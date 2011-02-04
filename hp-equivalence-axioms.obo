@@ -1,19 +1,8 @@
 format-version: 1.4
 date: 25:09:2009 13:37
 saved-by: George Gkoutos
-id-mapping: during OBO_REL:exists_during
-id-mapping: qualifier qualifier
-id-mapping: output has_output
-id-mapping: has_quality OBO_REL:has_quality
-id-mapping: quality_of OBO_REL:quality_of
-id-mapping: located_in OBO_REL:located_in
-id-mapping: has_central_participant OBOL:has_central_participant
-id-mapping: preceded_by OBO_REL:preceded_by
-id-mapping: exists_during OBO_REL:exists_during
-id-mapping: inheres_in OBO_REL:inheres_in
-id-mapping: inheres_in_part_of inheres_in_part_of
-ontology: hp/hp-logical-definitions! input: human-phenotype-ontology_xp.obo
-! input: human-phenotype-ontology_xp.obo
+ontology: hp/hp-logical-definitions
+
 [Term]
 id: HP:0001573 ! Single central incisor
 intersection_of: PATO:0000001 ! quality
@@ -4671,7 +4660,7 @@ intersection_of: inheres_in FMA:24479 ! Fibula
 ![Term]
 !id: HP:0010675 ! Abnormality of the mineralisation and ossification of bones of the feet
 !intersection_of: PATO:0000001 ! quality
-intersection_of: qualifier PATO:0000460 ! abnormal
+!intersection_of: qualifier PATO:0000460 ! abnormal
 !intersection_of: inheres_in GO:0001503 ! ossification
 !intersection_of: has_central_participant FMA:24222 ! Skeleton of foot
 
@@ -22920,12 +22909,6 @@ intersection_of: HP:0001977 ! Thrombosis
 intersection_of: inheres_in FMA:50981 ! cerebral vein
 
 [Term]
-id: HP:0005607 ! Abnormality of the tracheobronchial system
-intersection_of: PATO:0000001 ! quality
-intersection_of: inheres_in_part_of UBERON:0004102 ! tracheobronchial system
-intersection_of: qualifier PATO:0000460 ! abnormal
-
-[Term]
 id: HP:0006208 ! Metaphyseal cupping of proximal phalanges
 intersection_of: HP:0003021 ! Metaphyseal cupping
 intersection_of: inheres_in FMA:75828 ! proximal phalanx of toe
@@ -23171,33 +23154,63 @@ intersection_of: FMA:7149 ! Organ system
 intersection_of: has_part FMA:7160 ! Genital system
 intersection_of: has_part FMA:7159 ! Urinary system
 
-[Typedef]
-id: inheres_in_part_of
-name: inheres_in_part_of
-is_a: inheres_in
-holds_over_chain: inheres_in part_of
-
+! map this to 'depends on'
 [Typedef]
 id: towards
 name: towards
+xref: BFO:0000070
+
+[Typedef]
+id: part_of
+name: part of
+xref: BFO:0000050
 
 [Typedef]
 id: has_part
-name: has_part
-def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
-comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
+name: has part
+xref: BFO:0000051
+
+[Typedef]
+id: has_granular_part
+name: has granular part
+xref: BFO:0000071
 
 [Typedef]
 id: results_in
-name: results_in
+name: results in
 
 [Typedef]
 id: occurs_in
-name: occurs_in
+name: occurs in
+xref: BFO:0000066
+
+[Typedef]
+id: inheres_in_part_of
+name: inheres in part of
+holds_over_chain: inheres_in part_of
 
 [Typedef]
 id: inheres_in
-name:inheres_in
+name: inheres in
+is_a: inheres_in_part_of
+xref: BFO:0000052
 
+[Typedef]
+id: qualifier
+name: qualifier
 
+[Typedef]
+id: phenotype_of
+name: phenotype of
+xref: RO:0002201
+
+[Typedef]
+id: bearer_of
+name: bearer of
+xref: BFO:0000053
+
+[Typedef]
+id: has_participant
+name: has participant
+xref: BFO:0000057
 
