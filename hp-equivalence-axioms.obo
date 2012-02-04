@@ -1,33 +1,13 @@
 format-version: 1.4
 date: 25:09:2009 13:37
-saved-by: George Gkoutos
+saved-by: George Gkoutos, Sandra, Sebastian, PN Robinson
 ontology: hp/hp-logical-definitions
-
-[Term]
-id: HP:0001573 ! Single central incisor
-intersection_of: PATO:0000001 ! quality
-intersection_of: has_part _:single_incisor_tooth
-intersection_of: has_part _:central_incisor_tooth
-
-! these need to be named terms in HPO I think
-
-[Term]
-id: _:single_incisor_tooth
-is_anonymous: true
-intersection_of: PATO:0002001 ! has fewer parts of type
-intersection_of: inheres_in FMA:75150 ! Dentition
-intersection_of: towards FMA:12823 ! Incisor tooth
-
-[Term]
-id: _:central_incisor_tooth
-is_anonymous: true
-intersection_of: PATO:0001924 ! mislocalised medially
-intersection_of: inheres_in FMA:12823 ! Incisor tooth
 
 [Term]
 id: HP:0006315 ! Single median maxillary incisor
 intersection_of: PATO:0002001 ! has fewer parts of type
 intersection_of: inheres_in FMA:75150 ! Dentition
+intersection_of: PATO:0001924 ! mislocalised medially
 intersection_of: towards FMA:55722 ! Upper central secondary incisor tooth
 
 [Term]
@@ -126,7 +106,7 @@ intersection_of: has_part HP:0006355 ! Agenesis of mandibular central incisor
 [Term]
 id: _:central_eye
 is_anonymous: true
-intersection_of: PATO:0002159 ! dislocated towards
+intersection_of: PATO:0001852 ! dislocated
 intersection_of: inheres_in FMA:12513 ! Eyeball
 intersection_of: towards FMA:264779 ! Nasion
 
@@ -326,11 +306,6 @@ intersection_of: inheres_in_part_of FMA:256135 ! Body
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
-id: MP:0001945 ! fever
-intersection_of: PATO:0001305 ! increased temperature
-intersection_of: inheres_in FMA:256135 ! Body
-
-[Term]
 id: HP:0010986 ! Abnormality of immune system organ
 intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in FMA:9825 ! Immune system
@@ -519,13 +494,13 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 [Term]
 id: HP:0011035 ! Abnormality of the renal cortex
 intersection_of: PATO:0000001 ! quality
-intersection_of: inheres_in FMA:155581 ! cortex of the kidney
+intersection_of: inheres_in FMA:15581 ! cortex of the kidney
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
 id: HP:0011006 ! Abnormality of the musculature of the neck
 intersection_of: PATO:0000001 ! quality
-intersection_of: inheres_in FMA:15581 ! neck musculature
+intersection_of: inheres_in FMA:71290 ! Musculature of neck
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
@@ -641,10 +616,18 @@ intersection_of: towards FMA:55635 ! Mandibular dental arcade
 
 [Term]
 id: HP:0002673 ! Coxa valga
-intersection_of: PATO:0000133 ! orientation
-intersection_of: inheres_in FMA:32851 ! Head of femur
-intersection_of: towards FMA:42385 ! Neck of femur
+intersection_of: PATO:0002327 ! increased angle
+intersection_of: inheres_in FMA:42385 ! Neck of femur
+intersection_of: towards FMA:32847 ! Diaphysis of femur
 intersection_of: qualifier PATO:0000460 ! abnormal
+
+[Term]
+id:  HP:0002812 ! Coxa vara
+intersection_of: PATO:0002328 ! decreased angle
+intersection_of: inheres_in FMA:42385 ! Neck of femur
+intersection_of: towards FMA:32847 ! Diaphysis of femur
+intersection_of: qualifier PATO:0000460 ! abnormal
+
 
 [Term]
 id: HP:0010665 ! Bilateral coxa valga
@@ -710,11 +693,6 @@ id: HP:0009889 ! Localized hirsutism
 intersection_of: HP:0001007 ! Hirsutism
 intersection_of: qualifier PATO:0000627 ! localised
 
-[Term]
-id: HP:0011074 ! Localized hypoplasia of dental enamel
-intersection_of: PATO:0000644 ! hyperplastic
-intersection_of: inheres_in FMA:55629 ! dental enamel
-intersection_of: qualifier PATO:0000627 ! localised
 
 [Term]
 id: HP:0011059 ! Localized periodontitis
@@ -908,6 +886,13 @@ intersection_of: qualifier PATO:0000394 ! mild
 !intersection_of: PATO:0001570 ! having decreased processual parts
 !intersection_of: towards GO:0045453 ! bone resorption
 !
+!id: _:increased_bone_resorption is a synonym of -> HP:0002797 ! Osteolysis
+
+[Term]
+id: HP:0002797 ! Osteolysis
+intersection_of: PATO:0001570 ! having decreased processual parts
+intersection_of: towards GO:0045453 ! bone resorption
+
 ![Term]
 !id: _:increased_bone_resorption_or_:decreased_osteogenesis
 !is_anonymous: true
@@ -925,7 +910,7 @@ intersection_of: qualifier PATO:0000394 ! mild
 !Simplified verison
 [Term]
 id: HP:0000939 ! Osteoporosis
-intersection_of: PATO:0001563 ! increased mass
+intersection_of: PATO:0001562 ! decreased mass
 intersection_of: inheres_in FMA:5018 ! Bone organ
 intersection_of: qualifier PATO:0001869 ! pathological
 
@@ -1058,13 +1043,10 @@ id: HP:0003557 ! Increased variability in muscle fiber diameter
 intersection_of: PATO:0001958 ! increased variability of size
 intersection_of: inheres_in FMA:9727 ! Skeletal muscle cell
 
-! This should be a named term in HPO
 [Term]
-id: _:hypoplastic_areola
-is_anonymous: true
+id: HP:0100853 ! Hypoplastic areola
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:67796 ! Areola
-
 
 [Term]
 id: HP:0010666 ! Hypoplasia of the anterior nasal spine
@@ -1284,11 +1266,10 @@ intersection_of: results_in HP:0007126 ! Proximal amyotrophy
 [Term]
 id: HP:0001460 ! Aplasia/Hypoplasia involving the musculature
 union_of: HP:0009004 ! Muscle hypoplasia
-union_of: _:aplasia_involving_the_musculature
+union_of: HP:0100854 ! Aplasia of the musculature
 
-!this should be a named term in HPO
 [Term]
-id: _:aplasia_involving_the_musculature
+id: HP:0100854 ! Aplasia of the musculature
 intersection_of: PATO:0001483 ! aplastic
 intersection_of: inheres_in_part_of FMA:5022 ! Muscle organ
 
@@ -1346,13 +1327,10 @@ intersection_of: inheres_in FMA:37670 ! Biceps brachii
 [Term]
 id: HP:0009784 ! Aplasia/Hypoplasia of the triceps
 union_of: HP:0009785 ! Triceps aplasia
-union_of: _:hypoplastic_triceps
-
-! This should be a named term in HPO
+union_of: HP:0100855 ! Triceps hypoplasia
 
 [Term]
-id: _:hypoplastic_triceps
-is_anonymous: true
+id: HP:0100855 ! Triceps hypoplasia
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:37688 ! Triceps brachii
 
@@ -1438,7 +1416,7 @@ intersection_of: inheres_in FMA:9622 ! Muscle of lower limb
 [Term]
 id: HP:0002385 ! paraparesis
 intersection_of: PATO:0001779 ! decreased strength
-intersection_of: inheres_in MA:9622 ! Muscle of lower limb
+intersection_of: inheres_in FMA:9622 ! Muscle of lower limb
 
 [Term]
 id: HP:0003733 ! Thigh hypertrophy
@@ -2070,11 +2048,8 @@ intersection_of: PATO:0001558 ! lacking processual parts
 intersection_of: towards GO:0001503 ! ossification
 intersection_of: inheres_in FMA:11945 ! Body of vertebra
 
-! This should be a named term in HPO
-
 [Term]
-id: _:poorly_ossified_vertebra
-is_anonymous: true
+id: HP:0100856 ! Poorly ossified vertebrae
 intersection_of: PATO:0002302 ! decreased process quality
 intersection_of: inheres_in GO:0001503 ! ossification
 intersection_of: has_central_participant FMA:11945 ! Body of vertebra
@@ -2082,7 +2057,7 @@ intersection_of: has_central_participant FMA:11945 ! Body of vertebra
 [Term]
 id: HP:0004599 ! Absent or minimally ossified vertebral bodies
 union_of: HP:0004606 ! Unossified vertebral bodies
-union_of: _:poorly_ossified_vertebra
+union_of: HP:0100856 ! Poorly ossified vertebrae
 
 [Term]
 id: HP:0005451 ! Decreased cranial base ossification
@@ -2518,20 +2493,20 @@ id: HP:0003778 ! Short mandibular rami
 intersection_of: PATO:0000574 ! decreased length
 intersection_of: inheres_in FMA:52828 ! Ramus of mandible
 
-![Term]
-!id: HP:0005790 ! Short mandibular condyles
-!intersection_of: PATO:0000587 ! decreased size
-!intersection_of: inheres_in BTO:0001750 ! mandibular condyle
+[Term]
+id: HP:0005790 ! Short mandibular condyles
+intersection_of: PATO:0000587 ! decreased size
+intersection_of: inheres_in FMA:52836 ! Condylar process of mandible
 
-![Term]
-!id: HP:0007627 ! Mandibular condyle aplasia
-!intersection_of: PATO:0001483 ! aplastic
-!intersection_of: inheres_in BTO:0001750 ! mandibular condyle
+[Term]
+id: HP:0007627 ! Mandibular condyle aplasia
+intersection_of: PATO:0001483 ! aplastic
+intersection_of: inheres_in FMA:52836 ! Condylar process of mandible
 
-![Term]
-!id: HP:0007628 ! Mandibular condyle hypoplasia
-!intersection_of: PATO:0000645 ! hypoplastic
-!intersection_of: inheres_in BTO:0001750 ! mandibular condyle
+[Term]
+id: HP:0007628 ! Mandibular condyle hypoplasia
+intersection_of: PATO:0000645 ! hypoplastic
+intersection_of: inheres_in FMA:52836 ! Condylar process of mandible
 
 [Term]
 id: HP:0000326 ! Abnormality of the maxilla
@@ -2744,12 +2719,10 @@ intersection_of: inheres_in FMA:54709 ! Sella turcica
 id: HP:0005444 ! Enlarged, flat sella turcica
 intersection_of: PATO:0000001 ! quality
 intersection_of: has_part HP:0002690 ! Large sella turcica
-intersection_of: has_part _:flat_sella_turcica
+intersection_of: has_part HP:0100857 ! Flat sella turcica
 
-! This should be a named term in HPO
 [Term]
-id: _:flat_sella_turcica
-is_anonymous: true
+id: HP:0100857 ! Flat sella turcica
 intersection_of: PATO:0000407 ! flat
 intersection_of: inheres_in FMA:54709 ! Sella turcica
 
@@ -2880,12 +2853,8 @@ intersection_of: inheres_in_part_of FMA:50801 ! Brain
 intersection_of: inheres_in FMA:9637 ! Portion of tissue
 intersection_of: towards FMA:52734 ! Frontal bone
 
-! This should be a named term in HPO
-
 [Term]
-id: _:occipital_prominence
-is_anonymous: true
-is_a: _:temp_term_holder
+id: HP:0000269 ! Prominent occiput
 intersection_of: PATO:0001482 ! prominent
 intersection_of: inheres_in FMA:52735 ! Occipital bone
 
@@ -2893,7 +2862,7 @@ intersection_of: inheres_in FMA:52735 ! Occipital bone
 id: HP:0004489 ! Frontal and occipital prominence
 intersection_of: PATO:0000001 ! quality
 intersection_of: has_part HP:0002007 ! Frontal bossing
-intersection_of: has_part _:occipital_prominence
+intersection_of: has_part HP:0000269 ! Prominent occiput
 
 [Term]
 id: HP:0000152 ! Abnormality of head and neck
@@ -2983,27 +2952,18 @@ intersection_of: has_part _:celiac_artery_anerysm
 intersection_of: has_part _:superior_mesenteric_artery_anerysm
 intersection_of: has_part _:inferior_mesenteric_artery_anerysm
 
-! This should be a named term in HPO
-
 [Term]
-id: _:celiac_artery_anerysm
-is_anonymous: true
+id: HP:0100858 ! Celiac artery aneurysm
 intersection_of: PATO:0002093 ! ballooning
 intersection_of: inheres_in FMA:50737 ! Celiac artery
 
-! This should be a named term in HPO
-
 [Term]
-id: _:superior_mesenteric_artery_anerysm
-is_anonymous: true
+id: HP:0100859 ! Superior mesenteric artery aneurysm
 intersection_of: PATO:0002093 ! ballooning
 intersection_of: inheres_in FMA:14749 ! Superior mesenteric artery
 
-! This should be a named term in HPO
-
 [Term]
-id: _:inferior_mesenteric_artery_anerysm
-is_anonymous: true
+id: HP:0100860 ! Inferior mesenteric artery aneurysm
 intersection_of: PATO:0002093 ! ballooning
 intersection_of: inheres_in FMA:14750 ! Inferior mesenteric artery
 
@@ -3877,11 +3837,6 @@ intersection_of: PATO:0000570 ! increased height
 intersection_of: inheres_in_part_of FMA:9914 ! Vertebra
 
 [Term]
-id: HP:0005693 ! Disproportionately tall vertebral bodies
-intersection_of: PATO:0000570 ! increased height
-intersection_of: inheres_in FMA:11945 ! Body of vertebra
-
-[Term]
 id: HP:0008439 ! Lumbar hemivertebrae
 intersection_of: HP:0002937 ! Hemivertebrae
 intersection_of: inheres_in_part_of FMA:9921 ! Lumbar vertebra
@@ -4096,15 +4051,11 @@ intersection_of: inheres_in FMA:13073 ! Second lumbar vertebra
 
 [Term]
 id: HP:0004578 ! Mild vertebral body sclerosis
-intersection_of: _:vertebral_body_sclerosis
+intersection_of: HP:0100861 ! Vertebral body sclerosis
 intersection_of: qualifier PATO:0000394 ! mild
 
-! This should definitely be a named HP term, parent to HP:0004578
-
 [Term]
-id: _:vertebral_body_sclerosis
-is_anonymous: true
-is_a: _:temp_term_holder
+id: HP:0100861 ! Vertebral body sclerosis
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:11945 ! Body of vertebra
@@ -4507,44 +4458,50 @@ intersection_of: HP:0002650 ! Scoliosis
 intersection_of: inheres_in FMA:72066 ! Set of thoracolumbar vertebrae
 
 [Term]
-id: HP:0002475 ! Meningomyelocele
-intersection_of: PATO:0002167 ! herniated out of
-intersection_of: towards FMA:13478 ! Vertebral column
-intersection_of: inheres_in_part_of _:spinal_cord_and_meninges
-
-[Term]
 id: HP:0002436 ! Occipital meningocele
 intersection_of: PATO:0002167 ! herniated out of
 intersection_of: towards FMA:52735 ! Occipital bone
 intersection_of: inheres_in_part_of _:spinal_cord_and_meninges
 
-! This should be a named term in HPO
-[Term]
-id: _:incomplete_closure_of_the_spinal_cord
-is_anonymous: true
-is_a: _:temp_term_holder
-intersection_of: PATO:0000609 ! closure incomplete
-intersection_of: inheres_in FMA:7647 ! Spinal cord
 
-! This should be a named term in HPO
+![Term]
+!id: _:incomplete_closure_of_the_spinal_cord
+!is_anonymous: true
+!is_a: _:temp_term_holder
+!intersection_of: PATO:0000609 ! closure incomplete
+!intersection_of: inheres_in FMA:7647 ! Spinal cord
+
 [Term]
-id: _:incomplete_closure_of_the_vertebral_arch
-is_anonymous: true
-is_a: _:temp_term_holder
+id: HP:0010301 ! Spinal dysraphism
 intersection_of: PATO:0000609 ! closure incomplete
 intersection_of: inheres_in FMA:11946 ! Vertebral arch
 
 [Term]
 id: HP:0002414 ! Spina bifida
-intersection_of: PATO:0000001 ! quality
-intersection_of: has_part _:incomplete_closure_of_the_spinal_cord
-intersection_of: has_part _:incomplete_closure_of_the_vertebral_arch
+union_of: HP:0003298 ! Spina bifida occulta
+union_of: HP:0002435 ! Meningocele
+union_of: HP:0002475 ! Meningomyelocele
 
 [Term]
 id: HP:0003298 ! Spina bifida occulta
 intersection_of: PATO:0000001 ! quality
 intersection_of: has_part HP:0002143 ! Abnormality of the spinal cord
-intersection_of: has_part _:incomplete_closure_of_the_vertebral_arch
+intersection_of: has_part HP:0010301 ! Spinal dysraphism
+
+[Term]
+id: HP:0002435 ! Meningocele
+intersection_of: PATO:0002167 ! herniated out of
+intersection_of: towards FMA:13478 ! Vertebral column
+intersection_of: HP:0010301 ! Spinal dysraphism
+intersection_of: HP:0010651 ! Abnormality of the meninges
+
+[Term]
+id: HP:0002475 ! Meningomyelocele
+intersection_of: PATO:0002167 ! herniated out of
+intersection_of: towards FMA:13478 ! Vertebral column
+intersection_of: HP:0010301 ! Spinal dysraphism
+intersection_of: HP:0010651 ! Abnormality of the meninges
+intersection_of: HP:0002143 ! Abnormality of the spinal cord
 
 [Term]
 id: HP:0004614 ! spina bifida occulta at s1
@@ -4930,24 +4887,22 @@ intersection_of: has_part HP:0006429 ! Broad femoral neck
 
 [Term]
 id: HP:0009108 ! Aplasia/Hypoplasia involving the femoral head and neck
-union_of: _:aplastic_femoral_head_and_neck
-union_of: _:hypoplastic_femoral_head_and_neck
+union_of: HP:0100862 ! Aplasia of the femoral head
+union_of: HP:0100863 ! Aplasia of the femoral neck
+union_of: HP:0008802 ! Hypoplasia of the femoral head
+union_of: HP:0100864 ! Hypoplasia of the femoral neck
 
-! This should be a named term in HPO
+![Term]
+!id: _:hypoplastic_femoral_head_and_neck
+!is_anonymous: true
+!intersection_of: PATO:0000645 ! hypoplastic
+!intersection_of: inheres_in _:femoral_head_and_neck
 
-[Term]
-id: _:hypoplastic_femoral_head_and_neck
-is_anonymous: true
-intersection_of: PATO:0000645 ! hypoplastic
-intersection_of: inheres_in _:femoral_head_and_neck
-
-! This should be a named term in HPO
-
-[Term]
-id: _:aplastic_femoral_head_and_neck
-is_anonymous: true
-intersection_of: PATO:0001483 ! aplastic
-intersection_of: inheres_in _:femoral_head_and_neck
+![Term]
+!id: _:aplastic_femoral_head_and_neck
+!is_anonymous: true
+!intersection_of: PATO:0001483 ! aplastic
+!intersection_of: inheres_in _:femoral_head_and_neck
 
 [Term]
 id: HP:0008804 ! Broad femoral heads and necks
@@ -5208,7 +5163,7 @@ intersection_of: inheres_in_part_of FMA:24222 ! Skeleton of foot
 [Term]
 id: HP:0008371 ! Abnormal ossification involving metatarsal bones
 intersection_of: PATO:0001019 ! mass density
-intersection_of: inheres_in FMA:33814 ! Epiphysis of metatarsal bone
+intersection_of: inheres_in FMA:24492 ! Metatarsal bone
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
@@ -5252,17 +5207,16 @@ intersection_of: has_central_participant FMA:7583 ! Tubercle of rib
 
 [Term]
 id: HP:0003893 ! Advanced maturation/advanced ossification of the humeral epiphyses
-intersection_of: PATO:0002086 ! advanced
+intersection_of: PATO:0000694 ! premature
 intersection_of: inheres_in GO:0001503 ! ossification
 intersection_of: has_central_participant FMA:32825 ! Epiphysis of humerus
 
 [Term]
 id: HP:0008108 ! Advanced tarsal ossification
-intersection_of: PATO:0002086 ! advanced
+intersection_of: PATO:0000694 ! premature
 intersection_of: inheres_in GO:0001503 ! ossification
 intersection_of: has_central_participant FMA:24491 ! Tarsal bone
 
-!This should be a named term in HPO
 
 [Term]
 id: _:irregular_tarsal_ossification
@@ -5270,7 +5224,6 @@ intersection_of: PATO:0000330 ! irregular spatial pattern
 intersection_of: inheres_in GO:0001503 ! ossification
 intersection_of: has_central_participant FMA:24491 ! Tarsal bone
 
-!This should be a named term in HPO
 
 [Term]
 id: _:defective_tarsal_ossification
@@ -5278,11 +5231,22 @@ intersection_of: PATO:0001511 ! non-functional
 intersection_of: inheres_in GO:0001503 ! ossification
 intersection_of: has_central_participant FMA:24491 ! Tarsal bone
 
+!perhaps this works?
+
 [Term]
 id: HP:0008134 ! Defective, irregular tarsal ossification
-intersection_of: PATO:0000001 ! quality
-intersection_of: has_part _:defective_tarsal_ossification
-intersection_of: has_part _:irregular_tarsal_ossification
+intersection_of: inheres_in GO:0001503 ! ossification
+intersection_of: has_central_participant FMA:24491 ! Tarsal bone
+intersection_of: PATO:0000330 ! irregular spatial pattern
+intersection_of: PATO:0001511 ! non-functional
+
+![Term]
+!id: HP:0008134 ! Defective, irregular tarsal ossification
+!intersection_of: inheres_in GO:0001503 ! ossification
+!intersection_of: has_central_participant FMA:24491 ! Tarsal bone
+!intersection_of: has_part _:defective_tarsal_ossification
+!intersection_of: has_part _:irregular_tarsal_ossification
+
 
 [Term]
 id: HP:0005921 ! Abnormal ossification of hand bones
@@ -5338,27 +5302,6 @@ intersection_of: inheres_in FMA:9611 ! Femur
 id: HP:0009565 ! Aplasia of the distal phalanx of the 2nd finger
 intersection_of: PATO:0001483 ! aplastic
 intersection_of: inheres_in FMA:23946 ! Distal phalanx of index finger
-
-[Term]
-id: HP:0009566 ! Hypoplastic/small distal phalanx of the 2nd finger
-union_of: _:hypoplastic_distal_phalanx_of_the_2nd_finger
-union_of: _:small_proximal_phalanx_of_the_2nd_finger
-
-! This should be a named term in HPO
-
-[Term]
-id: _:hypoplastic_distal_phalanx_of_the_2nd_finger
-is_anonymous: true
-intersection_of: PATO:0000645 ! hypoplastic
-intersection_of: inheres_in FMA:23946 ! Distal phalanx of index finger
-
-! This should be a named term in HPO
-
-[Term]
-id: _:small_proximal_phalanx_of_the_2nd_finger
-is_anonymous: true
-intersection_of: PATO:0000587 ! decreased size
-intersection_of: inheres_in FMA:23919 ! Proximal phalanx of index finger
 
 [Term]
 id: HP:0009394 ! Bracket epiphyses of the 4th finger
@@ -5552,30 +5495,26 @@ id: HP:0009559 ! Bullet-shaped distal phalanx of the 2nd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23946 ! Distal phalanx of index finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_distal_phalanx_of_the_2nd_finger
-is_anonymous: true
+id: HP:0100900 ! Sclerosis of the distal phalanx of the 2nd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23946 ! Distal phalanx of index finger
 
 [Term]
 id: HP:0009562 ! Patchy sclerosis of the distal phalanx of the 2nd finger
-intersection_of: _:sclerosis_of_the_distal_phalanx_of_the_2nd_finger
+intersection_of: HP:0100900 ! Sclerosis of the distal phalanx of the 2nd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
-id: _:clavicular_sclerosis
-is_anonymous: true
+id: HP:0100923 ! Clavicular sclerosis
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:13321 ! Clavicle
 
 [Term]
 id: HP:0006648 ! Mild clavicular sclerosis
-intersection_of: _:clavicular_sclerosis
+intersection_of: HP:0100923 ! Clavicular sclerosis
 intersection_of: qualifier PATO:0000394 ! mild
 
 [Term]
@@ -5645,10 +5584,9 @@ id: HP:0009423 ! Bullet-shaped distal phalanx of the 3rd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23947 ! Distal phalanx of middle finger
 
-
 [Term]
 id: HP:0009425 ! Patchy sclerosis of the distal phalanx of the 3rd finger
-intersection_of: _:sclerosis_of_the_distal_phalanx_of_the_3rd_finger
+intersection_of: HP:0100901 ! Sclerosis of the distal phalanx of the 3rd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -5702,18 +5640,15 @@ id: HP:0009303 ! Osteolytic defects of the distal phalanx of the 4th finger
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:23948 ! Distal phalanx of ring finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_distal_phalanx_of_the_4th_finger
-is_anonymous: true
+id: HP:0100902 ! Sclerosis of the distal phalanx of the 4th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23948 ! Distal phalanx of ring finger
 
 [Term]
 id: HP:0009304 ! Patchy sclerosis of the distal phalanx of the 4th finger
-intersection_of: _:sclerosis_of_the_distal_phalanx_of_the_4th_finger
+intersection_of: HP:0100902 ! Sclerosis of the distal phalanx of the 4th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -5782,18 +5717,15 @@ id: HP:0009242 ! Osteolytic defects of the distal phalanx of the 5th finger
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:23949 ! Distal phalanx of little finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_distal_phalanx_of_the_5th_finger
-is_anonymous: true
+id: HP:0100903 ! Sclerosis of the distal phalanx of the 5th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23949 ! Distal phalanx of little finger
 
 [Term]
 id: HP:0009243 ! Patchy sclerosis of the distal phalanx of the 5th finger
-intersection_of: _:sclerosis_of_the_distal_phalanx_of_the_5th_finger
+intersection_of: HP:0100903 ! Sclerosis of the distal phalanx of the 5th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -6019,18 +5951,15 @@ intersection_of: PATO:0000642 ! fused with
 intersection_of: inheres_in FMA:23914 ! Phalanx of finger
 intersection_of: towards FMA:23914 ! Phalanx of finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_hand
-is_anonymous: true
+id: HP:0100899 ! Sclerosis of the phalanges of the hand
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23914 ! Phalanx of finger
 
 [Term]
 id: HP:0009772 ! Patchy sclerosis of the phalanges of the hand
-intersection_of: _:sclerosis_of_the_phalanges_of_the_hand
+intersection_of: HP:0100899 ! Sclerosis of the phalanges of the hand
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -6192,18 +6121,37 @@ id: HP:0009850 ! Triangular shaped middle phalanges of the hand
 intersection_of: PATO:0001875 ! triangular
 intersection_of: inheres_in FMA:75817 ! Middle phalanx of finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_middle_phalanges_of_the_hand
-is_anonymous: true
+id: HP:0100916 ! Sclerosis of the middle phalanges of the hand
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:75817 ! Middle phalanx of finger
 
 [Term]
+id: HP:0100915 ! Sclerosis of the distal phalanges of the hand
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in FMA:75818 ! Distal phalanx of finger
+
+[Term]
+id: HP:0100917 ! Sclerosis of the proximal phalanges of the hand
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in FMA:75816 ! Proximal phalanx of finger
+
+[Term]
 id: HP:0009848 ! Patchy sclerosis of the middle phalanges of the hand
-intersection_of: _:sclerosis_of_the_middle_phalanges_of_the_hand
+intersection_of: HP:0100916 ! Sclerosis of the middle phalanges of the hand
+intersection_of: qualifier PATO:0001608 ! patchy
+
+[Term]
+id: HP:0009840 ! Patchy sclerosis of the distal phalanges of the hand
+intersection_of: HP:0100915 ! Sclerosis of the distal phalanges of the hand
+intersection_of: qualifier PATO:0001608 ! patchy
+
+[Term]
+id: HP:0009856 ! Patchy sclerosis of the proximal phalanges of the hand
+intersection_of: HP:0100917 ! Sclerosis of the proximal phalanges of the hand
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -7767,10 +7715,6 @@ intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in_part_of FMA:55628 ! Dentine
 intersection_of: qualifier PATO:0000460 ! abnormal
 
-[Term]
-id: HP:0010333 ! Joint contractures of the 3rd toe
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:25051 ! Third toe
 
 [Term]
 id: HP:0010334 ! Polydactyly affecting the 3rd toe
@@ -8036,6 +7980,7 @@ intersection_of: inheres_in FMA:24974 ! Knee
 id: HP:0006297 ! Hypoplasia of dental enamel
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:55629 ! Enamel
+intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
 id: HP:0010290 ! Short hard palate
@@ -9645,32 +9590,26 @@ id: HP:0009570 ! Bullet-shaped middle phalanx of the 2nd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23933 ! Middle phalanx of index finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_middle_phalanx_of_the_2nd_finger
-is_anonymous: true
+id: HP:0100904 ! Sclerosis of the middle phalanx of the 2nd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23933 ! Middle phalanx of index finger
 
 [Term]
 id: HP:0009573 ! Patchy sclerosis of the middle phalanx of the 2nd finger
-intersection_of: _:sclerosis_of_the_middle_phalanx_of_the_2nd_finger
+intersection_of: HP:0100904 ! Sclerosis of the middle phalanx of the 2nd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_first_metatarsal_bone
-is_anonymous: true
+id: HP:0100945 ! Sclerosis of the 1st metatarsal
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:24502 ! First metatarsal bone
 
 [Term]
 id: HP:0010072 ! Patchy sclerosis of the 1st metatarsal
-intersection_of: _:sclerosis_of_the_first_metatarsal_bone
+intersection_of: HP:0100945 ! Sclerosis of the 1st metatarsal
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -9739,28 +9678,21 @@ id: HP:0009431 ! Bullet-shaped middle phalanx of the 3rd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23934 ! Middle phalanx of middle finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_middle_phalanx_of_the_3rd_finger
-is_anonymous: true
+id: HP:0100905 ! Sclerosis of the middle phalanx of the 3rd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23934 ! Middle phalanx of middle finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_distal_phalanx_of_the_3rd_finger
-is_anonymous: true
+id: HP:0100901 ! Sclerosis of the distal phalanx of the 3rd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23947 ! Distal phalanx of middle finger
 
-
 [Term]
 id: HP:0009434 ! Patchy sclerosis of the middle phalanx of the 3rd finger
-intersection_of: _:sclerosis_of_the_middle_phalanx_of_the_3rd_finger
+intersection_of: HP:0100905 ! Sclerosis of the middle phalanx of the 3rd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -9825,18 +9757,15 @@ id: HP:0009296 ! Bullet-shaped middle phalanx of the 4th finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23935 ! Middle phalanx of ring finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_middle_phalanx_of_the_4th_finger
-is_anonymous: true
+id: HP:0100906 ! Sclerosis of the middle phalanx of the 4th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23935 ! Middle phalanx of ring finger
 
 [Term]
 id: HP:0009307 ! Patchy sclerosis of the middle phalanx of the 4th finger
-intersection_of: _:sclerosis_of_the_middle_phalanx_of_the_4th_finger
+intersection_of: HP:0100906 ! Sclerosis of the middle phalanx of the 4th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -9912,18 +9841,15 @@ id: HP:0009168 ! Bullet-shaped middle phalanx of the 5th finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23936 ! Middle phalanx of little finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_middle_phalanx_of_the_5th_finger
-is_anonymous: true
+id: HP:0100907 ! Sclerosis of the middle phalanx of the 5th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23936 ! Middle phalanx of little finger
 
 [Term]
 id: HP:0009175 ! Patchy sclerosis of the middle phalanx of the 5th finger
-intersection_of: _:sclerosis_of_the_middle_phalanx_of_the_5th_finger
+intersection_of: HP:0100907 ! Sclerosis of the middle phalanx of the 5th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 ![Term]
@@ -9992,18 +9918,15 @@ id: HP:0009582 ! Bullet-shaped proximal phalanx of the 2nd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23919 ! Proximal phalanx of index finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_proximal_phalanx_of_the_2nd_finger
-is_anonymous: true
+id: HP:0100908 ! Sclerosis of the proximal phalanx of the 2nd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23919 ! Proximal phalanx of index finger
 
 [Term]
 id: HP:0009585 ! Patchy sclerosis of the proximal phalanx of the 2nd finger
-intersection_of: _:sclerosis_of_the_proximal_phalanx_of_the_2nd_finger
+intersection_of: HP:0100908 ! Sclerosis of the proximal phalanx of the 2nd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10067,18 +9990,15 @@ id: HP:0009451 ! Bullet-shaped proximal phalanx of the 3rd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23920 ! Proximal phalanx of middle finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_proximal_phalanx_of_the_3rd_finger
-is_anonymous: true
+id: HP:0100909 ! Sclerosis of the proximal phalanx of the 3rd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23920 ! Proximal phalanx of middle finger
 
 [Term]
 id: HP:0009454 ! Patchy sclerosis of the proximal phalanx of the 3rd finger
-intersection_of: _:sclerosis_of_the_proximal_phalanx_of_the_3rd_finger
+intersection_of: HP:0100909 ! Sclerosis of the proximal phalanx of the 3rd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10148,18 +10068,15 @@ id: HP:0009311 ! Bullet-shaped proximal phalanx of the 4th finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23921 ! Proximal phalanx of ring finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_proximal_phalanx_of_the_4th_finger
-is_anonymous: true
+id: HP:0100910 ! Sclerosis of the proximal phalanx of the 4th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23921 ! Proximal phalanx of ring finger
 
 [Term]
 id: HP:0009313 ! Patchy sclerosis of the proximal phalanx of the 4th finger
-intersection_of: _:sclerosis_of_the_proximal_phalanx_of_the_4th_finger
+intersection_of: HP:0100910 ! Sclerosis of the proximal phalanx of the 4th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10213,18 +10130,15 @@ id: HP:0009990 ! Partial/complete duplication of the proximal phalanx of the 5th
 union_of: HP:0009993 ! Complete duplication of the proximal phalanx of the 5th finger
 union_of: HP:0009996 ! Partial duplication of the proximal phalanx of the 5th finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_proximal_phalanx_of_the_5th_finger
-is_anonymous: true
+id: HP:0100911 ! Sclerosis of the proximal phalanx of the 5th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23922 ! Proximal phalanx of little finger
 
 [Term]
 id: HP:0009231 ! Patchy sclerosis of the proximal phalanx of the 5th finger
-intersection_of: _:sclerosis_of_the_proximal_phalanx_of_the_5th_finger
+intersection_of: HP:0100911 ! Sclerosis of the proximal phalanx of the 5th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10271,18 +10185,15 @@ id: HP:0009652 ! Bullet-shaped phalanges of the thumb
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:35477 ! Phalanx of thumb
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_thumb
-is_anonymous: true
+id: HP:0100922 ! Sclerosis of the phalanges of the thumb
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:35477 ! Phalanx of thumb
 
 [Term]
 id: HP:0009655 ! Patchy sclerosis of the phalanges of the thumb
-intersection_of: _:sclerosis_of_the_phalanges_of_the_thumb
+intersection_of: HP:0100922 ! Sclerosis of the phalanges of the thumb
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10410,18 +10321,15 @@ id: HP:0010030 ! Osteolytic defects of the 1st metacarpal
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:23899 ! First metacarpal bone
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_1st_metacarpal
-is_anonymous: true
+id: HP:0100914 ! Sclerosis of the 1st metacarpal
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23899 ! First metacarpal bone
 
 [Term]
 id: HP:0010031 ! Patchy sclerosis of the 1st metacarpal
-intersection_of: _:sclerosis_of_the_1st_metacarpal
+intersection_of: HP:0100914 ! Sclerosis of the 1st metacarpal
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10487,18 +10395,15 @@ id: HP:0010078 ! Bullet-shaped distal phalanx of the hallux
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:32627 ! Distal phalanx of big toe
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_distal_phalanx_of_the_hallux
-is_anonymous: true
+id: HP:0100944 ! Sclerosis of the distal phalanx of the hallux
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:32627 ! Distal phalanx of big toe
 
 [Term]
 id: HP:0010081 ! Patchy sclerosis of the distal phalanx of the hallux
-intersection_of: _:sclerosis_of_distal_phalanx_of_the_hallux
+intersection_of: HP:0100944 ! Sclerosis of the distal phalanx of the hallux
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10512,18 +10417,15 @@ id: HP:0010198 ! Osteolytic defects of the middle phalanges of the toes
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:75829 ! Middle phalanx of toe
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_middle_phalanx_of_the_hallux
-is_anonymous: true
+id: HP:0100947 ! Sclerosis of the middle phalanges of the toes
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:75829 ! Middle phalanx of toe
 
 [Term]
 id: HP:0010199 ! Patchy sclerosis of the middle phalanges of the toes
-intersection_of: _:sclerosis_of_middle_phalanx_of_the_hallux
+intersection_of: HP:0100947 ! Sclerosis of the middle phalanges of the toes
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10583,32 +10485,26 @@ id: HP:0010207 ! Osteolytic defects of the proximal phalanges of the toes
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:75828 ! Proximal phalanx of toe
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_proximal_phalanx_of_the_toe
-is_anonymous: true
+id: HP:0100946 ! Sclerosis of the proximal phalanges of the toes
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:75828 ! Proximal phalanx of toe
 
 [Term]
 id: HP:0010208 ! Patchy sclerosis of the proximal phalanges of the toes
-intersection_of: _:sclerosis_of_proximal_phalanx_of_the_toe
+intersection_of: HP:0100946 ! Sclerosis of the proximal phalanges of the toes
 intersection_of: qualifier PATO:0001608 ! patchy
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_proximal_phalanx_of_the_hallux
-is_anonymous: true
+id: HP:0100943 ! Sclerosis of the proximal phalanx of the hallux
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:43252 ! Proximal phalanx of big toe
 
 [Term]
 id: HP:0010090 ! Patchy sclerosis of the proximal phalanx of the hallux
-intersection_of: _:sclerosis_of_proximal_phalanx_of_the_hallux
+intersection_of: HP:0100943 ! Sclerosis of the proximal phalanx of the hallux
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10622,18 +10518,15 @@ id: HP:0010189 ! Osteolytic defects of the distal phalanges of the toes
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:75830 ! Distal phalanx of toe
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_distal_phalanx_of_the_toe
-is_anonymous: true
+id: HP:0100948 ! Sclerosis of the distal phalanges of the toes
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:75830 ! Distal phalanx of toe
 
 [Term]
 id: HP:0010190 ! Patchy sclerosis of the distal phalanges of the toes
-intersection_of: _:sclerosis_of_distal_phalanx_of_the_toe
+intersection_of: HP:0100948 ! Sclerosis of the distal phalanges of the toes
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -10671,20 +10564,6 @@ intersection_of: PATO:0000642 ! fused with
 intersection_of: inheres_in FMA:32618 ! Proximal phalanx of second toe
 intersection_of: towards FMA:32618 ! Proximal phalanx of second toe
 
-! This should be a named term in HPO
-
-[Term]
-id: _:sclerosis_of_the_proximal_phalanx_of_the_2nd_toe
-is_anonymous: true
-intersection_of: PATO:0001788 ! increased mass density
-intersection_of: qualifier PATO:0001869 ! pathological
-intersection_of: inheres_in FMA:32618 ! Proximal phalanx of second toe
-
-[Term]
-id: HP:0010400 ! Patchy sclerosis of the proximal phalanx of the 2nd toe
-intersection_of: _:sclerosis_of_the_proximal_phalanx_of_the_2nd_toe
-intersection_of: qualifier PATO:0001608 ! patchy
-
 [Term]
 id: HP:0010399 ! Osteolytic defects of the proximal phalanx of the 2nd toe
 intersection_of: HP:0002797 ! Osteolysis
@@ -10701,10 +10580,52 @@ intersection_of: PATO:0000642 ! fused with
 intersection_of: inheres_in FMA:32623 ! Middle phalanx of second toe
 intersection_of: towards FMA:32623 ! Middle phalanx of second toe
 
+!XXX
+
 [Term]
 id: HP:0010409 ! Patchy sclerosis of the middle phalanx of the 2nd toe
-intersection_of: _:sclerosis_of_the_proximal_middle_of_the_2nd_toe
+intersection_of: HP:0100935 ! Sclerosis of the middle phalanx of the 2nd toe
 intersection_of: qualifier PATO:0001608 ! patchy
+
+[Term]
+id: HP:0100935 ! Sclerosis of the middle phalanx of the 2nd toe
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in FMA:32623 ! Middle phalanx of second toe
+
+[Term]
+id: HP:0100931 ! Sclerosis of the proximal phalanx of the 2nd toe
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in FMA:32618 ! Proximal phalanx of second toe
+
+[Term]
+id: HP:0010400 ! Patchy sclerosis of the proximal phalanx of the 2nd toe
+intersection_of: HP:0100931 ! Sclerosis of the proximal phalanx of the 2nd toe
+intersection_of: qualifier PATO:0001608 ! patchy
+
+[Term]
+id: HP:0010418 ! Patchy sclerosis of the distal phalanx of the 2nd toe
+intersection_of: HP:0100939 ! Sclerosis of the distal phalanx of the 2nd toe
+intersection_of: qualifier PATO:0001608 ! patchy
+
+[Term]
+id: HP:0100939 ! Sclerosis of the distal phalanx of the 2nd toe
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in FMA:32628 ! Distal phalanx of second toe
+
+[Term]
+id: HP:0100925 ! Sclerosis of bones of the feet
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in_part_of FMA:24222 ! Skeleton of foot
+
+[Term]
+id: HP:0100924 ! Sclerosis of the phalanges of the toes
+intersection_of: PATO:0001788 ! increased mass density
+intersection_of: qualifier PATO:0001869 ! pathological
+intersection_of: inheres_in FMA:24493 ! Phalanx of toe
 
 [Term]
 id: HP:0010408 ! Osteolytic defects of the middle phalanx of the 2nd toe
@@ -10720,12 +10641,7 @@ intersection_of: inheres_in FMA:32623 ! Middle phalanx of second toe
 id: HP:0010419 ! Symphalangism affecting the distal phalanx of the 2nd toe
 intersection_of: PATO:0000642 ! fused with
 intersection_of: inheres_in FMA:32628 ! Distal phalanx of second toe
-intersection_of: towards FMA:32628 ! Distal phalanx of second toe
-
-[Term]
-id: HP:0010418 ! Patchy sclerosis of the distal phalanx of the 2nd toe
-intersection_of: _:sclerosis_of_the_proximal_distal_of_the_2nd_toe
-intersection_of: qualifier PATO:0001608 ! patchy
+intersection_of: towards FMA:32899 ! Phalanx of second toe
 
 [Term]
 id: HP:0010417 ! Osteolytic defects of the distal phalanx of the 2nd toe
@@ -11350,18 +11266,15 @@ id: HP:0010347 ! Aplasia/Hypoplasia of the phalanges of the 2nd toe
 intersection_of: PATO:0002290 ! aplastic/hypoplastic
 intersection_of: inheres_in FMA:32899 ! Phalanx of second toe
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_2nd_toe
-is_anonymous: true
+id: HP:0100926 ! Sclerosis of the phalanges of the 2nd toe
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:32899 ! Phalanx of second toe
 
 [Term]
 id: HP:0010352 ! Patchy sclerosis of the phalanges of the 2nd toe
-intersection_of: _:sclerosis_of_the_phalanges_of_the_2nd_toe
+intersection_of: HP:0100926 ! Sclerosis of the phalanges of the 2nd toe
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -11395,18 +11308,15 @@ intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in FMA:32900 ! Phalanx of third toe
 intersection_of: qualifier PATO:0000460 ! abnormal
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_3rd_toe
-is_anonymous: true
+id: HP:0100927 ! Sclerosis of the phalanges of the 3rd toe
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:32900 ! Phalanx of third toe
 
 [Term]
 id: HP:0010364 ! Patchy sclerosis of the phalanges of the 3rd toe
-intersection_of: _:sclerosis_of_the_phalanges_of_the_3rd_toe
+intersection_of: HP:0100927 ! Sclerosis of the phalanges of the 3rd toe
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -11414,20 +11324,13 @@ id: HP:0010359 ! Aplasia/Hypoplasia of the phalanges of the 3rd toe
 union_of: _:hypoplastic_third_toe_phalanx
 union_of: _:aplastic_third_toe_phalanx
 
-! This should be a named term in HPO
-
 [Term]
-id: _:hypoplastic_third_toe_phalanx
-is_anonymous: true
+id: HP:0100366 ! Hypoplastic/small phalanges of the 3rd toe
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:32900 ! Phalanx of third toe
 
-
-! This should be a named term in HPO
-
 [Term]
-id: _:aplastic_third_toe_phalanx
-is_anonymous: true
+id: HP:0100362 ! Aplasia of the phalanges of the 3rd toe
 intersection_of: PATO:0001483 ! aplastic
 intersection_of: inheres_in FMA:32900 ! Phalanx of third toe
 
@@ -11467,27 +11370,18 @@ id: HP:0010371 ! Aplasia/Hypoplasia of the phalanges of the 4th toe
 union_of: _:hypoplastic_fourth_toe_phalanx
 union_of: _:aplastic_fourth_toe_phalanx
 
-! This should be a named term in HPO
 
 [Term]
-id: _:hypoplastic_fourth_toe_phalanx
-is_anonymous: true
+id: HP:0100367 ! Hypoplastic/small phalanges of the 4th toe
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:32901 ! Phalanx of fourth toe
 
 
-! This should be a named term in HPO
-
 [Term]
-id: _:aplastic_fourth_toe_phalanx
-is_anonymous: true
+id: HP:0100363 ! Aplasia of the phalanges of the 4th toe
 intersection_of: PATO:0001483 ! aplastic
 intersection_of: inheres_in FMA:32901 ! Phalanx of fourth toe
 
-[Term]
-id: HP:0010339 ! Joint contractures of the 4th toe
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:25052 ! Fourth toe
 
 [Term]
 id: HP:0010335 ! Abnormality of the epiphyses of the 4th toe
@@ -11579,18 +11473,15 @@ intersection_of: inheres_in_part_of FMA:32851 ! Head of femur
 intersection_of: inheres_in FMA:24012 ! Epiphysis
 intersection_of: qualifier PATO:0000460 ! abnormal
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_4th_toe
-is_anonymous: true
+id: HP:0100928 ! Sclerosis of the phalanges of the 4th toe
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:32901 ! Phalanx of fourth toe
 
 [Term]
 id: HP:0010376 ! Patchy sclerosis of the phalanges of the 4th toe
-intersection_of: _:sclerosis_of_the_phalanges_of_the_4th_toe
+intersection_of: HP:0100928 ! Sclerosis of the phalanges of the 4th toe
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -11634,36 +11525,26 @@ id: HP:0010383 ! Aplasia/Hypoplasia of the phalanges of the 5th toe
 union_of: _:hypoplastic_little_toe_phalanx
 union_of: _:aplastic_little_toe_phalanx
 
-! This should be a named term in HPO
-
 [Term]
-id: _:hypoplastic_little_toe_phalanx
+id: HP:0100368 ! Hypoplastic/small phalanges of the 5th toe
 is_anonymous: true
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:32902 ! Phalanx of little toe
 
-
-! This should be a named term in HPO
-
 [Term]
-id: _:aplastic_little_toe_phalanx
-is_anonymous: true
+id: HP:0100364 ! Aplasia of the phalanges of the 5th toe
 intersection_of: PATO:0001483 ! aplastic
 intersection_of: inheres_in FMA:32902 ! Phalanx of little toe
 
-
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_5th_toe
-is_anonymous: true
+id: HP:0100929 ! Sclerosis of the phalanges of the 5th toe
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:32902 ! Phalanx of little toe
 
 [Term]
 id: HP:0010388 ! Patchy sclerosis of the phalanges of the 5th toe
-intersection_of: _:sclerosis_of_the_phalanges_of_the_5th_toe
+intersection_of: HP:0100929 ! Sclerosis of the phalanges of the 5th toe
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -12044,18 +11925,15 @@ id: HP:0009945 ! Partial/complete duplication of phalanges of the 2nd finger
 union_of: HP:0009957 ! Complete duplication of the phalanges of the 2nd finger
 union_of: HP:0009956 ! Partial duplication of the phalanges of the 2nd finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_3rd_finger
-is_anonymous: true
+id: HP:0100919 ! Sclerosis of the phalanges of the 3rd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:35483 ! Phalanx of middle finger
 
 [Term]
 id: HP:0009444 ! Patchy sclerosis of the phalanges of the 3rd finger
-intersection_of: _:sclerosis_of_the_phalanges_of_the_3rd_finger
+intersection_of: HP:0100919 ! Sclerosis of the phalanges of the 3rd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -12063,18 +11941,15 @@ id: HP:0009548 ! Bullet-shaped phalanges of the 2nd finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_2nd_finger
-is_anonymous: true
+id: HP:0100918 ! Sclerosis of the phalanges of the 2nd finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
 
 [Term]
 id: HP:0009551 ! Patchy sclerosis of the phalanges of the 2nd finger
-intersection_of: _:sclerosis_of_the_phalanges_of_the_2nd_finger
+intersection_of: HP:0100918 ! Sclerosis of the phalanges of the 2nd finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -12690,6 +12565,76 @@ id: HP:0001372 ! Joint contractures
 intersection_of: HP:0001371 ! Contractures
 intersection_of: inheres_in_part_of FMA:7490 ! Joint
 
+
+[Term]
+id: HP:0010345 ! Joint contractures of the 5th toe
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:25053 ! Little toe
+
+
+[Term]
+id: HP:0010212 ! Joint contractures of the hallux
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:25047 ! Big toe
+
+
+[Term]
+id: HP:0010333 ! Joint contractures of the 3rd toe
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:25051 ! Third toe
+
+
+[Term]
+id: HP:0010339 ! Joint contractures of the 4th toe
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:25052 ! Fourth toe
+
+[Term]
+id: HP:0010327 ! Joint contractures of the 2nd toe
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:25048 ! Second toe
+
+
+
+[Term]
+id: HP:0009183 ! Joint contractures of the 5th finger
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:24949 ! Little finger
+
+[Term]
+id: HP:0009274 ! Joint contractures of the 4th finger
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:24948 ! Ring finger
+
+
+[Term]
+id: HP:0009319 ! Joint contractures of the 3rd finger
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:24947 ! Middle finger
+
+
+[Term]
+id: HP:0009537 ! Joint contractures of the 2nd finger
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:24946 ! Index finger
+
+
+[Term]
+id: HP:0009600 ! Joint contractures of the thumb
+intersection_of: HP:0001371 ! Contractures
+intersection_of: inheres_in FMA:7490 ! Joint
+intersection_of: inheres_in_part_of FMA:24938 ! Thumb
+
+
 [Term]
 id: HP:0005053 ! mild joint contractures
 intersection_of: HP:0001371 ! Contractures
@@ -12709,11 +12654,6 @@ intersection_of: inheres_in FMA:35249 ! Metacarpophalangeal joint of thumb
 id: HP:0009626 ! Contractures of the interphalangeal joint of the thumb
 intersection_of: HP:0001371 ! Contractures
 intersection_of: inheres_in FMA:35312 ! Interphalangeal joint of thumb
-
-[Term]
-id: HP:0010327 ! Joint contractures of the 2nd toe
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:25048 ! Second toe
 
 [Term]
 id: HP:0010319 ! Abnormality of the 2nd toe
@@ -13050,8 +12990,6 @@ id: HP:0004277 ! Fractured hand bones
 intersection_of: PATO:0001444 ! broken
 intersection_of: inheres_in_part_of FMA:24159 ! Skeleton of hand
 
-! request term from FMA
-
 [Term]
 id: HP:0004054 ! Sclerosis of hand bones
 intersection_of: PATO:0001788 ! increased mass density
@@ -13313,7 +13251,7 @@ intersection_of: inheres_in FMA:256135 ! Body
 
 [Term]
 id: HP:0001604 ! Vocal cord paresis
-intersection_of: PATO:0001779 ! decreased strength
+intersection_of: PATO:0000763 ! paralysed
 intersection_of: inheres_in_part_of FMA:55457 ! vocal fold
 
 [Term]
@@ -13542,7 +13480,7 @@ intersection_of: towards MPATH:240 ! hemangioma
 
 [Term]
 id: HP:0003241 ! Genital hypoplasia
-intersection_of: PATO:0000001 ! quality
+intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in_part_of FMA:7160 ! Genital system
 intersection_of: qualifier PATO:0000460 ! abnormal
 
@@ -13783,10 +13721,8 @@ id: HP:0003175 ! Hypoplastic ischia
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:42847 ! Bone of ischium
 
-! This should be a named term in HPO
 [Term]
-id: _:broad_ischia
-is_anonymous: true
+id: HP:0100865 ! Broad ischia 
 intersection_of: PATO:0000600 ! increased width
 intersection_of: inheres_in FMA:42847 ! Bone of ischium
 
@@ -13806,10 +13742,8 @@ id: HP:0003177 ! Square iliac bones
 intersection_of: PATO:0000413 ! square
 intersection_of: inheres_in FMA:42832 ! Bone of ilium
 
-! This should be a named term in HPO
 [Term]
-id: _:short_iliac_bone
-is_anonymous: true
+id: HP:0100866 ! Short iliac bones
 intersection_of: PATO:0000569 ! decreased height
 intersection_of: inheres_in FMA:42832 ! Bone of ilium
 
@@ -14099,8 +14033,8 @@ intersection_of: inheres_in FMA:52781 ! External ear
 
 [Term]
 id: HP:0000393 ! Microtia
-intersection_of: PATO:0000587 ! decreased size
-intersection_of: inheres_in FMA:52781 ! External ear
+intersection_of: HP:0008551 ! Hypoplasia of the external ear
+intersection_of: qualifier PATO:0000396 ! severe
 
 [Term]
 id: HP:0000369 ! Low-set ears
@@ -14422,8 +14356,10 @@ intersection_of: inheres_in FMA:46472 ! Nose
 
 [Term]
 id: HP:0000461 ! Large nose
-intersection_of: PATO:0000586 ! increased size
+intersection_of: PATO:0000595 ! increased volume
 intersection_of: inheres_in FMA:46472 ! Nose
+intersection_of: qualifier PATO:0000460 ! abnormal
+
 
 [Term]
 id: HP:0000463 ! Nares, anteverted
@@ -15063,7 +14999,7 @@ intersection_of: inheres_in FMA:85541 ! Umbilical cord
 [Term]
 id: HP:0001220 ! Interphalangeal joint contractures (hands)
 intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:42765 ! Interphalangeal joint
+intersection_of: inheres_in FMA:35285 ! Interphalangeal joint of finger 
 
 [Term]
 id: HP:0001222 ! Spatulate thumbs
@@ -16134,10 +16070,15 @@ id: HP:0002281 ! Gray matter heterotopias
 intersection_of: HP:0002282 ! Heterotopia
 intersection_of: inheres_in FMA:67242 ! Gray matter of neuraxis
 
+![Term]
+!id: HP:0002282 ! Heterotopia
+!intersection_of: PATO:0000628 ! ectopic
+!intersection_of: inheres_in FMA:67498 ! Organ
+
 [Term]
 id: HP:0002282 ! Heterotopia
 intersection_of: PATO:0000628 ! ectopic
-intersection_of: inheres_in FMA:67498 ! Organ
+intersection_of: inheres_in FMA:70333 ! Neural cell
 
 [Term]
 id: HP:0002297 ! Red hair
@@ -16196,12 +16137,6 @@ id: HP:0002418 ! Abnormality of the midbrain
 intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in_part_of FMA:61993 ! Midbrain
 intersection_of: qualifier PATO:0000460 ! abnormal
-
-! This is wrong
-![Term]
-!id: HP:0002436 ! occipital meningocele
-!intersection_of: HP:0002435 ! meningocele
-!intersection_of: inheres_in FMA:74525 ! occipital
 
 [Term]
 id: HP:0002443 ! Abnormality of the hypothalamus
@@ -16375,7 +16310,7 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 [Term]
 id: HP:0100659 ! Abnormality of the cerebral vasculature
 intersection_of: PATO:0000001 ! quality
-intersection_of: inheres_in_part_of FMA:67944 ! Cerebellum
+intersection_of: inheres_in_part_of FMA:50801 ! Brain
 intersection_of: inheres_in FMA:69050 ! Vasculature
 intersection_of: qualifier PATO:0000460 ! abnormal
 
@@ -16964,13 +16899,13 @@ intersection_of: inheres_in FMA:35324 ! Proximal interphalangeal joint of little
 
 [Term]
 id: HP:0003048 ! Radial head subluxation
-intersection_of: PATO:0002160 ! partial dislocated towards
+intersection_of: PATO:0002157 ! partial dislocated 
 intersection_of: inheres_in FMA:33773 ! Head of radius
 intersection_of: towards FMA:7490 ! Joint
 
 [Term]
 id: HP:0003320 ! C1-C2 subluxation
-intersection_of: PATO:0002160 ! partial dislocated towards
+intersection_of: PATO:0002157 ! partial dislocated 
 intersection_of: inheres_in FMA:12520 ! Axis
 intersection_of: towards FMA:12519 ! Atlas
 
@@ -17743,6 +17678,15 @@ id: HP:0004788 ! intestinal lymphedema
 intersection_of: HP:0001004 ! Lymphedema
 intersection_of: inheres_in FMA:7199 ! Intestine
 
+
+[Term]
+id: HP:0001004 ! Lymphedema
+intersection_of: HP:0000969 ! Edema
+intersection_of: HP:0100763 ! Abnormality of the lyphatic system
+intersection_of: qualifier PATO:0000460 ! abnormal
+
+
+
 [Term]
 id: HP:0004790 ! small intestine hypoplastic
 intersection_of: PATO:0000645 ! hypoplastic
@@ -18149,7 +18093,7 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 [Term]
 id: HP:0001711 ! Left ventricular abnormality
 intersection_of: PATO:0000001 ! quality
-intersection_of: inheres_in FMA:7201 ! left ventricle
+intersection_of: inheres_in FMA:7101 ! Left ventricle
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
@@ -18251,7 +18195,7 @@ intersection_of: towards MPATH:310 ! germ cell tumor
 intersection_of: inheres_in FMA:62000 ! cerebrum
 
 [Term]
-id: HP:0100620 ! Germinoma
+id: HP:0100728 ! Germ cell neoplasia
 intersection_of: PATO:0002002 ! having extra physical parts
 intersection_of: towards MPATH:310 ! germ cell tumor
 
@@ -18685,7 +18629,7 @@ intersection_of: inheres_in FMA:64183 ! Feces
 ! I have requested a GO term for this (swallowing)
 ![Term]
 !id: HP:0002015 ! Dysphagia
-!intersection_of: PATO:0001641 ! dysfunctional
+!intersection_of: PATO:0001624 ! decreased functionality
 !intersection_of: inheres_in GO:0043050 ! pharyngeal pumping
 
 [Term]
@@ -18902,10 +18846,8 @@ intersection_of: PATO:0000001 ! quality
 intersection_of: has_part HP:0002247 ! Duodenal atresia
 intersection_of: has_part _:duodenal_stenosis
 
-! this should be a named term in HPO
 [Term]
-id: _:duodenal_stenosis
-is_anonymous: true
+id: HP:0100867 ! Duodenal stenosis
 intersection_of: PATO:0001847 ! constricted
 intersection_of: inheres_in FMA:7206 ! Duodenum
 
@@ -19003,10 +18945,20 @@ id: HP:0008711 ! Benign prostatic hyperplasia
 intersection_of: PATO:0000644 ! hyperplastic
 intersection_of: inheres_in FMA:9600 ! prostate
 
+
 [Term]
 id: HP:0006282 ! Generalized hypoplasia of dental enamel
-intersection_of: PATO:0000644 ! hyperplastic
+intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:55629 ! dental enamel
+intersection_of: qualifier PATO:0001566 ! distributed
+
+
+[Term]
+id: HP:0011074 ! Localized hypoplasia of dental enamel
+intersection_of: PATO:0000645 ! hypoplastic
+intersection_of: inheres_in FMA:55629 ! dental enamel
+intersection_of: qualifier PATO:0000627 ! localised
+
 
 [Term]
 id: HP:0008239 ! Adrenal medullary hypoplasia
@@ -19068,12 +19020,11 @@ id: HP:0001400 ! Hepatic abscesses due to immunodeficiency
 intersection_of: HP:0002721 ! Immunodeficiency
 intersection_of: results_in HP:0100523 ! Liver abscess
 
-! This should be a named term in HPO
-[Term]
-id: _:hyperplastic_renal_artery
-is_anonymous: true
-intersection_of: PATO:0000644 ! hyperplastic
-intersection_of: inheres_in FMA:14751 ! renal artery
+![Term]
+!id: _:hyperplastic_renal_artery
+!is_anonymous: true
+!intersection_of: PATO:0000644 ! hyperplastic
+!intersection_of: inheres_in FMA:14751 ! renal artery
 
 [Term]
 id: HP:0002903 ! Aminoaciduria
@@ -19118,7 +19069,7 @@ intersection_of: towards MPATH:376 ! neuroblastoma
 [Term]
 id: HP:0002665 ! Lymphoma
 intersection_of: PATO:0002002 ! has extra parts of type
-intersection_of: towards MPATH:343
+intersection_of: towards MPATH:343 ! lymphoma
 
 [Term]
 id: HP:0002671 ! Basal cell carcinoma
@@ -19349,7 +19300,7 @@ intersection_of: inheres_in FMA:52734 ! Frontal bone
 
 [Term]
 id: HP:0000921 ! Missing ribs
-intersection_of: PATO:0002002 ! has extra parts of type
+intersection_of: PATO:0002001 ! has fewer parts of type
 intersection_of: towards FMA:7574 ! Rib
 
 [Term]
@@ -19463,7 +19414,7 @@ intersection_of: inheres_in FMA:9603 ! thyroid gland
 id: HP:0009715 ! Papillary cystadenoma of the epididymis
 intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: towards MPATH:298 ! papillary cystadenoma
-intersection_of: inheres_in FMA:9603 ! epididymis
+intersection_of: inheres_in FMA:18255 ! epididymis
 
 [Term]
 id: HP:0100517 ! Neoplasm of the urethra
@@ -19825,18 +19776,15 @@ id: HP:0009643 ! Bullet-shaped distal phalanx of the thumb
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23945 ! Distal phalanx of thumb
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_distal_phalanx_of_the_thumb
-is_anonymous: true
+id: HP:0100912 ! Sclerosis of the distal phalanx of the thumb
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23945 ! Distal phalanx of thumb
 
 [Term]
 id: HP:0009646 ! Patchy sclerosis of the distal phalanx of the thumb
-intersection_of: _:sclerosis_of_the_distal_phalanx_of_the_thumb
+intersection_of: HP:0100912 ! Sclerosis of the distal phalanx of the thumb
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -20596,13 +20544,13 @@ intersection_of: towards CHEBI:50404 ! lipoprotein cholesterol
 id: HP:0003351 ! Decreased circulating renin level
 intersection_of: PATO:0001163 ! decreased concentration
 intersection_of: inheres_in FMA:9670 ! Portion of blood
-intersection_of: towards PRO:000013883 ! renin
+intersection_of: towards PR:000013883 ! renin
 
 [Term]
 id: HP:0000848 ! increased circulating renin level
 intersection_of: PATO:0001162 ! increased concentration
 intersection_of: inheres_in FMA:9670 ! Portion of blood
-intersection_of: towards PRO:000013883 ! renin
+intersection_of: towards PR:000013883 ! renin
 
 [Term]
 id: HP:0008247 ! Euthyroid hyperthyroxinemia
@@ -20744,6 +20692,13 @@ id: HP:0000476 ! Cystic hygroma
 intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: inheres_in FMA:7155 ! neck
 intersection_of: towards MPATH:420 ! lymphangioma
+
+! [Term]
+! id: HP:0000476 ! Cystic hygroma
+! intersection_of: PATO:0002002 ! has extra parts of type
+! intersection_of: towards MPATH:62 ! cyst
+! intersection_of: inheres_in FMA:7155 ! neck
+! intersection_of: towards HP:0001004 ! Lymphedema
 
 [Term]
 id: HP:0002858 ! Meningioma
@@ -21078,13 +21033,14 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
 id: HP:0000414 ! Bulbous nose
-intersection_of: PATO:0000586 ! increased size
-intersection_of: inheres_in FMA:59518 ! Tip of nose
+intersection_of: PATO:0000595 ! increased volume
+intersection_of: inheres_in FMA:46472 ! Nose
+intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
 id: HP:0000417 ! Slender nose
 intersection_of: PATO:0000592 ! decreased thickness
-intersection_of: inheres_in FMA:59518 ! Tip of nose
+intersection_of: inheres_in FMA:46472 ! Nose
 
 [Term]
 id: HP:0006101 ! Finger syndactyly
@@ -21935,7 +21891,7 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 [Term]
 id: HP:0010977 ! Abnormality of phagocytes
 intersection_of: PATO:0000001 ! quality
-intersection_of: inheres_in Cl:0000518 ! phagocyte
+intersection_of: inheres_in CL:0000518 ! phagocyte
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
@@ -22705,6 +22661,9 @@ intersection_of: inheres_in FMA:7088 ! heart
 id: HP:0011093 ! Molarization of premolar
 intersection_of: PATO:0000586 ! increased size
 intersection_of: inheres_in FMA:55637 ! premolar tooth
+intersection_of: PATO:0000051 ! morphology
+intersection_of: qualifier PATO:0000460 ! abnormal
+
 
 [Term]
 id: HP:0003899 ! Round humeral epiphyses
@@ -22873,12 +22832,12 @@ intersection_of: inheres_in FMA:14543 ! Colon
 
 [Term]
 id: HP:0004393 ! Liver dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:7197 ! Liver
 
 ![Term]
 !id: HP:0007256 ! Pyramidal signs
-!intersection_of: PATO:0001641 ! dysfunctional
+!intersection_of: PATO:0001624 ! decreased functionality
 !intersection_of: inheres_in FMA:72634 ! Pyramidal tract
 
 [Term]
@@ -22888,7 +22847,7 @@ intersection_of: inheres_in FMA:7193 ! Vestibular system
 
 [Term]
 id: HP:0001751 ! Vestibular dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:7193 ! Vestibular system
 
 [Term]
@@ -22898,13 +22857,13 @@ intersection_of: inheres_in FMA:7193 ! Vestibular system
 
 [Term]
 id: HP:0007921 ! Vestibular dysfunction, variable
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:7193 ! Vestibular system
 intersection_of: qualifier PATO:0001227 ! variant
 
 [Term]
 id: HP:0006279 ! Beta-cell dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in CL:0000169 ! pancreatic B cell
 
 [Term]
@@ -23055,7 +23014,7 @@ intersection_of: towards FMA:62875 ! Immunoglobulin E
 
 [Term]
 id: HP:0005435 ! Impaired T cell function
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in CL:0000084 ! T cell
 
 [Term]
@@ -23070,7 +23029,7 @@ intersection_of: inheres_in FMA:9608 ! Bone marrow
 
 [Term]
 id: HP:0005609 ! Gallbladder dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:7202 ! Gallbladder
 
 [Term]
@@ -23609,12 +23568,12 @@ intersection_of: inheres_in FMA:67944 ! Cerebellum
 
 [Term]
 id: HP:0007275 ! Pyramidal tract dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:72634 ! Pyramidal tract
 
 [Term]
 id: HP:0007299 ! Dysfunction of lateral corticospinal tracts
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:72635 ! Lateral corticospinal tract
 
 [Term]
@@ -23707,7 +23666,7 @@ intersection_of: inheres_in _:renal_tubule_death
 
 [Term]
 id: HP:0000124 ! Renal tubular dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in FMA:15627 ! Renal tubule
 
 [Term]
@@ -23997,10 +23956,16 @@ id: HP:0008621 ! Hypoplastic pinna
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:56580 ! Pinna
 
+! [Term]
+! id: HP:0000376 ! Mondini malformation
+! intersection_of: PATO:0000645 ! hypoplastic
+! intersection_of: inheres_in_part_of FMA:60201 ! Cochlea
+
 [Term]
 id: HP:0000376 ! Mondini malformation
-intersection_of: PATO:0000645 ! hypoplastic
-intersection_of: inheres_in_part_of FMA:60201 ! Cochlea
+intersection_of: PATO:0001796 ! decreased coiling
+intersection_of: inheres_in FMA:60201 ! Cochlea
+
 
 [Term]
 id: HP:0008609 ! Middle ear malformations
@@ -24220,14 +24185,11 @@ intersection_of: inheres_in GO:0014889 ! muscle atrophy
 
 [Term]
 id: HP:0008977 ! Moderate diffuse skeletal muscle wasting
-intersection_of: _:severe_skeletal_muscle_atrophy
-intersection_of: qualifier PATO:0000635 ! unlocalised
-
-! this should be a named term in HPO parent to HP:0008977
+intersection_of: HP:0009074 ! Diffuse muscle atrophy
+intersection_of: qualifier PATO:0000395 ! moderate
 
 [Term]
-id: _:severe_skeletal_muscle_atrophy
-is_anonymous: true
+id: HP:0100868 ! Severe skeletal muscle atrophy
 intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in GO:0014732 ! skeletal muscle atrophy
 intersection_of: qualifier PATO:0000396 ! severe
@@ -24384,11 +24346,12 @@ intersection_of: PATO:0000642 ! fused with
 intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
 intersection_of: towards FMA:35489 ! Phalanx of little finger
 
+
 [Term]
 id: HP:0010064 ! Symphalangism affecting the phalanges of the hallux
 intersection_of: PATO:0000642 ! fused with
-intersection_of: inheres_in FMA:25047 ! Big toe
-intersection_of: towards FMA:25047 ! Big toe
+intersection_of: inheres_in FMA:32884 ! Phalanx of big toe
+intersection_of: towards FMA:32884 ! Phalanx of big toe
 
 [Term]
 id: HP:0010062 ! Osteolytic defects of the phalanges of the hallux
@@ -24400,18 +24363,15 @@ id: HP:0010060 ! Bullet-shaped phalanges of the hallux
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:32884 ! Phalanx of big toe
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_hallux
-is_anonymous: true
+id: HP:0100930 ! Sclerosis of the phalanges of the hallux
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:32884 ! Phalanx of big toe
 
 [Term]
 id: HP:0010063 ! Patchy sclerosis of the phalanges of the hallux
-intersection_of: _:sclerosis_of_the_phalanges_of_the_hallux
+intersection_of: HP:0100930 ! Sclerosis of the phalanges of the hallux
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -24519,18 +24479,15 @@ id: HP:0009405 ! Bullet-shaped phalanges of the 4th finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:35486 ! Phalanx of ring finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_4th_finger
-is_anonymous: true
+id: HP:0100920 ! Sclerosis of the phalanges of the 4th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:35486 ! Phalanx of ring finger
 
 [Term]
 id: HP:0009406 ! Patchy sclerosis of the phalanges of the 4th finger
-intersection_of: _:sclerosis_of_the_phalanges_of_the_4th_finger
+intersection_of: HP:0100920 ! Sclerosis of the phalanges of the 4th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -24566,11 +24523,6 @@ intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
-id: HP:0009183 ! Joint contractures of the 5th finger
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
-
-[Term]
 id: HP:0004216 ! Osteolytic defects of the phalanges of the 5th finger
 intersection_of: HP:0002797 ! Osteolysis
 intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
@@ -24580,18 +24532,15 @@ id: HP:0009375 ! Bullet-shaped phalanges of the 5th finger
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_phalanges_of_the_5th_finger
-is_anonymous: true
+id: HP:0100921 ! Sclerosis of the phalanges of the 5th finger
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
 
 [Term]
 id: HP:0009377 ! Patchy sclerosis of the phalanges of the 5th finger
-intersection_of: _:sclerosis_of_the_phalanges_of_the_5th_finger
+intersection_of: HP:0100921 ! Sclerosis of the phalanges of the 5th finger
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -24613,7 +24562,7 @@ intersection_of: inheres_in FMA:24012 ! Epiphysis
 [Term]
 id: HP:0009237 ! Hypoplastic/small 5th finger
 intersection_of: PATO:0000645 ! hypoplastic
-intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
+intersection_of: inheres_in FMA:24949 ! Little finger
 
 [Term]
 id: HP:0009240 ! Broad distal phalanx of the 5th finger
@@ -24636,10 +24585,6 @@ id: HP:0009272 ! Aplasia/Hypoplasia of the 4th finger
 union_of: HP:0009281 ! Aplasia of the 4th finger
 union_of: HP:0009280 ! Hypoplastic/small 4th finger
 
-[Term]
-id: HP:0009274 ! Joint contractures of the 4th finger
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:35486 ! Phalanx of ring finger
 
 [Term]
 id: HP:0009292 ! Broad distal phalanx of the 4th finger
@@ -24662,10 +24607,6 @@ id: HP:0009318 ! Aplasia/Hypoplasia of the 3rd finger
 union_of: HP:0009460 ! Aplasia of the 3rd finger
 union_of: HP:0009461 ! Hypoplastic/small 3rd finger
 
-[Term]
-id: HP:0009319 ! Joint contractures of the 3rd finger
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:35483 ! Phalanx of middle finger
 
 [Term]
 id: HP:0009320 ! Abnormality of the epiphyses of the 3rd finger
@@ -24754,11 +24695,18 @@ id: HP:0010234 ! Ivory epiphyses of the phalanges of the hand
 intersection_of: PATO:0002149 ! ivory
 intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
 
+
+! [Term]
+! id: HP:0009374 ! Broad phalanges of the 5th finger
+! intersection_of: PATO:0000600 ! increased width
+! intersection_of: inheres_in_part_of FMA:24949 ! Little finger
+! intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
+
 [Term]
 id: HP:0009374 ! Broad phalanges of the 5th finger
 intersection_of: PATO:0000600 ! increased width
-intersection_of: inheres_in_part_of FMA:24949 ! Little finger
-intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
+intersection_of: inheres_in FMA:35489 ! Phalanx of little finger
+
 
 [Term]
 id: HP:0009384 ! Cone-shaped epiphyses of the 5th finger
@@ -24813,11 +24761,18 @@ intersection_of: PATO:0000587 ! decreased size
 intersection_of: inheres_in_part_of FMA:35486 ! Phalanx of ring finger
 intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
 
+! [Term]
+! id: HP:0009404 ! Broad phalanges of the 4th finger
+! intersection_of: PATO:0000600 ! increased width
+! intersection_of: inheres_in_part_of FMA:35486 ! Phalanx of ring finger
+! intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
+
 [Term]
 id: HP:0009404 ! Broad phalanges of the 4th finger
 intersection_of: PATO:0000600 ! increased width
-intersection_of: inheres_in_part_of FMA:35486 ! Phalanx of ring finger
-intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
+intersection_of: inheres_in FMA:35486 ! Phalanx of ring finger
+
+
 
 [Term]
 id: HP:0009412 ! Cone-shaped epiphyses of the 3rd finger
@@ -24849,10 +24804,17 @@ id: HP:0009422 ! Broad distal phalanx of the 3rd finger
 intersection_of: PATO:0000600 ! increased width
 intersection_of: inheres_in FMA:23947 ! Distal phalanx of middle finger
 
+! [Term]
+! id: HP:0009440 ! Broad phalanges of the 3rd finger
+! intersection_of: HP:0009768 ! Broad phalanges of the hand
+! intersection_of: inheres_in FMA:35483 ! Phalanx of middle finger
+
 [Term]
 id: HP:0009440 ! Broad phalanges of the 3rd finger
-intersection_of: HP:0009768 ! Broad phalanges of the hand
+intersection_of: PATO:0000600 ! increased width
 intersection_of: inheres_in FMA:35483 ! Phalanx of middle finger
+
+
 
 [Term]
 id: HP:0009445 ! Symphalangism of the 3rd finger
@@ -24863,7 +24825,7 @@ intersection_of: towards FMA:35483 ! Phalanx of middle finger
 [Term]
 id: HP:0010563 ! Camptodactyly (hands)
 intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:23914 ! Phalanx of finger
+intersection_of: inheres_in FMA:35285 ! Interphalangeal joint of finger
 
 [Term]
 id: HP:0005803 ! Coned epiphyses of hands and feet
@@ -24922,11 +24884,6 @@ intersection_of: inheres_in_part_of FMA:24946 ! Index finger
 intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
 
 [Term]
-id: HP:0009537 ! Joint contractures of the 2nd finger
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
-
-[Term]
 id: HP:0009541 ! Abnormality of the phalanges of the 2nd finger
 intersection_of: HP:0005918 ! Abnormality of the phalanges of the hand
 intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
@@ -24937,10 +24894,16 @@ intersection_of: PATO:0000642 ! fused with
 intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
 intersection_of: towards FMA:35480 ! Phalanx of index finger
 
+! [Term]
+! id: HP:0009547 ! Broad phalanges of the 2nd finger
+! intersection_of: HP:0009768 ! Broad phalanges of the hand
+! intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
+
 [Term]
 id: HP:0009547 ! Broad phalanges of the 2nd finger
-intersection_of: HP:0009768 ! Broad phalanges of the hand
+intersection_of: PATO:0000600 ! increased width
 intersection_of: inheres_in FMA:35480 ! Phalanx of index finger
+
 
 [Term]
 id: HP:0009558 ! Broad distal phalanx of the 2nd finger
@@ -24958,10 +24921,6 @@ intersection_of: HP:0005930 ! Abnormality of the epiphyses
 intersection_of: inheres_in_part_of FMA:35477 ! Phalanx of thumb
 intersection_of: inheres_in FMA:240707 ! Epiphysis of phalanx of finger
 
-[Term]
-id: HP:0009600 ! Joint contractures of the thumb
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:35477 ! Phalanx of thumb
 
 [Term]
 id: HP:0009601 ! Aplasia/Hypoplasia of the thumb
@@ -25026,18 +24985,15 @@ id: HP:0009631 ! Bullet-shaped proximal phalanx of the thumb
 intersection_of: PATO:0002087 ! bullet-shaped
 intersection_of: inheres_in FMA:23918 ! Proximal phalanx of thumb
 
-! This should be a named term in HPO
-
 [Term]
-id: _:sclerosis_of_the_proximal_phalanx_of_the_thumb
-is_anonymous: true
+id: HP:0100913 ! Sclerosis of the proximal phalanx of the thumb
 intersection_of: PATO:0001788 ! increased mass density
 intersection_of: qualifier PATO:0001869 ! pathological
 intersection_of: inheres_in FMA:23918 ! Proximal phalanx of thumb
 
 [Term]
 id: HP:0009634 ! Patchy sclerosis of the proximal phalanx of the thumb
-intersection_of: _:sclerosis_of_the_proximal_phalanx_of_the_thumb
+intersection_of: HP:0100913 ! Sclerosis of the proximal phalanx of the thumb
 intersection_of: qualifier PATO:0001608 ! patchy
 
 [Term]
@@ -25075,10 +25031,6 @@ id: HP:0009698 ! Contractures of the proximal interphalangeal joints of the fing
 intersection_of: HP:0009473 ! Joint contractures involving the joints of the hand
 intersection_of: inheres_in FMA:65022 ! Proximal interphalangeal joint
 
-[Term]
-id: HP:0010345 ! Joint contractures of the 5th toe
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:25053 ! Little toe
 
 [Term]
 id: HP:0010341 ! Abnormality of the epiphyses of the 5th toe
@@ -25381,20 +25333,14 @@ intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: towards MPATH:476 ! telangiectasia
 intersection_of: inheres_in FMA:24759 ! Skin of cheek
 
-! this should be a named term in HPO
 [Term]
-id: _:foot_telangiectases
-is_anonymous: true
-is_a: _:temp_term_holder
+id: HP:0100870 ! Teleangiectases of soles
 intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: towards MPATH:476 ! telangiectasia
 intersection_of: inheres_in FMA:37849 ! Skin of sole of foot
 
-! this should be a named term in HPO
 [Term]
-id: _:palm_telangiectases
-is_anonymous: true
-is_a: _:temp_term_holder
+id: HP:0100869 ! Teleangiectases of palms
 intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: towards MPATH:476 ! telangiectasia
 intersection_of: inheres_in FMA:79170 ! Skin of palm proper
@@ -25402,8 +25348,8 @@ intersection_of: inheres_in FMA:79170 ! Skin of palm proper
 [Term]
 id: HP:0007399 ! Telangiectases of palms and soles
 intersection_of: PATO:0000001 ! quality
-intersection_of: has_part _:foot_telangiectases
-intersection_of: has_part _:palm_telangiectases
+intersection_of: has_part HP:0100870 ! Teleangiectases of soles
+intersection_of: has_part HP:0100869 ! Teleangiectases of palms
 
 [Term]
 id: HP:0009894 ! Thickened ears
@@ -27343,11 +27289,8 @@ id: HP:0001238 ! Slender fingers
 intersection_of: PATO:0000592 ! decreased thickness
 intersection_of: inheres_in FMA:9666 ! Finger
 
-! this should be a named term in HPO
-
 [Term]
-id: _:long_fingers
-is_anonymous: true
+id: HP:0100807 ! Long fingers
 intersection_of: PATO:0000573 ! increased length
 intersection_of: inheres_in FMA:9666 ! Finger
 
@@ -27386,7 +27329,7 @@ intersection_of: inheres_in FMA:9666 ! Finger
 [Term]
 id: HP:0001836 ! Camptodactyly (feet)
 intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:24493 ! Phalanx of toe
+intersection_of: inheres_in FMA:35225 ! Interphalangeal joint of toe
 
 [Term]
 id: HP:0001854 ! Gout (feet)
@@ -27415,7 +27358,7 @@ intersection_of: inheres_in FMA:7181 ! Trunk
 
 [Term]
 id: HP:0002493 ! Corticospinal tract dysfunction
-intersection_of: PATO:0001641 ! dysfunctional
+intersection_of: PATO:0001624 ! decreased functionality
 intersection_of: inheres_in UBERON:0004095 ! corticospinal tract
 
 [Term]
@@ -27612,10 +27555,6 @@ id: HP:0009898 ! Hypoplasia of the crus of the ear
 intersection_of: PATO:0000645 ! hypoplastic
 intersection_of: inheres_in FMA:61024 ! Crus of helical part of auricular cartilage
 
-[Term]
-id: HP:0010212 ! Joint contractures of the hallux
-intersection_of: HP:0001371 ! Contractures
-intersection_of: inheres_in FMA:25047 ! Big toe
 
 [Term]
 id: HP:0010559 ! Vertical clivus
@@ -28081,7 +28020,7 @@ intersection_of: inheres_in NBO:0000092 ! anxiety-related behaviou
 [Term]
 id: HP:0000740 ! Anxiety (with pheochromocytoma)
 intersection_of: PATO:0000001 ! quality
-intersection_of: has_part HP:0000713 ! agitation
+intersection_of: has_part HP:0000739 ! anxiety
 intersection_of: has_part HP:0002666 ! Pheochromocytoma
 
 [Term]
@@ -28251,7 +28190,7 @@ intersection_of: PATO:0001561 ! having extra processual parts
 intersection_of: towards NBO:0000248 ! obsessive-compulsive disorder
 
 [Term]
-id:HP:0000751 ! Personality changes
+id: HP:0000751 ! Personality changes
 intersection_of: PATO:0001561 ! having extra processual parts
 intersection_of: towards NBO:0000265 ! personality disorder
 
@@ -28509,6 +28448,10 @@ id: HP:0100710 ! Impulsivity
 intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in NBO:0000119 ! impulsive behavior
 intersection_of: qualifier PATO:0000460 ! abnormal
+
+!! Latest Obol results (conservative, vetted) 2011-07-09
+
+
 
 ! not sure about this - similar case - Chris needs to add them to the spatial ontology
 
