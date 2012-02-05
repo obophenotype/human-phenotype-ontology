@@ -20754,7 +20754,7 @@ intersection_of: inheres_in FMA:9604 ! Adrenal gland
 !intersection_of: inheres_in FMA:12274 ! Urine
 !intersection_of: towards CHEBI:33709 ! amino acid
 !intersection_of: PATO:0001624 ! decreased functionality
-!intersection_of: FMAID:7203 ! kidney
+!intersection_of: FMA:7203 ! kidney
 
 [Term]
 id: HP:0008363 ! Aplasia/Hypoplasia of the tarsal bones
@@ -20831,9 +20831,11 @@ id: HP:0008773 ! Aplasia/Hypoplasia of the middle ear
 intersection_of: PATO:0002290 ! aplastic/hypoplastic
 intersection_of: inheres_in FMA:56513 ! Middle ear
 
+!this is wrong: it's not just virus 
+
 [Term]
 id: HP:0008524 ! Chronic ear infection
-intersection_of: PATO:0001561 ! having extra processual parts
+intersection_of: PATO:0001558 ! lacking processual parts
 intersection_of: towards GO:0051607 ! defense response to virus
 intersection_of: inheres_in FMA:52780 ! Ear
 
@@ -21229,6 +21231,12 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 id: HP:0000951 ! Abnormality of the skin
 intersection_of: PATO:0000001 ! quality
 intersection_of: inheres_in FMA:7163 ! Skin
+intersection_of: qualifier PATO:0000460 ! abnormal
+
+[Term]
+id: HP:0011138 ! Abnormality of skin adnexa
+intersection_of: PATO:0000001 ! quality
+intersection_of: inheres_in FMA:70594 ! Arbitrary zone of epidermis
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
@@ -27070,6 +27078,18 @@ intersection_of: qualifier PATO:0000460 ! abnormal
 intersection_of: inheres_in FMA:58238 ! cornea
 
 [Term]
+id: HP:0100887  ! Abnormality of globe size
+intersection_of: PATO:0000117 ! size
+intersection_of: qualifier PATO:0000460 ! abnormal
+intersection_of: inheres_in FMA:12513 ! Eyeball
+
+[Term]
+id: HP:0100886  ! Abnormality of globe location
+intersection_of: PATO:0000140 ! position
+intersection_of: inheres_in FMA:12513 ! Eyeball
+intersection_of: qualifier PATO:0000460 ! abnormal
+
+[Term]
 id: HP:0002648 ! Abnormality of skull shape
 intersection_of: PATO:0000052 ! shape
 intersection_of: inheres_in_part_of FMA:46565 ! Skull
@@ -29068,3 +29088,14 @@ id: _:temp_term_holder
 name: temp_term_holder
 namespace: medical_genetics
 comment: temp holder for anonymous terms.
+
+
+
+
+
+
+
+
+
+
+
