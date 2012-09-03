@@ -992,7 +992,7 @@ intersection_of: inheres_in UBERON:0004449 ! cerebral artery
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
-id: HP:0002408 ! Cerebral arteriovenous malformation
+id: HP:0100026 ! Arteriovenous malformations
 intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: towards MPATH:70 ! fistula
 intersection_of: inheres_in FMA:50720 ! Artery
@@ -16310,11 +16310,12 @@ intersection_of: inheres_in_part_of FMA:69050 ! Vasculature
 intersection_of: inheres_in FMA:50720 ! Artery
 intersection_of: qualifier PATO:0000460 ! abnormal
 
-[Term]
-id: HP:0002627 ! Right aortic arch
-intersection_of: PATO:0001793 ! right side of
-intersection_of: inheres_in FMA:7394 ! Trachea
-intersection_of: inheres_in FMA:3768 ! Arch of aorta
+! 9.02.2012 commented out because of strange inferences...
+![Term]
+!id: HP:0002627 ! Right aortic arch
+!intersection_of: PATO:0001793 ! right side of
+!intersection_of: inheres_in FMA:7394 ! Trachea
+!intersection_of: inheres_in FMA:3768 ! Arch of aorta
 
 [Term]
 id: HP:0002638 ! Superficial thrombophlebitis
@@ -17973,7 +17974,7 @@ intersection_of: inheres_in FMA:7203 ! Kidney
 [Term]
 id: HP:0011048 ! Agenesis of permanent mandibular central incisor
 intersection_of: PATO:0002000 ! lacks all parts of type
-intersection_of: towards FMA:551 ! lower secondary incisor
+intersection_of: towards FMA:55713 ! Lower secondary incisor tooth
 
 [Term]
 id: HP:0002791 ! hypoventilation
@@ -25291,7 +25292,7 @@ intersection_of: inheres_in FMA:59011 ! Conjunctiva
 id: HP:0100579 ! Mucosal telangiectasiae
 intersection_of: PATO:0002002 ! has extra parts of type
 intersection_of: towards MPATH:476 ! telangiectasia
-intersection_of: inheres_in FMA:45630 ! Mucosa
+intersection_of: inheres_in FMA:85355 ! Mucosa
 
 [Term]
 id: HP:0000434 ! Nasal mucosa telangiectases
@@ -28300,6 +28301,7 @@ xref: BFO:0000066
 id: inheres_in_part_of
 name: inheres in part of
 holds_over_chain: inheres_in part_of
+xref: RO:0002314
 
 [Typedef]
 id: inheres_in
