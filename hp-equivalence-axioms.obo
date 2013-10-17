@@ -196,7 +196,7 @@ intersection_of: inheres_in_part_of FMA:24140 ! Skeleton of lower limb
 [Term]
 id: HP:0009815 ! Aplasia/Hypoplasia of the extremities
 intersection_of: PATO:0002290 ! aplastic/hypoplastic
-intersection_of: inheres_in_part_of _:bones_of_the_extremities
+intersection_of: inheres_in_part_of FMA:71222 ! Appendicular skeleton
 
 [Term]
 id: HP:0010331 ! Aplasia/Hypoplasia of the 3rd toe
@@ -3550,8 +3550,8 @@ intersection_of: inheres_in FMA:9576 ! Thorax
 
 [Term]
 id: HP:0004582 ! Irregularity of vertebral bodies
-intersection_of: _:irregular_vertebrae
-intersection_of: qualifier PATO:0000394 ! mild
+intersection_of: PATO:0000330 ! irregular spatial pattern
+intersection_of: inheres_in FMA:11945 ! Body of vertebra
 
 [Term]
 id: HP:0008473 ! Narrow anterio-posterior vertebral body diameter
@@ -10767,12 +10767,12 @@ intersection_of: inheres_in_part_of FMA:24140 ! Skeleton of lower limb
 [Term]
 id: HP:0009825 ! Aplasia involving bones of the extremities
 intersection_of: PATO:0001483 ! aplastic
-intersection_of: inheres_in_part_of _:bones_of_the_extremities
+intersection_of: inheres_in_part_of FMA:71222 ! Appendicular skeleton
 
 [Term]
 id: HP:0009826 ! Hypoplasia involving bones of the extremities
 intersection_of: PATO:0000645 ! hypoplastic
-intersection_of: inheres_in_part_of _:bones_of_the_extremities
+intersection_of: inheres_in_part_of FMA:71222 ! Appendicular skeleton
 
 [Term]
 id: HP:0003026 ! Short long bones
@@ -18047,12 +18047,6 @@ id: HP:0009612 ! Duplication of the distal phalanx of the thumb
 union_of: HP:0009606 ! duplicated distal phalanx of the thumb
 union_of: HP:0009611 ! bifid distal phalanx of thumb
 
-! CHRIS CHECK THIS, PLEEEAAAASSSEEE !
-![Term]
-!id: HP:0002607 ! Bowel incontinence
-!union_of: HP:0000020 ! Urinary incontinence
-!union_of: HP:0002607 ! Bowel incontinence
-
 [Term]
 id: HP:0009645 ! Osteolytic defects of the distal phalanx of the thumb
 intersection_of: HP:0002797 ! Osteolysis
@@ -23404,14 +23398,6 @@ intersection_of: PATO:0001633 ! posterior to
 intersection_of: inheres_in FMA:9914 ! Vertebra
 
 [Term]
-id: _:irregular_vertebrae
-is_anonymous: true
-is_a: _:temp_term_holder
-intersection_of: PATO:0000330 ! irregular spatial pattern
-intersection_of: inheres_in_part_of FMA:9914 ! Vertebra
-intersection_of: inheres_in FMA:11945 ! Body of vertebra
-
-[Term]
 id: _:craniofacial_sclerosis
 is_anonymous: true
 is_a: _:temp_term_holder
@@ -27139,13 +27125,6 @@ id: _:left_and_right_kidney
 intersection_of: FMA:256135 ! Body
 intersection_of: has_part FMA:7205 ! Left kidney
 intersection_of: has_part FMA:7204 ! Right kidney
-
-[Term]
-id: _:bones_of_the_extremities
-is_anonymous: true
-intersection_of: FMA:23875 ! Skeleton
-intersection_of: has_part FMA:24140 ! Skeleton of lower limb
-intersection_of: has_part FMA:24139 ! Skeleton of upper limb
 
 [Term]
 id: _:primary_and_permenant_dentition
