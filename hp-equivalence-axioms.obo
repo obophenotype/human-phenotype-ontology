@@ -7485,11 +7485,6 @@ intersection_of: inheres_in FMA:25053 ! Little toe
 intersection_of: qualifier PATO:0000460 ! abnormal
 
 [Term]
-id: HP:0004097 ! Deviation of finger
-intersection_of: PATO:0002175 ! deviation
-intersection_of: inheres_in FMA:75818 ! Distal phalanx of finger
-
-[Term]
 id: HP:0003049 ! Ulnar deviation of the wrist
 intersection_of: PATO:0002176 ! deviation towards the lateral side
 intersection_of: inheres_in FMA:24922 ! Wrist
@@ -7606,7 +7601,7 @@ union_of: HP:0009487 ! Ulnar deviation of the hand
 
 [Term]
 id: HP:0009484 ! Deviation of the hand or of fingers of the hand
-union_of: _:deviation_of_finger
+union_of: HP:0004097 ! Deviation of finger
 union_of: _:deviation_of_hand
 
 ! This should be a named term in HPO
@@ -7620,8 +7615,7 @@ intersection_of: inheres_in FMA:9712 ! Hand
 ! This should be a named term in HPO
 
 [Term]
-id: _:deviation_of_finger
-is_anonymous: true
+id: HP:0004097 ! Deviation of finger
 intersection_of: PATO:0002175 ! deviation
 intersection_of: inheres_in FMA:9666 ! Finger
 
