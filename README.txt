@@ -6,11 +6,13 @@ See:
 
 CURRENT WORKFLOW:
 
-The current workflow is to edit obo files in a text editor, and check a reasoner report.
+The editors version is now:
 
-The source file lives in the Charite SVN repo, in
+ * hp/hp-equivalence-axioms-subq-ubr.owl
 
-hpo/src/ontology/human-phenotype-ontologies_xp.obo
+This is deprecated:
 
-Edit this version. THE VERSION IN THIS REPO IS A COPY AND WILL BE OVERWRITTEN.
+ * hpo/src/ontology/human-phenotype-ontologies_xp.obo
+
+
 
