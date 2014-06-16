@@ -1,6 +1,5 @@
 all: hp.obo hp.owl all-subsets
 
-
 hp.obo: build/hp-simple.obo
 	owltools $< --make-subset-by-properties -o -f obo $@
 
@@ -11,7 +10,7 @@ subsets:
 	mkdir $@
 
 all-subsets: build/hp.owl subsets
-	cp -p build/subsets/*{.obo,owl} subsets/
+	mkdir -p subsets && cp -p build/subsets/*{.obo,owl} subsets/
 
 build/hp-simple.obo: hp-edit.owl
 	ontology-release-runner --ignoreLock --skip-release-folder --outdir build --simple --allow-overwrite --no-reasoner $<
