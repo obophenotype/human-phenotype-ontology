@@ -1,7 +1,7 @@
 all: hp.obo hp.owl all-subsets
 
 hp.obo: build/hp-simple.obo
-	owltools $< --make-subset-by-properties -o -f obo $@
+	owltools $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
 
 hp.owl: build/hp.owl
 	cp -p $< $@
