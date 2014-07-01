@@ -13,7 +13,7 @@ all-subsets: build/hp.owl subsets
 	mkdir -p subsets && cp -p build/subsets/* subsets/
 
 build/hp-simple.obo: hp-edit.owl
-	ontology-release-runner --ignoreLock --skip-release-folder --outdir build --simple --allow-overwrite --no-reasoner $<
+	ontology-release-runner $(OORT_ARGS) --ignoreLock --skip-release-folder --outdir build --simple --allow-overwrite --no-reasoner $<
 
 build/hp.owl: build/hp-simple.obo
 
