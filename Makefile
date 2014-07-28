@@ -1,4 +1,4 @@
-all: hp.obo hp.owl all-subsets
+all: hp.obo hp.owl all-subsets hp-inferred.obo
 
 hp.obo: build/hp-simple.obo
 	owltools $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
@@ -16,6 +16,7 @@ all-subsets: build/hp.owl subsets
 build/hp-simple.obo: hp-edit.owl
 	ontology-release-runner $(OORT_ARGS) --ignoreLock --skip-release-folder --outdir build --simple --allow-overwrite --no-reasoner $<
 
+# TODO: once equivalence have been sorted, remove --allowEquivalencies
 hp-inferred.obo: hp-edit.owl
 	owltools  --use-catalog $<  --assert-inferred-subclass-axioms --markIsInferred --allowEquivalencies --reasoner-query -r elk HP_0000001 --make-ontology-from-results hp-inferred -o -f obo $@.tmp --reasoner-dispose && grep -v ^owl-axioms $@.tmp > $@
 
