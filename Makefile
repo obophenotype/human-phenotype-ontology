@@ -12,8 +12,12 @@ subsets:
 all-subsets: build/hp.owl subsets
 	mkdir -p subsets && cp -p build/subsets/* subsets/
 
+# Note: we currently use no-reasoner for now, until we can trust all inferences
 build/hp-simple.obo: hp-edit.owl
 	ontology-release-runner $(OORT_ARGS) --ignoreLock --skip-release-folder --outdir build --simple --allow-overwrite --no-reasoner $<
+
+hp-inferred.obo: hp-edit.owl
+	owltools  --use-catalog $<  --assert-inferred-subclass-axioms --markIsInferred --allowEquivalencies --reasoner-query -r elk HP_0000001 --make-ontology-from-results hp-inferred -o -f obo $@.tmp --reasoner-dispose && grep -v ^owl-axioms $@.tmp > $@
 
 build/hp.owl: build/hp-simple.obo
 
