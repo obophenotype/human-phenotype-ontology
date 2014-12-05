@@ -46,7 +46,7 @@ GETTING STARTED
 Always start by doing:
 
 Email google group at phenotype-ontology-editors@googlegroups.com to lock the files  
-Example  “[LOCKING] hp-edit..owl for editing”
+Example [LOCKING] hp-edit..owl for editing
 
 svn update
 
@@ -58,7 +58,7 @@ Switch on the Elk reasoner (see how to get plugins above). If you are making cha
 
 Edit the ontology in protege:
 
-Find parent term in Protégé by searching (at top of screen)
+Find parent term in Protege by searching (at top of screen)
 Double check that term is not already there
 Add subclass
 Add label (URI should be auto-generated)
@@ -79,6 +79,8 @@ Commit your changes
 OBSOLETING
 ---------------
 
+YOU NEED THE OBSOLESCENCE PLUGIN!!!!
+
 1. Find the  class you wish to obsolete, and compare it with the class you wish to replace (or consider) it with. You need to check that both the text definition and the logical axioms have the same intent, and that nothing desired is lost in the obsolescence.
 
 2. Copy any subClass axioms that you intend to keep for historical purposes (e.g. those that are not replicated on the target class) into a comment annotation property. If you do this, please ensure to add to any exisiting comments rather than adding a new COMMENT. There can be only one COMMENT in obo format and Jenkins will throw an error. If there are equivalence axioms, you may wish to consult with an expert to make sure the axioms are retained properly in the file.
@@ -90,6 +92,8 @@ OBSOLETING
 You should see the class crossed out after you do this. 
 
 4. Add an annotation property "term replaced by". Navigate to the term by clicking on the "entity IRI" and either browse or control F to find the term that is replacing the one being obsoleted.
+
+5. YOU HAVE TO ADD THE ALTERNATIVE-ID TAG to the class that replaces the obsolote class. All IDs of the old term have to be moved to this field!!
 
 6. You may wish to add a comment regarding the reason for obsolescence or so as to include reference to why the term was replaced with whatever is indicated. Again, do not add more than one comment annotation on a class.
 
