@@ -79,7 +79,7 @@ Commit your changes
 OBSOLETING
 ---------------
 
-YOU NEED THE OBSOLESCENCE PLUGIN!!!!
+!!! YOU NEED THE OBSOLESCENCE PLUGIN!!!! (https://github.com/balhoff/obo-actions/downloads)
 
 1. Find the  class you wish to obsolete, and compare it with the class you wish to replace (or consider) it with. You need to check that both the text definition and the logical axioms have the same intent, and that nothing desired is lost in the obsolescence.
 
