@@ -3,7 +3,7 @@ OORT_ARGS= --catalog-xml catalog-v001.xml
 all: hp.obo hp.owl all-subsets hp-inferred.obo
 
 hp.obo: build/hp-simple.obo
-	owltools -- $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
+	owltools --use-catalog $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
 
 hp.owl: build/hp.owl
 	cp -p $< $@
