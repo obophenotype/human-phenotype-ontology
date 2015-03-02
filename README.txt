@@ -14,5 +14,3 @@ This is deprecated:
 
  * hpo/src/ontology/human-phenotype-ontologies_xp.obo
 
-
-test
