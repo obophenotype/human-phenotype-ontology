@@ -1,6 +1,6 @@
 # Source for Human Phenotype Ontology
 
-before downloading: see http://human-phenotype-ontology.org/contao/index.php/legal-issues.html !!!
+before downloading: see http://www.human-phenotype-ontology.org/contao/index.php/license.html 
 
 when citing: see http://human-phenotype-ontology.org/contao/index.php/hpo_publ.html
 
