@@ -1,6 +1,9 @@
 # How to checkout
 
-Please use the --recursive option when checking out! (i.e. git clone --recursive https://github.com/obophenotype/human-phenotype-ontology.git). 
+Please use the --recursive option when checking out! I.e.
+    
+    git clone --recursive https://github.com/obophenotype/human-phenotype-ontology.git
+
 This will add an upheno-folder to repository, that contains all the imported ontologies. Only by using this option, the catalog-v001.xml will 
 point to the correct files.
 
