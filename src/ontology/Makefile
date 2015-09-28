@@ -23,4 +23,26 @@ build/hp-simple.obo: hp-edit.owl catalog-v001.xml
 hp-inferred.obo: hp-edit.owl
 	owltools  --use-catalog $<  --assert-inferred-subclass-axioms --markIsInferred --allowEquivalencies --reasoner-query -r elk HP_0000001 --make-ontology-from-results hp-inferred -o -f obo $@.tmp --reasoner-dispose && grep -v ^owl-axioms $@.tmp > $@
 
+# Create a read-only OBO subset with logical defs
+hp-edit.obo: hp-edit.owl
+	owltools --use-catalog $< -o -f obo $@
+subsets/hp-ldefs.obo: hp-edit.obo
+	obo-filter-tags.pl -t intersection_of -t id -t name $< | obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@
+
 build/hp.owl: build/hp-simple.obo
+
+
+### NEW: Switching over to Robot
+
+ROBOJENKINS=http://build.berkeleybop.org/job/robot/lastSuccessfulBuild/artifact/bin
+
+robot.jar:
+	wget $(ROBOJENKINS)/$@ -O $@
+robot: robot.jar
+	wget $(ROBOJENKINS)/$@ -O $@ && chmod +x $@
+
+hp-previous.owl: hp-edit.owl
+	git show HEAD~1:src/ontology/$< > $@ 
+
+diff.txt: hp-previous.owl
+	./robot diff -l $< -r hp-edit.owl -o $@
