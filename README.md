@@ -14,11 +14,6 @@ When citing: see http://human-phenotype-ontology.org/contao/index.php/hpo_publ.h
 
  * https://github.com/obophenotype/human-phenotype-ontology/
 
-Teams:
-
- * https://github.com/orgs/obophenotype/teams/human-phenotype
- * http://www.human-phenotype-ontology.org/people.html
-
 ## Issues
 
  * https://github.com/obophenotype/human-phenotype-ontology/issues
