@@ -1,14 +1,14 @@
 
 # Source for Human Phenotype Ontology
 
-Before downloading: see http://www.human-phenotype-ontology.org/contao/index.php/license.html 
+**Important**
 
-When citing: see http://human-phenotype-ontology.org/contao/index.php/hpo_publ.html
+ * Before downloading [see license information and instructions how to cite the HPO project](http://human-phenotype-ontology.github.io/license.html)
 
 ## CI Job
 
+ * http://compbio.charite.de/hudson/job/hpo/ 
  * https://build.berkeleybop.org/job/build-hp-edit/
- * http://compbio.charite.de/hudson/job/hpo/
 
 ## Project Page
 
