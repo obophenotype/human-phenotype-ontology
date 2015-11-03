@@ -10,9 +10,9 @@
  * http://compbio.charite.de/hudson/job/hpo/ 
  * https://build.berkeleybop.org/job/build-hp-edit/
 
-## Project Page
+## Project Homepage
 
- * https://github.com/obophenotype/human-phenotype-ontology/
+ * http://human-phenotype-ontology.github.io/
 
 ## Issues
 
