@@ -42,3 +42,23 @@ script:
 #  on:
 #    tags: true
 
+## Deployment options
+####################
+
+#deploy:
+#  # specify the deployment provider
+#  provider: releases
+#  # options for provider
+#  api_key:
+#    secure: securekeyhere
+#  file: myrepo-$TRAVIS_BRANCH.tar.gz
+#  # conditions for deployment
+#  on:
+#    condition: $PRODBUILDCOMPLETE = true
+#    repo: myname/myrepo
+#    all_branches: true
+#    tags: true
+#
+#after_deploy:
+#  - ssh git@mysite.biz "./deploy.sh $TRAVIS_BRANCH"
+
