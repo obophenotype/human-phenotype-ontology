@@ -1,7 +1,44 @@
-deploy:
-  provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
-  skip_cleanup: true
-  on:
-    tags: true
+notifications: 
+  email:
+    recipients:
+      - dr.sebastian.koehler@gmail.com
+      - peter.robinson@charite.de
+      # change is when the repo status goes from pass to fail or vice versa
+    on_success: change
+    on_failure: always
+
+install:
+  - wget -i src/owltools/urls.txt
+  
+before_script:  
+  - mkdir -p owltools_folder
+  - mv owltools owltools_folder/
+  - mv *jar owltools_folder/
+  - mv ontology-rel* owltools_folder/
+  - chmod +x owltools_folder/*
+  - export PATH="$PATH":`pwd`/owltools_folder/
+  - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
+
+script:
+  - ls
+  - pwd
+  - echo $HOME
+  - ls $HOME
+  - ls -l
+  - cd src/ontology/
+  - make &> log.txt
+  - ls
+  - pwd
+  - echo $HOME
+  - ls $HOME
+  - ls -l
+
+
+#deploy:
+#  provider: releases
+#  api_key: "GITHUB OAUTH TOKEN"
+#  file: "FILE TO UPLOAD"
+#  skip_cleanup: true
+#  on:
+#    tags: true
+
