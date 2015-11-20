@@ -20,45 +20,7 @@ before_script:
   - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
 script:
-  - ls
-  - pwd
-  - echo $HOME
-  - ls $HOME
-  - ls -l
   - cd src/ontology/
   - make &> log.txt
-  - ls
-  - pwd
-  - echo $HOME
-  - ls $HOME
-  - ls -l
-
-
-#deploy:
-#  provider: releases
-#  api_key: "GITHUB OAUTH TOKEN"
-#  file: "FILE TO UPLOAD"
-#  skip_cleanup: true
-#  on:
-#    tags: true
-
-## Deployment options
-####################
-
-#deploy:
-#  # specify the deployment provider
-#  provider: releases
-#  # options for provider
-#  api_key:
-#    secure: securekeyhere
-#  file: myrepo-$TRAVIS_BRANCH.tar.gz
-#  # conditions for deployment
-#  on:
-#    condition: $PRODBUILDCOMPLETE = true
-#    repo: myname/myrepo
-#    all_branches: true
-#    tags: true
-#
-#after_deploy:
-#  - ssh git@mysite.biz "./deploy.sh $TRAVIS_BRANCH"
+  - tail -n 100 log.txt
 
