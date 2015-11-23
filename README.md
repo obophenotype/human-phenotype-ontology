@@ -13,9 +13,9 @@
 
 ## Project Homepage
 
- * http://human-phenotype-ontology.github.io/
+ * http://www.human-phenotype-ontology.org
 
-## Issues
+## Tracker
 
  * https://github.com/obophenotype/human-phenotype-ontology/issues
 
