@@ -1,15 +1,10 @@
 [![Build Status](https://travis-ci.org/obophenotype/human-phenotype-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/human-phenotype-ontology)
 
-# Source for Human Phenotype Ontology
+
 
 **Important**
 
  * Before downloading [see license information and instructions how to cite the HPO project](http://human-phenotype-ontology.github.io/license.html)
-
-## CI Job
-
- * http://compbio.charite.de/hudson/job/hpo/ 
- * https://build.berkeleybop.org/job/build-hp-edit/
 
 ## Project Homepage
 
@@ -17,7 +12,11 @@
 
 ## Tracker
 
- * https://github.com/obophenotype/human-phenotype-ontology/issues
+ * Please post issues at our [github tracker](https://github.com/obophenotype/human-phenotype-ontology/issues)
+
+## CI Job
+
+ * Each commit is automatically checked with [Travis](https://travis-ci.org/obophenotype/human-phenotype-ontology)
 
 ## Instructions on using SourceTree with Github
  
