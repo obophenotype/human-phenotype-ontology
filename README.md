@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/obophenotype/human-phenotype-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/human-phenotype-ontology)
 
 # Source for Human Phenotype Ontology
 
