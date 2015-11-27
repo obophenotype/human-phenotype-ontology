@@ -2,9 +2,10 @@
 
 
 
-**Important**
+#Important
 
- * Before downloading [see license information and instructions how to cite the HPO project](http://human-phenotype-ontology.github.io/license.html)
+ * Before downloading [see **license** information and instructions how to **cite** the HPO project](http://human-phenotype-ontology.github.io/license.html)
+ * Please **do not create pull request**. Please open a ticket under [issues](https://github.com/obophenotype/human-phenotype-ontology/issues)
 
 ## Project Homepage
 
