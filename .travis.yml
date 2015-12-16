@@ -8,13 +8,16 @@ notifications:
     on_failure: always
 
 before_install:
+  - cd ~
   - cd src/format/
   - make
 
 install:
+  - cd ~
   - wget -i src/owltools/urls.txt
   
-before_script:  
+before_script:
+  - cd ~
   - mkdir -p owltools_folder
   - mv owltools owltools_folder/
   - mv *jar owltools_folder/
@@ -24,6 +27,7 @@ before_script:
   - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
 script:
+  - cd ~
   - cd src/ontology/
   - make &> log.txt
   - tail -n 100 log.txt
