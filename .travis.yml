@@ -1,3 +1,4 @@
+# who gets notified if build-status changes
 notifications: 
   email:
     recipients:
@@ -7,19 +8,24 @@ notifications:
     on_success: change
     on_failure: always
 
+# store the home dir for later use
 env:
   global:
     - CI_HOME=`pwd`/$REPO
 
+# simple format and ending tests
 before_install:
   - cd $CI_HOME  
   - cd src/format/
   - make
 
+# get the OWLTOOLS jars
 install:
   - cd $CI_HOME  
   - wget -i src/owltools/urls.txt
-  
+ 
+# set everything up, e.g. put files in 
+# correct place and set env-variables
 before_script:
   - cd $CI_HOME
   - mkdir -p owltools_folder
@@ -30,6 +36,8 @@ before_script:
   - export PATH="$PATH":`pwd`/owltools_folder/
   - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
+# call make to build the ontology
+# which includes some quality checks
 script:
   - cd $CI_HOME  
   - cd src/ontology/
