@@ -7,17 +7,22 @@ notifications:
     on_success: change
     on_failure: always
 
+env:
+  global:
+    - REPO="obophenotype/human-phenotype-ontology"
+    - CI_HOME=`pwd`/$REPO
+
 before_install:
-  - pwd
+  - cd $CI_HOME  
   - cd src/format/
   - make
 
 install:
-  - cd ~
+  - cd $CI_HOME  
   - wget -i src/owltools/urls.txt
   
 before_script:
-  - cd ~
+  - cd $CI_HOME
   - mkdir -p owltools_folder
   - mv owltools owltools_folder/
   - mv *jar owltools_folder/
@@ -27,7 +32,7 @@ before_script:
   - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
 script:
-  - cd ~
+  - cd $CI_HOME  
   - cd src/ontology/
   - make &> log.txt
   - tail -n 100 log.txt
