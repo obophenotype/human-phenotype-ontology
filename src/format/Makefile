@@ -24,7 +24,7 @@ all: check-tab check-encoding
 # folder where they belong)
 .PHONY: check-tab
 check-tab:
-	if grep "\\t" $(ONTO); \
+	if grep -P "\t" $(ONTO); \
 	then echo found tab and tabs are not allowed; exit 1;\
 	else echo Did not find any tab character; \
 	fi
