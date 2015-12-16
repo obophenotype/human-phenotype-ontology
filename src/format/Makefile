@@ -1,7 +1,9 @@
 ###############################################################
 ###############################################################
 # This makefile takes the hp-edit.owl file and checks if there
-# are formatting issues
+# are formatting issues. At the moment we test whether 
+# - tab characters are found
+# - the command iconv is successful
 # 
 # Author: Sebastian Koehler
 ###############################################################
@@ -34,8 +36,7 @@ check-tab:
 # and the suggestions are generated
 .PHONY: check-encoding
 check-encoding:
-	#grep "\t" $(ONTO)
-	echo huhu;
+	iconv -f UTF-8 -t ISO-8859-15 $(ONTO) > converted.txt || (echo "mycommand failed $$?"; exit 1)
 
 # clean
 .PHONY: clean
