@@ -9,9 +9,6 @@
 ###############################################################
 ###############################################################
 
-# the jar needed for doing the textmining etc.
-SUGGEST_ANNOTATIONS=java -Xmx3G -jar jar/SuggestAnnotations.jar
-
 # the folder where the omim.txt and latest annotationfile are stored
 ONTO?=../ontology/hp-edit.owl
 
@@ -27,7 +24,7 @@ all: check-tab check-encoding
 # folder where they belong)
 .PHONY: check-tab
 check-tab:
-	if grep "\t" $(ONTO); \
+	if grep "\\t" $(ONTO); \
 	then echo found tab and tabs are not allowed; exit 1;\
 	else echo Did not find any tab character; \
 	fi
@@ -36,7 +33,7 @@ check-tab:
 # and the suggestions are generated
 .PHONY: check-encoding
 check-encoding:
-	iconv -f UTF-8 -t ISO-8859-15 $(ONTO) > converted.txt || (echo "mycommand failed $$?"; exit 1)
+	iconv -f UTF-8 -t ISO-8859-15 $(ONTO) > converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
 # clean
 .PHONY: clean
