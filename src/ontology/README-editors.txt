@@ -98,6 +98,29 @@ Commit your changes
   git add -u .
   git commit -m "COMMIT MESSAGE" hp-edit.owl
   git push
+
+
+CREATING NEW TERMS (Checklist)
+------------------------------
+* In general, the term should be announced on the github tracker prior to creation of new term
+* Make sure the Protege reasoner (Elk) is active to investigate any unforeseen and unintended logical inferences
+* Most terms should have the following items added
+** Label
+** Definition (english-language). This should be extended by database_cross_reference (e.g., PMID:123 to provide additional information)
+** Comment. This is optional but can be used to provide additional information about the term such as diseases that are characterised by the feature or diagnostic methods that can be used to demonstrated the feature
+** database_cross_reference. Indicate an item in another database that is equivalent to this HPPO term. FOr instance, MeSH:D058529. We can add a label (e.g., "Single umbilical artery") by the "Annotations" button.
+** If possible, add relevant synonyms. Use "has_exact_synonym" for true synonyms (prefereed). If needed, use has_related_synonym for words/phrases that are not 100% identical in meaning but are likely to be confused with the main term.
+* Note that "id" (e.g., HP:0001234) and "has_obo_namespace" (human_phenotype) were added automatically by the OBO to OWL conversion and are not required for new terms.
+
+
+##Closing Issues with Commit Messages.
+This is the prefered way to commit a new term.
+See the [github help pages for this] (https://help.github.com/articles/closing-issues-via-commit-messages/).
+To close and commit terms that relate to issue #608, for instance, create the terms and save them to file.
+git add -u .
+git commit -m"This closes #608"
+git push
+
   
 OBSOLETING
 ---------------
