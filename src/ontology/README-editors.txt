@@ -93,6 +93,10 @@ Save
 
 **do not edit any other files!!!**
 
+Check encoding
+iconv -f UTF-8 -t ISO-8859-15 hp-edit.owl > out.txt
+iconv will print an error message if there are any non UTF-8 characters.
+
 Commit your changes
 
   git add -u .
