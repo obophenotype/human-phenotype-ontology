@@ -10,6 +10,7 @@ SETTING UP
 Especially
 (1) The ELK plugin (see below)
 (2) The Term Metadata editor plugin (Alpha), to be found at: http://wiki.geneontology.org/index.php/Ontology_editor_plugins
+(3) The obsolescence plugin  (see http://wiki.geneontology.org/index.php/Ontology_editor_plugins).
 
 
 
