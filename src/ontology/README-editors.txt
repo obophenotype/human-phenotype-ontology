@@ -98,6 +98,21 @@ Check encoding
 iconv -f UTF-8 -t ISO-8859-15 hp-edit.owl > out.txt
 iconv will print an error message if there are any non UTF-8 characters.
 
+If you get an error like this:
+
+$ iconv -f UTF-8 -t ISO-8859-15 hp-edit.owl > out.txt
+iconv: illegal input sequence at position 16650269
+
+do this to find the offending character
+$ dd if=hp-edit.owl of=error.txt bs=1 count=10 skip=16650269
+$ hexdump -C error.txt 
+00000000  e2 80 93 61 6d 69 6e 6f  20 61                    |...amino a|
+0000000a
+
+i.e., the problem was a non UTF8 dash right before the word "amino". Remove the character, save the file and try again.
+
+
+
 Commit your changes
 
   git add -u .
