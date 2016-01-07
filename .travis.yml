@@ -40,6 +40,7 @@ script:
   - cd src/ontology/
   - make &> log.txt
   - tail -n 100 log.txt
+  # now check for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
   - java -jar src/jar/TestDuplicatedLabels.jar src/ontology/hp.obo
 
