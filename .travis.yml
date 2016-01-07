@@ -40,4 +40,6 @@ script:
   - cd src/ontology/
   - make &> log.txt
   - tail -n 100 log.txt
+  - cd $CI_HOME
+  - java -jar src/jar/TestDuplicatedLabels.jar src/ontology/hp.obo
 
