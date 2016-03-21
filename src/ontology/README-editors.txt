@@ -173,6 +173,14 @@ click on parent in description
 click back button to get back to your term
 (stupid, eh?)
 
+
+MERGING
+---------------
+If you use the Refactor > Rename entity... menu item, and make the IRI of one term the same as the 
+IRI of another term, all the axioms are merged to one term. 
+Don't forget replaced_by and alt_id tags.
+
+
 SAVING and COMMITTING
 ---------------
 
