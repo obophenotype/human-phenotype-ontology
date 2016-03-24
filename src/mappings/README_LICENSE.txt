@@ -6,3 +6,5 @@ Copyright HPO-consortium:
  - medraMapping.tsv
  - onet_hpo.tsv
  - term2umls.out
+ 
+In general, read the license restrictions for HPO related data at: http://www.human-phenotype-ontology.org
