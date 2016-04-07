@@ -25,7 +25,7 @@ hp-inferred.obo: hp-edit.owl
 
 # Create a read-only OBO subset with logical defs
 hp-edit.obo: hp-edit.owl
-	owltools --use-catalog $< -o -f obo $@
+	owltools --use-catalog $< --add-obo-shorthand-to-properties -o -f obo $@
 subsets/hp-ldefs.obo: hp-edit.obo
 	obo-filter-tags.pl -t intersection_of -t id -t name $< | obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@
 
