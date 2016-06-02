@@ -48,8 +48,8 @@ script:
   - tail -n 100 log.txt
   # now check for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
-  - java -jar src/jar/CheckFreetextAnnotations.jar src/ontology/hp.obo
+#  - java -jar src/jar/CheckFreetextAnnotations.jar src/ontology/hp.obo
   # now check for redundant subclass assertions
-  - java -jar src/jar/CheckRedundantLinks.jar src/ontology/hp.obo 
+#  - java -jar src/jar/CheckRedundantLinks.jar src/ontology/hp.obo 
 
 
