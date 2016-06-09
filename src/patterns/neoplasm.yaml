@@ -1,0 +1,35 @@
+pattern_name: hp/patterns/neoplasm
+classes:
+  neoplasm phenotype: HP:0002664
+  neoplasm: NCIT:C7419
+  increased amount: PATO:0000470
+  abnormal: PATO:0000460
+
+relations:
+  has part: BFO_0000051
+  part of: BFO_0000050
+  inheres in: RO:0002233
+    
+vars: 
+  pathological entity: "'pathological entity'"
+
+name:
+  text: "%s presence"
+  vars:
+    - pathological entity
+
+annotations: 
+  - property: oio:hasRelatedSynonym
+    text: "%s"
+    vars:
+      - pathological entity
+
+def: 
+  text: "Abnormal presence of %s."
+  vars:
+    - pathological entity
+    
+equivalentTo: 
+  text: "'neoplasm phenotype' and ('has part' some ('increased amount' and 'inheres in' some %s and 'has qualifier' some 'abnormal'))"
+  vars:
+    - pathological entity
