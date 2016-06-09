@@ -11,25 +11,25 @@ relations:
   inheres in: RO:0002233
     
 vars: 
-  pathological entity: "'pathological entity'"
+  entity: "'neoplasm'"
 
 name:
   text: "%s presence"
   vars:
-    - pathological entity
+    - entity
 
 annotations: 
   - property: oio:hasRelatedSynonym
     text: "%s"
     vars:
-      - pathological entity
+      - entity
 
 def: 
   text: "Abnormal presence of %s."
   vars:
-    - pathological entity
+    - entity
     
 equivalentTo: 
   text: "'neoplasm phenotype' and ('has part' some ('increased amount' and 'inheres in' some %s and 'has qualifier' some 'abnormal'))"
   vars:
-    - pathological entity
+    - entity
