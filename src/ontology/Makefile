@@ -46,3 +46,38 @@ hp-previous.owl: hp-edit.owl
 
 diff.txt: hp-previous.owl
 	./robot diff -l $< -r hp-edit.owl -o $@
+
+# ----------------------------------------
+# DESIGN PATTERNS AND TEMPLATES
+# ----------------------------------------
+MODDIR=modules
+USECAT=--use-catalog
+
+MODS = neoplasm
+MODS_CSV = $(patsubst %,$(MODDIR)/%.csv,$(MODS))
+
+
+all_modules: all_modules_omn all_modules_owl all_modules_obo
+all_modules_owl: $(patsubst %, $(MODDIR)/%.owl, $(MODS))
+all_modules_omn: $(patsubst %, $(MODDIR)/%.omn, $(MODS))
+all_modules_obo: $(patsubst %, $(MODDIR)/%.obo, $(MODS))
+
+$(MODDIR)/%.omn: $(MODDIR)/%.csv ../patterns/%.yaml
+	apply-pattern.py -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p ../patterns/$*.yaml -G $(MODDIR)/$*-gci.owl > $@.tmp && mv $@.tmp $@
+
+#$(MODDIR)/%-gci.owl: $(MODDIR)/%.omn
+
+$(MODDIR)/%.owl: $(MODDIR)/%.omn 
+	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/ecto/$@ -o -f ofn $@
+
+$(MODDIR)/%.obo: $(MODDIR)/%.owl
+	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+hp-edit.csv: hp-edit.owl
+	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep "^http://purl.obolibrary.org/obo/HP_" | perl -npe 's@.*HP_@HP:@' > $@
+
+IDMIN = --min 4000000
+fill: hp-edit.csv
+	fill-col1-ids.pl $(IDMIN) $(MODS_CSV) $<
+testfill: hp-edit.csv
+	fill-col1-ids.pl $(IDMIN) -n $(MODS_CSV) $<
