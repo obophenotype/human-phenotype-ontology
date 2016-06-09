@@ -1,3 +1,5 @@
+OBO = http://purl.obolibrary.org/obo
+
 all: hp.obo hp.owl all-subsets hp-inferred.obo
 
 hp.obo: build/hp-simple.obo
@@ -68,13 +70,23 @@ $(MODDIR)/%.omn: $(MODDIR)/%.csv ../patterns/%.yaml
 #$(MODDIR)/%-gci.owl: $(MODDIR)/%.omn
 
 $(MODDIR)/%.owl: $(MODDIR)/%.omn 
-	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/ecto/$@ -o -f ofn $@
+	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/hp/$@ -o -f ofn $@
 
 $(MODDIR)/%.obo: $(MODDIR)/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 hp-edit.csv: hp-edit.owl
 	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep "^http://purl.obolibrary.org/obo/HP_" | perl -npe 's@.*HP_@HP:@' > $@
+
+# See https://github.com/ontodev/ncit-obo/issues/17 for why this is so contorted
+modules/ncit_neoplasm_obo.owl: $(HOME)/repos/ontodev/ncit-obo/build/subsets/neoplasm.owl
+	perl -npe 's@http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#@http://purl.obolibrary.org/obo/NCIT_@g' $< > $@.tmp && owltools $@.tmp --extract-mingraph --set-ontology-id $(OBO)/ncit/neoplasm.owl -o $@
+
+modules/ncit_seed.txt: modules/neoplasm.csv
+	cut -f3 -d ',' $< > $@
+
+modules/ncit_import.owl: modules/ncit_seed.txt modules/ncit_neoplasm_obo.owl
+	robot -p 'NCIT: $(OBO)/NCIT_' extract -m BOT -i modules/ncit_neoplasm_obo.owl -T $< -O $(OBO)/hp/$@ -o $@
 
 IDMIN = --min 4000000
 fill: hp-edit.csv
