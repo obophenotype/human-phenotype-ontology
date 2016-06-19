@@ -3,9 +3,9 @@ SETTING UP
 
 ## Editing environment
 
-1. Install Protege 4.3 or higher
-2. Get the Elk plugin
-3. Install any required plugins from: http://wiki.geneontology.org/index.php/Ontology_editor_plugins
+1. Install Protege 5.0 or higher
+2. Ensure you have the Elk plugin (comes with the latest 5.0 release)
+3. Install any additional plugins from: http://wiki.geneontology.org/index.php/Ontology_editor_plugins
 
 Especially
 (1) The ELK plugin (see below)
@@ -30,7 +30,7 @@ you did during last session, but *does not check* for use of the URI before assi
 to OWL, protege will not know not to start from the beginning. Some tips to check to see where you are in your range:
 (1) Go to the view menu, click "render by entity IRI short name (Id)". This will display classes as "HP_0030021" etc.
 (2) Use the search box to search for classes starting within your range, such as "HP_04" for Melissa's range. Check the "show all results" box to see all of your results.
-(3) Find the last used ID in your range, e.g. HP_0030652, and set Protoge to the next unused ID in your range (e.g., "HP_0030653") rather than the beginning of the range.
+(3) Find the last used ID in your range, e.g. HP_0030652, and set Protege to the next unused ID in your range (e.g., "HP_0030653") rather than the beginning of the range.
 To do so (assuming you are using Protege 5), go to the File|Preferences window and find the "New Entities" tab. The following settings are correct:
 (i) Start with "Specified URI": http://purl.obolibrary.org/obo/
 (ii) Followed by "/"
@@ -67,7 +67,7 @@ GETTING STARTED
 
 Always start by doing:
 
-Email google group at phenotype-ontology-editors@googlegroups.com to lock the files  
+Email google group at phenotype-ontology-editors@googlegroups.com to lock the files
 Example [LOCKING] hp-edit..owl for editing
 
 git pull
@@ -105,7 +105,7 @@ iconv: illegal input sequence at position 16650269
 
 do this to find the offending character
 $ dd if=hp-edit.owl of=error.txt bs=1 count=10 skip=16650269
-$ hexdump -C error.txt 
+$ hexdump -C error.txt
 00000000  e2 80 93 61 6d 69 6e 6f  20 61                    |...amino a|
 0000000a
 
@@ -141,7 +141,7 @@ git add -u .
 git commit -m"This closes #608"
 git push
 
-  
+
 OBSOLETING
 ---------------
 
@@ -152,10 +152,10 @@ OBSOLETING
 2. Copy any subClass axioms that you intend to keep for historical purposes (e.g. those that are not replicated on the target class) into a comment annotation property. If you do this, please ensure to add to any exisiting comments rather than adding a new COMMENT. There can be only one COMMENT in obo format and Jenkins will throw an error. If there are equivalence axioms, you may wish to consult with an expert to make sure the axioms are retained properly in the file.
 
 3. Go to the obsolescence plugin by going to the edit menu and scroll to the bottom, to "Make Entity Obsolete". This will perform the following for you:
-	Relabel the class as "obsolete your old term label here". 
-	Add an annotation property, "deprecated", value "true", of type "boolean". 
+	Relabel the class as "obsolete your old term label here".
+	Add an annotation property, "deprecated", value "true", of type "boolean".
 	Delete subClassOf axioms
-You should see the class crossed out after you do this. 
+You should see the class crossed out after you do this.
 
 4. Add an annotation property "term replaced by". Navigate to the term by clicking on the "entity IRI" and either browse or control F to find the term that is replacing the one being obsoleted.
 
@@ -176,8 +176,8 @@ click back button to get back to your term
 
 MERGING
 ---------------
-If you use the Refactor > Rename entity... menu item, and make the IRI of one term the same as the 
-IRI of another term, all the axioms are merged to one term. 
+If you use the Refactor > Rename entity... menu item, and make the IRI of one term the same as the
+IRI of another term, all the axioms are merged to one term.
 Don't forget replaced_by and alt_id tags.
 
 
@@ -190,8 +190,8 @@ decipher, it can sometimes show you egregious errors, sometimes Protege's fault)
 
 **Important: make sure you save in functional syntax, using the same
   prefixes as in the source file. This SHOULD be automatic (but Protege sometimes gets it wrong - one reason to do the diff).
-  
-**Important: there is currently a bug in Protege that is being investigated (well, there are many). If protege asks you to name your merged file when you save and gives you no other option, DON'T DO IT. Quit Protege and start over. You will lose your work - another reason to save and commit in small increments.  
+
+**Important: there is currently a bug in Protege that is being investigated (well, there are many). If protege asks you to name your merged file when you save and gives you no other option, DON'T DO IT. Quit Protege and start over. You will lose your work - another reason to save and commit in small increments.
 
 If there are changes to the file after an svn update, Protege will ask you to reload. You may wish not to trust the reload and simply reopen Protege.
 
@@ -201,12 +201,12 @@ email will be sent to the curators list.
 
 You can check on the build here:
   http://build.berkeleybop.org/job/build-hp-edit/
-  
+
 Check for errors in the report, send an email to curators if you cannot determine what the error is.
 
 MIREOTING
 ---------
-Sometimes you may wish to reference a class from another ontology in the context of editing HP, and the term may not yet be mireoted. You can currently pull in a new term from GO, Uberon, Chebi, CL, PATO or PR. 
+Sometimes you may wish to reference a class from another ontology in the context of editing HP, and the term may not yet be mireoted. You can currently pull in a new term from GO, Uberon, Chebi, CL, PATO or PR.
 
 1. Identify the class to be included, and copy the URI (for example, look in Ontobee or open file in separate Protege instance and do control U to copy the URI). Note the superclass(es) of the class.
 
@@ -227,7 +227,7 @@ Always synchronize the reasoner before committing. Did your changes
 introduce unsatisfiable classes? If so, investigate them.
 
 For any classes you have created, are they in your ID range? Did you
-add text definitions, adding provenance information? Is the reasoner finding unintended inferred equivalent classes? Subclasses? 
+add text definitions, adding provenance information? Is the reasoner finding unintended inferred equivalent classes? Subclasses?
 
 Check the jenkins report after your commits. This should alert you to
 any of the following:
@@ -236,6 +236,3 @@ any of the following:
  * consistency problems with other ontologies
  * violation of obo-format (e.g. two labels for a class; two text
    definitions; etc)
-
-
-
