@@ -11,6 +11,10 @@
 # Project Homepage
 
  * http://www.human-phenotype-ontology.org
+ 
+# Project Wiki
+ 
+ * https://github.com/obophenotype/human-phenotype-ontology/wiki
 
 # Tracker
 
