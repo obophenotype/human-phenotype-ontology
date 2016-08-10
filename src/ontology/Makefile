@@ -58,7 +58,6 @@ USECAT=--use-catalog
 MODS = neoplasm
 MODS_CSV = $(patsubst %,$(MODDIR)/%.csv,$(MODS))
 
-
 all_modules: all_modules_omn all_modules_owl all_modules_obo
 all_modules_owl: $(patsubst %, $(MODDIR)/%.owl, $(MODS))
 all_modules_omn: $(patsubst %, $(MODDIR)/%.omn, $(MODS))
@@ -70,7 +69,7 @@ $(MODDIR)/%.omn: $(MODDIR)/%.csv ../patterns/%.yaml
 #$(MODDIR)/%-gci.owl: $(MODDIR)/%.omn
 
 $(MODDIR)/%.owl: $(MODDIR)/%.omn 
-	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/hp/$@ -o -f ofn $@
+	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/hp/$@ -o  $@
 
 $(MODDIR)/%.obo: $(MODDIR)/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
