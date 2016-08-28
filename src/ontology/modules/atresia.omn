@@ -2,25 +2,25 @@ Prefix: : <http://purl.obolibrary.org/obo/>
 Prefix: IAO: <http://purl.obolibrary.org/obo/IAO_>
 Prefix: DOSDP: <http://geneontology.org/foo/>
 Prefix: oio: <http://www.geneontology.org/formats/oboInOwl#>
-Prefix: HP: <http://purl.obolibrary.org/obo/HP_>
-Prefix: GO: <http://purl.obolibrary.org/obo/GO_>
-Prefix: NPO: <http://purl.obolibrary.org/obo/NPO_>
-Prefix: ExO: <http://purl.obolibrary.org/obo/ExO_>
 Prefix: NCIT: <http://purl.obolibrary.org/obo/NCIT_>
-Prefix: CHEBI: <http://purl.obolibrary.org/obo/CHEBI_>
-Prefix: OBA: <http://purl.obolibrary.org/obo/OBA_>
-Prefix: ENVO: <http://purl.obolibrary.org/obo/ENVO_>
-Prefix: UBERON: <http://purl.obolibrary.org/obo/UBERON_>
-Prefix: ECTO: <http://purl.obolibrary.org/obo/ECTO_>
-Prefix: RO: <http://purl.obolibrary.org/obo/RO_>
-Prefix: GOCHE: <http://purl.obolibrary.org/obo/GOCHE_>
-Prefix: BFO: <http://purl.obolibrary.org/obo/BFO_>
-Prefix: NBO: <http://purl.obolibrary.org/obo/NBO_>
-Prefix: PR: <http://purl.obolibrary.org/obo/PR_>
+Prefix: GO: <http://purl.obolibrary.org/obo/GO_>
 Prefix: SO: <http://purl.obolibrary.org/obo/SO_>
-Prefix: PO: <http://purl.obolibrary.org/obo/PO_>
-Prefix: CL: <http://purl.obolibrary.org/obo/CL_>
+Prefix: HP: <http://purl.obolibrary.org/obo/HP_>
+Prefix: RO: <http://purl.obolibrary.org/obo/RO_>
 Prefix: PATO: <http://purl.obolibrary.org/obo/PATO_>
+Prefix: CHEBI: <http://purl.obolibrary.org/obo/CHEBI_>
+Prefix: NBO: <http://purl.obolibrary.org/obo/NBO_>
+Prefix: UBERON: <http://purl.obolibrary.org/obo/UBERON_>
+Prefix: CL: <http://purl.obolibrary.org/obo/CL_>
+Prefix: OBA: <http://purl.obolibrary.org/obo/OBA_>
+Prefix: GOCHE: <http://purl.obolibrary.org/obo/GOCHE_>
+Prefix: ExO: <http://purl.obolibrary.org/obo/ExO_>
+Prefix: ECTO: <http://purl.obolibrary.org/obo/ECTO_>
+Prefix: NPO: <http://purl.obolibrary.org/obo/NPO_>
+Prefix: BFO: <http://purl.obolibrary.org/obo/BFO_>
+Prefix: PO: <http://purl.obolibrary.org/obo/PO_>
+Prefix: PR: <http://purl.obolibrary.org/obo/PR_>
+Prefix: ENVO: <http://purl.obolibrary.org/obo/ENVO_>
 
  ## Auto-generated
 
@@ -30,11 +30,11 @@ AnnotationProperty: atresia/entity
 AnnotationProperty: DOSDP:applies-pattern
 AnnotationProperty: oio:hasRelatedSynonym
 AnnotationProperty: oio:hasExactSynonym
-Class: PATO:0000460 ## abnormal
 Class: PATO:0001819 ## atretic
+Class: PATO:0000460 ## abnormal
+ObjectProperty: BFO:0000051 ## has_part
 ObjectProperty: RO:0002180 ## qualifier
 ObjectProperty: RO:0000052 ## inheres_in
-ObjectProperty: BFO:0000051 ## has_part
 ## Auto-generated classes
 
 Class: UBERON:0000057 ## urethra
@@ -45,14 +45,6 @@ Class: HP:0000068
  Annotations: oio:hasExactSynonym "Atresia of the urethra"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000057 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some urethra and 'qualifier' some 'abnormal')
 
-Class: UBERON:0000057 ## urethra
-## {"entity": "UBERON:0000057"}
-Class: HP:0000068
- Annotations: rdfs:label "Urethra atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the urethra."
- Annotations: oio:hasExactSynonym "Atresia of the urethra"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000057 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some urethra and 'qualifier' some 'abnormal')
-
 Class: UBERON:0000996 ## vagina
 ## {"entity": "UBERON:0000996"}
 Class: HP:0000148
@@ -60,22 +52,6 @@ Class: HP:0000148
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the vagina."
  Annotations: oio:hasExactSynonym "Atresia of the vagina"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000996 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some vagina and 'qualifier' some 'abnormal')
-
-Class: UBERON:0000996 ## vagina
-## {"entity": "UBERON:0000996"}
-Class: HP:0000148
- Annotations: rdfs:label "Vagina atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the vagina."
- Annotations: oio:hasExactSynonym "Atresia of the vagina"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000996 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some vagina and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001352 ## external acoustic meatus
-## {"entity": "UBERON:0001352"}
-Class: HP:0000413
- Annotations: rdfs:label "External acoustic meatus atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the external acoustic meatus."
- Annotations: oio:hasExactSynonym "Atresia of the external acoustic meatus"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001352 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some external acoustic meatus and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001352 ## external acoustic meatus
 ## {"entity": "UBERON:0001352"}
@@ -93,14 +69,6 @@ Class: HP:0000453
  Annotations: oio:hasExactSynonym "Atresia of the internal naris"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0010425 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some internal naris and 'qualifier' some 'abnormal')
 
-Class: UBERON:0010425 ## internal naris
-## {"entity": "UBERON:0010425"}
-Class: HP:0000453
- Annotations: rdfs:label "Internal naris atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the internal naris."
- Annotations: oio:hasExactSynonym "Atresia of the internal naris"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0010425 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some internal naris and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001850 ## lacrimal drainage system
 ## {"entity": "UBERON:0001850"}
 Class: HP:0000564
@@ -108,22 +76,6 @@ Class: HP:0000564
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the lacrimal drainage system."
  Annotations: oio:hasExactSynonym "Atresia of the lacrimal drainage system"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001850 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some lacrimal drainage system and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001850 ## lacrimal drainage system
-## {"entity": "UBERON:0001850"}
-Class: HP:0000564
- Annotations: rdfs:label "Lacrimal drainage system atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the lacrimal drainage system."
- Annotations: oio:hasExactSynonym "Atresia of the lacrimal drainage system"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001850 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some lacrimal drainage system and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001245 ## anus
-## {"entity": "UBERON:0001245"}
-Class: HP:0002023
- Annotations: rdfs:label "Anus atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the anus."
- Annotations: oio:hasExactSynonym "Atresia of the anus"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001245 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some anus and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001245 ## anus
 ## {"entity": "UBERON:0001245"}
@@ -141,14 +93,6 @@ Class: HP:0002032
  Annotations: oio:hasExactSynonym "Atresia of the esophagus"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001043 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some esophagus and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001043 ## esophagus
-## {"entity": "UBERON:0001043"}
-Class: HP:0002032
- Annotations: rdfs:label "Esophagus atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the esophagus."
- Annotations: oio:hasExactSynonym "Atresia of the esophagus"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001043 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some esophagus and 'qualifier' some 'abnormal')
-
 Class: UBERON:0002114 ## duodenum
 ## {"entity": "UBERON:0002114"}
 Class: HP:0002247
@@ -156,22 +100,6 @@ Class: HP:0002247
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the duodenum."
  Annotations: oio:hasExactSynonym "Atresia of the duodenum"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002114 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some duodenum and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002114 ## duodenum
-## {"entity": "UBERON:0002114"}
-Class: HP:0002247
- Annotations: rdfs:label "Duodenum atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the duodenum."
- Annotations: oio:hasExactSynonym "Atresia of the duodenum"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002114 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some duodenum and 'qualifier' some 'abnormal')
-
-Class: UBERON:0005409 ## alimentary part of gastrointestinal system
-## {"entity": "UBERON:0005409"}
-Class: HP:0002589
- Annotations: rdfs:label "Alimentary part of gastrointestinal system atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the alimentary part of gastrointestinal system."
- Annotations: oio:hasExactSynonym "Atresia of the alimentary part of gastrointestinal system"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0005409 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some alimentary part of gastrointestinal system and 'qualifier' some 'abnormal')
 
 Class: UBERON:0005409 ## alimentary part of gastrointestinal system
 ## {"entity": "UBERON:0005409"}
@@ -189,14 +117,6 @@ Class: HP:0004399
  Annotations: oio:hasExactSynonym "Atresia of the pylorus"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001166 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some pylorus and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001166 ## pylorus
-## {"entity": "UBERON:0001166"}
-Class: HP:0004399
- Annotations: rdfs:label "Pylorus atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the pylorus."
- Annotations: oio:hasExactSynonym "Atresia of the pylorus"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001166 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some pylorus and 'qualifier' some 'abnormal')
-
 Class: UBERON:0004771 ## posterior nasal aperture
 ## {"entity": "UBERON:0004771"}
 Class: HP:0004496
@@ -204,22 +124,6 @@ Class: HP:0004496
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the posterior nasal aperture."
  Annotations: oio:hasExactSynonym "Atresia of the posterior nasal aperture"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0004771 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some posterior nasal aperture and 'qualifier' some 'abnormal')
-
-Class: UBERON:0004771 ## posterior nasal aperture
-## {"entity": "UBERON:0004771"}
-Class: HP:0004496
- Annotations: rdfs:label "Posterior nasal aperture atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the posterior nasal aperture."
- Annotations: oio:hasExactSynonym "Atresia of the posterior nasal aperture"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0004771 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some posterior nasal aperture and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002012 ## pulmonary artery
-## {"entity": "UBERON:0002012"}
-Class: HP:0004935
- Annotations: rdfs:label "Pulmonary artery atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the pulmonary artery."
- Annotations: oio:hasExactSynonym "Atresia of the pulmonary artery"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002012 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some pulmonary artery and 'qualifier' some 'abnormal')
 
 Class: UBERON:0002012 ## pulmonary artery
 ## {"entity": "UBERON:0002012"}
@@ -237,14 +141,6 @@ Class: HP:0005235
  Annotations: oio:hasExactSynonym "Atresia of the jejunum"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002115 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some jejunum and 'qualifier' some 'abnormal')
 
-Class: UBERON:0002115 ## jejunum
-## {"entity": "UBERON:0002115"}
-Class: HP:0005235
- Annotations: rdfs:label "Jejunum atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the jejunum."
- Annotations: oio:hasExactSynonym "Atresia of the jejunum"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002115 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some jejunum and 'qualifier' some 'abnormal')
-
 Class: UBERON:0003703 ## extrahepatic bile duct
 ## {"entity": "UBERON:0003703"}
 Class: HP:0005242
@@ -252,22 +148,6 @@ Class: HP:0005242
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the extrahepatic bile duct."
  Annotations: oio:hasExactSynonym "Atresia of the extrahepatic bile duct"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0003703 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some extrahepatic bile duct and 'qualifier' some 'abnormal')
-
-Class: UBERON:0003703 ## extrahepatic bile duct
-## {"entity": "UBERON:0003703"}
-Class: HP:0005242
- Annotations: rdfs:label "Extrahepatic bile duct atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the extrahepatic bile duct."
- Annotations: oio:hasExactSynonym "Atresia of the extrahepatic bile duct"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0003703 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some extrahepatic bile duct and 'qualifier' some 'abnormal')
-
-Class: UBERON:0003704 ## intrahepatic bile duct
-## {"entity": "UBERON:0003704"}
-Class: HP:0005248
- Annotations: rdfs:label "Intrahepatic bile duct atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the intrahepatic bile duct."
- Annotations: oio:hasExactSynonym "Atresia of the intrahepatic bile duct"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0003704 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some intrahepatic bile duct and 'qualifier' some 'abnormal')
 
 Class: UBERON:0003704 ## intrahepatic bile duct
 ## {"entity": "UBERON:0003704"}
@@ -285,14 +165,6 @@ Class: HP:0005912
  Annotations: oio:hasExactSynonym "Atresia of the biliary tree"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001173 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some biliary tree and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001173 ## biliary tree
-## {"entity": "UBERON:0001173"}
-Class: HP:0005912
- Annotations: rdfs:label "Biliary tree atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the biliary tree."
- Annotations: oio:hasExactSynonym "Atresia of the biliary tree"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001173 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some biliary tree and 'qualifier' some 'abnormal')
-
 Class: UBERON:0000056 ## ureter
 ## {"entity": "UBERON:0000056"}
 Class: HP:0005999
@@ -300,22 +172,6 @@ Class: HP:0005999
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the ureter."
  Annotations: oio:hasExactSynonym "Atresia of the ureter"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000056 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some ureter and 'qualifier' some 'abnormal')
-
-Class: UBERON:0000056 ## ureter
-## {"entity": "UBERON:0000056"}
-Class: HP:0005999
- Annotations: rdfs:label "Ureter atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the ureter."
- Annotations: oio:hasExactSynonym "Atresia of the ureter"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000056 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some ureter and 'qualifier' some 'abnormal')
-
-Class: UBERON:0010284 ## lacrimal punctum
-## {"entity": "UBERON:0010284"}
-Class: HP:0007820
- Annotations: rdfs:label "Lacrimal punctum atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the lacrimal punctum."
- Annotations: oio:hasExactSynonym "Atresia of the lacrimal punctum"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0010284 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some lacrimal punctum and 'qualifier' some 'abnormal')
 
 Class: UBERON:0010284 ## lacrimal punctum
 ## {"entity": "UBERON:0010284"}
@@ -333,14 +189,6 @@ Class: HP:0008750
  Annotations: oio:hasExactSynonym "Atresia of the larynx"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001737 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some larynx and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001737 ## larynx
-## {"entity": "UBERON:0001737"}
-Class: HP:0008750
- Annotations: rdfs:label "Larynx atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the larynx."
- Annotations: oio:hasExactSynonym "Atresia of the larynx"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001737 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some larynx and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001155 ## colon
 ## {"entity": "UBERON:0001155"}
 Class: HP:0010448
@@ -348,22 +196,6 @@ Class: HP:0010448
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the colon."
  Annotations: oio:hasExactSynonym "Atresia of the colon"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001155 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some colon and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001155 ## colon
-## {"entity": "UBERON:0001155"}
-Class: HP:0010448
- Annotations: rdfs:label "Colon atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the colon."
- Annotations: oio:hasExactSynonym "Atresia of the colon"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001155 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some colon and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002137 ## aortic valve
-## {"entity": "UBERON:0002137"}
-Class: HP:0010883
- Annotations: rdfs:label "Aortic valve atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the aortic valve."
- Annotations: oio:hasExactSynonym "Atresia of the aortic valve"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002137 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some aortic valve and 'qualifier' some 'abnormal')
 
 Class: UBERON:0002137 ## aortic valve
 ## {"entity": "UBERON:0002137"}
@@ -381,14 +213,6 @@ Class: HP:0011100
  Annotations: oio:hasExactSynonym "Atresia of the intestine"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000160 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some intestine and 'qualifier' some 'abnormal')
 
-Class: UBERON:0000160 ## intestine
-## {"entity": "UBERON:0000160"}
-Class: HP:0011100
- Annotations: rdfs:label "Intestine atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the intestine."
- Annotations: oio:hasExactSynonym "Atresia of the intestine"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0000160 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some intestine and 'qualifier' some 'abnormal')
-
 Class: UBERON:0002116 ## ileum
 ## {"entity": "UBERON:0002116"}
 Class: HP:0011102
@@ -396,22 +220,6 @@ Class: HP:0011102
  Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the ileum."
  Annotations: oio:hasExactSynonym "Atresia of the ileum"
  EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002116 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some ileum and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002116 ## ileum
-## {"entity": "UBERON:0002116"}
-Class: HP:0011102
- Annotations: rdfs:label "Ileum atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the ileum."
- Annotations: oio:hasExactSynonym "Atresia of the ileum"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0002116 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some ileum and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001052 ## rectum
-## {"entity": "UBERON:0001052"}
-Class: HP:0025023
- Annotations: rdfs:label "Rectum atresia"
- Annotations: IAO:0000115 "A developmental defect resulting in complete obliteration of the lumen of the rectum."
- Annotations: oio:hasExactSynonym "Atresia of the rectum"
- EquivalentTo: BFO:0000051 some (PATO:0001819 and RO:0000052 some UBERON:0001052 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atretic' and 'inheres_in' some rectum and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001052 ## rectum
 ## {"entity": "UBERON:0001052"}

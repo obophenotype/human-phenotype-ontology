@@ -2,25 +2,25 @@ Prefix: : <http://purl.obolibrary.org/obo/>
 Prefix: IAO: <http://purl.obolibrary.org/obo/IAO_>
 Prefix: DOSDP: <http://geneontology.org/foo/>
 Prefix: oio: <http://www.geneontology.org/formats/oboInOwl#>
-Prefix: BFO: <http://purl.obolibrary.org/obo/BFO_>
-Prefix: CL: <http://purl.obolibrary.org/obo/CL_>
-Prefix: ExO: <http://purl.obolibrary.org/obo/ExO_>
-Prefix: GOCHE: <http://purl.obolibrary.org/obo/GOCHE_>
-Prefix: OBA: <http://purl.obolibrary.org/obo/OBA_>
-Prefix: CHEBI: <http://purl.obolibrary.org/obo/CHEBI_>
-Prefix: SO: <http://purl.obolibrary.org/obo/SO_>
-Prefix: PR: <http://purl.obolibrary.org/obo/PR_>
-Prefix: UBERON: <http://purl.obolibrary.org/obo/UBERON_>
-Prefix: NPO: <http://purl.obolibrary.org/obo/NPO_>
-Prefix: ENVO: <http://purl.obolibrary.org/obo/ENVO_>
-Prefix: RO: <http://purl.obolibrary.org/obo/RO_>
 Prefix: ECTO: <http://purl.obolibrary.org/obo/ECTO_>
+Prefix: NBO: <http://purl.obolibrary.org/obo/NBO_>
+Prefix: ExO: <http://purl.obolibrary.org/obo/ExO_>
+Prefix: PO: <http://purl.obolibrary.org/obo/PO_>
 Prefix: HP: <http://purl.obolibrary.org/obo/HP_>
 Prefix: PATO: <http://purl.obolibrary.org/obo/PATO_>
+Prefix: ENVO: <http://purl.obolibrary.org/obo/ENVO_>
+Prefix: RO: <http://purl.obolibrary.org/obo/RO_>
+Prefix: CL: <http://purl.obolibrary.org/obo/CL_>
+Prefix: GOCHE: <http://purl.obolibrary.org/obo/GOCHE_>
+Prefix: OBA: <http://purl.obolibrary.org/obo/OBA_>
 Prefix: GO: <http://purl.obolibrary.org/obo/GO_>
-Prefix: NBO: <http://purl.obolibrary.org/obo/NBO_>
+Prefix: SO: <http://purl.obolibrary.org/obo/SO_>
+Prefix: UBERON: <http://purl.obolibrary.org/obo/UBERON_>
+Prefix: BFO: <http://purl.obolibrary.org/obo/BFO_>
+Prefix: CHEBI: <http://purl.obolibrary.org/obo/CHEBI_>
+Prefix: NPO: <http://purl.obolibrary.org/obo/NPO_>
 Prefix: NCIT: <http://purl.obolibrary.org/obo/NCIT_>
-Prefix: PO: <http://purl.obolibrary.org/obo/PO_>
+Prefix: PR: <http://purl.obolibrary.org/obo/PR_>
 
  ## Auto-generated
 
@@ -30,11 +30,11 @@ AnnotationProperty: atrophy/entity
 AnnotationProperty: DOSDP:applies-pattern
 AnnotationProperty: oio:hasRelatedSynonym
 AnnotationProperty: oio:hasExactSynonym
-Class: PATO:0000460 ## abnormal
 Class: PATO:0001623 ## atrophied
+Class: PATO:0000460 ## abnormal
 ObjectProperty: BFO:0000051 ## has_part
-ObjectProperty: RO:0002180 ## qualifier
 ObjectProperty: RO:0000052 ## inheres_in
+ObjectProperty: RO:0002180 ## qualifier
 ## Auto-generated classes
 
 Class: UBERON:0000473 ## testis
@@ -45,14 +45,6 @@ Class: HP:0000029
  Annotations: oio:hasExactSynonym "Atrophy of the testis"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0000473 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some testis and 'qualifier' some 'abnormal')
 
-Class: UBERON:0000473 ## testis
-## {"entity": "UBERON:0000473"}
-Class: HP:0000029
- Annotations: rdfs:label "Testis atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of testis tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the testis"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0000473 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some testis and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001231 ## nephron tubule
 ## {"entity": "UBERON:0001231"}
 Class: HP:0000092
@@ -60,22 +52,6 @@ Class: HP:0000092
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of nephron tubule tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the nephron tubule"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001231 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some nephron tubule and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001231 ## nephron tubule
-## {"entity": "UBERON:0001231"}
-Class: HP:0000092
- Annotations: rdfs:label "Nephron tubule atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of nephron tubule tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the nephron tubule"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001231 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some nephron tubule and 'qualifier' some 'abnormal')
-
-Class: UBERON:0000941 ## cranial nerve II
-## {"entity": "UBERON:0000941"}
-Class: HP:0000648
- Annotations: rdfs:label "Cranial nerve II atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of cranial nerve II tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the cranial nerve II"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0000941 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cranial nerve II and 'qualifier' some 'abnormal')
 
 Class: UBERON:0000941 ## cranial nerve II
 ## {"entity": "UBERON:0000941"}
@@ -93,14 +69,6 @@ Class: HP:0001089
  Annotations: oio:hasExactSynonym "Atrophy of the iris"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001769 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some iris and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001769 ## iris
-## {"entity": "UBERON:0001769"}
-Class: HP:0001089
- Annotations: rdfs:label "Iris atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of iris tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the iris"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001769 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some iris and 'qualifier' some 'abnormal')
-
 Class: UBERON:0003951 ## ocular fundus
 ## {"entity": "UBERON:0003951"}
 Class: HP:0001099
@@ -108,22 +76,6 @@ Class: HP:0001099
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of ocular fundus tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the ocular fundus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0003951 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some ocular fundus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0003951 ## ocular fundus
-## {"entity": "UBERON:0003951"}
-Class: HP:0001099
- Annotations: rdfs:label "Ocular fundus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of ocular fundus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the ocular fundus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0003951 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some ocular fundus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002037 ## cerebellum
-## {"entity": "UBERON:0002037"}
-Class: HP:0001272
- Annotations: rdfs:label "Cerebellum atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of cerebellum tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the cerebellum"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002037 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebellum and 'qualifier' some 'abnormal')
 
 Class: UBERON:0002037 ## cerebellum
 ## {"entity": "UBERON:0002037"}
@@ -141,14 +93,6 @@ Class: HP:0001465
  Annotations: oio:hasExactSynonym "Atrophy of the musculature of shoulder"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004476 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of shoulder and 'qualifier' some 'abnormal')
 
-Class: UBERON:0004476 ## musculature of shoulder
-## {"entity": "UBERON:0004476"}
-Class: HP:0001465
- Annotations: rdfs:label "Musculature of shoulder atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of shoulder tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the musculature of shoulder"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004476 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of shoulder and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001225 ## cortex of kidney
 ## {"entity": "UBERON:0001225"}
 Class: HP:0002048
@@ -156,22 +100,6 @@ Class: HP:0002048
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of cortex of kidney tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the cortex of kidney"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001225 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cortex of kidney and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001225 ## cortex of kidney
-## {"entity": "UBERON:0001225"}
-Class: HP:0002048
- Annotations: rdfs:label "Cortex of kidney atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of cortex of kidney tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the cortex of kidney"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001225 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cortex of kidney and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001893 ## telencephalon
-## {"entity": "UBERON:0001893"}
-Class: HP:0002059
- Annotations: rdfs:label "Telencephalon atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of telencephalon tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the telencephalon"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001893 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some telencephalon and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001893 ## telencephalon
 ## {"entity": "UBERON:0001893"}
@@ -189,14 +117,6 @@ Class: HP:0002120
  Annotations: oio:hasExactSynonym "Atrophy of the cerebral cortex"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0000956 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebral cortex and 'qualifier' some 'abnormal')
 
-Class: UBERON:0000956 ## cerebral cortex
-## {"entity": "UBERON:0000956"}
-Class: HP:0002120
- Annotations: rdfs:label "Cerebral cortex atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of cerebral cortex tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the cerebral cortex"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0000956 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebral cortex and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001873 ## caudate nucleus
 ## {"entity": "UBERON:0001873"}
 Class: HP:0002340
@@ -204,22 +124,6 @@ Class: HP:0002340
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of caudate nucleus tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the caudate nucleus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001873 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some caudate nucleus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001873 ## caudate nucleus
-## {"entity": "UBERON:0001873"}
-Class: HP:0002340
- Annotations: rdfs:label "Caudate nucleus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of caudate nucleus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the caudate nucleus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001873 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some caudate nucleus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0018254 ## skeletal musculature
-## {"entity": "UBERON:0018254"}
-Class: HP:0003202
- Annotations: rdfs:label "Skeletal musculature atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of skeletal musculature tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the skeletal musculature"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0018254 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some skeletal musculature and 'qualifier' some 'abnormal')
 
 Class: UBERON:0018254 ## skeletal musculature
 ## {"entity": "UBERON:0018254"}
@@ -237,14 +141,6 @@ Class: HP:0003393
  Annotations: oio:hasExactSynonym "Atrophy of the thenar muscle"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0014376 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some thenar muscle and 'qualifier' some 'abnormal')
 
-Class: UBERON:0014376 ## thenar muscle
-## {"entity": "UBERON:0014376"}
-Class: HP:0003393
- Annotations: rdfs:label "Thenar muscle atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of thenar muscle tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the thenar muscle"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0014376 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some thenar muscle and 'qualifier' some 'abnormal')
-
 Class: UBERON:0002988 ## first dorsal interosseous of manus
 ## {"entity": "UBERON:0002988"}
 Class: HP:0003426
@@ -252,22 +148,6 @@ Class: HP:0003426
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of first dorsal interosseous of manus tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the first dorsal interosseous of manus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002988 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some first dorsal interosseous of manus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002988 ## first dorsal interosseous of manus
-## {"entity": "UBERON:0002988"}
-Class: HP:0003426
- Annotations: rdfs:label "First dorsal interosseous of manus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of first dorsal interosseous of manus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the first dorsal interosseous of manus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002988 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some first dorsal interosseous of manus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0004471 ## musculature of pectoral girdle
-## {"entity": "UBERON:0004471"}
-Class: HP:0003724
- Annotations: rdfs:label "Musculature of pectoral girdle atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of pectoral girdle tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the musculature of pectoral girdle"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004471 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of pectoral girdle and 'qualifier' some 'abnormal')
 
 Class: UBERON:0004471 ## musculature of pectoral girdle
 ## {"entity": "UBERON:0004471"}
@@ -285,14 +165,6 @@ Class: HP:0003797
  Annotations: oio:hasExactSynonym "Atrophy of the musculature of limb"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004480 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of limb and 'qualifier' some 'abnormal')
 
-Class: UBERON:0004480 ## musculature of limb
-## {"entity": "UBERON:0004480"}
-Class: HP:0003797
- Annotations: rdfs:label "Musculature of limb atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of limb tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the musculature of limb"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004480 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of limb and 'qualifier' some 'abnormal')
-
 Class: UBERON:0002097 ## skin of body
 ## {"entity": "UBERON:0002097"}
 Class: HP:0004334
@@ -300,22 +172,6 @@ Class: HP:0004334
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of skin of body tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the skin of body"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002097 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some skin of body and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002097 ## skin of body
-## {"entity": "UBERON:0002097"}
-Class: HP:0004334
- Annotations: rdfs:label "Skin of body atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of skin of body tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the skin of body"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002097 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some skin of body and 'qualifier' some 'abnormal')
-
-Class: UBERON:0004103 ## alveolar ridge
-## {"entity": "UBERON:0004103"}
-Class: HP:0006308
- Annotations: rdfs:label "Alveolar ridge atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of alveolar ridge tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the alveolar ridge"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004103 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some alveolar ridge and 'qualifier' some 'abnormal')
 
 Class: UBERON:0004103 ## alveolar ridge
 ## {"entity": "UBERON:0004103"}
@@ -333,14 +189,6 @@ Class: HP:0006855
  Annotations: oio:hasExactSynonym "Atrophy of the cerebellar vermis"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004720 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebellar vermis and 'qualifier' some 'abnormal')
 
-Class: UBERON:0004720 ## cerebellar vermis
-## {"entity": "UBERON:0004720"}
-Class: HP:0006855
- Annotations: rdfs:label "Cerebellar vermis atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of cerebellar vermis tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the cerebellar vermis"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004720 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebellar vermis and 'qualifier' some 'abnormal')
-
 Class: UBERON:0002132 ## dentate nucleus
 ## {"entity": "UBERON:0002132"}
 Class: HP:0007047
@@ -348,22 +196,6 @@ Class: HP:0007047
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of dentate nucleus tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the dentate nucleus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002132 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some dentate nucleus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002132 ## dentate nucleus
-## {"entity": "UBERON:0002132"}
-Class: HP:0007047
- Annotations: rdfs:label "Dentate nucleus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of dentate nucleus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the dentate nucleus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002132 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some dentate nucleus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002707 ## corticospinal tract
-## {"entity": "UBERON:0002707"}
-Class: HP:0007117
- Annotations: rdfs:label "Corticospinal tract atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of corticospinal tract tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the corticospinal tract"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002707 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some corticospinal tract and 'qualifier' some 'abnormal')
 
 Class: UBERON:0002707 ## corticospinal tract
 ## {"entity": "UBERON:0002707"}
@@ -381,14 +213,6 @@ Class: HP:0007181
  Annotations: oio:hasExactSynonym "Atrophy of the interosseous muscle of manus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001502 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some interosseous muscle of manus and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001502 ## interosseous muscle of manus
-## {"entity": "UBERON:0001502"}
-Class: HP:0007181
- Annotations: rdfs:label "Interosseous muscle of manus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of interosseous muscle of manus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the interosseous muscle of manus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001502 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some interosseous muscle of manus and 'qualifier' some 'abnormal')
-
 Class: UBERON:0004482 ## musculature of lower limb
 ## {"entity": "UBERON:0004482"}
 Class: HP:0007210
@@ -396,22 +220,6 @@ Class: HP:0007210
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of lower limb tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the musculature of lower limb"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004482 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of lower limb and 'qualifier' some 'abnormal')
-
-Class: UBERON:0004482 ## musculature of lower limb
-## {"entity": "UBERON:0004482"}
-Class: HP:0007210
- Annotations: rdfs:label "Musculature of lower limb atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of lower limb tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the musculature of lower limb"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004482 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of lower limb and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002336 ## corpus callosum
-## {"entity": "UBERON:0002336"}
-Class: HP:0007371
- Annotations: rdfs:label "Corpus callosum atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of corpus callosum tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the corpus callosum"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002336 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some corpus callosum and 'qualifier' some 'abnormal')
 
 Class: UBERON:0002336 ## corpus callosum
 ## {"entity": "UBERON:0002336"}
@@ -429,14 +237,6 @@ Class: HP:0007373
  Annotations: oio:hasExactSynonym "Atrophy of the motor neuron"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some CL:0000100 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some motor neuron and 'qualifier' some 'abnormal')
 
-Class: CL:0000100 ## motor neuron
-## {"entity": "CL:0000100"}
-Class: HP:0007373
- Annotations: rdfs:label "Motor neuron atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of motor neuron tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the motor neuron"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some CL:0000100 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some motor neuron and 'qualifier' some 'abnormal')
-
 Class: UBERON:0002129 ## cerebellar cortex
 ## {"entity": "UBERON:0002129"}
 Class: HP:0008278
@@ -444,22 +244,6 @@ Class: HP:0008278
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of cerebellar cortex tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the cerebellar cortex"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002129 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebellar cortex and 'qualifier' some 'abnormal')
-
-Class: UBERON:0002129 ## cerebellar cortex
-## {"entity": "UBERON:0002129"}
-Class: HP:0008278
- Annotations: rdfs:label "Cerebellar cortex atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of cerebellar cortex tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the cerebellar cortex"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002129 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some cerebellar cortex and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001497 ## muscle of pelvic girdle
-## {"entity": "UBERON:0001497"}
-Class: HP:0008988
- Annotations: rdfs:label "Muscle of pelvic girdle atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of muscle of pelvic girdle tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the muscle of pelvic girdle"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001497 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some muscle of pelvic girdle and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001497 ## muscle of pelvic girdle
 ## {"entity": "UBERON:0001497"}
@@ -477,14 +261,6 @@ Class: HP:0009049
  Annotations: oio:hasExactSynonym "Atrophy of the peroneus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0009132 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some peroneus and 'qualifier' some 'abnormal')
 
-Class: UBERON:0009132 ## peroneus
-## {"entity": "UBERON:0009132"}
-Class: HP:0009049
- Annotations: rdfs:label "Peroneus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of peroneus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the peroneus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0009132 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some peroneus and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001377 ## quadriceps femoris
 ## {"entity": "UBERON:0001377"}
 Class: HP:0009050
@@ -492,22 +268,6 @@ Class: HP:0009050
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of quadriceps femoris tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the quadriceps femoris"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001377 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some quadriceps femoris and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001377 ## quadriceps femoris
-## {"entity": "UBERON:0001377"}
-Class: HP:0009050
- Annotations: rdfs:label "Quadriceps femoris atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of quadriceps femoris tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the quadriceps femoris"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001377 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some quadriceps femoris and 'qualifier' some 'abnormal')
-
-Class: UBERON:0004481 ## musculature of upper limb
-## {"entity": "UBERON:0004481"}
-Class: HP:0009129
- Annotations: rdfs:label "Musculature of upper limb atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of upper limb tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the musculature of upper limb"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004481 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of upper limb and 'qualifier' some 'abnormal')
 
 Class: UBERON:0004481 ## musculature of upper limb
 ## {"entity": "UBERON:0004481"}
@@ -525,14 +285,6 @@ Class: HP:0009130
  Annotations: oio:hasExactSynonym "Atrophy of the musculature of manus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004489 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of manus and 'qualifier' some 'abnormal')
 
-Class: UBERON:0004489 ## musculature of manus
-## {"entity": "UBERON:0004489"}
-Class: HP:0009130
- Annotations: rdfs:label "Musculature of manus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of musculature of manus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the musculature of manus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0004489 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some musculature of manus and 'qualifier' some 'abnormal')
-
 Class: UBERON:0001213 ## intestinal villus
 ## {"entity": "UBERON:0001213"}
 Class: HP:0011473
@@ -540,22 +292,6 @@ Class: HP:0011473
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of intestinal villus tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the intestinal villus"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001213 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some intestinal villus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001213 ## intestinal villus
-## {"entity": "UBERON:0001213"}
-Class: HP:0011473
- Annotations: rdfs:label "Intestinal villus atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of intestinal villus tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the intestinal villus"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001213 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some intestinal villus and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001495 ## pectoral muscle
-## {"entity": "UBERON:0001495"}
-Class: HP:0012037
- Annotations: rdfs:label "Pectoral muscle atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of pectoral muscle tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the pectoral muscle"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001495 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some pectoral muscle and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001495 ## pectoral muscle
 ## {"entity": "UBERON:0001495"}
@@ -573,14 +309,6 @@ Class: HP:0012241
  Annotations: oio:hasExactSynonym "Atrophy of the levator palpebrae superioris"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001604 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some levator palpebrae superioris and 'qualifier' some 'abnormal')
 
-Class: UBERON:0001604 ## levator palpebrae superioris
-## {"entity": "UBERON:0001604"}
-Class: HP:0012241
- Annotations: rdfs:label "Levator palpebrae superioris atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of levator palpebrae superioris tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the levator palpebrae superioris"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001604 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some levator palpebrae superioris and 'qualifier' some 'abnormal')
-
 Class: UBERON:0006533 ## rectus extraocular muscle
 ## {"entity": "UBERON:0006533"}
 Class: HP:0012242
@@ -588,22 +316,6 @@ Class: HP:0012242
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of rectus extraocular muscle tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the rectus extraocular muscle"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0006533 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some rectus extraocular muscle and 'qualifier' some 'abnormal')
-
-Class: UBERON:0006533 ## rectus extraocular muscle
-## {"entity": "UBERON:0006533"}
-Class: HP:0012242
- Annotations: rdfs:label "Rectus extraocular muscle atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of rectus extraocular muscle tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the rectus extraocular muscle"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0006533 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some rectus extraocular muscle and 'qualifier' some 'abnormal')
-
-Class: UBERON:0000955 ## brain
-## {"entity": "UBERON:0000955"}
-Class: HP:0012444
- Annotations: rdfs:label "Brain atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of brain tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the brain"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0000955 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some brain and 'qualifier' some 'abnormal')
 
 Class: UBERON:0000955 ## brain
 ## {"entity": "UBERON:0000955"}
@@ -621,14 +333,6 @@ Class: HP:0012585
  Annotations: oio:hasExactSynonym "Atrophy of the kidney"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002113 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some kidney and 'qualifier' some 'abnormal')
 
-Class: UBERON:0002113 ## kidney
-## {"entity": "UBERON:0002113"}
-Class: HP:0012585
- Annotations: rdfs:label "Kidney atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of kidney tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the kidney"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0002113 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some kidney and 'qualifier' some 'abnormal')
-
 Class: UBERON:0007709 ## superior cerebellar peduncle of pons
 ## {"entity": "UBERON:0007709"}
 Class: HP:0030286
@@ -636,22 +340,6 @@ Class: HP:0030286
  Annotations: IAO:0000115 "Partial or complete wasting (loss) of superior cerebellar peduncle of pons tissue that was once present."
  Annotations: oio:hasExactSynonym "Atrophy of the superior cerebellar peduncle of pons"
  EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0007709 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some superior cerebellar peduncle of pons and 'qualifier' some 'abnormal')
-
-Class: UBERON:0007709 ## superior cerebellar peduncle of pons
-## {"entity": "UBERON:0007709"}
-Class: HP:0030286
- Annotations: rdfs:label "Superior cerebellar peduncle of pons atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of superior cerebellar peduncle of pons tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the superior cerebellar peduncle of pons"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0007709 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some superior cerebellar peduncle of pons and 'qualifier' some 'abnormal')
-
-Class: UBERON:0001378 ## rectus femoris
-## {"entity": "UBERON:0001378"}
-Class: HP:0040191
- Annotations: rdfs:label "Rectus femoris atrophy"
- Annotations: IAO:0000115 "Partial or complete wasting (loss) of rectus femoris tissue that was once present."
- Annotations: oio:hasExactSynonym "Atrophy of the rectus femoris"
- EquivalentTo: BFO:0000051 some (PATO:0001623 and RO:0000052 some UBERON:0001378 and RO:0002180 some PATO:0000460) ## 'has_part' some ('atrophied' and 'inheres_in' some rectus femoris and 'qualifier' some 'abnormal')
 
 Class: UBERON:0001378 ## rectus femoris
 ## {"entity": "UBERON:0001378"}
