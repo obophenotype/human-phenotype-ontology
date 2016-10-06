@@ -208,17 +208,15 @@ MIREOTING
 ---------
 Sometimes you may wish to reference a class from another ontology in the context of editing HP, and the term may not yet be mireoted. You can currently pull in a new term from GO, Uberon, Chebi, CL, PATO or PR.
 
-1. Identify the class to be included, and copy the URI (for example, look in Ontobee or open file in separate Protege instance and do control U to copy the URI). Note the superclass(es) of the class.
+1. Identify the class to be included, and copy the URI (for example, look in Ontobee or open file in separate Protege instance and do control U to copy the URI).
 
-2. Whilst editing HP, change the "Active Ontology" file in the top header to the import file that will house the new class, for example, uberon_import.owl
+2. Go to the upheno-repo (https://github.com/obophenotype/upheno) and add the URI to the file "imports/imports_requests.owl". E.g. add a line 
+SubClassOf(<http://purl.obolibrary.org/obo/FAKE_1> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/upheno/imports/imports_requests.obo#fake> <http://purl.obolibrary.org/obo/GO_0061696>))
+if you are trying to add "GO_0061696"
 
-3. Add a new class under the appropriate superclass in the import file, change the URI by doing control U and pasting the URI as per above. Make sure to add the label as an annotation so that you can find the class later.
+3. Save, commit and push (!) the file "imports/imports_requests.owl"
 
-4. Save the file (note that you should save in RDF/XML with the "use XML entities" checked in the Preferences/Save tab.
-
-5. Do a Diff to make sure you are saving in the proper file format.
-
-*6. Advanced editors with Owltools - run "make imports", for example, make imports/uberon_import.owl  in the CL ontology directory. This will pull in the closure and add the metadata.
+4. Advanced editors with Owltools - run "make imports", for example, make imports/go_import.owl  in the upheno ontology directory. This will pull in the closure and add the metadata.
 
 CHECKLIST
 ---------
