@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/obophenotype/human-phenotype-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/human-phenotype-ontology)
 
+# Contact
+
+If you have questions, please contact dr.sebastian.koehler@gmail.com or peter.robinson@jax.org
 
 
 #Important
