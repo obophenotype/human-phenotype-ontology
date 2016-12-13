@@ -59,4 +59,6 @@ diff.txt: hp-previous.owl
 # REPORTS
 
 reports/%.csv: hp-inferred.owl sparql/%.sparql
-	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+	wget -N http://apache.mirror.digionline.de/jena/binaries/apache-jena-3.1.1.zip
+	unzip apache-jena-3.1.1.zip
+	apache-jena-3.1.1/bin/arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
