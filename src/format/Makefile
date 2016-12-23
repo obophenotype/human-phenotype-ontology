@@ -4,8 +4,9 @@
 # are formatting issues. At the moment we test whether 
 # - tab characters are found
 # - the command iconv is successful
+# - subclass axioms for HP classes are pointing to other HP classes
 # 
-# Author: Sebastian Koehler
+# Author: Sebastian Koehler (dr.sebastian.koehler@gmail.com, http://drseb.github.io)
 ###############################################################
 ###############################################################
 
@@ -15,7 +16,7 @@ ONTO?=../ontology/hp-edit.owl
 
 # make everything !
 .PHONY: all
-all: check-tab check-encoding
+all: check-tab check-encoding check-subclass-axioms
 
 
 ###############################################################
@@ -28,6 +29,14 @@ check-tab:
 	then echo found tab and tabs are not allowed; exit 1;\
 	else echo Did not find any tab character; \
 	fi
+
+.PHONY: check-subclass-axioms
+check-subclass-axioms:
+	if egrep 'SubClassOf\(<http://purl.obolibrary.org/obo/HP_\d{7}> <http://purl.obolibrary.org/obo/[^H][^P]' $(ONTO); \ 
+	then echo Invalid subclass axiom for HP class (non-HP-class set to super-class); exit 1;\
+	else echo Subclass axioms seem fine so far; \
+	fi
+	
 	
 # in this step the files are read
 # and the suggestions are generated
