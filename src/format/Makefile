@@ -32,11 +32,10 @@ check-tab:
 
 .PHONY: check-subclass-axioms
 check-subclass-axioms:
-	if egrep 'SubClassOf\(<http://purl.obolibrary.org/obo/HP_\d{7}> <http://purl.obolibrary.org/obo/[^H][^P]' $(ONTO); \ 
-	then echo Invalid subclass axiom for HP class (non-HP-class set to super-class); exit 1;\
-	else echo Subclass axioms seem fine so far; \
+	if grep -E '^SubClassOf\(<http://purl.obolibrary.org/obo/HP_\d{7}> <http://purl.obolibrary.org/obo/[^H][^P]' $(ONTO); \
+	then echo Invalid subclass axiom for HP class-only intra-HP-axioms allowed; exit 1;\
+	else echo Did not find problems with subclass axioms; \
 	fi
-	
 	
 # in this step the files are read
 # and the suggestions are generated
