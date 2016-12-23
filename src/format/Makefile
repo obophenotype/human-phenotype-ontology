@@ -12,7 +12,7 @@
 
 # the folder where the omim.txt and latest annotationfile are stored
 ONTO?=../ontology/hp-edit.owl
-CHECK_SUBCLASS_AXIOMS?=java -jar checkSubclassAxioms.jar
+CHECK_SUBCLASS_AXIOMS?=java -jar CheckSubclassAxioms.jar
 
 # make everything !
 .PHONY: all
