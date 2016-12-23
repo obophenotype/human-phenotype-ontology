@@ -2,7 +2,6 @@
 notifications: 
   email:
     recipients:
-      - phenotype-ontologies-editors@googlegroups.com
       - dr.sebastian.koehler@gmail.com
       - Peter.Robinson@jax.org
     on_success: change
@@ -18,6 +17,8 @@ env:
 
 # simple format and ending tests
 before_install:
+  - cd $CI_HOME
+  - if egrep 'SubClassOf\(<http://purl.obolibrary.org/obo/HP_\d{7}> <http://purl.obolibrary.org/obo/[^H][^P]' src/ontology/hp-edit.owl ; then echo "invalid subclass axiom for HP class";exit 1; fi
   - cd $CI_HOME  
   - cd src/format/
   - make
