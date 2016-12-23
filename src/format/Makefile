@@ -12,7 +12,7 @@
 
 # the folder where the omim.txt and latest annotationfile are stored
 ONTO?=../ontology/hp-edit.owl
-
+CHECK_SUBCLASS_AXIOMS?=java -jar checkSubclassAxioms.jar
 
 # make everything !
 .PHONY: all
@@ -32,10 +32,7 @@ check-tab:
 
 .PHONY: check-subclass-axioms
 check-subclass-axioms:
-	if grep -E '^SubClassOf\(<http://purl.obolibrary.org/obo/HP_\d{7}> <http://purl.obolibrary.org/obo/[^H][^P]' $(ONTO); \
-	then echo Invalid subclass axiom for HP class-only intra-HP-axioms allowed; exit 1;\
-	else echo Did not find problems with subclass axioms; \
-	fi
+	$(CHECK_SUBCLASS_AXIOMS) $(ONTO)
 	
 # in this step the files are read
 # and the suggestions are generated
