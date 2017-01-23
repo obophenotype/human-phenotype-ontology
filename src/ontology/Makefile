@@ -60,9 +60,7 @@ diff.txt: hp-previous.owl
 # REPORTS
 
 reports/%.csv: hp-inferred.owl sparql/%.sparql
-	wget -N http://apache.mirror.digionline.de/jena/binaries/apache-jena-3.1.1.zip
-	unzip -n apache-jena-3.1.1.zip
-	apache-jena-3.1.1/bin/arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
 
 include Makefile-ODP
 
