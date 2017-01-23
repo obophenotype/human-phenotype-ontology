@@ -1,0 +1,17 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix hp: <http://purl.obolibrary.org/obo/hp.owl#>
+prefix obo: <http://purl.obolibrary.org/obo/>
+
+select distinct (STR(?term) AS ?IRI) (STR(?label) AS ?primary_label) (STR(?def) AS ?definition) (STR(?prop) AS ?synonym_prop) (STR(?value) AS ?synonym_label)
+where
+{
+?term ?prop ?value .
+?term rdfs:label ?label .
+OPTIONAL { ?term obo:IAO_0000115 ?def . }
+?axiom owl:annotatedSource ?term .
+?axiom owl:annotatedProperty ?prop .
+?axiom owl:annotatedTarget ?value .
+?axiom hp:layperson ?blah .
+}
