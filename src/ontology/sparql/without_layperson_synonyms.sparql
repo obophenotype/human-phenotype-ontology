@@ -3,6 +3,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX hp: <http://purl.obolibrary.org/obo/hp.owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 
 # Encountered some newlines in names and definitions
 SELECT DISTINCT (STR(?term) AS ?IRI) (REPLACE(STR(?label), "\n", " ") AS ?primary_label) (REPLACE(STR(?def), "\n", " ") AS ?definition)
@@ -16,6 +17,6 @@ FILTER NOT EXISTS {
 ?axiom owl:annotatedSource ?term .
 ?axiom owl:annotatedProperty ?prop .
 ?axiom owl:annotatedTarget ?value .
-?axiom hp:layperson ?blah .
+?axiom oio:hasSynonymType hp:layperson .
 }
 }
