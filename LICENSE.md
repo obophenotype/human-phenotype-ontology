@@ -1,1 +1,1 @@
-Please the licence explanation at the [HPO website](http://www.human-phenotype-ontology.org/contao/index.php/license.html)
+Please the license explanation at the [HPO website](http://human-phenotype-ontology.github.io/license.html)
