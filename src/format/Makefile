@@ -4,7 +4,8 @@
 # are formatting issues. At the moment we test whether 
 # - tab characters are found
 # - the command iconv is successful
-# - subclass axioms for HP classes are pointing to other HP classes
+# - only intra-ontology subclass axioms allowed. exceptions to this 
+#   rule are listed in subclass_whitelist.txt
 # 
 # Author: Sebastian Koehler (dr.sebastian.koehler@gmail.com, http://drseb.github.io)
 ###############################################################
