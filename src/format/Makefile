@@ -17,19 +17,28 @@ CHECK_SUBCLASS_AXIOMS?=java -jar CheckSubclassAxioms.jar
 
 # make everything !
 .PHONY: all
-all: check-tab check-encoding check-subclass-axioms
+all: check-tab check-laylabel check-encoding check-subclass-axioms
 
 
 ###############################################################
 
-# this is step one (all the files are downloaded and put into the 
-# folder where they belong)
+# check tab
 .PHONY: check-tab
 check-tab:
 	if grep -P "\t" $(ONTO); \
 	then echo found tab and tabs are not allowed; exit 1;\
 	else echo Did not find any tab character; \
 	fi
+	
+
+# check that no labels are lay
+.PHONY: check-laylabel
+check-laylabel:
+	if grep "rdfs:label.*HP_.*layperson" $(ONTO); \
+	then echo found primary labels asserted as lay. this is forbidden!; exit 1;\
+	else echo Did not find any problems regarding primary labels asserted as lay; \
+	fi
+
 
 .PHONY: check-subclass-axioms
 check-subclass-axioms:
