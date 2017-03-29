@@ -59,10 +59,21 @@ diff.txt: hp-previous.owl
 
 # REPORTS
 
-reports/%.csv: hp-inferred.owl sparql/%.sparql
-	wget -N http://apache.mirror.digionline.de/jena/binaries/apache-jena-3.1.1.zip
+# path to local download of ARQ
+ARQ_PATH=./apache-jena-3.1.1/bin/arq
+
+# path to executable where arq is found.
+# defaults to download location. If you want to use a version
+# on your path: ARQ=arq make reports/...
+ARQ=$(ARQ_PATH)
+
+$(ARQ_PATH):
+	wget -N http://apache.mirror.digionline.de/jena/binaries/apache-jena-3.1.1.zip && \
 	unzip -n apache-jena-3.1.1.zip
-	apache-jena-3.1.1/bin/arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+.PRECIOUS: $(ARQ_PATH)
+
+reports/%.csv: hp-inferred.owl sparql/%.sparql $(ARQ_PATH)
+	$(ARQ) --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
 
 include Makefile-ODP
 
