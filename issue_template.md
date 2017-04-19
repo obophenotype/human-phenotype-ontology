@@ -1,4 +1,4 @@
-If this is a request for a new term, please provide us with the folloing information:
+If this is a request for a new term, please provide us with the folloing information. See also this [introduction](https://github.com/obophenotype/human-phenotype-ontology/wiki/How-to-make-a-good-term-request).
 
 1. Preferred term label (e.g., Asplenia)
 
@@ -16,3 +16,4 @@ If this is a request for a new term, please provide us with the folloing informa
 
 
 6. If you would like a nanoattribution, please indicate your ORCID id or provide a label such as HPO:probinson (organization, first initial-last name)
+
