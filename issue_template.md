@@ -1,4 +1,4 @@
-If this is a request for a new term, please provide us with the folloing information. See also this [introduction](https://github.com/obophenotype/human-phenotype-ontology/wiki/How-to-make-a-good-term-request).
+If this is a request for a new term, please provide us with the folloing information (c.f., https://github.com/obophenotype/human-phenotype-ontology/wiki/How-to-make-a-good-term-request).
 
 1. Preferred term label (e.g., Asplenia)
 
