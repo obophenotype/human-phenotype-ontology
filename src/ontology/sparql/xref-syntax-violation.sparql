@@ -7,6 +7,6 @@ SELECT ?c ?x WHERE
 {
   ?c hasDbXref: ?x .
 
-  FILTER( regex(STR(?x), " ") || regex(STR(?x), ";")  )
+  FILTER( regex(STR(?x), " ") || regex(STR(?x), ";") || STR(?x) = ""  )
 
 }
