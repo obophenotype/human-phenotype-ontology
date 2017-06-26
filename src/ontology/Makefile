@@ -56,6 +56,7 @@ hp-previous.owl: hp-edit.owl
 diff.txt: hp-previous.owl
 	./robot diff -l $< -r hp-edit.owl -o $@
 
+
 # REPORTS
 
 reports/%.csv: hp-inferred.owl sparql/%.sparql
