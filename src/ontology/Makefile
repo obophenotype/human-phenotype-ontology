@@ -59,4 +59,8 @@ diff.txt: hp-previous.owl
 # REPORTS
 
 reports/%.csv: hp-inferred.owl sparql/%.sparql
-	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+	robot query -i $< -s sparql/$*.sparql $@
+#	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+
+reports/hp-edit-%.csv: hp-edit.owl sparql/%.sparql
+	robot query -i $< -s sparql/$*.sparql $@
