@@ -57,13 +57,33 @@ diff.txt: hp-previous.owl
 	./robot diff -l $< -r hp-edit.owl -o $@
 
 
-# REPORTS
+SPARQLDIR=sparql
+# ----------------------------------------
+# SPARQL REPORTS
+# ----------------------------------------
 
 reports/%.csv: hp-inferred.owl sparql/%.sparql
 	robot query -i $< -s sparql/$*.sparql $@
-#	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
 
 reports/hp-edit-%.csv: hp-edit.owl sparql/%.sparql
 	robot query -i $< -s sparql/$*.sparql $@
+
+# ----------------------------------------
+# VALIDATION
+# ----------------------------------------
+
+# these live in the ../sparql directory, and have suffix -violation.sparql
+# adding the name here will make the violation check live
+VCHECKS = xref-syntax redundant-subClassOf trailing-whitespace
+
+# run all violation checks
+VARGS = $(foreach V,$(VCHECKS),-s $(SPARQLDIR)/$V-violation.sparql reports/$V-violation.csv)
+sparql_test: hp-edit.owl
+	robot query -i $< $(VARGS)
+	../util/check-violations-sparql-output.pl $(patsubst %,reports/%-violation.csv,$(VCHECKS))
+
+# use this to run tests on an individual basis
+reports/%-violation.csv: $(SRC)
+	robot query -i $< -s $(SPARQLDIR)/$*-violation.sparql $@
 
 include Makefile-ODP
