@@ -1,5 +1,7 @@
 all: hp.obo hp.owl all-subsets hp-inferred.obo
 
+test: sparql_test
+
 hp.obo: build/hp-simple.obo
 	owltools $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
 
