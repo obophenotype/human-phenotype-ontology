@@ -19,8 +19,8 @@ env:
     - CI_HOME=`pwd`/$REPO
     - HP_EDIT=src/ontology/hp-edit.owl
     - HP_OBO=src/ontology/hp.obo
-    - OBO_CHECK_JAR=hpo-obo-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
-    - OWL_CHECK_JAR=hpo-owl-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+    - OBO_CHECK_JAR=hpo-obo-qc/target/hpo-obo-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+    - OWL_CHECK_JAR=hpo-owl-qc/target/hpo-owl-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
 # get all jars
 install:
@@ -51,7 +51,9 @@ install:
 # perform quality checks
 script:
   # run tests on hp-edit
+   # encoding test
   - iconv -f UTF-8 -t ISO-8859-15 $HP_EDIT > converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
+   # java-based owl checkss
   - java -jar $OWL_CHECK_JAR $HP_EDIT
   # build hp.owl and hp.obo
   - cd $CI_HOME  
