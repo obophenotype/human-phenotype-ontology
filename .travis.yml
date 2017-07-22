@@ -29,18 +29,19 @@ env:
 # get all jars
 install:
   - curl -o $HOME/.m2/settings.xml http://compbio.charite.de/tl_files/groupmembers/koehler/settings.xml
-  - mvn dependency:go-offline
   # owltools
   - cd $CI_HOME  
   - wget -i src/owltools/urls.txt
   # owl-qc
   - git clone https://github.com/Phenomics/hpo-owl-qc.git
   - cd hpo-owl-qc
+  - mvn dependency:go-offline
   - mvn clean install
   # obo-qc
   - cd $CI_HOME
   - git clone https://github.com/Phenomics/hpo-obo-qc.git
   - cd hpo-obo-qc
+  - mvn dependency:go-offline
   - mvn clean install
   # other steps, e.g. path-variable
   - cd $CI_HOME
