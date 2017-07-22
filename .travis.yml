@@ -10,6 +10,10 @@ notifications:
     on_success: change
     on_failure: always
 
+cache:
+  directories:
+  - "$HOME/.m2"
+
 jdk:
   - oraclejdk8
 
@@ -24,6 +28,8 @@ env:
 
 # get all jars
 install:
+  - curl -o $HOME/.m2/settings.xml http://compbio.charite.de/tl_files/groupmembers/koehler/settings.xml
+  - mvn dependency:go-offline
   # owltools
   - cd $CI_HOME  
   - wget -i src/owltools/urls.txt
