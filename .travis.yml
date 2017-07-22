@@ -17,21 +17,26 @@ jdk:
 env:
   global:
     - CI_HOME=`pwd`/$REPO
+    - HP_EDIT=src/ontology/hp-edit.owl
+    - HP_OBO=src/ontology/hp.obo
+    - OBO_CHECK_JAR=hpo-obo-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+    - OWL_CHECK_JAR=hpo-owl-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 
-# simple format and ending tests
-before_install:
-  - cd $CI_HOME  
-  - cd src/format/
-  - make
-
-# get the OWLTOOLS jars
+# get all jars
 install:
+  # owltools
   - cd $CI_HOME  
   - wget -i src/owltools/urls.txt
- 
-# set everything up, e.g. put files in 
-# correct place and set env-variables
-before_script:
+  # owl-qc
+  - git clone https://github.com/Phenomics/hpo-owl-qc.git
+  - cd hpo-owl-qc
+  - mvn clean install
+  # obo-qc
+  - cd $CI_HOME
+  - git clone https://github.com/Phenomics/hpo-obo-qc.git
+  - cd hpo-obo-qc
+  - mvn clean install
+  # other steps, e.g. path-variable
   - cd $CI_HOME
   - mkdir -p owltools_folder
   - mv owltools owltools_folder/
@@ -39,19 +44,22 @@ before_script:
   - mv ontology-rel* owltools_folder/
   - chmod +x owltools_folder/*
   - export PATH="$PATH":`pwd`/owltools_folder/
+  - export PATH="$PATH":`pwd`/hpo-owl-qc/target/
+  - export PATH="$PATH":`pwd`/hpo-obo-qc/target/
   - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
-# call make to build the ontology
-# which includes some quality checks
+# perform quality checks
 script:
+  # run tests on hp-edit
+  - iconv -f UTF-8 -t ISO-8859-15 $HP_EDIT > converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
+  - java -jar $OWL_CHECK_JAR $HP_EDIT
+  # build hp.owl and hp.obo
   - cd $CI_HOME  
   - cd src/ontology/
   - make &> log.txt
   - tail -n 100 log.txt
   # now check for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
-  - java -jar src/jar/CheckFreetextAnnotations.jar src/ontology/hp.obo
-  # now check for redundant subclass assertions
-  - java -jar src/jar/CheckRedundantLinks.jar src/ontology/hp.obo 
+  - java -jar $OBO_CHECK_JAR $HP_OBO
 
 
