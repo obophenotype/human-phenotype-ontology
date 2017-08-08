@@ -7,6 +7,7 @@ notifications:
       - vasilevs@ohsu.edu
       - Leigh.Carmody@jax.org
       - haendel@ohsu.edu
+      - Kayli.Rageth@SanfordHealth.org
     on_success: change
     on_failure: always
 
@@ -24,19 +25,19 @@ env:
 
 # get all jars
 install:
-  # owltools
+  # owltools dowload
   - cd $CI_HOME  
   - wget -i src/owltools/urls.txt
-  # owl-qc
+  # owl-qc maven install
   - git clone https://github.com/Phenomics/hpo-owl-qc.git
   - cd hpo-owl-qc
   - mvn clean install
-  # obo-qc
+  # obo-qc maven install
   - cd $CI_HOME
   - git clone https://github.com/Phenomics/hpo-obo-qc.git
   - cd hpo-obo-qc
   - mvn clean install
-  # other steps, e.g. path-variable
+  # other steps, e.g. path-variables to use owltools
   - cd $CI_HOME
   - mkdir -p owltools_folder
   - mv owltools owltools_folder/
@@ -60,7 +61,7 @@ script:
   - cd src/ontology/
   - make &> log.txt
   - tail -n 100 log.txt
-  # now check for duplicated labels, synonyms that are used for different classes
+  # now check hp.obo for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
   - java -jar $OBO_CHECK_JAR $HP_OBO
 
