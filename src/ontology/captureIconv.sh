@@ -1,0 +1,18 @@
+#!/bin/sh
+COUNT=100 ## Number of characters to show near error.
+X="$(./runIconv.sh 2>&1 > /dev/null)"
+if [ ! -n "$X"  ]; then
+    echo "iconv was happy-no character encoding issues detected"
+    exit
+fi
+POS=`echo "$X" | cut -d ' ' -f 7`
+dd if=hp-edit.owl of=error.txt bs=1 count=$COUNT skip=$POS
+
+echo "*************************************************"
+echo "*************************************************"
+echo "** Character error found in hp.edit by iconv at $POS"
+
+hexdump -C error.txt
+echo "*************************************************"
+echo "*************************************************"
+
