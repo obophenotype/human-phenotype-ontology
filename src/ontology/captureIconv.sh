@@ -4,6 +4,7 @@ X="$(./runIconv.sh 2>&1 > /dev/null)"
 if [ ! -n "$X"  ]; then
     echo "iconv was happy-no character encoding issues detected"
     rm out.txt
+    rm error.txt
     exit
 fi
 POS=`echo "$X" | cut -d ' ' -f 7`
