@@ -1,6 +1,10 @@
 SETTING UP
 ----------
 
+This document has been superceded by
+https://github.com/obophenotype/human-phenotype-ontology/wiki/Editor-Guide
+
+
 ## Editing environment
 
 1. Install Protege 5.0 or higher
