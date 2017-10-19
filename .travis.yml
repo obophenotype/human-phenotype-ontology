@@ -22,6 +22,7 @@ env:
     - HP_OBO=src/ontology/hp.obo
     - OBO_CHECK_JAR=hpo-obo-qc/target/hpo-obo-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
     - OWL_CHECK_JAR=hpo-owl-qc/target/hpo-owl-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+    - JAVA_OPTS=-Xmx4g
 
 # get all jars
 install:
@@ -47,7 +48,7 @@ install:
   - export PATH="$PATH":`pwd`/owltools_folder/
   - export PATH="$PATH":`pwd`/hpo-owl-qc/target/
   - export PATH="$PATH":`pwd`/hpo-obo-qc/target/
-  - export OORT_ARGS='--catalog-xml catalog-v001.xml -Xmx4G' 
+  - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
 # perform quality checks
 script:
