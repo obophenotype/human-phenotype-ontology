@@ -1,19 +1,19 @@
->If this is a request for a new term, please provide us with the folloing information (c.f., https://github.com/obophenotype/human-phenotype-ontology/wiki/How-to-make-a-good-term-request).
+>If this is a request for a new term, please provide us with the following information:
 
->1. Preferred term label (e.g., Asplenia)_
-
-
->2. Synonyms (e.g., Absent spleen)
+>1. Preferred term label
 
 
->3. Textual definition (the definition should be understandable even for non-specialists. Include a PubMed ID to refer to any relevant article that provides additional information about the suggested term).
+>2. Synonyms
 
 
->4. Suggested parent term (Please look in the hierarchy of the HPO using the [HPO Browser](http://compbio.charite.de/hpoweb/showterm?id=HP:0000118) or other browsers such as [OLS](http://www.ebi.ac.uk/ols/ontologies/hp) and find the place in the HPO where the new term best fits)
+>3. Textual definition (should be understandable even for non-specialists, please include a PubMed ID for relevant articles providing additional information about the suggestion)
 
 
->5. If you know of a disease that is characterized by this feature, please indicate it (e.g., by its Orphanet or OMIM id), and we will add the annotation to our database.
+>4. Suggested parent term (use [HPO Browser](http://compbio.charite.de/hpoweb/showterm?id=HP:0000118) or [OLS](http://www.ebi.ac.uk/ols/ontologies/hp) )
 
 
->6. If you would like a nanoattribution, please indicate your ORCID id or provide a label such as HPO:probinson (organization, first initial-last name)
+>5. Are there diseases characterized by this term ? (e.g. Orphanet or OMIM id)
+
+
+>6. For nano-attributions, please indicate your ORCID id or provide a label such as HPO:probinson (organization, first initial-last name)
 
