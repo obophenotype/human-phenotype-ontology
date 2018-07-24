@@ -223,6 +223,7 @@ if you are trying to add "GO_0061696"
 4. Advanced editors with Owltools - run "make imports", for example, make imports/go_import.owl  in the upheno ontology directory. This will pull in the closure and add the metadata.
    If owltools says something like "'imports/go_import.owl'" is up to date.", then just delete the file "'imports/go_import.owl'" and try again
 
+
 CHECKLIST
 ---------
 
