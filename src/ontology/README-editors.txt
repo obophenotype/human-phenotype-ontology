@@ -159,13 +159,13 @@ OBSOLETING
 	Relabel the class as "obsolete your old term label here".
 	Add an annotation property, "deprecated", value "true", of type "boolean".
 	Delete subClassOf axioms
-You should see the class crossed out after you do this.
+   You should see the class crossed out after you do this.
 
-4. Add an annotation property "term replaced by". Navigate to the term by clicking on the "entity IRI" and either browse or control F to find the term that is replacing the one being obsoleted.
+4 a) Add an annotation property "term replaced by". Navigate to the term by clicking on the "entity IRI" and either browse or control F to find the term that is replacing the one being obsoleted.
 
-5. YOU HAVE TO ADD THE ALTERNATIVE-ID TAG to the class that replaces the obsolote class. All IDs of the old term have to be moved to this field!!
+4 b) You HAVE to add alt_id, consider, or replaced_by tags! The obsoleted class is not allowed to have any alt_ids. Please contact Sebastian in case you have questions!
 
-6. You may wish to add a comment regarding the reason for obsolescence or so as to include reference to why the term was replaced with whatever is indicated. Again, do not add more than one comment annotation on a class.
+5. You may wish to add a comment regarding the reason for obsolescence or so as to include reference to why the term was replaced with whatever is indicated. Again, do not add more than one comment annotation on a class.
 
 SEARCHING BY URI
 ----------------
