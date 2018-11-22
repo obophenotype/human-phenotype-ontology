@@ -32,10 +32,10 @@ install:
   - cd hpo-owl-qc
   - mvn clean install
   # obo-qc maven install
-  - cd $CI_HOME
-  - git clone https://github.com/Phenomics/hpo-obo-qc.git
-  - cd hpo-obo-qc
-  - mvn clean install
+  #- cd $CI_HOME
+  #- git clone https://github.com/Phenomics/hpo-obo-qc.git
+  #- cd hpo-obo-qc
+  #- mvn clean install
   # other steps, e.g. path-variables to use owltools
   - cd $CI_HOME
   - mkdir -p owltools_folder
@@ -62,6 +62,6 @@ script:
   - tail -n 100 log.txt
   # now check hp.obo for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
-  - java -jar $OBO_CHECK_JAR $HP_OBO
+  #- java -jar $OBO_CHECK_JAR $HP_OBO
 
 
