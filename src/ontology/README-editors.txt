@@ -167,6 +167,8 @@ OBSOLETING
 
 5. You may wish to add a comment regarding the reason for obsolescence or so as to include reference to why the term was replaced with whatever is indicated. Again, do not add more than one comment annotation on a class.
 
+6. Please also check if any diseases are still associated with this term! 
+
 SEARCHING BY URI
 ----------------
 To view IDs instead of labels:
