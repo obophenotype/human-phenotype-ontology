@@ -1,17 +1,21 @@
 pattern_name: atrophy
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns/atrophy
 
 classes:
   atrophied: PATO:0001623
   abnormal: PATO:0000460
+  entity: BFO:0000001
 
 relations: 
   inheres_in: RO:0000052
-  qualifier: RO:0002180
-  has_part: BFO:0000051
+  qualifier: RO:0002573
   has_part: BFO:0000051
 
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
 vars:
-  entity: "Thing"
+  entity: "'entity'"
 
 name:
   text: "%s atrophy"
@@ -19,7 +23,7 @@ name:
    - entity
 
 annotations:
-  - property: oio:hasExactSynonym
+  - annotationProperty: exact_synonym
     text: "atrophy of the %s"
     vars:
      - entity
@@ -30,8 +34,6 @@ def:
     - entity
 
 equivalentTo:
-  text: "'has_part' some ('atrophied' and 'inheres_in' some %s and 'qualifier' some 'abnormal')"
+  text: "'has_part' some ('atrophied' and ('inheres_in' some %s) and ('qualifier' some 'abnormal'))"
   vars:
     - entity
-
-
