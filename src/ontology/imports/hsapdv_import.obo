@@ -1,0 +1,2956 @@
+format-version: 1.2
+ontology: hp/imports/hsapdv_import
+
+[Term]
+id: HsapDv:0000000
+name: human life cycle stage
+namespace: human_stages_ontology
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+xref: UBERON:0000105
+
+[Term]
+id: HsapDv:0000001
+name: human life cycle
+namespace: human_developmental_stage
+def: "Temporal interval that defines human life from the prenatal stage until late adulthood." [Bgee:curator]
+xref: UBERON:0000104
+is_a: HsapDv:0000000 ! human life cycle stage
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000002
+name: embryonic human stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage." [Bgee:curator]
+comment: By embryo we mean in the sense of up to the 8th week postfertilization (over 7 and under 8 weeks), we treat fetus as a separate stage.
+synonym: "embryo stage" RELATED []
+synonym: "first trimester" RELATED [http://en.wikipedia.org/wiki/Gestational_age]
+xref: EV:0300001
+xref: FMA:72652
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000045 ! prenatal stage
+property_value: end_dpf "56.0" xsd:float
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000003
+name: Carnegie stage 01
+namespace: human_developmental_stage
+def: "Embryonic stage defined by a fertilized oocyte and presence of pronuclei." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Starts at day 1 post-fertilization, beginning of the first week.
+synonym: "CS01" EXACT [EHDAA2:CS01]
+xref: EHDAA2:CS01
+xref: FMA:295882
+xref: UBERON:0000106
+xref: XUO:0000130
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000002 ! embryonic human stage
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000004
+name: cleavage stage
+namespace: human_developmental_stage
+def: "Early stage of Carnegie stage 02 consisting of division of cells in the early embryo." [Bgee:curator]
+xref: UBERON:0000107
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000003 ! Carnegie stage 01
+relationship: part_of HsapDv:0000002 ! embryonic human stage
+
+[Term]
+id: HsapDv:0000005
+name: Carnegie stage 02
+namespace: human_developmental_stage
+def: "Embryonic stage during which cell division occurs with reduction in cytoplasmic volume, and formation of inner and outer cell mass." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 2 and day 3 post-fertilization.
+synonym: "CS02" EXACT [EHDAA2:CS02]
+xref: EHDAA2:CS02
+xref: FMA:295884
+xref: XUO:0000131
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000004 ! cleavage stage
+relationship: preceded_by HsapDv:0000003 ! Carnegie stage 01
+property_value: start_dpf "2.5" xsd:float
+
+[Term]
+id: HsapDv:0000006
+name: blastula stage
+namespace: human_developmental_stage
+def: "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel." [UBERON:0000108]
+comment: The blastula follows the morula and precedes the gastrula in the developmental sequence.
+xref: UBERON:0000108
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000002 ! embryonic human stage
+relationship: preceded_by HsapDv:0000005 ! Carnegie stage 02
+
+[Term]
+id: HsapDv:0000007
+name: Carnegie stage 03
+namespace: human_developmental_stage
+def: "Blastula stage with the loss of the zona pellucida and the definition of a free blastocyst." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 4 and day 5 post-fertilization.
+synonym: "CS03" EXACT [EHDAA2:CS03]
+xref: EHDAA2:CS03
+xref: FMA:295907
+xref: XUO:0000132
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker GO:0001835
+relationship: immediately_preceded_by HsapDv:0000205 ! morula stage
+relationship: part_of HsapDv:0000006 ! blastula stage
+property_value: start_dpf "4.5" xsd:float
+
+[Term]
+id: HsapDv:0000008
+name: Carnegie stage 04
+namespace: human_developmental_stage
+def: "Blastula stage during which the blastocyst becomes attached." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 5 and day 6 post-fertilization.
+synonym: "CS04" EXACT [EHDAA2:CS04]
+xref: EHDAA2:CS04
+xref: FMA:295908
+xref: XUO:0000133
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000007 ! Carnegie stage 03
+relationship: part_of HsapDv:0000006 ! blastula stage
+property_value: editor_notes "Note that GO treats blastocyst attachment and implantation (CS05) as synonymous" xsd:string
+property_value: start_dpf "5.5" xsd:float
+
+[Term]
+id: HsapDv:0000009
+name: Carnegie stage 05
+namespace: human_developmental_stage
+def: "Blastula stage during which implantation occurs." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 7 and day 12 post-fertilization, beginning of the second week.
+synonym: "CS04" EXACT []
+xref: FMA:295909
+xref: XUO:0000134
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker GO:0007566
+relationship: immediately_preceded_by HsapDv:0000008 ! Carnegie stage 04
+relationship: part_of HsapDv:0000006 ! blastula stage
+property_value: start_dpf "7.0" xsd:float
+
+[Term]
+id: HsapDv:0000010
+name: gastrula stage
+namespace: human_developmental_stage
+def: "Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the end of cleavage." [UBERON:0000109]
+xref: UBERON:0000109
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000002 ! embryonic human stage
+relationship: preceded_by HsapDv:0000006 ! blastula stage
+
+[Term]
+id: HsapDv:0000011
+name: Carnegie stage 06
+namespace: human_developmental_stage
+def: "Gastrula stage during which the extraembryonic mesoderm and primitive streak appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 13 and day 15 post-fertilization.
+synonym: "CS06" EXACT []
+xref: FMA:295910
+xref: XUO:0000135
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000474
+relationship: has_stage_marker EHDAA2:0001525
+relationship: immediately_preceded_by HsapDv:0000009 ! Carnegie stage 05
+relationship: immediately_preceded_by HsapDv:0000033 ! Carnegie stage 05c
+relationship: part_of HsapDv:0000010 ! gastrula stage
+property_value: start_dpf "13.0" xsd:float
+
+[Term]
+id: HsapDv:0000012
+name: neurula stage
+namespace: human_developmental_stage
+def: "Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate." [UBERON:0000110]
+comment: This stage starts the emergence of the central nervous system.
+xref: UBERON:0000110
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001254
+relationship: part_of HsapDv:0000002 ! embryonic human stage
+relationship: preceded_by HsapDv:0000010 ! gastrula stage
+
+[Term]
+id: HsapDv:0000013
+name: Carnegie stage 07
+namespace: human_developmental_stage
+def: "Neurula stage during which the notochordal process appears, and gastrulation is continuing." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 15 and day 17 post-fertilization, beginning of the third week.
+synonym: "CS07" EXACT [EHDAA2:CS07]
+xref: EHDAA2:CS07
+xref: FMA:295911
+xref: XUO:0000136
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001279
+relationship: immediately_preceded_by HsapDv:0000011 ! Carnegie stage 06
+relationship: immediately_preceded_by HsapDv:0000035 ! Carnegie stage 06b
+relationship: part_of HsapDv:0000012 ! neurula stage
+property_value: start_dpf "15.0" xsd:float
+
+[Term]
+id: HsapDv:0000014
+name: Carnegie stage 08
+namespace: human_developmental_stage
+def: "Neurula stage during which the primitive pit and the notochordal canal appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 17 and day 19 post-fertilization.
+synonym: "CS08" EXACT [EHDAA2:CS08]
+xref: EHDAA2:CS08
+xref: FMA:295912
+xref: XUO:0000137
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001521
+relationship: has_stage_marker UBERON:0013704
+relationship: immediately_preceded_by HsapDv:0000013 ! Carnegie stage 07
+relationship: part_of HsapDv:0000012 ! neurula stage
+property_value: start_dpf "17.0" xsd:float
+
+[Term]
+id: HsapDv:0000015
+name: organogenesis stage
+namespace: human_developmental_stage
+def: "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [UBERON:0000111]
+xref: UBERON:0000111
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000002 ! embryonic human stage
+relationship: preceded_by HsapDv:0000012 ! neurula stage
+
+[Term]
+id: HsapDv:0000016
+name: Carnegie stage 09
+namespace: human_developmental_stage
+def: "Organogenesis stage during which somites 1-3 appear, and neural folds, cardiac primordium, and head fold are present." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 19 and day 21 post-fertilization.
+synonym: "CS09" EXACT [EHDAA2:CS09]
+xref: EHDAA2:CS09
+xref: FMA:295913
+xref: XUO:0000138
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000214
+relationship: has_stage_marker EHDAA2:0001249
+relationship: has_stage_marker EHDAA2:0001849
+relationship: has_stage_marker EHDAA2:0001850
+relationship: has_stage_marker EHDAA2:0001851
+relationship: immediately_preceded_by HsapDv:0000014 ! Carnegie stage 08
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000017
+name: Carnegie stage 10
+namespace: human_developmental_stage
+def: "Organogenesis stage during which somites 4-12 appear, and the neural fold fuses." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 22 and day 23 post-fertilization, beginning of the fourth week.
+synonym: "CS10" EXACT [EHDAA2:CS10]
+xref: EHDAA2:CS10
+xref: FMA:295914
+xref: XUO:0000139
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001852
+relationship: has_stage_marker EHDAA2:0001853
+relationship: has_stage_marker EHDAA2:0001854
+relationship: has_stage_marker EHDAA2:0001855
+relationship: has_stage_marker EHDAA2:0001856
+relationship: has_stage_marker EHDAA2:0001857
+relationship: has_stage_marker EHDAA2:0001858
+relationship: has_stage_marker EHDAA2:0001859
+relationship: has_stage_marker EHDAA2:0001860
+relationship: has_stage_marker GO:0001843
+relationship: immediately_preceded_by HsapDv:0000016 ! Carnegie stage 09
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "22.0" xsd:float
+
+[Term]
+id: HsapDv:0000018
+name: Carnegie stage 11
+namespace: human_developmental_stage
+def: "Organogenesis stage during which somites 13-20 appear, and the rostral neuropore closes." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 23 and day 26 post-fertilization.
+synonym: "CS11" EXACT [EHDAA2:CS11]
+xref: EHDAA2:CS11
+xref: FMA:295915
+xref: XUO:0000140
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001861
+relationship: has_stage_marker EHDAA2:0001862
+relationship: has_stage_marker EHDAA2:0001863
+relationship: has_stage_marker EHDAA2:0001864
+relationship: has_stage_marker EHDAA2:0001865
+relationship: has_stage_marker EHDAA2:0001866
+relationship: has_stage_marker EHDAA2:0001867
+relationship: has_stage_marker EHDAA2:0001868
+relationship: immediately_preceded_by HsapDv:0000017 ! Carnegie stage 10
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "23.0" xsd:float
+
+[Term]
+id: HsapDv:0000019
+name: Carnegie stage 12
+namespace: human_developmental_stage
+def: "Organogenesis stage during which somites 21-29 appear, and the caudal neuropore closes." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 26 and day 30 post-fertilization.
+synonym: "CS12" EXACT [EHDAA2:CS12]
+xref: EHDAA2:CS12
+xref: FMA:295916
+xref: XUO:0000141
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001869
+relationship: has_stage_marker EHDAA2:0001870
+relationship: has_stage_marker EHDAA2:0001871
+relationship: has_stage_marker EHDAA2:0001872
+relationship: has_stage_marker EHDAA2:0001873
+relationship: has_stage_marker EHDAA2:0001874
+relationship: has_stage_marker EHDAA2:0001875
+relationship: has_stage_marker EHDAA2:0001876
+relationship: has_stage_marker EHDAA2:0001877
+relationship: has_stage_marker GO:0021507
+relationship: immediately_preceded_by HsapDv:0000018 ! Carnegie stage 11
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "26.0" xsd:float
+
+[Term]
+id: HsapDv:0000020
+name: Carnegie stage 13
+namespace: human_developmental_stage
+def: "Organogenesis developmental stage during which somite 30 appears, and leg buds, lens placode, pharyngeal arches are present." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 28 and day 32 post-fertilization, beginning of the fifth week.
+synonym: "CS13" EXACT [EHDAA2:CS13]
+xref: EHDAA2:CS13
+xref: FMA:295917
+xref: XUO:0000142
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000982
+relationship: has_stage_marker EHDAA2:0001033
+relationship: has_stage_marker EHDAA2:0001878
+relationship: immediately_preceded_by HsapDv:0000019 ! Carnegie stage 12
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "28.0" xsd:float
+
+[Term]
+id: HsapDv:0000021
+name: Carnegie stage 14
+namespace: human_developmental_stage
+def: "Organogenesis stage during which lens pit and optic cup appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 31 and day 35 post-fertilization.
+synonym: "CS14" EXACT [EHDAA2:CS14]
+xref: EHDAA2:CS14
+xref: FMA:295918
+xref: XUO:0000143
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000981
+relationship: has_stage_marker EHDAA2:0001303
+relationship: immediately_preceded_by HsapDv:0000020 ! Carnegie stage 13
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "31.0" xsd:float
+
+[Term]
+id: HsapDv:0000022
+name: Carnegie stage 15
+namespace: human_developmental_stage
+def: "Organogenesis stage during which lens vesicle, nasal pit, and hand plate appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 35 and day 38 post-fertilization.
+synonym: "CS15" EXACT [EHDAA2:CS15]
+xref: EHDAA2:CS15
+xref: FMA:295928
+xref: XUO:0000144
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000728
+relationship: has_stage_marker EHDAA2:0000983
+relationship: has_stage_marker UBERON:0005426
+relationship: has_stage_marker UBERON:0005870
+relationship: has_stage_marker UBERON:0006875
+relationship: immediately_preceded_by HsapDv:0000021 ! Carnegie stage 14
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "35.0" xsd:float
+
+[Term]
+id: HsapDv:0000023
+name: Carnegie stage 16
+namespace: human_developmental_stage
+def: "Organogenesis stage during which nasal pits moved ventrally, and features are auricular hillocks, and foot plate." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 37 and day 42 post-fertilization, beginning of the sixth week.
+synonym: "CS16" EXACT [EHDAA2:CS16]
+xref: EHDAA2:CS16
+xref: FMA:295919
+xref: XUO:0000145
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000155
+relationship: has_stage_marker EHDAA2:0000546
+relationship: has_stage_marker UBERON:0006871
+relationship: immediately_preceded_by HsapDv:0000022 ! Carnegie stage 15
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "37.0" xsd:float
+
+[Term]
+id: HsapDv:0000024
+name: Carnegie stage 17
+namespace: human_developmental_stage
+def: "Organogenesis stage during which finger rays become visible." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 42 and day 44 post-fertilization.
+synonym: "CS17" EXACT [EHDAA2:CS17]
+xref: EHDAA2:CS17
+xref: FMA:295920
+xref: XUO:0000146
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000023 ! Carnegie stage 16
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "42.0" xsd:float
+
+[Term]
+id: HsapDv:0000025
+name: Carnegie stage 18
+namespace: human_developmental_stage
+def: "Organogenesis stage during which ossification commences." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 44 and day 48 post-fertilization, beginning of the seventh week.
+synonym: "CS18" EXACT [EHDAA2:CS18]
+xref: EHDAA2:CS18
+xref: FMA:295921
+xref: XUO:0000147
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker GO:0001503
+relationship: immediately_preceded_by HsapDv:0000024 ! Carnegie stage 17
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "44.0" xsd:float
+
+[Term]
+id: HsapDv:0000026
+name: Carnegie stage 19
+namespace: human_developmental_stage
+def: "Organogenesis stage during which the straightening of the trunk starts." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 48 and day 51 post-fertilization.
+synonym: "CS19" EXACT [EHDAA2:CS19]
+xref: EHDAA2:CS19
+xref: FMA:295922
+xref: XUO:0000148
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000025 ! Carnegie stage 18
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "48.0" xsd:float
+
+[Term]
+id: HsapDv:0000027
+name: Carnegie stage 20
+namespace: human_developmental_stage
+def: "Organogenesis stage during which upper limbs are longer and bent at elbow." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 51 and day 53 post-fertilization, beginning of the eighth week.
+synonym: "CS20" EXACT [EHDAA2:CS20]
+xref: EHDAA2:CS20
+xref: FMA:295923
+xref: XUO:0000149
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000026 ! Carnegie stage 19
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "51.0" xsd:float
+
+[Term]
+id: HsapDv:0000028
+name: Carnegie stage 21
+namespace: human_developmental_stage
+def: "Organogenesis stage during which hands and feet turned inward." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 53 and day 54 post-fertilization.
+synonym: "CS21" EXACT []
+xref: FMA:295924
+xref: XUO:0000150
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000027 ! Carnegie stage 20
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "53.0" xsd:float
+
+[Term]
+id: HsapDv:0000029
+name: Carnegie stage 22
+namespace: human_developmental_stage
+def: "Organogenesis stage during which eyelids and external ears appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 54 and day 56 post-fertilization.
+synonym: "CS22" EXACT []
+xref: FMA:295925
+xref: XUO:0000151
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0000462
+relationship: has_stage_marker UBERON:0001711
+relationship: immediately_preceded_by HsapDv:0000028 ! Carnegie stage 21
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "54.0" xsd:float
+
+[Term]
+id: HsapDv:0000030
+name: Carnegie stage 23
+namespace: human_developmental_stage
+def: "Organogenesis stage during which the head, the body, and the limbs are rounded structures." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
+comment: Usually starts between day 56 and day 60 post-fertilization.
+synonym: "CS23" EXACT []
+xref: FMA:295926
+xref: FMA:63631
+xref: XUO:0000152
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000029 ! Carnegie stage 22
+relationship: part_of HsapDv:0000015 ! organogenesis stage
+property_value: start_dpf "56.0" xsd:float
+
+[Term]
+id: HsapDv:0000031
+name: Carnegie stage 05a
+namespace: human_developmental_stage
+def: "Carnegie developmental stage 5 defined by a solid trophoblast." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage05.pdf]
+synonym: "CS05a" EXACT [EHDAA2:CS05a]
+xref: EHDAA2:CS05a
+xref: FMA:296707
+xref: XUO:0000187
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000009 ! Carnegie stage 05
+relationship: part_of HsapDv:0000009 ! Carnegie stage 05
+
+[Term]
+id: HsapDv:0000032
+name: Carnegie stage 05b
+namespace: human_developmental_stage
+def: "Carnegie developmental stage 5 defined by a trophoblastic lacunae." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage05.pdf]
+synonym: "CS05b" EXACT [EHDAA2:CS05b]
+xref: EHDAA2:CS05b
+xref: FMA:296709
+xref: XUO:0000188
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0004715
+relationship: immediately_preceded_by HsapDv:0000031 ! Carnegie stage 05a
+relationship: part_of HsapDv:0000009 ! Carnegie stage 05
+
+[Term]
+id: HsapDv:0000033
+name: Carnegie stage 05c
+namespace: human_developmental_stage
+def: "Carnegie developmental stage 5 defined by a lacunar vascular circle." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage05.pdf]
+synonym: "CS05c" EXACT [EHDAA2:CS05c]
+xref: EHDAA2:CS05c
+xref: FMA:296711
+xref: XUO:0000189
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000032 ! Carnegie stage 05b
+relationship: part_of HsapDv:0000009 ! Carnegie stage 05
+
+[Term]
+id: HsapDv:0000034
+name: Carnegie stage 06a
+namespace: human_developmental_stage
+def: "Carnegie developmental stage 6 during which chorionic villi appear." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage06.pdf]
+synonym: "CS06a" EXACT [EHDAA2:CS06a]
+xref: EHDAA2:CS06a
+xref: XUO:0000190
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0004717
+relationship: immediately_preceded_by HsapDv:0000009 ! Carnegie stage 05
+relationship: immediately_preceded_by HsapDv:0000033 ! Carnegie stage 05c
+relationship: part_of HsapDv:0000011 ! Carnegie stage 06
+
+[Term]
+id: HsapDv:0000035
+name: Carnegie stage 06b
+namespace: human_developmental_stage
+def: "Carnegie developmental stage 6 during which the primitive streak appears." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage06.pdf]
+synonym: "CS06b" EXACT [EHDAA2:CS06b]
+xref: EHDAA2:CS06b
+xref: XUO:0000191
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker EHDAA2:0001525
+relationship: immediately_preceded_by HsapDv:0000034 ! Carnegie stage 06a
+relationship: part_of HsapDv:0000011 ! Carnegie stage 06
+
+[Term]
+id: HsapDv:0000037
+name: fetal stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
+comment: Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term "fetus" generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective. [Wikipedia:Fetus]
+synonym: "fetus stage" RELATED []
+synonym: "foetus stage" RELATED []
+synonym: "second and third trimester" RELATED [http://en.wikipedia.org/wiki/Gestational_age]
+xref: EV:0300011
+xref: UBERON:0007220
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000002 ! embryonic human stage
+relationship: part_of HsapDv:0000045 ! prenatal stage
+property_value: end_dpf "266.0" xsd:float
+property_value: start_dpf "56.0" xsd:float
+
+[Term]
+id: HsapDv:0000045
+name: prenatal stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with fertilization and ends at birth." [UBERON:0000068]
+xref: UBERON:0000068
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000001 ! human life cycle
+property_value: end_dpf "266.0" xsd:float
+property_value: end_ypb "0.0" xsd:float
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000046
+name: 9th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 8 and under 9 weeks of development." [Bgee:curator]
+comment: External genitalia begin to distinguish themselves as either male or female. Eyelids are completely closed, and vocal ligaments appear (see http://ehd.org/resources_bpd_documentation_english.php).
+subset: granular_stage
+xref: EV:0300012
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000197 ! third LMP month human stage
+property_value: end_dpf "63.0" xsd:float
+property_value: start_dpf "56.0" xsd:float
+
+[Term]
+id: HsapDv:0000047
+name: 10th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 9 and under 10 weeks of development." [Bgee:curator]
+comment: The fingernails and toenails begin to develop and unique fingerprints appear. Ossification is underway in most bones (see http://ehd.org/resources_bpd_documentation_english.php).
+subset: granular_stage
+xref: EV:0300013
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000046 ! 9th week post-fertilization human stage
+relationship: part_of HsapDv:0000197 ! third LMP month human stage
+property_value: end_dpf "70.0" xsd:float
+property_value: start_dpf "63.0" xsd:float
+
+[Term]
+id: HsapDv:0000048
+name: 11th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 10 and under 11 weeks of development." [Bgee:curator]
+comment: The nose and lips are completely formed, and external genitalia can be distinguished as male or female (see http://ehd.org/resources_bpd_documentation_english.php).
+subset: granular_stage
+xref: EV:0300030
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: has_stage_marker UBERON:0001833
+relationship: has_stage_marker UBERON:0007827
+relationship: immediately_preceded_by HsapDv:0000047 ! 10th week post-fertilization human stage
+relationship: part_of HsapDv:0000197 ! third LMP month human stage
+property_value: end_dpf "77.0" xsd:float
+property_value: start_dpf "70.0" xsd:float
+
+[Term]
+id: HsapDv:0000049
+name: 12th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 11 and under 12 weeks of development." [Bgee:curator]
+comment: Upper limb length has nearly reached its final proportion to body size (see http://ehd.org/resources_bpd_documentation_english.php). The assignation of this week to the fourth or third LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+subset: granular_stage
+xref: EV:0300014
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000048 ! 11th week post-fertilization human stage
+relationship: part_of HsapDv:0000198 {notes="debatable"} ! fourth LMP month human stage
+property_value: end_dpf "84.0" xsd:float
+property_value: start_dpf "77.0" xsd:float
+
+[Term]
+id: HsapDv:0000050
+name: 13th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 12 and under 13 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300015
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000049 ! 12th week post-fertilization human stage
+relationship: part_of HsapDv:0000198 ! fourth LMP month human stage
+property_value: end_dpf "91.0" xsd:float
+property_value: start_dpf "84.0" xsd:float
+
+[Term]
+id: HsapDv:0000051
+name: 14th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 13 and under 14 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300016
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000050 ! 13th week post-fertilization human stage
+relationship: part_of HsapDv:0000198 ! fourth LMP month human stage
+property_value: end_dpf "98.0" xsd:float
+property_value: start_dpf "91.0" xsd:float
+
+[Term]
+id: HsapDv:0000052
+name: 15th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 14 and under 15 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300031
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000051 ! 14th week post-fertilization human stage
+relationship: part_of HsapDv:0000198 ! fourth LMP month human stage
+property_value: end_dpf "105.0" xsd:float
+property_value: start_dpf "98.0" xsd:float
+
+[Term]
+id: HsapDv:0000053
+name: 16th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 15 and under 16 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the fifth or fourth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+subset: granular_stage
+xref: EV:0300017
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000052 ! 15th week post-fertilization human stage
+relationship: part_of HsapDv:0000199 {notes="debatable"} ! fifth LMP month human stage
+property_value: end_dpf "112.0" xsd:float
+property_value: start_dpf "105.0" xsd:float
+
+[Term]
+id: HsapDv:0000054
+name: 17th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 16 and under 17 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300018
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000053 ! 16th week post-fertilization human stage
+relationship: part_of HsapDv:0000199 ! fifth LMP month human stage
+property_value: end_dpf "119.0" xsd:float
+property_value: start_dpf "112.0" xsd:float
+
+[Term]
+id: HsapDv:0000055
+name: 18th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 17 and under 18 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300019
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000054 ! 17th week post-fertilization human stage
+relationship: part_of HsapDv:0000199 ! fifth LMP month human stage
+property_value: end_dpf "126.0" xsd:float
+property_value: start_dpf "119.0" xsd:float
+
+[Term]
+id: HsapDv:0000056
+name: 19th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 18 and under 19 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300020
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000055 ! 18th week post-fertilization human stage
+relationship: part_of HsapDv:0000199 ! fifth LMP month human stage
+property_value: end_dpf "133.0" xsd:float
+property_value: start_dpf "126.0" xsd:float
+
+[Term]
+id: HsapDv:0000057
+name: 20th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 19 and under 20 weeks of development." [Bgee:curator]
+comment: The cochlea has reached adult size within the fully developed inner ear (see http://ehd.org/resources_bpd_documentation_english.php). The assignation of this week to the sixth or fifth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+subset: granular_stage
+xref: EV:0300021
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000056 ! 19th week post-fertilization human stage
+relationship: part_of HsapDv:0000200 {notes="debatable"} ! sixth LMP month human stage
+property_value: end_dpf "140.0" xsd:float
+property_value: start_dpf "133.0" xsd:float
+
+[Term]
+id: HsapDv:0000058
+name: 21st week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 20 and under 21 weeks of development." [Bgee:curator]
+comment: The lungs gain some ability to breathe air. This stage is considered the age of viability because survival outside the womb becomes possible for some fetuses (see http://ehd.org/resources_bpd_documentation_english.php).
+subset: granular_stage
+xref: EV:0300029
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000057 ! 20th week post-fertilization human stage
+relationship: part_of HsapDv:0000200 ! sixth LMP month human stage
+property_value: end_dpf "147.0" xsd:float
+property_value: start_dpf "140.0" xsd:float
+
+[Term]
+id: HsapDv:0000059
+name: 22nd week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 21 and under 22 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300022
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000058 ! 21st week post-fertilization human stage
+relationship: part_of HsapDv:0000200 ! sixth LMP month human stage
+property_value: end_dpf "154.0" xsd:float
+property_value: start_dpf "147.0" xsd:float
+
+[Term]
+id: HsapDv:0000060
+name: 23rd week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 22 and under 23 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300023
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000059 ! 22nd week post-fertilization human stage
+relationship: part_of HsapDv:0000200 ! sixth LMP month human stage
+property_value: end_dpf "161.0" xsd:float
+property_value: start_dpf "154.0" xsd:float
+
+[Term]
+id: HsapDv:0000061
+name: 24th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 23 and under 24 weeks of development." [Bgee:curator]
+comment: The eyelids reopen (see http://ehd.org/resources_bpd_documentation_english.php).
+subset: granular_stage
+xref: EV:0300024
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000060 ! 23rd week post-fertilization human stage
+relationship: part_of HsapDv:0000200 ! sixth LMP month human stage
+property_value: end_dpf "168.0" xsd:float
+property_value: start_dpf "161.0" xsd:float
+
+[Term]
+id: HsapDv:0000062
+name: 25th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 24 and under 25 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the seventh or sixth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+subset: granular_stage
+xref: EV:0300032
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000061 ! 24th week post-fertilization human stage
+relationship: part_of HsapDv:0000201 {notes="debatable"} ! seventh LMP month human stage
+property_value: end_dpf "175.0" xsd:float
+property_value: start_dpf "168.0" xsd:float
+
+[Term]
+id: HsapDv:0000063
+name: 26th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 25 and under 26 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300025
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000062 ! 25th week post-fertilization human stage
+relationship: part_of HsapDv:0000201 ! seventh LMP month human stage
+property_value: end_dpf "182.0" xsd:float
+property_value: start_dpf "175.0" xsd:float
+
+[Term]
+id: HsapDv:0000064
+name: 27th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 26 and under 27 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300033
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000063 ! 26th week post-fertilization human stage
+relationship: part_of HsapDv:0000201 ! seventh LMP month human stage
+property_value: end_dpf "189.0" xsd:float
+property_value: start_dpf "182.0" xsd:float
+
+[Term]
+id: HsapDv:0000065
+name: 28th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 27 and under 28 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300026
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000064 ! 27th week post-fertilization human stage
+relationship: part_of HsapDv:0000201 ! seventh LMP month human stage
+property_value: end_dpf "196.0" xsd:float
+property_value: start_dpf "189.0" xsd:float
+
+[Term]
+id: HsapDv:0000066
+name: 29th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 28 and under 29 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the eighth or seventh LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+subset: granular_stage
+xref: EV:0300034
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000065 ! 28th week post-fertilization human stage
+relationship: part_of HsapDv:0000202 {notes="debatable"} ! eighth LMP month human stage
+property_value: end_dpf "203.0" xsd:float
+property_value: start_dpf "196.0" xsd:float
+
+[Term]
+id: HsapDv:0000067
+name: 30th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 29 and under 30 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300035
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000066 ! 29th week post-fertilization human stage
+relationship: part_of HsapDv:0000202 ! eighth LMP month human stage
+property_value: end_dpf "210.0" xsd:float
+property_value: start_dpf "203.0" xsd:float
+
+[Term]
+id: HsapDv:0000068
+name: 31st week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 30 and under 31 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300036
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000067 ! 30th week post-fertilization human stage
+relationship: part_of HsapDv:0000202 ! eighth LMP month human stage
+property_value: end_dpf "217.0" xsd:float
+property_value: start_dpf "210.0" xsd:float
+
+[Term]
+id: HsapDv:0000069
+name: 32nd week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 31 and under 32 weeks of development." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300027
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000068 ! 31st week post-fertilization human stage
+relationship: part_of HsapDv:0000202 ! eighth LMP month human stage
+property_value: end_dpf "224.0" xsd:float
+property_value: start_dpf "217.0" xsd:float
+
+[Term]
+id: HsapDv:0000070
+name: 33rd week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 32 and under 33 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the eighth or ninth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000069 ! 32nd week post-fertilization human stage
+relationship: part_of HsapDv:0000202 {notes="debatable"} ! eighth LMP month human stage
+property_value: end_dpf "231.0" xsd:float
+property_value: start_dpf "224.0" xsd:float
+
+[Term]
+id: HsapDv:0000071
+name: 34th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 33 and under 34 weeks of development." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000070 ! 33rd week post-fertilization human stage
+relationship: part_of HsapDv:0000203 ! ninth LMP month human stage
+property_value: end_dpf "238.0" xsd:float
+property_value: start_dpf "231.0" xsd:float
+
+[Term]
+id: HsapDv:0000072
+name: 35th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 34 and under 35 weeks of development." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000071 ! 34th week post-fertilization human stage
+relationship: part_of HsapDv:0000203 ! ninth LMP month human stage
+property_value: end_dpf "245.0" xsd:float
+property_value: start_dpf "238.0" xsd:float
+
+[Term]
+id: HsapDv:0000073
+name: 36th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 35 and under 36 weeks of development." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000072 ! 35th week post-fertilization human stage
+relationship: part_of HsapDv:0000203 ! ninth LMP month human stage
+property_value: end_dpf "252.0" xsd:float
+property_value: start_dpf "245.0" xsd:float
+
+[Term]
+id: HsapDv:0000074
+name: 37th week post-fertilization human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 36 and under 37 weeks of development." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000073 ! 36th week post-fertilization human stage
+relationship: part_of HsapDv:0000203 ! ninth LMP month human stage
+property_value: end_dpf "259.0" xsd:float
+property_value: start_dpf "252.0" xsd:float
+
+[Term]
+id: HsapDv:0000075
+name: 38th week post-fertilization and over human stage
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 37 weeks of development and until birth." [Bgee:curator]
+comment: The assignation of this week to the ninth or tenth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000074 ! 37th week post-fertilization human stage
+relationship: part_of HsapDv:0000203 {notes="debatable"} ! ninth LMP month human stage
+property_value: end_dpf "266.0" xsd:float
+property_value: start_dpf "259.0" xsd:float
+
+[Term]
+id: HsapDv:0000080
+name: immature stage
+namespace: human_developmental_stage
+def: "Human developmental stage that covers the period from birth until 12 years old." [Bgee:curator]
+synonym: "0-12 years" EXACT []
+synonym: "child" RELATED []
+xref: UBERON:0000112
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000001 ! human life cycle
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000081
+name: child stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to child who is over 2 and under 13 years old." [Bgee:curator]
+synonym: "2-12 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000083 ! infant stage
+relationship: part_of HsapDv:0000080 ! immature stage
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "2.0" xsd:float
+
+[Term]
+id: HsapDv:0000082
+name: newborn human stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to a newborn who is under 32 days old." [Bgee:curator]
+synonym: "0-1 month" EXACT []
+synonym: "neonatal stage" RELATED []
+synonym: "neonate" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000080 ! immature stage
+property_value: end_mpb "1.0" xsd:float
+property_value: end_ypb "0.083" xsd:float
+property_value: start_mpb "0.0" xsd:float
+property_value: start_ypb "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000083
+name: infant stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to an infant who is over 31 days and is under 24 months old." [Bgee:curator]
+synonym: "1-23 months" EXACT []
+synonym: "infantile stage" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000082 ! newborn human stage
+relationship: part_of HsapDv:0000080 ! immature stage
+property_value: end_mpb "24.0" xsd:float
+property_value: end_ypb "2.0" xsd:float
+property_value: start_mpb "1.0" xsd:float
+property_value: start_ypb "0.083" xsd:float
+
+[Term]
+id: HsapDv:0000084
+name: 2-5 year-old child stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 24 months and under 6 years old." [Bgee:curator]
+synonym: "preschool child" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000081 ! child stage
+property_value: end_ypb "6.0" xsd:float
+property_value: start_ypb "2.0" xsd:float
+
+[Term]
+id: HsapDv:0000085
+name: 6-12 year-old child stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 6 and under 13 years old." [Bgee:curator]
+synonym: "prepubescent" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000084 ! 2-5 year-old child stage
+relationship: part_of HsapDv:0000081 ! child stage
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "6.0" xsd:float
+
+[Term]
+id: HsapDv:0000086
+name: adolescent stage
+namespace: human_developmental_stage
+def: "Mature stage that refers to an adolescent who is over 13 and under 19 years old." [Bgee:curator]
+synonym: "13-18 years" EXACT []
+synonym: "teen" RELATED []
+synonym: "teenager" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000204 ! mature stage
+property_value: end_ypb "19.0" xsd:float
+property_value: start_ypb "13.0" xsd:float
+
+[Term]
+id: HsapDv:0000087
+name: human adult stage
+namespace: human_developmental_stage
+def: "Human developmental stage that refers to an adult who is over 19." [Bgee:curator]
+synonym: "19+ years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000086 ! adolescent stage
+relationship: part_of HsapDv:0000204 ! mature stage
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000088
+name: human early adulthood stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is under 45." [Bgee:curator]
+synonym: "19-44 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000087 ! human adult stage
+property_value: end_ypb "45.0" xsd:float
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000089
+name: young adult stage
+namespace: human_developmental_stage
+def: "Early adulthood that refers to an adult who is under 25." [Bgee:curator]
+synonym: "19-24 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000088 ! human early adulthood stage
+property_value: end_ypb "25.0" xsd:float
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000090
+name: 25-44 year-old human stage
+namespace: human_developmental_stage
+def: "Early adulthood that refers to an adult who is over 25 and under 45." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000089 ! young adult stage
+relationship: part_of HsapDv:0000088 ! human early adulthood stage
+property_value: end_ypb "45.0" xsd:float
+property_value: start_ypb "25.0" xsd:float
+
+[Term]
+id: HsapDv:0000091
+name: human late adulthood stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 45." [Bgee:curator]
+synonym: "45+ years" EXACT []
+synonym: "Middle Aged + Aged" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000088 ! human early adulthood stage
+relationship: part_of HsapDv:0000087 ! human adult stage
+property_value: start_ypb "45.0" xsd:float
+
+[Term]
+id: HsapDv:0000092
+name: human middle aged stage
+namespace: human_developmental_stage
+def: "Late adulthood that refers to an adult who is over 45 and under 65." [Bgee:curator]
+synonym: "45-64 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000091 ! human late adulthood stage
+property_value: end_ypb "65.0" xsd:float
+property_value: start_ypb "45.0" xsd:float
+
+[Term]
+id: HsapDv:0000093
+name: human aged stage
+namespace: human_developmental_stage
+def: "Late adulthood that refers to an adult who is over 65." [Bgee:curator]
+synonym: "65+ years" EXACT []
+synonym: "elderly" RELATED []
+xref: UBERON:0007222
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000092 ! human middle aged stage
+relationship: part_of HsapDv:0000091 ! human late adulthood stage
+property_value: start_ypb "65.0" xsd:float
+
+[Term]
+id: HsapDv:0000094
+name: 65-79 year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is under 80." [Bgee:curator]
+synonym: "elderly" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000093 ! human aged stage
+property_value: end_ypb "80.0" xsd:float
+property_value: start_ypb "65.0" xsd:float
+
+[Term]
+id: HsapDv:0000095
+name: 80 year-old and over human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 80." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000173 ! 79-year-old human stage
+relationship: part_of HsapDv:0000093 ! human aged stage
+property_value: start_ypb "80.0" xsd:float
+
+[Term]
+id: HsapDv:0000096
+name: 2-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 2 and under 3 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300053
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+property_value: end_ypb "3.0" xsd:float
+property_value: start_ypb "2.0" xsd:float
+
+[Term]
+id: HsapDv:0000097
+name: 3-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 3 and under 4 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300054
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000096 ! 2-year-old human stage
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+property_value: end_ypb "4.0" xsd:float
+property_value: start_ypb "3.0" xsd:float
+
+[Term]
+id: HsapDv:0000098
+name: 4-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 4 and under 5 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300055
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000097 ! 3-year-old human stage
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+property_value: end_ypb "5.0" xsd:float
+property_value: start_ypb "4.0" xsd:float
+
+[Term]
+id: HsapDv:0000099
+name: 5-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 5 and under 6 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300056
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000098 ! 4-year-old human stage
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+property_value: end_ypb "6.0" xsd:float
+property_value: start_ypb "5.0" xsd:float
+
+[Term]
+id: HsapDv:0000100
+name: 6-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 6 and under 7 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300057
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000099 ! 5-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "7.0" xsd:float
+property_value: start_ypb "6.0" xsd:float
+
+[Term]
+id: HsapDv:0000101
+name: 7-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 7 and under 8 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300058
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000100 ! 6-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "8.0" xsd:float
+property_value: start_ypb "7.0" xsd:float
+
+[Term]
+id: HsapDv:0000102
+name: 8-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 8 and under 9 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300059
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000101 ! 7-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "9.0" xsd:float
+property_value: start_ypb "8.0" xsd:float
+
+[Term]
+id: HsapDv:0000103
+name: 9-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 9 and under 10 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300060
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000102 ! 8-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "10.0" xsd:float
+property_value: start_ypb "9.0" xsd:float
+
+[Term]
+id: HsapDv:0000104
+name: 10-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 10 and under 11 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300061
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000103 ! 9-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "11.0" xsd:float
+property_value: start_ypb "10.0" xsd:float
+
+[Term]
+id: HsapDv:0000105
+name: 11-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 11 and under 12 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300062
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000104 ! 10-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "12.0" xsd:float
+property_value: start_ypb "11.0" xsd:float
+
+[Term]
+id: HsapDv:0000106
+name: 12-year-old human stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 12 and under 13 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300063
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000105 ! 11-year-old human stage
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "12.0" xsd:float
+
+[Term]
+id: HsapDv:0000107
+name: 13-year-old human stage
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 13 and under 14 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300065
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000106 ! 12-year-old human stage
+relationship: part_of HsapDv:0000086 ! adolescent stage
+property_value: end_ypb "14.0" xsd:float
+property_value: start_ypb "13.0" xsd:float
+
+[Term]
+id: HsapDv:0000108
+name: 14-year-old human stage
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 14 and under 15 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300066
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000107 ! 13-year-old human stage
+relationship: part_of HsapDv:0000086 ! adolescent stage
+property_value: end_ypb "15.0" xsd:float
+property_value: start_ypb "14.0" xsd:float
+
+[Term]
+id: HsapDv:0000109
+name: 15-year-old human stage
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 15 and under 16 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300067
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000108 ! 14-year-old human stage
+relationship: part_of HsapDv:0000086 ! adolescent stage
+property_value: end_ypb "16.0" xsd:float
+property_value: start_ypb "15.0" xsd:float
+
+[Term]
+id: HsapDv:0000110
+name: 16-year-old human stage
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 16 and under 17 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300068
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000109 ! 15-year-old human stage
+relationship: part_of HsapDv:0000086 ! adolescent stage
+property_value: end_ypb "17.0" xsd:float
+property_value: start_ypb "16.0" xsd:float
+
+[Term]
+id: HsapDv:0000111
+name: 17-year-old human stage
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 17 and under 18 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300069
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000110 ! 16-year-old human stage
+relationship: part_of HsapDv:0000086 ! adolescent stage
+property_value: end_ypb "18.0" xsd:float
+property_value: start_ypb "17.0" xsd:float
+
+[Term]
+id: HsapDv:0000112
+name: 18-year-old human stage
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 18 and under 19 years old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300071
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000111 ! 17-year-old human stage
+relationship: part_of HsapDv:0000086 ! adolescent stage
+property_value: end_ypb "19.0" xsd:float
+property_value: start_ypb "18.0" xsd:float
+
+[Term]
+id: HsapDv:0000113
+name: 19-year-old human stage
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is under 20." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300072
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000112 ! 18-year-old human stage
+relationship: part_of HsapDv:0000089 ! young adult stage
+property_value: end_ypb "20.0" xsd:float
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000114
+name: 20-year-old human stage
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 20 and under 21." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300073
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000113 ! 19-year-old human stage
+relationship: part_of HsapDv:0000089 ! young adult stage
+property_value: end_ypb "21.0" xsd:float
+property_value: start_ypb "20.0" xsd:float
+
+[Term]
+id: HsapDv:0000115
+name: 21-year-old human stage
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 21 and under 22." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300074
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000114 ! 20-year-old human stage
+relationship: part_of HsapDv:0000089 ! young adult stage
+property_value: end_ypb "22.0" xsd:float
+property_value: start_ypb "21.0" xsd:float
+
+[Term]
+id: HsapDv:0000116
+name: 22-year-old human stage
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 22 and under 23." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300075
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000115 ! 21-year-old human stage
+relationship: part_of HsapDv:0000089 ! young adult stage
+property_value: end_ypb "23.0" xsd:float
+property_value: start_ypb "22.0" xsd:float
+
+[Term]
+id: HsapDv:0000117
+name: 23-year-old human stage
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 23 and under 24." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300076
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000116 ! 22-year-old human stage
+relationship: part_of HsapDv:0000089 ! young adult stage
+property_value: end_ypb "24.0" xsd:float
+property_value: start_ypb "23.0" xsd:float
+
+[Term]
+id: HsapDv:0000118
+name: 24-year-old human stage
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 24 and under 25." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300077
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000117 ! 23-year-old human stage
+relationship: part_of HsapDv:0000089 ! young adult stage
+property_value: end_ypb "25.0" xsd:float
+property_value: start_ypb "24.0" xsd:float
+
+[Term]
+id: HsapDv:0000119
+name: 25-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 25 and under 26." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300078
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000118 ! 24-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "26.0" xsd:float
+property_value: start_ypb "25.0" xsd:float
+
+[Term]
+id: HsapDv:0000120
+name: 26-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adultwho is over 26 and under 27." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300079
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000119 ! 25-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "27.0" xsd:float
+property_value: start_ypb "26.0" xsd:float
+
+[Term]
+id: HsapDv:0000121
+name: 27-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 27 and under 28." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300080
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000120 ! 26-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "28.0" xsd:float
+property_value: start_ypb "27.0" xsd:float
+
+[Term]
+id: HsapDv:0000122
+name: 28-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 28 and under 29." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300081
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000121 ! 27-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "29.0" xsd:float
+property_value: start_ypb "28.0" xsd:float
+
+[Term]
+id: HsapDv:0000123
+name: 29-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 29 and under 30." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300082
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000122 ! 28-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "30.0" xsd:float
+property_value: start_ypb "29.0" xsd:float
+
+[Term]
+id: HsapDv:0000124
+name: 30-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 30 and under 31." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300083
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000123 ! 29-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "31.0" xsd:float
+property_value: start_ypb "30.0" xsd:float
+
+[Term]
+id: HsapDv:0000125
+name: 31-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 31 and under 32." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300084
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000124 ! 30-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "32.0" xsd:float
+property_value: start_ypb "31.0" xsd:float
+
+[Term]
+id: HsapDv:0000126
+name: 32-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 32 and under 33." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300085
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000125 ! 31-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "33.0" xsd:float
+property_value: start_ypb "32.0" xsd:float
+
+[Term]
+id: HsapDv:0000127
+name: 33-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 33 and under 34." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300086
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000126 ! 32-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "34.0" xsd:float
+property_value: start_ypb "33.0" xsd:float
+
+[Term]
+id: HsapDv:0000128
+name: 34-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 34 and under 35." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300087
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000127 ! 33-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "35.0" xsd:float
+property_value: start_ypb "34.0" xsd:float
+
+[Term]
+id: HsapDv:0000129
+name: 35-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 35 and under 36." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300088
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000128 ! 34-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "36.0" xsd:float
+property_value: start_ypb "35.0" xsd:float
+
+[Term]
+id: HsapDv:0000130
+name: 36-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 36 and under 37." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300089
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000129 ! 35-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "37.0" xsd:float
+property_value: start_ypb "36.0" xsd:float
+
+[Term]
+id: HsapDv:0000131
+name: 37-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 37 and under 38." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300090
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000130 ! 36-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "38.0" xsd:float
+property_value: start_ypb "37.0" xsd:float
+
+[Term]
+id: HsapDv:0000132
+name: 38-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 38 and under 39." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300091
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000131 ! 37-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "39.0" xsd:float
+property_value: start_ypb "38.0" xsd:float
+
+[Term]
+id: HsapDv:0000133
+name: 39-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 39 and under 40." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300092
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000132 ! 38-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "40.0" xsd:float
+property_value: start_ypb "39.0" xsd:float
+
+[Term]
+id: HsapDv:0000134
+name: 40-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 40 and under 41." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300093
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000133 ! 39-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "41.0" xsd:float
+property_value: start_ypb "40.0" xsd:float
+
+[Term]
+id: HsapDv:0000135
+name: 41-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 41 and under 42." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300094
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000134 ! 40-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "42.0" xsd:float
+property_value: start_ypb "41.0" xsd:float
+
+[Term]
+id: HsapDv:0000136
+name: 42-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 42 and under 43." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300095
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000135 ! 41-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "43.0" xsd:float
+property_value: start_ypb "42.0" xsd:float
+
+[Term]
+id: HsapDv:0000137
+name: 43-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 43 and under 44." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300096
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000136 ! 42-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "44.0" xsd:float
+property_value: start_ypb "43.0" xsd:float
+
+[Term]
+id: HsapDv:0000138
+name: 44-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 44 and under 45." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300097
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000137 ! 43-year-old human stage
+relationship: part_of HsapDv:0000090 ! 25-44 year-old human stage
+property_value: end_ypb "45.0" xsd:float
+property_value: start_ypb "44.0" xsd:float
+
+[Term]
+id: HsapDv:0000139
+name: 45-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 45 and under 46." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300098
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000138 ! 44-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "46.0" xsd:float
+property_value: start_ypb "45.0" xsd:float
+
+[Term]
+id: HsapDv:0000140
+name: 46-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 46 and under 47." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300099
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000139 ! 45-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "47.0" xsd:float
+property_value: start_ypb "46.0" xsd:float
+
+[Term]
+id: HsapDv:0000141
+name: 47-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 47 and under 48." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300100
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000140 ! 46-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "48.0" xsd:float
+property_value: start_ypb "47.0" xsd:float
+
+[Term]
+id: HsapDv:0000142
+name: 48-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 48 and under 49." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300101
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000141 ! 47-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "49.0" xsd:float
+property_value: start_ypb "48.0" xsd:float
+
+[Term]
+id: HsapDv:0000143
+name: 49-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 49 and under 50." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300102
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000142 ! 48-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "50.0" xsd:float
+property_value: start_ypb "49.0" xsd:float
+
+[Term]
+id: HsapDv:0000144
+name: 50-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 50 and under 51." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300103
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000143 ! 49-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "51.0" xsd:float
+property_value: start_ypb "50.0" xsd:float
+
+[Term]
+id: HsapDv:0000145
+name: 51-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 51 and under 52." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300104
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000144 ! 50-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "52.0" xsd:float
+property_value: start_ypb "51.0" xsd:float
+
+[Term]
+id: HsapDv:0000146
+name: 52-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 52 and under 53." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300105
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000145 ! 51-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "53.0" xsd:float
+property_value: start_ypb "52.0" xsd:float
+
+[Term]
+id: HsapDv:0000147
+name: 53-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 53 and under 54." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300106
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000146 ! 52-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "54.0" xsd:float
+property_value: start_ypb "53.0" xsd:float
+
+[Term]
+id: HsapDv:0000148
+name: 54-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 54 and under 55." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300107
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000147 ! 53-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "55.0" xsd:float
+property_value: start_ypb "54.0" xsd:float
+
+[Term]
+id: HsapDv:0000149
+name: 55-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 55 and under 56." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300108
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000148 ! 54-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "56.0" xsd:float
+property_value: start_ypb "55.0" xsd:float
+
+[Term]
+id: HsapDv:0000150
+name: 56-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 56 and under 57." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300109
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000149 ! 55-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "57.0" xsd:float
+property_value: start_ypb "56.0" xsd:float
+
+[Term]
+id: HsapDv:0000151
+name: 57-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 57 and under 58." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300110
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000150 ! 56-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "58.0" xsd:float
+property_value: start_ypb "57.0" xsd:float
+
+[Term]
+id: HsapDv:0000152
+name: 58-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 58 and under 59." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300111
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000151 ! 57-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "59.0" xsd:float
+property_value: start_ypb "58.0" xsd:float
+
+[Term]
+id: HsapDv:0000153
+name: 59-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 59 and under 60." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300112
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000152 ! 58-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "60.0" xsd:float
+property_value: start_ypb "59.0" xsd:float
+
+[Term]
+id: HsapDv:0000154
+name: 60-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 60 and under 61." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300113
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000153 ! 59-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "61.0" xsd:float
+property_value: start_ypb "60.0" xsd:float
+
+[Term]
+id: HsapDv:0000155
+name: 61-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 61 and under 62." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300114
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000154 ! 60-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "62.0" xsd:float
+property_value: start_ypb "61.0" xsd:float
+
+[Term]
+id: HsapDv:0000156
+name: 62-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 62 and under 63." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300115
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000155 ! 61-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "63.0" xsd:float
+property_value: start_ypb "62.0" xsd:float
+
+[Term]
+id: HsapDv:0000157
+name: 63-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 63 and under 64." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300116
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000156 ! 62-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "64.0" xsd:float
+property_value: start_ypb "63.0" xsd:float
+
+[Term]
+id: HsapDv:0000158
+name: 64-year-old human stage
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 64 and under 65." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300117
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000157 ! 63-year-old human stage
+relationship: part_of HsapDv:0000092 ! human middle aged stage
+property_value: end_ypb "65.0" xsd:float
+property_value: start_ypb "64.0" xsd:float
+
+[Term]
+id: HsapDv:0000159
+name: 65-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 65 and under 66." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300118
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000158 ! 64-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "66.0" xsd:float
+property_value: start_ypb "65.0" xsd:float
+
+[Term]
+id: HsapDv:0000160
+name: 66-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 66 and under 67." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300119
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000159 ! 65-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "67.0" xsd:float
+property_value: start_ypb "66.0" xsd:float
+
+[Term]
+id: HsapDv:0000161
+name: 67-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 67 and under 68." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300120
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000160 ! 66-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "68.0" xsd:float
+property_value: start_ypb "67.0" xsd:float
+
+[Term]
+id: HsapDv:0000162
+name: 68-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 68 and under 69." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300121
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000161 ! 67-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "69.0" xsd:float
+property_value: start_ypb "68.0" xsd:float
+
+[Term]
+id: HsapDv:0000163
+name: 69-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 69 and under 70." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300122
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000162 ! 68-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "70.0" xsd:float
+property_value: start_ypb "69.0" xsd:float
+
+[Term]
+id: HsapDv:0000164
+name: 70-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 70 and under 71." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300124
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000163 ! 69-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "71.0" xsd:float
+property_value: start_ypb "70.0" xsd:float
+
+[Term]
+id: HsapDv:0000165
+name: 71-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 71 and under 72." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300125
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000164 ! 70-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "72.0" xsd:float
+property_value: start_ypb "71.0" xsd:float
+
+[Term]
+id: HsapDv:0000166
+name: 72-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 72 and under 73." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300126
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000165 ! 71-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "73.0" xsd:float
+property_value: start_ypb "72.0" xsd:float
+
+[Term]
+id: HsapDv:0000167
+name: 73-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 73 and under 74." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300127
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000166 ! 72-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "74.0" xsd:float
+property_value: start_ypb "73.0" xsd:float
+
+[Term]
+id: HsapDv:0000168
+name: 74-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 74 and under 75." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300128
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000167 ! 73-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "75.0" xsd:float
+property_value: start_ypb "74.0" xsd:float
+
+[Term]
+id: HsapDv:0000169
+name: 75-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 75 and under 76." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300129
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000168 ! 74-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "76.0" xsd:float
+property_value: start_ypb "75.0" xsd:float
+
+[Term]
+id: HsapDv:0000170
+name: 76-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 76 and under 77." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300130
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000169 ! 75-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "77.0" xsd:float
+property_value: start_ypb "76.0" xsd:float
+
+[Term]
+id: HsapDv:0000171
+name: 77-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 77 and under 78." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300131
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000170 ! 76-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "78.0" xsd:float
+property_value: start_ypb "77.0" xsd:float
+
+[Term]
+id: HsapDv:0000172
+name: 78-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 78 and under 79." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300132
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000171 ! 77-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "79.0" xsd:float
+property_value: start_ypb "78.0" xsd:float
+
+[Term]
+id: HsapDv:0000173
+name: 79-year-old human stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 79 and under 80." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300133
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000172 ! 78-year-old human stage
+relationship: part_of HsapDv:0000094 ! 65-79 year-old human stage
+property_value: end_ypb "80.0" xsd:float
+property_value: start_ypb "79.0" xsd:float
+
+[Term]
+id: HsapDv:0000174
+name: 1-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 1 and under 2 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300039
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "2.0" xsd:float
+property_value: start_mpb "1.0" xsd:float
+
+[Term]
+id: HsapDv:0000175
+name: 2-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 2 and under 3 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300040
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000174 ! 1-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "3.0" xsd:float
+property_value: start_mpb "2.0" xsd:float
+
+[Term]
+id: HsapDv:0000176
+name: 3-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 3 and under 4 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300041
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000175 ! 2-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "4.0" xsd:float
+property_value: start_mpb "3.0" xsd:float
+
+[Term]
+id: HsapDv:0000177
+name: 4-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 4 and under 5 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300042
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000176 ! 3-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "5.0" xsd:float
+property_value: start_mpb "4.0" xsd:float
+
+[Term]
+id: HsapDv:0000178
+name: 5-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 5 and under 6 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300043
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000177 ! 4-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "6.0" xsd:float
+property_value: start_mpb "5.0" xsd:float
+
+[Term]
+id: HsapDv:0000179
+name: 6-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 6 and under 7 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300044
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000178 ! 5-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "7.0" xsd:float
+property_value: start_mpb "6.0" xsd:float
+
+[Term]
+id: HsapDv:0000180
+name: 7-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 7 and under 8 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300045
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000179 ! 6-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "8.0" xsd:float
+property_value: start_mpb "7.0" xsd:float
+
+[Term]
+id: HsapDv:0000181
+name: 8-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 8 and under 9 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300046
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000180 ! 7-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "9.0" xsd:float
+property_value: start_mpb "8.0" xsd:float
+
+[Term]
+id: HsapDv:0000182
+name: 9-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 9 and under 10 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300047
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000181 ! 8-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "10.0" xsd:float
+property_value: start_mpb "9.0" xsd:float
+
+[Term]
+id: HsapDv:0000183
+name: 10-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 10 and under 11 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300048
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000182 ! 9-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "11.0" xsd:float
+property_value: start_mpb "10.0" xsd:float
+
+[Term]
+id: HsapDv:0000184
+name: 11-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 11 and under 12 months old." [Bgee:curator]
+subset: granular_stage
+xref: EV:0300049
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000183 ! 10-month-old human stage
+relationship: part_of HsapDv:0000256 ! under-1-year-old human stage
+property_value: end_mpb "12.0" xsd:float
+property_value: start_mpb "11.0" xsd:float
+
+[Term]
+id: HsapDv:0000185
+name: 12-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 12 and under 13 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000184 ! 11-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "13.0" xsd:float
+property_value: start_mpb "12.0" xsd:float
+
+[Term]
+id: HsapDv:0000186
+name: 13-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 13 and under 14 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000185 ! 12-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "14.0" xsd:float
+property_value: start_mpb "13.0" xsd:float
+
+[Term]
+id: HsapDv:0000187
+name: 14-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 14 and under 15 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000186 ! 13-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "15.0" xsd:float
+property_value: start_mpb "14.0" xsd:float
+
+[Term]
+id: HsapDv:0000188
+name: 15-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 15 and under 16 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000187 ! 14-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "16.0" xsd:float
+property_value: start_mpb "15.0" xsd:float
+
+[Term]
+id: HsapDv:0000189
+name: 16-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 16 and under 17 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000188 ! 15-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "17.0" xsd:float
+property_value: start_mpb "16.0" xsd:float
+
+[Term]
+id: HsapDv:0000190
+name: 17-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 17 and under 18 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000189 ! 16-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "18.0" xsd:float
+property_value: start_mpb "17.0" xsd:float
+
+[Term]
+id: HsapDv:0000191
+name: 18-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 18 and under 19 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000190 ! 17-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "19.0" xsd:float
+property_value: start_mpb "18.0" xsd:float
+
+[Term]
+id: HsapDv:0000192
+name: 19-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 19 and under 20 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000191 ! 18-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "20.0" xsd:float
+property_value: start_mpb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000193
+name: 20-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 20 and under 21 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000192 ! 19-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "21.0" xsd:float
+property_value: start_mpb "20.0" xsd:float
+
+[Term]
+id: HsapDv:0000194
+name: 21-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 21 and under 22 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000193 ! 20-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "22.0" xsd:float
+property_value: start_mpb "21.0" xsd:float
+
+[Term]
+id: HsapDv:0000195
+name: 22-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 22 and under 23 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000194 ! 21-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "23.0" xsd:float
+property_value: start_mpb "22.0" xsd:float
+
+[Term]
+id: HsapDv:0000196
+name: 23-month-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 23 and under 24 months old." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000195 ! 22-month-old human stage
+relationship: part_of HsapDv:0000246 ! 1-year-old human stage
+property_value: end_mpb "24.0" xsd:float
+property_value: end_ypb "2.0" xsd:float
+property_value: start_mpb "23.0" xsd:float
+
+[Term]
+id: HsapDv:0000197
+name: third LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the third month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "77.0" xsd:float
+property_value: month_of_gestation "3.0" xsd:float
+property_value: start_dpf "56.0" xsd:float
+
+[Term]
+id: HsapDv:0000198
+name: fourth LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the fourth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000197 ! third LMP month human stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "105.0" xsd:float
+property_value: month_of_gestation "4.0" xsd:float
+property_value: start_dpf "77.0" xsd:float
+
+[Term]
+id: HsapDv:0000199
+name: fifth LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the fifth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000198 ! fourth LMP month human stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "133.0" xsd:float
+property_value: month_of_gestation "5.0" xsd:float
+property_value: start_dpf "105.0" xsd:float
+
+[Term]
+id: HsapDv:0000200
+name: sixth LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the sixth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000199 ! fifth LMP month human stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "168.0" xsd:float
+property_value: month_of_gestation "6.0" xsd:float
+property_value: start_dpf "133.0" xsd:float
+
+[Term]
+id: HsapDv:0000201
+name: seventh LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the seventh month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000200 ! sixth LMP month human stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "196.0" xsd:float
+property_value: month_of_gestation "7.0" xsd:float
+property_value: start_dpf "168.0" xsd:float
+
+[Term]
+id: HsapDv:0000202
+name: eighth LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the eighth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000201 ! seventh LMP month human stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "231.0" xsd:float
+property_value: month_of_gestation "8.0" xsd:float
+property_value: start_dpf "196.0" xsd:float
+
+[Term]
+id: HsapDv:0000203
+name: ninth LMP month human stage
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the ninth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000202 ! eighth LMP month human stage
+relationship: part_of HsapDv:0000037 ! fetal stage
+property_value: end_dpf "266.0" xsd:float
+property_value: month_of_gestation "9.0" xsd:float
+property_value: start_dpf "231.0" xsd:float
+
+[Term]
+id: HsapDv:0000204
+name: mature stage
+namespace: human_developmental_stage
+def: "Human developmental stage that refers to a sexually mature human." [Bgee:curator]
+xref: UBERON:0000113
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000001 ! human life cycle
+property_value: start_ypb "13.0" xsd:float
+
+[Term]
+id: HsapDv:0000205
+name: morula stage
+namespace: human_developmental_stage
+def: "The morula stage is the later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic cavity has not formed. Formation of the cavity marks the beginning of Carnegie stage 03." [Bgee:curator]
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000004 ! cleavage stage
+relationship: part_of HsapDv:0000005 ! Carnegie stage 02
+
+[Term]
+id: HsapDv:0000206
+name: 80-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 80 and under 81." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "81.0" xsd:float
+property_value: start_ypb "80.0" xsd:float
+
+[Term]
+id: HsapDv:0000207
+name: 81-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 81 and under 82." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000206 ! 80-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "82.0" xsd:float
+property_value: start_ypb "81.0" xsd:float
+
+[Term]
+id: HsapDv:0000208
+name: 82-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 82 and under 83." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000207 ! 81-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "83.0" xsd:float
+property_value: start_ypb "82.0" xsd:float
+
+[Term]
+id: HsapDv:0000209
+name: 83-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 83 and under 84." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000208 ! 82-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "84.0" xsd:float
+property_value: start_ypb "83.0" xsd:float
+
+[Term]
+id: HsapDv:0000210
+name: 84-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 84 and under 85." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000209 ! 83-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "85.0" xsd:float
+property_value: start_ypb "84.0" xsd:float
+
+[Term]
+id: HsapDv:0000211
+name: 85-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 85 and under 86." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000210 ! 84-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "86.0" xsd:float
+property_value: start_ypb "85.0" xsd:float
+
+[Term]
+id: HsapDv:0000212
+name: 86-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 86 and under 87." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000211 ! 85-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "87.0" xsd:float
+property_value: start_ypb "86.0" xsd:float
+
+[Term]
+id: HsapDv:0000213
+name: 87-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 87 and under 88." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000212 ! 86-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "88.0" xsd:float
+property_value: start_ypb "87.0" xsd:float
+
+[Term]
+id: HsapDv:0000214
+name: 88-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 88 and under 89." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000213 ! 87-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "89.0" xsd:float
+property_value: start_ypb "88.0" xsd:float
+
+[Term]
+id: HsapDv:0000215
+name: 89-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 89 and under 90." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000214 ! 88-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "90.0" xsd:float
+property_value: start_ypb "89.0" xsd:float
+
+[Term]
+id: HsapDv:0000216
+name: 90-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 90 and under 91." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000215 ! 89-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "91.0" xsd:float
+property_value: start_ypb "90.0" xsd:float
+
+[Term]
+id: HsapDv:0000217
+name: 91-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 91 and under 92." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000216 ! 90-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "92.0" xsd:float
+property_value: start_ypb "91.0" xsd:float
+
+[Term]
+id: HsapDv:0000218
+name: 92-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 92 and under 93." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000217 ! 91-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "93.0" xsd:float
+property_value: start_ypb "92.0" xsd:float
+
+[Term]
+id: HsapDv:0000219
+name: 93-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 93 and under 94." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000218 ! 92-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "94.0" xsd:float
+property_value: start_ypb "93.0" xsd:float
+
+[Term]
+id: HsapDv:0000220
+name: 94-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 94 and under 95." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000219 ! 93-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "95.0" xsd:float
+property_value: start_ypb "94.0" xsd:float
+
+[Term]
+id: HsapDv:0000221
+name: 95-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 95 and under 96." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000220 ! 94-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "96.0" xsd:float
+property_value: start_ypb "95.0" xsd:float
+
+[Term]
+id: HsapDv:0000222
+name: 96-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 96 and under 97." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000221 ! 95-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "97.0" xsd:float
+property_value: start_ypb "96.0" xsd:float
+
+[Term]
+id: HsapDv:0000223
+name: 97-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 97 and under 98." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000222 ! 96-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "98.0" xsd:float
+property_value: start_ypb "97.0" xsd:float
+
+[Term]
+id: HsapDv:0000224
+name: 98-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 98 and under 99." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000223 ! 97-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "99.0" xsd:float
+property_value: start_ypb "98.0" xsd:float
+
+[Term]
+id: HsapDv:0000225
+name: 99-year-old human stage
+namespace: human_developmental_stage
+def: "Aged stage that refers to an adult who is over 99 and under 100." [Bgee:curator]
+subset: granular_stage
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000224 ! 98-year-old human stage
+relationship: part_of HsapDv:0000095 ! 80 year-old and over human stage
+property_value: end_ypb "100.0" xsd:float
+property_value: start_ypb "99.0" xsd:float
+
+[Term]
+id: HsapDv:0000246
+name: 1-year-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to a child who is over 1 and under 2 years old." [Bgee:curator]
+synonym: "12-23 months" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000184 ! 11-month-old human stage
+relationship: part_of HsapDv:0000083 ! infant stage
+property_value: end_mpb "24.0" xsd:float
+property_value: end_ypb "2.0" xsd:float
+property_value: start_mpb "12.0" xsd:float
+property_value: start_ypb "1.0" xsd:float
+
+[Term]
+id: HsapDv:0000256
+name: under-1-year-old human stage
+namespace: human_developmental_stage
+def: "Infant stage that refers to an infant who is over 31 days and is under 12 months old." [Bgee:curator]
+synonym: "1-11 months" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000082 ! newborn human stage
+relationship: part_of HsapDv:0000083 ! infant stage
+property_value: end_mpb "24.0" xsd:float
+property_value: end_ypb "1.0" xsd:float
+property_value: start_mpb "1.0" xsd:float
+property_value: start_ypb "0.083" xsd:float
+
+[Typedef]
+id: end_dpf
+name: end, days post fertilization
+namespace: human_stages_ontology
+def: "Count of number of days intervening between the end of the stage and the time of fertilization according to a reference model. Note that the first day of development has the value of 1 for this property." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000033
+is_metadata_tag: true
+
+[Typedef]
+id: end_mpb
+name: end, months post birth
+namespace: human_stages_ontology
+def: "Count of number of months intervening between the end of the stage and the time of birth according to a reference model. Note that the first month of post-birth development has the value of 1 for this property, and the period during which the child is one month old has the value 2" []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000035
+is_metadata_tag: true
+
+[Typedef]
+id: end_ypb
+name: end, years post birth
+namespace: human_stages_ontology
+def: "Count of number of years intervening between the end of the stage and the time of birth according to a reference model. Note that the first year of post-birth development has the value of 1 for this property, and the period during which the child is one year old has the value 2" []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000036
+is_metadata_tag: true
+
+[Typedef]
+id: has_end_time
+name: has end time
+namespace: human_stages_ontology
+is_metadata_tag: true
+
+[Typedef]
+id: has_stage_marker
+name: has stage marker
+namespace: human_stages_ontology
+def: "A relationship between a stage class and an anatomical structure or developmental process class, in which the stage is characterized by the appearance of the structure or the occurrence of the biological process" []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+is_metadata_tag: true
+
+[Typedef]
+id: has_start_time
+name: has start time
+namespace: human_stages_ontology
+is_metadata_tag: true
+
+[Typedef]
+id: has_unit
+name: has unit
+namespace: human_stages_ontology
+comment: Used to associate a measurement property (e.g. days post fertilization) with a unit (e.g. days)
+is_metadata_tag: true
+
+[Typedef]
+id: immediately_preceded_by
+name: immediately_preceded_by
+namespace: human_stages_ontology
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+xref: RO:0002087
+is_a: preceded_by ! preceded_by
+
+[Typedef]
+id: month_of_gestation
+name: month of gestation
+namespace: human_stages_ontology
+def: "Defines the start and end of a stage with a duration of 1 month, relative to either the time of fertilization or last menstrual period of the mother (to be clarified), counting from one, in terms of a reference model. Thus if month_of_gestation=3, then the stage is 2 month in." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+xref: Wikipedia:Gestational_age
+property_value: has_unit UO:0000035
+is_metadata_tag: true
+
+[Typedef]
+id: part_of
+name: part of
+namespace: human_stages_ontology
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: preceded_by
+name: preceded_by
+namespace: human_stages_ontology
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+xref: BFO:0000062
+is_transitive: true
+
+[Typedef]
+id: start_dpf
+name: start, days post fertilization
+namespace: human_stages_ontology
+def: "Count of number of days intervening between the start of the stage and the time of fertilization according to a reference model. Note that the first day of development has the value of 0 for this property." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000033
+is_metadata_tag: true
+
+[Typedef]
+id: start_mpb
+name: start, months post birth
+namespace: human_stages_ontology
+def: "Count of number of months intervening between the start of the stage and the time of birth according to a reference model. Note that the first month of post-birth development has the value of 0 for this property, and the period during which the child is one month old has the value 1." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000035
+is_metadata_tag: true
+
+[Typedef]
+id: start_ypb
+name: start, years post birth
+namespace: human_stages_ontology
+def: "Count of number of years intervening between the start of the stage and the time of birth according to a reference model. Note that the first year of post-birth development has the value of 0 for this property, and the period during which the child is one year old has the value 1." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000036
+is_metadata_tag: true
+
