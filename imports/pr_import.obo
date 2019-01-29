@@ -1,0 +1,940 @@
+format-version: 1.2
+data-version: hp/releases/2019-01-29/imports/pr_import.owl
+ontology: hp/imports/pr_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))\n\n\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12726> \"HGNC:12726\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437> \"HGNC:1437\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=2295> \"HGNC:2295\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=317> \"HGNC:317\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=399> \"HGNC:399\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4057> \"HGNC:4057\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4164> \"HGNC:4164\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4268> \"HGNC:4268\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=437> \"HGNC:437\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=438> \"HGNC:438\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=439> \"HGNC:439\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6081> \"HGNC:6081\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6553> \"HGNC:6553\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6563> \"HGNC:6563\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9445> \"HGNC:9445\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9606> \"HGNC:9606\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9958> \"HGNC:9958\"^^xsd:string)\n)
+
+[Term]
+id: BFO:0000019
+name: quality
+namespace: bfo
+
+[Term]
+id: BFO:0000024
+name: fiat object part
+namespace: bfo
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000030
+name: object
+namespace: bfo
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000040
+name: material entity
+namespace: bfo
+
+[Term]
+id: CHEBI:23367
+name: molecular entity
+namespace: chebi_ontology
+def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." [fake:2]
+is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: CHEBI:24431
+name: chemical entity
+namespace: chebi_ontology
+def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+is_a: BFO:0000030 ! object
+
+[Term]
+id: CHEBI:33247
+name: organic group
+namespace: chebi_ontology
+def: "Any substituent group or skeleton containing carbon." []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:33708
+name: amino-acid residue
+namespace: chebi_ontology
+def: "When two or more amino acids combine to form a peptide, the elements of water are removed, and what remains of each amino acid is called an amino-acid residue." [Dummy:dummy]
+synonym: "amino acid residue" EXACT []
+synonym: "protein residue" NARROW [PRO:DAN]
+is_a: CHEBI:33247 ! organic group
+
+[Term]
+id: CHEBI:50047
+name: organic amino compound
+namespace: chebi_ontology
+def: "A compound formally derived from ammonia by replacing one, two or three hydrogen atoms by organyl groups." []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: GO:0002185
+name: creatine kinase complex
+namespace: cellular_component
+def: "A protein complex having creatine kinase activity." [GOC:hjd]
+is_a: GO:0032991 ! protein-containing complex
+
+[Term]
+id: GO:0032991
+name: protein-containing complex
+namespace: cellular_component
+def: "Any macromolecular complex composed of two or more polypeptide subunits, which may or may not be identical. Protein complexes may have other associated non-protein prosthetic groups, such as nucleotides, metal ions or carbohydrate groups." [GOC:go_curators]
+comment: Note that although at some level almost all cellular components can be thought of as protein complexes, this term is intended to exclude structures composed of the same repeating subunit or subunits, for example microtubules. Protein complexes encompassed by this term are generally not structural, and usually have a defined set of subunits.
+synonym: "protein-protein complex" EXACT []
+
+[Term]
+id: NCBITaxon:2759
+name: Eukaryota
+namespace: ncbi_taxonomy
+synonym: "euk-" RELATED PRO-short-label [PRO:DAN]
+is_a: OBI:0100026 ! organism
+
+[Term]
+id: NCBITaxon:33154
+name: Opisthokonta
+namespace: ncbi_taxonomy
+synonym: "Fungi/Metazoa group" RELATED []
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: NCBITaxon:33208
+name: Metazoa
+namespace: ncbi_taxonomy
+synonym: "metazoan-" RELATED PRO-short-label [PRO:DAN]
+is_a: NCBITaxon:33154 ! Opisthokonta
+
+[Term]
+id: NCBITaxon:40674
+name: Mammalia
+namespace: ncbi_taxonomy
+synonym: "mammal" EXACT PRO-common-name []
+synonym: "mammal-" RELATED PRO-short-label [PRO:DAN]
+is_a: NCBITaxon:33208 ! Metazoa
+
+[Term]
+id: NCBITaxon:9606
+name: Homo sapiens
+namespace: ncbi_taxonomy
+synonym: "h" RELATED PRO-short-label [PRO:DAN]
+synonym: "human" RELATED PRO-common-name [PRO:DAN]
+is_a: NCBITaxon:40674 ! Mammalia
+
+[Term]
+id: OBI:0100026
+name: organism
+namespace: obi
+is_a: BFO:0000030 ! object
+
+[Term]
+id: PR:000000001
+name: protein
+namespace: protein
+def: "An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA." [PRO:DAN, PRO:WCB]
+comment: Proteins descended from a common ancestor can be classified into families and superfamilies composed of products of evolutionarily-related genes. The domain architecture of a protein is described by the order of its constituent domains. Proteins with the same domains in the same order are defined as homeomorphic [PRO:WCB].
+is_a: PR:000018263 ! amino acid chain
+
+[Term]
+id: PR:000003809
+name: alpha-fetoprotein
+namespace: protein
+def: "A protein that is a translation product of the human AFP gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "AFP" EXACT PRO-short-label [PRO:DNx]
+synonym: "alpha-1-fetoprotein" EXACT []
+synonym: "alpha-fetoglobulin" EXACT []
+synonym: "HPAFP" RELATED []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000003918
+name: serum albumin
+namespace: protein
+def: "A protein that is a translation product of the human ALB gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "ALB" EXACT PRO-short-label [PRO:DNx]
+synonym: "Alb-1" RELATED []
+synonym: "Alb1" RELATED []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000003964
+name: intestinal alkaline phosphatase
+namespace: protein
+def: "A protein that is a translation product of the human ALPI gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "ALPI" EXACT PRO-short-label [PRO:DNx]
+synonym: "IAP" RELATED []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000003968
+name: alkaline phosphatase, tissue-nonspecific isozyme
+namespace: protein
+def: "A protein that is a translation product of the human ALPL gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "Akp-2" RELATED []
+synonym: "Akp2" RELATED []
+synonym: "alkaline phosphatase 2" EXACT []
+synonym: "alkaline phosphatase liver/bone/kidney isozyme" EXACT []
+synonym: "ALPL" EXACT PRO-short-label [PRO:DNx]
+synonym: "AP-TNAP" EXACT []
+synonym: "TNSALP" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000003969
+name: alkaline phosphatase, placental type
+namespace: protein
+def: "A protein that is a translation product of the human ALPP gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "alkaline phosphatase Regan isozyme" EXACT []
+synonym: "ALPP" EXACT PRO-short-label [PRO:DNx]
+synonym: "placental alkaline phosphatase 1" EXACT []
+synonym: "PLAP" RELATED []
+synonym: "PLAP-1" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000005794
+name: ceruloplasmin
+namespace: protein
+def: "A protein that is a translation product of the human CP gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "CP" EXACT PRO-short-label [PRO:DNx]
+synonym: "ferroxidase" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000007749
+name: glucose-6-phosphate 1-dehydrogenase
+namespace: protein
+alt_id: PR:000007751
+def: "A protein that is a translation product of the human G6PD gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "G6PD" EXACT PRO-short-label [PRO:DNx]
+synonym: "G6pd-1" RELATED []
+synonym: "G6pdx" RELATED []
+synonym: "glucose-6-phosphate 1-dehydrogenase X" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000007856
+name: gastrin
+namespace: protein
+def: "A protein that is a translation product of the human GAST gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "GAS" RELATED []
+synonym: "GAST" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000007975
+name: gastric intrinsic factor
+namespace: protein
+def: "A protein that is a translation product of the human GIF gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "GIF" EXACT PRO-short-label [PRO:DNx]
+synonym: "IF" EXACT []
+synonym: "IFMH" RELATED []
+synonym: "INF" EXACT []
+synonym: "intrinsic factor" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000009054
+name: insulin
+namespace: protein
+def: "An insulin family protein that is a translation product of the human INS gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "INS" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000045358 ! insulin family protein
+
+[Term]
+id: PR:000009758
+name: leptin
+namespace: protein
+def: "A protein that is a translation product of the human LEP gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "LEP" EXACT PRO-short-label [PRO:DNx]
+synonym: "OB" RELATED []
+synonym: "obese protein" EXACT []
+synonym: "obesity factor" EXACT []
+synonym: "OBS" RELATED []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000009771
+name: galectin-3
+namespace: protein
+def: "A protein that is a translation product of the human LGALS3 gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "35 kDa lectin" EXACT []
+synonym: "carbohydrate-binding protein 35" EXACT []
+synonym: "CBP 35" EXACT []
+synonym: "gal-3" EXACT []
+synonym: "galactose-specific lectin 3" EXACT []
+synonym: "galactoside-binding protein" EXACT []
+synonym: "GALBP" EXACT []
+synonym: "IgE-binding protein" EXACT []
+synonym: "L-31" EXACT []
+synonym: "L-34 galactoside-binding lectin" EXACT []
+synonym: "laminin-binding protein" EXACT []
+synonym: "lectin L-29" EXACT []
+synonym: "LGALS3" EXACT PRO-short-label [PRO:DNx]
+synonym: "Mac-2 antigen" EXACT []
+synonym: "MAC2" RELATED []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000013246
+name: prolactin
+namespace: protein
+def: "A somatotropin hormone family member that is a translation product of the human PRL gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "PRL" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000029968 ! somatotropin hormone family member
+
+[Term]
+id: PR:000013429
+name: parathyroid hormone
+namespace: protein
+def: "A protein that is a translation product of the human PTH gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "parathormone" EXACT []
+synonym: "parathyrin" EXACT []
+synonym: "PTH" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000013883
+name: renin
+namespace: protein
+def: "A protein that is a translation product of the human REN gene or a 1:1 ortholog thereof." [PRO:DAN]
+comment: Category=gene.
+synonym: "angiotensinogenase" EXACT []
+synonym: "REN" EXACT PRO-short-label [PRO:DNx]
+xref: IUPHARobj:2413
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000017364
+name: von Willebrand factor
+namespace: protein
+def: "A protein that is a translation product of the human VWF gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "F8VWF" RELATED []
+synonym: "VWF" EXACT PRO-short-label [PRO:DNx]
+synonym: "vWF" EXACT []
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000018263
+name: amino acid chain
+namespace: protein
+def: "An organic amino compound that is a polymer of amino acid chain components (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds." [PRO:DAN, PRO:JSG]
+comment: Category=external.
+synonym: "peptide" NARROW [PRO:DAN]
+synonym: "polypeptide" NARROW [PRO:DAN]
+is_a: CHEBI:50047 ! organic amino compound
+relationship: has_part PR:000036907 ! amino acid chain component
+
+[Term]
+id: PR:000025513
+name: modified amino-acid residue
+namespace: protein
+def: "An organic group that results from covalent modification or chemical alteration to the side chain or backbone atoms of an amino acid residue or derivative thereof, where such alteration maintains the integrity of the amino acid chain containing the residue." [PRO:DAN, PRO:JSG]
+comment: Category=external. Note: This entity is distinct from MOD:00000 "protein modification" in that the latter includes proteolytic cleavages. [PRO:DAN, PRO:JSG]
+synonym: "modified amino acid chain residue" EXACT [PRO:DAN]
+synonym: "modified protein residue" NARROW [PRO:DAN]
+is_a: CHEBI:33247 ! organic group
+union_of: PR:000036198 ! peptidyl modified amino-acid residue
+union_of: PR:000036199 ! non-peptidyl modified amino-acid residue
+disjoint_from: PR:000026291 ! unmodified amino-acid residue
+
+[Term]
+id: PR:000026291
+name: unmodified amino-acid residue
+namespace: protein
+def: "An amino-acid residue that has not been covalently modified by chemical alteration to the side chain or backbone atoms." [PRO:DAN]
+comment: Category=external.
+synonym: "unmodified amino acid chain residue" EXACT [PRO:DAN]
+synonym: "unmodified protein residue" NARROW [PRO:DAN]
+is_a: CHEBI:33708 ! amino-acid residue
+
+[Term]
+id: PR:000027222
+name: CALCA gene translation product
+namespace: protein
+def: "A protein that is a translation product of the human CALCA gene or a 1:1 ortholog thereof." [MGI:2151253, PRO:CNA]
+comment: Category=gene.
+synonym: "CALC" RELATED []
+synonym: "CALCA" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000029067
+name: Homo sapiens protein
+namespace: protein
+def: "A protein that is encoded in the genome of Homo sapiens." [PRO:DAN]
+synonym: "human protein" EXACT PRO-short-label [PRO:DAN]
+is_a: PR:000036194 ! eukaryotic protein
+intersection_of: PR:000000001 ! protein
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:000029968
+name: somatotropin hormone family member
+namespace: protein
+def: "A protein that is a standalone version of the Hormone_1 domain (Pfam:PF00103). In the immature form, the domain is preceded by a signal peptide." [PRO:DAN]
+comment: Category=family.
+synonym: "fam:GH1" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000030026
+name: CALCA gene translation product (human)
+namespace: protein
+def: "A CALCA gene translation product that is encoded in the genome of human." [PRO:DNx, UniProtKB:P06881]
+comment: Category=organism-gene.
+synonym: "alpha-type CGRP (human)" EXACT [UniProtKB:P06881]
+synonym: "CALC1 (human)" RELATED [UniProtKB:P06881]
+synonym: "calcitonin gene-related peptide I (human)" EXACT [UniProtKB:P06881]
+synonym: "CGRP-I (human)" EXACT [UniProtKB:P06881]
+synonym: "hCALCA" EXACT PRO-short-label [PRO:DNx]
+is_a: PR:000027222 ! CALCA gene translation product
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000027222 ! CALCA gene translation product
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437 ! CALCA (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:000036194
+name: eukaryotic protein
+namespace: protein
+def: "A protein that is encoded in the genome of some Eukaryota." [PRO:DAN]
+synonym: "Eukaryota protein" EXACT [PRO:DAN]
+is_a: PR:000000001 ! protein
+intersection_of: PR:000000001 ! protein
+intersection_of: only_in_taxon NCBITaxon:2759 ! Eukaryota
+relationship: only_in_taxon NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: PR:000036198
+name: peptidyl modified amino-acid residue
+namespace: protein
+def: "An amino-acid residue that results from covalent modification or chemical alteration to the side chain or backbone atoms such that the peptide bonds remain." [PRO:DAN, PRO:JSG]
+comment: Category=external.
+is_a: CHEBI:33708 ! amino-acid residue
+disjoint_from: PR:000036199 ! non-peptidyl modified amino-acid residue
+
+[Term]
+id: PR:000036199
+name: non-peptidyl modified amino-acid residue
+namespace: protein
+def: "An organic group that results from covalent modification or chemical alteration to the backbone atoms of amino acid residues so that their peptide bond is altered but the C1 and alpha-N bond is uncleaved." [PRO:DAN, PRO:JSG]
+comment: Category=external.
+is_a: CHEBI:33247 ! organic group
+relationship: derives_from CHEBI:33708 ! amino-acid residue
+
+[Term]
+id: PR:000036907
+name: amino acid chain component
+namespace: protein
+def: "A fiat object part that is either a modified amino-acid residue or an unmodified amino-acid residue." [PRO:DAN]
+comment: Category=external. Note: This entity is distinct from CHEBI: "amino-acid residue" in that it includes residues that are technically not part of that class. [PRO:JSG]
+synonym: "amino-acid residue" BROAD [PRO:DAN]
+is_a: BFO:0000024 ! fiat object part
+union_of: PR:000025513 ! modified amino-acid residue
+union_of: PR:000026291 ! unmodified amino-acid residue
+
+[Term]
+id: PR:000045358
+name: insulin family protein
+namespace: protein
+def: "A protein that is a translation product of a gene that encodes a standalone Insulin (Pfam:PF00049) domain preceded by a signal peptide." [PRO:DAN]
+comment: Category=family.
+synonym: "fam:INS" EXACT PRO-short-label [PRO:DAN]
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:P00450
+name: ceruloplasmin (human)
+namespace: protein
+def: "A ceruloplasmin that is encoded in the genome of human." [PRO:DNx, UniProtKB:P00450]
+comment: Category=organism-gene.
+synonym: "hCP" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P00450
+is_a: PR:000005794 ! ceruloplasmin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000005794 ! ceruloplasmin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=2295 ! CP (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P00797
+name: renin (human)
+namespace: protein
+def: "A renin that is encoded in the genome of human." [PRO:DNx, UniProtKB:P00797]
+comment: Category=organism-gene.
+synonym: "hREN" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P00797
+is_a: PR:000013883 ! renin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000013883 ! renin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9958 ! REN (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P01236
+name: prolactin (human)
+namespace: protein
+def: "A prolactin that is encoded in the genome of human." [PRO:DNx, UniProtKB:P01236]
+comment: Category=organism-gene.
+synonym: "hPRL" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P01236
+is_a: PR:000013246 ! prolactin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000013246 ! prolactin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9445 ! PRL (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P01270
+name: parathyroid hormone (human)
+namespace: protein
+def: "A parathyroid hormone that is encoded in the genome of human." [PRO:DNx, UniProtKB:P01270]
+comment: Category=organism-gene.
+synonym: "hPTH" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P01270
+is_a: PR:000013429 ! parathyroid hormone
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000013429 ! parathyroid hormone
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9606 ! PTH (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P01308
+name: insulin (human)
+namespace: protein
+def: "An insulin that is encoded in the genome of human." [PRO:DAN, UniProtKB:P01308]
+comment: Category=organism-gene.
+synonym: "hINS" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P01308
+is_a: PR:000009054 ! insulin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000009054 ! insulin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6081 ! INS (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P01350
+name: gastrin (human)
+namespace: protein
+def: "A gastrin that is encoded in the genome of human." [PRO:DNx, UniProtKB:P01350]
+comment: Category=organism-gene.
+synonym: "hGAST" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P01350
+is_a: PR:000007856 ! gastrin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000007856 ! gastrin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4164 ! GAST (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P02768
+name: serum albumin (human)
+namespace: protein
+def: "A serum albumin that is encoded in the genome of human." [PRO:DNx, UniProtKB:P02768]
+comment: Category=organism-gene.
+synonym: "hALB" EXACT PRO-short-label [PRO:DNx]
+xref: Reactome:R-HSA-5620933 "PR:P02768 located_in GO:0005829"
+xref: UniProtKB:P02768
+is_a: PR:000003918 ! serum albumin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000003918 ! serum albumin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=399 ! ALB (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P02771
+name: alpha-fetoprotein (human)
+namespace: protein
+def: "An alpha-fetoprotein that is encoded in the genome of human." [PRO:DNx, UniProtKB:P02771]
+comment: Category=organism-gene.
+synonym: "hAFP" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P02771
+is_a: PR:000003809 ! alpha-fetoprotein
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000003809 ! alpha-fetoprotein
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=317 ! AFP (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P04275
+name: von Willebrand factor (human)
+namespace: protein
+def: "A von Willebrand factor that is encoded in the genome of human." [PRO:DNx, UniProtKB:P04275]
+comment: Category=organism-gene.
+synonym: "hVWF" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P04275
+is_a: PR:000017364 ! von Willebrand factor
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000017364 ! von Willebrand factor
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12726 ! VWF (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P05186
+name: alkaline phosphatase, tissue-nonspecific isozyme (human)
+namespace: protein
+def: "An alkaline phosphatase, tissue-nonspecific isozyme that is encoded in the genome of human." [PRO:DNx, UniProtKB:P05186]
+comment: Category=organism-gene.
+synonym: "hALPL" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P05186
+is_a: PR:000003968 ! alkaline phosphatase, tissue-nonspecific isozyme
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000003968 ! alkaline phosphatase, tissue-nonspecific isozyme
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=438 ! ALPL (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P05187
+name: alkaline phosphatase, placental type (human)
+namespace: protein
+def: "An alkaline phosphatase, placental type that is encoded in the genome of human." [PRO:DNx, UniProtKB:P05187]
+comment: Category=organism-gene.
+synonym: "hALPP" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P05187
+is_a: PR:000003969 ! alkaline phosphatase, placental type
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000003969 ! alkaline phosphatase, placental type
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=439 ! ALPP (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P09923
+name: intestinal-type alkaline phosphatase (human)
+namespace: protein
+def: "An intestinal alkaline phosphatase that is encoded in the genome of human." [PRO:DNx, UniProtKB:P09923]
+comment: Category=organism-gene.
+synonym: "hALPI" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P09923
+is_a: PR:000003964 ! intestinal alkaline phosphatase
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000003964 ! intestinal alkaline phosphatase
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=437 ! ALPI (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P11413
+name: glucose-6-phosphate 1-dehydrogenase (human)
+namespace: protein
+def: "A glucose-6-phosphate 1-dehydrogenase that is encoded in the genome of human." [PRO:DNx, UniProtKB:P11413]
+comment: Category=organism-gene.
+synonym: "hG6PD" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P11413
+is_a: PR:000007749 ! glucose-6-phosphate 1-dehydrogenase
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000007749 ! glucose-6-phosphate 1-dehydrogenase
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4057 ! G6PD (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P17931
+name: galectin-3 (human)
+namespace: protein
+def: "A galectin-3 that is encoded in the genome of human." [PRO:DNx, UniProtKB:P17931]
+comment: Category=organism-gene.
+synonym: "hLGALS3" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P17931
+is_a: PR:000009771 ! galectin-3
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000009771 ! galectin-3
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6563 ! LGALS3 (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P27352
+name: gastric intrinsic factor (human)
+namespace: protein
+def: "A gastric intrinsic factor that is encoded in the genome of human." [PRO:DNx, UniProtKB:P27352]
+comment: Category=organism-gene.
+synonym: "hGIF" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P27352
+is_a: PR:000007975 ! gastric intrinsic factor
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000007975 ! gastric intrinsic factor
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4268 ! GIF (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: PR:P41159
+name: leptin (human)
+namespace: protein
+def: "A leptin that is encoded in the genome of human." [PRO:DNx, UniProtKB:P41159]
+comment: Category=organism-gene.
+synonym: "hLEP" EXACT PRO-short-label [PRO:DNx]
+xref: UniProtKB:P41159
+is_a: PR:000009758 ! leptin
+is_a: PR:000029067 ! Homo sapiens protein
+intersection_of: PR:000009758 ! leptin
+intersection_of: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: has_gene_template http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6553 ! LEP (human)
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: SO:0000010
+name: protein_coding
+namespace: sequence
+synonym: "protein-coding" EXACT []
+is_a: BFO:0000019 ! quality
+
+[Term]
+id: SO:0000110
+name: sequence_feature
+namespace: sequence
+def: "An extent of biological sequence." [SO:ke]
+synonym: "located sequence feature" RELATED []
+synonym: "located_sequence_feature" EXACT []
+synonym: "sequence feature" EXACT []
+
+[Term]
+id: SO:0000704
+name: gene
+namespace: sequence
+def: "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions." [SO:immuno_workshop]
+is_a: SO:0000110 ! sequence_feature
+
+[Term]
+id: SO:0001217
+name: protein_coding_gene
+namespace: sequence
+synonym: "protein coding gene" EXACT []
+is_a: SO:0000704 ! gene
+relationship: has_quality SO:0000010 ! protein_coding
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12726
+name: VWF (human)
+namespace: gene
+def: "A protein coding gene VWF in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437
+name: CALCA (human)
+namespace: gene
+def: "A protein coding gene CALCA in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=2295
+name: CP (human)
+namespace: gene
+def: "A protein coding gene CP in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=317
+name: AFP (human)
+namespace: gene
+def: "A protein coding gene AFP in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=399
+name: ALB (human)
+namespace: gene
+def: "A protein coding gene ALB in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4057
+name: G6PD (human)
+namespace: gene
+def: "A protein coding gene G6PD in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4164
+name: GAST (human)
+namespace: gene
+def: "A protein coding gene GAST in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4268
+name: GIF (human)
+namespace: gene
+def: "A protein coding gene GIF in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=437
+name: ALPI (human)
+namespace: gene
+def: "A protein coding gene ALPI in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=438
+name: ALPL (human)
+namespace: gene
+def: "A protein coding gene ALPL in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=439
+name: ALPP (human)
+namespace: gene
+def: "A protein coding gene ALPP in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6081
+name: INS (human)
+namespace: gene
+def: "A protein coding gene INS in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6553
+name: LEP (human)
+namespace: gene
+def: "A protein coding gene LEP in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6563
+name: LGALS3 (human)
+namespace: gene
+def: "A protein coding gene LGALS3 in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9445
+name: PRL (human)
+namespace: gene
+def: "A protein coding gene PRL in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9606
+name: PTH (human)
+namespace: gene
+def: "A protein coding gene PTH in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Term]
+id: http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9958
+name: REN (human)
+namespace: gene
+def: "A protein coding gene REN in human." [PRO:DNx]
+comment: Category=external.
+is_a: SO:0001217 ! protein_coding_gene
+relationship: only_in_taxon NCBITaxon:9606 ! Homo sapiens
+
+[Typedef]
+id: derives_from
+name: derives_from
+namespace: protein
+xref: RO:0001000
+is_transitive: true
+
+[Typedef]
+id: has_gene_template
+name: has_gene_template
+namespace: protein
+is_transitive: false
+
+[Typedef]
+id: has_part
+name: has_part
+namespace: protein
+xref: BFO:0000051
+is_transitive: true
+
+[Typedef]
+id: has_quality
+name: has_quality
+namespace: protein
+xref: RO:0000086
+is_transitive: false
+
+[Typedef]
+id: has_role
+name: has_role
+namespace: protein
+xref: RO:0000087
+is_transitive: false
+
+[Typedef]
+id: located_in
+name: located_in
+namespace: protein
+xref: RO:0001025
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+name: only_in_taxon
+namespace: protein
+def: "U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon." [ROC:Waclaw]
+comment: Down-propagates. The original name for this in the paper is 'specific_to'. Applicable to genes because some genes are lost in sub-species (strains) of a species.
+synonym: "never_outside_taxon" EXACT []
+synonym: "specific_to" EXACT []
+synonym: "specific_to_taxon" EXACT []
+xref: RO:0002160
+is_transitive: false
+
+[Typedef]
+id: part_of
+name: part_of
+namespace: protein
+xref: BFO:0000050
+is_transitive: true
+
