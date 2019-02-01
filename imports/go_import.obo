@@ -3296,6 +3296,41 @@ xref: reactome:R-HSA-193672 "Sphingomyelinase is activated by the NGF:p75NTR com
 is_a: GO:0038023 ! signaling receptor activity
 
 [Term]
+id: GO:0004930
+name: G protein-coupled receptor activity
+namespace: molecular_function
+alt_id: GO:0001622
+alt_id: GO:0001623
+alt_id: GO:0001624
+alt_id: GO:0001625
+alt_id: GO:0016526
+def: "Combining with an extracellular signal and transmitting the signal across the membrane by activating an associated G-protein; promotes the exchange of GDP for GTP on the alpha subunit of a heterotrimeric G-protein complex." [GOC:bf, http://www.iuphar-db.org, Wikipedia:GPCR]
+subset: goslim_chembl
+synonym: "EBV-induced receptor" NARROW []
+synonym: "Epstein-Barr Virus-induced receptor activity" NARROW []
+synonym: "G protein coupled receptor activity" EXACT []
+synonym: "G protein linked receptor activity" EXACT []
+synonym: "G-protein coupled receptor activity" EXACT []
+synonym: "G-protein coupled receptor activity, unknown ligand" NARROW []
+synonym: "G-protein linked receptor activity" EXACT []
+synonym: "GPCR activity" EXACT []
+synonym: "ligand-dependent GPCR activity" EXACT []
+synonym: "Mas proto-oncogene receptor activity" NARROW []
+synonym: "orphan G protein coupled receptor activity" NARROW []
+synonym: "orphan G-protein coupled receptor activity" NARROW []
+synonym: "orphan GPCR activity" NARROW []
+synonym: "RDC1 receptor activity" NARROW []
+synonym: "receptor activity, G-protein coupled" EXACT [GOC:bf]
+synonym: "SREB receptor" NARROW []
+synonym: "super conserved receptor expressed in brain receptor activity" NARROW []
+xref: reactome:R-HSA-114552 "G12/13 activation by PAR"
+xref: reactome:R-HSA-114558 "Gq activation by PAR"
+xref: reactome:R-HSA-167408 "The high affinity receptor complex binds to G-protein"
+xref: Wikipedia:GPCR
+is_a: GO:0004888 ! transmembrane signaling receptor activity
+relationship: part_of GO:0007186 ! G protein-coupled receptor signaling pathway
+
+[Term]
 id: GO:0005102
 name: signaling receptor binding
 namespace: molecular_function
@@ -5579,6 +5614,25 @@ synonym: "cell surface receptor linked signalling pathway" EXACT [GOC:mah]
 is_a: GO:0007165 ! signal transduction
 
 [Term]
+id: GO:0007186
+name: G protein-coupled receptor signaling pathway
+namespace: biological_process
+alt_id: GO:0038042
+def: "A series of molecular signals that proceeds with an activated receptor promoting the exchange of GDP for GTP on the alpha-subunit of an associated heterotrimeric G-protein complex. The GTP-bound activated alpha-G-protein then dissociates from the beta- and gamma-subunits to further transmit the signal within the cell. The pathway begins with receptor-ligand interaction, or for basal GPCR signaling the pathway begins with the receptor activating its G protein in the absence of an agonist, and ends with regulation of a downstream cellular process, e.g. transcription.  The pathway can start from the plasma membrane, Golgi or nuclear membrane (PMID:24568158 and PMID:16902576)." [GOC:bf, GOC:mah, PMID:16902576, PMID:24568158, Wikipedia:G_protein-coupled_receptor]
+synonym: "dimeric G-protein coupled receptor signaling pathway" NARROW []
+synonym: "dimeric G-protein coupled receptor signalling pathway" NARROW [GOC:mah]
+synonym: "G protein coupled receptor protein signaling pathway" EXACT []
+synonym: "G protein coupled receptor protein signalling pathway" EXACT []
+synonym: "G-protein coupled receptor protein signal transduction" EXACT []
+synonym: "G-protein coupled receptor protein signaling pathway" EXACT [GOC:bf]
+synonym: "G-protein coupled receptor signaling pathway via GPCR dimer" NARROW [GOC:bf]
+synonym: "G-protein coupled receptor signalling pathway" EXACT []
+synonym: "G-protein-coupled receptor protein signalling pathway" EXACT []
+synonym: "GPCR signaling pathway" EXACT []
+synonym: "GPCR signalling pathway" EXACT []
+is_a: GO:0007165 ! signal transduction
+
+[Term]
 id: GO:0007267
 name: cell-cell signaling
 namespace: biological_process
@@ -6169,6 +6223,23 @@ subset: goslim_plant
 synonym: "accidental cell death" RELATED []
 synonym: "necrosis" RELATED []
 is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0008277
+name: regulation of G protein-coupled receptor signaling pathway
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of G protein-coupled receptor signaling pathway." [GOC:go_curators]
+synonym: "regulation of G protein coupled receptor protein signaling pathway" EXACT []
+synonym: "regulation of G protein coupled receptor protein signalling pathway" EXACT []
+synonym: "regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "regulation of G-protein coupled receptor protein signalling pathway" EXACT []
+synonym: "regulation of G-protein-coupled receptor protein signalling pathway" EXACT []
+synonym: "regulation of GPCR protein signaling pathway" EXACT []
+synonym: "regulation of GPCR protein signalling pathway" EXACT []
+is_a: GO:0009966 ! regulation of signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0007186 ! G protein-coupled receptor signaling pathway
+relationship: regulates GO:0007186 ! G protein-coupled receptor signaling pathway
 
 [Term]
 id: GO:0008283
@@ -7926,6 +7997,15 @@ xref: Wikipedia:Endomembrane_system
 is_a: GO:0044464 ! cell part
 relationship: has_part GO:0005773 ! vacuole
 relationship: has_part GO:0005886 ! plasma membrane
+
+[Term]
+id: GO:0012506
+name: vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any membrane-bounded vesicle in the cell." [GOC:mah, GOC:vesicle]
+xref: NIF_Subcellular:sao1153182838
+is_a: GO:0031090 ! organelle membrane
+relationship: part_of GO:0031982 ! vesicle
 
 [Term]
 id: GO:0014003
@@ -10615,6 +10695,25 @@ is_a: GO:0062012 ! regulation of small molecule metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006766 ! vitamin metabolic process
 relationship: regulates GO:0006766 ! vitamin metabolic process
+
+[Term]
+id: GO:0030659
+name: cytoplasmic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a cytoplasmic vesicle." [GOC:mah]
+is_a: GO:0012506 ! vesicle membrane
+is_a: GO:0044433 ! cytoplasmic vesicle part
+
+[Term]
+id: GO:0030667
+name: secretory granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a secretory granule." [GOC:mah]
+synonym: "secretory vesicle membrane" BROAD []
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+is_a: GO:0098805 ! whole membrane
+relationship: part_of GO:0030141 ! secretory granule
 
 [Term]
 id: GO:0030705
@@ -14053,6 +14152,21 @@ is_a: GO:0005766 ! primary lysosome
 is_a: GO:0030141 ! secretory granule
 
 [Term]
+id: GO:0042588
+name: zymogen granule
+namespace: cellular_component
+def: "A membrane-bounded, cytoplasmic secretory granule found in enzyme-secreting cells and visible by light microscopy. Contain zymogen, an inactive enzyme precursor, often of a digestive enzyme." [GOC:jl, ISBN:0198506732]
+is_a: GO:0030141 ! secretory granule
+
+[Term]
+id: GO:0042589
+name: zymogen granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a zymogen granule." [GOC:jl]
+is_a: GO:0030667 ! secretory granule membrane
+relationship: part_of GO:0042588 ! zymogen granule
+
+[Term]
 id: GO:0042592
 name: homeostatic process
 namespace: biological_process
@@ -15741,6 +15855,17 @@ created_by: janelomax
 creation_date: 2012-09-19T15:56:30Z
 
 [Term]
+id: GO:0044705
+name: multi-organism reproductive behavior
+namespace: biological_process
+def: "The specific behavior of an organism that is associated with reproduction involving another organism of the same or different species." [GOC:jl, GOC:pr]
+is_a: GO:0019098 ! reproductive behavior
+is_a: GO:0044703 ! multi-organism reproductive process
+is_a: GO:0051705 ! multi-organism behavior
+created_by: janelomax
+creation_date: 2012-09-19T16:02:12Z
+
+[Term]
 id: GO:0044706
 name: multi-multicellular organism process
 namespace: biological_process
@@ -16999,6 +17124,52 @@ is_a: GO:2001022 ! positive regulation of response to DNA damage stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0006281 ! DNA repair
 relationship: positively_regulates GO:0006281 ! DNA repair
+
+[Term]
+id: GO:0045744
+name: negative regulation of G protein-coupled receptor signaling pathway
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of G protein-coupled receptor signaling pathway." [GOC:go_curators]
+synonym: "down regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "down-regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "downregulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "inhibition of G-protein coupled receptor protein signaling pathway" NARROW []
+synonym: "negative regulation of G protein coupled receptor protein signaling pathway" EXACT []
+synonym: "negative regulation of G protein coupled receptor protein signalling pathway" EXACT []
+synonym: "negative regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "negative regulation of G-protein coupled receptor protein signalling pathway" EXACT []
+synonym: "negative regulation of G-protein-coupled receptor protein signalling pathway" EXACT []
+synonym: "negative regulation of GPCR protein signaling pathway" EXACT []
+synonym: "negative regulation of GPCR protein signalling pathway" EXACT []
+is_a: GO:0008277 ! regulation of G protein-coupled receptor signaling pathway
+is_a: GO:0009968 ! negative regulation of signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0007186 ! G protein-coupled receptor signaling pathway
+relationship: negatively_regulates GO:0007186 ! G protein-coupled receptor signaling pathway
+
+[Term]
+id: GO:0045745
+name: positive regulation of G protein-coupled receptor signaling pathway
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of G protein-coupled receptor signaling pathway activity." [GOC:go_curators]
+synonym: "activation of G-protein coupled receptor protein signaling pathway" NARROW []
+synonym: "positive regulation of G protein coupled receptor protein signaling pathway" EXACT []
+synonym: "positive regulation of G protein coupled receptor protein signalling pathway" EXACT []
+synonym: "positive regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "positive regulation of G-protein coupled receptor protein signalling pathway" EXACT []
+synonym: "positive regulation of G-protein-coupled receptor protein signaling pathway" EXACT []
+synonym: "positive regulation of G-protein-coupled receptor protein signalling pathway" EXACT []
+synonym: "positive regulation of GPCR protein signaling pathway" EXACT []
+synonym: "positive regulation of GPCR protein signalling pathway" EXACT []
+synonym: "stimulation of G-protein coupled receptor protein signaling pathway" NARROW []
+synonym: "up regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "up-regulation of G-protein coupled receptor protein signaling pathway" EXACT []
+synonym: "upregulation of G-protein coupled receptor protein signaling pathway" EXACT []
+is_a: GO:0008277 ! regulation of G protein-coupled receptor signaling pathway
+is_a: GO:0009967 ! positive regulation of signal transduction
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0007186 ! G protein-coupled receptor signaling pathway
+relationship: positively_regulates GO:0007186 ! G protein-coupled receptor signaling pathway
 
 [Term]
 id: GO:0045759
@@ -24625,6 +24796,22 @@ created_by: donghui
 creation_date: 2010-09-01T03:44:27Z
 
 [Term]
+id: GO:0086103
+name: G protein-coupled receptor signaling pathway involved in heart process
+namespace: biological_process
+def: "An G protein-coupled receptor signaling pathway which contributes to a circulatory system process carried out by the heart." [GOC:BHF, GOC:mtg_cardiac_conduct_nov11, PMID:17376402]
+synonym: "G-protein coupled receptor signaling pathway involved in heart process" EXACT [GOC:bf]
+synonym: "G-protein coupled receptor signalling pathway involved in heart process" EXACT [GOC:bf]
+synonym: "GPCR signaling pathway involved in cardiac process" EXACT [GOC:bf]
+synonym: "GPCR signaling pathway involved in heart process" EXACT [GOC:bf]
+is_a: GO:0007186 ! G protein-coupled receptor signaling pathway
+intersection_of: GO:0007186 ! G protein-coupled receptor signaling pathway
+intersection_of: part_of GO:0003015 ! heart process
+relationship: part_of GO:0003015 ! heart process
+created_by: rfoulger
+creation_date: 2012-03-19T01:28:23Z
+
+[Term]
 id: GO:0090025
 name: regulation of monocyte chemotaxis
 namespace: biological_process
@@ -25251,6 +25438,32 @@ intersection_of: GO:0031224 ! intrinsic component of membrane
 intersection_of: part_of GO:0031966 ! mitochondrial membrane
 
 [Term]
+id: GO:0098588
+name: bounding membrane of organelle
+namespace: cellular_component
+def: "The lipid bilayer that forms the outer-most layer of an organelle." [GOC:dos]
+comment: Examples include the outer membranes of double membrane bound organelles such as mitochondria as well as the bounding membranes of single-membrane bound organelles such as lysosomes.
+is_a: GO:0031090 ! organelle membrane
+created_by: davidos
+creation_date: 2014-02-26T13:41:31Z
+
+[Term]
+id: GO:0098589
+name: membrane region
+namespace: cellular_component
+def: "A membrane that is a part of a larger membrane.  Examples include the apical region of the plasma membrane of an epithelial cell and the various regions of the endoplasmic reticulum membrane." [GOC:dos]
+comment: Note that this term should not be used for direct manual annotation as it should always be possible to choose a more specific subclass.
+subset: gocheck_do_not_manually_annotate
+synonym: "region of membrane" EXACT []
+is_a: GO:0016020 ! membrane
+is_a: GO:0044425 ! membrane part
+intersection_of: GO:0016020 ! membrane
+intersection_of: part_of GO:0098805 ! whole membrane
+disjoint_from: GO:0098805 ! whole membrane
+relationship: part_of GO:0098805 ! whole membrane
+creation_date: 2014-03-06T11:37:54Z
+
+[Term]
 id: GO:0098590
 name: plasma membrane region
 namespace: cellular_component
@@ -25409,6 +25622,15 @@ is_a: GO:0098796 ! membrane protein complex
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: part_of GO:0070469 ! respirasome
 relationship: part_of GO:0070469 ! respirasome
+
+[Term]
+id: GO:0098805
+name: whole membrane
+namespace: cellular_component
+def: "Any lipid bilayer that completely encloses some structure, and all the proteins embedded in it or attached to it.  Examples include the plasma membrane and most organelle membranes." [GOC:dos]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
+is_a: GO:0016020 ! membrane
 
 [Term]
 id: GO:0098813
@@ -29293,6 +29515,48 @@ intersection_of: positively_regulates GO:0001944 ! vasculature development
 relationship: positively_regulates GO:0001944 ! vasculature development
 created_by: sl
 creation_date: 2015-03-06T22:17:04Z
+
+[Term]
+id: GO:1904068
+name: G protein-coupled receptor signaling pathway involved in social behavior
+namespace: biological_process
+def: "Any G protein-coupled receptor signaling pathway that is involved in social behavior." [GO_REF:0000060, GOC:kmv, GOC:TermGenie, pmid:22665789]
+synonym: "G protein coupled receptor protein signaling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G protein coupled receptor protein signaling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G protein coupled receptor protein signaling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G protein coupled receptor protein signalling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G protein coupled receptor protein signalling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G protein coupled receptor protein signalling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor protein signal transduction involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G-protein coupled receptor protein signal transduction involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor protein signal transduction involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor protein signaling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G-protein coupled receptor protein signaling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor protein signaling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor signaling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G-protein coupled receptor signaling pathway involved in social behavior" EXACT []
+synonym: "G-protein coupled receptor signaling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor signalling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G-protein coupled receptor signalling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G-protein coupled receptor signalling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G-protein-coupled receptor protein signaling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G-protein-coupled receptor protein signaling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G-protein-coupled receptor protein signaling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "G-protein-coupled receptor protein signalling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "G-protein-coupled receptor protein signalling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "G-protein-coupled receptor protein signalling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "GPCR signaling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "GPCR signaling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "GPCR signaling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+synonym: "GPCR signalling pathway involved in cooperative behavior" RELATED [GOC:TermGenie]
+synonym: "GPCR signalling pathway involved in social behavior" EXACT [GOC:TermGenie]
+synonym: "GPCR signalling pathway involved in social behaviour" EXACT [GOC:TermGenie]
+is_a: GO:0007186 ! G protein-coupled receptor signaling pathway
+intersection_of: GO:0007186 ! G protein-coupled receptor signaling pathway
+intersection_of: part_of GO:0035176 ! social behavior
+relationship: part_of GO:0035176 ! social behavior
+created_by: kmv
+creation_date: 2015-03-20T01:51:10Z
 
 [Term]
 id: GO:1904098

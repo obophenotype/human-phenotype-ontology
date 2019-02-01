@@ -989,6 +989,20 @@
       "type" : "CLASS",
       "lbl" : "prolactin (mouse)"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/GO_0043235",
+      "meta" : {
+        "definition" : {
+          "val" : "Any protein complex that undergoes combination with a hormone, neurotransmitter, drug or intracellular messenger to initiate a change in cell function.",
+          "xrefs" : [ "GOC:go_curators" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "cellular_component"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "receptor complex"
+    }, {
       "id" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1695",
       "meta" : {
         "definition" : {
@@ -3398,6 +3412,16 @@
       },
       "type" : "CLASS",
       "lbl" : "C-C chemokine receptor type 3 (mouse)"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pr#PRO-proteoform-std",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasScope",
+          "val" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "Synonyms for proteoforms based on use of UniProtKb accession, subsequence range, and positions and types of modifications or variations"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PR_000025806",
       "meta" : {
@@ -7810,6 +7834,16 @@
       },
       "type" : "CLASS",
       "lbl" : "Cebpa (mouse)"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pr#PSI-MOD-label",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasScope",
+          "val" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "Unique short label curated by PSI-MOD"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PR_Q9Z0D9",
       "meta" : {
@@ -15068,6 +15102,16 @@
       "type" : "CLASS",
       "lbl" : "quality"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/pr#PRO-proteoform-ftid",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasScope",
+          "val" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "Synonyms for proteoforms based on use of UniProtKb feature identifier (FTId) and positions and types of modifications or variations"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000015",
       "meta" : {
         "basicPropertyValues" : [ {
@@ -17974,13 +18018,13 @@
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.informatics.jax.org/marker/MGI:88476"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_Q8CIZ8",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001896",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_Q8CIZ8",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:88326",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -18322,13 +18366,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000018620"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P01831",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018492",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P01831",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:106910",
       "pred" : "is_a",
@@ -18522,25 +18566,25 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_33208"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000002981",
-      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
-      "obj" : "http://www.informatics.jax.org/marker/MGI:106910"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_Q14246",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000002981",
+      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
+      "obj" : "http://www.informatics.jax.org/marker/MGI:106910"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018444",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P13595",
-      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
-      "obj" : "http://www.informatics.jax.org/marker/MGI:97281"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000046307",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000018949"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P13595",
+      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
+      "obj" : "http://www.informatics.jax.org/marker/MGI:97281"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_Q63961",
       "pred" : "is_a",
@@ -18758,13 +18802,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000048036",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_O09100",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000007858"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000048036",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:106185",
       "pred" : "is_a",
@@ -18774,13 +18818,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001203"
     }, {
-      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4164",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-    }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:88321",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
+    }, {
+      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4164",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P20138",
       "pred" : "is_a",
@@ -19014,13 +19058,13 @@
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000018523",
-      "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P04053",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000018523",
+      "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001809",
       "pred" : "is_a",
@@ -19054,13 +19098,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P27548",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001963",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P27548",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001318",
       "pred" : "is_a",
@@ -19254,13 +19298,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001932"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P31997",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-    }, {
       "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6162",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P31997",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
       "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12726",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -19330,10 +19374,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000013883"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000026631",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000016401"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001892",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000000001"
@@ -19341,6 +19381,10 @@
       "sub" : "http://purl.obolibrary.org/obo/CHEBI_23367",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/CHEBI_24431"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000026631",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000016401"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018966",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
@@ -19450,13 +19494,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/SO_0001217",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_Q9NPY3",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000029067"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/SO_0001217",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000704"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:95661",
       "pred" : "is_a",
@@ -19622,21 +19666,21 @@
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.informatics.jax.org/marker/MGI:88332"
     }, {
-      "sub" : "http://www.informatics.jax.org/marker/MGI:88346",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001006",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000000001"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000018335",
+      "sub" : "http://www.informatics.jax.org/marker/MGI:88346",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000001084"
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
       "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6138",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000018335",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000001084"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P41159",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
@@ -19818,13 +19862,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_7955"
     }, {
-      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11249",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018921",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000003809"
+    }, {
+      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11249",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:2143702",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -19882,13 +19926,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000029067"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P08575-1",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_P08575"
-    }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:107527",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P08575-1",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_P08575"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000048798",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
@@ -19922,13 +19966,13 @@
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P51683",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P10721",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6342"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P51683",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P17679",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -19986,13 +20030,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
-      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4702",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000045358",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000000001"
+    }, {
+      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4702",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
       "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1683",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -20050,13 +20094,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P37217",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_Q5UKY4",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000006169"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P37217",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018968",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
@@ -20178,13 +20222,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P53566",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000005307"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P01732",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001084"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P53566",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000005307"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001018",
       "pred" : "is_a",
@@ -20338,13 +20382,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000047533",
-      "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P49238",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=2558"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000047533",
+      "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P49238",
       "pred" : "is_a",
@@ -20498,13 +20542,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001083"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_Q9W735",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000029061"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/BFO_0000030",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_Q9W735",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000029061"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018598",
       "pred" : "is_a",
@@ -20758,13 +20802,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001874"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_O09100",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000025408",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/MOD_00693"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_O09100",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:87983",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -20810,13 +20854,13 @@
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
       "obj" : "http://purl.obolibrary.org/obo/SO_0000418"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P56528",
-      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
-      "obj" : "http://www.informatics.jax.org/marker/MGI:107474"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018555",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001867"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P56528",
+      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
+      "obj" : "http://www.informatics.jax.org/marker/MGI:107474"
     }, {
       "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6081",
       "pred" : "is_a",
@@ -21218,13 +21262,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000029067"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P51675",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_Q62351",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P51675",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P06127",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
@@ -21382,13 +21426,13 @@
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1706"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000021840",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000017364"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001889",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000021840",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000017364"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P40240",
       "pred" : "is_a",
@@ -21742,13 +21786,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P17433",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_O89103",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000002037"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P17433",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P01350",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
@@ -21842,13 +21886,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_000048798",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_Q03405"
-    }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:105057",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_000048798",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_Q03405"
     }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:104618",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -21918,13 +21962,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_O14638",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000029067"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P04275",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_O14638",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000029067"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P08575",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -22062,13 +22106,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P02772",
-      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
-      "obj" : "http://www.informatics.jax.org/marker/MGI:87951"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P41160",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000009758"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P02772",
+      "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
+      "obj" : "http://www.informatics.jax.org/marker/MGI:87951"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000018949",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
@@ -22086,13 +22130,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000001800"
     }, {
-      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9053",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000021935",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000024"
+    }, {
+      "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=9053",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000046326",
       "pred" : "is_a",
@@ -22146,13 +22190,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P05532",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P41597",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1603"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P05532",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000029032"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000001444",
       "pred" : "is_a",
@@ -22562,13 +22606,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P49715",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-    }, {
       "sub" : "http://www.informatics.jax.org/marker/MGI:99480",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P49715",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P51677",
       "pred" : "is_a",
@@ -22706,6 +22750,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/GO_0043235",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/GO_0032991"
+    }, {
       "sub" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1694",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
@@ -22754,13 +22802,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
-      "sub" : "http://www.informatics.jax.org/marker/MGI:98282",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P23769",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
       "obj" : "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=4171"
+    }, {
+      "sub" : "http://www.informatics.jax.org/marker/MGI:98282",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/SO_0001217"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_000021259",
       "pred" : "http://purl.obolibrary.org/obo/pr#lacks_part",
@@ -23054,13 +23102,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PR_000002976"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PR_P01590",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PR_000001380"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P51678",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
       "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PR_P01590",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PR_000001380"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PR_P19437",
       "pred" : "http://purl.obolibrary.org/obo/pr#has_gene_template",
@@ -24797,18 +24845,18 @@
         "fillerId" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PR_000018523",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PR_000001800" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/pr#lacks_part",
-        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000418"
-      } ]
-    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PR_P26011",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PR_000009143" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0002160",
         "fillerId" : "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PR_000018523",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PR_000001800" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pr#lacks_part",
+        "fillerId" : "http://purl.obolibrary.org/obo/SO_0000418"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PR_Q63961",

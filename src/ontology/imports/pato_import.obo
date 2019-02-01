@@ -1610,6 +1610,17 @@ synonym: "palsy" NARROW []
 is_a: PATO:0002076 ! movement behavioral quality
 
 [Term]
+id: PATO:0000769
+name: coordinated
+namespace: quality
+def: "A coordination quality of inhering in a bearer by virtue of the bearer's having skillful and effective interaction of movement." [PATOC:GVG]
+subset: disposition_slim
+subset: value_slim
+is_a: PATO:0000188 ! coordination
+disjoint_from: PATO:0000770 ! uncoordinated
+relationship: is_opposite_of PATO:0000770 ! uncoordinated
+
+[Term]
 id: PATO:0000770
 name: uncoordinated
 namespace: quality
@@ -1617,7 +1628,7 @@ def: "A coordination quality of inhering in a bearer by virtue of the bearer's l
 subset: disposition_slim
 subset: value_slim
 is_a: PATO:0000188 ! coordination
-relationship: is_opposite_of PATO:0000769
+relationship: is_opposite_of PATO:0000769 ! coordinated
 
 [Term]
 id: PATO:0000888
@@ -2717,7 +2728,7 @@ def: "A quality inhering in a bearer by virtue of the bearer's lacking complete 
 subset: value_slim
 synonym: "underdeveloped" RELATED []
 is_a: PATO:0000261 ! maturity
-relationship: is_opposite_of PATO:0001701
+relationship: is_opposite_of PATO:0001701 ! mature
 
 [Term]
 id: PATO:0001505
@@ -3557,6 +3568,15 @@ intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 relationship: is_opposite_of PATO:0001697 ! decreased photosensitivity
 
 [Term]
+id: PATO:0001701
+name: mature
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the bearer's exhibiting complete growth, differentiation, or development." [Merriam-Webster:Merriam-Webster]
+subset: value_slim
+is_a: PATO:0000261 ! maturity
+relationship: is_opposite_of PATO:0001501 ! immature
+
+[Term]
 id: PATO:0001706
 name: behavioural inactive
 namespace: quality
@@ -4254,6 +4274,34 @@ subset: cell_quality
 subset: value_slim
 is_a: PATO:0002005 ! concavity
 relationship: is_opposite_of PATO:0001355 ! convex
+
+[Term]
+id: PATO:0001859
+name: increased coordination
+namespace: quality
+def: "A coordination which is relatively high." [PATOC:GVG]
+subset: disposition_slim
+subset: value_slim
+synonym: "high coordination" EXACT []
+is_a: PATO:0000769 ! coordinated
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0000769 ! coordinated
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+relationship: is_opposite_of PATO:0001860 ! decreased coordination
+
+[Term]
+id: PATO:0001860
+name: decreased coordination
+namespace: quality
+def: "A coordination which is relatively low." [PATOC:GVG]
+subset: disposition_slim
+subset: value_slim
+synonym: "low coordination" EXACT []
+is_a: PATO:0000769 ! coordinated
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0000769 ! coordinated
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+relationship: is_opposite_of PATO:0001859 ! increased coordination
 
 [Term]
 id: PATO:0001861
@@ -5189,6 +5237,17 @@ subset: value_slim
 is_a: PATO:0000470 ! increased amount
 created_by: george
 creation_date: 2009-10-06T03:28:38Z
+
+[Term]
+id: PATO:0002124
+name: laminar
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the bearer's processing the form of a thin plate sheet or layer." [PATOC:GVG]
+subset: mpath_slim
+subset: value_slim
+is_a: PATO:0000141 ! structure
+created_by: george
+creation_date: 2009-10-06T04:37:14Z
 
 [Term]
 id: PATO:0002135

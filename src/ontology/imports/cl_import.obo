@@ -2115,6 +2115,19 @@ intersection_of: CL:0000034 ! stem cell
 intersection_of: RO:0002215 GO:0048103
 
 [Term]
+id: CL:0000737
+name: striated muscle cell
+namespace: cell
+def: "Muscle cell which has as its direct parts myofilaments organized into sarcomeres." [GOC:tfm, ISBN:0721662544]
+xref: BTO:0002916
+xref: CALOHA:TS-2157
+xref: FMA:86936
+is_a: CL:0000187 ! muscle cell
+intersection_of: CL:0000187 ! muscle cell
+intersection_of: BFO:0000051 GO:0030017
+intersection_of: RO:0000053 PATO:0001410
+
+[Term]
 id: CL:0000738
 name: leukocyte
 namespace: cell
@@ -4848,6 +4861,43 @@ intersection_of: CL:0000037 ! hematopoietic stem cell
 intersection_of: BFO:0000050 UBERON:0000922
 created_by: tmeehan
 creation_date: 2010-09-22T09:05:13Z
+
+[Term]
+id: CL:0002353
+name: fetal liver hematopoietic progenitor cell
+namespace: cell
+def: "A hematopoietic stem cell that resides in the fetal liver. In mice, this cell type is first observed at E10.5. This cell type is MHC-positive, HSA-positive, AA4.1-positive, CD45-positive, Sca-1 positive, CD150-positive, CD48-negative and CD244-negative." [GOC:tfm, ISBN:978-1-60327-346-6, PMID:16569764]
+is_a: CL:0002352 {is_inferred="true"} ! gestational hematopoietic stem cell
+intersection_of: CL:0002352 ! gestational hematopoietic stem cell
+intersection_of: lacks_plasma_membrane_part PR:000001308
+intersection_of: lacks_plasma_membrane_part PR:000001896
+intersection_of: RO:0002104 GO:0042611
+intersection_of: RO:0002104 PR:000001006
+intersection_of: RO:0002104 PR:000001833
+intersection_of: RO:0002104 PR:000001932
+intersection_of: RO:0002104 PR:000002037
+intersection_of: RO:0002104 PR:000002979
+relationship: BFO:0000050 UBERON:0002107
+created_by: tmeehan
+creation_date: 2010-09-22T09:08:32Z
+
+[Term]
+id: CL:0002354
+name: yolk sac hematopoietic stem cell
+namespace: cell
+def: "A hematopoietic stem found in the yolk sac. In mice, this cell type is Sca-1-negative, CD45-negative, MHC-negative, HSA-positive, AA4.1-positive, CD44-positive." [doi:10.1097/MOH.0b013e3282f97ae1, GOC:tfm]
+synonym: "hemangioblast precursor" EXACT []
+is_a: CL:0002352 {is_inferred="true"} ! gestational hematopoietic stem cell
+intersection_of: CL:0002352 ! gestational hematopoietic stem cell
+intersection_of: lacks_plasma_membrane_part GO:0042611
+intersection_of: lacks_plasma_membrane_part PR:000001006
+intersection_of: lacks_plasma_membrane_part PR:000002979
+intersection_of: RO:0002104 PR:000001307
+intersection_of: RO:0002104 PR:000001932
+intersection_of: RO:0002104 PR:000002037
+relationship: BFO:0000050 UBERON:0001040
+created_by: tmeehan
+creation_date: 2010-09-22T09:08:34Z
 
 [Term]
 id: CL:0002359
@@ -7638,6 +7688,16 @@ intersection_of: CL:0002543 ! vein endothelial cell
 intersection_of: BFO:0000050 UBERON:0000376
 created_by: TermGenie
 creation_date: 2014-12-02T18:40:47Z
+
+[Term]
+id: CL:2000077
+name: skeletal muscle tissue of pectoralis major striated muscle cell
+namespace: cell
+def: "Any striated muscle cell that is part of a skeletal muscle tissue of pectoralis major." [GOC:TermGenie]
+intersection_of: CL:0000737 ! striated muscle cell
+intersection_of: BFO:0000050 UBERON:0004510
+created_by: TermGenie
+creation_date: 2014-12-02T18:48:17Z
 
 [Term]
 id: CL:2000079
