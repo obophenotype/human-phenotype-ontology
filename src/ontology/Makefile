@@ -164,7 +164,7 @@ annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)
 
 
 seed.txt: $(SRC)
-	$(ROBOT) query --catalog catalog-v001.xml -f csv -i $< --query ../sparql/terms.sparql $@
+	$(ROBOT) query --use-graphs true --catalog catalog-v001.xml -f csv -i $< --query ../sparql/terms.sparql $@
 
 
 # Generate terms.txt for each import.  (Assume OBO-style Possibly hacky step?)
