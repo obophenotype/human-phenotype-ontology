@@ -58,7 +58,7 @@ script:
   # build hp.owl and hp.obo
   - cd $CI_HOME  
   - cd src/ontology/
-  - make &> log.txt
+  - make 2>&1 log.txt
   - tail -n 100 log.txt
   # now check hp.obo for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
