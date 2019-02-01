@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-01-29/imports/chebi_import.owl
+data-version: hp/releases/2019-02-01/imports/chebi_import.owl
 ontology: hp/imports/chebi_import
 
 [Term]
@@ -2343,7 +2343,6 @@ synonym: "4-amino-3-hydroxybutanoic acid" EXACT IUPAC_NAME [IUPAC]
 synonym: "4-amino-3-hydroxybutyric acid" RELATED [ChemIDplus]
 synonym: "GABOB" RELATED [KEGG_COMPOUND]
 synonym: "gamma-Amino-beta-hydroxybutyric acid" EXACT [KEGG_COMPOUND]
-synonym: "gamma-amino-beta-hydroxybutyric acid" EXACT [UniProt]
 xref: Beilstein:1721708 "Beilstein"
 xref: Beilstein:1752568 "Beilstein"
 xref: CAS:352-21-6 "ChemIDplus"
@@ -2627,7 +2626,6 @@ alt_id: CHEBI:3673
 def: "A mucopolysaccharide composed of repeating beta-D-glucopyranuronosyl-(1->3)-beta-D-N-acetylgalactosaminyl units." []
 subset: 3_STAR
 synonym: "Chondroitin" RELATED [KEGG_COMPOUND]
-synonym: "chondroitin D-glucuronic acid" RELATED [UniProt]
 synonym: "Chondroitin-D-glucuronate" RELATED [KEGG_COMPOUND]
 xref: KEGG:C00401
 xref: KEGG:G11334
@@ -2963,7 +2961,6 @@ synonym: "RSR" RELATED [IUPAC]
 synonym: "Sulfide" RELATED [KEGG_COMPOUND]
 synonym: "sulfides" EXACT IUPAC_NAME [IUPAC]
 synonym: "Thioether" RELATED [KEGG_COMPOUND]
-synonym: "thioether" RELATED [UniProt]
 synonym: "thioethers" RELATED [IUPAC]
 xref: KEGG:C00297
 is_a: CHEBI:26822 ! sulfide
@@ -3799,7 +3796,6 @@ def: "A gamma-amino acid that is butanoic acid with the amino substituent locate
 subset: 3_STAR
 synonym: "4-Aminobutanoic acid" RELATED [KEGG_COMPOUND]
 synonym: "4-aminobutanoic acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "4-aminobutanoic acid" RELATED [UniProt]
 synonym: "4-aminobutanoic acid" RELATED [ChEBI]
 synonym: "4-Aminobutyric acid" RELATED [KEGG_COMPOUND]
 synonym: "4-aminobutyric acid" RELATED [ChEBI]
@@ -5702,7 +5698,6 @@ alt_id: CHEBI:12990
 alt_id: CHEBI:21038
 def: "Any D-aldose having a chain of six carbon atoms in the molecule." []
 subset: 3_STAR
-synonym: "D-aldohexose" EXACT [UniProt]
 synonym: "D-aldohexoses" RELATED [ChEBI]
 is_a: CHEBI:33917 ! aldohexose
 is_a: CHEBI:4194 ! D-hexose
@@ -5902,7 +5897,6 @@ subset: 3_STAR
 synonym: "2-amino-4-[(2-amino-2-carboxyethyl)sulfanyl]butanoic acid" EXACT IUPAC_NAME [IUPAC]
 synonym: "cystathione" RELATED [ChEBI]
 synonym: "Cystathionine" EXACT [KEGG_COMPOUND]
-synonym: "cystathionine" EXACT [UniProt]
 synonym: "DL-Cystathionine" RELATED [ChemIDplus]
 synonym: "S-(2-amino-2-carboxyethyl)homocysteine" EXACT IUPAC_NAME [IUPAC]
 xref: CAS:535-34-2 "KEGG COMPOUND"
@@ -6281,7 +6275,6 @@ subset: 3_STAR
 synonym: "(2R)-2-hydroxy monocarboxylic acids" RELATED [ChEBI]
 synonym: "(2R)-Hydroxy-carboxylate" RELATED [KEGG_COMPOUND]
 synonym: "(R)-2-Hydroxyacid" RELATED [KEGG_COMPOUND]
-synonym: "(R)-2-hydroxyacid" RELATED [UniProt]
 synonym: "(R)-2-Hydroxycarboxylic acid" RELATED [KEGG_COMPOUND]
 xref: KEGG:C02489
 xref: KEGG:C15487
@@ -6801,7 +6794,6 @@ synonym: "4-carboxymethylphenol" RELATED [ChemIDplus]
 synonym: "4-hydroxybenzeneacetic acid" RELATED [ChemIDplus]
 synonym: "4-Hydroxyphenylacetate" RELATED [KEGG_COMPOUND]
 synonym: "4-Hydroxyphenylacetic acid" EXACT [KEGG_COMPOUND]
-synonym: "4-hydroxyphenylacetic acid" EXACT [UniProt]
 synonym: "p-hydroxyphenylacetic acid" RELATED [ChemIDplus]
 xref: CAS:156-38-7 "ChemIDplus"
 xref: HMDB:HMDB0000020
@@ -7008,7 +7000,6 @@ synonym: "tirosina" RELATED [ChEBI]
 synonym: "Tyr" RELATED [ChEBI]
 synonym: "Tyrosin" RELATED [ChEBI]
 synonym: "Tyrosine" EXACT [KEGG_COMPOUND]
-synonym: "tyrosine" EXACT [UniProt]
 synonym: "tyrosine" EXACT IUPAC_NAME [IUPAC]
 synonym: "Y" RELATED [ChEBI]
 xref: Beilstein:515881 "Beilstein"
@@ -8210,8 +8201,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
@@ -10054,6 +10045,7 @@ namespace: chebi_ontology
 alt_id: CHEBI:8283
 subset: 1_STAR
 is_a: CHEBI:33709 ! amino acid
+relationship: is_tautomer_of CHEBI:62031 ! polar amino acid zwitterion
 
 [Term]
 id: CHEBI:26191
@@ -11037,7 +11029,7 @@ relationship: has_role CHEBI:24020 ! fat-soluble vitamin
 id: CHEBI:27311
 name: volatile oil component
 namespace: chebi_ontology
-def: "Any metabolite that is found naturally as a component of a volatile oil." []
+def: "Any plant metabolite that is found naturally as a component of a volatile oil." []
 subset: 3_STAR
 synonym: "essential oil component" RELATED [ChEBI]
 synonym: "essential oil components" RELATED [ChEBI]
@@ -11045,7 +11037,8 @@ synonym: "ethereal oil component" RELATED [ChEBI]
 synonym: "ethereal oil components" RELATED [ChEBI]
 synonym: "volatile oil components" RELATED [ChEBI]
 xref: Wikipedia:Essential_oil
-is_a: CHEBI:25212 ! metabolite
+is_a: CHEBI:52206 ! biochemical role
+is_a: CHEBI:76924 ! plant metabolite
 
 [Term]
 id: CHEBI:27314
@@ -12277,7 +12270,6 @@ alt_id: CHEBI:3401
 subset: 3_STAR
 synonym: "[CO(OH)2]" RELATED [IUPAC]
 synonym: "Carbonic acid" EXACT [KEGG_COMPOUND]
-synonym: "carbonic acid" EXACT [UniProt]
 synonym: "carbonic acid" EXACT IUPAC_NAME [IUPAC]
 synonym: "Dihydrogen carbonate" RELATED [KEGG_COMPOUND]
 synonym: "dihydroxidooxidocarbon" EXACT IUPAC_NAME [IUPAC]
@@ -13236,7 +13228,6 @@ synonym: "2-Hydroxytricarballylic acid" RELATED [KEGG_COMPOUND]
 synonym: "3-Carboxy-3-hydroxypentane-1,5-dioic acid" RELATED [HMDB]
 synonym: "CITRIC ACID" EXACT [PDBeChem]
 synonym: "Citric acid" EXACT [KEGG_COMPOUND]
-synonym: "citric acid" EXACT [UniProt]
 synonym: "Citronensaeure" RELATED [ChEBI]
 synonym: "E330" RELATED [ChEBI]
 synonym: "H3cit" RELATED [IUPAC]
@@ -13308,7 +13299,6 @@ synonym: "Butanoate" RELATED [KEGG_COMPOUND]
 synonym: "BUTANOIC ACID" RELATED [PDBeChem]
 synonym: "Butanoic acid" RELATED [KEGG_COMPOUND]
 synonym: "butanoic acid" EXACT IUPAC_NAME [IUPAC]
-synonym: "butanoic acid" RELATED [UniProt]
 synonym: "butoic acid" RELATED [ChEBI]
 synonym: "Buttersaeure" RELATED [ChEBI]
 synonym: "Butyric acid" EXACT [KEGG_COMPOUND]
@@ -13681,7 +13671,6 @@ synonym: "glucitol" EXACT IUPAC_NAME [IUPAC]
 synonym: "gulitol" RELATED [ChEBI]
 synonym: "rel-(2R,3R,4R,5S)-hexane-1,2,3,4,5,6-hexol" RELATED [IUPAC]
 synonym: "Sorbitol" RELATED [KEGG_COMPOUND]
-synonym: "sorbitol" RELATED [UniProt]
 xref: Beilstein:1721909 "Beilstein"
 xref: Gmelin:83165 "Gmelin"
 xref: Wikipedia:Sorbitol
@@ -14973,7 +14962,6 @@ alt_id: CHEBI:11448
 alt_id: CHEBI:19370
 subset: 3_STAR
 synonym: "2,5-diaminopentanoate" EXACT IUPAC_NAME [IUPAC]
-synonym: "2,5-diaminopentanoate" RELATED [UniProt]
 synonym: "ornithinate" EXACT IUPAC_NAME [IUPAC]
 synonym: "ornithine anion" RELATED [JCBN]
 xref: Gmelin:1242186 "Gmelin"
@@ -15440,6 +15428,21 @@ subset: 3_STAR
 synonym: "fertiliser" RELATED [ChEBI]
 synonym: "fertilizers" RELATED [ChEBI]
 is_a: CHEBI:33286 ! agrochemical
+
+[Term]
+id: CHEBI:33290
+name: food
+namespace: chebi_ontology
+def: "Any material that can be ingested by an organism." []
+subset: 3_STAR
+synonym: "food material" RELATED [ChEBI]
+synonym: "food materials" RELATED [ChEBI]
+synonym: "food role" RELATED [ChEBI]
+synonym: "foods" RELATED [ChEBI]
+synonym: "foodstuff" RELATED [ChEBI]
+synonym: "foodstuffs" RELATED [ChEBI]
+is_a: CHEBI:52211 ! physiological role
+relationship: has_part CHEBI:78295 ! food component
 
 [Term]
 id: CHEBI:33292
@@ -16736,7 +16739,6 @@ alt_id: CHEBI:2835
 def: "An amino acid whose structure includes an aromatic ring." []
 subset: 3_STAR
 synonym: "Aromatic amino acid" EXACT [KEGG_COMPOUND]
-synonym: "aromatic amino acid" EXACT [UniProt]
 synonym: "aromatic amino acids" RELATED [ChEBI]
 xref: KEGG:C01021
 xref: Wikipedia:Aromatic_amino_acid
@@ -24064,14 +24066,13 @@ def: "Zwitterionic form of a polar amino acid having an anionic carboxy group an
 subset: 2_STAR
 synonym: "a polar amino acid" RELATED [UniProt]
 xref: MetaCyc:Polar-amino-acids "SUBMITTER"
-is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:35238 ! amino acid zwitterion
-is_a: CHEBI:50860 ! organic molecular entity
+relationship: is_tautomer_of CHEBI:26167 ! polar amino acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H4NO2R" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/mass "74.05870" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "74.059" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "74.024" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+]C([*])C([O-])=O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(C([O-])=O)(*)[NH3+]" xsd:string
 
 [Term]
 id: CHEBI:62081
