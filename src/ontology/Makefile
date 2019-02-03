@@ -21,7 +21,7 @@ build/hp-simple.obo: hp-edit.owl catalog-v001.xml
 
 # TODO: once equivalence have been sorted, remove --allowEquivalencies
 hp-inferred.obo: hp-inferred.owl
-	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools --use-catalog $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 hp-inferred.owl: hp-edit.owl
 	owltools --use-catalog $< --assert-inferred-subclass-axioms --markIsInferred --allowEquivalencies -o $@
