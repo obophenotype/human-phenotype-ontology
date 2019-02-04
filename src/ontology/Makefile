@@ -1,4 +1,4 @@
-all: hp.obo hp.owl all-subsets hp-inferred.obo
+all: hp.obo hp.owl hp-inferred.obo
 
 hp.obo: build/hp-simple.obo
 	owltools $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
@@ -17,11 +17,11 @@ catalog-v001.xml: default-catalog.xml
 
 # Note: we currently use no-reasoner for now, until we can trust all inferences
 build/hp-simple.obo: hp-edit.owl catalog-v001.xml
-	ontology-release-runner --catalog-xml catalog-v001.xml $(OORT_ARGS) --ignoreLock --skip-release-folder --outdir build --simple --allow-overwrite --no-reasoner $<
+	ontology-release-runner --catalog-xml catalog-v001.xml $(OORT_ARGS) --ignoreLock --no-subsets --skip-release-folder --outdir build --simple --skip-ontology-checks --allow-overwrite --no-reasoner $<
 
 # TODO: once equivalence have been sorted, remove --allowEquivalencies
 hp-inferred.obo: hp-inferred.owl
-	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools --use-catalog $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 hp-inferred.owl: hp-edit.owl
 	owltools --use-catalog $< --assert-inferred-subclass-axioms --markIsInferred --allowEquivalencies -o $@
