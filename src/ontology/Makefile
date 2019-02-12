@@ -19,18 +19,23 @@ RELEASEDIR=                 ../..
 PATTERNDIR=                 ../patterns
 REPORTDIR=                 reports
 SPARQLDIR =                 ../sparql
-REPORT_FAIL_ON =            none
+REPORT_FAIL_ON =            ERROR
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 
 TODAY   := $(shell date +%Y-%m-%d)
+DOSDP_SCHEMA=                http:// # change to PURL when ready.
+PATTERN_TESTER=              simple_pattern_tester.py
+DOSDPT=                      dosdp-tools
+PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
+
 
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
 
-all: all_imports all_main all_subsets sparql_test patterns all_reports all_assets
+all: all_imports patterns all_main all_subsets sparql_test all_reports all_assets
 
 ## -- main targets --
 ##
@@ -111,9 +116,11 @@ show_assets:
 
 # This should be executed by the release manager whenever time comes to make a release.
 # It will ensure that all assets/files are fresh, and will copy to release folder
-prepare_release: $(ASSETS)
-	rsync -R $^ $(RELEASEDIR) &&\
-	echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
+prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
+	rsync -R $(ASSETS) $(RELEASEDIR) &&\
+  mkdir -p $(RELEASEDIR)/patterns &&\
+  cp $(PATTERN_RELEASE_FILES) $(RELEASEDIR)/patterns &&\
+  echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
 
 prepare_initial_release: prepare_release
 	cd $(RELEASEDIR) && git add $(ASSETS)
@@ -140,7 +147,10 @@ ANNOTATE_VERSION_IRI = annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@.owl
 
 # by default we use ELK to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: $(SRC)
+
+OTHER_SRC = $(PATTERNDIR)/definitions.owl
+
+$(ONT).owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) reason --input $< --reasoner ELK \
 		 relax \
 		 reduce -r ELK \
@@ -148,10 +158,11 @@ $(ONT).owl: $(SRC)
 	         merge  $(patsubst %, -i %, $(IMPORT_OWL_FILES))  \
 	         annotate --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
 
-# requires robot 1.2
-$(ONT)-base.owl: $(SRC)
-	$(ROBOT) remove --trim false --input $< --select imports \
-annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@ &&\
+# requires robot 1.2. For some reason, the pipe between remove | merge does not work. 
+$(ONT)-base.owl: $(SRC) $(PATTERNDIR)/definitions.owl
+	$(ROBOT) remove --trim false --input $< --select imports --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
+$(ROBOT) merge -i $@ -i $(PATTERNDIR)/definitions.owl --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
+$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
 	echo "$(ONT)-base.owl successfully created."
 
 # ----------------------------------------
@@ -163,8 +174,9 @@ annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)
 # seed.txt contains all referenced entities
 
 
-seed.txt: $(SRC)
-	$(ROBOT) query --use-graphs true --catalog catalog-v001.xml -f csv -i $< --query ../sparql/terms.sparql $@
+seed.txt: $(SRC) prepare_patterns $(PATTERNDIR)/all_pattern_terms.txt
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
+	cat $@.tmp $(PATTERNDIR)/all_pattern_terms.txt | sort | uniq >  $@
 
 
 # Generate terms.txt for each import.  (Assume OBO-style Possibly hacky step?)
@@ -199,7 +211,7 @@ imports/%_import.obo: imports/%_import.owl
 mirror/nbo.trigger: $(SRC)
 
 mirror/nbo.owl: mirror/nbo.trigger
-	$(ROBOT) convert -I https://raw.githubusercontent.com/monarch-ebi-dev/ontologies/master/nbo-base.owl -o $@
+	$(ROBOT) convert -I http://purl.obolibrary.org/obo/nbo/nbo-base.owl -o $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -279,7 +291,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/cl.trigger: $(SRC)
 
 mirror/cl.owl: mirror/cl.trigger
-	$(ROBOT) convert -I https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-base.owl -o $@
+	$(ROBOT) convert -I http://purl.obolibrary.org/obo/cl/cl-base.owl -o $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -346,6 +358,69 @@ all_reports_onestep: $(SRC)
 IM=build-$(ONT)
 build-docker:
 	docker build -t $(ONT) .
+
+
+
+# ----------------------------------------
+# Patterns (experimental)
+# ----------------------------------------
+
+# Test patterns for schema compliance:
+
+.PHONY: .FORCE
+
+.PHONY: patterns
+patterns: all_imports $(PATTERNDIR)/pattern.owl $(PATTERNDIR)/definitions.owl
+
+.PHONY: pattern_clean
+pattern_clean:
+	echo "Not implemented"
+
+pattern_schema_checks: $(PATTERNDIR)/dosdp-patterns
+	simple_pattern_tester.py $(PATTERNDIR)/dosdp-patterns/ # 2>&1 | tee $@
+
+#This command is a workaround for the absence of -N and -i in wget of alpine (the one ODK depend on now). It downloads all patterns specified in external.txt
+$(PATTERNDIR)/dosdp-patterns: .FORCE
+	< $(PATTERNDIR)/dosdp-patterns/external.txt tr '\n' '\0' | sed 's!.*/!!' | xargs -0 -I{} rm -f $(PATTERNDIR)/dosdp-patterns/{} &&\
+	< $(PATTERNDIR)/dosdp-patterns/external.txt tr '\n' '\0' | xargs -0 -I{} wget -q {} -P $(PATTERNDIR)/dosdp-patterns
+
+$(PATTERNDIR)/pattern.owl: pattern_schema_checks $(PATTERNDIR)/dosdp-patterns
+	$(DOSDPT) prototype --obo-prefixes --template=$(PATTERNDIR)/dosdp-patterns --outfile=$@
+
+individual_patterns_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.ofn, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv)))
+pattern_term_lists_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.txt, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv)))
+
+
+
+
+
+# Generating the individual pattern modules and merging them into definitions.owl
+$(PATTERNDIR)/definitions.owl: prepare_patterns $(individual_patterns_default)  
+	$(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl -o definitions.ofn &&\
+	mv definitions.ofn $@
+
+$(PATTERNDIR)/data/default/%.ofn: $(PATTERNDIR)/data/default/%.tsv $(PATTERNDIR)/dosdp-patterns/%.yaml $(SRC) all_imports .FORCE
+	dosdp-tools generate --catalog=catalog-v001.xml --infile=$< --template=$(word 2, $^) --ontology=$(word 3, $^) --obo-prefixes=true --outfile=$@
+
+
+
+
+
+# Generating the seed file from all the TSVs
+$(PATTERNDIR)/all_pattern_terms.txt: $(pattern_term_lists_default)   $(PATTERNDIR)/pattern_owl_seed.txt
+	cat $^ | sort | uniq > $@
+	
+$(PATTERNDIR)/pattern_owl_seed.txt: $(PATTERNDIR)/pattern.owl
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@
+
+$(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/default/%.tsv .FORCE
+	dosdp-tools terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@
+
+.PHONY: prepare_patterns
+prepare_patterns:	
+	touch $(pattern_term_lists_default)   &&\
+  touch $(individual_patterns_default)  
+
 
 
 
