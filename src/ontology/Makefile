@@ -221,7 +221,7 @@ mirror/nbo.owl: mirror/nbo.trigger
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	$(ROBOT) convert -I $(URIBASE)/pr.owl -o $@
+	$(ROBOT) convert -I https://raw.githubusercontent.com/monarch-ebi-dev/ontologies/master/pr.owl.gz -o $@
 
 .PRECIOUS: mirror/%.owl
 
