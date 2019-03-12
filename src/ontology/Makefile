@@ -34,7 +34,7 @@ PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMAT) tsv)
-RELEASE_ARTEFACTS = $(sort  full base base full)
+RELEASE_ARTEFACTS = $(sort  simple non-classified simple-non-classified basic full base full)
  
 # ----------------------------------------
 # Top-level targets
@@ -101,7 +101,7 @@ all_patterns: $(PATTERN_FILES)
 ## -- dosdp pattern targets --
 ##
 
-OBO_REPORT = $(ONT)-base-obo-report
+OBO_REPORT = $(ONT)-edit-obo-report $(ONT)-obo-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
 
@@ -145,6 +145,22 @@ prepare_initial_release: prepare_release
 # ----------------------------------------
 
 
+$(ONT)-simple.obo: $(ONT)-simple.owl
+	$(ROBOT) convert --check false -i $< -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
+$(ONT)-simple.json: $(ONT)-simple.owl
+	$(ROBOT) convert -i $< -f json -o $*.tmp.json && mv $*.tmp.json $@
+$(ONT)-non-classified.obo: $(ONT)-non-classified.owl
+	$(ROBOT) convert --check false -i $< -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
+$(ONT)-non-classified.json: $(ONT)-non-classified.owl
+	$(ROBOT) convert -i $< -f json -o $*.tmp.json && mv $*.tmp.json $@
+$(ONT)-simple-non-classified.obo: $(ONT)-simple-non-classified.owl
+	$(ROBOT) convert --check false -i $< -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
+$(ONT)-simple-non-classified.json: $(ONT)-simple-non-classified.owl
+	$(ROBOT) convert -i $< -f json -o $*.tmp.json && mv $*.tmp.json $@
+$(ONT)-basic.obo: $(ONT)-basic.owl
+	$(ROBOT) convert --check false -i $< -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
+$(ONT)-basic.json: $(ONT)-basic.owl
+	$(ROBOT) convert -i $< -f json -o $*.tmp.json && mv $*.tmp.json $@
 $(ONT)-full.obo: $(ONT)-full.owl
 	$(ROBOT) convert --check false -i $< -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
 $(ONT)-full.json: $(ONT)-full.owl
@@ -170,16 +186,15 @@ $(ONTOLOGYTERMS): $(SRC) all_imports
 
  
 
-$(ONT).owl: $(ONT)-full.owl
-	cp $< $@
- 
+$(ONT).owl: $(ONT)-simple-non-classified.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
-$(ONT).obo: $(ONT)-full.obo
-	cp $< $@
- 
+$(ONT).obo: $(ONT)-simple-non-classified.obo
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
+		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
 
-$(ONT).json: $(ONT)-full.json
-	cp $< $@
+$(ONT).json: $(ONT)-simple-non-classified.json
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.json && mv $@.tmp.json $@
 
 
 
@@ -198,6 +213,42 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
+# foo-non-classified: (edit->imports-merged)
+$(ONT)-non-classified.owl: $(SRC) $(OTHER_SRC)
+	$(ROBOT) merge --input $< \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
+# foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
+# drop every axiom: filter --term-file keep_terms.txt --trim true
+$(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS)
+	$(ROBOT) reason --input $< --reasoner ELK \
+		remove --select imports \
+		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
+		relax \
+		reduce -r ELK \
+		filter --term-file $(ONTOLOGYTERMS) --trim true \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
+# foo-simple-non-classified (edit->relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest") <- aka the HPO use case, no reason.
+# Should this be the non-classified ontology with the drop foreign axiom filter? 
+$(ONT)-simple-non-classified.owl: $(SRC) #$(OTHER_SRC) $(ONTOLOGYTERMS)
+	$(ROBOT) remove --input $< --select imports \
+		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
+		relax \
+		reduce -r ELK \
+		remove --term "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace" \
+		filter --term-file $(ONTOLOGYTERMS) --trim false \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
+# foo-basic: A version of -simple containing only relationships using relations on a configurable whitelist (default = BFO:0000050 (?)). See above (David comment) for explanation.
+# removes any axioms that contains one of the ops that not in the whitelist file
+
+$(ONT)-basic.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS) $(KEEPRELATIONS)
+	$(ROBOT) reason --input $< --reasoner ELK \
+		remove --select imports \
+		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
+		remove --term-file $(KEEPRELATIONS) --select complement --select object-properties --trim true \
+		relax \
+		reduce -r ELK \
+		filter --term-file $(ONTOLOGYTERMS) --trim true \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 # ----------------------------------------
 # Import modules
 # ----------------------------------------
