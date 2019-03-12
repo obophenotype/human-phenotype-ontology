@@ -3,15 +3,15 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-hp.owl: $(SRC) $(OTHER_SRC)
-	$(ROBOT) remove --input $< --select imports \
-	         merge  $(patsubst %, -i %, $(IMPORT_OWL_FILES))  \
-	         annotate --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
+#hp.owl: $(SRC) $(OTHER_SRC)
+#	$(ROBOT) remove --input $< --select imports \
+#	         merge  $(patsubst %, -i %, $(IMPORT_OWL_FILES))  \
+#	         annotate --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
 
-hp.obo: $(SRC)
-	$(ROBOT) remove --trim false --input $< --select imports \
-	         convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ 
-	#perl ../scripts/obo-filter-tags.pl -t intersection_of -t id -t name $@ | perl ../scripts/obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@.tmp && mv $@.tmp $@
+#hp.obo: $(SRC)
+#	$(ROBOT) remove --trim false --input $< --select imports \
+#	         convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ 
+#	#perl ../scripts/obo-filter-tags.pl -t intersection_of -t id -t name $@ | perl ../scripts/obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@.tmp && mv $@.tmp $@
 
 	#owltools $< --make-subset-by-properties -o -f obo $@.tmp && grep -v ^remark: $@.tmp > $@
 
