@@ -15,5 +15,5 @@
 
 5. Tickets with insufficient detail will be marked with a *'More info needed'* label to alert the submitter.
 
-### On behalf of the HPO editorial team, many thanks!
+### On behalf of the HPO editorial team, many  thanks! 
    
