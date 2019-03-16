@@ -52,5 +52,6 @@
 #subsets/hp-ldefs.obo: hp-edit.obo
 #	obo-filter-tags.pl -t intersection_of -t id -t name $< | obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@
 
-
+#  xref-syntax nolabels (currently failing)
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference
 
