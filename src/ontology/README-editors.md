@@ -30,7 +30,7 @@ To edit, open the file in Protege. First make sure you have the repository clone
 
 You should discuss the git workflow you should use with the maintainer
 of this repo, who should document it here. If you are the maintainer,
-you can contact the odk developers for assistance. You may want to
+you can contact the odk developers for assistance. You may want to 
 copy the flow an existing project, for example GO: [Gene Ontology
 Editors Tutorial](https://go-protege-tutorial.readthedocs.io/en/latest/).
 
