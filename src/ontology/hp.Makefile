@@ -55,3 +55,19 @@
 #  xref-syntax nolabels (currently failing)
 SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference
 
+hp_test.owl: $(SRC)
+	$(ROBOT) remove --input $< --select imports \
+		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
+		remove --axioms equivalent \
+		relax \
+		reduce -r ELK \
+		filter --select ontology --term-file $(ONTOLOGYTERMS) --trim false \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
+
+test_obo: hp_test.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
+		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o hp_test.tmp.obo && grep -v ^owl-axioms hp_test.tmp.obo > hp.obo && rm hp_test.tmp.obo
+
+test: sparql_test all_reports test_obo
+	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success"
+
