@@ -74,7 +74,7 @@ test: sparql_test all_reports test_obo
 # We overwrite the .owl release to be, for now, a simple merged version of the editors file.
 $(ONT).owl: $(SRC)
 	$(ROBOT) merge --input $< \
-		annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
+		annotate --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
 hp_labels.csv: $(SRC)
