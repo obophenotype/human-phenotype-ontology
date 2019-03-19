@@ -529,7 +529,3 @@ prepare_patterns:
 
 include hp.Makefile
 
-
-
-
-
