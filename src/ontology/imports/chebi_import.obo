@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-03-06/imports/chebi_import.owl
+data-version: hp/releases/2019-03-18/imports/chebi_import.owl
 ontology: hp/imports/chebi_import
 
 [Term]
@@ -249,6 +249,22 @@ is_a: CHEBI:35693 ! dicarboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:16995 ! oxalic acid
 
 [Term]
+id: CHEBI:132954
+name: sebacate
+namespace: chebi_ontology
+def: "A dicarboxylic acid anion obtained by deprotonation of at least one of the carboxy groups of sebacic acid." []
+subset: 3_STAR
+synonym: "decanedioic acid anion" RELATED [ChEBI]
+synonym: "decanedioic acid anions" RELATED [ChEBI]
+synonym: "sebacate anion" RELATED [ChEBI]
+synonym: "sebacate anions" RELATED [ChEBI]
+synonym: "sebacates" RELATED [ChEBI]
+synonym: "sebacic acid anion" RELATED [ChEBI]
+synonym: "sebacic acid anions" RELATED [ChEBI]
+is_a: CHEBI:35693 ! dicarboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:41865 ! sebacic acid
+
+[Term]
 id: CHEBI:132961
 name: methylsuccinate
 namespace: chebi_ontology
@@ -336,6 +352,29 @@ is_a: CHEBI:28965 ! dicarboxylic acid dianion
 relationship: is_conjugate_base_of CHEBI:36145 ! oxo dicarboxylic acid
 
 [Term]
+id: CHEBI:133580
+name: N-hexanoylglycinate
+namespace: chebi_ontology
+def: "A monocarboxylic acid anion that is the conjugate base of N-hexanoylglycine, obtained by deprotonation of the carboxy group; major species at pH 7.3." []
+subset: 3_STAR
+synonym: "(hexanoylamino)acetate" EXACT IUPAC_NAME [IUPAC]
+synonym: "N-caproylglycinate" RELATED [ChEBI]
+synonym: "N-hexanoylglycine" RELATED [UniProt]
+synonym: "N-hexanoylglycine anion" RELATED [ChEBI]
+synonym: "N-hexanoylglycine(1-)" RELATED [ChEBI]
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+is_a: CHEBI:57670 ! N-acylglycinate
+relationship: has_role CHEBI:25212 ! metabolite
+relationship: is_conjugate_base_of CHEBI:64390 ! N-hexanoylglycine
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C8H14NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C8H15NO3/c1-2-3-4-5-7(10)9-6-8(11)12/h2-6H2,1H3,(H,9,10)(H,11,12)/p-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "UPCKIPHSXMXJOX-UHFFFAOYSA-M" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "172.202" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "172.09792" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "N(CC([O-])=O)C(CCCCC)=O" xsd:string
+
+[Term]
 id: CHEBI:133608
 name: 1-methylhistidine zwitterion
 namespace: chebi_ontology
@@ -370,6 +409,30 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "JDHILDINMRGULE-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "169.181" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "169.08513" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C(=O)C([NH3+])CC=1N(C=NC1)C" xsd:string
+
+[Term]
+id: CHEBI:133610
+name: N-isobutyrylglycinate
+namespace: chebi_ontology
+def: "A monocarboxylic acid anion that is the conjugate base of N-isobutyrylglycine, obtained by deprotonation of the carboxy group; major species at pH 7.3." []
+subset: 3_STAR
+synonym: "(2-methylpropanamido)acetate" EXACT IUPAC_NAME [IUPAC]
+synonym: "isobutanoylglycinate" RELATED [ChEBI]
+synonym: "isobutyrylglycinate" RELATED [ChEBI]
+synonym: "N-(2-methylpropanoyl)glycinate" RELATED [ChEBI]
+synonym: "N-isobutanoylglycinate" RELATED [ChEBI]
+xref: HMDB:HMDB0000730
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+is_a: CHEBI:57670 ! N-acylglycinate
+relationship: has_role CHEBI:84087 ! human urinary metabolite
+relationship: is_conjugate_base_of CHEBI:70979 ! N-isobutyrylglycine
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H10NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C6H11NO3/c1-4(2)6(10)7-3-5(8)9/h4H,3H2,1-2H3,(H,7,10)(H,8,9)/p-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "DCICDMMXFIELDF-UHFFFAOYSA-M" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "144.149" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "144.06662" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(CNC(=O)C(C)C)(=O)[O-]" xsd:string
 
 [Term]
 id: CHEBI:133744
@@ -8538,8 +8601,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [ChEBI]
 synonym: "carbonyl group" EXACT [UniProt]
+synonym: "carbonyl group" EXACT [ChEBI]
 is_a: CHEBI:51422 ! organodiyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
@@ -21097,6 +21160,83 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "59.98584"
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C([O-])=O" xsd:string
 
 [Term]
+id: CHEBI:41808
+name: decane
+namespace: chebi_ontology
+alt_id: CHEBI:32894
+alt_id: CHEBI:41801
+def: "A straight-chain alkane with 10 carbon atoms." []
+subset: 3_STAR
+synonym: "CH3-[CH2]8-CH3" RELATED [IUPAC]
+synonym: "DECANE" EXACT [PDBeChem]
+synonym: "decane" EXACT IUPAC_NAME [IUPAC]
+synonym: "Dekan" RELATED [ChEBI]
+synonym: "n-decane" RELATED [NIST_Chemistry_WebBook]
+synonym: "n-Dekan" RELATED [ChEBI]
+xref: Beilstein:1696981 "ChemIDplus"
+xref: CAS:124-18-5 "ChemIDplus"
+xref: DrugBank:DB02826
+xref: Gmelin:67816 "Gmelin"
+xref: HMDB:HMDB0031450
+xref: LIPID_MAPS_instance:LMFA11000568 "LIPID MAPS"
+xref: MetaCyc:CPD-9287
+xref: PDBeChem:D10
+xref: PMID:11762597 "Europe PMC"
+xref: Reaxys:1696981 "Reaxys"
+xref: Wikipedia:Decane
+is_a: CHEBI:18310 ! alkane
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C10H22" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C10H22/c1-3-5-7-9-10-8-6-4-2/h3-10H2,1-2H3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "DIOQZVSQGTUSAI-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "142.28168" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "142.17215" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCC" xsd:string
+
+[Term]
+id: CHEBI:41865
+name: sebacic acid
+namespace: chebi_ontology
+alt_id: CHEBI:41860
+alt_id: CHEBI:9071
+def: "An alpha,omega-dicarboxylic acid that is the 1,8-dicarboxy derivative of octane." []
+subset: 3_STAR
+synonym: "1,10-decanedioic acid" RELATED [NIST_Chemistry_WebBook]
+synonym: "1,8-dicarboxyoctane" RELATED [ChEBI]
+synonym: "Decanedioic acid" RELATED [KEGG_COMPOUND]
+synonym: "decanedioic acid" EXACT IUPAC_NAME [IUPAC]
+synonym: "SEBACIC ACID" EXACT [PDBeChem]
+synonym: "Sebacic acid" EXACT [KEGG_COMPOUND]
+synonym: "Sebacinsaeure" RELATED [ChEBI]
+xref: Beilstein:1210591 "ChemIDplus"
+xref: CAS:111-20-6 "KEGG COMPOUND"
+xref: DrugBank:DB07645
+xref: Gmelin:102423 "Gmelin"
+xref: HMDB:HMDB0000792
+xref: KEGG:C08277
+xref: KNApSAcK:C00001202
+xref: LIPID_MAPS_instance:LMFA01170006 "LIPID MAPS"
+xref: MetaCyc:CPD-3623
+xref: PDBeChem:DEC
+xref: PMID:22770225 "Europe PMC"
+xref: PMID:9439441 "Europe PMC"
+xref: Reaxys:1210591 "Reaxys"
+xref: Wikipedia:Sebacic_acid
+is_a: CHEBI:28383 ! alpha,omega-dicarboxylic acid
+relationship: has_parent_hydride CHEBI:41808 ! decane
+relationship: has_role CHEBI:76924 ! plant metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: is_conjugate_acid_of CHEBI:132954 ! sebacate
+relationship: is_conjugate_acid_of CHEBI:76283 ! sebacate(2-)
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C10H18O4" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C10H18O4/c11-9(12)7-5-3-1-2-4-6-8-10(13)14/h1-8H2,(H,11,12)(H,13,14)" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "CXMXRPHRNRROMY-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "202.24752" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "202.12051" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC(=O)CCCCCCCCC(O)=O" xsd:string
+
+[Term]
 id: CHEBI:4194
 name: D-hexose
 namespace: chebi_ontology
@@ -25521,6 +25661,43 @@ synonym: "aralkylamino compounds" RELATED [ChEBI]
 is_a: CHEBI:50047 ! organic amino compound
 
 [Term]
+id: CHEBI:64390
+name: N-hexanoylglycine
+namespace: chebi_ontology
+def: "An N-acylglycine in which the acyl group is specified as hexanoyl." []
+subset: 3_STAR
+synonym: "Caproylglycine" RELATED [HMDB]
+synonym: "Hexanoylglycine" RELATED [ChemIDplus]
+synonym: "N-(1-oxohexyl)glycine" RELATED [HMDB]
+synonym: "N-caproylglycine" RELATED [ChemIDplus]
+synonym: "N-hexanoylglycine" EXACT IUPAC_NAME [IUPAC]
+synonym: "n-Hexanoylglycine" EXACT [HMDB]
+xref: CAS:24003-67-6 "ChemIDplus"
+xref: HMDB:HMDB0000701
+xref: Patent:EP226304
+xref: Patent:EP415598
+xref: Patent:EP517371
+xref: Patent:EP572167
+xref: Patent:EP580409
+xref: Patent:US4757066
+xref: Patent:US5112863
+xref: Patent:US5238917
+xref: Patent:US5559092
+xref: PMID:17190852 "Europe PMC"
+xref: PMID:22770225 "Europe PMC"
+xref: Reaxys:1773416 "Reaxys"
+is_a: CHEBI:16180 ! N-acylglycine
+relationship: has_role CHEBI:25212 ! metabolite
+relationship: is_conjugate_acid_of CHEBI:133580 ! N-hexanoylglycinate
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C8H15NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C8H15NO3/c1-2-3-4-5-7(10)9-6-8(11)12/h2-6H2,1H3,(H,9,10)(H,11,12)" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "UPCKIPHSXMXJOX-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "173.20960" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "173.10519" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCC(=O)NCC(O)=O" xsd:string
+
+[Term]
 id: CHEBI:64554
 name: tryptophan zwitterion
 namespace: chebi_ontology
@@ -26204,6 +26381,39 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "169.08513
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "Cn1cncc1CC(N)C(O)=O" xsd:string
 
 [Term]
+id: CHEBI:70979
+name: N-isobutyrylglycine
+namespace: chebi_ontology
+def: "An N-acylglycine in which the acyl group is specified as isobutryl." []
+subset: 3_STAR
+synonym: "[(2-methylpropanoyl)amino]acetic acid" EXACT IUPAC_NAME [IUPAC]
+synonym: "isobutanoylglycine" RELATED [ChEBI]
+synonym: "isobutyrylglycine" RELATED [HMDB]
+synonym: "N-(2-methylpropanoyl)glycine" EXACT IUPAC_NAME [IUPAC]
+synonym: "N-isobutanoylglycine" RELATED [ChEBI]
+xref: HMDB:HMDB0000730
+xref: PMID:14723814 "Europe PMC"
+xref: PMID:17712735 "Europe PMC"
+xref: PMID:20528888 "Europe PMC"
+xref: PMID:20836999 "Europe PMC"
+xref: PMID:22770225 "Europe PMC"
+xref: PMID:23062437 "Europe PMC"
+xref: PMID:7360517 "Europe PMC"
+xref: PMID:7408214 "Europe PMC"
+xref: PMID:8548022 "Europe PMC"
+xref: Reaxys:1762789 "Reaxys"
+is_a: CHEBI:16180 ! N-acylglycine
+relationship: has_role CHEBI:84087 ! human urinary metabolite
+relationship: is_conjugate_acid_of CHEBI:133610 ! N-isobutyrylglycinate
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H11NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C6H11NO3/c1-4(2)6(10)7-3-5(8)9/h4H,3H2,1-2H3,(H,7,10)(H,8,9)" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "DCICDMMXFIELDF-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "145.15640" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "145.07389" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(C)C(=O)NCC(O)=O" xsd:string
+
+[Term]
 id: CHEBI:71300
 name: EC 2.* (transferase) inhibitor
 namespace: chebi_ontology
@@ -26589,6 +26799,33 @@ def: "Any metabolite produced by metabolism of a xenobiotic compound." []
 subset: 3_STAR
 synonym: "xenobiotic metabolites" RELATED [ChEBI]
 is_a: CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:76283
+name: sebacate(2-)
+namespace: chebi_ontology
+def: "A dicarboxylic acid dianion obtained by deprotonation of both carboxy groups of suberic acid; major species at pH 7.3." []
+subset: 3_STAR
+synonym: "C10-DCA(2-)" RELATED [SUBMITTER]
+synonym: "decanedioate" EXACT IUPAC_NAME [IUPAC]
+synonym: "decanedioate" RELATED [UniProt]
+synonym: "decanedioate(2-)" RELATED [ChEBI]
+synonym: "sebacate" RELATED [ChEBI]
+xref: MetaCyc:CPD-3623
+xref: PMID:21886157 "Europe PMC"
+xref: Reaxys:3906061 "Reaxys"
+is_a: CHEBI:132954 ! sebacate
+is_a: CHEBI:28965 ! dicarboxylic acid dianion
+relationship: has_role CHEBI:76924 ! plant metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: is_conjugate_base_of CHEBI:41865 ! sebacic acid
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C10H16O4" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C10H18O4/c11-9(12)7-5-3-1-2-4-6-8-10(13)14/h1-8H2,(H,11,12)(H,13,14)/p-2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "CXMXRPHRNRROMY-UHFFFAOYSA-L" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "200.23160" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "200.10596" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C(=O)CCCCCCCCC([O-])=O" xsd:string
 
 [Term]
 id: CHEBI:76413

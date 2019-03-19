@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-03-06/imports/go_import.owl
+data-version: hp/releases/2019-03-18/imports/go_import.owl
 ontology: hp/imports/go_import
 
 [Term]
@@ -15524,7 +15524,7 @@ alt_id: GO:0043298
 alt_id: GO:0044404
 alt_id: GO:0072519
 alt_id: GO:0085031
-def: "A process carried out by symbiont gene products that enables a symbiotic interaction with a host organism. The various forms of symbiosis include parasitism, in which the association is disadvantageous or destructive to one of the organisms; mutualism, in which the association is advantageous, or often necessary to one or both and not harmful to either; and commensalism, in which one member of the association benefits while the other is not affected. However, mutualism, parasitism, and commensalism are often not discrete categories of interactions and should rather be perceived as a continuum of interaction ranging from parasitism to mutualism. In fact, the direction of a symbiotic interaction can change during the lifetime of the symbionts due to developmental changes as well as changes in the biotic/abiotic environment in which the interaction occurs. Microscopic symbionts are often referred to as endosymbionts." [GOC:cc, https://study.com/academy/lesson/symbiont-definition-lesson-quiz.html]
+def: "A process carried out by symbiont gene products that enables the interaction between two organisms living together in more or less intimate association. The various forms of symbiosis include parasitism, in which the association is disadvantageous or destructive to one of the organisms; mutualism, in which the association is advantageous, or often necessary to one or both and not harmful to either; and commensalism, in which one member of the association benefits while the other is not affected. However, mutualism, parasitism, and commensalism are often not discrete categories of interactions and should rather be perceived as a continuum of interaction ranging from parasitism to mutualism. In fact, the direction of a symbiotic interaction can change during the lifetime of the symbionts due to developmental changes as well as changes in the biotic/abiotic environment in which the interaction occurs. Microscopic symbionts are often referred to as endosymbionts." [GOC:cc, https://study.com/academy/lesson/symbiont-definition-lesson-quiz.html]
 comment: Changed term, definition see https://github.com/geneontology/go-ontology/issues/14807
 subset: goslim_chembl
 subset: goslim_generic
@@ -15933,15 +15933,18 @@ comment: This term was improved by GO_REF:0000022. It was moved.
 synonym: "innate immunity" EXACT [GOC:pg]
 synonym: "nonspecific immune response" EXACT []
 xref: Wikipedia:Innate_immune_system
-is_a: GO:0006952 ! defense response
 is_a: GO:0006955 ! immune response
+is_a: GO:0098542 ! defense response to other organism
 
 [Term]
 id: GO:0045088
 name: regulation of innate immune response
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the innate immune response, the organism's first line of defense against infection." [GOC:ebc]
+is_a: GO:0002831 ! regulation of response to biotic stimulus
 is_a: GO:0031347 ! regulation of defense response
+is_a: GO:0032101 ! regulation of response to external stimulus
+is_a: GO:0043900 ! regulation of multi-organism process
 is_a: GO:0050776 ! regulation of immune response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0045087 ! innate immune response
@@ -15956,7 +15959,10 @@ synonym: "stimulation of innate immune response" NARROW []
 synonym: "up regulation of innate immune response" EXACT []
 synonym: "up-regulation of innate immune response" EXACT []
 synonym: "upregulation of innate immune response" EXACT []
+is_a: GO:0002833 ! positive regulation of response to biotic stimulus
 is_a: GO:0031349 ! positive regulation of defense response
+is_a: GO:0032103 ! positive regulation of response to external stimulus
+is_a: GO:0043902 ! positive regulation of multi-organism process
 is_a: GO:0045088 ! regulation of innate immune response
 is_a: GO:0050778 ! positive regulation of immune response
 intersection_of: GO:0008150 ! biological_process
@@ -17415,7 +17421,10 @@ synonym: "down regulation of innate immune response" EXACT []
 synonym: "down-regulation of innate immune response" EXACT []
 synonym: "downregulation of innate immune response" EXACT []
 synonym: "inhibition of innate immune response" NARROW []
+is_a: GO:0002832 ! negative regulation of response to biotic stimulus
 is_a: GO:0031348 ! negative regulation of defense response
+is_a: GO:0032102 ! negative regulation of response to external stimulus
+is_a: GO:0043901 ! negative regulation of multi-organism process
 is_a: GO:0045088 ! regulation of innate immune response
 is_a: GO:0050777 ! negative regulation of immune response
 intersection_of: GO:0008150 ! biological_process

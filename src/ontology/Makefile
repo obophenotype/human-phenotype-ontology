@@ -66,4 +66,4 @@ reports/%.csv: hp-inferred.owl sparql/%.sparql
 reports/hp-edit-%.csv: hp-edit.owl sparql/%.sparql
 	robot query -i $< -s sparql/$*.sparql $@
 
-include Makefile-ODP
+#include Makefile-ODP
