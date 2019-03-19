@@ -76,3 +76,6 @@ $(ONT).owl: $(SRC)
 	$(ROBOT) merge --input $< \
 		annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
+
+hp_labels.csv: $(SRC)
+	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@

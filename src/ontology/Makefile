@@ -224,7 +224,7 @@ $(ONT)-simple-non-classified.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS)
 		remove --axioms equivalent \
 		relax \
 		reduce -r ELK \
-		filter --select ontology --term-file $(ONTOLOGYTERMS) --trim false \
+		filter --select ontology --term-file $(ONTOLOGYTERMS) --select annotations --trim false \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 # ----------------------------------------
 # Import modules
@@ -282,7 +282,8 @@ mirror/nbo.owl: mirror/nbo.trigger
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	$(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipped PR.owl!!!!!"
+	#$(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -292,7 +293,8 @@ mirror/pr.owl: mirror/pr.trigger
 mirror/go.trigger: $(SRC)
 
 mirror/go.owl: mirror/go.trigger
-	$(ROBOT) convert -I $(URIBASE)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipped GO.owl!!!!!"
+	#$(ROBOT) convert -I $(URIBASE)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -302,7 +304,8 @@ mirror/go.owl: mirror/go.trigger
 mirror/uberon.trigger: $(SRC)
 
 mirror/uberon.owl: mirror/uberon.trigger
-	$(ROBOT) convert -I $(URIBASE)/uberon.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipped UBERON.owl!!!!!"
+	#$(ROBOT) convert -I $(URIBASE)/uberon.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -322,7 +325,8 @@ mirror/ro.owl: mirror/ro.trigger
 mirror/chebi.trigger: $(SRC)
 
 mirror/chebi.owl: mirror/chebi.trigger
-	$(ROBOT) convert -I $(URIBASE)/chebi.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipped CHEBI.owl!!!!!"
+	#$(ROBOT) convert -I $(URIBASE)/chebi.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 .PRECIOUS: mirror/%.owl
 
