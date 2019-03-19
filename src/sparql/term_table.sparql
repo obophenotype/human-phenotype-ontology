@@ -1,0 +1,9 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?term ?label
+WHERE {
+  { 
+    ?term rdfs:label ?label .
+  }
+  FILTER(isIRI(?term) && regex(str(?term), "HP_"))
+}

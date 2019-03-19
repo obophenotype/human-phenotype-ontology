@@ -1,17 +1,14 @@
-# who gets notified if build-status changes
-notifications: 
-  email:
-    recipients:
-      - dr.sebastian.koehler@gmail.com
-      - peter.robinson@jax.org
-      - Leigh.Carmody@jax.org
-      - vasilevs@ohsu.edu
-    on_success: change
-    on_failure: always
+## REMEMBER TO SET UP YOUR GITHUB REPO FOR TRAVIS
+## Go to: https://travis-ci.org/obophenotype for details
+sudo: required
 
-jdk:
-  - oraclejdk8
+services:
+  - docker
 
+before_install:
+  - docker pull obolibrary/odkfull
+  
+# OLD PIPELINE
 # store the home dir for later use
 env:
   global:
@@ -21,8 +18,10 @@ env:
     - OBO_CHECK_JAR=hpo-obo-qc/target/hpo-obo-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
     - OWL_CHECK_JAR=hpo-owl-qc/target/hpo-owl-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
     - JAVA_OPTS=-Xmx4g
+    
+jdk:
+  - oraclejdk8
 
-# get all jars
 install:
   # owltools dowload
   - cd $CI_HOME  
@@ -48,20 +47,39 @@ install:
   - export PATH="$PATH":`pwd`/hpo-obo-qc/target/
   - export OORT_ARGS='--catalog-xml catalog-v001.xml' 
 
+#after_success:
+#  coveralls
+
+# whitelist
+branches:
+  only:
+    - master
+    - test-travis
+
+### Add your own lists here
+### See https://github.com/INCATools/ontology-development-kit/issues/35
+# who gets notified if build-status changes
+notifications:
+  email:
+    recipients:
+      - dr.sebastian.koehler@gmail.com
+      - peter.robinson@jax.org
+      - Leigh.Carmody@jax.org
+      - vasilevs@ohsu.edu
+      - nicolas.matentzoglu@gmail.com
+    on_success: change
+    on_failure: always
+
 # perform quality checks
-script:
-  # run tests on hp-edit
-   # encoding test
+script: 
+  - cd $CI_HOME
+  # encoding test on hp-edit
   - iconv -f UTF-8 -t ISO-8859-15 $HP_EDIT > converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
-   # java-based owl checkss
+  # java-based owl checks on hp-edit
   - java -jar $OWL_CHECK_JAR $HP_EDIT
-  # build hp.owl and hp.obo
-  - cd $CI_HOME  
-  - cd src/ontology/
-  - make &> log.txt
-  - tail -n 100 log.txt
+  # The ODK QC and build: 
+  - cd src/ontology && sh run.sh make test #&> log.txt
+  #- tail -n 100 log.txt
   # now check hp.obo for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
   - java -jar $OBO_CHECK_JAR $HP_OBO
-
-
