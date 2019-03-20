@@ -1,6 +1,6 @@
 ---
-name: Revise subclass relation
-about: Revise the subclass relation for an HPO term
+name: Revise subclass relationship
+about: Revise the subclass structure for HPO terms
 
 ---
 

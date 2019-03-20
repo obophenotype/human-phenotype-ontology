@@ -1,6 +1,6 @@
 ---
 name: Revise logical definition
-about: Change the logical OWL-DL statement of an HPO term
+about: Improve the OWL-DL statement of an HPO term
 
 ---
 

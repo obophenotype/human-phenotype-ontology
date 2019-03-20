@@ -1,6 +1,6 @@
 ---
-name: Adding term
-about: A new term suggestion to HPO
+name: Add term
+about: New term suggestion for HPO
 
 ---
 

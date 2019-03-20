@@ -1,6 +1,6 @@
 ---
-name: Obsolete term
-about: Obsolete or deprecate a term in HPO
+name: Obsolete a term
+about: Obsolete or deprecate an existing HPO term
 
 ---
 

@@ -1,6 +1,6 @@
 ---
-name: Adding synonym
-about: A new synonym to an existing HPO term
+name: Add synonym
+about: New synonym suggestion for an existing HPO term
 
 ---
 
