@@ -9,6 +9,7 @@ about: Obsolete or deprecate a term in HPO
 
 **Reason for deprecation**
 
+
 **Suggested replacement or term to consider**
 
 
