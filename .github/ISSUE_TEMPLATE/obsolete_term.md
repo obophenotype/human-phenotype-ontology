@@ -1,20 +1,17 @@
 ---
-name: Revise textual definition
-about: Change the textual definition of an HPO term
+name: Obsolete term
+about: Obsolete or deprecate a term in HPO
 
 ---
 
 **HPO term**
 
 
-**Suggeted revision of textual definition**
+**Reason for deprecation**
+
+**Suggested replacement or term to consider**
 
 
 **ping**
-@drseb
 @pnrobinson
-@nicolevasilevsky
-@LCCarmody 
-
-
-
+@drseb

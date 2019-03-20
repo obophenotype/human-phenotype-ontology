@@ -1,15 +1,13 @@
 ---
-name: Obsolete term
-about: Obsolete or deprecate a term in HPO
+name: Revise subclass relation
+about: Revise the subclass relation for an HPO term
 
 ---
 
 **HPO term**
 
 
-**Reason for deprecation**
-
-**Suggested replacement or term to consider**
+**Suggested revision and reasons**
 
 
 **ping**

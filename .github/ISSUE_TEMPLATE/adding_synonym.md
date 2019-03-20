@@ -1,26 +1,14 @@
 ---
-name: Adding term
-about: A new term suggestion to HPO
+name: Adding synonym
+about: A new synonym to an existing HPO term
 
 ---
 
-**Preferred term label:**
+** HPO term**
 
+** Synonym to be added **
 
-**Synonyms**
-
-
-**Definition (free text, please give PubMed ID)**
-
-
-**Parent term (use [HPO app](https://hpo.jax.org/app/)**
-
-
-**Diseases characterized by this term ? (e.g. Orphanet- or OMIM-id)**
-
-
-**Your nano-attribution (ORCID-id)**
-
+** broad/exact/narrow/plural/abbreviation ? **
 
 **ping**
 

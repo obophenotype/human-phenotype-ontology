@@ -1,17 +1,25 @@
 ---
-name: Adding synonym
-about: Add a missing synonym to an existing term in HPO
+name: Adding term
+about: A new term suggestion to HPO
 
 ---
 
-**Existing HPO term**
+**Preferred term label:**
 
 
-**Synonyms to be added**
+**Synonyms**
+
+
+**Definition (free text, please give PubMed ID)**
+
+
+**Parent term (use [HPO app](https://hpo.jax.org/app/)**
+
+
+**Diseases characterized by this term ? (e.g. Orphanet- or OMIM-id)**
 
 
 **Your nano-attribution (ORCID-id)**
-
 
 
 **ping**
@@ -20,3 +28,4 @@ about: Add a missing synonym to an existing term in HPO
 @drseb
 @nicolevasilevsky 
 @LCCarmody 
+
