@@ -1,7 +1,7 @@
 ---
 name: Typos/Bugs/Errors
 about: Report all kinds of typos or bugs in HPO
-asignees: drseb, pnrobinson
+assignees: drseb, pnrobinson
 labels: typo, bug
 ---
 
