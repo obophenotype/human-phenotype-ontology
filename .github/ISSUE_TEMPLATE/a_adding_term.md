@@ -1,7 +1,8 @@
 ---
 name: Add term
 about: New term suggestion for HPO
-
+assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+labels: 'new term request'
 ---
 
 **Preferred term label:**
@@ -22,10 +23,4 @@ about: New term suggestion for HPO
 **Your nano-attribution (ORCID-id)**
 
 
-**ping**
-
-@pnrobinson
-@drseb
-@nicolevasilevsky 
-@LCCarmody 
 
