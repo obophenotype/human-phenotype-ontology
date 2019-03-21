@@ -14,13 +14,13 @@ labels: 'new term request'
 **Definition (free text, please give PubMed ID)**
 
 
-**Parent term (use [HPO app](https://hpo.jax.org/app/)**
+**Parent term (use hpo.jax.org/app)**
 
 
-**Diseases characterized by this term ? (e.g. Orphanet- or OMIM-id)**
+**Diseases characterized by this term ? (e.g. Orphanet or OMIM number)**
 
 
-**Your nano-attribution (ORCID-id)**
+**Your nano-attribution (ORCID)**
 
 
 

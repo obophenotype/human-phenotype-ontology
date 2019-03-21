@@ -1,7 +1,8 @@
 ---
 name: Revise subclass relationship
 about: Revise the subclass structure for HPO terms
-
+assignees: pnrobinson, drseb
+labels: hpo-classhierarchy
 ---
 
 **HPO term**
@@ -10,6 +11,3 @@ about: Revise the subclass structure for HPO terms
 **Suggested revision and reasons**
 
 
-**ping**
-@pnrobinson
-@drseb
