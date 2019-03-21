@@ -17,12 +17,18 @@
  
 # Questions/Requests/Tickets
 
- * Please post issues at our [github tracker](https://github.com/obophenotype/human-phenotype-ontology/issues)
+ * Please post issues at our [github tracker](https://github.com/obophenotype/human-phenotype-ontology/issues/new/choose)
 
 
 # Contact
 
 If you have questions, please contact dr.sebastian.koehler@gmail.com or peter.robinson@jax.org
 
+# Mailing list
 
+Consider signing up the HPO mailing list at https://groups.io/g/human-phenotype-ontology
+
+# Twitter
+
+Follow us on twitter under the username @hp_ontology
 
