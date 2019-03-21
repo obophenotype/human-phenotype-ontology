@@ -1,6 +1,6 @@
 ## Before you write a new HPO ontology request, please consider the following: 
 
-- **Does the term already exist?** Before submitting suggestions for new ontology terms, check whether the term exist, either as a primary term or a synonym term. To do this, search the ontology using the [HPO-Browser] (http://compbio.charite.de/hpoweb/showterm?id=HP:0000118) browser. Requests for new synonyms or clarification of textual definitions are also welcomed.
+- **Does the term already exist?** Before submitting suggestions for new ontology terms, check whether the term exist, either as a primary term or a synonym term. To do this, search the ontology using the [HPO-Browser](https://hpo.jax.org/) browser. Requests for new synonyms or clarification of textual definitions are also welcomed.
 
 
 ## Guidelines for creating GitHub tickets with contributions to the HPO ontology:
