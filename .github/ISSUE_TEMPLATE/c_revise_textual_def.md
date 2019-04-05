@@ -8,7 +8,7 @@ labels: 'textual definition'
 **HPO term**
 
 
-**Suggeted revision of textual definition**
+**Suggested revision of textual definition**
 
 
 
