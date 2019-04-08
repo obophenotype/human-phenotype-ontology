@@ -59,8 +59,8 @@ all_main: $(MAIN_FILES)
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-
-IMPORTS =  nbo pr go uberon ro chebi hsapdv pato cl mpath
+# pr
+IMPORTS =  nbo go uberon ro chebi hsapdv pato cl mpath
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(foreach f,$(FORMATS), $(n).$(f)))
@@ -286,8 +286,7 @@ mirror/nbo.owl: mirror/nbo.trigger
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	echo "Warning: PR mirroring skipped until PR is fixed!"
-	#@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: mirror/%.owl
 
