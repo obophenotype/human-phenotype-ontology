@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-03-18/imports/chebi_import.owl
+data-version: hp/releases/2019-04-08/imports/chebi_import.owl
 ontology: hp/imports/chebi_import
 
 [Term]
@@ -856,6 +856,47 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "134.04801
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(=CC(NC(=*)*)=*)(NC(C(C)=*)=O)*" xsd:string
 
 [Term]
+id: CHEBI:142533
+name: ->4)-alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp-yl group
+namespace: chebi_ontology
+def: "An organic group forming part of, and a proposed epitope within, globoside GM1." []
+subset: 3_STAR
+synonym: "->4)-alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-beta-D-Glc-yl" RELATED [ChEBI]
+synonym: "->4)-alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-beta-D-Glc-yl group" RELATED [ChEBI]
+synonym: "->4)-alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosylp-(1->4)-beta-D-glucopyranosyl" EXACT IUPAC_NAME [IUPAC]
+synonym: "->4)-alpha-D-galactosyl-(1->4)-beta-D-galactosylp-(1->4)-beta-D-glucosyl" RELATED [ChEBI]
+xref: PMID:7691279 "Europe PMC"
+is_a: CHEBI:33247 ! organic group
+relationship: has_role CHEBI:53000 ! epitope
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H30O15" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "486.423" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "486.15847" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "*[C@@H]1O[C@@H]([C@@H](O[C@@H]2O[C@@H]([C@H](O[C@@H]3[C@@H]([C@@H](O)[C@H]([C@@H](CO)O3)O*)O)[C@@H]([C@H]2O)O)CO)[C@@H]([C@H]1O)O)CO" xsd:string
+
+[Term]
+id: CHEBI:142567
+name: alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp-yl group
+namespace: chebi_ontology
+def: "A trisaccharide beta-D-glucosyl group obtained by removal of the hydroxy group from the hemiacetal function of alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucose. Part of, and the proposed epitope from, alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide (globoside Gb3Cer; globotriosylceramide; CTH)." []
+subset: 3_STAR
+synonym: "alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-D-Glc-yl" RELATED [ChEBI]
+synonym: "alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranosyl" EXACT IUPAC_NAME [IUPAC]
+synonym: "alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl" RELATED [ChEBI]
+synonym: "Gala1-4Galb1-4Glcb-yl" RELATED [ChEBI]
+synonym: "Galalpha1-4Galbeta1-4Glcbeta-R" RELATED [ChEBI]
+synonym: "Galalpha1-4Galbeta1-4Glcbeta-yl" RELATED [ChEBI]
+xref: PMID:7691279 "Europe PMC"
+is_a: CHEBI:30697 ! beta-D-glucosyl group
+relationship: has_role CHEBI:53000 ! epitope
+relationship: is_substituent_group_from CHEBI:68485 ! alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H31O15" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "487.430" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "487.16630" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@@H]1([C@@H]([C@H]([C@@H]([C@H](O1)CO)O[C@H]2[C@@H]([C@H]([C@H]([C@H](O2)CO)O[C@@H]3[C@@H]([C@H]([C@H]([C@H](O3)CO)O)O)O)O)O)O)O)*" xsd:string
+
+[Term]
 id: CHEBI:142590
 name: 3-aminoisobutanoic acid zwitterion
 namespace: chebi_ontology
@@ -871,6 +912,27 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "QCHPKSFMDHPSNR-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "103.120" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "103.06333" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(C(C)C[NH3+])([O-])=O" xsd:string
+
+[Term]
+id: CHEBI:142767
+name: alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc-yl group
+namespace: chebi_ontology
+def: "A beta-D-glucosyl group derived from the trisaccharide N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucose.  Implied reactive epitope within ganglioside GM3." []
+subset: 3_STAR
+synonym: "3'-sialyllactosyl" RELATED [ChEBI]
+synonym: "5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranosyl" EXACT IUPAC_NAME [IUPAC]
+synonym: "alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl" RELATED [ChEBI]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Galp-(1->4)-beta-D-Glcp-yl" RELATED [ChEBI]
+synonym: "Neu5Acalpha2-3Galbeta1-4Glcbeta-yl" RELATED [ChEBI]
+xref: PMID:7534889 "Europe PMC"
+is_a: CHEBI:30697 ! beta-D-glucosyl group
+relationship: has_role CHEBI:53000 ! epitope
+relationship: is_substituent_group_from CHEBI:59226 ! N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C23H38NO18" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "616.545" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "616.20889" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "O([C@@H]1[C@H]([C@H](O[C@@H]2[C@H](O[C@@H](*)[C@@H]([C@H]2O)O)CO)O[C@@H]([C@@H]1O)CO)O)[C@]3(O[C@]([C@@H]([C@H](C3)O)NC(C)=O)([C@@H]([C@@H](CO)O)O)[H])C(O)=O" xsd:string
 
 [Term]
 id: CHEBI:14321
@@ -1631,6 +1693,83 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "158.04399
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "NC(=O)NC1NC(=O)NC1=O" xsd:string
 
 [Term]
+id: CHEBI:15681
+name: alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-ceramide
+namespace: chebi_ontology
+alt_id: CHEBI:10959
+alt_id: CHEBI:12288
+alt_id: CHEBI:12580
+alt_id: CHEBI:15680
+alt_id: CHEBI:21147
+alt_id: CHEBI:21623
+alt_id: CHEBI:5227
+def: "A sialodiosylceramide consisting of the trisaccharide alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc attached to the primary hydroxy function of ceramide." []
+subset: 3_STAR
+synonym: "(2S,3R,4E)-2-(acylamino)-3-hydroxyoctadec-4-en-1-yl 5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranoside" EXACT IUPAC_NAME [IUPAC]
+synonym: "(Gal)1 (Glc)1 (Neu5Ac)1 (Cer)1" RELATED [KEGG_GLYCAN]
+synonym: "(N-Acetylneuraminyl)-D-galactosyl-D-glucosylceramide" RELATED [KEGG_COMPOUND]
+synonym: "(Neu5Ac)GM3" RELATED [ChEBI]
+synonym: "alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosylceramide" RELATED [ChEBI]
+synonym: "alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosylceramides" RELATED [ChEBI]
+synonym: "alpha-N-Acetylneuraminyl-2,3-beta-D-galactosyl-1,4-beta-D-glucosylceramide" RELATED [KEGG_COMPOUND]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1')-Cer" RELATED [ChEBI]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Galp-(1->4)-beta-D-Glcp-(1<->1')-Cer" RELATED [ChEBI]
+synonym: "ganglioside GM3" RELATED [ChEBI]
+synonym: "GM3" RELATED [KEGG_COMPOUND]
+synonym: "GM3 (NeuAc)" RELATED [ChEBI]
+synonym: "Hematoside" RELATED [KEGG_GLYCAN]
+synonym: "monosialoganglioside GM3" RELATED [ChEBI]
+synonym: "N-Acetylneuraminyl-2,3-alpha-D-galactosyl-1,4-beta-D-glucosylceramide" RELATED [KEGG_COMPOUND]
+synonym: "Neu5Ac-alpha2->3Gal-beta1->4Glc-beta1->1'Cer" RELATED [KEGG_COMPOUND]
+synonym: "Neu5Acalpha2->3Galbeta1->4Glcbeta-Cer" RELATED [ChEBI]
+synonym: "NeuAc-GM3" RELATED [ChEBI]
+synonym: "NeuAcalpha2-3Galbeta1-4Glcbeta1-1'Cer" RELATED [ChEBI]
+synonym: "NeuAcalpha2->3Galbeta1->4Glc-Cer" RELATED [ChEBI]
+xref: KEGG:C04730
+xref: KEGG:G00108
+xref: LIPID_MAPS_instance:LMSP0601AJ00 "LIPID MAPS"
+xref: PMID:11093705 "Europe PMC"
+xref: PMID:11164910 "Europe PMC"
+xref: PMID:11534772 "Europe PMC"
+xref: PMID:12950986 "Europe PMC"
+xref: PMID:1371229 "Europe PMC"
+xref: PMID:1379980 "Europe PMC"
+xref: PMID:15102521 "Europe PMC"
+xref: PMID:15385432 "Europe PMC"
+xref: PMID:15546874 "Europe PMC"
+xref: PMID:1567198 "Europe PMC"
+xref: PMID:15939439 "Europe PMC"
+xref: PMID:16212238 "Europe PMC"
+xref: PMID:16341241 "Europe PMC"
+xref: PMID:16574813 "Europe PMC"
+xref: PMID:167132 "Europe PMC"
+xref: PMID:1724444 "Europe PMC"
+xref: PMID:19364317 "Europe PMC"
+xref: PMID:21149694 "Europe PMC"
+xref: PMID:2303428 "Europe PMC"
+xref: PMID:2448252 "Europe PMC"
+xref: PMID:2449247 "Europe PMC"
+xref: PMID:2714813 "Europe PMC"
+xref: PMID:2775195 "Europe PMC"
+xref: PMID:3392043 "Europe PMC"
+xref: PMID:3864442 "Europe PMC"
+xref: PMID:7534889 "Europe PMC"
+xref: PMID:7693874 "Europe PMC"
+xref: PMID:8448384 "Europe PMC"
+xref: PMID:8496625 "Europe PMC"
+xref: PMID:9375803 "Europe PMC"
+is_a: CHEBI:79209 ! alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide
+relationship: has_part CHEBI:142767 ! alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc-yl group
+relationship: has_role CHEBI:59132 ! antigen
+relationship: has_role CHEBI:75771 ! mouse metabolite
+relationship: is_conjugate_acid_of CHEBI:60065 ! alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-N-acylsphingosine(1-)
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C42H73N2O21R" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "942.02980" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "941.47058" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[H][C@]1(O[C@@](C[C@H](O)[C@H]1NC(C)=O)(O[C@H]1[C@@H](O)[C@@H](CO)O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](OC[C@H](NC([*])=O)[C@H](O)\\C=C\\CCCCCCCCCCCCC)O[C@@H]2CO)[C@@H]1O)C(O)=O)[C@H](O)[C@H](O)CO" xsd:string
+
+[Term]
 id: CHEBI:15693
 name: aldose
 namespace: chebi_ontology
@@ -2072,6 +2211,42 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "XOAAWQZATWQOTB-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "125.148" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "125.01466" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(CS(O)(=O)=O)N" xsd:string
+
+[Term]
+id: CHEBI:15903
+name: beta-D-glucose
+namespace: chebi_ontology
+alt_id: CHEBI:10397
+alt_id: CHEBI:12373
+alt_id: CHEBI:22795
+alt_id: CHEBI:41140
+def: "D-Glucopyranose with beta configuration at the anomeric centre." []
+subset: 3_STAR
+synonym: "beta-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "BETA-D-GLUCOSE" EXACT [PDBeChem]
+synonym: "beta-D-Glucose" EXACT [KEGG_COMPOUND]
+synonym: "beta-D-glucose" EXACT [UniProt]
+xref: Beilstein:1281607 "Beilstein"
+xref: CAS:492-61-5 "KEGG COMPOUND"
+xref: Drug_Central:845 "DrugCentral"
+xref: DrugBank:DB02379
+xref: Gmelin:648637 "Gmelin"
+xref: KEGG:C00221
+xref: PDBeChem:BGC
+xref: PMID:19443021 "Europe PMC"
+xref: PMID:25568069 "Europe PMC"
+xref: Reaxys:1281607 "Reaxys"
+is_a: CHEBI:4167 ! D-glucopyranose
+relationship: has_role CHEBI:53000 ! epitope
+relationship: has_role CHEBI:75771 ! mouse metabolite
+relationship: is_enantiomer_of CHEBI:37631 ! beta-L-glucose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6-/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "WQZGKKKJIJFFOK-VFUOTHLCSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.15588" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@H]1O[C@@H](O)[C@H](O)[C@@H](O)[C@@H]1O" xsd:string
 
 [Term]
 id: CHEBI:15904
@@ -3153,6 +3328,69 @@ property_value: http://purl.obolibrary.org/obo/chebi/formula "C10H16NO9R" xsd:st
 property_value: http://purl.obolibrary.org/obo/chebi/mass "294.23530" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "294.08251" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[H][C@]1(OC(O)(C[C@H](O)[C@H]1NC([*])=O)C(O)=O)[C@H](O)[C@H](O)CO" xsd:string
+
+[Term]
+id: CHEBI:16523
+name: D-serine
+namespace: chebi_ontology
+alt_id: CHEBI:13019
+alt_id: CHEBI:143888
+alt_id: CHEBI:21090
+alt_id: CHEBI:42262
+alt_id: CHEBI:4245
+def: "The R-enantiomer of serine." []
+subset: 3_STAR
+synonym: "(2R)-2-amino-3-hydroxypropanoic acid" RELATED [IUPAC]
+synonym: "(R)-2-Amino-3-hydroxy-propionic acid" RELATED [ChEMBL]
+synonym: "(R)-2-amino-3-hydroxypropanoic acid" RELATED [ChEBI]
+synonym: "D-Serin" RELATED [ChEBI]
+synonym: "D-SERINE" EXACT [PDBeChem]
+synonym: "D-Serine" EXACT [KEGG_COMPOUND]
+synonym: "D-serine" EXACT IUPAC_NAME [IUPAC]
+synonym: "DSN" RELATED [PDBeChem]
+xref: Beilstein:1721403 "Beilstein"
+xref: CAS:312-84-5 "KEGG COMPOUND"
+xref: DrugBank:DB03929
+xref: ECMDB:ECMDB03406
+xref: Gmelin:1041392 "Gmelin"
+xref: HMDB:HMDB0003406
+xref: KEGG:C00740
+xref: MetaCyc:D-SERINE
+xref: PDBeChem:DSN
+xref: PMID:11864625 "Europe PMC"
+xref: PMID:12850593 "Europe PMC"
+xref: PMID:19212759 "Europe PMC"
+xref: PMID:19217074 "Europe PMC"
+xref: PMID:21295046 "Europe PMC"
+xref: PMID:21914633 "Europe PMC"
+xref: PMID:21956571 "Europe PMC"
+xref: PMID:22117694 "Europe PMC"
+xref: PMID:22128843 "Europe PMC"
+xref: PMID:22266400 "Europe PMC"
+xref: PMID:22280157 "Europe PMC"
+xref: PMID:22362148 "Europe PMC"
+xref: PMID:22369458 "Europe PMC"
+xref: PMID:22445805 "Europe PMC"
+xref: PMID:22465696 "Europe PMC"
+xref: PMID:22486999 "Europe PMC"
+xref: Reaxys:1721403 "Reaxys"
+xref: YMDB:YMDB00284
+is_a: CHEBI:16733 ! D-alpha-amino acid
+is_a: CHEBI:17822 ! serine
+relationship: has_role CHEBI:64571 ! NMDA receptor agonist
+relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: is_conjugate_acid_of CHEBI:32840 ! D-serinate
+relationship: is_conjugate_base_of CHEBI:32841 ! D-serinium
+relationship: is_enantiomer_of CHEBI:17115 ! L-serine
+relationship: is_tautomer_of CHEBI:35247 ! D-serine zwitterion
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H7NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-UWTATZPHSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "105.09262" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "105.04259" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "N[C@H](CO)C(O)=O" xsd:string
 
 [Term]
 id: CHEBI:16526
@@ -4665,6 +4903,84 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "122.05791
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@H](O)[C@H](O)CO" xsd:string
 
 [Term]
+id: CHEBI:17115
+name: L-serine
+namespace: chebi_ontology
+alt_id: CHEBI:13167
+alt_id: CHEBI:21387
+alt_id: CHEBI:45440
+alt_id: CHEBI:45451
+alt_id: CHEBI:45590
+alt_id: CHEBI:45597
+alt_id: CHEBI:45677
+alt_id: CHEBI:6301
+def: "The L-enantiomer of serine." []
+subset: 3_STAR
+synonym: "(2S)-2-amino-3-hydroxypropanoic acid" RELATED [IUPAC]
+synonym: "(S)-(-)-serine" RELATED [NIST_Chemistry_WebBook]
+synonym: "(S)-2-amino-3-hydroxypropanoic acid" RELATED [NIST_Chemistry_WebBook]
+synonym: "(S)-alpha-Amino-beta-hydroxypropionic acid" RELATED [HMDB]
+synonym: "(S)-serine" RELATED [ChemIDplus]
+synonym: "beta-Hydroxy-L-alanine" RELATED [HMDB]
+synonym: "beta-Hydroxyalanine" RELATED [HMDB]
+synonym: "L-(-)-serine" RELATED [NIST_Chemistry_WebBook]
+synonym: "L-2-Amino-3-hydroxypropionic acid" RELATED [KEGG_COMPOUND]
+synonym: "L-3-Hydroxy-2-aminopropionic acid" RELATED [HMDB]
+synonym: "L-3-Hydroxy-alanine" RELATED [KEGG_COMPOUND]
+synonym: "L-Ser" RELATED [DrugBank]
+synonym: "L-Serin" RELATED [ChEBI]
+synonym: "L-Serine" EXACT [KEGG_COMPOUND]
+synonym: "L-serine" EXACT IUPAC_NAME [IUPAC]
+synonym: "S" RELATED [ChEBI]
+synonym: "Ser" RELATED [ChEBI]
+synonym: "SERINE" RELATED [PDBeChem]
+synonym: "Serine" RELATED [KEGG_COMPOUND]
+xref: Beilstein:1721404 "Beilstein"
+xref: CAS:56-45-1 "NIST Chemistry WebBook"
+xref: Drug_Central:4127 "DrugCentral"
+xref: DrugBank:DB00133
+xref: ECMDB:ECMDB00187
+xref: Gmelin:2570 "Gmelin"
+xref: HMDB:HMDB0000187
+xref: KEGG:C00065
+xref: KEGG:D00016
+xref: KNApSAcK:C00001393
+xref: MetaCyc:SER
+xref: PDBeChem:SER
+xref: PMID:1650428 "Europe PMC"
+xref: PMID:17439666 "Europe PMC"
+xref: PMID:19062365 "Europe PMC"
+xref: PMID:21956576 "Europe PMC"
+xref: PMID:22265470 "Europe PMC"
+xref: PMID:22393170 "Europe PMC"
+xref: PMID:22547037 "Europe PMC"
+xref: PMID:22566084 "Europe PMC"
+xref: PMID:22566694 "Europe PMC"
+xref: Reaxys:1721404 "Reaxys"
+xref: Wikipedia:L-serine
+xref: YMDB:YMDB00112
+is_a: CHEBI:15705 ! L-alpha-amino acid
+is_a: CHEBI:17822 ! serine
+is_a: CHEBI:26650 ! serine family amino acid
+is_a: CHEBI:83813 ! proteinogenic amino acid
+relationship: has_role CHEBI:75771 ! mouse metabolite
+relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: has_role CHEBI:84735 ! algal metabolite
+relationship: is_conjugate_acid_of CHEBI:32836 ! L-serinate
+relationship: is_conjugate_base_of CHEBI:32837 ! L-serinium
+relationship: is_enantiomer_of CHEBI:16523 ! D-serine
+relationship: is_tautomer_of CHEBI:33384 ! L-serine zwitterion
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H7NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-REOHCLBHSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "105.09262" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "105.04259" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "N[C@@H](CO)C(O)=O" xsd:string
+
+[Term]
 id: CHEBI:17120
 name: hexanoate
 namespace: chebi_ontology
@@ -5886,6 +6202,7 @@ xref: Wikipedia:Uracil
 is_a: CHEBI:26432 ! pyrimidine nucleobase
 is_a: CHEBI:38337 ! pyrimidone
 relationship: has_role CHEBI:50266 ! prodrug
+relationship: has_role CHEBI:50904 ! allergen
 relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
@@ -6030,6 +6347,29 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "167.03498
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "Oc1ccc(CC([O-])=O)cc1O" xsd:string
 
 [Term]
+id: CHEBI:17634
+name: D-glucose
+namespace: chebi_ontology
+alt_id: CHEBI:12965
+alt_id: CHEBI:20999
+def: "A glucose with D-configuration." []
+subset: 3_STAR
+synonym: "D(+)-glucose" RELATED [ChemIDplus]
+synonym: "D-(+)-glucose" RELATED [NIST_Chemistry_WebBook]
+synonym: "D-gluco-hexose" EXACT IUPAC_NAME [IUPAC]
+synonym: "D-glucose" EXACT IUPAC_NAME [IUPAC]
+synonym: "dextrose" RELATED [NIST_Chemistry_WebBook]
+synonym: "grape sugar" RELATED [ChemIDplus]
+synonym: "Traubenzucker" RELATED [ChemIDplus]
+xref: CAS:50-99-7 "ChemIDplus"
+is_a: CHEBI:17234 ! glucose
+is_a: CHEBI:17608 ! D-aldohexose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.15588" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+
+[Term]
 id: CHEBI:17650
 name: cortisol
 namespace: chebi_ontology
@@ -6081,6 +6421,7 @@ relationship: has_role CHEBI:49167 ! anti-asthmatic drug
 relationship: has_role CHEBI:50857 ! anti-allergic agent
 relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
+relationship: has_role CHEBI:88188 ! drug allergen
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C21H30O5" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C21H30O5/c1-19-7-5-13(23)9-12(19)3-4-14-15-6-8-21(26,17(25)11-22)20(15,2)10-16(24)18(14)19/h9,14-16,18,22,24,26H,3-8,10-11H2,1-2H3/t14-,15-,16-,18+,19-,20-,21-/m0/s1" xsd:string
@@ -6251,6 +6592,33 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "UCTLRSWJYQTBFZ-DD
 property_value: http://purl.obolibrary.org/obo/chebi/mass "384.63766" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "384.33922" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[H][C@@]1(CC[C@@]2([H])C3=CC=C4C[C@@H](O)CC[C@]4(C)[C@@]3([H])CC[C@]12C)[C@H](C)CCCC(C)C" xsd:string
+
+[Term]
+id: CHEBI:17761
+name: ceramide
+namespace: chebi_ontology
+alt_id: CHEBI:12487
+alt_id: CHEBI:13954
+alt_id: CHEBI:23074
+alt_id: CHEBI:7242
+def: "Ceramides (N-acyl-sphingoid bases) are a major subclass of sphingoid base derivatives with an amide-linked fatty acid. The fatty acids are typically saturated or monounsaturated with chain lengths from 14 to 26 carbon atoms; the presence of a hydroxyl group on carbon 2 is fairly common. Ceramides are generally precursors of more complex sphingolipids. In the illustrated generalised structure, R(1) = OH, OX (where X = acyl, glycosyl, phosphate, phosphonate, etc.), or H." []
+subset: 3_STAR
+synonym: "a ceramide" RELATED [UniProt]
+synonym: "Cer" RELATED [CBN]
+synonym: "Ceramide" EXACT [KEGG_COMPOUND]
+synonym: "ceramides" RELATED [ChEBI]
+synonym: "N-acylated sphingoid" RELATED [CBN]
+xref: KEGG:C00195
+xref: LIPID_MAPS_class:LMSP02 "LIPID MAPS"
+xref: PMID:7542630 "Europe PMC"
+xref: Wikipedia:Ceramide
+is_a: CHEBI:26739 ! sphingolipid
+is_a: CHEBI:37622 ! carboxamide
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C4H6NO2R3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "100.09590" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "100.03985" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "O[C@H]([*])[C@H](C[*])NC([*])=O" xsd:string
 
 [Term]
 id: CHEBI:17790
@@ -7652,6 +8020,72 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "650.79004
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "N[C@@H](Cc1cc(I)c(Oc2ccc(O)c(I)c2)c(I)c1)C(O)=O" xsd:string
 
 [Term]
+id: CHEBI:18259
+name: N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosylceramide
+namespace: chebi_ontology
+alt_id: CHEBI:12452
+alt_id: CHEBI:12557
+alt_id: CHEBI:21508
+alt_id: CHEBI:21513
+alt_id: CHEBI:24252
+alt_id: CHEBI:5388
+def: "A glycotetraosylceramide having N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucose as the tetrasaccharide component." []
+subset: 3_STAR
+synonym: "(Gal)2 (GalNAc)1 (Glc)1 (Cer)1" RELATED [KEGG_GLYCAN]
+synonym: "beta-D-GalNAc-(1->3)-alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1')-Cer" RELATED [JCBN]
+synonym: "beta-D-GalpNAc-(1->3)-alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp-(1<->1')-Cer" RELATED [JCBN]
+synonym: "CTH/Gb4" RELATED [ChEBI]
+synonym: "GalNAc-1->3-Gal-1->4-Gal-1->4-Glc-Cer" RELATED [ChemIDplus]
+synonym: "GalNAcbeta1-3-Galalpha1-4Galbeta1-4Glcbeta1-1Cer" RELATED [ChEBI]
+synonym: "Gb4 Globoside" RELATED [ChemIDplus]
+synonym: "Gb4 Globotetraosyl ceramide" RELATED [ChemIDplus]
+synonym: "Gb4Cer" RELATED [ChemIDplus]
+synonym: "Gb4Cer" RELATED [KEGG_GLYCAN]
+synonym: "GbOse4Cer" RELATED [ChEBI]
+synonym: "Gbose4Cer" RELATED [ChemIDplus]
+synonym: "globoside Gb4Cer (d18:1(4E))" RELATED [UniProt]
+synonym: "Globoside GL-4" RELATED [ChemIDplus]
+synonym: "Globoside I" RELATED [KEGG_COMPOUND]
+synonym: "Globotetraosyl ceramide" RELATED [ChemIDplus]
+synonym: "N-[(2S,3R,4E)-1-{[2-acetamido-2-deoxy-beta-D-galactopyranosyl-(1->3)-alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranosyl]oxy}-3-hydroxyoctadec-4-en-2-yl]alkanamide" EXACT IUPAC_NAME [IUPAC]
+synonym: "N-acetyl-D-galactosaminyl-(1->3)-D-galactosyl-(1->4)-D-galactosyl-(1->4)-D-glucosylceramides" RELATED [ChEBI]
+synonym: "N-Acetyl-D-galactosaminyl-1,3-D-galactosyl-1,4-D-galactosyl-1,4-D-glucosylceramide" RELATED [KEGG_COMPOUND]
+synonym: "N-Acetyl-galactosaminyl-1,3-D-galactosyl-1,4-D-galactosyl-1,4-D-glucosylceramide" RELATED [KEGG_COMPOUND]
+synonym: "Slt-iiv receptor" RELATED [ChemIDplus]
+synonym: "VT2vp1 Receptor" RELATED [ChemIDplus]
+xref: CAS:11034-93-8 "ChemIDplus"
+xref: KEGG:C03272
+xref: KEGG:G00094
+xref: PMID:1528196 "Europe PMC"
+xref: PMID:15495792 "Europe PMC"
+xref: PMID:15661151 "Europe PMC"
+xref: PMID:1601891 "Europe PMC"
+xref: PMID:1724444 "Europe PMC"
+xref: PMID:21252262 "Europe PMC"
+xref: PMID:21376640 "Europe PMC"
+xref: PMID:2448252 "Europe PMC"
+xref: PMID:2456994 "Europe PMC"
+xref: PMID:3220436 "Europe PMC"
+xref: PMID:4026313 "Europe PMC"
+xref: PMID:7287743 "Europe PMC"
+xref: PMID:7690848 "Europe PMC"
+xref: PMID:7691279 "Europe PMC"
+xref: PMID:8161226 "Europe PMC"
+is_a: CHEBI:23075 ! glycotetraosylceramide
+is_a: CHEBI:61360 ! globoside
+is_a: CHEBI:88167 ! N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-ceramide
+relationship: has_part CHEBI:142533 ! ->4)-alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp-yl group
+relationship: has_part CHEBI:142567 ! alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp-yl group
+relationship: has_role CHEBI:59132 ! antigen
+relationship: has_role CHEBI:75771 ! mouse metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C45H79N2O23R" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "1016.10840" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "1015.50736" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCC\\C=C\\[C@@H](O)[C@H](CO[C@@H]1O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@H](O[C@H]3O[C@H](CO)[C@H](O)[C@H](O[C@@H]4O[C@H](CO)[C@H](O)[C@H](O)[C@H]4NC(C)=O)[C@H]3O)[C@H](O)[C@H]2O)[C@H](O)[C@H]1O)NC([*])=O" xsd:string
+
+[Term]
 id: CHEBI:18282
 name: nucleobase
 namespace: chebi_ontology
@@ -8262,6 +8696,32 @@ is_a: CHEBI:30879 ! alcohol
 is_a: CHEBI:50047 ! organic amino compound
 
 [Term]
+id: CHEBI:22480
+name: amino disaccharide
+namespace: chebi_ontology
+def: "A disaccharide derivative that is a disaccharide having one or more substituted or unsubstituted amino groups in place of hydroxy groups at unspecified positions." []
+subset: 3_STAR
+synonym: "amino-disaccharides" RELATED [ChEBI]
+is_a: CHEBI:22483 ! amino oligosaccharide
+is_a: CHEBI:63353 ! disaccharide derivative
+
+[Term]
+id: CHEBI:22483
+name: amino oligosaccharide
+namespace: chebi_ontology
+subset: 3_STAR
+synonym: "amino oligosaccharides" RELATED [ChEBI]
+is_a: CHEBI:63563 ! oligosaccharide derivative
+
+[Term]
+id: CHEBI:22484
+name: galactosamine oligosaccharide
+namespace: chebi_ontology
+subset: 3_STAR
+synonym: "galactosamine oligosaccharides" RELATED [ChEBI]
+is_a: CHEBI:22483 ! amino oligosaccharide
+
+[Term]
 id: CHEBI:22494
 name: aminobenzoate
 namespace: chebi_ontology
@@ -8608,6 +9068,15 @@ property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "28.01010" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "27.99491" xsd:string
+
+[Term]
+id: CHEBI:23075
+name: glycotetraosylceramide
+namespace: chebi_ontology
+def: "An oligoglycosylceramide consisting of a glycotetraosyl moiety attached to the ceramide oxygen with an unspecified N-acyl substituent attached to the ceramide nitrogen." []
+subset: 3_STAR
+synonym: "glycotetraosylceramides" RELATED [ChEBI]
+is_a: CHEBI:36520 ! oligoglycosylceramide
 
 [Term]
 id: CHEBI:23116
@@ -9026,6 +9495,32 @@ synonym: "glucocorticoids" RELATED [ChEBI]
 is_a: CHEBI:36699 ! corticosteroid hormone
 
 [Term]
+id: CHEBI:24280
+name: D-glucosyl group
+namespace: chebi_ontology
+def: "The glucosyl group formed from D-glucopyranose." []
+subset: 3_STAR
+synonym: "D-glucopyranosyl" EXACT IUPAC_NAME [IUPAC]
+synonym: "D-glucopyranosyl group" RELATED [ChEBI]
+synonym: "glucopyranosyl group" RELATED [ChEBI]
+synonym: "glucosyl group" RELATED [ChEBI]
+is_a: CHEBI:24281 ! glucosyl group
+relationship: is_substituent_group_from CHEBI:4167 ! D-glucopyranose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H11O5" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "163.14850" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "163.06065" xsd:string
+
+[Term]
+id: CHEBI:24281
+name: glucosyl group
+namespace: chebi_ontology
+def: "A glycosyl group obtained by removing the hydroxy group from the hemiacetal function of a glucose and, by extension, of a lower oligosaccharide having glucose at the reducing end." []
+subset: 3_STAR
+synonym: "glucosyl groups" RELATED [ChEBI]
+is_a: CHEBI:24403 ! glycosyl group
+
+[Term]
 id: CHEBI:24315
 name: glutamic acid derivative
 namespace: chebi_ontology
@@ -9120,6 +9615,35 @@ synonym: "glycosides" RELATED [ChEBI]
 synonym: "O-glycoside" RELATED [ChEBI]
 synonym: "O-glycosides" RELATED [ChEBI]
 is_a: CHEBI:63161 ! glycosyl compound
+
+[Term]
+id: CHEBI:24402
+name: glycosphingolipid
+namespace: chebi_ontology
+alt_id: CHEBI:5498
+def: "A glycosphingolipid is a glycolipid that is a carbohydrate-containing derivative of a sphingoid or ceramide. It is understood that the carbohydrate residue is attached by a glycosidic linkage to O-1 of the sphingoid." []
+subset: 3_STAR
+synonym: "glycosphingolipids" RELATED [ChEBI]
+xref: PMID:18845618 "Europe PMC"
+xref: PMID:19303901 "Europe PMC"
+xref: PMID:26954668 "Europe PMC"
+xref: PMID:26976737 "Europe PMC"
+xref: PMID:27253729 "Europe PMC"
+xref: PMID:27325407 "Europe PMC"
+xref: Wikipedia:Glycosphingolipid
+is_a: CHEBI:26739 ! sphingolipid
+is_a: CHEBI:33563 ! glycolipid
+
+[Term]
+id: CHEBI:24403
+name: glycosyl group
+namespace: chebi_ontology
+def: "An organic group obtained by removing the hydroxy group from the hemiacetal function of a monosaccharide or monosaccharide derivative and, by extension, of a lower oligosaccharide or oligosaccharide derivative." []
+subset: 3_STAR
+synonym: "glycosyl group" EXACT IUPAC_NAME [IUPAC]
+synonym: "glycosyl groups" RELATED [ChEBI]
+synonym: "groupe glycosyle" RELATED [IUPAC]
+is_a: CHEBI:33247 ! organic group
 
 [Term]
 id: CHEBI:24431
@@ -10025,6 +10549,16 @@ xref: Wikipedia:Neurotransmitter
 is_a: CHEBI:33280 ! molecular messenger
 
 [Term]
+id: CHEBI:25513
+name: neutral glycosphingolipid
+namespace: chebi_ontology
+alt_id: CHEBI:7543
+def: "Any glycosphingolipid containing unsubstituted glycosyl moieties." []
+subset: 3_STAR
+synonym: "neutral glycosphingolipids" RELATED [ChEBI]
+is_a: CHEBI:24402 ! glycosphingolipid
+
+[Term]
 id: CHEBI:25555
 name: nitrogen atom
 namespace: chebi_ontology
@@ -10060,6 +10594,46 @@ synonym: "nonmetal" EXACT IUPAC_NAME [IUPAC]
 synonym: "nonmetal" RELATED [ChEBI]
 synonym: "nonmetals" RELATED [ChEBI]
 is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:25629
+name: octadecanoate
+namespace: chebi_ontology
+alt_id: CHEBI:231588
+def: "A fatty acid anion 18:0 that is the conjugate base of octadecanoic acid (stearic acid). Stearates have a variety of uses in the pharmaceutical industry." []
+subset: 3_STAR
+synonym: "CH3-[CH2]16-COO(-)" RELATED [IUPAC]
+synonym: "octadecanoate" EXACT IUPAC_NAME [IUPAC]
+synonym: "octadecanoate" EXACT [UniProt]
+synonym: "octadecanoic acid, ion(1-)" RELATED [ChemIDplus]
+synonym: "Stearate" RELATED [KEGG_COMPOUND]
+synonym: "stearate" RELATED [ChemIDplus]
+synonym: "stearic acid, ion(1-)" RELATED [ChemIDplus]
+xref: Beilstein:3590530 "Beilstein"
+xref: CAS:646-29-7 "ChemIDplus"
+xref: Gmelin:344065 "Gmelin"
+xref: KEGG:C01530
+xref: MetaCyc:STEARIC_ACID
+xref: PMID:16401590 "Europe PMC"
+xref: PMID:19184617 "Europe PMC"
+xref: PMID:3180776 "Europe PMC"
+xref: PMID:7452460 "Europe PMC"
+xref: Reaxys:3590530 "Reaxys"
+is_a: CHEBI:57560 ! long-chain fatty acid anion
+is_a: CHEBI:58954 ! straight-chain saturated fatty acid anion
+is_a: CHEBI:78125 ! fatty acid anion 18:0
+is_a: CHEBI:83955 ! 2-saturated fatty acid anion
+relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: has_role CHEBI:76924 ! plant metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: is_conjugate_base_of CHEBI:28842 ! octadecanoic acid
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H35O2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C18H36O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h2-17H2,1H3,(H,19,20)/p-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "QIQXTHQIDYTFRH-UHFFFAOYSA-M" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "283.470" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "283.26425" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(CCCCCCCCCC)CCCCCCC(=O)[O-]" xsd:string
 
 [Term]
 id: CHEBI:25676
@@ -10877,6 +11451,16 @@ xref: PMID:20237329 "Europe PMC"
 is_a: CHEBI:35366 ! fatty acid
 
 [Term]
+id: CHEBI:26649
+name: serine derivative
+namespace: chebi_ontology
+def: "An amino acid derivative resulting from reaction of serine at the amino group or the carboxy group, or from the replacement of any hydrogen of serine by a heteroatom. The definition normally excludes peptides containing serine residues." []
+subset: 3_STAR
+synonym: "serine derivatives" RELATED [ChEBI]
+is_a: CHEBI:83821 ! amino acid derivative
+relationship: has_functional_parent CHEBI:17822 ! serine
+
+[Term]
 id: CHEBI:26650
 name: serine family amino acid
 namespace: chebi_ontology
@@ -10959,6 +11543,17 @@ synonym: "sodium compounds" RELATED [ChEBI]
 synonym: "sodium molecular entities" RELATED [ChEBI]
 is_a: CHEBI:33296 ! alkali metal molecular entity
 relationship: has_part CHEBI:26708 ! sodium atom
+
+[Term]
+id: CHEBI:26739
+name: sphingolipid
+namespace: chebi_ontology
+def: "Sphingolipids are a complex family of compounds that share a common structural feature, a sphingoid base backbone." []
+subset: 3_STAR
+synonym: "sphingolipids" RELATED [ChEBI]
+is_a: CHEBI:18059 ! lipid
+is_a: CHEBI:35352 ! organonitrogen compound
+is_a: CHEBI:36963 ! organooxygen compound
 
 [Term]
 id: CHEBI:26764
@@ -11315,6 +11910,15 @@ def: "A chemical compound containing three hydroxy groups." []
 subset: 3_STAR
 synonym: "triols" RELATED [ChEBI]
 is_a: CHEBI:26191 ! polyol
+
+[Term]
+id: CHEBI:27150
+name: trisaccharide
+namespace: chebi_ontology
+subset: 3_STAR
+synonym: "trisaccharides" RELATED [ChEBI]
+xref: Wikipedia:Trisaccharide
+is_a: CHEBI:50699 ! oligosaccharide
 
 [Term]
 id: CHEBI:27162
@@ -12374,6 +12978,7 @@ xref: Gmelin:16269 "Gmelin"
 xref: KEGG:C00070
 xref: WebElements:Cu
 is_a: CHEBI:33366 ! copper group element atom
+is_a: CHEBI:88184 ! metal allergen
 relationship: has_role CHEBI:27027 ! micronutrient
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
@@ -12499,6 +13104,68 @@ relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "(C12H19NO20S3)n" xsd:string
+
+[Term]
+id: CHEBI:28842
+name: octadecanoic acid
+namespace: chebi_ontology
+alt_id: CHEBI:25631
+alt_id: CHEBI:45710
+def: "A C18 straight-chain saturated fatty acid component of many animal and vegetable lipids. As well as in the diet, it is used in hardening soaps, softening plastics and in making cosmetics, candles and  plastics." []
+subset: 3_STAR
+synonym: "18:0" RELATED [ChEBI]
+synonym: "acide octadecanoique" RELATED [ChEBI]
+synonym: "acide stearique" RELATED [ChEBI]
+synonym: "C18:0" RELATED [ChemIDplus]
+synonym: "CH3-[CH2]16-COOH" RELATED [IUPAC]
+synonym: "n-octadecanoic acid" RELATED [NIST_Chemistry_WebBook]
+synonym: "Octadecanoic acid" EXACT [KEGG_COMPOUND]
+synonym: "octadecanoic acid" EXACT IUPAC_NAME [IUPAC]
+synonym: "Octadecansaeure" RELATED [ChemIDplus]
+synonym: "octadecoic acid" RELATED [ChEBI]
+synonym: "Oktadekansaeure" RELATED [ChEBI]
+synonym: "STEARIC ACID" RELATED [PDBeChem]
+synonym: "stearic acid" RELATED [ChEBI]
+synonym: "Stearinsaeure" RELATED [ChemIDplus]
+xref: Beilstein:608585 "Beilstein"
+xref: CAS:57-11-4 "NIST Chemistry WebBook"
+xref: Drug_Central:4611 "DrugCentral"
+xref: DrugBank:DB03193
+xref: Gmelin:11738 "Gmelin"
+xref: HMDB:HMDB0000827
+xref: KEGG:C01530
+xref: KEGG:D00119
+xref: KNApSAcK:C00001238
+xref: LIPID_MAPS_instance:LMFA01010018 "LIPID MAPS"
+xref: MetaCyc:STEARIC_ACID
+xref: PDBeChem:STE
+xref: PMID:11425337 "Europe PMC"
+xref: PMID:16448636 "Europe PMC"
+xref: PMID:17439666 "Europe PMC"
+xref: PMID:18982377 "Europe PMC"
+xref: PMID:19468063 "Europe PMC"
+xref: PMID:19838949 "Europe PMC"
+xref: PMID:22735334 "Europe PMC"
+xref: PMID:26884207 "Europe PMC"
+xref: PMID:7763343 "Europe PMC"
+xref: Reaxys:608585 "Reaxys"
+xref: Wikipedia:Stearic_acid
+is_a: CHEBI:15904 ! long-chain fatty acid
+is_a: CHEBI:26607 ! saturated fatty acid
+is_a: CHEBI:39418 ! straight-chain saturated fatty acid
+relationship: has_parent_hydride CHEBI:32926 ! octadecane
+relationship: has_role CHEBI:76924 ! plant metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: has_role CHEBI:83056 ! Daphnia magna metabolite
+relationship: has_role CHEBI:84735 ! algal metabolite
+relationship: is_conjugate_acid_of CHEBI:25629 ! octadecanoate
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H36O2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C18H36O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h2-17H2,1H3,(H,19,20)" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "QIQXTHQIDYTFRH-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "284.478" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "284.27153" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C(CCCCCCCCCC)CCCCCCC(=O)O" xsd:string
 
 [Term]
 id: CHEBI:28868
@@ -12641,6 +13308,27 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "TUNFSRHWOTWDNC-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "228.37090" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "228.20893" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCCC(O)=O" xsd:string
+
+[Term]
+id: CHEBI:28892
+name: ganglioside
+namespace: chebi_ontology
+alt_id: CHEBI:26669
+alt_id: CHEBI:36525
+alt_id: CHEBI:5274
+def: "A molecule composed of a glycosphingolipid (ceramide and oligosaccharide) with one or more sialic acids linked on the sugar chain." []
+subset: 3_STAR
+synonym: "Ganglioside" EXACT [KEGG_COMPOUND]
+synonym: "gangliosides" RELATED [LIPID_MAPS]
+synonym: "gangliosides" RELATED [ChEBI]
+synonym: "sialoglycosphingolipids" EXACT IUPAC_NAME [IUPAC]
+xref: KEGG:C01808
+xref: LIPID_MAPS_class:LMSP0601 "LIPID MAPS"
+xref: PMID:16158191 "Europe PMC"
+xref: PMID:2088646 "Europe PMC"
+xref: Wikipedia:Ganglioside
+is_a: CHEBI:17761 ! ceramide
+is_a: CHEBI:36526 ! acidic glycosphingolipid
 
 [Term]
 id: CHEBI:28938
@@ -13699,6 +14387,26 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "273.10011
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "NC(Cc1ccc(Oc2ccc(O)cc2)cc1)C(O)=O" xsd:string
 
 [Term]
+id: CHEBI:30697
+name: beta-D-glucosyl group
+namespace: chebi_ontology
+def: "A D-glucosyl group obtained by removing the hydroxy group from the hemiacetal function of beta-D-glucose and, by extension, of a lower oligosaccharide having beta-D-glucose at the reducing end. The unsubstituted parent of the class of beta-D-glucosyl groups." []
+subset: 3_STAR
+synonym: "beta-D-glucopyranosyl" EXACT IUPAC_NAME [IUPAC]
+synonym: "beta-D-glucopyranosyl group" RELATED [ChEBI]
+synonym: "beta-D-glucosyl" RELATED [ChEBI]
+synonym: "beta-D-glucosyl group" EXACT [UniProt]
+synonym: "beta-glucopyranosyl group" RELATED [ChEBI]
+synonym: "beta-glucosyl" RELATED [ChEBI]
+xref: PMID:28979944 "Europe PMC"
+is_a: CHEBI:24280 ! D-glucosyl group
+relationship: is_substituent_group_from CHEBI:15903 ! beta-D-glucose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H11O5" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "163.14850" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "163.06065" xsd:string
+
+[Term]
 id: CHEBI:30745
 name: phenylacetic acid
 namespace: chebi_ontology
@@ -13749,6 +14457,7 @@ relationship: has_functional_parent CHEBI:15366 ! acetic acid
 relationship: has_role CHEBI:22676 ! auxin
 relationship: has_role CHEBI:27026 ! toxin
 relationship: has_role CHEBI:35219 ! plant growth retardant
+relationship: has_role CHEBI:50904 ! allergen
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:76924 ! plant metabolite
 relationship: has_role CHEBI:76956 ! Aspergillus metabolite
@@ -15459,6 +16168,90 @@ property_value: http://purl.obolibrary.org/obo/chebi/mass "120.127" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "120.06607" xsd:string
 
 [Term]
+id: CHEBI:32836
+name: L-serinate
+namespace: chebi_ontology
+def: "A serinate that is the conjugate base of L-serine, obtained by deprotonation of the carboxy group." []
+subset: 3_STAR
+synonym: "(2S)-2-amino-3-hydroxypropanoate" RELATED [IUPAC]
+synonym: "L-serinate" EXACT IUPAC_NAME [IUPAC]
+synonym: "L-serine anion" RELATED [JCBN]
+xref: Beilstein:4372751 "Beilstein"
+xref: Gmelin:324693 "Gmelin"
+is_a: CHEBI:32845 ! serinate
+is_a: CHEBI:59814 ! L-alpha-amino acid anion
+relationship: is_conjugate_base_of CHEBI:17115 ! L-serine
+relationship: is_enantiomer_of CHEBI:32840 ! D-serinate
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H6NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/p-1/t2-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-REOHCLBHSA-M" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "104.08468" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "104.03532" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "N[C@@H](CO)C([O-])=O" xsd:string
+
+[Term]
+id: CHEBI:32837
+name: L-serinium
+namespace: chebi_ontology
+def: "A serinium that is the conjugate acid of L-serine, obtained by protonation of the amino group." []
+subset: 3_STAR
+synonym: "(1S)-1-carboxy-2-hydroxyethanaminium" RELATED [IUPAC]
+synonym: "L-serine cation" RELATED [JCBN]
+synonym: "L-serinium" EXACT IUPAC_NAME [IUPAC]
+is_a: CHEBI:32846 ! serinium
+relationship: is_conjugate_acid_of CHEBI:17115 ! L-serine
+relationship: is_enantiomer_of CHEBI:32841 ! D-serinium
+property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H8NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/p+1/t2-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-REOHCLBHSA-O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "106.10056" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "106.04987" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+][C@@H](CO)C(O)=O" xsd:string
+
+[Term]
+id: CHEBI:32840
+name: D-serinate
+namespace: chebi_ontology
+def: "The D-enantiomer of serinate." []
+subset: 3_STAR
+synonym: "(2R)-2-amino-3-hydroxypropanoate" RELATED [IUPAC]
+synonym: "D-serinate" EXACT IUPAC_NAME [IUPAC]
+synonym: "D-serine anion" RELATED [JCBN]
+xref: Gmelin:745975 "Gmelin"
+is_a: CHEBI:32845 ! serinate
+relationship: is_conjugate_base_of CHEBI:16523 ! D-serine
+relationship: is_enantiomer_of CHEBI:32836 ! L-serinate
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H6NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/p-1/t2-/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-UWTATZPHSA-M" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "104.08468" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "104.03532" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "N[C@H](CO)C([O-])=O" xsd:string
+
+[Term]
+id: CHEBI:32841
+name: D-serinium
+namespace: chebi_ontology
+def: "The D-enantiomer of serinium." []
+subset: 3_STAR
+synonym: "(1R)-1-carboxy-2-hydroxyethanaminium" RELATED [IUPAC]
+synonym: "D-serine cation" RELATED [JCBN]
+synonym: "D-serinium" EXACT IUPAC_NAME [IUPAC]
+is_a: CHEBI:32846 ! serinium
+relationship: is_conjugate_acid_of CHEBI:16523 ! D-serine
+relationship: is_enantiomer_of CHEBI:32837 ! L-serinium
+property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H8NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/p+1/t2-/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-UWTATZPHSA-O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "106.10056" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "106.04987" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+][C@H](CO)C(O)=O" xsd:string
+
+[Term]
 id: CHEBI:32845
 name: serinate
 namespace: chebi_ontology
@@ -15750,6 +16543,33 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "44.06260"
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCC" xsd:string
 
 [Term]
+id: CHEBI:32926
+name: octadecane
+namespace: chebi_ontology
+def: "A straight-chain alkane carrying 18 carbon atoms." []
+subset: 3_STAR
+synonym: "CH3-[CH2]16-CH3" RELATED [IUPAC]
+synonym: "n-octadecane" RELATED [NIST_Chemistry_WebBook]
+synonym: "octadecane" EXACT IUPAC_NAME [IUPAC]
+synonym: "Oktadekan" RELATED [ChEBI]
+xref: Beilstein:1740138 "Beilstein"
+xref: CAS:593-45-3 "NIST Chemistry WebBook"
+xref: Gmelin:263389 "Gmelin"
+xref: KNApSAcK:C00030879
+xref: PMID:9842728 "Europe PMC"
+xref: Reaxys:1740138 "Reaxys"
+is_a: CHEBI:83563 ! long-chain alkane
+relationship: has_role CHEBI:76924 ! plant metabolite
+relationship: has_role CHEBI:76969 ! bacterial metabolite
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H38" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C18H38/c1-3-5-7-9-11-13-15-17-18-16-14-12-10-8-6-4-2/h3-18H2,1-2H3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "RZJRJXONCZWCBN-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "254.49430" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "254.29735" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCCCCCCC" xsd:string
+
+[Term]
 id: CHEBI:32952
 name: amine
 namespace: chebi_ontology
@@ -15865,6 +16685,43 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "XPPKVPWEQAFLFU-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "174.95126" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "174.92140" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "OP([O-])(=O)OP([O-])([O-])=O" xsd:string
+
+[Term]
+id: CHEBI:3306
+name: calcitonin
+namespace: chebi_ontology
+def: "A 32-membered heterodetic cyclic peptide comprising the sequence Cys-Ser-Asn-Leu-Ser-Thr-Cys-Val-Leu-Gly-Lys-Leu-Ser-Gln-Glu-Leu-His-Lys-Leu-Gln-Thr-Tyr-Pro-Arg-Thr-Asn-Thr-Gly-Ser-Gly-Thr-Pro-NH2 cyclised by a disulfide bridge between the two Cys residues at positions 1 and 7." []
+subset: 3_STAR
+synonym: "Calcitonin" EXACT [KEGG_COMPOUND]
+synonym: "calcitonin" RELATED INN [ChemIDplus]
+synonym: "Calcitonin, salmon" RELATED [KEGG_COMPOUND]
+synonym: "Cibacalcin" RELATED [KEGG_COMPOUND]
+synonym: "cyclo-[Cys-Ser-Asn-Leu-Ser-Thr-Cys]-Val-Leu-Gly-Lys-Leu-Ser-Gln-Glu-Leu-His-Lys-Leu-Gln-Thr-Tyr-Pro-Arg-Thr-Asn-Thr-Gly-Ser-Gly-Thr-Pro-NH2" RELATED [ChEBI]
+synonym: "N-{[(4R,7S,10S,13S,16S,19S,22R)-22-amino-16-(2-amino-2-oxoethyl)-7-[(1R)-1-hydroxyethyl]-10,19-bis(hydroxymethyl)-13-isobutyl-6,9,12,15,18,21-hexaoxo-1,2-dithia-5,8,11,14,17,20-hexaazacyclotricosan-4-yl]carbonyl}-L-valyl-L-leucylglycyl-L-lysyl-L-leucyl-L-seryl-L-glutaminyl-L-alpha-glutamyl-L-leucyl-L-histidyl-L-lysyl-L-leucyl-L-glutaminyl-L-threonyl-L-tyrosyl-L-prolyl-L-arginyl-L-threonyl-L-asparaginyl-L-threonylglycyl-L-serylglycyl-L-threonyl-L-prolinamide" EXACT IUPAC_NAME [IUPAC]
+synonym: "Salmon calcitonin" RELATED [ChemIDplus]
+synonym: "Salmon calcitonin-(1-32)" RELATED [ChemIDplus]
+synonym: "Salmotonin" RELATED [DrugBank]
+synonym: "Thyrocalcitonin (salmon)" RELATED [ChemIDplus]
+xref: CAS:47931-85-1 "KEGG COMPOUND"
+xref: CAS:9007-12-9 "KEGG COMPOUND"
+xref: Drug_Central:2989 "DrugCentral"
+xref: DrugBank:DB00017
+xref: KEGG:C06865
+xref: KEGG:D00249
+xref: Reaxys:8186880 "Reaxys"
+xref: Wikipedia:Calcitonin
+is_a: CHEBI:15841 ! polypeptide
+is_a: CHEBI:24533 ! heterodetic cyclic peptide
+is_a: CHEBI:25905 ! peptide hormone
+relationship: has_role CHEBI:25212 ! metabolite
+relationship: has_role CHEBI:50646 ! bone density conservation agent
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C145H240N44O48S2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C145H240N44O48S2/c1-65(2)45-86(175-139(232)110(70(11)12)183-136(229)99-63-239-238-62-79(148)117(210)178-96(59-191)134(227)174-92(52-104(151)202)131(224)172-90(49-69(9)10)129(222)180-98(61-193)135(228)187-114(74(16)197)142(235)181-99)118(211)158-55-106(204)162-80(25-18-20-40-146)120(213)169-89(48-68(7)8)128(221)179-97(60-192)133(226)167-83(34-37-102(149)200)122(215)165-85(36-39-109(207)208)123(216)171-88(47-67(5)6)127(220)173-91(51-77-54-156-64-161-77)130(223)164-81(26-19-21-41-147)121(214)170-87(46-66(3)4)126(219)166-84(35-38-103(150)201)125(218)186-113(73(15)196)141(234)177-94(50-76-30-32-78(199)33-31-76)143(236)189-44-24-29-101(189)137(230)168-82(27-22-42-157-145(154)155)124(217)185-112(72(14)195)140(233)176-93(53-105(152)203)132(225)184-111(71(13)194)138(231)160-56-107(205)163-95(58-190)119(212)159-57-108(206)182-115(75(17)198)144(237)188-43-23-28-100(188)116(153)209/h30-33,54,64-75,79-101,110-115,190-199H,18-29,34-53,55-63,146-148H2,1-17H3,(H2,149,200)(H2,150,201)(H2,151,202)(H2,152,203)(H2,153,209)(H,156,161)(H,158,211)(H,159,212)(H,160,231)(H,162,204)(H,163,205)(H,164,223)(H,165,215)(H,166,219)(H,167,226)(H,168,230)(H,169,213)(H,170,214)(H,171,216)(H,172,224)(H,173,220)(H,174,227)(H,175,232)(H,176,233)(H,177,234)(H,178,210)(H,179,221)(H,180,222)(H,181,235)(H,182,206)(H,183,229)(H,184,225)(H,185,217)(H,186,218)(H,187,228)(H,207,208)(H4,154,155,157)/t71-,72-,73-,74-,75-,79+,80+,81+,82+,83+,84+,85+,86+,87+,88+,89+,90+,91+,92+,93+,94+,95+,96+,97+,98+,99+,100+,101+,110+,111+,112+,113+,114+,115+/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "BBBFJLBPOGFECG-VJVYQDLKSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "3431.85300" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "3429.71331" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(C)C[C@H](NC(=O)[C@@H](NC(=O)[C@@H]1CSSC[C@H](N)C(=O)N[C@@H](CO)C(=O)N[C@@H](CC(N)=O)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CO)C(=O)N[C@@H]([C@@H](C)O)C(=O)N1)C(C)C)C(=O)NCC(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCC(N)=O)C(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](Cc1cnc[nH]1)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CCC(N)=O)C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@@H](Cc1ccc(O)cc1)C(=O)N1CCC[C@H]1C(=O)N[C@@H](CCCNC(N)=N)C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@@H](CC(N)=O)C(=O)N[C@@H]([C@@H](C)O)C(=O)NCC(=O)N[C@@H](CO)C(=O)NCC(=O)N[C@@H]([C@@H](C)O)C(=O)N1CCC[C@H]1C(N)=O" xsd:string
 
 [Term]
 id: CHEBI:33224
@@ -16193,7 +17050,7 @@ is_a: CHEBI:24432 ! biological role
 id: CHEBI:33282
 name: antibacterial agent
 namespace: chebi_ontology
-def: "A substance that kills or slows the growth of bacteria." []
+def: "A substance (or active part thereof) that kills or slows the growth of bacteria." []
 subset: 3_STAR
 synonym: "antibacterial agents" RELATED [ChEBI]
 synonym: "antibacterials" RELATED [ChEBI]
@@ -16436,6 +17293,27 @@ synonym: "copper group elements" RELATED [ChEBI]
 synonym: "group 11 elements" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:27081 ! transition element atom
 is_a: CHEBI:33561 ! d-block element atom
+
+[Term]
+id: CHEBI:33384
+name: L-serine zwitterion
+namespace: chebi_ontology
+def: "A serine zwitterion obtained by transfer of a proton from the carboxy to the amino group of L-serine." []
+subset: 3_STAR
+synonym: "(2S)-2-ammonio-3-hydroxypropanoate" EXACT IUPAC_NAME [IUPAC]
+synonym: "L-serine" RELATED [UniProt]
+synonym: "L-serine zwitterion" EXACT [IUPAC]
+xref: MetaCyc:SER
+is_a: CHEBI:35243 ! serine zwitterion
+relationship: is_enantiomer_of CHEBI:35247 ! D-serine zwitterion
+relationship: is_tautomer_of CHEBI:17115 ! L-serine
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H7NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-REOHCLBHSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "105.09262" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "105.04259" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+][C@@H](CO)C([O-])=O" xsd:string
 
 [Term]
 id: CHEBI:33402
@@ -18013,6 +18891,27 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "105.04259
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+]C(CO)C([O-])=O" xsd:string
 
 [Term]
+id: CHEBI:35247
+name: D-serine zwitterion
+namespace: chebi_ontology
+def: "A serine zwitterion obtained by transfer of a proton from the carboxy to the amino group of D-serine." []
+subset: 3_STAR
+synonym: "(2R)-2-ammonio-3-hydroxypropanoate" EXACT IUPAC_NAME [IUPAC]
+synonym: "D-serine" RELATED [UniProt]
+synonym: "D-serine zwitterion" EXACT [IUPAC]
+xref: MetaCyc:D-SERINE
+is_a: CHEBI:35243 ! serine zwitterion
+relationship: is_enantiomer_of CHEBI:33384 ! L-serine zwitterion
+relationship: is_tautomer_of CHEBI:16523 ! D-serine
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H7NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "MTCFGRXMJLQNBG-UWTATZPHSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "105.09262" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "105.04259" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+][C@H](CO)C([O-])=O" xsd:string
+
+[Term]
 id: CHEBI:35267
 name: quaternary ammonium ion
 namespace: chebi_ontology
@@ -19286,7 +20185,7 @@ def: "A steroid ester obtained by formal condensation of the carboxy group of an
 subset: 3_STAR
 synonym: "3-hydroxysteroid ester" RELATED [ChEBI]
 synonym: "3-hydroxysteroid esters" RELATED [ChEBI]
-synonym: "a steryl ester" RELATED [UniProt]
+synonym: "a sterol ester" RELATED [UniProt]
 synonym: "Sterol ester" EXACT [KEGG_COMPOUND]
 synonym: "Steryl ester" RELATED [KEGG_COMPOUND]
 xref: KEGG:C01958
@@ -19739,6 +20638,41 @@ name: phosphorus oxoacids and derivatives
 namespace: chebi_ontology
 subset: 1_STAR
 is_a: CHEBI:26082 ! phosphorus molecular entity
+
+[Term]
+id: CHEBI:36508
+name: glycotriaosylceramide
+namespace: chebi_ontology
+subset: 1_STAR
+is_a: CHEBI:36520 ! oligoglycosylceramide
+
+[Term]
+id: CHEBI:36520
+name: oligoglycosylceramide
+namespace: chebi_ontology
+alt_id: CHEBI:24253
+alt_id: CHEBI:25672
+subset: 1_STAR
+is_a: CHEBI:17761 ! ceramide
+is_a: CHEBI:25513 ! neutral glycosphingolipid
+
+[Term]
+id: CHEBI:36526
+name: acidic glycosphingolipid
+namespace: chebi_ontology
+alt_id: CHEBI:22208
+alt_id: CHEBI:2428
+subset: 1_STAR
+is_a: CHEBI:24402 ! glycosphingolipid
+
+[Term]
+id: CHEBI:36544
+name: sialodiosylceramide
+namespace: chebi_ontology
+def: "A ganglioside in which the number of residues in the oligosaccharide chain is two." []
+subset: 3_STAR
+synonym: "sialodiosylceramides" RELATED [ChEBI]
+is_a: CHEBI:28892 ! ganglioside
 
 [Term]
 id: CHEBI:36586
@@ -20288,6 +21222,72 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "41.99799"
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[*]C(=O)N([*])[*]" xsd:string
 
 [Term]
+id: CHEBI:37624
+name: L-glucose
+namespace: chebi_ontology
+subset: 3_STAR
+synonym: "L(-)-glucose" RELATED [ChemIDplus]
+synonym: "L-gluco-hexose" EXACT IUPAC_NAME [IUPAC]
+synonym: "L-glucose" EXACT IUPAC_NAME [IUPAC]
+xref: Beilstein:1724626 "ChemIDplus"
+xref: CAS:921-60-8 "ChemIDplus"
+is_a: CHEBI:17234 ! glucose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.156" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+
+[Term]
+id: CHEBI:37627
+name: L-glucopyranose
+namespace: chebi_ontology
+def: "The L-enantiomer of glucopyranose." []
+subset: 3_STAR
+synonym: "L-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+xref: Beilstein:2206321 "Beilstein"
+xref: Reaxys:2206321 "Reaxys"
+is_a: CHEBI:37624 ! L-glucose
+is_a: CHEBI:37661 ! glucopyranose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6?/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "WQZGKKKJIJFFOK-ZZWDRFIYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.15588" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@@H]1OC(O)[C@@H](O)[C@H](O)[C@H]1O" xsd:string
+
+[Term]
+id: CHEBI:37631
+name: beta-L-glucose
+namespace: chebi_ontology
+def: "A L-glucopyranose with a beta-configuration at the anomeric position." []
+subset: 3_STAR
+synonym: "beta-L-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+xref: Beilstein:1907373 "Beilstein"
+xref: Reaxys:1907373 "Reaxys"
+is_a: CHEBI:37627 ! L-glucopyranose
+relationship: is_enantiomer_of CHEBI:15903 ! beta-D-glucose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "WQZGKKKJIJFFOK-QYESYBIKSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.15588" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@@H]1O[C@H](O)[C@@H](O)[C@H](O)[C@H]1O" xsd:string
+
+[Term]
+id: CHEBI:37661
+name: glucopyranose
+namespace: chebi_ontology
+subset: 3_STAR
+synonym: "glucopyranose" EXACT IUPAC_NAME [IUPAC]
+is_a: CHEBI:17234 ! glucose
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.156" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+
+[Term]
 id: CHEBI:37684
 name: mannose
 namespace: chebi_ontology
@@ -20298,7 +21298,6 @@ subset: 3_STAR
 synonym: "Man" RELATED [JCBN]
 synonym: "manno-hexose" EXACT IUPAC_NAME [IUPAC]
 synonym: "mannose" EXACT IUPAC_NAME [IUPAC]
-synonym: "mannose" EXACT [UniProt]
 xref: PMID:16180318 "Europe PMC"
 xref: PMID:24407290 "Europe PMC"
 is_a: CHEBI:33917 ! aldohexose
@@ -21160,6 +22159,58 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "59.98584"
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C([O-])=O" xsd:string
 
 [Term]
+id: CHEBI:4167
+name: D-glucopyranose
+namespace: chebi_ontology
+def: "A glucopyranose having D-configuration." []
+subset: 3_STAR
+synonym: "D-Glc" RELATED [ChEBI]
+synonym: "D-Glcp" RELATED [ChEBI]
+synonym: "D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "D-Glucose" RELATED [KEGG_COMPOUND]
+synonym: "D-glucose" RELATED [UniProt]
+synonym: "Dextrose" RELATED [KEGG_COMPOUND]
+synonym: "Glc-OH" RELATED [ChEBI]
+synonym: "Glucose" RELATED [KEGG_COMPOUND]
+synonym: "glucose" RELATED [ChEBI]
+synonym: "Grape sugar" RELATED [KEGG_COMPOUND]
+xref: Beilstein:1281604 "Beilstein"
+xref: CAS:2280-44-6 "ChemIDplus"
+xref: Gmelin:83256 "Gmelin"
+xref: HMDB:HMDB0000122
+xref: KEGG:C00031
+xref: KEGG:D00009
+xref: KNApSAcK:C00001122
+xref: MetaCyc:D-Glucose
+xref: PMID:15987845 "Europe PMC"
+xref: PMID:16901854 "Europe PMC"
+xref: PMID:17336832 "Europe PMC"
+xref: PMID:17439666 "Europe PMC"
+xref: PMID:17928662 "Europe PMC"
+xref: PMID:19913595 "Europe PMC"
+xref: PMID:26812026 "Europe PMC"
+xref: PMID:7524207 "Europe PMC"
+xref: PMID:9140037 "Europe PMC"
+xref: PMID:9501190 "Europe PMC"
+xref: PMID:9506998 "Europe PMC"
+xref: PMID:9545565 "Europe PMC"
+xref: Reaxys:1281604 "Reaxys"
+xref: Wikipedia:Glucose
+is_a: CHEBI:17634 ! D-glucose
+is_a: CHEBI:37661 ! glucopyranose
+relationship: has_role CHEBI:75771 ! mouse metabolite
+relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C6H12O6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C6H12O6/c7-1-2-3(8)4(9)5(10)6(11)12-2/h2-11H,1H2/t2-,3-,4+,5-,6?/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "WQZGKKKJIJFFOK-GASJEMHNSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "180.15588" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "180.06339" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O" xsd:string
+
+[Term]
 id: CHEBI:41808
 name: decane
 namespace: chebi_ontology
@@ -21880,7 +22931,6 @@ name: ornithinium(1+)
 namespace: chebi_ontology
 subset: 3_STAR
 synonym: "2,5-diammoniopentanoate" EXACT IUPAC_NAME [IUPAC]
-synonym: "ornithine" RELATED [UniProt]
 synonym: "ornithine monocation" RELATED [JCBN]
 synonym: "ornithinium" EXACT IUPAC_NAME [IUPAC]
 synonym: "ornithinium(1+)" EXACT [JCBN]
@@ -23238,7 +24288,7 @@ is_a: CHEBI:52209 ! aetiopathogenetic role
 id: CHEBI:50904
 name: allergen
 namespace: chebi_ontology
-def: "A chemical compound which causes the onset of an allergic reaction by interacting with any of the molecular pathways involved in an allergy." []
+def: "A chemical compound, or part thereof, which causes the onset of an allergic reaction by interacting with any of the molecular pathways involved in an allergy." []
 subset: 3_STAR
 synonym: "alergeno" RELATED [ChEBI]
 synonym: "allergene" RELATED [ChEBI]
@@ -23701,6 +24751,58 @@ synonym: "polyionic macromolecule" RELATED [ChEBI]
 is_a: CHEBI:33839 ! macromolecule
 
 [Term]
+id: CHEBI:53604
+name: N-acetyl-alpha-D-galactosaminyl-L-serine residue
+namespace: chebi_ontology
+alt_id: CHEBI:87078
+def: "An L-alpha-amino acid residue derived from N-acetyl-alpha-D-galactosaminyl-L-serine." []
+subset: 3_STAR
+synonym: "-[GalNAc(alpha1->O)]Ser-" RELATED [JCBN]
+synonym: "GalNAc alpha 1-O-Ser" RELATED [ChEBI]
+synonym: "N-acetyl-alpha-D-galactosaminyl-L-serine residue" EXACT [UniProt]
+synonym: "O-(2-acetamido-2-deoxy-alpha-D-galactopyranosyl)-L-serine residue" EXACT IUPAC_NAME [IUPAC]
+synonym: "Tn antigen" RELATED [ChEBI]
+xref: PMID:1378020 "Europe PMC"
+xref: PMID:1426254 "Europe PMC"
+xref: PMID:26847142 "Europe PMC"
+xref: PMID:9509302 "Europe PMC"
+xref: RESID:AA0154
+xref: Wikipedia:Tn_antigen
+is_a: CHEBI:83228 ! L-alpha-amino acid residue
+relationship: has_role CHEBI:53000 ! epitope
+relationship: is_substituent_group_from CHEBI:53608 ! O-(N-acetyl-alpha-D-galactosaminyl)-L-serine
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C11H18N2O7" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "290.270" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "290.11140" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C([C@@H](C(*)=O)N*)O[C@@H]1[C@@H]([C@H]([C@H]([C@H](O1)CO)O)O)NC(=O)C" xsd:string
+
+[Term]
+id: CHEBI:53608
+name: O-(N-acetyl-alpha-D-galactosaminyl)-L-serine
+namespace: chebi_ontology
+alt_id: CHEBI:46057
+def: "A non-proteinogenic L-amino acid that is N-acetyl-alpha-D-galactosamine linked via an alpha glycosidic bond to the O at position 3 of L-serine." []
+subset: 3_STAR
+synonym: "alpha-D-GalNAc-Ser" RELATED [ChEBI]
+synonym: "GalNAc(alpha1->O)Ser" RELATED [JCBN]
+synonym: "GalNAcalpha1-Ser" RELATED [ChEBI]
+synonym: "O-(2-acetamido-2-deoxy-alpha-D-galactopyranosyl)-L-serine" EXACT IUPAC_NAME [IUPAC]
+synonym: "O-(N-acetyl-alpha-D-galactosaminyl)-L-serine" EXACT [ChEBI]
+xref: PDBeChem:TNR
+xref: PMID:15864747 "Europe PMC"
+xref: Reaxys:5115296 "Reaxys"
+is_a: CHEBI:83822 ! non-proteinogenic L-alpha-amino acid
+is_a: CHEBI:84135 ! L-serine derivative
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C11H20N2O8" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C11H20N2O8/c1-4(15)13-7-9(17)8(16)6(2-14)21-11(7)20-3-5(12)10(18)19/h5-9,11,14,16-17H,2-3,12H2,1H3,(H,13,15)(H,18,19)/t5-,6+,7+,8-,9+,11-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "REDMNGDGDYFZRE-WKWISIMFSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "308.28510" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "308.12197" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(=O)N[C@@H]1[C@@H](O)[C@@H](O)[C@@H](CO)O[C@@H]1OC[C@H](N)C(O)=O" xsd:string
+
+[Term]
 id: CHEBI:5386
 name: globin
 namespace: chebi_ontology
@@ -23752,6 +24854,68 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "QRMZSPFSDQBLIX-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "182.17330" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "182.05791" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "COc1cc(CC(O)=O)ccc1O" xsd:string
+
+[Term]
+id: CHEBI:546807
+name: beta-D-Galp-(1->3)-D-GalpNAc
+namespace: chebi_ontology
+alt_id: CHEBI:10382
+alt_id: CHEBI:22773
+alt_id: CHEBI:22782
+alt_id: CHEBI:27716
+alt_id: CHEBI:62468
+def: "An amino disaccharide consisting of D-galactopyranose at the non-reducing end joined by a (1->3) glycosidic linkage to N-acetyl-D-galactopyranosamine." []
+subset: 3_STAR
+synonym: "(Gal)1 (GalNAc)1" RELATED [KEGG_GLYCAN]
+synonym: "2-(acetylamino)-2-deoxy-3-O-beta-D-galactopyranosyl-D-galactopyranose" RELATED [IUPAC]
+synonym: "2-acetamido-2-deoxy-3-O-beta-D-galactopyranosyl-D-galactopyranose" RELATED [IUPAC]
+synonym: "beta-D-Gal-(1->3)-D-GalNAc" RELATED [ChEBI]
+synonym: "beta-D-galactopyranosyl-(1->3)-2-acetamido-2-deoxy-D-galactopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "beta-D-Galactopyranosyl-(1->3)-N-acetyl-D-galactosamine" RELATED [KEGG_COMPOUND]
+synonym: "beta-D-galactosyl-(1->3)-N-acetyl-D-galactosamine" RELATED [UniProt]
+synonym: "beta-D-galactosyl-3-N-acetyl-D-galactosamine" RELATED [ChEBI]
+synonym: "beta-D-Galp-(1->3)-D-GalpNAc" EXACT [ChEBI]
+synonym: "Galbeta1-3GalNAc" RELATED [ChEBI]
+synonym: "Galbeta1->3GalNAc" RELATED [ChEBI]
+synonym: "TF epitope" RELATED [ChEBI]
+synonym: "Thomsen-Friedenreich epitope" RELATED [ChEBI]
+xref: Beilstein:4788642 "Beilstein"
+xref: CAS:20972-29-6 "KEGG COMPOUND"
+xref: KEGG:C07278
+xref: KEGG:G10607
+xref: PMID:11294842 "Europe PMC"
+xref: PMID:11425800 "Europe PMC"
+xref: PMID:11459848 "Europe PMC"
+xref: PMID:12472179 "Europe PMC"
+xref: PMID:1291050 "Europe PMC"
+xref: PMID:15963963 "Europe PMC"
+xref: PMID:16776550 "Europe PMC"
+xref: PMID:19221437 "Europe PMC"
+xref: PMID:1933953 "Europe PMC"
+xref: PMID:19443021 "Europe PMC"
+xref: PMID:19506091 "Europe PMC"
+xref: PMID:19913595 "Europe PMC"
+xref: PMID:2055602 "Europe PMC"
+xref: PMID:2457603 "Europe PMC"
+xref: PMID:2461959 "Europe PMC"
+xref: PMID:2470785 "Europe PMC"
+xref: PMID:2584393 "Europe PMC"
+xref: PMID:28188832 "Europe PMC"
+xref: PMID:3360006 "Europe PMC"
+xref: PMID:59831 "Europe PMC"
+xref: PMID:7757427 "Europe PMC"
+xref: PMID:9405387 "Europe PMC"
+xref: Reaxys:4788642 "Reaxys"
+is_a: CHEBI:22480 ! amino disaccharide
+is_a: CHEBI:22484 ! galactosamine oligosaccharide
+relationship: has_role CHEBI:53000 ! epitope
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C14H25NO11" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C14H25NO11/c1-4(18)15-7-12(9(20)6(3-17)24-13(7)23)26-14-11(22)10(21)8(19)5(2-16)25-14/h5-14,16-17,19-23H,2-3H2,1H3,(H,15,18)/t5-,6-,7-,8+,9+,10+,11-,12-,13?,14+/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "HMQPEDMEOBLSQB-UITYFYQISA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "383.34840" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "383.14276" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(=O)N[C@H]1C(O)O[C@H](CO)[C@H](O)[C@@H]1O[C@@H]1O[C@H](CO)[C@H](O)[C@H](O)[C@H]1O" xsd:string
 
 [Term]
 id: CHEBI:5520
@@ -24435,6 +25599,15 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "95.95173"
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]S(=O)(=O)O[*]" xsd:string
 
 [Term]
+id: CHEBI:59132
+name: antigen
+namespace: chebi_ontology
+def: "Any substance that stimulates an immune response in the body, such as through antibody production or by presentation to a T-cell receptor after binding to a major histocompability complex (MHC)." []
+subset: 3_STAR
+synonym: "antigens" RELATED [ChEBI]
+is_a: CHEBI:24432 ! biological role
+
+[Term]
 id: CHEBI:59163
 name: biomarker
 namespace: chebi_ontology
@@ -24480,6 +25653,40 @@ is_a: CHEBI:28868 ! fatty acid anion
 relationship: is_conjugate_base_of CHEBI:59202 ! straight-chain fatty acid
 
 [Term]
+id: CHEBI:59226
+name: N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucose
+namespace: chebi_ontology
+alt_id: CHEBI:85038
+def: "An amino trisaccharide that is the carbohydrate portion of ganglioside GM3. It comprises a linear sequence of alpha-N-acetylneuraminyl, beta-D-galactosyl and beta-D-glucose residues linked (2->3) and (1->4)." []
+subset: 3_STAR
+synonym: "(6R)-5-(acetylamino)-3,5-dideoxy-6-[(1R,2R)-1,2,3-trihydroxypropyl]-beta-L-threo-hex-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "3'-sialyllactose" RELATED [HMDB]
+synonym: "5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucose" RELATED [ChEBI]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc" RELATED [ChEBI]
+synonym: "alpha-Neup5Ac-(2->3)-beta-D-Galp-(1->4)-beta-D-Glcp" RELATED [ChEBI]
+synonym: "GM3 carbohydrate moiety" RELATED [ChEBI]
+synonym: "N-Acetylneuraminoyllactose" RELATED [HMDB]
+synonym: "Neu5Aca2-3Galb1-4Glcb" RELATED [ChEBI]
+synonym: "Neu5Acalpha2-3Galbeta1-4Glcbeta" RELATED [ChEBI]
+xref: Beilstein:4632263 "Beilstein"
+xref: HMDB:HMDB0000825
+xref: PMID:11164910 "Europe PMC"
+xref: PMID:19443021 "Europe PMC"
+xref: PMID:25568069 "Europe PMC"
+xref: Reaxys:4632263 "Reaxys"
+is_a: CHEBI:59266 ! amino trisaccharide
+relationship: has_role CHEBI:53000 ! epitope
+relationship: has_role CHEBI:75768 ! mammalian metabolite
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C23H39NO19" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C23H39NO19/c1-6(28)24-11-7(29)2-23(22(37)38,42-18(11)12(31)8(30)3-25)43-19-13(32)9(4-26)40-21(16(19)35)41-17-10(5-27)39-20(36)15(34)14(17)33/h7-21,25-27,29-36H,2-5H2,1H3,(H,24,28)(H,37,38)/t7-,8+,9+,10+,11+,12+,13-,14+,15+,16+,17+,18+,19-,20+,21-,23-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "CILYIEBUXJIHCO-UITFWXMXSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "633.55110" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "633.21163" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(=O)N[C@@H]1[C@@H](O)C[C@@](O[C@H]2[C@@H](O)[C@@H](CO)O[C@@H](O[C@@H]3[C@@H](CO)O[C@@H](O)[C@H](O)[C@H]3O)[C@@H]2O)(O[C@H]1[C@H](O)[C@H](O)CO)C(O)=O" xsd:string
+
+[Term]
 id: CHEBI:59238
 name: cyclic fatty acid
 namespace: chebi_ontology
@@ -24503,6 +25710,16 @@ synonym: "acyclic tetrapyrrole anion" RELATED [ChEBI]
 synonym: "acyclic tetrapyrrole anions" RELATED [ChEBI]
 synonym: "linear tetrapyrrole anions" RELATED [ChEBI]
 is_a: CHEBI:25696 ! organic anion
+
+[Term]
+id: CHEBI:59266
+name: amino trisaccharide
+namespace: chebi_ontology
+def: "An amino oligosaccharide that is a trisaccharide having one or more substituted or unsubstituted amino groups in place of hydroxy groups at unspecified positions." []
+subset: 3_STAR
+synonym: "amino trisaccharides" RELATED [ChEBI]
+is_a: CHEBI:22483 ! amino oligosaccharide
+is_a: CHEBI:63571 ! trisaccharide derivative
 
 [Term]
 id: CHEBI:5931
@@ -24875,6 +26092,25 @@ relationship: is_conjugate_base_of CHEBI:4439 ! dermatan
 property_value: http://purl.obolibrary.org/obo/chebi/formula "H2O(C14H20NO11)n" xsd:string
 
 [Term]
+id: CHEBI:60065
+name: alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-N-acylsphingosine(1-)
+namespace: chebi_ontology
+def: "A carbohydrate acid derivative anion that is the conjugate base of alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosylceramide arising from deprotonation of the neuraminosyl carboxy group; major species at pH 7.3." []
+subset: 3_STAR
+synonym: "alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosylceramide" RELATED [ChEBI]
+synonym: "ganglioside GM3 (d18:1(4E))" RELATED [UniProt]
+is_a: CHEBI:35757 ! monocarboxylic acid anion
+is_a: CHEBI:79210 ! alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide(1-)
+is_a: CHEBI:88071 ! monosialodiglycosylceramide(1-)
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: is_conjugate_base_of CHEBI:15681 ! alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-ceramide
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C42H72N2O21R" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "941.02190" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "940.46276" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCC\\C=C\\[C@@H](O)[C@H](CO[C@@H]1O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@H](O)[C@H](O[C@@]3(C[C@H](O)[C@@H](NC(C)=O)[C@@H](O3)[C@H](O)[C@H](O)CO)C([O-])=O)[C@H]2O)[C@H](O)[C@H]1O)NC([*])=O" xsd:string
+
+[Term]
 id: CHEBI:60073
 name: N-acylneuraminate
 namespace: chebi_ontology
@@ -25067,6 +26303,42 @@ is_a: CHEBI:37395 ! mucopolysaccharide
 relationship: has_functional_parent CHEBI:29057 ! keratan
 
 [Term]
+id: CHEBI:60948
+name: alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-D-Glc
+namespace: chebi_ontology
+def: "A linear trisaccharide comprising D-glucose (at the reducing end) having an alpha-D-galactosyl-(1->4)-beta-D-galactosyl moiety at the 4-position." []
+subset: 3_STAR
+synonym: "(Gal)2 (Glc)1" RELATED [KEGG_GLYCAN]
+synonym: "4'-galactosyllactose" RELATED [ChEBI]
+synonym: "4-O-(4-O-alpha-D-galactopyranosyl-beta-D-galactopyranosyl)-D-glucopyranose" RELATED [ChemIDplus]
+synonym: "alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-D-glucose" RELATED [ChEBI]
+synonym: "alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-D-Glcp" RELATED [ChEBI]
+synonym: "Gal-alpha-1,4-Gal-beta-1,4-Glc" RELATED [ChEBI]
+synonym: "Gal-alpha1,4Gal-beta1,4-Glc" RELATED [ChEBI]
+synonym: "Galalpha1,4Gal-beta1,4Glc" RELATED [ChEBI]
+synonym: "Galalpha1-4Gal-beta1-4Glc" RELATED [ChEBI]
+synonym: "Galalpha1-4Gal-beta1-4Glc~OH" RELATED [ChEBI]
+synonym: "Pk" RELATED [ChEBI]
+xref: CAS:80446-87-3 "ChemIDplus"
+xref: KEGG:G03416
+xref: PMID:12020649 "Europe PMC"
+xref: PMID:16133831 "Europe PMC"
+xref: PMID:17991151 "Europe PMC"
+xref: PMID:2292729 "Europe PMC"
+xref: PMID:2456994 "Europe PMC"
+xref: PMID:9538266 "Europe PMC"
+xref: Reaxys:5386141 "Reaxys"
+is_a: CHEBI:27150 ! trisaccharide
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H32O16" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C18H32O16/c19-1-4-7(22)8(23)12(27)17(31-4)34-15-6(3-21)32-18(13(28)10(15)25)33-14-5(2-20)30-16(29)11(26)9(14)24/h4-29H,1-3H2/t4-,5-,6-,7+,8+,9-,10-,11-,12-,13-,14-,15+,16?,17-,18+/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "FYGDTMLNYKFZSV-ANKSBSNASA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "504.43710" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "504.16903" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@H]1O[C@H](O[C@H]2[C@@H](CO)O[C@@H](O[C@@H]3[C@@H](CO)OC(O)[C@H](O)[C@H]3O)[C@H](O)[C@H]2O)[C@H](O)[C@@H](O)[C@H]1O" xsd:string
+
+[Term]
 id: CHEBI:61115
 name: EC 3.5.1.98 (histone deacetylase) inhibitor
 namespace: chebi_ontology
@@ -25129,6 +26401,16 @@ synonym: "beta-hydroxy carboxylic acids" RELATED [ChEBI]
 synonym: "beta-hydroxycarboxylic acid" RELATED [ChEBI]
 synonym: "beta-hydroxycarboxylic acids" RELATED [ChEBI]
 is_a: CHEBI:24669 ! hydroxy carboxylic acid
+
+[Term]
+id: CHEBI:61360
+name: globoside
+namespace: chebi_ontology
+def: "Any glycosphingolipid where the oligosaccharide component has an N-acetylgalactosaminyl residue at the non-reducing end." []
+subset: 3_STAR
+synonym: "globosides" RELATED [ChEBI]
+xref: Wikipedia:Globoside
+is_a: CHEBI:24402 ! glycosphingolipid
 
 [Term]
 id: CHEBI:61409
@@ -25456,6 +26738,16 @@ is_a: CHEBI:78616 ! carbohydrates and carbohydrate derivatives
 relationship: has_functional_parent CHEBI:16646 ! carbohydrate
 
 [Term]
+id: CHEBI:63353
+name: disaccharide derivative
+namespace: chebi_ontology
+def: "A carbohydrate derivative that is formally obtained from a disaccharide." []
+subset: 3_STAR
+synonym: "disaccharide derivatives" RELATED [ChEBI]
+is_a: CHEBI:63299 ! carbohydrate derivative
+relationship: has_functional_parent CHEBI:36233 ! disaccharide
+
+[Term]
 id: CHEBI:63367
 name: monosaccharide derivative
 namespace: chebi_ontology
@@ -25604,6 +26896,28 @@ subset: 3_STAR
 synonym: "ketoaldonate derivatives" RELATED [ChEBI]
 is_a: CHEBI:63551 ! carbohydrate acid derivative anion
 relationship: has_functional_parent CHEBI:24961 ! ketoaldonate
+
+[Term]
+id: CHEBI:63563
+name: oligosaccharide derivative
+namespace: chebi_ontology
+def: "A carbohydrate derivative that is formally obtained from an oligosaccharide." []
+subset: 3_STAR
+synonym: "O-glycosylglycoside derivative" RELATED [ChEBI]
+synonym: "O-glycosylglycoside derivatives" RELATED [ChEBI]
+synonym: "oligosaccharide derivatives" RELATED [ChEBI]
+is_a: CHEBI:63299 ! carbohydrate derivative
+relationship: has_functional_parent CHEBI:50699 ! oligosaccharide
+
+[Term]
+id: CHEBI:63571
+name: trisaccharide derivative
+namespace: chebi_ontology
+def: "An oligosaccharide derivative that is formally obtained from a trisaccharide." []
+subset: 3_STAR
+synonym: "trisaccharide derivatives" RELATED [ChEBI]
+is_a: CHEBI:63563 ! oligosaccharide derivative
+relationship: has_functional_parent CHEBI:27150 ! trisaccharide
 
 [Term]
 id: CHEBI:63726
@@ -26221,6 +27535,29 @@ is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
 is_a: CHEBI:38179 ! monocyclic heteroarene
 
 [Term]
+id: CHEBI:68485
+name: alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp
+namespace: chebi_ontology
+def: "alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-D-Glcp with beta-configuration at the reducing end anomeric centre." []
+subset: 3_STAR
+synonym: "alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-D-Glc" RELATED [ChEBI]
+synonym: "alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucose" RELATED [ChEBI]
+synonym: "Gala1-4Galb1-4Glcb" RELATED [ChEBI]
+synonym: "Galalpha1-4Galbeta1-4Glcbeta" RELATED [ChEBI]
+xref: PMID:19443021 "Europe PMC"
+xref: PMID:25568069 "Europe PMC"
+is_a: CHEBI:60948 ! alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-D-Glc
+relationship: has_role CHEBI:53000 ! epitope
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H32O16" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C18H32O16/c19-1-4-7(22)8(23)12(27)17(31-4)34-15-6(3-21)32-18(13(28)10(15)25)33-14-5(2-20)30-16(29)11(26)9(14)24/h4-29H,1-3H2/t4-,5-,6-,7+,8+,9-,10-,11-,12-,13-,14-,15+,16-,17-,18+/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "FYGDTMLNYKFZSV-SKWQFERISA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "504.43710" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "504.16903" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC[C@H]1O[C@H](O[C@H]2[C@@H](CO)O[C@@H](O[C@@H]3[C@@H](CO)O[C@@H](O)[C@H](O)[C@H]3O)[C@H](O)[C@H]2O)[C@H](O)[C@@H](O)[C@H]1O" xsd:string
+
+[Term]
 id: CHEBI:68566
 name: 3-methylglutaric acid
 namespace: chebi_ontology
@@ -26446,11 +27783,10 @@ namespace: chebi_ontology
 def: "A carbohydrate acid anion obtained by deprotonation of any aldonic acid. Major structure at pH 7.3 of aldonate compounds." []
 subset: 3_STAR
 synonym: "aldonates" RELATED [ChEBI]
-synonym: "an aldonate" RELATED [UniProt]
 is_a: CHEBI:33721 ! carbohydrate acid anion
 relationship: is_conjugate_acid_of CHEBI:22301 ! aldonic acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H5O4" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "(CH2O)n.C2H3O3" xsd:string
 
 [Term]
 id: CHEBI:72695
@@ -27375,6 +28711,20 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "255.23241
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C([*])=O" xsd:string
 
 [Term]
+id: CHEBI:78125
+name: fatty acid anion 18:0
+namespace: chebi_ontology
+def: "Any saturated fatty acid anion containing 18 carbons. Formed by deprotonation of the carboxylic acid moiety. Major species at pH 7.3." []
+subset: 3_STAR
+synonym: "fatty acid 18:0" RELATED [UniProt]
+is_a: CHEBI:58953 ! saturated fatty acid anion
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C18H35O2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "283.46930" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "283.26371" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C([*])=O" xsd:string
+
+[Term]
 id: CHEBI:78295
 name: food component
 namespace: chebi_ontology
@@ -27661,6 +29011,50 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "552.84832
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "Nc1nc2N[C@@H]3O[C@H](COP([O-])([O-])=O)C4=C(S[Mo]([O-])(=O)(S-*)S4)[C@@H]3Nc2c(=O)[nH]1" xsd:string
 
 [Term]
+id: CHEBI:79209
+name: alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide
+namespace: chebi_ontology
+def: "A sialodiaosylceramide consisting of the trisaccharide alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucose attached to the primary hydroxy function of a ceramide with undefined sphingoid base." []
+subset: 3_STAR
+synonym: "ganglioside GM3" RELATED [SUBMITTER]
+xref: PMID:1601877 "SUBMITTER"
+xref: PMID:8643456 "SUBMITTER"
+is_a: CHEBI:36544 ! sialodiosylceramide
+relationship: is_conjugate_acid_of CHEBI:79210 ! alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide(1-)
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C27H44N2O21R2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "732.640" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "732.24366" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(=O)N[C@@H]1[C@@H](O)C[C@@](O[C@H]2[C@@H](O)[C@@H](CO)O[C@@H](O[C@H]3[C@H](O)[C@@H](O)[C@H](OC[C@H](NC([*])=O)[C@H](O)[*])O[C@@H]3CO)[C@@H]2O)(O[C@H]1[C@H](O)[C@H](O)CO)C(O)=O" xsd:string
+
+[Term]
+id: CHEBI:79210
+name: alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide(1-)
+namespace: chebi_ontology
+def: "An anionic ganglioside that is the conjugate base of alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide arising from deprotonation of the neuraminosyl carboxy group; major species at pH 7.3." []
+subset: 3_STAR
+synonym: "ganglioside GM3" RELATED [UniProt]
+synonym: "ganglioside GM3(1-)" RELATED [SUBMITTER]
+xref: PMID:1601877 "SUBMITTER"
+xref: PMID:8643456 "SUBMITTER"
+is_a: CHEBI:79346 ! anionic ganglioside
+relationship: is_conjugate_base_of CHEBI:79209 ! alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1)-ceramide
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C27H43N2O21R2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "731.632" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "731.23583" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(=O)N[C@@H]1[C@@H](O)C[C@@](O[C@H]2[C@@H](O)[C@@H](CO)O[C@@H](O[C@H]3[C@H](O)[C@@H](O)[C@H](OC[C@H](NC([*])=O)[C@H](O)[*])O[C@@H]3CO)[C@@H]2O)(O[C@H]1[C@H](O)[C@H](O)CO)C([O-])=O" xsd:string
+
+[Term]
+id: CHEBI:79346
+name: anionic ganglioside
+namespace: chebi_ontology
+def: "Any carbohydrate acid derivative anion obtained by deprotonation of at least one of the neuraminosyl carboxy groups of a ganglioside." []
+subset: 3_STAR
+synonym: "ganglioside anion" RELATED [ChEBI]
+is_a: CHEBI:63551 ! carbohydrate acid derivative anion
+
+[Term]
 id: CHEBI:79387
 name: trivalent inorganic anion
 namespace: chebi_ontology
@@ -27744,6 +29138,37 @@ subset: 3_STAR
 synonym: "Daphnia metabolites" RELATED [ChEBI]
 xref: Wikipedia:Daphnia
 is_a: CHEBI:83039 ! crustacean metabolite
+
+[Term]
+id: CHEBI:83228
+name: L-alpha-amino acid residue
+namespace: chebi_ontology
+def: "An alpha-amino-acid residue derived from an L-alpha-amino acid." []
+subset: 3_STAR
+synonym: "an L-alpha amino acid residue" RELATED [UniProt]
+synonym: "L-alpha-amino acid residue" EXACT [ChEBI]
+synonym: "L-alpha-amino acid residues" RELATED [ChEBI]
+is_a: CHEBI:33710 ! alpha-amino-acid residue
+relationship: is_substituent_group_from CHEBI:15705 ! L-alpha-amino acid
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H2NOR" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "56.04340" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "56.01364" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[*][C@H](N-*)C(-*)=O" xsd:string
+
+[Term]
+id: CHEBI:83563
+name: long-chain alkane
+namespace: chebi_ontology
+def: "Any alkane having a chain length of at least 13 carbon atoms." []
+subset: 3_STAR
+synonym: "a long-chain alkane" RELATED [UniProt]
+is_a: CHEBI:18310 ! alkane
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "HR" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "1.008" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "1.00783" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[*]" xsd:string
 
 [Term]
 id: CHEBI:83811
@@ -27907,6 +29332,63 @@ synonym: "human urinary metabolites" RELATED [ChEBI]
 is_a: CHEBI:77746 ! human metabolite
 
 [Term]
+id: CHEBI:84118
+name: ganglioside GM3
+namespace: chebi_ontology
+def: "A sialodiaosylceramide that is an alpha-N-acetylneuraminosyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-N-acylsphingosine in which the acyl group on nitrogen is (15Z)-tetracos-15-enoyl." []
+subset: 3_STAR
+synonym: "(2S,3R,4E)-3-hydroxy-2-[(15Z)-tetracos-15-enoylamino]octadec-4-en-1-yl 5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranoside" EXACT IUPAC_NAME [IUPAC]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1)-N-(15Z)-tetracos-15-enoylsphingosine" RELATED [ChEBI]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1)-N-cis-tetracos-15-enoylsphingosine" RELATED [ChEBI]
+synonym: "G(M3) ganglioside" RELATED [ChEBI]
+synonym: "GM3" RELATED [ChEBI]
+synonym: "monosialodihexosylganglioside" RELATED [ChEBI]
+synonym: "monosialoganglioside GM3" RELATED [ChEBI]
+synonym: "NANA-Gal-Glc-ceramide" RELATED [ChEBI]
+xref: PMID:24362891 "Europe PMC"
+is_a: CHEBI:15681 ! alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-ceramide
+is_a: CHEBI:36544 ! sialodiosylceramide
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C65H118N2O21" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C65H118N2O21/c1-4-6-8-10-12-14-16-18-19-20-21-22-23-24-25-27-29-31-33-35-37-39-52(75)67-46(47(72)38-36-34-32-30-28-26-17-15-13-11-9-7-5-2)44-83-62-57(79)56(78)59(51(43-70)85-62)86-63-58(80)61(55(77)50(42-69)84-63)88-65(64(81)82)40-48(73)53(66-45(3)71)60(87-65)54(76)49(74)41-68/h18-19,36,38,46-51,53-63,68-70,72-74,76-80H,4-17,20-35,37,39-44H2,1-3H3,(H,66,71)(H,67,75)(H,81,82)/b19-18-,38-36+/t46-,47+,48-,49+,50+,51+,53+,54+,55-,56+,57+,58+,59+,60+,61-,62+,63-,65-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "PFJKOHUKELZMLE-VEUXDRLPSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "1263.63320" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "1262.82271" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCC\\C=C\\[C@@H](O)[C@H](CO[C@@H]1O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@H](O)[C@H](O[C@@]3(C[C@H](O)[C@@H](NC(C)=O)[C@@H](O3)[C@H](O)[C@H](O)CO)C(O)=O)[C@H]2O)[C@H](O)[C@H]1O)NC(=O)CCCCCCCCCCCCC\\C=C/CCCCCCCC" xsd:string
+
+[Term]
+id: CHEBI:84125
+name: globoside Gb4
+namespace: chebi_ontology
+def: "A glycotetraosylceramide in which a linear beta-D-GalNAc-(1->3)-alpha-D-Gal-(1->-4)-beta-D-Gal-(1->4)-beta-D-Glc tetrasaccharide unit is linked glycosidically to a (3R,4E)-3-hydroxy-2-(pentacosanoylamino)octadec-4-en-1-yl ceramide group." []
+subset: 3_STAR
+synonym: "(15Z)-N-[(2S,3R,4E)-1-{[2-acetamido-2-deoxy-beta-D-galactopyranosyl-(1->3)-alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranosyl]oxy}-3-hydroxyoctadec-4-en-2-yl]tetracos-15-enamide" EXACT IUPAC_NAME [IUPAC]
+synonym: "(15Z)-N-[(2S,3R,4E)-1-{[N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl]oxy}-3-hydroxyoctadec-4-en-2-yl]tetracos-15-enamide" RELATED [ChEBI]
+synonym: "GalbetaNAcbeta3Galalpha4Galbeta4GlcbetaCer" RELATED [ChEBI]
+synonym: "globoside Gb4Cer(d18:1(4E)/24:1(15Z))" RELATED [UniProt]
+xref: PMID:24362891 "Europe PMC"
+is_a: CHEBI:18259 ! N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosylceramide
+is_a: CHEBI:23075 ! glycotetraosylceramide
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C68H124N2O23" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C68H124N2O23/c1-4-6-8-10-12-14-16-18-19-20-21-22-23-24-25-27-29-31-33-35-37-39-52(77)70-46(47(76)38-36-34-32-30-28-26-17-15-13-11-9-7-5-2)44-86-66-59(83)57(81)62(50(42-73)89-66)91-67-60(84)58(82)63(51(43-74)90-67)92-68-61(85)64(55(79)49(41-72)88-68)93-65-53(69-45(3)75)56(80)54(78)48(40-71)87-65/h18-19,36,38,46-51,53-68,71-74,76,78-85H,4-17,20-35,37,39-44H2,1-3H3,(H,69,75)(H,70,77)/b19-18-,38-36+/t46-,47+,48+,49+,50+,51+,53+,54-,55-,56+,57+,58+,59+,60+,61+,62+,63-,64-,65-,66+,67-,68+/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "WSOCRZVLWFROQD-NCMUZYOHSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "1337.71180" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "1336.85949" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCC\\C=C\\[C@@H](O)[C@H](CO[C@@H]1O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@H](O[C@H]3O[C@H](CO)[C@H](O)[C@H](O[C@@H]4O[C@H](CO)[C@H](O)[C@H](O)[C@H]4NC(C)=O)[C@H]3O)[C@H](O)[C@H]2O)[C@H](O)[C@H]1O)NC(=O)CCCCCCCCCCCCC\\C=C/CCCCCCCC" xsd:string
+
+[Term]
+id: CHEBI:84135
+name: L-serine derivative
+namespace: chebi_ontology
+def: "A proteinogenic amino acid derivative resulting from reaction of L-serine at the amino group or the carboxy group, or from the replacement of any hydrogen of L-serine by a heteroatom." []
+subset: 3_STAR
+synonym: "L-serine derivatives" RELATED [ChEBI]
+is_a: CHEBI:26649 ! serine derivative
+is_a: CHEBI:83811 ! proteinogenic amino acid derivative
+relationship: has_functional_parent CHEBI:17115 ! L-serine
+
+[Term]
 id: CHEBI:84185
 name: D-proline derivative
 namespace: chebi_ontology
@@ -27958,6 +29440,26 @@ property_value: http://purl.obolibrary.org/obo/chebi/formula "C3H5O3R" xsd:strin
 property_value: http://purl.obolibrary.org/obo/chebi/mass "89.070" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "89.02387" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC(O)[*]C([O-])=O" xsd:string
+
+[Term]
+id: CHEBI:84690
+name: alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1')-Cer(d18:1/18:0)
+namespace: chebi_ontology
+def: "A glycotriaosylceramide having alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl as the glycotriaosyl component attached to the Cer(d18:1/18:0)." []
+subset: 3_STAR
+synonym: "Gb3(d18:1/18:0)" RELATED [ChEBI]
+synonym: "N-[(2S,3R,4E)-1-{[alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranosyl]oxy}-3-hydroxyoctadec-4-en-2-yl]octadecanamide" EXACT IUPAC_NAME [IUPAC]
+xref: LIPID_MAPS_instance:LMSP0502AA02 "LIPID MAPS"
+is_a: CHEBI:36508 ! glycotriaosylceramide
+relationship: has_functional_parent CHEBI:28842 ! octadecanoic acid
+relationship: has_role CHEBI:75771 ! mouse metabolite
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C54H101NO18" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C54H101NO18/c1-3-5-7-9-11-13-15-17-18-20-22-24-26-28-30-32-42(60)55-37(38(59)31-29-27-25-23-21-19-16-14-12-10-8-6-4-2)36-68-52-48(66)45(63)50(40(34-57)70-52)73-54-49(67)46(64)51(41(35-58)71-54)72-53-47(65)44(62)43(61)39(33-56)69-53/h29,31,37-41,43-54,56-59,61-67H,3-28,30,32-36H2,1-2H3,(H,55,60)/b31-29+/t37-,38+,39+,40+,41+,43-,44-,45+,46+,47+,48+,49+,50+,51-,52+,53+,54-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "KWGVNZWSEWAOMI-DHCJWVHISA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "1052.37560" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "1051.70187" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCCCCCCC(=O)N[C@@H](CO[C@@H]1O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@H](O[C@H]3O[C@H](CO)[C@H](O)[C@H](O)[C@H]3O)[C@H](O)[C@H]2O)[C@H](O)[C@H]1O)[C@H](O)\\C=C\\CCCCCCCCCCCCC" xsd:string
 
 [Term]
 id: CHEBI:84729
@@ -28118,6 +29620,31 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "102.05605
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCC(N)C([O-])=O" xsd:string
 
 [Term]
+id: CHEBI:88071
+name: monosialodiglycosylceramide(1-)
+namespace: chebi_ontology
+def: "An anionic ganglioside in which the oligosaccharide portion is composed of a disaccharide, to which one sialic acid residue is attached." []
+subset: 3_STAR
+is_a: CHEBI:79346 ! anionic ganglioside
+
+[Term]
+id: CHEBI:88167
+name: N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl-(1<->1')-ceramide
+namespace: chebi_ontology
+def: "A glycotetraosylceramide having N-acetyl-beta-D-galactosaminyl-(1->3)-alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucosyl  component attached to the primary hydroxy function of a ceramide with undefined sphingoid base." []
+subset: 3_STAR
+synonym: "beta-D-GalNAc-(1->3)-alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-beta-D-Glc-(1<->1')-Cer" RELATED [ChEBI]
+synonym: "beta-D-GalpNAc-(1->3)-alpha-D-Galp-(1->4)-beta-D-Galp-(1->4)-beta-D-Glcp-(1<->1')-Cer" RELATED [ChEBI]
+synonym: "globoside Gb4Cer" RELATED [UniProt]
+is_a: CHEBI:23075 ! glycotetraosylceramide
+is_a: CHEBI:61360 ! globoside
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C30H50N2O23R2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "806.719" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "806.28044" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@H]([C@@H](*)O)(NC(=O)*)CO[C@@H]1O[C@@H]([C@@H](O[C@@H]2O[C@@H]([C@H](O[C@@H]3[C@@H]([C@@H](O[C@H]4[C@@H]([C@H]([C@@H](O)[C@H](O4)CO)O)NC(C)=O)[C@H]([C@@H](CO)O3)O)O)[C@@H]([C@H]2O)O)CO)[C@@H]([C@H]1O)O)CO" xsd:string
+
+[Term]
 id: CHEBI:88184
 name: metal allergen
 namespace: chebi_ontology
@@ -28128,6 +29655,16 @@ synonym: "allergenic metals" RELATED [ChEBI]
 synonym: "metal allergens" RELATED [ChEBI]
 is_a: CHEBI:33521 ! metal atom
 relationship: has_role CHEBI:50904 ! allergen
+
+[Term]
+id: CHEBI:88188
+name: drug allergen
+namespace: chebi_ontology
+def: "Any drug which causes the onset of an allergic reaction." []
+subset: 3_STAR
+synonym: "allergenic drug" RELATED [ChEBI]
+is_a: CHEBI:23888 ! drug
+is_a: CHEBI:50904 ! allergen
 
 [Term]
 id: CHEBI:89843

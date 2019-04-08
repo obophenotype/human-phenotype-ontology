@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-03-18/imports/go_import.owl
+data-version: hp/releases/2019-04-08/imports/go_import.owl
 ontology: hp/imports/go_import
 
 [Term]
@@ -7974,7 +7974,7 @@ name: programmed cell death
 namespace: biological_process
 alt_id: GO:0016244
 def: "A process which begins when a cell receives an internal or external signal and activates a series of biochemical events (signaling pathway). The process ends with the death of the cell." [GOC:lr, GOC:mtg_apoptosis]
-comment: Note that this term should be used to annotate gene products in the organism undergoing the programmed cell death. To annotate genes in another organism whose products modulate programmed cell death in a host organism, consider the term 'modulation by symbiont of host programmed cell death ; GO:0052040'. Also, note that 'programmed cell death ; GO:0012501' should be used to refer to instances of caspase-independent cell death mechanisms, in the absence of further indications on the process taking place. At present, caspase-independent cell death is not yet represented in GO due to the lack of consensus and in-depth research on the topic. 'programmed cell death ; GO:0012501' may also be used to annotate gene products in taxa where apoptosis as defined in GO:0006915 does not occur, such as plants. You may also consider these specific children: GO:0097468 'programmed cell death in response to reactive oxygen species' (with descendants GO:0010421 'hydrogen peroxide-mediated programmed cell death' and GO:0010343 'singlet oxygen-mediated programmed cell death'), and GO:0009626 'plant-type hypersensitive response' and its children, which are descendants of GO:0034050 'host programmed cell death induced by symbiont'.
+comment: Note that this term should be used to annotate gene products in the organism undergoing the programmed cell death. To annotate genes in another organism whose products modulate programmed cell death in a host organism, consider the term 'modulation by symbiont of host programmed cell death ; GO:0052040'. Also, note that 'programmed cell death ; GO:0012501' should be used to refer to instances of caspase-independent cell death mechanisms, in the absence of further indications on the process taking place. At present, caspase-independent cell death is not yet represented in GO due to the lack of consensus and in-depth research on the topic. 'programmed cell death ; GO:0012501' may also be used to annotate gene products in taxa where apoptosis as defined in GO:0006915 does not occur, such as plants. You may also consider these specific children: GO:0097468 'programmed cell death in response to reactive oxygen species' (with descendants GO:0010421 'hydrogen peroxide-mediated programmed cell death' and GO:0010343 'singlet oxygen-mediated programmed cell death'), and GO:0009626 'plant-type hypersensitive response' and its children.
 synonym: "caspase-independent apoptosis" RELATED []
 synonym: "caspase-independent cell death" NARROW []
 synonym: "non-apoptotic programmed cell death" NARROW []
@@ -21182,6 +21182,32 @@ xref: Wikipedia:Interphase
 is_a: GO:0022403 ! cell cycle phase
 
 [Term]
+id: GO:0051328
+name: meiotic interphase
+namespace: biological_process
+def: "The cell cycle phase which begins after cytokinesis and ends when meiotic prophase begins. Meiotic cells have an interphase after each meiotic division, but only interphase I involves replication of the cell's DNA." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "interphase of meiotic cell cycle" EXACT []
+is_a: GO:0051325 ! interphase
+is_a: GO:0098762 ! meiotic cell cycle phase
+intersection_of: GO:0051325 ! interphase
+intersection_of: happens_during GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0051329
+name: mitotic interphase
+namespace: biological_process
+def: "The cell cycle phase following cytokinesis which begins with G1 phase, proceeds through S phase and G2 phase and ends when mitotic prophase begins. During interphase the cell readies itself for mitosis and the replication of its DNA occurs." [GOC:mtg_cell_cycle]
+comment: Note that this term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation is 'regulation of x/y phase transition' or to a process which occurs during the reported phase (i.e mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+synonym: "interphase of mitotic cell cycle" EXACT []
+is_a: GO:0051325 ! interphase
+is_a: GO:0098763 ! mitotic cell cycle phase
+intersection_of: GO:0051325 ! interphase
+intersection_of: happens_during GO:0000278 ! mitotic cell cycle
+
+[Term]
 id: GO:0051336
 name: regulation of hydrolase activity
 namespace: biological_process
@@ -25526,6 +25552,30 @@ def: "Any process that reduces or removes the toxicity of a toxic substance. The
 subset: goslim_pombe
 is_a: GO:0008150 ! biological_process
 relationship: part_of GO:0009636 ! response to toxic substance
+
+[Term]
+id: GO:0098762
+name: meiotic cell cycle phase
+namespace: biological_process
+def: "One of the distinct periods or stages into which the meiotic cell cycle is divided. Each phase is characterized by the occurrence of specific biochemical and morphological events." [GOC:dos]
+comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0022403 ! cell cycle phase
+intersection_of: GO:0022403 ! cell cycle phase
+intersection_of: happens_during GO:0051321 ! meiotic cell cycle
+relationship: happens_during GO:0051321 ! meiotic cell cycle
+
+[Term]
+id: GO:0098763
+name: mitotic cell cycle phase
+namespace: biological_process
+def: "One of the distinct periods or stages into which the mitotic cell cycle is divided. Each phase is characterized by the occurrence of specific biochemical and morphological events." [GOC:dos]
+comment: This term should not be used for direct annotation. If you are trying to make an annotation to x phase, it is likely that the correct annotation should be to 'regulation of x/y phase transition' or to a process which occurs during the reported phase (e.g. mitotic DNA replication for mitotic S-phase). To capture the phase when a specific location or process is observed, the phase term can be used in an annotation extension (PMID:24885854) applied to a cellular component term (with the relation exists_during) or a biological process term (with the relation happens_during).
+subset: gocheck_do_not_annotate
+is_a: GO:0022403 ! cell cycle phase
+intersection_of: GO:0022403 ! cell cycle phase
+intersection_of: happens_during GO:0000278 ! mitotic cell cycle
+relationship: happens_during GO:0000278 ! mitotic cell cycle
 
 [Term]
 id: GO:0098771
@@ -31902,6 +31952,20 @@ created_by: yaf
 creation_date: 2011-12-02T02:01:26Z
 
 [Typedef]
+id: ends_during
+name: ends_during
+namespace: external
+xref: RO:0002093
+
+[Typedef]
+id: happens_during
+name: happens during
+namespace: external
+xref: RO:0002092
+is_transitive: true
+is_a: ends_during ! ends_during
+
+[Typedef]
 id: has_part
 name: has part
 namespace: external
@@ -31945,4 +32009,10 @@ name: regulates
 namespace: external
 xref: RO:0002211
 is_transitive: true
+
+[Typedef]
+id: starts_during
+name: starts_during
+namespace: external
+xref: RO:0002091
 
