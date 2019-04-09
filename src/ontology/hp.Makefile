@@ -52,18 +52,19 @@
 #subsets/hp-ldefs.obo: hp-edit.obo
 #	obo-filter-tags.pl -t intersection_of -t id -t name $< | obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@
 
-hp_test.owl: $(SRC)
+test.owl: $(SRC)
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/hp_terms.sparql ontologyterms-test.txt && \
 	$(ROBOT) remove --input $< --select imports \
 		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
 		remove --axioms equivalent \
 		relax \
 		reduce -r ELK \
-		filter --select ontology --term-file $(ONTOLOGYTERMS) --trim false \
+		filter --select ontology --term-file ontologyterms-test.txt --trim false \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
-test_obo: hp_test.owl
+test_obo: test.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o hp_test.tmp.obo && grep -v ^owl-axioms hp_test.tmp.obo > hp.obo && rm hp_test.tmp.obo
+		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o test.tmp.obo && grep -v ^owl-axioms test.tmp.obo > hp.obo && rm test.tmp.obo
 
 test: sparql_test all_reports test_obo
 	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success (NOTE: xref-syntax nolabels not currently tested, uncomment in hp.Makefile)"
