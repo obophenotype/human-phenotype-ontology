@@ -28,6 +28,7 @@ ERROR	deprecated_class_reference	HP:0001724	IAO:0100001	HP:0004942
 ERROR	deprecated_class_reference	HP:0001862	IAO:0100001	HP:0006121	
 ERROR	deprecated_class_reference	HP:0002109	IAO:0100001	HP:0025426	
 ERROR	deprecated_class_reference	HP:0002271	IAO:0100001	HP:0012332	
+ERROR	deprecated_class_reference	HP:0002281	IAO:0100001	HP:0002282	
 ERROR	deprecated_class_reference	HP:0002377	IAO:0100001	HP:0006824	
 ERROR	deprecated_class_reference	HP:0002459	IAO:0100001	HP:0012332	
 ERROR	deprecated_class_reference	HP:0002564	IAO:0100001	HP:0030680	
@@ -83,6 +84,7 @@ ERROR	deprecated_class_reference	HP:0005921	IAO:0100001	HP:0010660
 ERROR	deprecated_class_reference	HP:0006525	IAO:0100001	HP:0002101	
 ERROR	deprecated_class_reference	HP:0006877	IAO:0100001	HP:0001249	
 ERROR	deprecated_class_reference	HP:0007087	IAO:0100001	HP:0001336	
+ERROR	deprecated_class_reference	HP:0007314	IAO:0100001	HP:0002282	
 ERROR	deprecated_class_reference	HP:0007316	IAO:0100001	HP:0002305	
 ERROR	deprecated_class_reference	HP:0007409	IAO:0100001	HP:0003758	
 ERROR	deprecated_class_reference	HP:0007692	IAO:0100001	HP:0000519	
@@ -105,6 +107,7 @@ ERROR	deprecated_class_reference	HP:0007981	IAO:0100001	HP:0001133
 ERROR	deprecated_class_reference	HP:0008024	IAO:0100001	HP:0100018	
 ERROR	deprecated_class_reference	HP:0008033	IAO:0100001	HP:0000577	
 ERROR	deprecated_class_reference	HP:0008051	IAO:0100001	HP:0007703	
+ERROR	deprecated_class_reference	HP:0008230	IAO:0100001	HP:0040171	
 ERROR	deprecated_class_reference	HP:0009044	IAO:0100001	HP:0030241	
 ERROR	deprecated_class_reference	HP:0009449	IAO:0100001	HP:0009447	
 ERROR	deprecated_class_reference	HP:0010700	IAO:0100001	HP:0000518	
@@ -218,6 +221,8 @@ ERROR	duplicate_label	HP:0012632	rdfs:label	Abnormal intraocular pressure
 ERROR	duplicate_label	HP:0012337	rdfs:label	Abnormal homeostasis	
 ERROR	duplicate_label	HP:0011849	rdfs:label	Abnormal bone ossification	
 ERROR	duplicate_label	HP:0002027	rdfs:label	Abdominal pain	
+ERROR	multiple_definitions	HP:0020097	IAO:0000115	An infection by an encapsulated bacterial agent. Isolates which cause invasive disease are usually surrounded by a polysaccharide capsule, which is a major virulence factor and the key antigen in protective protein-polysaccharide conjugate vaccines.	
+ERROR	multiple_definitions	HP:0020097	IAO:0000115	Encapsulated bacteria have been responsible for the majority of bacteremia and meningitis in children for many decades. In children aged over 3 months, Streptococcus pneumoniae (pneumococcus), Neisseria meningitidis (meningococcus), and Haemophilus influenzae have been the predominant pathogens, with H. influenzae being a less significant problem since the introduction of vaccines against type b organisms. Disease is most common in young children less than 5 years of age and older adults aged over 65 years. In neonates and young infants, Group B Streptococcus (GBS) is the major cause of bacteremia and meningitis. These organisms have the shared characteristic of being surrounded by a polysaccharide capsule, which is a key virulence factor because it helps the bacteria evade complement deposition and subsequent phagocytosis and killing. These polysaccharides have also been the basis for successful vaccines against all except GBS, because immune responses against the polysaccharide capsule are the primary mechanism of protection for the human host. Each species can be encapsulated by polysaccharides of different biochemical compositions, which has been used for categorization into capsular groups or serotypes.	
 ERROR	missing_ontology_license	hp.owl	dc:license		
 ERROR	missing_ontology_title	hp.owl	dc11:title		
 WARN	duplicate_exact_synonym	HP:0000729	oboInOwl:hasExactSynonym	ASD	
@@ -1109,6 +1114,8 @@ WARN	multiple_asserted_superclasses	HP:0002837	rdfs:subClassOf	HP:0012387
 WARN	multiple_asserted_superclasses	HP:0002837	rdfs:subClassOf	HP:0025426	
 WARN	multiple_asserted_superclasses	HP:0002840	rdfs:subClassOf	HP:0002733	
 WARN	multiple_asserted_superclasses	HP:0002840	rdfs:subClassOf	HP:0012649	
+WARN	multiple_asserted_superclasses	HP:0002841	rdfs:subClassOf	HP:0002719	
+WARN	multiple_asserted_superclasses	HP:0002841	rdfs:subClassOf	HP:0020100	
 WARN	multiple_asserted_superclasses	HP:0002850	rdfs:subClassOf	HP:0004313	
 WARN	multiple_asserted_superclasses	HP:0002850	rdfs:subClassOf	HP:0410243	
 WARN	multiple_asserted_superclasses	HP:0002857	rdfs:subClassOf	HP:0002815	
@@ -1819,7 +1826,7 @@ WARN	multiple_asserted_superclasses	HP:0005220	rdfs:subClassOf	HP:0007378
 WARN	multiple_asserted_superclasses	HP:0005223	rdfs:subClassOf	HP:0002250	
 WARN	multiple_asserted_superclasses	HP:0005223	rdfs:subClassOf	HP:0100668	
 WARN	multiple_asserted_superclasses	HP:0005224	rdfs:subClassOf	HP:0002034	
-WARN	multiple_asserted_superclasses	HP:0005224	rdfs:subClassOf	HP:0002722	
+WARN	multiple_asserted_superclasses	HP:0005224	rdfs:subClassOf	HP:0025615	
 WARN	multiple_asserted_superclasses	HP:0005225	rdfs:subClassOf	HP:0000969	
 WARN	multiple_asserted_superclasses	HP:0005225	rdfs:subClassOf	HP:0002242	
 WARN	multiple_asserted_superclasses	HP:0005227	rdfs:subClassOf	HP:0030255	
@@ -1848,6 +1855,8 @@ WARN	multiple_asserted_superclasses	HP:0005336	rdfs:subClassOf	HP:0000290
 WARN	multiple_asserted_superclasses	HP:0005336	rdfs:subClassOf	HP:0007400	
 WARN	multiple_asserted_superclasses	HP:0005345	rdfs:subClassOf	HP:0002624	
 WARN	multiple_asserted_superclasses	HP:0005345	rdfs:subClassOf	HP:0030962	
+WARN	multiple_asserted_superclasses	HP:0005366	rdfs:subClassOf	HP:0002205	
+WARN	multiple_asserted_superclasses	HP:0005366	rdfs:subClassOf	HP:0020096	
 WARN	multiple_asserted_superclasses	HP:0005390	rdfs:subClassOf	HP:0002719	
 WARN	multiple_asserted_superclasses	HP:0005390	rdfs:subClassOf	HP:0031690	
 WARN	multiple_asserted_superclasses	HP:0005404	rdfs:subClassOf	HP:0010975	
@@ -2609,6 +2618,9 @@ WARN	multiple_asserted_superclasses	HP:0008828	rdfs:subClassOf	HP:0009107
 WARN	multiple_asserted_superclasses	HP:0008828	rdfs:subClassOf	HP:0010574	
 WARN	multiple_asserted_superclasses	HP:0008829	rdfs:subClassOf	HP:0003368	
 WARN	multiple_asserted_superclasses	HP:0008829	rdfs:subClassOf	HP:0009107	
+WARN	multiple_asserted_superclasses	HP:0008866	rdfs:subClassOf	HP:0001508	
+WARN	multiple_asserted_superclasses	HP:0008866	rdfs:subClassOf	HP:0002719	
+WARN	multiple_asserted_superclasses	HP:0008866	rdfs:subClassOf	HP:0032169	
 WARN	multiple_asserted_superclasses	HP:0008905	rdfs:subClassOf	HP:0008873	
 WARN	multiple_asserted_superclasses	HP:0008905	rdfs:subClassOf	HP:0009826	
 WARN	multiple_asserted_superclasses	HP:0008944	rdfs:subClassOf	HP:0003693	
@@ -5330,6 +5342,8 @@ WARN	multiple_asserted_superclasses	HP:0011304	rdfs:subClassOf	HP:0009602
 WARN	multiple_asserted_superclasses	HP:0011304	rdfs:subClassOf	HP:0009768	
 WARN	multiple_asserted_superclasses	HP:0011335	rdfs:subClassOf	HP:0000290	
 WARN	multiple_asserted_superclasses	HP:0011335	rdfs:subClassOf	HP:0009937	
+WARN	multiple_asserted_superclasses	HP:0011370	rdfs:subClassOf	HP:0001581	
+WARN	multiple_asserted_superclasses	HP:0011370	rdfs:subClassOf	HP:0002841	
 WARN	multiple_asserted_superclasses	HP:0011371	rdfs:subClassOf	HP:0001581	
 WARN	multiple_asserted_superclasses	HP:0011371	rdfs:subClassOf	HP:0004429	
 WARN	multiple_asserted_superclasses	HP:0011395	rdfs:subClassOf	HP:0000375	
@@ -5596,6 +5610,12 @@ WARN	multiple_asserted_superclasses	HP:0025023	rdfs:subClassOf	HP:0002034
 WARN	multiple_asserted_superclasses	HP:0025023	rdfs:subClassOf	HP:0011100	
 WARN	multiple_asserted_superclasses	HP:0025028	rdfs:subClassOf	HP:0002242	
 WARN	multiple_asserted_superclasses	HP:0025028	rdfs:subClassOf	HP:0012331	
+WARN	multiple_asserted_superclasses	HP:0025038	rdfs:subClassOf	HP:0000035	
+WARN	multiple_asserted_superclasses	HP:0025038	rdfs:subClassOf	HP:0025615	
+WARN	multiple_asserted_superclasses	HP:0025044	rdfs:subClassOf	HP:0002088	
+WARN	multiple_asserted_superclasses	HP:0025044	rdfs:subClassOf	HP:0025615	
+WARN	multiple_asserted_superclasses	HP:0025079	rdfs:subClassOf	HP:0012090	
+WARN	multiple_asserted_superclasses	HP:0025079	rdfs:subClassOf	HP:0025615	
 WARN	multiple_asserted_superclasses	HP:0025130	rdfs:subClassOf	HP:0012379	
 WARN	multiple_asserted_superclasses	HP:0025130	rdfs:subClassOf	HP:0025129	
 WARN	multiple_asserted_superclasses	HP:0025132	rdfs:subClassOf	HP:0003117	
@@ -5646,6 +5666,8 @@ WARN	multiple_asserted_superclasses	HP:0030018	rdfs:subClassOf	HP:0030014
 WARN	multiple_asserted_superclasses	HP:0030018	rdfs:subClassOf	HP:0031845	
 WARN	multiple_asserted_superclasses	HP:0030019	rdfs:subClassOf	HP:0030014	
 WARN	multiple_asserted_superclasses	HP:0030019	rdfs:subClassOf	HP:0031845	
+WARN	multiple_asserted_superclasses	HP:0030049	rdfs:subClassOf	HP:0011450	
+WARN	multiple_asserted_superclasses	HP:0030049	rdfs:subClassOf	HP:0025615	
 WARN	multiple_asserted_superclasses	HP:0030072	rdfs:subClassOf	HP:0000245	
 WARN	multiple_asserted_superclasses	HP:0030072	rdfs:subClassOf	HP:0012720	
 WARN	multiple_asserted_superclasses	HP:0030077	rdfs:subClassOf	HP:0025426	
@@ -5716,6 +5738,8 @@ WARN	multiple_asserted_superclasses	HP:0030736	rdfs:subClassOf	HP:0005107
 WARN	multiple_asserted_superclasses	HP:0030736	rdfs:subClassOf	HP:0009792	
 WARN	multiple_asserted_superclasses	HP:0030745	rdfs:subClassOf	HP:0002617	
 WARN	multiple_asserted_superclasses	HP:0030745	rdfs:subClassOf	HP:0011603	
+WARN	multiple_asserted_superclasses	HP:0030757	rdfs:subClassOf	HP:0011061	
+WARN	multiple_asserted_superclasses	HP:0030757	rdfs:subClassOf	HP:0025615	
 WARN	multiple_asserted_superclasses	HP:0030766	rdfs:subClassOf	HP:0012531	
 WARN	multiple_asserted_superclasses	HP:0030766	rdfs:subClassOf	HP:0031704	
 WARN	multiple_asserted_superclasses	HP:0030767	rdfs:subClassOf	HP:0009792	
@@ -5732,6 +5756,8 @@ WARN	multiple_asserted_superclasses	HP:0030875	rdfs:subClassOf	HP:0002795
 WARN	multiple_asserted_superclasses	HP:0030875	rdfs:subClassOf	HP:0030163	
 WARN	multiple_asserted_superclasses	HP:0030877	rdfs:subClassOf	HP:0006536	
 WARN	multiple_asserted_superclasses	HP:0030877	rdfs:subClassOf	HP:0032340	
+WARN	multiple_asserted_superclasses	HP:0030885	rdfs:subClassOf	HP:0002719	
+WARN	multiple_asserted_superclasses	HP:0030885	rdfs:subClassOf	HP:0020108	
 WARN	multiple_asserted_superclasses	HP:0030951	rdfs:subClassOf	HP:0011805	
 WARN	multiple_asserted_superclasses	HP:0030951	rdfs:subClassOf	HP:0040290	
 WARN	multiple_asserted_superclasses	HP:0030953	rdfs:subClassOf	HP:0000502	
@@ -5773,6 +5799,10 @@ WARN	multiple_asserted_superclasses	HP:0031508	rdfs:subClassOf	HP:0002926
 WARN	multiple_asserted_superclasses	HP:0031508	rdfs:subClassOf	HP:0003117	
 WARN	multiple_asserted_superclasses	HP:0031610	rdfs:subClassOf	HP:0003834	
 WARN	multiple_asserted_superclasses	HP:0031610	rdfs:subClassOf	HP:0031869	
+WARN	multiple_asserted_superclasses	HP:0031699	rdfs:subClassOf	HP:0020104	
+WARN	multiple_asserted_superclasses	HP:0031699	rdfs:subClassOf	HP:0031690	
+WARN	multiple_asserted_superclasses	HP:0031700	rdfs:subClassOf	HP:0020108	
+WARN	multiple_asserted_superclasses	HP:0031700	rdfs:subClassOf	HP:0031690	
 WARN	multiple_asserted_superclasses	HP:0031725	rdfs:subClassOf	HP:0025588	
 WARN	multiple_asserted_superclasses	HP:0031725	rdfs:subClassOf	HP:0032011	
 WARN	multiple_asserted_superclasses	HP:0031776	rdfs:subClassOf	HP:0025589	
@@ -5799,6 +5829,8 @@ WARN	multiple_asserted_superclasses	HP:0032162	rdfs:subClassOf	HP:0011122
 WARN	multiple_asserted_superclasses	HP:0032162	rdfs:subClassOf	HP:0032158	
 WARN	multiple_asserted_superclasses	HP:0032248	rdfs:subClassOf	HP:0020071	
 WARN	multiple_asserted_superclasses	HP:0032248	rdfs:subClassOf	HP:0032169	
+WARN	multiple_asserted_superclasses	HP:0032255	rdfs:subClassOf	HP:0020100	
+WARN	multiple_asserted_superclasses	HP:0032255	rdfs:subClassOf	HP:0031690	
 WARN	multiple_asserted_superclasses	HP:0032309	rdfs:subClassOf	HP:0001911	
 WARN	multiple_asserted_superclasses	HP:0032309	rdfs:subClassOf	HP:0011893	
 WARN	multiple_asserted_superclasses	HP:0032409	rdfs:subClassOf	HP:0001339	
@@ -6671,7 +6703,7 @@ WARN	multiple_asserted_superclasses	HP:0100517	rdfs:subClassOf	HP:0000795
 WARN	multiple_asserted_superclasses	HP:0100517	rdfs:subClassOf	HP:0010786	
 WARN	multiple_asserted_superclasses	HP:0100521	rdfs:subClassOf	HP:0000777	
 WARN	multiple_asserted_superclasses	HP:0100521	rdfs:subClassOf	HP:0011793	
-WARN	multiple_asserted_superclasses	HP:0100523	rdfs:subClassOf	HP:0002722	
+WARN	multiple_asserted_superclasses	HP:0100523	rdfs:subClassOf	HP:0025615	
 WARN	multiple_asserted_superclasses	HP:0100523	rdfs:subClassOf	HP:0410042	
 WARN	multiple_asserted_superclasses	HP:0100526	rdfs:subClassOf	HP:0002088	
 WARN	multiple_asserted_superclasses	HP:0100526	rdfs:subClassOf	HP:0100606	
@@ -6736,6 +6768,8 @@ WARN	multiple_asserted_superclasses	HP:0100584	rdfs:subClassOf	HP:0012649
 WARN	multiple_asserted_superclasses	HP:0100590	rdfs:subClassOf	HP:0002034	
 WARN	multiple_asserted_superclasses	HP:0100590	rdfs:subClassOf	HP:0100589	
 WARN	multiple_asserted_superclasses	HP:0100590	rdfs:subClassOf	HP:0100819	
+WARN	multiple_asserted_superclasses	HP:0100592	rdfs:subClassOf	HP:0002585	
+WARN	multiple_asserted_superclasses	HP:0100592	rdfs:subClassOf	HP:0025615	
 WARN	multiple_asserted_superclasses	HP:0100593	rdfs:subClassOf	HP:0002763	
 WARN	multiple_asserted_superclasses	HP:0100593	rdfs:subClassOf	HP:0010766	
 WARN	multiple_asserted_superclasses	HP:0100598	rdfs:subClassOf	HP:0000969	
@@ -9090,7 +9124,6 @@ WARN	missing_definition	HP:0002275	IAO:0000115
 WARN	missing_definition	HP:0002275	IAO:0000600		
 WARN	missing_definition	HP:0002277	IAO:0000600		
 WARN	missing_definition	HP:0002280	IAO:0000600		
-WARN	missing_definition	HP:0002281	IAO:0000600		
 WARN	missing_definition	HP:0002282	IAO:0000600		
 WARN	missing_definition	HP:0002283	IAO:0000600		
 WARN	missing_definition	HP:0002286	IAO:0000600		
@@ -11152,7 +11185,6 @@ WARN	missing_definition	HP:0004754	IAO:0000600
 WARN	missing_definition	HP:0004755	IAO:0000600		
 WARN	missing_definition	HP:0004756	IAO:0000600		
 WARN	missing_definition	HP:0004757	IAO:0000600		
-WARN	missing_definition	HP:0004758	IAO:0000115		
 WARN	missing_definition	HP:0004758	IAO:0000600		
 WARN	missing_definition	HP:0004761	IAO:0000115		
 WARN	missing_definition	HP:0004761	IAO:0000600		
@@ -13108,8 +13140,6 @@ WARN	missing_definition	HP:0007311	IAO:0000115
 WARN	missing_definition	HP:0007311	IAO:0000600		
 WARN	missing_definition	HP:0007313	IAO:0000115		
 WARN	missing_definition	HP:0007313	IAO:0000600		
-WARN	missing_definition	HP:0007314	IAO:0000115		
-WARN	missing_definition	HP:0007314	IAO:0000600		
 WARN	missing_definition	HP:0007321	IAO:0000600		
 WARN	missing_definition	HP:0007325	IAO:0000600		
 WARN	missing_definition	HP:0007326	IAO:0000115		
@@ -13888,8 +13918,6 @@ WARN	missing_definition	HP:0008225	IAO:0000600
 WARN	missing_definition	HP:0008226	IAO:0000600		
 WARN	missing_definition	HP:0008227	IAO:0000600		
 WARN	missing_definition	HP:0008229	IAO:0000600		
-WARN	missing_definition	HP:0008230	IAO:0000115		
-WARN	missing_definition	HP:0008230	IAO:0000600		
 WARN	missing_definition	HP:0008231	IAO:0000115		
 WARN	missing_definition	HP:0008231	IAO:0000600		
 WARN	missing_definition	HP:0008232	IAO:0000600		
@@ -13959,7 +13987,6 @@ WARN	missing_definition	HP:0008320	IAO:0000600
 WARN	missing_definition	HP:0008321	IAO:0000600		
 WARN	missing_definition	HP:0008322	IAO:0000600		
 WARN	missing_definition	HP:0008323	IAO:0000600		
-WARN	missing_definition	HP:0008326	IAO:0000115		
 WARN	missing_definition	HP:0008326	IAO:0000600		
 WARN	missing_definition	HP:0008327	IAO:0000600		
 WARN	missing_definition	HP:0008330	IAO:0000600		
@@ -18551,6 +18578,35 @@ WARN	missing_definition	HP:0020079	IAO:0000600
 WARN	missing_definition	HP:0020080	IAO:0000600		
 WARN	missing_definition	HP:0020081	IAO:0000600		
 WARN	missing_definition	HP:0020082	IAO:0000600		
+WARN	missing_definition	HP:0020083	IAO:0000600		
+WARN	missing_definition	HP:0020084	IAO:0000600		
+WARN	missing_definition	HP:0020085	IAO:0000600		
+WARN	missing_definition	HP:0020086	IAO:0000600		
+WARN	missing_definition	HP:0020087	IAO:0000600		
+WARN	missing_definition	HP:0020088	IAO:0000600		
+WARN	missing_definition	HP:0020089	IAO:0000600		
+WARN	missing_definition	HP:0020090	IAO:0000600		
+WARN	missing_definition	HP:0020091	IAO:0000600		
+WARN	missing_definition	HP:0020093	IAO:0000600		
+WARN	missing_definition	HP:0020095	IAO:0000600		
+WARN	missing_definition	HP:0020096	IAO:0000600		
+WARN	missing_definition	HP:0020097	IAO:0000600		
+WARN	missing_definition	HP:0020098	IAO:0000600		
+WARN	missing_definition	HP:0020099	IAO:0000600		
+WARN	missing_definition	HP:0020100	IAO:0000600		
+WARN	missing_definition	HP:0020101	IAO:0000600		
+WARN	missing_definition	HP:0020102	IAO:0000600		
+WARN	missing_definition	HP:0020103	IAO:0000600		
+WARN	missing_definition	HP:0020104	IAO:0000600		
+WARN	missing_definition	HP:0020105	IAO:0000600		
+WARN	missing_definition	HP:0020106	IAO:0000600		
+WARN	missing_definition	HP:0020107	IAO:0000600		
+WARN	missing_definition	HP:0020108	IAO:0000600		
+WARN	missing_definition	HP:0020110	IAO:0000600		
+WARN	missing_definition	HP:0020111	IAO:0000600		
+WARN	missing_definition	HP:0020112	IAO:0000600		
+WARN	missing_definition	HP:0020113	IAO:0000600		
+WARN	missing_definition	HP:0020114	IAO:0000600		
 WARN	missing_definition	HP:0025004	IAO:0000600		
 WARN	missing_definition	HP:0025005	IAO:0000600		
 WARN	missing_definition	HP:0025006	IAO:0000600		
@@ -19137,6 +19193,26 @@ WARN	missing_definition	HP:0025610	IAO:0000600
 WARN	missing_definition	HP:0025611	IAO:0000600		
 WARN	missing_definition	HP:0025612	IAO:0000600		
 WARN	missing_definition	HP:0025613	IAO:0000600		
+WARN	missing_definition	HP:0025615	IAO:0000115		
+WARN	missing_definition	HP:0025615	IAO:0000600		
+WARN	missing_definition	HP:0025616	IAO:0000600		
+WARN	missing_definition	HP:0025617	IAO:0000600		
+WARN	missing_definition	HP:0025618	IAO:0000600		
+WARN	missing_definition	HP:0025619	IAO:0000600		
+WARN	missing_definition	HP:0025620	IAO:0000600		
+WARN	missing_definition	HP:0025621	IAO:0000600		
+WARN	missing_definition	HP:0025622	IAO:0000600		
+WARN	missing_definition	HP:0025623	IAO:0000600		
+WARN	missing_definition	HP:0025624	IAO:0000600		
+WARN	missing_definition	HP:0025625	IAO:0000600		
+WARN	missing_definition	HP:0025626	IAO:0000600		
+WARN	missing_definition	HP:0025627	IAO:0000600		
+WARN	missing_definition	HP:0025628	IAO:0000600		
+WARN	missing_definition	HP:0025629	IAO:0000600		
+WARN	missing_definition	HP:0025630	IAO:0000600		
+WARN	missing_definition	HP:0025631	IAO:0000600		
+WARN	missing_definition	HP:0025632	IAO:0000115		
+WARN	missing_definition	HP:0025632	IAO:0000600		
 WARN	missing_definition	HP:0030000	IAO:0000600		
 WARN	missing_definition	HP:0030001	IAO:0000600		
 WARN	missing_definition	HP:0030002	IAO:0000600		
@@ -21718,6 +21794,35 @@ WARN	missing_definition	HP:0032465	IAO:0000600
 WARN	missing_definition	HP:0032466	IAO:0000600		
 WARN	missing_definition	HP:0032467	IAO:0000600		
 WARN	missing_definition	HP:0032468	IAO:0000600		
+WARN	missing_definition	HP:0032469	IAO:0000600		
+WARN	missing_definition	HP:0032470	IAO:0000600		
+WARN	missing_definition	HP:0032471	IAO:0000600		
+WARN	missing_definition	HP:0032472	IAO:0000600		
+WARN	missing_definition	HP:0032473	IAO:0000600		
+WARN	missing_definition	HP:0032475	IAO:0000115		
+WARN	missing_definition	HP:0032475	IAO:0000600		
+WARN	missing_definition	HP:0032476	IAO:0000600		
+WARN	missing_definition	HP:0032477	IAO:0000600		
+WARN	missing_definition	HP:0032478	IAO:0000600		
+WARN	missing_definition	HP:0032479	IAO:0000600		
+WARN	missing_definition	HP:0032480	IAO:0000600		
+WARN	missing_definition	HP:0032481	IAO:0000600		
+WARN	missing_definition	HP:0032482	IAO:0000600		
+WARN	missing_definition	HP:0032483	IAO:0000600		
+WARN	missing_definition	HP:0032484	IAO:0000600		
+WARN	missing_definition	HP:0032485	IAO:0000600		
+WARN	missing_definition	HP:0032486	IAO:0000600		
+WARN	missing_definition	HP:0032487	IAO:0000600		
+WARN	missing_definition	HP:0032488	IAO:0000600		
+WARN	missing_definition	HP:0032489	IAO:0000600		
+WARN	missing_definition	HP:0032490	IAO:0000600		
+WARN	missing_definition	HP:0032491	IAO:0000600		
+WARN	missing_definition	HP:0032492	IAO:0000600		
+WARN	missing_definition	HP:0032493	IAO:0000600		
+WARN	missing_definition	HP:0032495	IAO:0000600		
+WARN	missing_definition	HP:0032496	IAO:0000600		
+WARN	missing_definition	HP:0032497	IAO:0000115		
+WARN	missing_definition	HP:0032497	IAO:0000600		
 WARN	missing_definition	HP:0040004	IAO:0000115		
 WARN	missing_definition	HP:0040004	IAO:0000600		
 WARN	missing_definition	HP:0040006	IAO:0000115		
@@ -22710,7 +22815,6 @@ WARN	missing_definition	HP:0100247	IAO:0000600
 WARN	missing_definition	HP:0100248	IAO:0000600		
 WARN	missing_definition	HP:0100249	IAO:0000600		
 WARN	missing_definition	HP:0100250	IAO:0000600		
-WARN	missing_definition	HP:0100251	IAO:0000115		
 WARN	missing_definition	HP:0100251	IAO:0000600		
 WARN	missing_definition	HP:0100252	IAO:0000115		
 WARN	missing_definition	HP:0100252	IAO:0000600		
