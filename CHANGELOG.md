@@ -11,14 +11,14 @@ straightforward as possible.
  
 ### Added
 - 62 new OMIM entries
-
 - annotation updates for > 700 OMIM entries with > 2000 new HPO-disease associations
-
 - if done: XXX new inheritance annotations to improve inheritance-mode-aware algorithms operating on HPO data
+- HP_0410397 Bronchiolectasis
 
 
 ### Changed
 - added logical defintion to HP_0410282 'Abnormal circulating amylase level' and children
+- reclassified 'Abnormal hepatic iron concentration' to be a child of 'Abnormal tissue metabolite concentration'
  
 ### Fixed
 
