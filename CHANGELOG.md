@@ -18,6 +18,7 @@ straightforward as possible.
 
 
 ### Changed
+- added logical defintion to HP_0410282 'Abnormal circulating amylase level' and children
  
 ### Fixed
 
