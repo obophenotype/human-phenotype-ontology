@@ -19,6 +19,7 @@ straightforward as possible.
 ### Changed
 - added logical defintion to HP_0410282 'Abnormal circulating amylase level' and children
 - reclassified 'Abnormal hepatic iron concentration' to be a child of 'Abnormal tissue metabolite concentration'
+- Re-added logical definitions to atresia and atrophy terms using the DOSDP/ODK pipeline
  
 ### Fixed
 
