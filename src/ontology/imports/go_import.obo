@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-04-15/imports/go_import.owl
+data-version: hp/releases/2019-04-24/imports/go_import.owl
 ontology: hp/imports/go_import
 
 [Term]
@@ -8210,7 +8210,10 @@ name: protein transport
 namespace: biological_process
 alt_id: GO:0015831
 def: "The directed movement of proteins into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+subset: goslim_chembl
+subset: goslim_generic
 subset: goslim_pir
+subset: goslim_yeast
 synonym: "enzyme transport" NARROW []
 is_a: GO:0015833 ! peptide transport
 is_a: GO:0045184 ! establishment of protein localization
@@ -10670,7 +10673,14 @@ name: receptor regulator activity
 namespace: molecular_function
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is changed." [GOC:ceb]
 is_a: GO:0098772 ! molecular function regulator
-relationship: part_of GO:0010469 ! regulation of signaling receptor activity
+
+[Term]
+id: GO:0030546
+name: signaling receptor activator activity
+namespace: molecular_function
+def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is increased." [GOC:ceb]
+synonym: "receptor activator activity" BROAD []
+is_a: GO:0030545 ! receptor regulator activity
 
 [Term]
 id: GO:0030595
@@ -11003,6 +11013,7 @@ subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_pir
 subset: goslim_plant
+synonym: "matrisome" NARROW []
 synonym: "proteinaceous extracellular matrix" EXACT []
 xref: NIF_Subcellular:nlx_subcell_20090513
 xref: Wikipedia:Extracellular_matrix
@@ -18655,9 +18666,11 @@ comment: Definition discussed in https://github.com/geneontology/go-ontology/iss
 subset: goslim_chembl
 synonym: "receptor agonist activity" BROAD [GOC:molecular_function_refactoring]
 synonym: "signaling molecule" EXACT []
+synonym: "signaling receptor ligand activity" EXACT []
 synonym: "vitamin D receptor activator activity" NARROW []
 is_a: GO:0005102 ! signaling receptor binding
-is_a: GO:0030545 ! receptor regulator activity
+is_a: GO:0030546 ! signaling receptor activator activity
+relationship: part_of GO:0007165 ! signal transduction
 created_by: midori
 creation_date: 2010-09-13T04:51:59Z
 
