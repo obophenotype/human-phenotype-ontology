@@ -4,7 +4,19 @@ All notable changes to the HPO project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
  
-## [Unreleased] - 2019-04-18
+## [Unreleased] - 
+2019-04-23
+
+### Added
+-2  new terms requested for LOINC annotations
+
+### Changed
+
+- Began patternization files
+
+
+
+2019-04-18
  
 Here we write upgrading notes. It's a team effort to make them as
 straightforward as possible.
