@@ -81,5 +81,5 @@ hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
 	
 	
-reports/%-obo-report.tsv: %.owl
+reports/hp-edit-obo-report.tsv: $(SRC)
 	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on $(REPORT_FAIL_ON) -o $@
