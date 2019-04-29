@@ -68,7 +68,7 @@ test_obo: test.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o test.tmp.obo && grep -v ^owl-axioms test.tmp.obo > hp.obo && rm test.tmp.obo
 
-test: sparql_test all_reports hp_report test_obo
+test: sparql_test all_reports test_obo
 	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success (NOTE: xref-syntax nolabels not currently tested, uncomment in hp.Makefile)"
 
 # We overwrite the .owl release to be, for now, a simple merged version of the editors file.
@@ -81,4 +81,12 @@ hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
 
 hp_report: $(SRC)
-	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on $(REPORT_FAIL_ON) -o $@
+	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on none -o hp_report
+
+# hp_error: hp_report
+#	ERR := $(shell grep '^ERROR' hp_report)
+#	$(shell echo $(ERR))
+#	ifneq ($(ERR),)
+#		$(error $(ERR))
+#	endif
+
