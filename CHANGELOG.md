@@ -5,6 +5,18 @@ All notable changes to the HPO project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
  
 ## [Unreleased] - 
+2019-04-30
+
+ 
+### Added
+- Added 2 new terms: HP_0500260, HP_0500261
+- Added new synonyms to Triggered by (HP_0025204), Aggrivated by (HP_0025285) terms, and Ameliorated by (HP_0025254)
+
+
+### Changed
+
+### Fixed
+
 2019-04-23
 
 ### Added
