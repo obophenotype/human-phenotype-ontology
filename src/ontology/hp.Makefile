@@ -52,8 +52,6 @@
 #subsets/hp-ldefs.obo: hp-edit.obo
 #	obo-filter-tags.pl -t intersection_of -t id -t name $< | obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@
 
-REPORT_FAIL_ON = ERROR
-
 test.owl: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/hp_terms.sparql ontologyterms-test.txt && \
 	$(ROBOT) remove --input $< --select imports \
