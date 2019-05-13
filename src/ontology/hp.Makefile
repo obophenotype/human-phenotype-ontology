@@ -66,7 +66,7 @@ test_obo: test.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o test.tmp.obo && grep -v ^owl-axioms test.tmp.obo > hp.obo && rm test.tmp.obo
 
-test: sparql_test all_reports test_obo
+test: sparql_test all_reports test_obo hp_error
 	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success (NOTE: xref-syntax nolabels not currently tested, uncomment in hp.Makefile)"
 
 # We overwrite the .owl release to be, for now, a simple merged version of the editors file.
@@ -81,6 +81,20 @@ hp_labels.csv: $(SRC)
 hp_report: $(SRC)
 	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on none -o hp_report
 
+hp_error: hp_report
+	grep '^ERROR' hp_report && exit -1 || echo "No errors"
+
+hp_foreign_obsoletes.csv: $(SRC)
+	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/hp_foreign_obsolete.sparql $@
+
+#imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt hp_foreign_obsoletes.csv
+#	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
+#		remove --term-file hp_foreign_obsoletes.csv --trim false \ 
+#		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+#.PRECIOUS: imports/%_import.owl
+
+remove_test:
+	$(ROBOT) remove -i ../../hp.owl --term-file hp_foreign_obsoletes.csv --preserve-structure true -o ../../hp.owl
 # hp_error: hp_report
 #	ERR := $(shell grep '^ERROR' hp_report)
 #	$(shell echo $(ERR))
