@@ -52,6 +52,9 @@
 #subsets/hp-ldefs.obo: hp-edit.obo
 #	obo-filter-tags.pl -t intersection_of -t id -t name $< | obo-grep.pl -r intersection_of - | grep -v ^owl-axioms > $@
 
+reports/%-obo-report.tsv: %.owl
+	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on $(REPORT_FAIL_ON) -o $@
+
 test.owl: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/hp_terms.sparql ontologyterms-test.txt && \
 	$(ROBOT) remove --input $< --select imports \
@@ -77,6 +80,7 @@ $(ONT).owl: $(SRC)
 
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
+
 
 hp_report: $(SRC)
 	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on none -o hp_report
