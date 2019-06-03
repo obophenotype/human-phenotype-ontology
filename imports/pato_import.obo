@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-04-24/imports/pato_import.owl
+data-version: hp/releases/2019-06-03/imports/pato_import.owl
 ontology: hp/imports/pato_import
 
 [Term]
@@ -78,16 +78,6 @@ subset: relational_slim
 subset: scalar_slim
 synonym: "concentration" EXACT []
 is_a: PATO:0002182 ! molecular quality
-
-[Term]
-id: PATO:0000040
-name: distance
-namespace: quality
-def: "A quality that is the extent of space between two entities." [PATOC:GVG]
-subset: attribute_slim
-subset: relational_slim
-subset: scalar_slim
-is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0000044
@@ -328,13 +318,6 @@ synonym: "relational structural quality" EXACT []
 is_a: PATO:0000051 ! morphology
 
 [Term]
-id: PATO:0000145
-name: obsolete liquid substance
-namespace: quality
-comment: This term was made obsolete because it is not a quality. To update annotations, consider the following term 'quality of a liquid; PATO:0001548 '
-is_obsolete: true
-
-[Term]
 id: PATO:0000150
 name: texture
 namespace: quality
@@ -371,14 +354,6 @@ subset: scalar_slim
 is_a: PATO:0000186 ! behavioral quality
 
 [Term]
-id: PATO:0000261
-name: maturity
-namespace: quality
-def: "A quality of a single physical entity which is held by a bearer when the latter exhibits a state of growth, differentiation, or development." [Merriam-Webster:Merriam-Webster]
-subset: attribute_slim
-is_a: PATO:0001995 ! organismal quality
-
-[Term]
 id: PATO:0000274
 name: fertility
 namespace: quality
@@ -386,24 +361,6 @@ def: "A reproductive quality inhering in a bearer by virtue of the bearer's init
 subset: attribute_slim
 subset: disposition_slim
 is_a: PATO:0001434 ! reproductive quality
-
-[Term]
-id: PATO:0000277
-name: female fertility
-namespace: quality
-def: "A fertility quality inhering in a female by virtue of the bearer's disposition to initiate, sustain, or support reproduction." [PATOC:GVG]
-subset: attribute_slim
-subset: disposition_slim
-is_a: PATO:0000274 ! fertility
-
-[Term]
-id: PATO:0000279
-name: male fertility
-namespace: quality
-def: "A fertility quality of inhering in a male by virtue of the bearer's disposition to initiate, sustain, or support reproduction." [PATOC:GVG]
-subset: attribute_slim
-subset: disposition_slim
-is_a: PATO:0000274 ! fertility
 
 [Term]
 id: PATO:0000297
@@ -426,19 +383,7 @@ def: "A mobility quality of inhering in a bearer by virtue of the bearer's dispo
 subset: disposition_slim
 subset: value_slim
 is_a: PATO:0000004 ! mobility
-disjoint_from: PATO:0000300 ! immobile
-relationship: is_opposite_of PATO:0000300 ! immobile
-
-[Term]
-id: PATO:0000300
-name: immobile
-namespace: quality
-def: "A mobility quality inhering in a bearer by virtue of the bearer's being incapable to move freely." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "fixed" RELATED []
-is_a: PATO:0000004 ! mobility
-relationship: is_opposite_of PATO:0000299 ! mobile
+property_value: RO:0002604 PATO:0000300
 
 [Term]
 id: PATO:0000318
@@ -486,16 +431,6 @@ synonym: "whitish" RELATED []
 is_a: PATO:0000014 ! color
 
 [Term]
-id: PATO:0000327
-name: low brightness
-namespace: quality
-def: "A color brightness which is relatively low." [PATOC:MAH]
-subset: value_slim
-synonym: "dark" EXACT []
-is_a: PATO:0000016 ! color brightness
-relationship: is_opposite_of PATO:0000665 ! high brightness
-
-[Term]
 id: PATO:0000328
 name: low saturation
 namespace: quality
@@ -504,7 +439,7 @@ subset: value_slim
 synonym: "dull" RELATED []
 synonym: "pale" EXACT []
 is_a: PATO:0000017 ! color saturation
-relationship: is_opposite_of PATO:0001229 ! high saturation
+property_value: RO:0002604 PATO:0001229
 
 [Term]
 id: PATO:0000330
@@ -515,35 +450,7 @@ subset: cell_quality
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0000060 ! spatial pattern
-relationship: is_opposite_of PATO:0000440 ! regular spatial pattern
-
-[Term]
-id: PATO:0000374
-name: increased distance
-namespace: quality
-def: "A distance which is greater relative to the normal or average." [PATOC:GVG]
-subset: relational_slim
-subset: value_slim
-synonym: "long distance" RELATED []
-is_a: PATO:0000040 ! distance
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0000040 ! distance
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000375 ! decreased distance
-
-[Term]
-id: PATO:0000375
-name: decreased distance
-namespace: quality
-def: "A distance which is lesser relative to the normal or average." [PATOC:GVG]
-subset: relational_slim
-subset: value_slim
-synonym: "short distance" RELATED []
-is_a: PATO:0000040 ! distance
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0000040 ! distance
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000374 ! increased distance
+property_value: RO:0002604 PATO:0000440
 
 [Term]
 id: PATO:0000380
@@ -558,7 +465,7 @@ is_a: PATO:0000044 ! frequency
 is_a: PATO:0000912 ! increased rate
 intersection_of: PATO:0000044 ! frequency
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000381 ! decreased frequency
+property_value: RO:0002604 PATO:0000381
 
 [Term]
 id: PATO:0000381
@@ -573,7 +480,7 @@ is_a: PATO:0000044 ! frequency
 is_a: PATO:0000911 ! decreased rate
 intersection_of: PATO:0000044 ! frequency
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000380 ! increased frequency
+property_value: RO:0002604 PATO:0000380
 
 [Term]
 id: PATO:0000386
@@ -590,7 +497,7 @@ is_a: PATO:0000048 ! hardness
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000048 ! hardness
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000387 ! soft
+property_value: RO:0002604 PATO:0000387
 
 [Term]
 id: PATO:0000387
@@ -604,7 +511,7 @@ is_a: PATO:0000048 ! hardness
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000048 ! hardness
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000386 ! hard
+property_value: RO:0002604 PATO:0000386
 
 [Term]
 id: PATO:0000389
@@ -615,7 +522,7 @@ subset: hpo_slim
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0001309 ! duration
-relationship: is_opposite_of PATO:0001863 ! chronic
+property_value: RO:0002604 PATO:0001863
 
 [Term]
 id: PATO:0000394
@@ -658,8 +565,7 @@ subset: value_slim
 synonym: "ramified" EXACT []
 synonym: "ramiform" EXACT []
 is_a: PATO:0002009 ! branchiness
-disjoint_from: PATO:0000414 ! unbranched
-relationship: is_opposite_of PATO:0000414 ! unbranched
+property_value: RO:0002604 PATO:0000414
 
 [Term]
 id: PATO:0000403
@@ -686,7 +592,7 @@ synonym: "helicoidal" RELATED []
 synonym: "helix-shaped" RELATED []
 synonym: "spiral" EXACT []
 is_a: PATO:0001794 ! coiling
-relationship: is_opposite_of PATO:0000415 ! uncoiled
+property_value: RO:0002604 PATO:0000415
 
 [Term]
 id: PATO:0000405
@@ -742,28 +648,6 @@ subset: value_slim
 is_a: PATO:0002317 ! parallelogram
 
 [Term]
-id: PATO:0000414
-name: unbranched
-namespace: quality
-def: "A branchiness quality inhering in a bearer by virtue of the bearer's lacking branches." [PATOC:GVG]
-subset: cell_quality
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0002009 ! branchiness
-relationship: is_opposite_of PATO:0000402 ! branched
-
-[Term]
-id: PATO:0000415
-name: uncoiled
-namespace: quality
-def: "A shape quality inhering in a bearer by virtue of the bearer's being not curled or wound (especially in concentric rings or spirals)." [WordNet:WordNet]
-subset: cell_quality
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0001794 ! coiling
-relationship: is_opposite_of PATO:0000404 ! coiled
-
-[Term]
 id: PATO:0000427
 name: recurrent
 namespace: quality
@@ -772,18 +656,7 @@ subset: hpo_slim
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0000428 ! sporadic
-
-[Term]
-id: PATO:0000428
-name: sporadic
-namespace: quality
-def: "A quality of a single process inhering in a bearer by virtue of the bearer's once or in or a few unpredictable instances." [PATO:MAH, WordNet:WordNet]
-subset: hpo_slim
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0000427 ! recurrent
+property_value: RO:0002604 PATO:0000428
 
 [Term]
 id: PATO:0000440
@@ -794,7 +667,7 @@ subset: mpath_slim
 subset: relational_slim
 subset: value_slim
 is_a: PATO:0000060 ! spatial pattern
-relationship: is_opposite_of PATO:0000330 ! irregular spatial pattern
+property_value: RO:0002604 PATO:0000330
 
 [Term]
 id: PATO:0000460
@@ -809,7 +682,7 @@ synonym: "atypia" RELATED []
 synonym: "atypical" RELATED []
 synonym: "defective" RELATED []
 is_a: PATO:0000069 ! deviation(from_normal)
-relationship: is_opposite_of PATO:0000461 ! normal
+property_value: RO:0002604 PATO:0000461
 
 [Term]
 id: PATO:0000461
@@ -821,7 +694,7 @@ subset: mpath_slim
 subset: value_slim
 synonym: "average" RELATED []
 is_a: PATO:0000069 ! deviation(from_normal)
-relationship: is_opposite_of PATO:0000460 ! abnormal
+property_value: RO:0002604 PATO:0000460
 
 [Term]
 id: PATO:0000462
@@ -837,9 +710,9 @@ synonym: "absence" EXACT []
 synonym: "absent from organism" EXACT []
 is_a: PATO:0000070 ! amount
 disjoint_from: PATO:0000467 ! present
-relationship: is_opposite_of PATO:0000467 ! present
 relationship: reciprocal_of PATO:0001558 ! lacking processual parts
 relationship: reciprocal_of PATO:0002000 ! lacks all parts of type
+property_value: RO:0002604 PATO:0000467
 
 [Term]
 id: PATO:0000467
@@ -850,7 +723,7 @@ subset: absent_slim
 subset: value_slim
 synonym: "present in organism" RELATED []
 is_a: PATO:0000070 ! amount
-relationship: is_opposite_of PATO:0000462 ! absent
+property_value: RO:0002604 PATO:0000462
 
 [Term]
 id: PATO:0000470
@@ -869,7 +742,7 @@ is_a: PATO:0000467 ! present
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0000070 ! amount
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001997 ! decreased amount
+property_value: RO:0002604 PATO:0001997
 
 [Term]
 id: PATO:0000498
@@ -888,7 +761,7 @@ is_a: PATO:0001309 ! duration
 is_a: PATO:0002304 ! increased process quality
 intersection_of: PATO:0001309 ! duration
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000499 ! decreased duration
+property_value: RO:0002604 PATO:0000499
 
 [Term]
 id: PATO:0000499
@@ -906,7 +779,7 @@ is_a: PATO:0001309 ! duration
 is_a: PATO:0002302 ! decreased process quality
 intersection_of: PATO:0001309 ! duration
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000498 ! increased duration
+property_value: RO:0002604 PATO:0000498
 
 [Term]
 id: PATO:0000502
@@ -918,19 +791,6 @@ synonym: "late" RELATED []
 is_a: PATO:0002325 ! onset quality
 
 [Term]
-id: PATO:0000513
-name: insensitive toward
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's lacking sensitivity toward an external stimulus." [PATOC:GVG]
-subset: disposition_slim
-subset: relational_slim
-subset: value_slim
-synonym: "insensitive" EXACT []
-synonym: "resistant" RELATED []
-is_a: PATO:0000085 ! sensitivity toward
-relationship: is_opposite_of PATO:0000516 ! sensitive toward
-
-[Term]
 id: PATO:0000516
 name: sensitive toward
 namespace: quality
@@ -940,19 +800,7 @@ subset: relational_slim
 subset: value_slim
 synonym: "sensitive" EXACT []
 is_a: PATO:0000085 ! sensitivity toward
-relationship: is_opposite_of PATO:0000513 ! insensitive toward
-
-[Term]
-id: PATO:0000546
-name: photoinsensitive
-namespace: quality
-def: "A photosensitivity quality inhering in a bearer by virtue of the bearer's lacking photosensitivity." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "photoresistant" RELATED []
-is_a: PATO:0000927 ! photosensitivity
-disjoint_from: PATO:0000547 ! photosensitive
-relationship: is_opposite_of PATO:0000547 ! photosensitive
+property_value: RO:0002604 PATO:0000513
 
 [Term]
 id: PATO:0000547
@@ -962,7 +810,7 @@ def: "A photosensitivity quality inhering in a bearer by virtue of the bearer's 
 subset: disposition_slim
 subset: value_slim
 is_a: PATO:0000927 ! photosensitivity
-relationship: is_opposite_of PATO:0000546 ! photoinsensitive
+property_value: RO:0002604 PATO:0000546
 
 [Term]
 id: PATO:0000569
@@ -975,7 +823,7 @@ is_a: PATO:0000119 ! height
 is_a: PATO:0000587 ! decreased size
 intersection_of: PATO:0000119 ! height
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000570 ! increased height
+property_value: RO:0002604 PATO:0000570
 
 [Term]
 id: PATO:0000570
@@ -988,7 +836,7 @@ is_a: PATO:0000119 ! height
 is_a: PATO:0000586 ! increased size
 intersection_of: PATO:0000119 ! height
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000569 ! decreased height
+property_value: RO:0002604 PATO:0000569
 
 [Term]
 id: PATO:0000573
@@ -1001,7 +849,7 @@ is_a: PATO:0000122 ! length
 is_a: PATO:0000586 ! increased size
 intersection_of: PATO:0000122 ! length
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000574 ! decreased length
+property_value: RO:0002604 PATO:0000574
 
 [Term]
 id: PATO:0000574
@@ -1016,7 +864,7 @@ is_a: PATO:0000122 ! length
 is_a: PATO:0000587 ! decreased size
 intersection_of: PATO:0000122 ! length
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000573 ! increased length
+property_value: RO:0002604 PATO:0000573
 
 [Term]
 id: PATO:0000582
@@ -1030,7 +878,7 @@ is_a: PATO:0000128 ! weight
 is_a: PATO:0002245 ! increased force
 intersection_of: PATO:0000128 ! weight
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000583 ! decreased weight
+property_value: RO:0002604 PATO:0000583
 
 [Term]
 id: PATO:0000583
@@ -1044,7 +892,7 @@ is_a: PATO:0000128 ! weight
 is_a: PATO:0002246 ! decreased force
 intersection_of: PATO:0000128 ! weight
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000582 ! increased weight
+property_value: RO:0002604 PATO:0000582
 
 [Term]
 id: PATO:0000584
@@ -1055,7 +903,7 @@ subset: mpath_slim
 subset: value_slim
 synonym: "hypertrophy" NARROW []
 is_a: PATO:0000595 ! increased volume
-relationship: is_opposite_of PATO:0000585 ! hypotrophic
+property_value: RO:0002604 PATO:0000585
 
 [Term]
 id: PATO:0000585
@@ -1067,7 +915,7 @@ subset: mpath_slim
 subset: value_slim
 synonym: "shrunken" EXACT []
 is_a: PATO:0000596 ! decreased volume
-relationship: is_opposite_of PATO:0000584 ! hypertrophic
+property_value: RO:0002604 PATO:0000584
 
 [Term]
 id: PATO:0000586
@@ -1085,7 +933,7 @@ is_a: PATO:0000117 ! size
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000117 ! size
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000587 ! decreased size
+property_value: RO:0002604 PATO:0000587
 
 [Term]
 id: PATO:0000587
@@ -1102,7 +950,7 @@ is_a: PATO:0000117 ! size
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000117 ! size
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000586 ! increased size
+property_value: RO:0002604 PATO:0000586
 
 [Term]
 id: PATO:0000591
@@ -1119,7 +967,7 @@ is_a: PATO:0000586 ! increased size
 is_a: PATO:0000915 ! thickness
 intersection_of: PATO:0000915 ! thickness
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000592 ! decreased thickness
+property_value: RO:0002604 PATO:0000592
 
 [Term]
 id: PATO:0000592
@@ -1135,7 +983,7 @@ is_a: PATO:0000587 ! decreased size
 is_a: PATO:0000915 ! thickness
 intersection_of: PATO:0000915 ! thickness
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000591 ! increased thickness
+property_value: RO:0002604 PATO:0000591
 
 [Term]
 id: PATO:0000595
@@ -1150,7 +998,7 @@ is_a: PATO:0000586 ! increased size
 is_a: PATO:0000918 ! volume
 intersection_of: PATO:0000918 ! volume
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000596 ! decreased volume
+property_value: RO:0002604 PATO:0000596
 
 [Term]
 id: PATO:0000596
@@ -1165,7 +1013,7 @@ is_a: PATO:0000587 ! decreased size
 is_a: PATO:0000918 ! volume
 intersection_of: PATO:0000918 ! volume
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000595 ! increased volume
+property_value: RO:0002604 PATO:0000595
 
 [Term]
 id: PATO:0000599
@@ -1178,7 +1026,7 @@ is_a: PATO:0000587 ! decreased size
 is_a: PATO:0000921 ! width
 intersection_of: PATO:0000921 ! width
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000600 ! increased width
+property_value: RO:0002604 PATO:0000600
 
 [Term]
 id: PATO:0000600
@@ -1193,7 +1041,7 @@ is_a: PATO:0000586 ! increased size
 is_a: PATO:0000921 ! width
 intersection_of: PATO:0000921 ! width
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000599 ! decreased width
+property_value: RO:0002604 PATO:0000599
 
 [Term]
 id: PATO:0000608
@@ -1204,7 +1052,7 @@ subset: value_slim
 synonym: "blocked" RELATED []
 is_a: PATO:0000136 ! closure
 disjoint_from: PATO:0000610 ! open
-relationship: is_opposite_of PATO:0000610 ! open
+property_value: RO:0002604 PATO:0000610
 
 [Term]
 id: PATO:0000609
@@ -1221,16 +1069,7 @@ namespace: quality
 def: "A morphological quality inhering in a bearer by virtue of the bearer's affording unobstructed passage or view." [answers.com:answers.com]
 subset: value_slim
 is_a: PATO:0000136 ! closure
-relationship: is_opposite_of PATO:0000608 ! closed
-
-[Term]
-id: PATO:0000613
-name: disoriented
-namespace: quality
-def: "A spatial pattern inhering in a bearer by virtue of the bearer's lacking orientation." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0000330 ! irregular spatial pattern
-relationship: is_opposite_of PATO:0000614 ! oriented
+property_value: RO:0002604 PATO:0000608
 
 [Term]
 id: PATO:0000614
@@ -1239,7 +1078,7 @@ namespace: quality
 def: "A pattern where all the repeated elements are oriented in the same direction." [PATOC:MAH]
 subset: value_slim
 is_a: PATO:0000440 ! regular spatial pattern
-relationship: is_opposite_of PATO:0000613 ! disoriented
+property_value: RO:0002604 PATO:0000613
 
 [Term]
 id: PATO:0000616
@@ -1278,7 +1117,7 @@ namespace: quality
 def: "A positional quality inhering in a bearer by virtue of the bearer's being overfilled." [WordNet:WordNet]
 subset: value_slim
 is_a: PATO:0000140 ! position
-relationship: is_opposite_of PATO:0000633 ! uncrowded
+property_value: RO:0002604 PATO:0000633
 
 [Term]
 id: PATO:0000623
@@ -1339,15 +1178,6 @@ is_a: PATO:0000440 ! regular spatial pattern
 is_a: PATO:0000965 ! symmetry
 
 [Term]
-id: PATO:0000633
-name: uncrowded
-namespace: quality
-def: "A spatial pattern inhering in a bearer by virtue of the bearer's being not overfilled." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0000060 ! spatial pattern
-relationship: is_opposite_of PATO:0000619 ! crowded
-
-[Term]
 id: PATO:0000634
 name: unilateral
 namespace: quality
@@ -1375,9 +1205,8 @@ subset: value_slim
 synonym: "degeneration" NARROW []
 is_a: PATO:0002037 ! degeneration
 disjoint_from: PATO:0001623 ! atrophied
-disjoint_from: PATO:0002038 ! non-degenerate
 relationship: has_part PATO:0000585 ! hypotrophic
-relationship: is_opposite_of PATO:0002038 ! non-degenerate
+property_value: RO:0002604 PATO:0002038
 
 [Term]
 id: PATO:0000640
@@ -1403,7 +1232,7 @@ synonym: "fused to" EXACT []
 synonym: "joined with" RELATED []
 synonym: "merged with" RELATED []
 is_a: PATO:0000141 ! structure
-relationship: is_opposite_of PATO:0000651 ! unfused from
+property_value: RO:0002604 PATO:0000651
 
 [Term]
 id: PATO:0000643
@@ -1425,7 +1254,7 @@ subset: value_slim
 synonym: "hyperplasia" EXACT []
 synonym: "overdeveloped" RELATED []
 is_a: PATO:0000586 ! increased size
-relationship: is_opposite_of PATO:0000645 ! hypoplastic
+property_value: RO:0002604 PATO:0000645
 
 [Term]
 id: PATO:0000645
@@ -1439,7 +1268,7 @@ synonym: "hypoplasia" EXACT []
 synonym: "underdeveloped" RELATED []
 is_a: PATO:0000587 ! decreased size
 is_a: PATO:0002290 ! aplastic/hypoplastic
-relationship: is_opposite_of PATO:0000644 ! hyperplastic
+property_value: RO:0002604 PATO:0000644
 
 [Term]
 id: PATO:0000646
@@ -1450,15 +1279,6 @@ subset: mpath_slim
 subset: value_slim
 synonym: "malformation" NARROW []
 is_a: PATO:0001617 ! deformed
-
-[Term]
-id: PATO:0000647
-name: necrotic
-namespace: quality
-def: "A structural quality inhering in a bearer by virtue of the bearer's undergoing unprogrammed cell death." [Wikipedia:http\://en.wikipedia.org/wiki/Necrotic]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0000648
@@ -1478,7 +1298,7 @@ subset: relational_slim
 subset: value_slim
 synonym: "unfused" EXACT []
 is_a: PATO:0000141 ! structure
-relationship: is_opposite_of PATO:0000642 ! fused with
+property_value: RO:0002604 PATO:0000642
 
 [Term]
 id: PATO:0000665
@@ -1488,7 +1308,7 @@ def: "A color brightness which is relatively high." [PATOC:MAH]
 subset: value_slim
 synonym: "light" EXACT []
 is_a: PATO:0000016 ! color brightness
-relationship: is_opposite_of PATO:0000327 ! low brightness
+property_value: RO:0002604 PATO:0000327
 
 [Term]
 id: PATO:0000688
@@ -1497,7 +1317,7 @@ namespace: quality
 def: "A quality of a single process inhering in a bearer by virtue of the bearer's not occurring or existing at the same time or having the same period or phase." [WordNet:WordNet]
 subset: value_slim
 is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0000695 ! synchronous
+property_value: RO:0002604 PATO:0000695
 
 [Term]
 id: PATO:0000689
@@ -1508,19 +1328,7 @@ def: "A quality of a single process inhering in a bearer by virtue of the bearer
 subset: value_slim
 synonym: "uninterrupted" EXACT []
 is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0000690 ! discontinuous
-
-[Term]
-id: PATO:0000690
-name: discontinuous
-namespace: quality
-alt_id: PATO:0000426
-def: "A quality of a single process inhering in a bearer by virtue of the bearer's being marked by breaks or interruptions." [thefreedictionary.com:thefreedictionary.com]
-subset: value_slim
-synonym: "intermittent" RELATED []
-synonym: "interrupted" EXACT []
-is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0000689 ! continuous
+property_value: RO:0002604 PATO:0000690
 
 [Term]
 id: PATO:0000692
@@ -1544,15 +1352,6 @@ synonym: "precocious" RELATED []
 is_a: PATO:0002325 ! onset quality
 
 [Term]
-id: PATO:0000695
-name: synchronous
-namespace: quality
-def: "A quality of a single process inhering in a bearer by virtue of the bearer's occurring or existing at the same time or having the same period or phase." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0000688 ! asynchronous
-
-[Term]
 id: PATO:0000700
 name: rough
 namespace: quality
@@ -1562,7 +1361,7 @@ subset: mpath_slim
 subset: value_slim
 synonym: "coarse" EXACT []
 is_a: PATO:0000150 ! texture
-relationship: is_opposite_of PATO:0000701 ! smooth
+property_value: RO:0002604 PATO:0000701
 
 [Term]
 id: PATO:0000701
@@ -1572,7 +1371,7 @@ def: "A texture quality inhering in a bearer by virtue of the bearer's processin
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0000150 ! texture
-relationship: is_opposite_of PATO:0000700 ! rough
+property_value: RO:0002604 PATO:0000700
 
 [Term]
 id: PATO:0000760
@@ -1585,7 +1384,7 @@ is_a: PATO:0001707 ! behavioural active
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001707 ! behavioural active
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000761 ! decreased behavioural activity
+property_value: RO:0002604 PATO:0000761
 
 [Term]
 id: PATO:0000761
@@ -1598,7 +1397,7 @@ is_a: PATO:0001707 ! behavioural active
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001707 ! behavioural active
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000760 ! increased behavioural activity
+property_value: RO:0002604 PATO:0000760
 
 [Term]
 id: PATO:0000763
@@ -1610,38 +1409,6 @@ synonym: "palsy" NARROW []
 is_a: PATO:0002076 ! movement behavioral quality
 
 [Term]
-id: PATO:0000769
-name: coordinated
-namespace: quality
-def: "A coordination quality of inhering in a bearer by virtue of the bearer's having skillful and effective interaction of movement." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0000188 ! coordination
-disjoint_from: PATO:0000770 ! uncoordinated
-relationship: is_opposite_of PATO:0000770 ! uncoordinated
-
-[Term]
-id: PATO:0000770
-name: uncoordinated
-namespace: quality
-def: "A coordination quality of inhering in a bearer by virtue of the bearer's lacking skillful and effective interaction of movement." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0000188 ! coordination
-relationship: is_opposite_of PATO:0000769 ! coordinated
-
-[Term]
-id: PATO:0000888
-name: female fertile
-namespace: quality
-def: "A female fertility quality inhering in a female by virtue of the bearer's disposition to initiate, sustain, or support reproduction." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0000277 ! female fertility
-disjoint_from: PATO:0000892 ! female sterile
-relationship: is_opposite_of PATO:0000892 ! female sterile
-
-[Term]
 id: PATO:0000890
 name: male sterile
 namespace: quality
@@ -1650,18 +1417,7 @@ subset: disposition_slim
 subset: value_slim
 synonym: "male infertile" RELATED []
 is_a: PATO:0000956 ! sterile
-disjoint_from: PATO:0000891 ! male fertile
-relationship: is_opposite_of PATO:0000891 ! male fertile
-
-[Term]
-id: PATO:0000891
-name: male fertile
-namespace: quality
-def: "A male fertility quality inhering in a male by virtue of the bearer's being capable of initiating, sustaining, or supporting reproduction." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0000279 ! male fertility
-relationship: is_opposite_of PATO:0000890 ! male sterile
+property_value: RO:0002604 PATO:0000891
 
 [Term]
 id: PATO:0000892
@@ -1672,7 +1428,7 @@ subset: disposition_slim
 subset: value_slim
 synonym: "female infertile" RELATED []
 is_a: PATO:0000956 ! sterile
-relationship: is_opposite_of PATO:0000888 ! female fertile
+property_value: RO:0002604 PATO:0000888
 
 [Term]
 id: PATO:0000911
@@ -1686,7 +1442,7 @@ is_a: PATO:0000161 ! rate
 is_a: PATO:0002302 ! decreased process quality
 intersection_of: PATO:0000161 ! rate
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000912 ! increased rate
+property_value: RO:0002604 PATO:0000912
 
 [Term]
 id: PATO:0000912
@@ -1701,7 +1457,7 @@ is_a: PATO:0000161 ! rate
 is_a: PATO:0002304 ! increased process quality
 intersection_of: PATO:0000161 ! rate
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000911 ! decreased rate
+property_value: RO:0002604 PATO:0000911
 
 [Term]
 id: PATO:0000915
@@ -1798,17 +1554,6 @@ synonym: "plumbeous" RELATED []
 is_a: PATO:0000014 ! color
 
 [Term]
-id: PATO:0000955
-name: fertile
-namespace: quality
-def: "A fertility quality inhering in a bearer by virtue of the bearer's being capable of initiating, sustaining, or supporting reproduction." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0000274 ! fertility
-disjoint_from: PATO:0000956 ! sterile
-relationship: is_opposite_of PATO:0000956 ! sterile
-
-[Term]
 id: PATO:0000956
 name: sterile
 namespace: quality
@@ -1816,7 +1561,7 @@ def: "A fertility quality inhering in a bearer by virtue of the bearer's being i
 subset: disposition_slim
 subset: value_slim
 is_a: PATO:0000274 ! fertility
-relationship: is_opposite_of PATO:0000955 ! fertile
+property_value: RO:0002604 PATO:0000955
 
 [Term]
 id: PATO:0000957
@@ -1837,18 +1582,7 @@ synonym: "clouding" RELATED []
 synonym: "cloudy" RELATED []
 synonym: "non-transparent" EXACT []
 is_a: PATO:0000957 ! opacity
-relationship: is_opposite_of PATO:0000964 ! transparent
-
-[Term]
-id: PATO:0000964
-name: transparent
-namespace: quality
-def: "A optical quality inhering in a bearer by virtue of the bearer's lacking opacity." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-synonym: "clear" EXACT []
-is_a: PATO:0000957 ! opacity
-relationship: is_opposite_of PATO:0000963 ! opaque
+property_value: RO:0002604 PATO:0000964
 
 [Term]
 id: PATO:0000965
@@ -1952,7 +1686,7 @@ subset: disposition_slim
 subset: relational_slim
 synonym: "susceptibility" EXACT []
 is_a: PATO:0000085 ! sensitivity toward
-relationship: is_opposite_of PATO:0001046 ! resistance to
+property_value: RO:0002604 PATO:0001046
 
 [Term]
 id: PATO:0001046
@@ -1965,7 +1699,7 @@ subset: relational_slim
 subset: scalar_slim
 synonym: "resistance" EXACT []
 is_a: PATO:0001995 ! organismal quality
-relationship: is_opposite_of PATO:0001043 ! susceptibility toward
+property_value: RO:0002604 PATO:0001043
 
 [Term]
 id: PATO:0001152
@@ -1977,20 +1711,7 @@ subset: relational_slim
 subset: value_slim
 synonym: "susceptible" EXACT []
 is_a: PATO:0001043 ! susceptibility toward
-disjoint_from: PATO:0001153 ! insusceptible toward
-relationship: is_opposite_of PATO:0001153 ! insusceptible toward
-
-[Term]
-id: PATO:0001153
-name: insusceptible toward
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's lacking susceptibilty toward an external stimulus." [PATO:GVG]
-subset: disposition_slim
-subset: relational_slim
-subset: value_slim
-synonym: "insusceptible" EXACT []
-is_a: PATO:0001043 ! susceptibility toward
-relationship: is_opposite_of PATO:0001152 ! susceptible toward
+property_value: RO:0002604 PATO:0001153
 
 [Term]
 id: PATO:0001154
@@ -1999,7 +1720,7 @@ namespace: quality
 def: "A quality inhering in a bearer by virtue of the bearer's length being notably higher than its width." [WordNet:WordNet]
 subset: value_slim
 is_a: PATO:0000052 ! shape
-relationship: is_opposite_of PATO:0002364 ! shortened
+property_value: RO:0002604 PATO:0002364
 
 [Term]
 id: PATO:0001159
@@ -2022,7 +1743,7 @@ is_a: PATO:0001159 ! concentrated
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001159 ! concentrated
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001163 ! decreased concentration
+property_value: RO:0002604 PATO:0001163
 
 [Term]
 id: PATO:0001163
@@ -2036,7 +1757,7 @@ is_a: PATO:0001159 ! concentrated
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001159 ! concentrated
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001162 ! increased concentration
+property_value: RO:0002604 PATO:0001162
 
 [Term]
 id: PATO:0001164
@@ -2054,17 +1775,7 @@ namespace: quality
 def: "A structural quality inhering in a bearer by virtue of the bearer being harmed or injured or spoiled, such that its functionality is impaired." [WordNet:WordNet]
 subset: value_slim
 is_a: PATO:0001020 ! damage
-disjoint_from: PATO:0001168 ! undamaged
-relationship: is_opposite_of PATO:0001168 ! undamaged
-
-[Term]
-id: PATO:0001168
-name: undamaged
-namespace: quality
-def: "A structural quality inhering in a bearer by virtue of not being harmed or injured or spoiled." [WordNet:WordNet]
-subset: value_slim
-is_a: PATO:0001020 ! damage
-relationship: is_opposite_of PATO:0001167 ! damaged
+property_value: RO:0002604 PATO:0001168
 
 [Term]
 id: PATO:0001171
@@ -2075,19 +1786,7 @@ subset: disposition_slim
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0001031 ! elasticity
-disjoint_from: PATO:0001172 ! inelastic
-relationship: is_opposite_of PATO:0001172 ! inelastic
-
-[Term]
-id: PATO:0001172
-name: inelastic
-namespace: quality
-def: "An elasticity quality inhering in a bearer by virtue of the bearer's inability to recover its size and shape after deformation in any way." [merriam-webster:merriam-webster]
-subset: disposition_slim
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0001031 ! elasticity
-relationship: is_opposite_of PATO:0001171 ! elastic
+property_value: RO:0002604 PATO:0001172
 
 [Term]
 id: PATO:0001195
@@ -2109,17 +1808,6 @@ subset: value_slim
 is_a: PATO:0001890 ! tripartite
 
 [Term]
-id: PATO:0001229
-name: high saturation
-namespace: quality
-def: "A color saturation which is of high purity." [PATOC:MAH]
-subset: value_slim
-synonym: "bright" EXACT []
-synonym: "vivid" RELATED []
-is_a: PATO:0000017 ! color saturation
-relationship: is_opposite_of PATO:0000328 ! low saturation
-
-[Term]
 id: PATO:0001230
 name: strength
 namespace: quality
@@ -2127,31 +1815,6 @@ def: "A quality inhering in a bearer by virtue of the bearer's power or force." 
 subset: attribute_slim
 subset: scalar_slim
 is_a: PATO:0001018 ! physical quality
-
-[Term]
-id: PATO:0001233
-name: dorsal to
-namespace: quality
-def: "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the back or upper surface of an organism relative to another entity." [PATOC:nw]
-subset: relational_slim
-subset: value_slim
-synonym: "dorsal" EXACT []
-synonym: "posterior_to (human torso)" EXACT []
-synonym: "superior_to (human head)" EXACT []
-is_a: PATO:0000140 ! position
-relationship: is_opposite_of PATO:0001234 ! distal to
-
-[Term]
-id: PATO:0001234
-name: distal to
-namespace: quality
-def: "A spatial quality inhering in a bearer by virtue of the bearer's being located further from a more centrally located entity." [PATOC:nw]
-subset: mpath_slim
-subset: relational_slim
-subset: value_slim
-synonym: "distal" EXACT []
-is_a: PATO:0000140 ! position
-relationship: is_opposite_of PATO:0001233 ! dorsal to
 
 [Term]
 id: PATO:0001236
@@ -2232,15 +1895,6 @@ synonym: "time" RELATED []
 is_a: PATO:0002062 ! physical quality of a process
 
 [Term]
-id: PATO:0001333
-name: temporally extended
-namespace: quality
-def: "A quality of a process which ends later than the natural end time." [PATOC:melissa]
-subset: value_slim
-is_a: PATO:0002304 ! increased process quality
-is_a: PATO:0002324 ! offset quality
-
-[Term]
 id: PATO:0001334
 name: diameter
 namespace: quality
@@ -2266,7 +1920,7 @@ def: "A shape quality that obtains by virtue of the bearer having inward facing 
 subset: cell_quality
 subset: value_slim
 is_a: PATO:0002005 ! concavity
-relationship: is_opposite_of PATO:0001857 ! concave
+property_value: RO:0002604 PATO:0001857
 
 [Term]
 id: PATO:0001362
@@ -2276,44 +1930,7 @@ def: "A structural quality inhering in a bearer by virtue of the bearer's dispos
 subset: disposition_slim
 subset: value_slim
 is_a: PATO:0001662 ! fragility
-disjoint_from: PATO:0001716 ! non-fragile
-relationship: is_opposite_of PATO:0001716 ! non-fragile
-
-[Term]
-id: PATO:0001374
-name: ploidy
-namespace: quality
-def: "A cellular quality inhering in a bearer by virtue of the bearer's number of homologous sets of chromosomes in the nucleus or primary chromosome-containing compartment of the cell, each set essentially coding for all the biological traits of the organism." [Wikipedia:http\://en.wikipedia.org/wiki/Ploidy]
-subset: attribute_slim
-is_a: PATO:0001396 ! cellular quality
-
-[Term]
-id: PATO:0001375
-name: haploid
-namespace: quality
-def: "A ploidy quality inhering in a bearer by virtue of the bearer's containing a single set of homologous chromosomes." [Wikipedia:http\://en.wikipedia.org/wiki/Haploid]
-subset: cell_quality
-subset: value_slim
-is_a: PATO:0001393 ! euploid
-
-[Term]
-id: PATO:0001393
-name: euploid
-namespace: quality
-def: "A ploidy quality inhering in a bearer by virtue of the bearer's containing an integral multiple of the monoploid number, possibly excluding the sex-determining chromosomes." [Wikipedia:http\://en.wikipedia.org/wiki/Euploid]
-subset: cell_quality
-subset: value_slim
-is_a: PATO:0001374 ! ploidy
-
-[Term]
-id: PATO:0001394
-name: diploid
-namespace: quality
-def: "A ploidy quality inhering in a bearer by virtue of the bearer's having two copies (homologs) of each chromosome, usually one from the mother and one from the father." [Wikipedia:http\://en.wikipedia.org/wiki/Diploid]
-comment: The exact number may be one or two different from the 2n number and still be classified as diploidy (although with aneuploidy). Nearly all mammals are diploid organisms, although all individuals have some small fracton of cells that are polyploidy.
-subset: cell_quality
-subset: value_slim
-is_a: PATO:0001393 ! euploid
+property_value: RO:0002604 PATO:0001716
 
 [Term]
 id: PATO:0001396
@@ -2321,75 +1938,6 @@ name: cellular quality
 namespace: quality
 def: "A monadic quality of continuant that exists at the cellular level of organisation." [PATOC:GVG]
 is_a: PATO:0001241 ! physical object quality
-
-[Term]
-id: PATO:0001397
-name: cellular potency
-namespace: quality
-def: "A cellular quality that arises by virtue of whether the bearer's disposition to differentiate into one or more mature cell types." [PATOC:GVG]
-subset: attribute_slim
-subset: disposition_slim
-is_a: PATO:0001396 ! cellular quality
-
-[Term]
-id: PATO:0001400
-name: unipotent
-namespace: quality
-def: "A cellular potency that is the capacity to produce only one differentiated cell type." [Wikipedia:http\://en.wikipedia.org/wiki/Unipotent]
-comment: Unipotent cells have the quality of self-renewal which distinguishes them from non-stem cells.
-subset: cell_quality
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0001397 ! cellular potency
-
-[Term]
-id: PATO:0001401
-name: oligopotent
-namespace: quality
-def: "A cellular potency that is the capacity to form multiple differentiated cell types of a specific lineage and lack self renewing capacity." [PATOC:MAH]
-comment: Less potent than multipotent, often thought of as precursor or progenitor cell status.
-subset: cell_quality
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0001397 ! cellular potency
-
-[Term]
-id: PATO:0001402
-name: multipotent
-namespace: quality
-def: "A cellular potency that is the capacity to form multiple differentiated cell types." [Wikipedia:http\://en.wikipedia.org/wiki/Multipotent]
-subset: cell_quality
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0001397 ! cellular potency
-
-[Term]
-id: PATO:0001404
-name: nucleate quality
-namespace: quality
-def: "A cellular quality inhering in a bearer by virtue of bearer's number of nuclei." [PATOC:GVG]
-subset: attribute_slim
-is_a: PATO:0001396 ! cellular quality
-
-[Term]
-id: PATO:0001405
-name: anucleate
-namespace: quality
-def: "A nucleate quality inhering in a bearer by virtue of the bearer's having no nucleus." [Biology-online:Biology-online]
-subset: cell_quality
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0001404 ! nucleate quality
-
-[Term]
-id: PATO:0001407
-name: mononucleate
-namespace: quality
-def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one nucleus." [Biology-online:Biology-online]
-subset: cell_quality
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0002505 ! nucleated
 
 [Term]
 id: PATO:0001409
@@ -2400,16 +1948,6 @@ subset: cell_quality
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0002007 ! convex 3-D shape
-
-[Term]
-id: PATO:0001410
-name: striated
-namespace: quality
-def: "A shape quality inhering in a bearer by virtue of the bearer's being marked by narrow lines or grooves, usually parallel." [Biology-online:Biology-online]
-subset: cell_quality
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0000052 ! shape
 
 [Term]
 id: PATO:0001419
@@ -2499,14 +2037,6 @@ synonym: "calcification" NARROW []
 is_a: PATO:0000025 ! composition
 
 [Term]
-id: PATO:0001448
-name: ossified
-namespace: quality
-def: "A composition quality inhering in an bearer by virtue of the bearer's being hardened by the deposition of calcium into bone." [MAMMALOGY:MAMMALOGY]
-subset: value_slim
-is_a: PATO:0001447 ! calcified
-
-[Term]
 id: PATO:0001449
 name: cartilaginous
 namespace: quality
@@ -2585,7 +2115,7 @@ is_a: PATO:0000587 ! decreased size
 is_a: PATO:0001595 ! depth
 intersection_of: PATO:0001595 ! depth
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001596 ! increased depth
+property_value: RO:0002604 PATO:0001596
 
 [Term]
 id: PATO:0001473
@@ -2617,7 +2147,7 @@ is_a: PATO:0000140 ! position
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000140 ! position
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001476 ! decreased position
+property_value: RO:0002604 PATO:0001476
 
 [Term]
 id: PATO:0001476
@@ -2630,7 +2160,7 @@ is_a: PATO:0000140 ! position
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000140 ! position
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001475 ! increased position
+property_value: RO:0002604 PATO:0001475
 
 [Term]
 id: PATO:0001477
@@ -2721,16 +2251,6 @@ synonym: "taper" EXACT []
 is_a: PATO:0001419 ! sharp
 
 [Term]
-id: PATO:0001501
-name: immature
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's lacking complete growth, differentiation, or development." [Merriam-Webster:Merriam-Webster]
-subset: value_slim
-synonym: "underdeveloped" RELATED []
-is_a: PATO:0000261 ! maturity
-relationship: is_opposite_of PATO:0001701 ! mature
-
-[Term]
 id: PATO:0001505
 name: separated from
 namespace: quality
@@ -2769,7 +2289,7 @@ def: "A functionality quality held by the bearer when the latter is able to perf
 subset: disposition_slim
 subset: value_slim
 is_a: PATO:0001509 ! functionality
-relationship: is_opposite_of PATO:0001511 ! non-functional
+property_value: RO:0002604 PATO:0001511
 
 [Term]
 id: PATO:0001511
@@ -2784,7 +2304,7 @@ synonym: "disfunctional" EXACT []
 synonym: "failure" RELATED []
 synonym: "functional failure" EXACT []
 is_a: PATO:0001509 ! functionality
-relationship: is_opposite_of PATO:0001510 ! functional
+property_value: RO:0002604 PATO:0001510
 
 [Term]
 id: PATO:0001512
@@ -2808,17 +2328,6 @@ subset: disposition_slim
 is_a: PATO:0001546 ! quality of a solid
 
 [Term]
-id: PATO:0001544
-name: flexible
-namespace: quality
-def: "A physical quality inhering in a bearer by virtue of the bearer's ability of being turned, bowed, or twisted without breaking." [merriam-webster:merriam-webster]
-subset: disposition_slim
-subset: value_slim
-synonym: "bendy" EXACT []
-is_a: PATO:0001543 ! flexibility
-relationship: is_opposite_of PATO:0001545 ! inflexible
-
-[Term]
 id: PATO:0001545
 name: inflexible
 namespace: quality
@@ -2828,7 +2337,7 @@ subset: value_slim
 synonym: "stiff" EXACT []
 synonym: "stiffness" RELATED []
 is_a: PATO:0001543 ! flexibility
-relationship: is_opposite_of PATO:0001544 ! flexible
+property_value: RO:0002604 PATO:0001544
 
 [Term]
 id: PATO:0001546
@@ -2862,7 +2371,7 @@ is_a: PATO:0000516 ! sensitive toward
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000516 ! sensitive toward
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001550 ! decreased sensitivity toward
+property_value: RO:0002604 PATO:0001550
 
 [Term]
 id: PATO:0001550
@@ -2878,7 +2387,7 @@ is_a: PATO:0000516 ! sensitive toward
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000516 ! sensitive toward
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001549 ! increased sensitivity toward
+property_value: RO:0002604 PATO:0001549
 
 [Term]
 id: PATO:0001551
@@ -2893,7 +2402,7 @@ is_a: PATO:0001457 ! sensitivity of a process
 is_a: PATO:0002304 ! increased process quality
 intersection_of: PATO:0001457 ! sensitivity of a process
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001552 ! decreased sensitivity of a process
+property_value: RO:0002604 PATO:0001552
 
 [Term]
 id: PATO:0001552
@@ -2908,7 +2417,7 @@ is_a: PATO:0001457 ! sensitivity of a process
 is_a: PATO:0002302 ! decreased process quality
 intersection_of: PATO:0001457 ! sensitivity of a process
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001551 ! increased sensitivity of a process
+property_value: RO:0002604 PATO:0001551
 
 [Term]
 id: PATO:0001555
@@ -2971,7 +2480,7 @@ is_a: PATO:0000125 ! mass
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000125 ! mass
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001563 ! increased mass
+property_value: RO:0002604 PATO:0001563
 
 [Term]
 id: PATO:0001563
@@ -2986,7 +2495,7 @@ is_a: PATO:0000125 ! mass
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000125 ! mass
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001562 ! decreased mass
+property_value: RO:0002604 PATO:0001562
 
 [Term]
 id: PATO:0001564
@@ -2995,37 +2504,6 @@ namespace: quality
 def: "A quality of a process inhering in a bearer by virtue of the bearer's processual parts." [PATOC:GVG]
 subset: relational_slim
 is_a: PATO:0001236 ! process quality
-
-[Term]
-id: PATO:0001566
-name: distributed
-namespace: quality
-alt_id: PATO:0001513
-def: "A spatial pattern inhering in a bearer by virtue of the bearer's being spread out or scattered about or divided up." [WordNet:WordNet]
-subset: mpath_slim
-subset: value_slim
-synonym: "diffuse" EXACT []
-synonym: "scattered" EXACT []
-is_a: PATO:0000060 ! spatial pattern
-relationship: is_opposite_of PATO:0001567 ! undistributed
-
-[Term]
-id: PATO:0001567
-name: undistributed
-namespace: quality
-def: "A spatial pattern inhering in a bearer by virtue of the bearer's not being spread out or scattered about or divided up." [WordNet:WordNet]
-subset: value_slim
-is_a: PATO:0000060 ! spatial pattern
-relationship: is_opposite_of PATO:0001566 ! distributed
-
-[Term]
-id: PATO:0001570
-name: having decreased processual parts
-namespace: quality
-def: "A quality of a process inhering in a bearer by virtue of the bearer's having fewer processual parts." [PATO:GVG]
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0001564 ! extra or missing processual parts
 
 [Term]
 id: PATO:0001571
@@ -3047,7 +2525,7 @@ is_a: PATO:0001025 ! pressure
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001025 ! pressure
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001576 ! increased pressure
+property_value: RO:0002604 PATO:0001576
 
 [Term]
 id: PATO:0001576
@@ -3060,7 +2538,7 @@ is_a: PATO:0001025 ! pressure
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001025 ! pressure
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001575 ! decreased pressure
+property_value: RO:0002604 PATO:0001575
 
 [Term]
 id: PATO:0001579
@@ -3100,7 +2578,7 @@ is_a: PATO:0000406 ! curved
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000406 ! curved
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001593 ! decreased curvature
+property_value: RO:0002604 PATO:0001593
 
 [Term]
 id: PATO:0001593
@@ -3112,7 +2590,7 @@ is_a: PATO:0000406 ! curved
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000406 ! curved
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001592 ! increased curvature
+property_value: RO:0002604 PATO:0001592
 
 [Term]
 id: PATO:0001594
@@ -3143,7 +2621,7 @@ is_a: PATO:0000586 ! increased size
 is_a: PATO:0001595 ! depth
 intersection_of: PATO:0001595 ! depth
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001472 ! decreased depth
+property_value: RO:0002604 PATO:0001472
 
 [Term]
 id: PATO:0001597
@@ -3234,7 +2712,7 @@ is_a: PATO:0001439 ! tonicity
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001439 ! tonicity
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001619 ! decreased tonicity
+property_value: RO:0002604 PATO:0001619
 
 [Term]
 id: PATO:0001619
@@ -3248,7 +2726,7 @@ is_a: PATO:0001439 ! tonicity
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001439 ! tonicity
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001618 ! increased tonicity
+property_value: RO:0002604 PATO:0001618
 
 [Term]
 id: PATO:0001623
@@ -3282,7 +2760,7 @@ is_a: PATO:0001510 ! functional
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001510 ! functional
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001625 ! increased functionality
+property_value: RO:0002604 PATO:0001625
 
 [Term]
 id: PATO:0001625
@@ -3296,7 +2774,7 @@ is_a: PATO:0001510 ! functional
 is_a: PATO:0001559 ! having extra function
 intersection_of: PATO:0001510 ! functional
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001624 ! decreased functionality
+property_value: RO:0002604 PATO:0001624
 
 [Term]
 id: PATO:0001626
@@ -3309,16 +2787,6 @@ synonym: "adequacy" RELATED []
 is_a: PATO:0001509 ! functionality
 
 [Term]
-id: PATO:0001627
-name: sufficient
-namespace: quality
-def: "A wholeness quality inhering in a bearer by virtue of the bearer's has enough functionality." [PATO:GVG]
-subset: value_slim
-synonym: "adequate" RELATED []
-is_a: PATO:0001626 ! sufficiency
-relationship: is_opposite_of PATO:0001628 ! insufficient
-
-[Term]
 id: PATO:0001628
 name: insufficient
 namespace: quality
@@ -3326,31 +2794,7 @@ def: "A wholeness quality inhering in a bearer by virtue of the bearer's lacks e
 subset: value_slim
 synonym: "inadequate" RELATED []
 is_a: PATO:0001626 ! sufficiency
-relationship: is_opposite_of PATO:0001627 ! sufficient
-
-[Term]
-id: PATO:0001632
-name: anterior to
-namespace: quality
-def: "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the front of an organism relative to another entity." [PATOC:nw]
-subset: mpath_slim
-subset: relational_slim
-subset: value_slim
-synonym: "preceding" EXACT []
-synonym: "ventral_to" EXACT []
-is_a: PATO:0000140 ! position
-
-[Term]
-id: PATO:0001633
-name: posterior to
-namespace: quality
-def: "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the rear of an organism relative to another entity." [PATOC:nw]
-subset: mpath_slim
-subset: relational_slim
-subset: value_slim
-synonym: "posterior (human torso)" EXACT []
-synonym: "superior (human head)" EXACT []
-is_a: PATO:0000140 ! position
+property_value: RO:0002604 PATO:0001627
 
 [Term]
 id: PATO:0001645
@@ -3401,18 +2845,6 @@ is_a: PATO:0000140 ! position
 relationship: has_part PATO:0000133 ! orientation
 
 [Term]
-id: PATO:0001653
-name: aligned with
-namespace: quality
-def: "An alignment quality inhering in a bearer by virtue of the bearer's being in a proper spatial positioning with respect to an additional entity." [PATO:GVG]
-subset: relational_slim
-subset: value_slim
-synonym: "aligned" EXACT []
-synonym: "aligned to" RELATED []
-is_a: PATO:0001652 ! alignment
-relationship: is_opposite_of PATO:0001654 ! misaligned with
-
-[Term]
 id: PATO:0001654
 name: misaligned with
 namespace: quality
@@ -3422,7 +2854,7 @@ subset: value_slim
 synonym: "misaligned" EXACT []
 synonym: "unaligned with" EXACT []
 is_a: PATO:0001652 ! alignment
-relationship: is_opposite_of PATO:0001653 ! aligned with
+property_value: RO:0002604 PATO:0001653
 
 [Term]
 id: PATO:0001662
@@ -3448,7 +2880,7 @@ is_a: PATO:0001152 ! susceptible toward
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001152 ! susceptible toward
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001670 ! decreased susceptibility toward
+property_value: RO:0002604 PATO:0001670
 
 [Term]
 id: PATO:0001670
@@ -3464,33 +2896,7 @@ is_a: PATO:0001152 ! susceptible toward
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001152 ! susceptible toward
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001669 ! increased susceptibility toward
-
-[Term]
-id: PATO:0001671
-name: increased distribution
-namespace: quality
-def: "A distribution which is relatively high." [PATOC:GVG]
-subset: value_slim
-synonym: "high distribution" EXACT []
-is_a: PATO:0001475 ! increased position
-is_a: PATO:0001566 ! distributed
-intersection_of: PATO:0001566 ! distributed
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001672 ! decreased distribution
-
-[Term]
-id: PATO:0001672
-name: decreased distribution
-namespace: quality
-def: "A distribution which is relatively low." [PATOC:GVG]
-subset: value_slim
-synonym: "low distribution" EXACT []
-is_a: PATO:0001476 ! decreased position
-is_a: PATO:0001566 ! distributed
-intersection_of: PATO:0001566 ! distributed
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001671 ! increased distribution
+property_value: RO:0002604 PATO:0001669
 
 [Term]
 id: PATO:0001673
@@ -3501,41 +2907,6 @@ comment: Cystic is an abnormal condition.
 subset: value_slim
 synonym: "cysts" NARROW []
 is_a: PATO:0002014 ! structure, cavities
-
-[Term]
-id: PATO:0001687
-name: elevation
-namespace: quality
-def: "A positional quality inhering in a bearer by virtue of the bearer's vertical distance of a point above or below a reference surface." [Trailillustrated:Trailillustrated]
-subset: attribute_slim
-is_a: PATO:0000140 ! position
-
-[Term]
-id: PATO:0001688
-name: increased elevation
-namespace: quality
-def: "An elevation which is relatively high." [PATOC:GVG]
-subset: value_slim
-synonym: "elevated" RELATED []
-synonym: "high elevation" EXACT []
-is_a: PATO:0001475 ! increased position
-is_a: PATO:0001687 ! elevation
-intersection_of: PATO:0001687 ! elevation
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001689 ! decreased elevation
-
-[Term]
-id: PATO:0001689
-name: decreased elevation
-namespace: quality
-def: "An elevation which is relatively low." [PATOC:GVG]
-subset: value_slim
-synonym: "low elevation" EXACT []
-is_a: PATO:0001476 ! decreased position
-is_a: PATO:0001687 ! elevation
-intersection_of: PATO:0001687 ! elevation
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001688 ! increased elevation
 
 [Term]
 id: PATO:0001697
@@ -3550,7 +2921,7 @@ is_a: PATO:0000547 ! photosensitive
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000547 ! photosensitive
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001698 ! increased photosensitivity
+property_value: RO:0002604 PATO:0001698
 
 [Term]
 id: PATO:0001698
@@ -3565,27 +2936,7 @@ is_a: PATO:0000547 ! photosensitive
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000547 ! photosensitive
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001697 ! decreased photosensitivity
-
-[Term]
-id: PATO:0001701
-name: mature
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's exhibiting complete growth, differentiation, or development." [Merriam-Webster:Merriam-Webster]
-subset: value_slim
-is_a: PATO:0000261 ! maturity
-relationship: is_opposite_of PATO:0001501 ! immature
-
-[Term]
-id: PATO:0001706
-name: behavioural inactive
-namespace: quality
-def: "A behavioral quality inhering in a bearer by virtue of the bearer's disposition to lack activity." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-is_a: PATO:0002265 ! behavioural activity
-disjoint_from: PATO:0001707 ! behavioural active
-relationship: is_opposite_of PATO:0001707 ! behavioural active
+property_value: RO:0002604 PATO:0001697
 
 [Term]
 id: PATO:0001707
@@ -3594,7 +2945,7 @@ namespace: quality
 def: "A behavioral quality of a process inhering in a bearer by virtue of the bearer's exhibiting marked activity." [PATOC:GVG]
 subset: value_slim
 is_a: PATO:0002265 ! behavioural activity
-relationship: is_opposite_of PATO:0001706 ! behavioural inactive
+property_value: RO:0002604 PATO:0001706
 
 [Term]
 id: PATO:0001708
@@ -3633,7 +2984,7 @@ is_a: PATO:0000573 ! increased length
 is_a: PATO:0001711 ! perimeter
 intersection_of: PATO:0001711 ! perimeter
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001713 ! decreased perimeter
+property_value: RO:0002604 PATO:0001713
 
 [Term]
 id: PATO:0001713
@@ -3645,7 +2996,7 @@ is_a: PATO:0000574 ! decreased length
 is_a: PATO:0001711 ! perimeter
 intersection_of: PATO:0001711 ! perimeter
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001712 ! increased perimeter
+property_value: RO:0002604 PATO:0001712
 
 [Term]
 id: PATO:0001714
@@ -3657,7 +3008,7 @@ is_a: PATO:0000573 ! increased length
 is_a: PATO:0001334 ! diameter
 intersection_of: PATO:0001334 ! diameter
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001715 ! decreased diameter
+property_value: RO:0002604 PATO:0001715
 
 [Term]
 id: PATO:0001715
@@ -3669,31 +3020,7 @@ is_a: PATO:0000574 ! decreased length
 is_a: PATO:0001334 ! diameter
 intersection_of: PATO:0001334 ! diameter
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001714 ! increased diameter
-
-[Term]
-id: PATO:0001716
-name: non-fragile
-namespace: quality
-def: "A structural quality inhering in a bearer by virtue of the bearer's ability to withstand great strain without tearing or breaking." [thefreedictionary.com:thefreedictionary.com]
-subset: attribute_slim
-subset: disposition_slim
-synonym: "resilient" RELATED []
-synonym: "strong" RELATED []
-synonym: "tough" RELATED []
-is_a: PATO:0001662 ! fragility
-relationship: is_opposite_of PATO:0001362 ! fragile
-
-[Term]
-id: PATO:0001727
-name: disposition
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's prevailing tendency, mood, or inclination." [Merriam-Webster:Merriam-Webster]
-subset: attribute_slim
-subset: disposition_slim
-subset: relational_slim
-synonym: "tendency" RELATED []
-is_a: PATO:0001241 ! physical object quality
+property_value: RO:0002604 PATO:0001714
 
 [Term]
 id: PATO:0001739
@@ -3702,34 +3029,6 @@ namespace: quality
 def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." [PATOC:GVG]
 subset: attribute_slim
 is_a: PATO:0001018 ! physical quality
-
-[Term]
-id: PATO:0001776
-name: increased flexibility
-namespace: quality
-def: "A flexibility which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "high flexibility" EXACT []
-is_a: PATO:0001544 ! flexible
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0001544 ! flexible
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001777 ! decreased flexibility
-
-[Term]
-id: PATO:0001777
-name: decreased flexibility
-namespace: quality
-def: "A flexibility which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "low flexibility" EXACT []
-is_a: PATO:0001544 ! flexible
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0001544 ! flexible
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001776 ! increased flexibility
 
 [Term]
 id: PATO:0001778
@@ -3742,7 +3041,7 @@ is_a: PATO:0001230 ! strength
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001230 ! strength
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001779 ! decreased strength
+property_value: RO:0002604 PATO:0001779
 
 [Term]
 id: PATO:0001779
@@ -3755,7 +3054,7 @@ is_a: PATO:0001230 ! strength
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001230 ! strength
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001778 ! increased strength
+property_value: RO:0002604 PATO:0001778
 
 [Term]
 id: PATO:0001780
@@ -3779,7 +3078,7 @@ is_a: PATO:0000049 ! intensity
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0000049 ! intensity
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001783 ! decreased intensity
+property_value: RO:0002604 PATO:0001783
 
 [Term]
 id: PATO:0001783
@@ -3792,7 +3091,7 @@ is_a: PATO:0000049 ! intensity
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0000049 ! intensity
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001782 ! increased intensity
+property_value: RO:0002604 PATO:0001782
 
 [Term]
 id: PATO:0001784
@@ -3853,7 +3152,7 @@ is_a: PATO:0001164 ! dense
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001164 ! dense
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001790 ! decreased mass density
+property_value: RO:0002604 PATO:0001790
 
 [Term]
 id: PATO:0001790
@@ -3866,7 +3165,7 @@ is_a: PATO:0001164 ! dense
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001164 ! dense
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001788 ! increased mass density
+property_value: RO:0002604 PATO:0001788
 
 [Term]
 id: PATO:0001793
@@ -3898,7 +3197,7 @@ is_a: PATO:0000404 ! coiled
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000404 ! coiled
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001796 ! decreased coiling
+property_value: RO:0002604 PATO:0001796
 
 [Term]
 id: PATO:0001796
@@ -3912,7 +3211,7 @@ is_a: PATO:0000404 ! coiled
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000404 ! coiled
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001795 ! increased coiling
+property_value: RO:0002604 PATO:0001795
 
 [Term]
 id: PATO:0001800
@@ -3973,19 +3272,7 @@ subset: value_slim
 synonym: "high fatigability" EXACT []
 is_a: PATO:0001779 ! decreased strength
 is_a: PATO:0001815 ! fatigability
-relationship: is_opposite_of PATO:0001817 ! decreased fatigability
-
-[Term]
-id: PATO:0001817
-name: decreased fatigability
-namespace: quality
-def: "A fatigability which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "low fatigability" EXACT []
-is_a: PATO:0001778 ! increased strength
-is_a: PATO:0001815 ! fatigability
-relationship: is_opposite_of PATO:0001816 ! increased fatigability
+property_value: RO:0002604 PATO:0001817
 
 [Term]
 id: PATO:0001818
@@ -3996,7 +3283,7 @@ subset: hpo_slim
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0002026 ! non-progressive
+property_value: RO:0002604 PATO:0002026
 
 [Term]
 id: PATO:0001819
@@ -4017,7 +3304,7 @@ subset: mpath_slim
 subset: value_slim
 synonym: "unperforated" EXACT []
 is_a: PATO:0002014 ! structure, cavities
-relationship: is_opposite_of PATO:0002112 ! perforate
+property_value: RO:0002604 PATO:0002112
 
 [Term]
 id: PATO:0001822
@@ -4030,17 +3317,6 @@ subset: scalar_slim
 is_a: PATO:0001018 ! physical quality
 
 [Term]
-id: PATO:0001823
-name: wet
-namespace: quality
-def: "A wetness quality inhering in a bearer by virtue of the bearer's being covered by a liquid." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0001822 ! wetness
-disjoint_from: PATO:0001824 ! dry
-relationship: is_opposite_of PATO:0001824 ! dry
-
-[Term]
 id: PATO:0001824
 name: dry
 namespace: quality
@@ -4048,32 +3324,7 @@ def: "A wetness quality inhering in a bearer by virtue of the bearer's not being
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0001822 ! wetness
-relationship: is_opposite_of PATO:0001823 ! wet
-
-[Term]
-id: PATO:0001825
-name: increased wetness
-namespace: quality
-def: "A wetness quality that is relatively high." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0001823 ! wet
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0001823 ! wet
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001826 ! decreased wetness
-
-[Term]
-id: PATO:0001826
-name: decreased wetness
-namespace: quality
-def: "A wetness quality that is relatively low." [PATOC:GVG]
-subset: value_slim
-synonym: "low wetness" EXACT []
-is_a: PATO:0001823 ! wet
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0001823 ! wet
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001825 ! increased wetness
+property_value: RO:0002604 PATO:0001823
 
 [Term]
 id: PATO:0001827
@@ -4098,90 +3349,6 @@ namespace: quality
 def: "A biological sex quality inhering in an individual or a population by virtue of having internal reproductive organs of female and external sexual characteristics of male." [PATOC:GVG]
 subset: value_slim
 is_a: PATO:0001827 ! pseudohermaphrodite
-
-[Term]
-id: PATO:0001830
-name: decreased female fertility
-namespace: quality
-def: "A female fertility which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "low female fertility" EXACT []
-is_a: PATO:0000888 ! female fertile
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0000888 ! female fertile
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001831 ! increased female fertility
-
-[Term]
-id: PATO:0001831
-name: increased female fertility
-namespace: quality
-def: "A female fertility which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "high female fertility" EXACT []
-is_a: PATO:0000888 ! female fertile
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0000888 ! female fertile
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001830 ! decreased female fertility
-
-[Term]
-id: PATO:0001832
-name: increased male fertility
-namespace: quality
-def: "A male fertility which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "high male fertility" EXACT []
-is_a: PATO:0000891 ! male fertile
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0000891 ! male fertile
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001833 ! decreased male fertility
-
-[Term]
-id: PATO:0001833
-name: decreased male fertility
-namespace: quality
-def: "A male fertility which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "low male fertility" EXACT []
-is_a: PATO:0000891 ! male fertile
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0000891 ! male fertile
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001832 ! increased male fertility
-
-[Term]
-id: PATO:0001834
-name: decreased fertility
-namespace: quality
-def: "A fertility which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "low fertility" EXACT []
-is_a: PATO:0000955 ! fertile
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0000955 ! fertile
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001835 ! increased fertility
-
-[Term]
-id: PATO:0001835
-name: increased fertility
-namespace: quality
-def: "A fertility which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "high fertility" EXACT []
-is_a: PATO:0000955 ! fertile
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0000955 ! fertile
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001834 ! decreased fertility
 
 [Term]
 id: PATO:0001845
@@ -4273,47 +3440,7 @@ def: "A shape quality in a bearer by virtue of the bearer's curving inward." [Wo
 subset: cell_quality
 subset: value_slim
 is_a: PATO:0002005 ! concavity
-relationship: is_opposite_of PATO:0001355 ! convex
-
-[Term]
-id: PATO:0001859
-name: increased coordination
-namespace: quality
-def: "A coordination which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "high coordination" EXACT []
-is_a: PATO:0000769 ! coordinated
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0000769 ! coordinated
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001860 ! decreased coordination
-
-[Term]
-id: PATO:0001860
-name: decreased coordination
-namespace: quality
-def: "A coordination which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: value_slim
-synonym: "low coordination" EXACT []
-is_a: PATO:0000769 ! coordinated
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0000769 ! coordinated
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001859 ! increased coordination
-
-[Term]
-id: PATO:0001861
-name: fasciculated
-namespace: quality
-def: "A structural quality inhering in a bearer by virtue of the bearer's forming a bundle of aligned anatomical fibers, as of muscle or nerve." [answers.com:answers.com]
-subset: mpath_slim
-subset: value_slim
-synonym: "fascicled" EXACT []
-is_a: PATO:0002013 ! fasciculation
-disjoint_from: PATO:0001959 ! defasciculated
-relationship: is_opposite_of PATO:0001959 ! defasciculated
+property_value: RO:0002604 PATO:0001355
 
 [Term]
 id: PATO:0001863
@@ -4324,7 +3451,7 @@ subset: hpo_slim
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0001309 ! duration
-relationship: is_opposite_of PATO:0000389 ! acute
+property_value: RO:0002604 PATO:0000389
 
 [Term]
 id: PATO:0001865
@@ -4441,17 +3568,6 @@ synonym: "clubbed" EXACT []
 is_a: PATO:0002008 ! concave 3-D shape
 
 [Term]
-id: PATO:0001889
-name: scalloped
-namespace: quality
-def: "A surface feature shape quality inhering in a bearer by virtue of the bearer's having the border, edge, or outline cut into a series of segments of circles resembling a scallop-shell." [Oxford:EnglishDictionary]
-subset: cell_quality
-subset: value_slim
-synonym: "crenate" EXACT []
-synonym: "crenulate" EXACT []
-is_a: PATO:0001976 ! serration
-
-[Term]
 id: PATO:0001890
 name: tripartite
 namespace: quality
@@ -4495,7 +3611,7 @@ is_a: PATO:0001648 ! circumference
 is_a: PATO:0001712 ! increased perimeter
 intersection_of: PATO:0001648 ! circumference
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001899 ! decreased circumference
+property_value: RO:0002604 PATO:0001899
 
 [Term]
 id: PATO:0001899
@@ -4507,16 +3623,7 @@ is_a: PATO:0001648 ! circumference
 is_a: PATO:0001713 ! decreased perimeter
 intersection_of: PATO:0001648 ! circumference
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001898 ! increased circumference
-
-[Term]
-id: PATO:0001908
-name: multinucleate
-namespace: quality
-def: "A nucleate quality inhering in a bearer by virtue of the bearer's having more than one nucleus." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0002505 ! nucleated
+property_value: RO:0002604 PATO:0001898
 
 [Term]
 id: PATO:0001910
@@ -4632,7 +3739,7 @@ is_a: PATO:0002302 ! decreased process quality
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001956 ! variability of size
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001958 ! increased variability of size
+property_value: RO:0002604 PATO:0001958
 
 [Term]
 id: PATO:0001958
@@ -4646,16 +3753,7 @@ is_a: PATO:0002304 ! increased process quality
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001956 ! variability of size
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0001957 ! decreased variability of size
-
-[Term]
-id: PATO:0001959
-name: defasciculated
-namespace: quality
-def: "A structural quality inhering in a bearer by virtue of the bearer's in which bundles of aligned anatomical fibers have become separated." [PATOC:mw]
-subset: value_slim
-is_a: PATO:0002013 ! fasciculation
-relationship: is_opposite_of PATO:0001861 ! fasciculated
+property_value: RO:0002604 PATO:0001957
 
 [Term]
 id: PATO:0001973
@@ -4664,14 +3762,6 @@ namespace: quality
 def: "A shape quality inhering in a bearer by virtue of the bearer's being tapering gradually into a rigid point." [ISBN:0881923214]
 subset: value_slim
 is_a: PATO:0001500 ! tapered
-
-[Term]
-id: PATO:0001976
-name: serration
-namespace: quality
-def: "A surface feature shape quality inhering in a bearer by virtue of the bearer's having or lacking sharp straight-edged teeth pointing to the apex." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0002267 ! edge shape
 
 [Term]
 id: PATO:0001977
@@ -4723,7 +3813,7 @@ is_a: PATO:0000467 ! present
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0000070 ! amount
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0000470 ! increased amount
+property_value: RO:0002604 PATO:0000470
 
 [Term]
 id: PATO:0001999
@@ -4761,7 +3851,7 @@ is_a: PATO:0001999 ! lacks parts or has fewer parts of type
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001999 ! lacks parts or has fewer parts of type
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002002 ! has extra parts of type
+property_value: RO:0002604 PATO:0002002
 
 [Term]
 id: PATO:0002002
@@ -4780,7 +3870,7 @@ is_a: PATO:0002083 ! altered number of
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0002083 ! altered number of
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002001 ! has fewer parts of type
+property_value: RO:0002604 PATO:0002001
 
 [Term]
 id: PATO:0002005
@@ -4810,7 +3900,7 @@ subset: attribute_slim
 xref: Image:http\://upload.wikimedia.org/wikipedia/commons/0/06/Convex_polygon_illustration1.png
 is_a: PATO:0002266 ! 3-D shape
 relationship: has_cross_section PATO:0002006 ! 2-D shape
-relationship: is_opposite_of PATO:0002008 ! concave 3-D shape
+property_value: RO:0002604 PATO:0002008
 
 [Term]
 id: PATO:0002008
@@ -4821,7 +3911,7 @@ subset: attribute_slim
 xref: Image:http\://en.wikipedia.org/wiki/Image\:Convex_polygon_illustration2.png
 is_a: PATO:0002266 ! 3-D shape
 relationship: has_part PATO:0001857 ! concave
-relationship: is_opposite_of PATO:0002007 ! convex 3-D shape
+property_value: RO:0002604 PATO:0002007
 
 [Term]
 id: PATO:0002009
@@ -4841,14 +3931,6 @@ subset: disposition_slim
 subset: mpath_slim
 subset: value_slim
 synonym: "tumorous" EXACT []
-is_a: PATO:0000141 ! structure
-
-[Term]
-id: PATO:0002013
-name: fasciculation
-namespace: quality
-def: "A structural quality inhering in a bearer by virtue of whether the bearer forms a bundle of anatomical fibers, as of muscle or nerve." [answers.com:http\://www.answers.com/]
-subset: attribute_slim
 is_a: PATO:0000141 ! structure
 
 [Term]
@@ -4886,7 +3968,7 @@ subset: hpo_slim
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0000057 ! occurrence
-relationship: is_opposite_of PATO:0001818 ! progressive
+property_value: RO:0002604 PATO:0001818
 created_by: george gkoutos
 creation_date: 2008-12-18T12:49:19Z
 
@@ -4913,25 +3995,13 @@ created_by: george
 creation_date: 2009-02-03T11:13:19Z
 
 [Term]
-id: PATO:0002038
-name: non-degenerate
-namespace: quality
-def: "A structural quality inhering in a bearer whose structure which does not deteriorate." [PATOC:GVG]
-subset: value_slim
-synonym: "not degenerate" EXACT []
-is_a: PATO:0002037 ! degeneration
-relationship: is_opposite_of PATO:0000639 ! degenerate
-created_by: george
-creation_date: 2009-02-03T11:14:54Z
-
-[Term]
 id: PATO:0002039
 name: biconcave
 namespace: quality
 def: "A concave quality inhering in a bearer by virtue of the bearer's curving inward on both sides or surfaces." [PATOC:GVG]
 subset: value_slim
 is_a: PATO:0001857 ! concave
-relationship: is_opposite_of PATO:0002040 ! biconvex
+property_value: RO:0002604 PATO:0002040
 
 [Term]
 id: PATO:0002040
@@ -4941,7 +4011,7 @@ def: "A shape quality inhering in a bearer by virtue of the bearer's being conve
 subset: value_slim
 xref: Image:http\://www.thefreedictionary.com/_/viewer.aspx?path=hm&name=A4bicovx
 is_a: PATO:0001355 ! convex
-relationship: is_opposite_of PATO:0002039 ! biconcave
+property_value: RO:0002604 PATO:0002039
 
 [Term]
 id: PATO:0002041
@@ -4963,7 +4033,7 @@ is_a: PATO:0001715 ! decreased diameter
 is_a: PATO:0002041 ! anterior-posterior diameter
 intersection_of: PATO:0002041 ! anterior-posterior diameter
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002043 ! increased anterior-posterior diameter
+property_value: RO:0002604 PATO:0002043
 
 [Term]
 id: PATO:0002043
@@ -4976,7 +4046,7 @@ is_a: PATO:0001714 ! increased diameter
 is_a: PATO:0002041 ! anterior-posterior diameter
 intersection_of: PATO:0002041 ! anterior-posterior diameter
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002042 ! decreased anterior-posterior diameter
+property_value: RO:0002604 PATO:0002042
 
 [Term]
 id: PATO:0002044
@@ -5007,7 +4077,7 @@ is_a: PATO:0000057 ! occurrence
 is_a: PATO:0002304 ! increased process quality
 intersection_of: PATO:0000057 ! occurrence
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002052 ! decreased occurrence
+property_value: RO:0002604 PATO:0002052
 created_by: George Gkoutos
 creation_date: 2009-03-26T11:10:11Z
 
@@ -5021,7 +4091,7 @@ is_a: PATO:0000057 ! occurrence
 is_a: PATO:0002302 ! decreased process quality
 intersection_of: PATO:0000057 ! occurrence
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002051 ! increased occurrence
+property_value: RO:0002604 PATO:0002051
 created_by: George Gkoutos
 creation_date: 2009-03-26T11:12:35Z
 
@@ -5036,7 +4106,7 @@ is_a: PATO:0001362 ! fragile
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001362 ! fragile
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002056 ! decreased fragility
+property_value: RO:0002604 PATO:0002056
 created_by: George Gkoutos
 creation_date: 2009-03-26T04:01:37Z
 
@@ -5051,7 +4121,7 @@ is_a: PATO:0001362 ! fragile
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001362 ! fragile
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002055 ! increased fragility
+property_value: RO:0002604 PATO:0002055
 created_by: George Gkoutos
 creation_date: 2009-03-26T04:02:14Z
 
@@ -5063,51 +4133,6 @@ subset: attribute_slim
 is_a: PATO:0001236 ! process quality
 created_by: george
 creation_date: 2009-06-05T09:16:46Z
-
-[Term]
-id: PATO:0002070
-name: affinity
-namespace: quality
-def: "A molecular quality that arises from the molecular attraction exerted between two atoms or compounds." [PATOC:GVG]
-subset: attribute_slim
-subset: disposition_slim
-subset: relational_slim
-subset: scalar_slim
-is_a: PATO:0002182 ! molecular quality
-created_by: George Gkoutos
-creation_date: 2009-09-18T01:16:16Z
-
-[Term]
-id: PATO:0002071
-name: increased affinity
-namespace: quality
-def: "An affinity which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0002070 ! affinity
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0002070 ! affinity
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002072 ! decreased affinity
-created_by: George Gkoutos
-creation_date: 2009-09-18T01:29:42Z
-
-[Term]
-id: PATO:0002072
-name: decreased affinity
-namespace: quality
-def: "An affinity which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0002070 ! affinity
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0002070 ! affinity
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002071 ! increased affinity
-created_by: George Gkoutos
-creation_date: 2009-09-18T01:30:11Z
 
 [Term]
 id: PATO:0002076
@@ -5164,18 +4189,6 @@ created_by: george
 creation_date: 2009-10-05T12:01:13Z
 
 [Term]
-id: PATO:0002094
-name: basophilic
-namespace: quality
-def: "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions." [PATOC:GVG]
-subset: disposition_slim
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0002070 ! affinity
-created_by: george
-creation_date: 2009-10-05T12:05:23Z
-
-[Term]
 id: PATO:0002096
 name: neoplastic, non-malignant
 namespace: quality
@@ -5212,20 +4225,9 @@ subset: value_slim
 synonym: "permeable" RELATED []
 synonym: "pierced" RELATED []
 is_a: PATO:0002014 ! structure, cavities
-relationship: is_opposite_of PATO:0001821 ! imperforate
+property_value: RO:0002604 PATO:0001821
 created_by: george
 creation_date: 2009-10-05T03:37:05Z
-
-[Term]
-id: PATO:0002114
-name: fatty
-namespace: quality
-def: "A composition quality inhering in a bearer by virtue of the bearer's containing excess lipid." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0000025 ! composition
-created_by: george
-creation_date: 2009-10-05T03:47:15Z
 
 [Term]
 id: PATO:0002118
@@ -5237,17 +4239,6 @@ subset: value_slim
 is_a: PATO:0000470 ! increased amount
 created_by: george
 creation_date: 2009-10-06T03:28:38Z
-
-[Term]
-id: PATO:0002124
-name: laminar
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's processing the form of a thin plate sheet or layer." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0000141 ! structure
-created_by: george
-creation_date: 2009-10-06T04:37:14Z
 
 [Term]
 id: PATO:0002135
@@ -5404,29 +4395,6 @@ created_by: george
 creation_date: 2009-12-02T04:10:10Z
 
 [Term]
-id: PATO:0002167
-name: herniated out of
-namespace: quality
-def: "A protruding quality inhering in a bearer by virtue of the bearer's bodily structure that has protruded out of the surface or boundary of another entity." [PATOC:GVG]
-subset: mpath_slim
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0001646 ! protruding out of
-created_by: george
-creation_date: 2009-12-02T05:19:32Z
-
-[Term]
-id: PATO:0002168
-name: displaced to
-namespace: quality
-def: "An angular placement quality inhering in a bearer by virtue of the bearer being changed in position in relation to another entity." [PATOC:GVG]
-subset: relational_slim
-synonym: "mislocalised to" RELATED []
-is_a: PATO:0000133 ! orientation
-created_by: george
-creation_date: 2010-01-14T04:45:18Z
-
-[Term]
 id: PATO:0002169
 name: split medially
 namespace: quality
@@ -5435,38 +4403,6 @@ subset: value_slim
 is_a: PATO:0001786 ! split
 created_by: george
 creation_date: 2010-02-03T04:37:15Z
-
-[Term]
-id: PATO:0002171
-name: split bilaterally
-namespace: quality
-def: "A shape quality inhering in a bearer by virtue of the bearer's being split on two side." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0001786 ! split
-created_by: george
-creation_date: 2010-02-03T04:37:53Z
-
-[Term]
-id: PATO:0002173
-name: misaligned towards
-namespace: quality
-def: "An alignment quality inhering in a bearer by virtue of the bearer's being in a improper spatial positioning towards an additional entity." [PATOC:GVG]
-subset: attribute_slim
-subset: relational_slim
-is_a: PATO:0001654 ! misaligned with
-created_by: George Gkoutos
-creation_date: 2010-02-22T03:18:17Z
-
-[Term]
-id: PATO:0002174
-name: misaligned away from
-namespace: quality
-def: "An alignment quality inhering in a bearer by virtue of the bearer's being in a improper spatial positioning away from an additional entity." [PATOC:GVG]
-subset: attribute_slim
-subset: relational_slim
-is_a: PATO:0001654 ! misaligned with
-created_by: George Gkoutos
-creation_date: 2010-02-22T03:18:48Z
 
 [Term]
 id: PATO:0002175
@@ -5550,16 +4486,6 @@ created_by: George Gkoutos
 creation_date: 2010-03-15T04:35:27Z
 
 [Term]
-id: PATO:0002206
-name: neonatal
-namespace: quality
-def: "A maturity quality inhering to a bearer by virtue of the bearer's being at the point or short after birth." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0000261 ! maturity
-created_by: George Gkoutos
-creation_date: 2010-05-07T12:11:47Z
-
-[Term]
 id: PATO:0002212
 name: slender
 namespace: quality
@@ -5581,7 +4507,7 @@ is_a: PATO:0001035 ! force
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001035 ! force
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002246 ! decreased force
+property_value: RO:0002604 PATO:0002246
 created_by: george
 creation_date: 2010-08-04T11:12:20Z
 
@@ -5596,79 +4522,9 @@ is_a: PATO:0001035 ! force
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001035 ! force
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002245 ! increased force
+property_value: RO:0002604 PATO:0002245
 created_by: george
 creation_date: 2010-08-04T11:13:13Z
-
-[Term]
-id: PATO:0002247
-name: degree of pigmentation
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's having or lacking of substances produced by living organisms that have a color resulting from selective color absorption." [url:http\://en.wikipedia.org/wiki/Biological_pigment]
-subset: attribute_slim
-subset: scalar_slim
-is_a: PATO:0000141 ! structure
-relationship: correlates_with PATO:0000014 ! color
-created_by: george
-creation_date: 2010-08-09T04:14:00Z
-
-[Term]
-id: PATO:0002248
-name: pigmented
-namespace: quality
-def: "A degree of pigmentation quality inhering in a bearer by virtue of the bearer's having substances produced by living organisms that have a color resulting from selective color absorption." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0002247 ! degree of pigmentation
-disjoint_from: PATO:0002249 ! unpigmented
-relationship: is_opposite_of PATO:0002249 ! unpigmented
-created_by: george
-creation_date: 2010-08-09T04:16:49Z
-
-[Term]
-id: PATO:0002249
-name: unpigmented
-namespace: quality
-def: "A degree of pigmentation quality inhering in a bearer by virtue of the bearer's lacking substances produced by living organisms that have a color resulting from selective color absorption." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-synonym: "depigmented" EXACT []
-is_a: PATO:0002247 ! degree of pigmentation
-relationship: is_opposite_of PATO:0002248 ! pigmented
-created_by: george
-creation_date: 2010-08-09T04:17:04Z
-
-[Term]
-id: PATO:0002250
-name: increased pigmentation
-namespace: quality
-def: "A degree of pigmentation quality that is relatively high." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-synonym: "hyperpigmented" EXACT []
-is_a: PATO:0002248 ! pigmented
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0002248 ! pigmented
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002251 ! decreased pigmentation
-created_by: george
-creation_date: 2010-08-09T04:17:19Z
-
-[Term]
-id: PATO:0002251
-name: decreased pigmentation
-namespace: quality
-def: "A degree of pigmentation quality that is relative low." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-synonym: "hypopigmented" EXACT []
-is_a: PATO:0002248 ! pigmented
-is_a: PATO:0002303 ! decreased object quality
-intersection_of: PATO:0002248 ! pigmented
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002250 ! increased pigmentation
-created_by: george
-creation_date: 2010-08-09T04:17:37Z
 
 [Term]
 id: PATO:0002254
@@ -5726,14 +4582,6 @@ created_by: george
 creation_date: 2010-10-05T12:31:16Z
 
 [Term]
-id: PATO:0002267
-name: edge shape
-namespace: quality
-is_a: PATO:0000052 ! shape
-created_by: george
-creation_date: 2010-10-05T12:34:31Z
-
-[Term]
 id: PATO:0002269
 name: accumulation
 namespace: quality
@@ -5755,21 +4603,9 @@ subset: relational_slim
 subset: value_slim
 synonym: "accumulated" EXACT []
 is_a: PATO:0002269 ! accumulation
-relationship: is_opposite_of PATO:0002271 ! decreased accumulation
+property_value: RO:0002604 PATO:0002271
 created_by: george
 creation_date: 2010-10-26T02:00:20Z
-
-[Term]
-id: PATO:0002271
-name: decreased accumulation
-namespace: quality
-def: "An accumulation which is relative low." [PATOC:GVG]
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0002269 ! accumulation
-relationship: is_opposite_of PATO:0002270 ! increased accumulation
-created_by: george
-creation_date: 2010-10-26T02:04:45Z
 
 [Term]
 id: PATO:0002281
@@ -5791,7 +4627,7 @@ is_a: PATO:0000299 ! mobile
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0000299 ! mobile
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002283 ! decreased mobility
+property_value: RO:0002604 PATO:0002283
 created_by: george
 creation_date: 2011-03-09T09:16:03Z
 
@@ -5805,7 +4641,7 @@ is_a: PATO:0000299 ! mobile
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0000299 ! mobile
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002282 ! increased mobility
+property_value: RO:0002604 PATO:0002282
 created_by: george
 creation_date: 2011-03-09T09:16:47Z
 
@@ -5819,7 +4655,7 @@ is_a: PATO:0001171 ! elastic
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001171 ! elastic
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002288 ! decreased elasticity
+property_value: RO:0002604 PATO:0002288
 created_by: George Gkoutos
 creation_date: 2011-03-30T11:50:21Z
 
@@ -5833,7 +4669,7 @@ is_a: PATO:0001171 ! elastic
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001171 ! elastic
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002287 ! increased elasticity
+property_value: RO:0002604 PATO:0002287
 created_by: George Gkoutos
 creation_date: 2011-03-30T11:50:39Z
 
@@ -5864,7 +4700,7 @@ is_a: PATO:0001488 ! cellular motility
 is_a: PATO:0002303 ! decreased object quality
 intersection_of: PATO:0001488 ! cellular motility
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002298 ! increased cellular motility
+property_value: RO:0002604 PATO:0002298
 
 [Term]
 id: PATO:0002298
@@ -5876,7 +4712,7 @@ is_a: PATO:0001488 ! cellular motility
 is_a: PATO:0002305 ! increased object quality
 intersection_of: PATO:0001488 ! cellular motility
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002297 ! decreased cellular motility
+property_value: RO:0002604 PATO:0002297
 
 [Term]
 id: PATO:0002300
@@ -5887,7 +4723,7 @@ is_a: PATO:0000069 ! deviation(from_normal)
 intersection_of: PATO:0000001 ! quality
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
 relationship: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002301 ! decreased quality
+property_value: RO:0002604 PATO:0002301
 created_by: George Gkoutos
 creation_date: 2011-06-16T06:39:43Z
 
@@ -5900,7 +4736,7 @@ is_a: PATO:0000069 ! deviation(from_normal)
 intersection_of: PATO:0000001 ! quality
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
 relationship: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002300 ! increased quality
+property_value: RO:0002604 PATO:0002300
 created_by: George Gkoutos
 creation_date: 2011-06-16T06:40:15Z
 
@@ -5913,7 +4749,7 @@ is_a: PATO:0001236 ! process quality
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0001236 ! process quality
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002304 ! increased process quality
+property_value: RO:0002604 PATO:0002304
 created_by: George Gkoutos
 creation_date: 2011-06-16T06:50:59Z
 
@@ -5926,7 +4762,7 @@ is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002301 ! decreased quality
 intersection_of: PATO:0001241 ! physical object quality
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002305 ! increased object quality
+property_value: RO:0002604 PATO:0002305
 created_by: George Gkoutos
 creation_date: 2011-06-16T06:51:54Z
 
@@ -5939,7 +4775,7 @@ is_a: PATO:0001236 ! process quality
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0001236 ! process quality
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002302 ! decreased process quality
+property_value: RO:0002604 PATO:0002302
 created_by: George Gkoutos
 creation_date: 2011-06-16T06:53:08Z
 
@@ -5952,7 +4788,7 @@ is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002300 ! increased quality
 intersection_of: PATO:0001241 ! physical object quality
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002303 ! decreased object quality
+property_value: RO:0002604 PATO:0002303
 created_by: George Gkoutos
 creation_date: 2011-06-16T06:54:01Z
 
@@ -6031,7 +4867,7 @@ is_a: PATO:0001475 ! increased position
 is_a: PATO:0002326 ! angle
 intersection_of: PATO:0002326 ! angle
 intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002328 ! decreased angle to
+property_value: RO:0002604 PATO:0002328
 created_by: George Gkoutos
 creation_date: 2011-11-23T12:06:38Z
 
@@ -6046,7 +4882,7 @@ is_a: PATO:0001476 ! decreased position
 is_a: PATO:0002326 ! angle
 intersection_of: PATO:0002326 ! angle
 intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002327 ! increased angle to
+property_value: RO:0002604 PATO:0002327
 created_by: George Gkoutos
 creation_date: 2011-11-23T12:06:54Z
 
@@ -6059,61 +4895,6 @@ subset: value_slim
 is_a: PATO:0000052 ! shape
 created_by: gkoutos
 creation_date: 2012-03-13T06:04:00Z
-
-[Term]
-id: PATO:0002360
-name: tendency
-namespace: quality
-def: "A disposition that can be compared on a linear scale - that is that it can be increased or decreased." [PATOC:RH]
-subset: attribute_slim
-subset: disposition_slim
-subset: relational_slim
-is_a: PATO:0001727 ! disposition
-created_by: gkoutos
-creation_date: 2012-03-16T06:31:50Z
-
-[Term]
-id: PATO:0002361
-name: increased tendency
-namespace: quality
-def: "A tendency which is relatively high." [PATOC:GVG]
-subset: disposition_slim
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0002305 ! increased object quality
-is_a: PATO:0002360 ! tendency
-intersection_of: PATO:0002360 ! tendency
-intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002362 ! decreased tendency
-created_by: gkoutos
-creation_date: 2012-03-16T06:31:57Z
-
-[Term]
-id: PATO:0002362
-name: decreased tendency
-namespace: quality
-def: "A tendency which is relatively low." [PATOC:GVG]
-subset: disposition_slim
-subset: relational_slim
-subset: value_slim
-is_a: PATO:0002303 ! decreased object quality
-is_a: PATO:0002360 ! tendency
-intersection_of: PATO:0002360 ! tendency
-intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
-relationship: is_opposite_of PATO:0002361 ! increased tendency
-created_by: gkoutos
-creation_date: 2012-03-16T06:32:57Z
-
-[Term]
-id: PATO:0002364
-name: shortened
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's length being notably lower than its width." [PATOC:GVG]
-subset: value_slim
-is_a: PATO:0000052 ! shape
-relationship: is_opposite_of PATO:0001154 ! elongated
-created_by: gkoutos
-creation_date: 2012-04-18T06:31:29Z
 
 [Term]
 id: PATO:0002400
@@ -6140,29 +4921,6 @@ created_by: gkoutos
 creation_date: 2012-12-17T10:41:37Z
 
 [Term]
-id: PATO:0002478
-name: transversely striated
-namespace: quality
-def: "A shape quality inhering in a bearer by virtue of the bearer's being marked by narrow lines or grooves, usually parallel, that are oriented transversely relative to the long axis of the bearer." [PATOC:DS]
-subset: cell_quality
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0001410 ! striated
-created_by: gkoutos
-creation_date: 2013-09-15T12:29:15Z
-
-[Term]
-id: PATO:0002505
-name: nucleated
-namespace: quality
-def: "A nucleate quality inhering in a bearer by virtue of the bearer's having one or more nucleus." [PATOC:GVG]
-subset: mpath_slim
-subset: value_slim
-is_a: PATO:0001404 ! nucleate quality
-created_by: gkoutos
-creation_date: 2013-10-21T05:44:34Z
-
-[Term]
 id: PATO:0015001
 name: absence due to degeneration
 namespace: quality
@@ -6182,11 +4940,6 @@ namespace: quality
 def: "A quality inhering in a bearer by virtue of the degree to which the bearers stands out or projects beyond a surface or line." [GOC:CJM]
 subset: attribute_slim
 is_a: PATO:0000057 ! occurrence
-
-[Typedef]
-id: correlates_with
-name: correlates_with
-namespace: quality
 
 [Typedef]
 id: decreased_in_magnitude_relative_to
@@ -6232,14 +4985,6 @@ domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 is_transitive: true
 is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
-
-[Typedef]
-id: is_opposite_of
-name: is opposite of
-namespace: quality
-xref: RO:0002604
-is_metadata_tag: true
-is_class_level: true
 
 [Typedef]
 id: part_of

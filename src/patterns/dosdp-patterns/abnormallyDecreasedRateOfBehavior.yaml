@@ -1,0 +1,38 @@
+pattern_name: abnormallyDecreasedRateOfBehavior
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedRateOfBehavior.yaml
+description: "Behavior occurs with a lower frequency (less often) than usual (per unit of time)."
+
+contributors: 
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  
+classes:
+  decreased rate: PATO:0000911
+  abnormal: PATO:0000460
+  behavior process: NBO:0000313
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  behavior_process: "'behavior process'"
+ 
+name:
+  text: "impaired %s"
+  vars:
+   - behavior_process
+
+def:
+  text: "Impaired or decreased %s."
+  vars:
+    - behavior_process
+
+equivalentTo:
+  text: "'has_part' some ('decreased rate' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - behavior_process
