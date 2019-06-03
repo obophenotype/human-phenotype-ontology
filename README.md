@@ -22,13 +22,15 @@
 
 # Contact
 
-If you have questions, please contact dr.sebastian.koehler@gmail.com or peter.robinson@jax.org
+## Direct
 
-# Mailing list
+ If you have questions, please contact dr.sebastian.koehler@gmail.com or peter.robinson@jax.org
+
+## Mailing list
 
 Consider signing up the HPO mailing list at https://groups.io/g/human-phenotype-ontology
 
-# Twitter
+## Twitter
 
 Follow us on twitter under the username @hp_ontology
 
