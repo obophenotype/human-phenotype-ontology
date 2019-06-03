@@ -5,11 +5,10 @@
  * [See **license** information and instructions how to **cite** the HPO project](https://hpo.jax.org/app/license)
 
 
-# Important!
+# Download
 
  * You should download HPO using the URLs: http://purl.obolibrary.org/obo/hp.obo or http://purl.obolibrary.org/obo/hp.owl
- * If you want to make a term request, please read [this](https://github.com/obophenotype/human-phenotype-ontology/wiki/How-to-make-a-good-term-request) first!
- * Please add disease-HPO-class requests also to this tracker!
+
 
 # Project Homepage
 
@@ -18,7 +17,8 @@
 # Questions/Requests/Tickets
 
  * Please post issues at our [github tracker](https://github.com/obophenotype/human-phenotype-ontology/issues/new/choose)
-
+ * If you want to make a term request, please read [this](https://github.com/obophenotype/human-phenotype-ontology/wiki/How-to-make-a-good-term-request) first!
+ * Please add disease-HPO-class requests also to this tracker!
 
 # Contact
 
