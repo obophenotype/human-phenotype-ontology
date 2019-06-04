@@ -11,6 +11,7 @@ straightforward as possible.
 ### Added
 
 ### Changed
+- added synonyms to HP_0011043 'Abnormality of circulating adrenocorticotropin level'
 
 ### Fixed
 
