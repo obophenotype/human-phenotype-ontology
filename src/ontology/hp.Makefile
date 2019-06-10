@@ -76,6 +76,7 @@ test: sparql_test all_reports test_obo hp_error
 $(ONT).owl: $(SRC)
 	$(ROBOT) merge --input $< \
 		annotate --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
+		remove --term owl:Nothing \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
 hp_labels.csv: $(SRC)
