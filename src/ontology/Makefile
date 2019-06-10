@@ -236,7 +236,7 @@ $(ONT)-simple-non-classified.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS)
 
 
 seed.txt: $(SRC) prepare_patterns $(PATTERNDIR)/all_pattern_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) query -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
+	@if [ $(IMP) = true ]; then $(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
 	cat $@.tmp $(PATTERNDIR)/all_pattern_terms.txt | sort | uniq >  $@; fi
 
 

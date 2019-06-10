@@ -377,6 +377,21 @@
       "type" : "CLASS",
       "lbl" : "decreased quality"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001333",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a process which ends later than the natural end time.",
+          "xrefs" : [ "PATOC:melissa" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "temporally extended"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001575",
       "meta" : {
         "definition" : {
@@ -709,6 +724,33 @@
       },
       "type" : "CLASS",
       "lbl" : "superelliptic"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001229",
+      "meta" : {
+        "definition" : {
+          "val" : "A color saturation which is of high purity.",
+          "xrefs" : [ "PATOC:MAH" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "vivid",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "bright",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000328"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "high saturation"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000133",
       "meta" : {
@@ -1223,6 +1265,21 @@
       "type" : "CLASS",
       "lbl" : "structure"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000261",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a single physical entity which is held by a bearer when the latter exhibits a state of growth, differentiation, or development.",
+          "xrefs" : [ "Merriam-Webster:Merriam-Webster" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "maturity"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000140",
       "meta" : {
         "definition" : {
@@ -1466,6 +1523,15 @@
       "type" : "CLASS",
       "lbl" : "duplicated"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#disposition_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Disposition slim"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000386",
       "meta" : {
         "definition" : {
@@ -1527,9 +1593,33 @@
       "type" : "CLASS",
       "lbl" : "anteverted"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#relational_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Relational slim: types of quality that require an additional entity in order to exist"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0100001",
       "type" : "PROPERTY",
       "lbl" : "term replaced by"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000279",
+      "meta" : {
+        "definition" : {
+          "val" : "A fertility quality of inhering in a male by virtue of the bearer's disposition to initiate, sustain, or support reproduction.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "male fertility"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001488",
       "meta" : {
@@ -1804,6 +1894,21 @@
       "type" : "CLASS",
       "lbl" : "fertility"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000277",
+      "meta" : {
+        "definition" : {
+          "val" : "A fertility quality inhering in a female by virtue of the bearer's disposition to initiate, sustain, or support reproduction.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "female fertility"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
       "type" : "PROPERTY",
       "lbl" : "has_alternative_id"
@@ -1843,6 +1948,29 @@
       "type" : "CLASS",
       "lbl" : "white"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001776",
+      "meta" : {
+        "definition" : {
+          "val" : "A flexibility which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "high flexibility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001777"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased flexibility"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000322",
       "meta" : {
         "definition" : {
@@ -1876,6 +2004,29 @@
       "type" : "CLASS",
       "lbl" : "increased circumference"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001777",
+      "meta" : {
+        "definition" : {
+          "val" : "A flexibility which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low flexibility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001776"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased flexibility"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000688",
       "meta" : {
         "definition" : {
@@ -1893,6 +2044,33 @@
       },
       "type" : "CLASS",
       "lbl" : "asynchronous"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001653",
+      "meta" : {
+        "definition" : {
+          "val" : "An alignment quality inhering in a bearer by virtue of the bearer's being in a proper spatial positioning with respect to an additional entity.",
+          "xrefs" : [ "PATO:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "aligned",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aligned to",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001654"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "aligned with"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001654",
       "meta" : {
@@ -1943,6 +2121,29 @@
       },
       "type" : "CLASS",
       "lbl" : "decreased height"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000327",
+      "meta" : {
+        "definition" : {
+          "val" : "A color brightness which is relatively low.",
+          "xrefs" : [ "PATOC:MAH" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "dark",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000665"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "low brightness"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000689",
       "meta" : {
@@ -2034,6 +2235,27 @@
       "type" : "CLASS",
       "lbl" : "decreased strength"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002505",
+      "meta" : {
+        "definition" : {
+          "val" : "A nucleate quality inhering in a bearer by virtue of the bearer's having one or more nucleus.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-10-21T05:44:34Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "nucleated"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000328",
       "meta" : {
         "definition" : {
@@ -2098,6 +2320,21 @@
       },
       "type" : "CLASS",
       "lbl" : "regular spatial pattern"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001410",
+      "meta" : {
+        "definition" : {
+          "val" : "A shape quality inhering in a bearer by virtue of the bearer's being marked by narrow lines or grooves, usually parallel.",
+          "xrefs" : [ "Biology-online:Biology-online" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "striated"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001652",
       "meta" : {
@@ -2361,6 +2598,29 @@
       "type" : "CLASS",
       "lbl" : "chromatic property"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001544",
+      "meta" : {
+        "definition" : {
+          "val" : "A physical quality inhering in a bearer by virtue of the bearer's ability of being turned, bowed, or twisted without breaking.",
+          "xrefs" : [ "merriam-webster:merriam-webster" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "bendy",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001545"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "flexible"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001786",
       "meta" : {
         "definition" : {
@@ -2518,6 +2778,36 @@
       "type" : "CLASS",
       "lbl" : "increased height"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000690",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a single process inhering in a bearer by virtue of the bearer's being marked by breaks or interruptions.",
+          "xrefs" : [ "thefreedictionary.com:thefreedictionary.com" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "intermittent",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "interrupted",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000689"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+          "val" : "PATO:0000426"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "discontinuous"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000330",
       "meta" : {
         "definition" : {
@@ -2662,6 +2952,24 @@
       "type" : "CLASS",
       "lbl" : "decreased length"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000695",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a single process inhering in a bearer by virtue of the bearer's occurring or existing at the same time or having the same period or phase.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000688"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "synchronous"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000573",
       "meta" : {
         "definition" : {
@@ -2741,6 +3049,15 @@
       },
       "type" : "CLASS",
       "lbl" : "premature"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#attribute_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Attribute slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000587",
       "meta" : {
@@ -2913,6 +3230,15 @@
       },
       "type" : "CLASS",
       "lbl" : "decreased coiling"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#abnormal_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Abnormal/normal slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000467",
       "meta" : {
@@ -3481,6 +3807,15 @@
       "type" : "CLASS",
       "lbl" : "right side of"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#hpo_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Human phenotype slim"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001447",
       "meta" : {
         "definition" : {
@@ -3990,6 +4325,29 @@
       "type" : "CLASS",
       "lbl" : "flat"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001859",
+      "meta" : {
+        "definition" : {
+          "val" : "A coordination which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "high coordination",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001860"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased coordination"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001617",
       "meta" : {
         "definition" : {
@@ -4354,6 +4712,24 @@
       "type" : "CLASS",
       "lbl" : "coiled"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000888",
+      "meta" : {
+        "definition" : {
+          "val" : "A female fertility quality inhering in a female by virtue of the bearer's disposition to initiate, sustain, or support reproduction.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000892"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "female fertile"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000645",
       "meta" : {
         "definition" : {
@@ -4452,6 +4828,24 @@
       },
       "type" : "CLASS",
       "lbl" : "horizontal"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000769",
+      "meta" : {
+        "definition" : {
+          "val" : "A coordination quality of inhering in a bearer by virtue of the bearer's having skillful and effective interaction of movement.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000770"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "coordinated"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001977",
       "meta" : {
@@ -4667,6 +5061,29 @@
       "type" : "CLASS",
       "lbl" : "circular"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001501",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's lacking complete growth, differentiation, or development.",
+          "xrefs" : [ "Merriam-Webster:Merriam-Webster" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "underdeveloped",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001701"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "immature"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001865",
       "meta" : {
         "definition" : {
@@ -4814,6 +5231,65 @@
       "type" : "CLASS",
       "lbl" : "sufficiency"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000415",
+      "meta" : {
+        "definition" : {
+          "val" : "A shape quality inhering in a bearer by virtue of the bearer's being not curled or wound (especially in concentric rings or spirals).",
+          "xrefs" : [ "WordNet:WordNet" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#cell_quality" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000404"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "uncoiled"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000414",
+      "meta" : {
+        "definition" : {
+          "val" : "A branchiness quality inhering in a bearer by virtue of the bearer's lacking branches.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000402"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "unbranched"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001627",
+      "meta" : {
+        "definition" : {
+          "val" : "A wholeness quality inhering in a bearer by virtue of the bearer's has enough functionality.",
+          "xrefs" : [ "PATO:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "adequate",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001628"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sufficient"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001869",
       "meta" : {
         "definition" : {
@@ -4945,6 +5421,65 @@
       },
       "type" : "CLASS",
       "lbl" : "quadrangular"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001860",
+      "meta" : {
+        "definition" : {
+          "val" : "A coordination which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low coordination",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001859"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased coordination"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000770",
+      "meta" : {
+        "definition" : {
+          "val" : "A coordination quality of inhering in a bearer by virtue of the bearer's lacking skillful and effective interaction of movement.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000769"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "uncoordinated"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000891",
+      "meta" : {
+        "definition" : {
+          "val" : "A male fertility quality inhering in a male by virtue of the bearer's being capable of initiating, sustaining, or supporting reproduction.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000890"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "male fertile"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000890",
       "meta" : {
@@ -5119,6 +5654,29 @@
       },
       "type" : "CLASS",
       "lbl" : "decreased amount"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000300",
+      "meta" : {
+        "definition" : {
+          "val" : "A mobility quality inhering in a bearer by virtue of the bearer's being incapable to move freely.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "fixed",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000299"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "immobile"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001876",
       "meta" : {
@@ -5325,6 +5883,47 @@
       "type" : "CLASS",
       "lbl" : "U-shaped"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000546",
+      "meta" : {
+        "definition" : {
+          "val" : "A photosensitivity quality inhering in a bearer by virtue of the bearer's lacking photosensitivity.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "photoresistant",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000547"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "photoinsensitive"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000428",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a single process inhering in a bearer by virtue of the bearer's once or in or a few unpredictable instances.",
+          "xrefs" : [ "PATO:MAH", "WordNet:WordNet" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#hpo_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000427"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "sporadic"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001878",
       "meta" : {
         "definition" : {
@@ -5462,6 +6061,21 @@
       "type" : "PROPERTY",
       "lbl" : "has_cross_section"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001402",
+      "meta" : {
+        "definition" : {
+          "val" : "A cellular potency that is the capacity to form multiple differentiated cell types.",
+          "xrefs" : [ "Wikipedia:http://en.wikipedia.org/wiki/Multipotent" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#cell_quality" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "multipotent"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001645",
       "meta" : {
         "definition" : {
@@ -5477,6 +6091,42 @@
       "type" : "CLASS",
       "lbl" : "protruding into"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001400",
+      "meta" : {
+        "definition" : {
+          "val" : "A cellular potency that is the capacity to produce only one differentiated cell type.",
+          "xrefs" : [ "Wikipedia:http://en.wikipedia.org/wiki/Unipotent" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Unipotent cells have the quality of self-renewal which distinguishes them from non-stem cells."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "unipotent"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001401",
+      "meta" : {
+        "definition" : {
+          "val" : "A cellular potency that is the capacity to form multiple differentiated cell types of a specific lineage and lack self renewing capacity.",
+          "xrefs" : [ "PATOC:MAH" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Less potent than multipotent, often thought of as precursor or progenitor cell status."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "oligopotent"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001648",
       "meta" : {
         "definition" : {
@@ -5491,6 +6141,21 @@
       },
       "type" : "CLASS",
       "lbl" : "circumference"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001407",
+      "meta" : {
+        "definition" : {
+          "val" : "A nucleate quality inhering in a bearer by virtue of the bearer's having one nucleus.",
+          "xrefs" : [ "Biology-online:Biology-online" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "mononucleate"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001649",
       "meta" : {
@@ -5535,6 +6200,21 @@
       "type" : "CLASS",
       "lbl" : "protruding out of"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001404",
+      "meta" : {
+        "definition" : {
+          "val" : "A cellular quality inhering in a bearer by virtue of bearer's number of nuclei.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "nucleate quality"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000318",
       "meta" : {
         "definition" : {
@@ -5549,6 +6229,21 @@
       },
       "type" : "CLASS",
       "lbl" : "blue"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001405",
+      "meta" : {
+        "definition" : {
+          "val" : "A nucleate quality inhering in a bearer by virtue of the bearer's having no nucleus.",
+          "xrefs" : [ "Biology-online:Biology-online" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#cell_quality" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "anucleate"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001883",
       "meta" : {
@@ -5615,6 +6310,29 @@
       },
       "type" : "CLASS",
       "lbl" : "rhomboid"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001817",
+      "meta" : {
+        "definition" : {
+          "val" : "A fatigability which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low fatigability",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001816"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased fatigability"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001818",
       "meta" : {
@@ -5842,6 +6560,29 @@
       "type" : "CLASS",
       "lbl" : "symmetry"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000964",
+      "meta" : {
+        "definition" : {
+          "val" : "A optical quality inhering in a bearer by virtue of the bearer's lacking opacity.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "clear",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000963"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transparent"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000967",
       "meta" : {
         "definition" : {
@@ -6004,6 +6745,29 @@
       "type" : "CLASS",
       "lbl" : "female pseudohermaphrodite"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001826",
+      "meta" : {
+        "definition" : {
+          "val" : "A wetness quality that is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low wetness",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001825"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased wetness"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000619",
       "meta" : {
         "definition" : {
@@ -6056,6 +6820,24 @@
       },
       "type" : "CLASS",
       "lbl" : "bilateral"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001706",
+      "meta" : {
+        "definition" : {
+          "val" : "A behavioral quality inhering in a bearer by virtue of the bearer's disposition to lack activity.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001707"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "behavioural inactive"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001827",
       "meta" : {
@@ -6151,6 +6933,42 @@
       "type" : "CLASS",
       "lbl" : "dry"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000613",
+      "meta" : {
+        "definition" : {
+          "val" : "A spatial pattern inhering in a bearer by virtue of the bearer's lacking orientation.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000614"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "disoriented"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001825",
+      "meta" : {
+        "definition" : {
+          "val" : "A wetness quality that is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001826"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased wetness"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001822",
       "meta" : {
         "definition" : {
@@ -6165,6 +6983,42 @@
       },
       "type" : "CLASS",
       "lbl" : "wetness"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001701",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's exhibiting complete growth, differentiation, or development.",
+          "xrefs" : [ "Merriam-Webster:Merriam-Webster" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001501"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "mature"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001823",
+      "meta" : {
+        "definition" : {
+          "val" : "A wetness quality inhering in a bearer by virtue of the bearer's being covered by a liquid.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001824"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "wet"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000614",
       "meta" : {
@@ -6235,6 +7089,37 @@
       "type" : "CLASS",
       "lbl" : "localized"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001716",
+      "meta" : {
+        "definition" : {
+          "val" : "A structural quality inhering in a bearer by virtue of the bearer's ability to withstand great strain without tearing or breaking.",
+          "xrefs" : [ "thefreedictionary.com:thefreedictionary.com" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#attribute_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "resilient",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "strong",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "tough",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001362"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "non-fragile"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001958",
       "meta" : {
         "definition" : {
@@ -6282,6 +7167,52 @@
       "type" : "CLASS",
       "lbl" : "3-D extent"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001831",
+      "meta" : {
+        "definition" : {
+          "val" : "A female fertility which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "high female fertility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001830"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased female fertility"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001832",
+      "meta" : {
+        "definition" : {
+          "val" : "A male fertility which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "high male fertility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001833"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased male fertility"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001711",
       "meta" : {
         "definition" : {
@@ -6296,6 +7227,52 @@
       },
       "type" : "CLASS",
       "lbl" : "perimeter"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001830",
+      "meta" : {
+        "definition" : {
+          "val" : "A female fertility which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low female fertility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001831"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased female fertility"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001835",
+      "meta" : {
+        "definition" : {
+          "val" : "A fertility which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "high fertility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001834"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased fertility"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001714",
       "meta" : {
@@ -6415,6 +7392,29 @@
       "type" : "CLASS",
       "lbl" : "exserted"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001833",
+      "meta" : {
+        "definition" : {
+          "val" : "A male fertility which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low male fertility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001832"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased male fertility"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001712",
       "meta" : {
         "definition" : {
@@ -6495,6 +7495,29 @@
       "type" : "CLASS",
       "lbl" : "decreased perimeter"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001834",
+      "meta" : {
+        "definition" : {
+          "val" : "A fertility which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "low fertility",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001835"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased fertility"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000639",
       "meta" : {
         "definition" : {
@@ -6548,6 +7571,26 @@
       "type" : "CLASS",
       "lbl" : "sparse"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001727",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's prevailing tendency, mood, or inclination.",
+          "xrefs" : [ "Merriam-Webster:Merriam-Webster" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "tendency",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "disposition"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001848",
       "meta" : {
         "definition" : {
@@ -6577,6 +7620,24 @@
       },
       "type" : "CLASS",
       "lbl" : "posteriorly rotated"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000633",
+      "meta" : {
+        "definition" : {
+          "val" : "A spatial pattern inhering in a bearer by virtue of the bearer's being not overfilled.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000619"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "uncrowded"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000632",
       "meta" : {
@@ -6646,6 +7707,33 @@
       },
       "type" : "CLASS",
       "lbl" : "constricted"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000513",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's lacking sensitivity toward an external stimulus.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#relational_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "insensitive",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "resistant",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000516"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "insensitive toward"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000634",
       "meta" : {
@@ -6754,6 +7842,52 @@
       },
       "type" : "CLASS",
       "lbl" : "width"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002604",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002604"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
+          "val" : "true"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#is_class_level",
+          "val" : "true"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "is_opposite_of"
+        } ]
+      },
+      "type" : "PROPERTY",
+      "lbl" : "is opposite of"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#cell_quality",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "cell_quality"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001908",
+      "meta" : {
+        "definition" : {
+          "val" : "A nucleate quality inhering in a bearer by virtue of the bearer's having more than one nucleus.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "multinucleate"
     }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#consider",
       "type" : "PROPERTY",
@@ -7054,6 +8188,24 @@
       "type" : "CLASS",
       "lbl" : "sterile"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000955",
+      "meta" : {
+        "definition" : {
+          "val" : "A fertility quality inhering in a bearer by virtue of the bearer's being capable of initiating, sustaining, or supporting reproduction.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000956"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "fertile"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001801",
       "meta" : {
         "definition" : {
@@ -7120,6 +8272,15 @@
       },
       "type" : "CLASS",
       "lbl" : "molecular quality"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#value_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Value slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002062",
       "meta" : {
@@ -7227,6 +8388,75 @@
       "type" : "CLASS",
       "lbl" : "quality of a substance"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002072",
+      "meta" : {
+        "definition" : {
+          "val" : "An affinity which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#relational_slim", "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "George Gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0002071"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-09-18T01:30:11Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased affinity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002070",
+      "meta" : {
+        "definition" : {
+          "val" : "A molecular quality that arises from the molecular attraction exerted between two atoms or compounds.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#scalar_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "George Gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-09-18T01:16:16Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "affinity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002071",
+      "meta" : {
+        "definition" : {
+          "val" : "An affinity which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#relational_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-09-18T01:29:42Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "George Gkoutos"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0002072"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased affinity"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
       "meta" : {
         "definition" : {
@@ -7290,6 +8520,15 @@
       },
       "type" : "CLASS",
       "lbl" : "polycystic"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#scalar_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Scalar slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002083",
       "meta" : {
@@ -7439,6 +8678,27 @@
       "type" : "CLASS",
       "lbl" : "neoplastic, malignant"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002094",
+      "meta" : {
+        "definition" : {
+          "val" : "An affinity inhering in a tissue constituent by virtue of the bearer exhibiting a molecular interaction for basic dyes under specific ph conditions.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-10-05T12:05:23Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "george"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "basophilic"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002093",
       "meta" : {
         "definition" : {
@@ -7563,6 +8823,24 @@
       },
       "type" : "CLASS",
       "lbl" : "sloped downward"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001172",
+      "meta" : {
+        "definition" : {
+          "val" : "An elasticity quality inhering in a bearer by virtue of the bearer's inability to recover its size and shape after deformation in any way.",
+          "xrefs" : [ "merriam-webster:merriam-webster" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001171"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "inelastic"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002141",
       "meta" : {
@@ -7756,6 +9034,35 @@
       },
       "type" : "CLASS",
       "lbl" : "persistence"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002038",
+      "meta" : {
+        "definition" : {
+          "val" : "A structural quality inhering in a bearer whose structure which does not deteriorate.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "not degenerate",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0000639"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-02-03T11:14:54Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "george"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "non-degenerate"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002039",
       "meta" : {
@@ -7973,6 +9280,30 @@
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym",
       "type" : "PROPERTY",
       "lbl" : "has_narrow_synonym"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002271",
+      "meta" : {
+        "definition" : {
+          "val" : "An accumulation which is relative low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#relational_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2010-10-26T02:04:45Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "george"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0002270"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased accumulation"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0015001",
       "meta" : {
@@ -8838,6 +10169,45 @@
       "type" : "CLASS",
       "lbl" : "notched"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001374",
+      "meta" : {
+        "definition" : {
+          "val" : "A cellular quality inhering in a bearer by virtue of the bearer's number of homologous sets of chromosomes in the nucleus or primary chromosome-containing compartment of the cell, each set essentially coding for all the biological traits of the organism.",
+          "xrefs" : [ "Wikipedia:http://en.wikipedia.org/wiki/Ploidy" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "ploidy"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#mpath_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Pathology slim"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001375",
+      "meta" : {
+        "definition" : {
+          "val" : "A ploidy quality inhering in a bearer by virtue of the bearer's containing a single set of homologous chromosomes.",
+          "xrefs" : [ "Wikipedia:http://en.wikipedia.org/wiki/Haploid" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#cell_quality" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "haploid"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002359",
       "meta" : {
         "definition" : {
@@ -8879,6 +10249,27 @@
       },
       "type" : "CLASS",
       "lbl" : "multiple"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002478",
+      "meta" : {
+        "definition" : {
+          "val" : "A shape quality inhering in a bearer by virtue of the bearer's being marked by narrow lines or grooves, usually parallel, that are oriented transversely relative to the long axis of the bearer.",
+          "xrefs" : [ "PATOC:DS" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#mpath_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-09-15T12:29:15Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "transversely striated"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001020",
       "meta" : {
@@ -9202,6 +10593,24 @@
       "type" : "CLASS",
       "lbl" : "branchiness"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001394",
+      "meta" : {
+        "definition" : {
+          "val" : "A ploidy quality inhering in a bearer by virtue of the bearer's having two copies (homologs) of each chromosome, usually one from the mother and one from the father.",
+          "xrefs" : [ "Wikipedia:http://en.wikipedia.org/wiki/Diploid" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#cell_quality" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "The exact number may be one or two different from the 2n number and still be classified as diploidy (although with aneuploidy). Nearly all mammals are diploid organisms, although all individuals have some small fracton of cells that are polyploidy."
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "diploid"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001152",
       "meta" : {
         "definition" : {
@@ -9225,6 +10634,30 @@
       "type" : "CLASS",
       "lbl" : "susceptible toward"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002362",
+      "meta" : {
+        "definition" : {
+          "val" : "A tendency which is relatively low.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2012-03-16T06:32:57Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0002361"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "decreased tendency"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001031",
       "meta" : {
         "definition" : {
@@ -9239,6 +10672,29 @@
       },
       "type" : "CLASS",
       "lbl" : "elasticity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001153",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's lacking susceptibilty toward an external stimulus.",
+          "xrefs" : [ "PATO:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "insusceptible",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001152"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "insusceptible toward"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002000",
       "meta" : {
@@ -9269,6 +10725,66 @@
       "type" : "CLASS",
       "lbl" : "lacks all parts of type"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002360",
+      "meta" : {
+        "definition" : {
+          "val" : "A disposition that can be compared on a linear scale - that is that it can be increased or decreased.",
+          "xrefs" : [ "PATOC:RH" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#relational_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2012-03-16T06:31:50Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "tendency"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002361",
+      "meta" : {
+        "definition" : {
+          "val" : "A tendency which is relatively high.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim", "http://purl.obolibrary.org/obo/pato#relational_slim", "http://purl.obolibrary.org/obo/pato#disposition_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0002362"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2012-03-16T06:31:57Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "increased tendency"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001393",
+      "meta" : {
+        "definition" : {
+          "val" : "A ploidy quality inhering in a bearer by virtue of the bearer's containing an integral multiple of the monoploid number, possibly excluding the sex-determining chromosomes.",
+          "xrefs" : [ "Wikipedia:http://en.wikipedia.org/wiki/Euploid" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#cell_quality", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "euploid"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001035",
       "meta" : {
         "definition" : {
@@ -9288,6 +10804,27 @@
       },
       "type" : "CLASS",
       "lbl" : "force"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002124",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's processing the form of a thin plate sheet or layer.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "george"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2009-10-06T04:37:14Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "laminar"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002245",
       "meta" : {
@@ -9368,6 +10905,30 @@
       },
       "type" : "CLASS",
       "lbl" : "decreased force"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002364",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a bearer by virtue of the bearer's length being notably lower than its width.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "gkoutos"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2012-04-18T06:31:29Z"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001154"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "shortened"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002001",
       "meta" : {
@@ -9450,6 +11011,21 @@
       },
       "type" : "CLASS",
       "lbl" : "elongated"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001397",
+      "meta" : {
+        "definition" : {
+          "val" : "A cellular quality that arises by virtue of whether the bearer's disposition to differentiate into one or more mature cell types.",
+          "xrefs" : [ "PATOC:GVG" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#disposition_slim", "http://purl.obolibrary.org/obo/pato#attribute_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "cellular potency"
     }, {
       "id" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
       "meta" : {
@@ -9576,6 +11152,15 @@
       },
       "type" : "CLASS",
       "lbl" : "aplastic growth"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/pato#absent_slim",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
+          "val" : "Absent/present slim"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0001163",
       "meta" : {
@@ -9757,6 +11342,24 @@
       "type" : "CLASS",
       "lbl" : "resistance to"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001168",
+      "meta" : {
+        "definition" : {
+          "val" : "A structural quality inhering in a bearer by virtue of not being harmed or injured or spoiled.",
+          "xrefs" : [ "WordNet:WordNet" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
+          "val" : "http://purl.obolibrary.org/obo/PATO_0001167"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "undamaged"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002257",
       "meta" : {
         "definition" : {
@@ -9936,6 +11539,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000133"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000513",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000085"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000406",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001591"
@@ -9959,6 +11566,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000461",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000069"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001826",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001823"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000057",
       "pred" : "is_a",
@@ -9987,6 +11598,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002161",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002008"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000769",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000188"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002305",
       "pred" : "is_a",
@@ -10052,9 +11667,17 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001164"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001375",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001393"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002097",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002011"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000613",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000330"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002056",
       "pred" : "is_a",
@@ -10083,6 +11706,14 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000600",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000586"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001831",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000888"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000414",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002009"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001783",
       "pred" : "is_a",
@@ -10123,6 +11754,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001938",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002317"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002361",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002360"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002014",
       "pred" : "is_a",
@@ -10212,6 +11847,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001591"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000955",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000274"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000387",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
@@ -10292,6 +11931,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000057"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001860",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002318",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
@@ -10308,9 +11951,21 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001488"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001544",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001543"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001475",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000140"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001653",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001652"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001333",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002324"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001783",
       "pred" : "is_a",
@@ -10323,6 +11978,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001596",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001595"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000415",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001794"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000413",
       "pred" : "is_a",
@@ -10344,9 +12003,17 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000327",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000016"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001562",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001394",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001393"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001473",
       "pred" : "is_a",
@@ -10376,6 +12043,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000025"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001825",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001988",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
@@ -10400,6 +12071,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002062"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001404",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001396"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000122",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001708"
@@ -10411,6 +12086,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001987",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002014"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002362",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002360"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000701",
       "pred" : "is_a",
@@ -10475,6 +12154,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001646",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001598"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001400",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001397"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002327",
       "pred" : "is_a",
@@ -10548,6 +12231,10 @@
       "pred" : "http://purl.obolibrary.org/obo/pato#reciprocal_of",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001555"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001835",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000955"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001575",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001025"
@@ -10555,6 +12242,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000047",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001995"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000546",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000927"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002301",
       "pred" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
@@ -10568,9 +12259,17 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000049"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001776",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001444",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001442"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001776",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001544"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000318",
       "pred" : "is_a",
@@ -10596,9 +12295,17 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001648"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001727",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000912",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000161"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002072",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002070"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001563",
       "pred" : "is_a",
@@ -10628,9 +12335,21 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002071",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000891",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000279"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002083",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001555"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001716",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001662"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001698",
       "pred" : "is_a",
@@ -10644,25 +12363,41 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000140"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002163",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0001645"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001619",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001439"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002163",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001645"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000161",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002062"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001393",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001374"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001835",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002177",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002175"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001501",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000261"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001711",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000122"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000277",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000274"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000322",
       "pred" : "is_a",
@@ -10680,6 +12415,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000587"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001401",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001397"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002304",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001236"
@@ -10692,13 +12431,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000608"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0001865",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0002007"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001602",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000586"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001865",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002007"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001652",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -10711,6 +12450,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001449",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000025"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000428",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000057"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002304",
       "pred" : "is_a",
@@ -10735,6 +12478,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001512",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000330"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000690",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000057"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002181",
       "pred" : "is_a",
@@ -10764,6 +12511,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002083"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001777",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001544"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000470",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002300"
@@ -10771,6 +12522,14 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002052",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000057"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001777",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001825",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001823"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001474",
       "pred" : "is_a",
@@ -10787,6 +12546,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001576",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001025"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001405",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001404"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001154",
       "pred" : "is_a",
@@ -10828,6 +12591,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002300"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001830",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000888"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001419",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000944"
@@ -10843,6 +12610,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000470",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000467"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001374",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001396"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001708",
       "pred" : "is_a",
@@ -10871,6 +12642,14 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000569",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000587"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001333",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002304"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001229",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000017"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002142",
       "pred" : "is_a",
@@ -10920,6 +12699,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001988"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002364",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002254",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001591"
@@ -10947,6 +12730,18 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001291",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001739"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002072",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001402",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001397"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001860",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000769"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001879",
       "pred" : "is_a",
@@ -11020,6 +12815,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001999"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001407",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002505"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001819",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000608"
@@ -11031,6 +12830,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002118",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000470"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001832",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002041",
       "pred" : "is_a",
@@ -11067,6 +12870,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001309",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002062"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002362",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001997",
       "pred" : "is_a",
@@ -11136,6 +12943,10 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/pato#different_in_magnitude_relative_to"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001397",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001396"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000186",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001995"
@@ -11151,6 +12962,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001977",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002478",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001410"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001476",
       "pred" : "is_a",
@@ -11171,6 +12986,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000618",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000140"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000279",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000274"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002042",
       "pred" : "is_a",
@@ -11200,6 +13019,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002254"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002038",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002037"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002245",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001035"
@@ -11211,6 +13034,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001362",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001662"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001859",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000133",
       "pred" : "is_a",
@@ -11243,6 +13070,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000596",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000918"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001833",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001230",
       "pred" : "is_a",
@@ -11303,6 +13134,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001788",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001823",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001822"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001894",
       "pred" : "is_a",
@@ -11372,6 +13207,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000927"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000888",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000277"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001898",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001648"
@@ -11388,6 +13227,14 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000956"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001834",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000955"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000261",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001995"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002143",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001481"
@@ -11403,6 +13250,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001608",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000330"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002071",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002070"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001162",
       "pred" : "is_a",
@@ -11444,13 +13295,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0015001",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000462"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000665",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000016"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0015001",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000462"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002246",
       "pred" : "is_a",
@@ -11467,6 +13318,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002302",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001236"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001834",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001618",
       "pred" : "is_a",
@@ -11491,6 +13346,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001890",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000402"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000633",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000060"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000188",
       "pred" : "is_a",
@@ -11532,6 +13391,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001410",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001609",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000060"
@@ -11539,6 +13402,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001816",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001815"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001830",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001850",
       "pred" : "is_a",
@@ -11567,6 +13434,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002300",
       "pred" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000461"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001832",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000891"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002327",
       "pred" : "is_a",
@@ -11684,6 +13555,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001018"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001908",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002505"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000642",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000141"
@@ -11691,6 +13566,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000761",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001707"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001826",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000033",
       "pred" : "is_a",
@@ -11704,6 +13583,14 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002360",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001727"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002094",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002070"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001854",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000060"
@@ -11711,6 +13598,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001563",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001701",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000261"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000643",
       "pred" : "is_a",
@@ -11723,6 +13614,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001561",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001564"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000695",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000057"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001669",
       "pred" : "is_a",
@@ -11784,13 +13679,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000406"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0001714",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000573"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001510",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001509"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001714",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000573"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001891",
       "pred" : "is_a",
@@ -11848,6 +13743,18 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001999"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001833",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000891"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002505",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001404"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001172",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001031"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001851",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000586"
@@ -11864,6 +13771,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001831",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000694",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002325"
@@ -11876,21 +13787,37 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001827"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002328",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001476"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002007",
       "pred" : "http://purl.obolibrary.org/obo/pato#has_cross_section",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002328",
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002361",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0001476"
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001625",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001510"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001817",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001815"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000586",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000117"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000964",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000957"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001627",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001626"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001594",
       "pred" : "is_a",
@@ -11900,13 +13827,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000004"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0001559",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000570",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000586"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001559",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002298",
       "pred" : "is_a",
@@ -11920,6 +13847,10 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001857"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002271",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002269"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000381",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000911"
@@ -11927,6 +13858,18 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002154",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0001785"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001706",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002265"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001859",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000769"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001153",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001043"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002089",
       "pred" : "is_a",
@@ -11951,6 +13894,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001593",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000406"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002070",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002182"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002001",
       "pred" : "is_a",
@@ -11983,6 +13930,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001697",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002303"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001168",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001020"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001847",
       "pred" : "is_a",
@@ -12040,6 +13991,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000141"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002124",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000141"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000944",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
@@ -12080,13 +14035,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000587"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000627",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000060"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000619",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000140"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000627",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000060"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001802",
       "pred" : "is_a",
@@ -12099,6 +14054,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001469",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000406"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001817",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001778"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001475",
       "pred" : "is_a",
@@ -12116,6 +14075,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000462"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000770",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000188"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001785",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000406"
@@ -12131,6 +14094,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0001919",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000628"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000300",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000004"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002324",
       "pred" : "is_a",
@@ -12153,14 +14120,28 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/hp/releases/2019-06-03/imports/pato_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/hp/releases/2019-06-10/imports/pato_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001776",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001544" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0000911",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000161" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001832",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000891" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
@@ -12173,6 +14154,20 @@
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002043",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0002041" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002072",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0002070" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001835",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000955" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
@@ -12217,6 +14212,13 @@
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001025" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001831",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000888" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
@@ -12294,15 +14296,15 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001712",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001711" ],
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001618",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001439" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001618",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001439" ],
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001712",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001711" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
@@ -12385,6 +14387,13 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001826",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001823" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0000912",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000161" ],
       "restrictions" : [ {
@@ -12448,8 +14457,22 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001833",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000891" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002304",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001236" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002071",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0002070" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
@@ -12485,6 +14508,13 @@
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002001",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001999" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001777",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001544" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
@@ -12532,6 +14562,13 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002361",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0002360" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002300",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000001" ],
       "restrictions" : [ {
@@ -12550,6 +14587,13 @@
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000547" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001859",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000769" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
@@ -12648,6 +14692,20 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001834",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000955" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001825",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001823" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#increased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002042",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0002041" ],
       "restrictions" : [ {
@@ -12704,6 +14762,13 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001830",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000888" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0000587",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000117" ],
       "restrictions" : [ {
@@ -12753,6 +14818,13 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001860",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000769" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001596",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001595" ],
       "restrictions" : [ {
@@ -12760,8 +14832,8 @@
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001552",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001457" ],
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002362",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0002360" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
@@ -12769,6 +14841,13 @@
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001779",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001230" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0001552",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001457" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/pato#decreased_in_magnitude_relative_to",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"

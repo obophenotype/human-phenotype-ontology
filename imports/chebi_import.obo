@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-06-03/imports/chebi_import.owl
+data-version: hp/releases/2019-06-10/imports/chebi_import.owl
 ontology: hp/imports/chebi_import
 
 [Term]
@@ -9130,8 +9130,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
@@ -17151,6 +17151,21 @@ subset: 3_STAR
 synonym: "fertiliser" RELATED [ChEBI]
 synonym: "fertilizers" RELATED [ChEBI]
 is_a: CHEBI:33286 ! agrochemical
+
+[Term]
+id: CHEBI:33290
+name: food
+namespace: chebi_ontology
+def: "Any material that can be ingested by an organism." []
+subset: 3_STAR
+synonym: "food material" RELATED [ChEBI]
+synonym: "food materials" RELATED [ChEBI]
+synonym: "food role" RELATED [ChEBI]
+synonym: "foods" RELATED [ChEBI]
+synonym: "foodstuff" RELATED [ChEBI]
+synonym: "foodstuffs" RELATED [ChEBI]
+is_a: CHEBI:52211 ! physiological role
+relationship: has_part CHEBI:78295 ! food component
 
 [Term]
 id: CHEBI:33292
