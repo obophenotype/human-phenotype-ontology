@@ -1,0 +1,13 @@
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?term ?annotation
+WHERE {
+  ?term ?p2 ?o2 .
+	?term a owl:Class .
+	?term ?annotation ?x .
+	?annotation a owl:AnnotationProperty . 
+  FILTER(isIRI(?term) && (regex(str(?term), UCASE("hp_")) || regex(str(?term), "http://purl.obolibrary.org/obo/HP_") || regex(str(?term), "http://purl.obolibrary.org/obo/hp")))
+}

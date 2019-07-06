@@ -106,3 +106,6 @@ remove_test:
 #		$(error $(ERR))
 #	endif
 
+annotation_types.txt: $(SRC)
+	$(ROBOT) query --use-graphs false -f csv -i $< --query ../sparql/hp_terms_annotations.sparql $@
+	python3 ../scripts/count_annotation_properties.py $@ $@
