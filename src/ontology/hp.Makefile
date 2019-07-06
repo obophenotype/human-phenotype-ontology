@@ -81,6 +81,8 @@ $(ONT).owl: $(SRC)
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
 
+$(PATTERNDIR)/dosdp-patterns: .FORCE
+	echo "skipping pattern updates."
 
 hp_report: $(SRC)
 	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on none -o hp_report
