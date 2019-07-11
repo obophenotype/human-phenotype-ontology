@@ -8,6 +8,6 @@ labels: 'logical definition'
 **HPO term**
 
 
-**Suggeted revision of logical definition**
+**Suggested revision of logical definition**
 
 
