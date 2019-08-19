@@ -12,9 +12,13 @@ straightforward as possible.
 
 ### Changed
 - added synonyms to HP_0011043 'Abnormality of circulating adrenocorticotropin level'
+- merged upper limb morphology terms
+- merged lower limb morphology terms
+- merged terms referring to missing subcutaneous fat
 
 ### Fixed
 
+- a lot of typos in textual definitions
  
 ## v2019-06-03
 
