@@ -111,3 +111,8 @@ remove_test:
 annotation_types.txt: $(SRC)
 	$(ROBOT) query --use-graphs false -f csv -i $< --query ../sparql/hp_terms_annotations.sparql $@
 	python3 ../scripts/count_annotation_properties.py $@ $@
+
+reports/hp_xrefs.csv: $(SRC)
+	$(ROBOT) query --use-graphs false -f csv -i $< --query ../sparql/xrefs.sparql $@.tmp
+	sort -t"," -k 2 $@.tmp > $@
+	rm $@.tmp
