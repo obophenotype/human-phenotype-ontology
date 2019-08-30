@@ -1,6 +1,7 @@
 # ----------------------------------------
 # Makefile for hp
 # Generated using ontology-starter-kit
+# ODK Version: v1.2.17
 # ----------------------------------------
 # <do not edit above this line>
 
@@ -14,7 +15,8 @@ ONT=                        hp
 ONTBASE=                    $(URIBASE)/$(ONT)
 EDIT_FORMAT=                owl
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
-ROBOT=                      robot
+CATALOG=                    catalog-v001.xml
+ROBOT=                      robot --catalog $(CATALOG)
 RELEASEDIR=                 ../..
 PATTERNDIR=                 ../patterns
 REPORTDIR=                 reports
@@ -23,8 +25,10 @@ REPORT_FAIL_ON =            none
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
+ODK_VERSION =               v1.2.17
 
-TODAY   := $(shell date +%Y-%m-%d)
+TODAY ?= $(shell date +%Y-%m-%d)
+OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
 DOSDP_SCHEMA=                http:// # change to PURL when ready.
 PATTERN_TESTER=              simple_pattern_tester.py
 DOSDPT=                      dosdp-tools
@@ -35,15 +39,19 @@ PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMAT) tsv)
 RELEASE_ARTEFACTS = $(sort  base simple-non-classified full base full)
- 
+
 # ----------------------------------------
 # Top-level targets
 # ----------------------------------------
 
 .PHONY: .FORCE
-all: all_imports patterns all_main all_subsets sparql_test all_reports all_assets
-test: sparql_test all_reports
-	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success"
+all: odkversion all_imports patterns all_main all_subsets sparql_test all_reports all_assets
+test: odkversion sparql_test all_reports
+	$(ROBOT) reason --input $(SRC) --reasoner ELK  --equivalent-classes-allowed asserted-only --output test.owl && rm test.owl && echo "Success"
+
+odkversion:
+	echo "ODK Makefile version: $(ODK_VERSION) (this is the version of the ODK with which this Makefile was generated, not the version of the ODK you are running)" &&\
+	echo "ROBOT version (ODK): " && $(ROBOT) --version
 
 ## -- main targets --
 ##
@@ -59,19 +67,19 @@ all_main: $(MAIN_FILES)
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-# pr
-IMPORTS =  nbo go uberon ro chebi hsapdv pato cl mpath
+
+IMPORTS =  nbo pr go uberon ro chebi hsapdv pato cl mpath
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(foreach f,$(FORMATS), $(n).$(f)))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 
 all_imports: $(IMPORT_FILES)
- 
+
 all_imports_owl: $(foreach n,$(IMPORT_ROOTS), $(n).owl)
- 
+
 all_imports_obo: $(foreach n,$(IMPORT_ROOTS), $(n).obo)
- 
+
 all_imports_json: $(foreach n,$(IMPORT_ROOTS), $(n).json)
 
 
@@ -102,7 +110,7 @@ all_patterns: $(PATTERN_FILES)
 ## -- dosdp pattern targets --
 ##
 
-OBO_REPORT = $(ONT)-edit-obo-report
+OBO_REPORT = $(SRC)-obo-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
 
@@ -129,6 +137,7 @@ show_assets:
 
 KEEPRELATIONS=keeprelations.txt
 ONTOLOGYTERMS=ontologyterms.txt
+SIMPLESEED=simple_seed.txt
 
 # This should be executed by the release manager whenever time comes to make a release.
 # It will ensure that all assets/files are fresh, and will copy to release folder
@@ -136,7 +145,7 @@ prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
 	rsync -R $(ASSETS) $(RELEASEDIR) &&\
   mkdir -p $(RELEASEDIR)/patterns &&\
   cp $(PATTERN_RELEASE_FILES) $(RELEASEDIR)/patterns &&\
-  echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
+  echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on your git hosting site such as GitHub or GitLab"
 
 prepare_initial_release: prepare_release
 	cd $(RELEASEDIR) && git add $(ASSETS)
@@ -147,31 +156,27 @@ prepare_initial_release: prepare_release
 
 
 $(ONT)-base.obo: $(ONT)-base.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT)-base.json: $(ONT)-base.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 $(ONT)-simple-non-classified.obo: $(ONT)-simple-non-classified.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT)-simple-non-classified.json: $(ONT)-simple-non-classified.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 $(ONT)-full.obo: $(ONT)-full.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT)-full.json: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 # Main release artefacts
 $(ONT).owl: $(ONT)-simple-non-classified.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
-$(ONT).obo: $(ONT)-simple-non-classified.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT).obo: $(ONT).owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT).json: $(ONT)-simple-non-classified.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
@@ -179,22 +184,22 @@ $(ONT).json: $(ONT)-simple-non-classified.owl
 # Initiating Step: Reason over source
 # ----------------------------------------
 
-ANNOTATE_VERSION_IRI = annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@.owl
+ANNOTATE_VERSION_IRI = annotate -V $(ONTBASE)/releases/$(TODAY)/$@.owl
 
 # by default we use ELK to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 
-OTHER_SRC = $(PATTERNDIR)/definitions.owl
+OTHER_SRC = $(PATTERNDIR)/definitions.owl 
 
 
-$(ONTOLOGYTERMS): $(SRC) all_imports
+$(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/hp_terms.sparql $@
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -202,27 +207,26 @@ $(ONTOLOGYTERMS): $(SRC) all_imports
 
 # base: OTHER sources of interest, such as definitions owl
 $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
-	$(ROBOT) remove --input $< --select imports \
+	$(ROBOT) remove --input $< --select imports --trim false \
 		merge $(patsubst %, -i %, $(OTHER_SRC)) \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
 # Full: The full artefacts with imports merged, reasoned
 $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) merge --input $< \
-		reason --reasoner ELK \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only \
 		relax \
 		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
 # foo-simple-non-classified (edit->relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest") <- aka the HPO use case, no reason.
-# Should this be the non-classified ontology with the drop foreign axiom filter? 
-# Consider adding remove --term "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace" 
+# Should this be the non-classified ontology with the drop foreign axiom filter?
+# Consider adding remove --term "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"
 
 $(ONT)-simple-non-classified.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS)
-	$(ROBOT) remove --input $< --select imports \
+	$(ROBOT) remove --input $< --select imports --trim true \
 		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
 		remove --axioms equivalent \
-		relax \
 		reduce -r ELK \
 		filter --select ontology --term-file $(ONTOLOGYTERMS) --trim false \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
@@ -250,7 +254,8 @@ imports/%_terms_combined.txt: seed.txt imports/%_terms.txt
 #
 # This pattern uses ROBOT to generate an import module
 imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
 
@@ -261,6 +266,8 @@ imports/%_import.obo: imports/%_import.owl
 	@if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f obo -o $@.tmp.obo && mv $@.tmp.obo $@; fi
 imports/%_import.json: imports/%_import.owl
 	@if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f json -o $@.tmp.json && mv $@.tmp.json $@; fi
+
+
 # ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------
@@ -404,7 +411,7 @@ sparql_test: $(SRC)
 # ----------------------------------------
 # ROBOT report
 # ----------------------------------------
-reports/%-obo-report.tsv: %.owl
+reports/%-obo-report.tsv: %
 	$(ROBOT) report -i $< --fail-on $(REPORT_FAIL_ON) -o $@
 
 # ----------------------------------------
@@ -472,24 +479,25 @@ $(PATTERNDIR)/data/default/%.ofn: $(PATTERNDIR)/data/default/%.tsv $(PATTERNDIR)
 # Generating the seed file from all the TSVs
 $(PATTERNDIR)/all_pattern_terms.txt: $(pattern_term_lists_default)   $(PATTERNDIR)/pattern_owl_seed.txt
 	cat $^ | sort | uniq > $@
-	
+
 $(PATTERNDIR)/pattern_owl_seed.txt: $(PATTERNDIR)/pattern.owl
-	@if [ $(IMP) = true ]; then $(ROBOT) query -f csv -i $< --query ../sparql/terms.sparql $@; fi
+	@if [ $(IMP) = true ]; then $(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@; fi
 
 $(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/default/%.tsv .FORCE
 	dosdp-tools terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@
 
 .PHONY: prepare_patterns
-prepare_patterns:	
+prepare_patterns:
 	touch $(pattern_term_lists_default)   &&\
   touch $(individual_patterns_default)  
 
 
 
 
+
+
+
+
+
+
 include hp.Makefile
-
-
-
-
-

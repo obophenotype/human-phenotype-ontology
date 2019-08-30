@@ -72,12 +72,6 @@ test_obo: test.owl
 test: sparql_test all_reports test_obo hp_error
 	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success (NOTE: xref-syntax nolabels not currently tested, uncomment in hp.Makefile)"
 
-# We overwrite the .owl release to be, for now, a simple merged version of the editors file.
-$(ONT).owl: $(SRC)
-	$(ROBOT) merge --input $< \
-		annotate --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
-		convert -o $@.tmp.owl && mv $@.tmp.owl $@
-
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
 
@@ -116,3 +110,25 @@ reports/hp_xrefs.csv: $(SRC)
 	$(ROBOT) query --use-graphs false -f csv -i $< --query ../sparql/xrefs.sparql $@.tmp
 	sort -t"," -k 2 $@.tmp > $@
 	rm $@.tmp
+	
+##################################
+###### SKIP DEFAULTS #############
+##################################
+
+# We overwrite the .owl release to be, for now, a simple merged version of the editors file.
+$(ONT).owl: $(SRC)
+	$(ROBOT) merge --input $< \
+		annotate --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		convert -o $@.tmp.owl && mv $@.tmp.owl $@
+
+$(ONT).obo: $(ONT)-simple-non-classified.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
+	convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+
+mirror/pr.owl: mirror/pr.trigger
+	echo "PRO MIRROR currently skipped!"
+.PRECIOUS: mirror/pr.owl
+
+imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
+	echo "PRO IMPORT currently skipped!"
+.PRECIOUS: imports/pr_import.owl
