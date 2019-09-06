@@ -1,5 +1,20 @@
 format-version: 1.2
-data-version: hp/releases/2019-06-10/imports/go_import.owl
+data-version: hp/releases/2019-09-06/imports/go_import.owl
+subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
+subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
+subsetdef: goslim_agr "AGR slim"
+subsetdef: goslim_aspergillus "Aspergillus GO slim"
+subsetdef: goslim_candida "Candida GO slim"
+subsetdef: goslim_chembl "ChEMBL protein targets summary"
+subsetdef: goslim_flybase_ribbon "FlyBase Drosophila GO ribbon slim"
+subsetdef: goslim_generic "Generic GO slim"
+subsetdef: goslim_metagenomics "Metagenomics GO slim"
+subsetdef: goslim_mouse "Mouse GO slim"
+subsetdef: goslim_pir "PIR GO slim"
+subsetdef: goslim_plant "Plant GO slim"
+subsetdef: goslim_pombe "Fission yeast GO slim"
+subsetdef: goslim_synapse "synapse GO slim"
+subsetdef: goslim_yeast "Yeast GO slim"
 ontology: hp/imports/go_import
 
 [Term]
@@ -692,10 +707,11 @@ relationship: part_of GO:0060429 ! epithelium development
 
 [Term]
 id: GO:0002087
-name: regulation of respiratory gaseous exchange by neurological system process
+name: regulation of respiratory gaseous exchange by nervous system process
 namespace: biological_process
 def: "A process carried out by the nervous system that is required for the proper control of respiratory gaseous exchange. This process occurs in the respiratory center of the brain in vertebrates." [GOC:dph, GOC:tb, PMID:12458206]
 synonym: "neurological control of breathing" EXACT [GOC:dph, GOC:tb]
+synonym: "regulation of respiratory gaseous exchange by neurological system process" EXACT []
 is_a: GO:0044065 ! regulation of respiratory system process
 is_a: GO:0050877 ! nervous system process
 intersection_of: GO:0050877 ! nervous system process
@@ -2858,7 +2874,7 @@ synonym: "(S)-malate hydro-lyase activity" EXACT [EC:4.2.1.2]
 synonym: "fumarase activity" EXACT [EC:4.2.1.2]
 synonym: "L-malate hydro-lyase activity" EXACT [EC:4.2.1.2]
 xref: EC:4.2.1.2
-xref: KEGG:R01082
+xref: KEGG_REACTION:R01082
 xref: MetaCyc:FUMHYDR-RXN
 xref: Reactome:R-HSA-451033 "(S)-Malate <=> Fumarate + H2O"
 xref: Reactome:R-HSA-70982 "Fumarate + H2O <=> (S)-Malate"
@@ -2929,7 +2945,7 @@ synonym: "methylmalonyl coenzyme A carbonylmutase activity" EXACT [EC:5.4.99.2]
 synonym: "methylmalonyl coenzyme A mutase activity" EXACT [EC:5.4.99.2]
 synonym: "methylmalonyl-CoA CoA-carbonyl mutase activity" EXACT [EC:5.4.99.2]
 xref: EC:5.4.99.2
-xref: KEGG:R00833
+xref: KEGG_REACTION:R00833
 xref: MetaCyc:METHYLMALONYL-COA-MUT-RXN
 xref: Reactome:R-HSA-3322971 "Defective MUT does not isomerise L-MM-CoA to SUCC-CoA"
 xref: Reactome:R-HSA-71010 "MUT isomerises L-MM-CoA to SUCC-CoA"
@@ -3088,7 +3104,7 @@ synonym: "orotodylate decarboxylase activity" EXACT [EC:4.1.1.23]
 synonym: "UMP synthase activity" EXACT [EC:4.1.1.23]
 synonym: "uridine 5'-monophosphate synthase activity" EXACT [EC:4.1.1.23]
 xref: EC:4.1.1.23
-xref: KEGG:R00965
+xref: KEGG_REACTION:R00965
 xref: MetaCyc:OROTPDECARB-RXN
 xref: Reactome:R-HSA-73564 "orotidine 5'-monophosphate => uridine 5'-monophosphate + CO2"
 xref: RHEA:11596
@@ -3124,7 +3140,7 @@ synonym: "secretory plant peroxidase activity" NARROW []
 synonym: "thiocyanate peroxidase" NARROW [EC:1.11.1.7]
 synonym: "verdoperoxidase" NARROW [EC:1.11.1.7]
 xref: EC:1.11.1.7
-xref: KEGG:R03532
+xref: KEGG_REACTION:R03532
 xref: MetaCyc:PEROXID-RXN
 xref: MIPS_funcat:32.07.07.05
 xref: Reactome:R-HSA-1222346 "AhpC reduces H2O2"
@@ -3167,7 +3183,7 @@ synonym: "phosphoglyceric acid kinase activity" EXACT [EC:2.7.2.3]
 synonym: "phosphoglyceric kinase activity" EXACT [EC:2.7.2.3]
 synonym: "phosphoglycerokinase activity" EXACT [EC:2.7.2.3]
 xref: EC:2.7.2.3
-xref: KEGG:R01512
+xref: KEGG_REACTION:R01512
 xref: MetaCyc:PHOSGLYPHOS-RXN
 xref: Reactome:R-HSA-70486 "ATP + 3-Phospho-D-glycerate <=> ADP + 1,3-bisphospho-D-glycerate"
 xref: Reactome:R-HSA-71850 "1,3-bisphospho-D-glycerate + ADP <=> 3-phospho-D-glycerate + ADP"
@@ -3244,7 +3260,7 @@ def: "Catalysis of the reaction: ATP + bicarbonate + pyruvate = ADP + 2 H(+) + o
 synonym: "pyruvate:carbon-dioxide ligase (ADP-forming)" EXACT [EC:6.4.1.1]
 synonym: "pyruvic carboxylase activity" EXACT [EC:6.4.1.1]
 xref: EC:6.4.1.1
-xref: KEGG:R00344
+xref: KEGG_REACTION:R00344
 xref: MetaCyc:PYRUVATE-CARBOXYLASE-RXN
 xref: Reactome:R-HSA-70501 "Pyruvate + CO2 + ATP => ADP + Orthophosphate + Oxaloacetate"
 xref: RHEA:20844
@@ -3336,7 +3352,7 @@ name: binding
 namespace: molecular_function
 def: "The selective, non-covalent, often stoichiometric, interaction of a molecule with one or more specific sites on another molecule." [GOC:ceb, GOC:mah, ISBN:0198506732]
 comment: Note that this term is in the subset of terms that should not be used for direct, manual gene product annotation. Please choose a more specific child term, or request a new one if no suitable term is available. For ligands that bind to signal transducing receptors, consider the molecular function term 'receptor binding ; GO:0005102' and its children.
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 subset: goslim_plant
 synonym: "ligand" NARROW []
@@ -4290,10 +4306,12 @@ is_a: GO:0044267 ! cellular protein metabolic process
 id: GO:0006486
 name: protein glycosylation
 namespace: biological_process
+alt_id: GO:0065006
 def: "A protein modification process that results in the addition of a carbohydrate or carbohydrate derivative unit to a protein amino acid, e.g. the addition of glycan chains to proteins." [GOC:curators, GOC:pr]
 subset: goslim_pombe
 subset: goslim_yeast
 synonym: "protein amino acid glycosylation" EXACT [GOC:bf]
+synonym: "protein-carbohydrate complex assembly" RELATED []
 xref: MIPS_funcat:14.07.02
 is_a: GO:0006464 ! cellular protein modification process
 is_a: GO:0043413 ! macromolecule glycosylation
@@ -6173,7 +6191,6 @@ id: GO:0008374
 name: O-acyltransferase activity
 namespace: molecular_function
 def: "Catalysis of the transfer of an acyl group to an oxygen atom on the acceptor molecule." [GOC:ai]
-xref: EC:2.3.1
 xref: Reactome:R-HSA-1482775 "MLCL is acylated to CL by HADH (IM)"
 xref: Reactome:R-HSA-1482781 "MLCL and PC are converted to CL and 1-acyl LPC by TAZ (IM) (Reversible)"
 xref: Reactome:R-HSA-1482850 "MLCL and PE are converted to CL and 1-acyl LPE by TAZ (IM) (Reversible)"
@@ -6235,7 +6252,7 @@ def: "Catalysis of the reaction: H(2)O + O(2) + sulfite = H(2)O(2) + H(+) + sulf
 synonym: "sulfite:oxygen oxidoreductase activity" EXACT [EC:1.8.3.1]
 synonym: "sulphite oxidase activity" EXACT []
 xref: EC:1.8.3.1
-xref: KEGG:R00533
+xref: KEGG_REACTION:R00533
 xref: MetaCyc:PWY-5326
 xref: MetaCyc:SULFITE-OXIDASE-RXN
 xref: Reactome:R-HSA-1614544 "Sulfite is oxidized to sulfate"
@@ -8968,7 +8985,7 @@ synonym: "pyroglutamase activity" EXACT [EC:3.5.2.9]
 synonym: "pyroglutamate hydrolase activity" EXACT [EC:3.5.2.9]
 synonym: "pyroglutamic hydrolase activity" EXACT [EC:3.5.2.9]
 xref: EC:3.5.2.9
-xref: KEGG:R00251
+xref: KEGG_REACTION:R00251
 xref: MetaCyc:5-OXOPROLINASE-ATP-HYDROLYSING-RXN
 xref: Reactome:R-HSA-1247935 "OPLAH hydrolyses OPRO to L-Glu"
 xref: Reactome:R-HSA-5603208 "Defective OPLAH does not hydrolyse OPRO"
@@ -10515,11 +10532,9 @@ id: GO:0031214
 name: biomineral tissue development
 namespace: biological_process
 def: "Formation of hard tissues that consist mainly of inorganic compounds, and also contain a small amounts of organic matrices that are believed to play important roles in their formation." [PMID:15132736]
-synonym: "biomineral formation" RELATED [GOC:dph, GOC:tb]
-synonym: "biomineralization" EXACT []
-synonym: "mineralization" EXACT []
-xref: Wikipedia:Biomineralisation
+xref: Wikipedia:Biomineralization
 is_a: GO:0009888 ! tissue development
+is_a: GO:0110148 ! biomineralization
 relationship: part_of GO:0048513 ! animal organ development
 
 [Term]
@@ -11071,7 +11086,7 @@ synonym: "down-regulation of myelination" EXACT []
 synonym: "downregulation of myelination" EXACT []
 synonym: "inhibition of myelination" NARROW []
 is_a: GO:0031641 ! regulation of myelination
-is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0048523 ! negative regulation of cellular process
 is_a: GO:0051961 ! negative regulation of nervous system development
 intersection_of: GO:0008150 ! biological_process
@@ -11089,7 +11104,7 @@ synonym: "up regulation of myelination" EXACT []
 synonym: "up-regulation of myelination" EXACT []
 synonym: "upregulation of myelination" EXACT []
 is_a: GO:0031641 ! regulation of myelination
-is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0048522 ! positive regulation of cellular process
 is_a: GO:0051962 ! positive regulation of nervous system development
 intersection_of: GO:0008150 ! biological_process
@@ -11098,10 +11113,11 @@ relationship: positively_regulates GO:0042552 ! myelination
 
 [Term]
 id: GO:0031644
-name: regulation of neurological system process
+name: regulation of nervous system process
 namespace: biological_process
-def: "Any process that modulates the frequency, rate or extent of a neurophysiological process, an organ system process carried out by any of the organs or tissues of neurological system." [GOC:dph, GOC:mah, GOC:tb]
+def: "Any process that modulates the frequency, rate or extent of a neurophysiological process, an organ system process carried out by any of the organs or tissues of the nervous system." [GOC:dph, GOC:mah, GOC:tb]
 synonym: "regulation of neurological process" EXACT [GOC:dph, GOC:tb]
+synonym: "regulation of neurological system process" EXACT []
 synonym: "regulation of neurophysiological process" EXACT []
 is_a: GO:0044057 ! regulation of system process
 intersection_of: GO:0008150 ! biological_process
@@ -11110,7 +11126,7 @@ relationship: regulates GO:0050877 ! nervous system process
 
 [Term]
 id: GO:0031645
-name: negative regulation of neurological system process
+name: negative regulation of nervous system process
 namespace: biological_process
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a neurophysiological process." [GOC:dph, GOC:mah, GOC:tb]
 synonym: "down regulation of neurological process" EXACT []
@@ -11118,8 +11134,9 @@ synonym: "down-regulation of neurological process" EXACT []
 synonym: "downregulation of neurological process" EXACT []
 synonym: "inhibition of neurological process" NARROW []
 synonym: "negative regulation of neurological process" EXACT [GOC:dph, GOC:tb]
+synonym: "negative regulation of neurological system process" EXACT []
 synonym: "negative regulation of neurophysiological process" EXACT []
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0050877 ! nervous system process
@@ -11127,17 +11144,18 @@ relationship: negatively_regulates GO:0050877 ! nervous system process
 
 [Term]
 id: GO:0031646
-name: positive regulation of neurological system process
+name: positive regulation of nervous system process
 namespace: biological_process
 def: "Any process that activates or increases the frequency, rate or extent of a neurophysiological process." [GOC:dph, GOC:mah, GOC:tb]
 synonym: "activation of neurological process" NARROW []
 synonym: "positive regulation of neurological process" EXACT [GOC:dph, GOC:tb]
+synonym: "positive regulation of neurological system process" EXACT []
 synonym: "positive regulation of neurophysiological process" EXACT []
 synonym: "stimulation of neurological process" NARROW []
 synonym: "up regulation of neurological process" EXACT []
 synonym: "up-regulation of neurological process" EXACT []
 synonym: "upregulation of neurological process" EXACT []
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0050877 ! nervous system process
@@ -14429,8 +14447,8 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of symbiosis, an interaction between two organisms living together in more or less intimate association." [GOC:jl]
 is_a: GO:0043900 ! regulation of multi-organism process
 intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0044403 ! symbiont process
-relationship: regulates GO:0044403 ! symbiont process
+intersection_of: regulates GO:0044403 ! symbiotic process
+relationship: regulates GO:0044403 ! symbiotic process
 
 [Term]
 id: GO:0043931
@@ -14577,14 +14595,17 @@ creation_date: 2009-07-15T11:55:44Z
 id: GO:0044110
 name: growth involved in symbiotic interaction
 namespace: biological_process
+alt_id: GO:0044153
 def: "The increase in size or mass of an organism occurring when the organism is in a symbiotic interaction." [GO:jl, GOC:pamgo_curators]
 comment: This term partially replaces the obsolete term 'growth or development during symbiotic interaction ; GO:0052171'. See also 'development during symbiotic interaction ; GO:0044111'.
 synonym: "growth during symbiotic interaction" RELATED [GOC:dph]
+synonym: "growth on or near surface of other organism during symbiotic interaction" RELATED [GOC:tb]
+synonym: "growth on or near surface of other organism involved in symbiotic interaction" RELATED []
 is_a: GO:0040007 ! growth
 is_a: GO:0051704 ! multi-organism process
 intersection_of: GO:0040007 ! growth
-intersection_of: part_of GO:0044403 ! symbiont process
-relationship: part_of GO:0044403 ! symbiont process
+intersection_of: part_of GO:0044403 ! symbiotic process
+relationship: part_of GO:0044403 ! symbiotic process
 created_by: jane
 creation_date: 2009-07-30T02:22:33Z
 
@@ -14592,14 +14613,17 @@ creation_date: 2009-07-30T02:22:33Z
 id: GO:0044111
 name: development involved in symbiotic interaction
 namespace: biological_process
+alt_id: GO:0044152
 def: "The progression of an organism from an initial condition to a later condition, occurring when the organism is in a symbiotic interaction." [GO:jl, GOC:pamgo_curators]
 comment: This term partially replaces the obsolete term 'growth or development during symbiotic interaction ; GO:0052171'. See also 'growth during symbiotic interaction ; GO:0044110'.
 synonym: "development during symbiotic interaction" RELATED [gOC:dph]
+synonym: "development on or near surface of other organism during symbiotic interaction" RELATED [GOC:dph]
+synonym: "development on or near surface of other organism involved in symbiotic interaction" NARROW []
 is_a: GO:0032502 ! developmental process
 is_a: GO:0051704 ! multi-organism process
 intersection_of: GO:0032502 ! developmental process
-intersection_of: part_of GO:0044403 ! symbiont process
-relationship: part_of GO:0044403 ! symbiont process
+intersection_of: part_of GO:0044403 ! symbiotic process
+relationship: part_of GO:0044403 ! symbiotic process
 created_by: jane
 creation_date: 2009-07-30T02:26:46Z
 
@@ -14775,7 +14799,7 @@ creation_date: 2011-10-27T02:27:48Z
 
 [Term]
 id: GO:0044403
-name: symbiont process
+name: symbiotic process
 namespace: biological_process
 alt_id: GO:0043298
 alt_id: GO:0044404
@@ -20788,7 +20812,7 @@ name: interaction with symbiont
 namespace: biological_process
 def: "An interaction between two organisms living together in more or less intimate association. The term symbiont is used for the smaller (macro) of the two members of a symbiosis; the various forms of symbiosis include parasitism, commensalism and mutualism." [GOC:cc]
 is_a: GO:0044419 ! interspecies interaction between organisms
-relationship: part_of GO:0044403 ! symbiont process
+relationship: part_of GO:0044403 ! symbiotic process
 
 [Term]
 id: GO:0051703
@@ -21000,8 +21024,8 @@ synonym: "regulation of physiological process in other organism during symbiotic
 synonym: "regulation of physiology of other organism during symbiotic interaction" NARROW []
 is_a: GO:0035821 ! modification of morphology or physiology of other organism
 intersection_of: GO:0035821 ! modification of morphology or physiology of other organism
-intersection_of: part_of GO:0044403 ! symbiont process
-relationship: part_of GO:0044403 ! symbiont process
+intersection_of: part_of GO:0044403 ! symbiotic process
+relationship: part_of GO:0044403 ! symbiotic process
 
 [Term]
 id: GO:0051818
@@ -21095,7 +21119,7 @@ id: GO:0051931
 name: regulation of sensory perception
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of sensory perception, the series of events required for an organism to receive a sensory stimulus, convert it to a molecular signal, and recognize and characterize the signal." [GOC:ai]
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0007600 ! sensory perception
 relationship: regulates GO:0007600 ! sensory perception
@@ -21151,7 +21175,7 @@ def: "Any process that modulates the frequency, rate or extent of transmission o
 synonym: "regulation of conduction of nerve impulse" EXACT [GOC:dph]
 is_a: GO:0010646 ! regulation of cell communication
 is_a: GO:0023051 ! regulation of signaling
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0019226 ! transmission of nerve impulse
 relationship: regulates GO:0019226 ! transmission of nerve impulse
@@ -21168,7 +21192,7 @@ synonym: "inhibition of transmission of nerve impulse" NARROW []
 synonym: "negative regulation of conduction of nerve impulse" EXACT [GOC:dph]
 is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0023057 ! negative regulation of signaling
-is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0051969 ! regulation of transmission of nerve impulse
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0019226 ! transmission of nerve impulse
@@ -21187,7 +21211,7 @@ synonym: "up-regulation of transmission of nerve impulse" EXACT []
 synonym: "upregulation of transmission of nerve impulse" EXACT []
 is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0023056 ! positive regulation of signaling
-is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0051969 ! regulation of transmission of nerve impulse
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0019226 ! transmission of nerve impulse
@@ -21233,6 +21257,31 @@ is_a: GO:0051983 ! regulation of chromosome segregation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0007059 ! chromosome segregation
 relationship: negatively_regulates GO:0007059 ! chromosome segregation
+
+[Term]
+id: GO:0052462
+name: modulation by host of symbiont phagocytosis
+namespace: biological_process
+def: "Any process in which an organism modulates the frequency, rate or extent of phagocytosis, the engulfing by phagocytes of external particulate material, in the symbiont organism. The symbiont is defined as the smaller of the organisms involved in a symbiotic interaction." [GOC:mtg_pamgo_17jul06]
+is_a: GO:0050764 ! regulation of phagocytosis
+is_a: GO:0051851 ! modification by host of symbiont morphology or physiology
+intersection_of: GO:0051851 ! modification by host of symbiont morphology or physiology
+intersection_of: regulates GO:0006909 ! phagocytosis
+
+[Term]
+id: GO:0052521
+name: positive regulation by host of symbiont phagocytosis
+namespace: biological_process
+def: "Any process in which an organism activates, maintains or increases the frequency, rate or extent of phagocytosis, the engulfing by phagocytes of external particulate material, in the symbiont organism. The symbiont is defined as the smaller of the organisms involved in a symbiotic interaction." [GOC:mtg_pamgo_17jul06]
+synonym: "activation by host of symbiont phagocytosis" NARROW []
+synonym: "stimulation by host of symbiont phagocytosis" NARROW []
+synonym: "up regulation by host of symbiont phagocytosis" EXACT []
+synonym: "up-regulation by host of symbiont phagocytosis" EXACT []
+synonym: "upregulation by host of symbiont phagocytosis" EXACT []
+is_a: GO:0050766 ! positive regulation of phagocytosis
+is_a: GO:0052462 ! modulation by host of symbiont phagocytosis
+intersection_of: GO:0051851 ! modification by host of symbiont morphology or physiology
+intersection_of: positively_regulates GO:0006909 ! phagocytosis
 
 [Term]
 id: GO:0055007
@@ -22607,9 +22656,7 @@ id: GO:0070167
 name: regulation of biomineral tissue development
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of biomineral tissue development, the formation of hard tissues that consist mainly of inorganic compounds." [GOC:mah]
-synonym: "regulation of biomineral formation" EXACT [GOC:dph, GOC:tb]
-synonym: "regulation of biomineralization" EXACT [GOC:mah]
-synonym: "regulation of mineralization" EXACT [GOC:mah]
+is_a: GO:0110149 ! regulation of biomineralization
 is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0031214 ! biomineral tissue development
@@ -22620,12 +22667,10 @@ id: GO:0070168
 name: negative regulation of biomineral tissue development
 namespace: biological_process
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of biomineral tissue development, the formation of hard tissues that consist mainly of inorganic compounds." [GOC:mah]
-synonym: "negative regulation of biomineral formation" EXACT [GOC:dph, GOC:tb]
-synonym: "negative regulation of biomineralization" EXACT [GOC:mah]
-synonym: "negative regulation of mineralization" EXACT [GOC:mah]
 is_a: GO:0051093 ! negative regulation of developmental process
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 is_a: GO:0070167 ! regulation of biomineral tissue development
+is_a: GO:0110150 ! negative regulation of biomineralization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0031214 ! biomineral tissue development
 relationship: negatively_regulates GO:0031214 ! biomineral tissue development
@@ -22635,12 +22680,10 @@ id: GO:0070169
 name: positive regulation of biomineral tissue development
 namespace: biological_process
 def: "Any process that activates or increases the frequency, rate or extent of biomineral tissue development, the formation of hard tissues that consist mainly of inorganic compounds." [GOC:mah]
-synonym: "positive regulation of biomineral formation" EXACT [GOC:dph, GOC:tb]
-synonym: "positive regulation of biomineralization" EXACT [GOC:mah]
-synonym: "positive regulation of mineralization" EXACT [GOC:mah]
 is_a: GO:0051094 ! positive regulation of developmental process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:0070167 ! regulation of biomineral tissue development
+is_a: GO:0110151 ! positive regulation of biomineralization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0031214 ! biomineral tissue development
 relationship: positively_regulates GO:0031214 ! biomineral tissue development
@@ -24844,6 +24887,70 @@ intersection_of: negatively_regulates GO:0009887 ! animal organ morphogenesis
 relationship: negatively_regulates GO:0009887 ! animal organ morphogenesis
 created_by: kmv
 creation_date: 2018-07-05T14:25:21Z
+
+[Term]
+id: GO:0110148
+name: biomineralization
+namespace: biological_process
+def: "The process where mineral crystals are formed and deposited in an organized fashion in a matrix (either cellular or extracellular) by living organisms. This gives rise to inorganic compound-based structures such as skeleton, teeth, ivory, shells, cuticle, and corals as well as bacterial biomineralization products." [GOC:aa, PMID:24395694, PMID:28229486]
+synonym: "biomineral formation" NARROW []
+synonym: "biomineralisation" EXACT []
+synonym: "mineralisation" EXACT []
+synonym: "mineralization" EXACT []
+xref: Wikipedia:Biomineralization
+is_a: GO:0008150 ! biological_process
+created_by: kmv
+creation_date: 2019-06-10T17:55:28Z
+
+[Term]
+id: GO:0110149
+name: regulation of biomineralization
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of biomineralization, the formation and deposition of mineral crystals by living organisms." [PMID:22992051]
+synonym: "regulation of biomineral formation" NARROW []
+synonym: "regulation of biomineralisation" EXACT []
+synonym: "regulation of mineralisation" EXACT []
+synonym: "regulation of mineralization" EXACT []
+is_a: GO:0050789 ! regulation of biological process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: regulates GO:0110148 ! biomineralization
+relationship: regulates GO:0110148 ! biomineralization
+created_by: kmv
+creation_date: 2019-06-10T18:06:59Z
+
+[Term]
+id: GO:0110150
+name: negative regulation of biomineralization
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of biomineralization, the formation and deposition of mineral crystals by living organisms." [PMID:22992051]
+synonym: "negative regulation of biomineral formation" NARROW []
+synonym: "negative regulation of biomineralisation" EXACT []
+synonym: "negative regulation of mineralisation" EXACT []
+synonym: "negative regulation of mineralization" EXACT []
+is_a: GO:0048519 ! negative regulation of biological process
+is_a: GO:0110149 ! regulation of biomineralization
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: negatively_regulates GO:0110148 ! biomineralization
+relationship: negatively_regulates GO:0110148 ! biomineralization
+created_by: kmv
+creation_date: 2019-06-10T18:12:24Z
+
+[Term]
+id: GO:0110151
+name: positive regulation of biomineralization
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of biomineralization, the formation and deposition of mineral crystals by living organisms." [PMID:22992051]
+synonym: "positive regulation of biomineral formation" NARROW []
+synonym: "positive regulation of biomineralisation" EXACT []
+synonym: "positive regulation of mineralisation" EXACT []
+synonym: "positive regulation of mineralization" EXACT []
+is_a: GO:0048518 ! positive regulation of biological process
+is_a: GO:0110149 ! regulation of biomineralization
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: positively_regulates GO:0110148 ! biomineralization
+relationship: positively_regulates GO:0110148 ! biomineralization
+created_by: kmv
+creation_date: 2019-06-10T18:18:01Z
 
 [Term]
 id: GO:0120025

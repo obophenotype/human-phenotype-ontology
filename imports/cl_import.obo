@@ -1,5 +1,6 @@
 format-version: 1.2
-data-version: hp/releases/2019-06-10/imports/cl_import.owl
+data-version: hp/releases/2019-09-06/imports/cl_import.owl
+subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 ontology: hp/imports/cl_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (ILC1)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\n)
 
@@ -121,7 +122,7 @@ is_a: CL:0000408 {is_inferred="true"} ! male gamete
 intersection_of: CL:0000408 ! male gamete
 intersection_of: RO:0002215 GO:0030317
 intersection_of: RO:0002215 GO:0048240
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 relationship: RO:0002202 CL:0000018 ! spermatid
 
 [Term]
@@ -407,7 +408,7 @@ def: "A cell that has a filiform extrusion of the cell surface." [GOC:tfm]
 xref: VHOG:0001532
 xref: XAO:0000031
 intersection_of: CL:0000003 ! native cell
-intersection_of: RO:0002104 GO:0005929
+intersection_of: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000066
@@ -430,10 +431,10 @@ disjoint_from: CL:0000738 ! leukocyte
 id: CL:0000067
 name: ciliated epithelial cell
 namespace: cell
-def: "An epithelial cell that has a cillia." [GOC:tfm]
+def: "An epithelial cell that has a cilia." [GOC:tfm]
 xref: FMA:70605
-intersection_of: CL:0000075 ! columnar/cuboidal epithelial cell
-intersection_of: RO:0002104 GO:0005929
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000068
@@ -6053,7 +6054,7 @@ name: multi-ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with many cilium." [CL:CVS]
 is_a: CL:0000066 ! epithelial cell
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0005020
@@ -7725,6 +7726,16 @@ intersection_of: CL:0000037 ! hematopoietic stem cell
 intersection_of: BFO:0000050 UBERON:0012168
 created_by: TermGenie
 creation_date: 2015-05-26T18:58:34Z
+
+[Term]
+id: CL:3000000
+name: ciliated epithelial cell of esophagus
+namespace: cell
+def: "A ciliated epithelial cell of the esophagus." [GOC:CellBLAST, PMID:29802404]
+intersection_of: CL:0000067 ! ciliated epithelial cell
+intersection_of: BFO:0000050 UBERON:0001976
+created_by: CellBLAST
+creation_date: 2019-02-09T16:40:30Z
 
 [Term]
 id: CP:0000000

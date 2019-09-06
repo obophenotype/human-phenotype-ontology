@@ -1,5 +1,8 @@
 format-version: 1.2
-data-version: hp/releases/2019-06-10/imports/chebi_import.owl
+data-version: hp/releases/2019-09-06/imports/chebi_import.owl
+subsetdef: 1_STAR "Preliminary entries"
+subsetdef: 2_STAR "Annotated by 3rd party"
+subsetdef: 3_STAR "Manually annotated by ChEBI Team"
 ontology: hp/imports/chebi_import
 
 [Term]
@@ -962,6 +965,27 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "146.04588
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[NH3+]C(CCC([O-])=O)C([O-])=O" xsd:string
 
 [Term]
+id: CHEBI:144637
+name: 4-hydroxy-D-proline
+namespace: chebi_ontology
+def: "The D-stereoisomer of 4-hydroxyproline." []
+subset: 3_STAR
+synonym: "(2R)-4-hydroxypyrrolidine-2-carboxylic acid" RELATED [ChEBI]
+synonym: "4-hydroxy-D-Pro" RELATED [ChEBI]
+synonym: "4-hydroxy-D-proline" EXACT IUPAC_NAME [IUPAC]
+synonym: "4-OH-D-Pro" RELATED [ChEBI]
+is_a: CHEBI:20392 ! 4-hydroxyproline
+is_a: CHEBI:84185 ! D-proline derivative
+relationship: is_enantiomer_of CHEBI:18240 ! 4-hydroxy-L-proline
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C5H9NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3?,4-/m1/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "PMMYEEVYMWASQN-SRBOSORUSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "131.131" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "131.05824" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@@H]1(CC(O)CN1)C(O)=O" xsd:string
+
+[Term]
 id: CHEBI:15035
 name: retinal
 namespace: chebi_ontology
@@ -1006,12 +1030,19 @@ name: xanthine
 namespace: chebi_ontology
 def: "A purine nucleobase found in humans and other organisms." []
 subset: 3_STAR
+synonym: "2,6-dioxopurine" RELATED [ChEBI]
+synonym: "2,6-dioxopurines" RELATED [ChEBI]
+synonym: "xanthine" EXACT [ChEBI]
+synonym: "xanthines" RELATED [ChEBI]
 xref: ECMDB:ECMDB00292
 xref: KNApSAcK:C00019660
+xref: PMID:1557408 "Europe PMC"
 xref: PMID:24629268 "Europe PMC"
+xref: PMID:9007687 "Europe PMC"
 xref: YMDB:YMDB00263
 is_a: CHEBI:25810 ! oxopurine
 is_a: CHEBI:26386 ! purine nucleobase
+relationship: has_functional_parent CHEBI:16235 ! guanine
 relationship: has_role CHEBI:78675 ! fundamental metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C5H4N4O2" xsd:string
@@ -1067,6 +1098,7 @@ xref: PMID:17439666 "Europe PMC"
 xref: PMID:25181601 "Europe PMC"
 xref: Reaxys:1721406 "Reaxys"
 xref: Wikipedia:Cysteine
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:26834 ! sulfur-containing amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 relationship: has_part CHEBI:50326 ! sulfanylmethyl group
@@ -1112,6 +1144,7 @@ xref: Reaxys:3587721 "Reaxys"
 xref: UM-BBD_compID:c0159 "UM-BBD"
 is_a: CHEBI:35179 ! 2-oxo monocarboxylic acid anion
 relationship: has_functional_parent CHEBI:17272 ! propionate
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:78675 ! fundamental metabolite
 relationship: is_conjugate_base_of CHEBI:32816 ! pyruvic acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
@@ -3043,6 +3076,7 @@ is_a: CHEBI:24834 ! inorganic anion
 is_a: CHEBI:33482 ! sulfur oxoanion
 is_a: CHEBI:48154 ! sulfur oxide
 is_a: CHEBI:79388 ! divalent inorganic anion
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
 relationship: is_conjugate_base_of CHEBI:45696 ! hydrogensulfate
@@ -3115,6 +3149,55 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "XSQUKJJJFZCRTK-UH
 property_value: http://purl.obolibrary.org/obo/chebi/mass "60.05534" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "60.03236" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "NC(N)=O" xsd:string
+
+[Term]
+id: CHEBI:16235
+name: guanine
+namespace: chebi_ontology
+alt_id: CHEBI:14371
+alt_id: CHEBI:14372
+alt_id: CHEBI:24443
+alt_id: CHEBI:42948
+alt_id: CHEBI:5563
+def: "A 2-aminopurine carrying a 6-oxo substituent." []
+subset: 3_STAR
+synonym: "2-amino-1,9-dihydro-6H-purin-6-one" EXACT IUPAC_NAME [IUPAC]
+synonym: "2-Amino-6-hydroxypurine" RELATED [KEGG_COMPOUND]
+synonym: "2-amino-6-oxopurine" RELATED [ChEBI]
+synonym: "G" RELATED [ChEBI]
+synonym: "Gua" RELATED [CBN]
+synonym: "GUANINE" EXACT [PDBeChem]
+synonym: "Guanine" EXACT [KEGG_COMPOUND]
+synonym: "guanine" EXACT [UniProt]
+xref: Beilstein:147911 "Beilstein"
+xref: CAS:73-40-5 "KEGG COMPOUND"
+xref: DrugBank:DB02377
+xref: Gmelin:431879 "Gmelin"
+xref: HMDB:HMDB0000132
+xref: KEGG:C00242
+xref: KNApSAcK:C00001501
+xref: MetaCyc:GUANINE
+xref: PDBeChem:GUN
+xref: PMID:22770225 "Europe PMC"
+xref: PMID:8070089 "Europe PMC"
+xref: Reaxys:147911 "Reaxys"
+xref: Wikipedia:Guanine
+is_a: CHEBI:20702 ! 2-aminopurines
+is_a: CHEBI:25810 ! oxopurine
+is_a: CHEBI:26386 ! purine nucleobase
+relationship: has_parent_hydride CHEBI:35589 ! 9H-purine
+relationship: has_role CHEBI:75771 ! mouse metabolite
+relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
+relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
+relationship: has_role CHEBI:77746 ! human metabolite
+relationship: has_role CHEBI:84735 ! algal metabolite
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C5H5N5O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C5H5N5O/c6-5-9-3-2(4(11)10-5)7-1-8-3/h1H,(H4,6,7,8,9,10,11)" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "UYTPUPDQBNUYGX-UHFFFAOYSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "151.126" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "151.04941" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C12=C(N=C(NC1=O)N)NC=N2" xsd:string
 
 [Term]
 id: CHEBI:16247
@@ -3935,7 +4018,6 @@ xref: PMID:21791173 "Europe PMC"
 xref: Reaxys:3664503 "Reaxys"
 is_a: CHEBI:36147 ! oxo dicarboxylate
 relationship: has_functional_parent CHEBI:30921 ! glutarate(2-)
-relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
 relationship: has_role CHEBI:84735 ! algal metabolite
@@ -5886,10 +5968,12 @@ xref: HMDB:HMDB0000892
 xref: KEGG:C00803
 xref: KNApSAcK:C00001208
 xref: LIPID_MAPS_instance:LMFA01010005 "LIPID MAPS"
+xref: PDBeChem:LEA
 xref: PDBeChem:PEI
 xref: PMID:20507156 "Europe PMC"
 xref: PPDB:3130
 xref: Reaxys:969454 "Reaxys"
+xref: Wikipedia:Valeric_acid
 is_a: CHEBI:26666 ! short-chain fatty acid
 is_a: CHEBI:39418 ! straight-chain saturated fatty acid
 relationship: has_role CHEBI:76924 ! plant metabolite
@@ -6049,6 +6133,7 @@ xref: MetaCyc:HCO3
 xref: PDBeChem:BCT
 xref: PMID:17215880 "Europe PMC"
 xref: PMID:17505962 "Europe PMC"
+xref: PMID:18439416 "Europe PMC"
 xref: PMID:28732801 "Europe PMC"
 xref: PMID:29150416 "Europe PMC"
 xref: PMID:29460248 "Europe PMC"
@@ -6056,6 +6141,7 @@ xref: PMID:29466234 "Europe PMC"
 xref: PMID:4208463 "Europe PMC"
 xref: Wikipedia:Bicarbonate
 is_a: CHEBI:35604 ! carbon oxoanion
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
@@ -6760,6 +6846,7 @@ xref: KEGG:C00716
 xref: KNApSAcK:C00001393
 xref: Reaxys:1721402 "Reaxys"
 xref: Wikipedia:Serine
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 relationship: has_part CHEBI:24712 ! hydroxymethyl group
 relationship: has_role CHEBI:78675 ! fundamental metabolite
@@ -7265,6 +7352,7 @@ xref: PDBeChem:CL
 xref: UM-BBD_compID:c0884 "UM-BBD"
 is_a: CHEBI:16042 ! halide anion
 is_a: CHEBI:33432 ! monoatomic chlorine
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
 relationship: is_conjugate_base_of CHEBI:17883 ! hydrogen chloride
@@ -7728,6 +7816,7 @@ xref: KEGG:C01536
 xref: KNApSAcK:C00001397
 xref: PMID:17190852 "Europe PMC"
 xref: Reaxys:515881 "Reaxys"
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:33856 ! aromatic amino acid
 relationship: has_functional_parent CHEBI:30768 ! propionic acid
@@ -7829,6 +7918,7 @@ xref: PMID:24616376 "Europe PMC"
 xref: PMID:24984001 "Europe PMC"
 xref: Reaxys:1723799 "Reaxys"
 xref: Wikipedia:Glutamic_acid
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 relationship: has_part CHEBI:50329 ! 2-carboxyethyl group
 relationship: has_role CHEBI:78675 ! fundamental metabolite
@@ -7865,6 +7955,7 @@ is_a: CHEBI:20392 ! 4-hydroxyproline
 is_a: CHEBI:83822 ! non-proteinogenic L-alpha-amino acid
 is_a: CHEBI:84186 ! L-proline derivative
 relationship: is_conjugate_acid_of CHEBI:62981 ! 4-hydroxy-L-prolinate
+relationship: is_enantiomer_of CHEBI:144637 ! 4-hydroxy-D-proline
 relationship: is_tautomer_of CHEBI:58419 ! 4-hydroxy-L-proline zwitterion
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C5H9NO3" xsd:string
@@ -8385,6 +8476,7 @@ xref: Wikipedia:Cobamamide
 is_a: CHEBI:23334 ! cobalamins
 is_a: CHEBI:33913 ! corrinoid
 relationship: has_role CHEBI:23354 ! coenzyme
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:26348 ! prosthetic group
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
@@ -8558,6 +8650,15 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "QSHQKIURKJITMZ-OB
 property_value: http://purl.obolibrary.org/obo/chebi/mass "330.59028" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "330.32865" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[H][C@@]12CCCC[C@]1(C)[C@@]1([H])CC[C@]3(C)[C@]([H])(CC[C@@]3([H])[C@]1([H])CC2)[C@H](C)CCC" xsd:string
+
+[Term]
+id: CHEBI:20702
+name: 2-aminopurines
+namespace: chebi_ontology
+def: "Any aminopurine having the amino substituent at the 2-position." []
+subset: 3_STAR
+synonym: "2-aminopurines" EXACT [ChEBI]
+is_a: CHEBI:22527 ! aminopurine
 
 [Term]
 id: CHEBI:20706
@@ -8882,6 +8983,7 @@ xref: PMID:22264337 "Europe PMC"
 xref: PMID:22770225 "Europe PMC"
 xref: Reaxys:1723525 "Reaxys"
 xref: Wikipedia:Asparagine
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:35735 ! dicarboxylic acid monoamide
 relationship: has_part CHEBI:50330 ! 2-amino-2-oxoethyl group
@@ -8940,6 +9042,7 @@ xref: KEGG:C16433
 xref: PMID:22264337 "Europe PMC"
 xref: Reaxys:774618 "Reaxys"
 xref: Wikipedia:Aspartic_acid
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:66873 ! C4-dicarboxylic acid
 relationship: has_part CHEBI:41402 ! carboxymethyl group
@@ -10191,6 +10294,7 @@ synonym: "iron cation" EXACT IUPAC_NAME [IUPAC]
 synonym: "iron cations" RELATED [ChEBI]
 is_a: CHEBI:33515 ! transition element cation
 is_a: CHEBI:82663 ! elemental iron
+relationship: has_role CHEBI:23357 ! cofactor
 property_value: http://purl.obolibrary.org/obo/chebi/formula "Fe" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "55.845" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "55.93494" xsd:string
@@ -10361,6 +10465,7 @@ xref: PMID:17439666 "Europe PMC"
 xref: PMID:22264337 "Europe PMC"
 xref: Reaxys:1616991 "Reaxys"
 xref: Wikipedia:Lysine
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:35987 ! diamino acid
 relationship: has_functional_parent CHEBI:30776 ! hexanoic acid
@@ -11036,7 +11141,7 @@ is_a: CHEBI:26079 ! phosphoric acid derivative
 id: CHEBI:26078
 name: phosphoric acid
 namespace: chebi_ontology
-def: "A phosphorus oxoacid that consits of one oxo and three hydroxy groups joined covalently to a central phosphorus atom." []
+def: "A phosphorus oxoacid that consists of one oxo and three hydroxy groups joined covalently to a central phosphorus atom." []
 subset: 3_STAR
 synonym: "[PO(OH)3]" RELATED [IUPAC]
 synonym: "acide phosphorique" RELATED [ChEBI]
@@ -11131,9 +11236,21 @@ id: CHEBI:26167
 name: polar amino acid
 namespace: chebi_ontology
 alt_id: CHEBI:8283
-subset: 1_STAR
+def: "Any amino acid whose side chain is capable of forming one or more hydrogen bonds." []
+subset: 3_STAR
+synonym: "polar amino acid" EXACT [ChEBI]
+synonym: "polar amino acids" RELATED [ChEBI]
+synonym: "polar amino-acid" RELATED [ChEBI]
+synonym: "polar amino-acids" RELATED [ChEBI]
+xref: MetaCyc:Polar-amino-acids
+xref: PMID:12016058 "Europe PMC"
 is_a: CHEBI:33709 ! amino acid
 relationship: is_tautomer_of CHEBI:62031 ! polar amino acid zwitterion
+property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H4NO2R" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "74.059" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "74.02420" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC(C(*)N)=O" xsd:string
 
 [Term]
 id: CHEBI:26191
@@ -11734,7 +11851,7 @@ relationship: has_part CHEBI:26833 ! sulfur atom
 id: CHEBI:26836
 name: sulfuric acid
 namespace: chebi_ontology
-def: "A sulfur oxoacid that consits of two oxo and two hydroxy groups joined covalently to a central sulfur atom." []
+def: "A sulfur oxoacid that consists of two oxo and two hydroxy groups joined covalently to a central sulfur atom." []
 subset: 3_STAR
 synonym: "[S(OH)2O2]" RELATED [MolBase]
 synonym: "[SO2(OH)2]" RELATED [IUPAC]
@@ -11865,6 +11982,7 @@ xref: PMID:11379295 "Europe PMC"
 xref: PMID:15221503 "Europe PMC"
 xref: PMID:22264337 "Europe PMC"
 xref: Wikipedia:Threonine
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:38263 ! 2-amino-3-hydroxybutanoic acid
 relationship: has_part CHEBI:50341 ! 1-hydroxyethyl group
 relationship: has_role CHEBI:83056 ! Daphnia magna metabolite
@@ -12359,6 +12477,7 @@ xref: PMID:29286160 "Europe PMC"
 xref: Reaxys:84087 "Reaxys"
 xref: Wikipedia:Histidine
 is_a: CHEBI:24780 ! imidazoles
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:33856 ! aromatic amino acid
 relationship: has_part CHEBI:50338 ! 1H-imidazol-4-ylmethyl group
@@ -12578,6 +12697,7 @@ xref: PMID:17439666 "Europe PMC"
 xref: PMID:22264337 "Europe PMC"
 xref: Reaxys:86196 "Reaxys"
 xref: Wikipedia:Tryptophan
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 is_a: CHEBI:33856 ! aromatic amino acid
 is_a: CHEBI:38631 ! aminoalkylindole
@@ -12700,6 +12820,7 @@ xref: KEGG:D03246
 xref: PDBeChem:COB
 is_a: CHEBI:140785 ! alkylcob(III)alamin
 is_a: CHEBI:23334 ! cobalamins
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
@@ -12802,6 +12923,7 @@ xref: KEGG:C00303
 xref: KNApSAcK:C00001359
 xref: Reaxys:1723795 "Reaxys"
 xref: Wikipedia:Glutamine
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 relationship: has_part CHEBI:50331 ! 3-amino-3-oxopropyl group
 relationship: has_role CHEBI:78675 ! fundamental metabolite
@@ -13394,7 +13516,7 @@ subset: 3_STAR
 synonym: "[NH4](+)" RELATED [MolBase]
 synonym: "ammonium" EXACT IUPAC_NAME [IUPAC]
 synonym: "ammonium" EXACT [ChEBI]
-synonym: "AMMONIUM ION" RELATED [PDBeChem]
+synonym: "ammonium ion" RELATED [PDBeChem]
 synonym: "Ammonium(1+)" RELATED [ChemIDplus]
 synonym: "azanium" EXACT IUPAC_NAME [IUPAC]
 synonym: "NH4(+)" RELATED [UniProt]
@@ -13427,9 +13549,9 @@ xref: PMID:22631217 "Europe PMC"
 xref: Reaxys:16093784 "Reaxys"
 xref: Wikipedia:Ammonium
 is_a: CHEBI:35106 ! nitrogen hydride
-is_a: CHEBI:35274 ! ammonium ion
 is_a: CHEBI:50313 ! onium cation
 is_a: CHEBI:60242 ! monovalent inorganic cation
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
@@ -13595,6 +13717,7 @@ xref: PMID:10848923 "Europe PMC"
 xref: Reaxys:1725411 "Reaxys"
 xref: Wikipedia:L-Arginine
 is_a: CHEBI:24436 ! guanidines
+is_a: CHEBI:26167 ! polar amino acid
 is_a: CHEBI:33704 ! alpha-amino acid
 relationship: has_part CHEBI:50340 ! 3-carbamimidamidopropyl group
 relationship: has_role CHEBI:78675 ! fundamental metabolite
@@ -13664,6 +13787,7 @@ is_a: CHEBI:25414 ! monoatomic monocation
 is_a: CHEBI:33504 ! alkali metal cation
 is_a: CHEBI:37246 ! elemental sodium
 is_a: CHEBI:60242 ! monovalent inorganic cation
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:77746 ! human metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "Na" xsd:string
@@ -13699,6 +13823,7 @@ is_a: CHEBI:25414 ! monoatomic monocation
 is_a: CHEBI:33504 ! alkali metal cation
 is_a: CHEBI:37247 ! elemental potassium
 is_a: CHEBI:60242 ! monovalent inorganic cation
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:77746 ! human metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "K" xsd:string
@@ -16179,6 +16304,7 @@ xref: Wikipedia:Pyruvic_acid
 xref: YMDB:YMDB00175
 is_a: CHEBI:35910 ! 2-oxo monocarboxylic acid
 relationship: has_functional_parent CHEBI:30768 ! propionic acid
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:78675 ! fundamental metabolite
 relationship: is_conjugate_acid_of CHEBI:15361 ! pyruvate
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
@@ -18600,6 +18726,7 @@ synonym: "corrinoids" EXACT IUPAC_NAME [IUPAC]
 synonym: "Korrinoid" RELATED [ChEBI]
 xref: KEGG:C06021
 is_a: CHEBI:36309 ! cyclic tetrapyrrole
+relationship: has_role CHEBI:23357 ! cofactor
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C19HN4R21" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "285.239" xsd:string
@@ -18705,7 +18832,7 @@ subset: 3_STAR
 synonym: "2-(5-hydroxy-1H-indol-3-yl)ethanaminium" EXACT IUPAC_NAME [IUPAC]
 synonym: "serotonin" RELATED [UniProt]
 synonym: "serotonin cation" RELATED [ChEBI]
-is_a: CHEBI:35274 ! ammonium ion
+is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: has_role CHEBI:77746 ! human metabolite
 relationship: is_conjugate_acid_of CHEBI:28790 ! serotonin
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
@@ -18977,7 +19104,7 @@ synonym: "quaternary ammonium ion" EXACT IUPAC_NAME [IUPAC]
 synonym: "quaternary ammonium ions" RELATED [ChEBI]
 xref: KEGG:C06703
 is_a: CHEBI:25697 ! organic cation
-is_a: CHEBI:35274 ! ammonium ion
+is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: has_parent_hydride CHEBI:28938 ! ammonium
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "NR4" xsd:string
@@ -18987,14 +19114,18 @@ property_value: http://purl.obolibrary.org/obo/chebi/smiles "[*][N+]([*])([*])[*
 
 [Term]
 id: CHEBI:35274
-name: ammonium ion
+name: ammonium ion derivative
 namespace: chebi_ontology
-def: "Ammonium, NH4(+), and derivatives formed by substitution by univalent groups." []
+def: "A derivative of ammonium, NH4(+), in which one (or more) of the hydrogens bonded to the nitrogen have been replaced with univalent organyl groups. The substituting carbon of the organyl group must not itself be directly attached to a heteroatom (thereby excluding protonated amides, hemiaminals, etc)." []
 subset: 3_STAR
+synonym: "ammonium ion derivatives" RELATED [ChEBI]
 synonym: "ammonium ions" RELATED [ChEBI]
+synonym: "azanium ion derivative" RELATED [ChEBI]
+synonym: "azanium ion derivatives" RELATED [ChEBI]
 synonym: "azanium ions" RELATED [ChEBI]
 is_a: CHEBI:33702 ! polyatomic cation
 is_a: CHEBI:51143 ! nitrogen molecular entity
+relationship: has_parent_hydride CHEBI:28938 ! ammonium
 
 [Term]
 id: CHEBI:35281
@@ -22704,6 +22835,7 @@ xref: PDBeChem:IPS
 xref: PDBeChem:PI
 is_a: CHEBI:35780 ! phosphate ion
 is_a: CHEBI:79388 ! divalent inorganic anion
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: is_conjugate_acid_of CHEBI:18367 ! phosphate(3-)
 relationship: is_conjugate_base_of CHEBI:39745 ! dihydrogenphosphate
@@ -25296,7 +25428,7 @@ synonym: "tryptamine" RELATED [UniProt]
 synonym: "tryptaminium cation" RELATED [ChEBI]
 synonym: "tryptaminium(1+)" RELATED [ChEBI]
 xref: Gmelin:533978 "Gmelin"
-is_a: CHEBI:35274 ! ammonium ion
+is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:76924 ! plant metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
@@ -25577,7 +25709,7 @@ synonym: "trimethylazanium" RELATED [ChEBI]
 synonym: "trimethylazanium cation" RELATED [ChEBI]
 xref: MetaCyc:TRIMETHYLAMINE
 xref: Reaxys:16709444 "Reaxys"
-is_a: CHEBI:35274 ! ammonium ion
+is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: has_role CHEBI:76967 ! human xenobiotic metabolite
 relationship: is_conjugate_acid_of CHEBI:18139 ! trimethylamine
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
@@ -26104,7 +26236,7 @@ name: N-acyl-D-alpha-amino acid anion
 namespace: chebi_ontology
 def: "The conjugate base of an N-acyl-D-alpha-amino acid arising from deprotonation of the C-1 carboxy group." []
 subset: 3_STAR
-synonym: "a N-acyl-D-amino acid" RELATED [UniProt]
+synonym: "an N-acyl-D-amino acid" RELATED [UniProt]
 synonym: "N-acyl-D-alpha-amino acid(1-)" RELATED [ChEBI]
 is_a: CHEBI:29067 ! carboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:15778 ! N-acyl-D-amino acid
@@ -26145,7 +26277,7 @@ synonym: "2-(3,4-dihydroxyphenyl)ethanaminium" EXACT IUPAC_NAME [IUPAC]
 synonym: "dopamine" RELATED [UniProt]
 synonym: "dopaminium cation" RELATED [ChEBI]
 xref: Gmelin:328863 "Gmelin"
-is_a: CHEBI:35274 ! ammonium ion
+is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: has_role CHEBI:77746 ! human metabolite
 relationship: is_conjugate_acid_of CHEBI:18243 ! dopamine
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
@@ -27416,7 +27548,7 @@ subset: 3_STAR
 synonym: "a primary amine" RELATED [UniProt]
 synonym: "substituted ammonium" RELATED [ChEBI]
 is_a: CHEBI:25697 ! organic cation
-is_a: CHEBI:35274 ! ammonium ion
+is_a: CHEBI:35274 ! ammonium ion derivative
 relationship: is_conjugate_acid_of CHEBI:32877 ! primary amine
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "H3NR" xsd:string
@@ -29559,8 +29691,8 @@ name: (omega-1)-hydroxy fatty acid anion
 namespace: chebi_ontology
 def: "A hydroxy fatty acid anion obtained by deprotonation of the carboxy group of any (omega-1)-hydroxy fatty acid; major species at pH 7.3." []
 subset: 3_STAR
-synonym: "(omega-1)-hydroxy fatty acid" RELATED [UniProt]
 synonym: "(omega-1)-hydroxy fatty acid anion" EXACT [SUBMITTER]
+synonym: "an (omega-1)-hydroxy fatty acid" RELATED [UniProt]
 is_a: CHEBI:59835 ! hydroxy fatty acid anion
 relationship: is_conjugate_base_of CHEBI:78954 ! (omega-1)-hydroxy fatty acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
