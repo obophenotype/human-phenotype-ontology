@@ -10,7 +10,8 @@ straightforward as possible.
 
 ### Added
 
-- new OMIM entries and updated thousands of annotations
+- 80 new OMIM entries 
+- added over 2000 annotations
 
 ### Changed
 
