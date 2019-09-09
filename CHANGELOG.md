@@ -3,10 +3,22 @@
 
 All notable changes to the HPO project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/).
  
-## [Unreleased] - 2019-06-04
+## [Unreleased] - 2019-09-09
  
  Here we write upgrading notes. It's a team effort to make them as
 straightforward as possible.
+
+### Added
+
+- new OMIM entries and updated thousands of annotations
+
+### Changed
+
+### Fixed
+- multiple typos in synonyms and definitions
+
+
+## v2019-09-06
 
 ### Added
 
