@@ -125,10 +125,10 @@ $(ONT).obo: $(ONT)-simple-non-classified.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 	convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
-mirror/pr.owl: mirror/pr.trigger
-	echo "PRO MIRROR currently skipped!"
-.PRECIOUS: mirror/pr.owl
+#mirror/pr.owl: mirror/pr.trigger
+#	echo "PRO MIRROR currently skipped!"
+#.PRECIOUS: mirror/pr.owl
 
-imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	echo "PRO IMPORT currently skipped!"
-.PRECIOUS: imports/pr_import.owl
+#imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
+#	echo "PRO IMPORT currently skipped!"
+#.PRECIOUS: imports/pr_import.owl
