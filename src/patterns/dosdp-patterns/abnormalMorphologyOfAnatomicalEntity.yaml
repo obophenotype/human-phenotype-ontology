@@ -1,6 +1,6 @@
 pattern_name: abnormalMorphologyOfAnatomicalEntity
 pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalMorphologyOfAnatomicalEntity.yaml
-description: "An abnormally shaped anatomical entity, like an abnormally shaped nose."
+description: "An morphologically abnormal anatomical entity. Morphological encompasses shape and colour, but more specific patterns exist."
 
 contributors:
   - https://orcid.org/0000-0002-9900-7880
@@ -26,18 +26,18 @@ vars:
   anatomical_entity: "'anatomical entity'"
 
 name:
-  text: "abnormal morphology of %s "
+  text: "abnormal %s morphology"
   vars:
    - anatomical_entity
 
 annotations:
   - annotationProperty: exact_synonym
-    text: "abnormal shape of %s"
+    text: "abnormal morphology of %s"
     vars:
      - anatomical_entity     
 
 def:
-  text: "Any structural anomaly of the %s."
+  text: "Any unspecified morphological anomaly of the %s, such as, for example, abnormal shape or colour."
   vars:
     - anatomical_entity
 

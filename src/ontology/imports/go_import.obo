@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-09-16/imports/go_import.owl
+data-version: hp/releases/2019-10-01/imports/go_import.owl
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr "AGR slim"
@@ -3048,6 +3048,24 @@ xref: EC:3.2.1
 xref: Reactome:R-HSA-5694563 "ABHD10 hydrolyses MPAG"
 xref: Reactome:R-HSA-6786652 "CHIT1 hydrolyses CHIT to 3xADGP"
 is_a: GO:0016798 ! hydrolase activity, acting on glycosyl bonds
+
+[Term]
+id: GO:0004556
+name: alpha-amylase activity
+namespace: molecular_function
+def: "Catalysis of the endohydrolysis of (1->4)-alpha-D-glucosidic linkages in polysaccharides containing three or more alpha-(1->4)-linked D-glucose units." [EC:3.2.1.1]
+synonym: "1,4-alpha-D-glucan glucanohydrolase activity" EXACT [EC:3.2.1.1]
+synonym: "alpha amylase activity" EXACT [EC:3.2.1.1]
+synonym: "endoamylase activity" EXACT [EC:3.2.1.1]
+synonym: "glycogenase activity" BROAD [EC:3.2.1.1]
+synonym: "taka-amylase A" RELATED [EC:3.2.1.1]
+xref: EC:3.2.1.1
+xref: MetaCyc:ALPHA-AMYL-RXN
+xref: MetaCyc:RXN-1823
+xref: MetaCyc:RXN-1825
+xref: Reactome:R-HSA-188979 "Digestion of linear starch (amylose) by extracellular amylase"
+xref: Reactome:R-HSA-191114 "Digestion of branched starch (amylopectin) by extracellular amylase"
+is_a: GO:0016160 ! amylase activity
 
 [Term]
 id: GO:0004565
@@ -8189,6 +8207,13 @@ synonym: "glycoside metabolism" EXACT []
 synonym: "O-glycoside metabolic process" EXACT []
 synonym: "O-glycoside metabolism" EXACT []
 is_a: GO:1901657 ! glycosyl compound metabolic process
+
+[Term]
+id: GO:0016160
+name: amylase activity
+namespace: molecular_function
+def: "Catalysis of the hydrolysis of amylose or an amylose derivative." [GOC:ai]
+is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
 id: GO:0016192
