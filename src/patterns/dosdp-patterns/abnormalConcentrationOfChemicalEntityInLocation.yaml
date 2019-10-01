@@ -3,7 +3,7 @@ pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalConcentr
 description: "An abnormal concentration of a chemical, like sodium, in a location, like the blood."
 
 classes:
-  concentration: PATO:0000033
+  concentration of: PATO:0000033
   abnormal: PATO:0000460
   chemical: CHEBI:24431
   independent continuant: BFO:0000004
@@ -35,7 +35,7 @@ def:
     - location
 
 equivalentTo:
-  text: "'has_part' some ('concentration' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  text: "'has_part' some ('concentration of' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
   vars:
     - chemical
     - location
