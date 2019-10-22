@@ -1,0 +1,1 @@
+# This folder contains files that are regenerated with every release to keep the src/ontology folder clean
