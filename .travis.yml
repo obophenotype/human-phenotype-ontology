@@ -2,8 +2,6 @@
 ## Go to: https://travis-ci.org/obophenotype for details
 sudo: required
 
-dist: trusty
-
 services:
   - docker
 
@@ -22,7 +20,7 @@ env:
     - JAVA_OPTS=-Xmx4g
     
 jdk:
-  - oraclejdk8
+  - oraclejdk11
 
 install:
   # owl-qc maven install
