@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-10-01/imports/chebi_import.owl
+data-version: hp/releases/2019-10-21/imports/chebi_import.owl
 subsetdef: 1_STAR "Preliminary entries"
 subsetdef: 2_STAR "Annotated by 3rd party"
 subsetdef: 3_STAR "Manually annotated by ChEBI Team"
@@ -9233,8 +9233,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
@@ -16689,7 +16689,6 @@ xref: KEGG:C00893
 xref: KEGG:C02580
 is_a: CHEBI:32952 ! amine
 is_a: CHEBI:50994 ! primary amino compound
-relationship: is_conjugate_base_of CHEBI:65296 ! primary ammonium ion
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "H2NR" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "16.02260" xsd:string
@@ -24598,6 +24597,7 @@ def: "A compound formally derived from ammonia by replacing one hydrogen atom by
 subset: 3_STAR
 synonym: "primary amino compounds" RELATED [ChEBI]
 is_a: CHEBI:50047 ! organic amino compound
+relationship: is_conjugate_base_of CHEBI:65296 ! primary ammonium ion
 
 [Term]
 id: CHEBI:50996
@@ -27543,13 +27543,13 @@ is_a: CHEBI:65255 ! food preservative
 id: CHEBI:65296
 name: primary ammonium ion
 namespace: chebi_ontology
-def: "An ammonium ion resulting from the protonation of the nitrogen atom of a primary amine. Major species at pH 7.3." []
+def: "An ammonium ion derivative resulting from the protonation of the nitrogen atom of a primary amino compound. Major species at pH 7.3." []
 subset: 3_STAR
 synonym: "a primary amine" RELATED [UniProt]
 synonym: "substituted ammonium" RELATED [ChEBI]
 is_a: CHEBI:25697 ! organic cation
 is_a: CHEBI:35274 ! ammonium ion derivative
-relationship: is_conjugate_acid_of CHEBI:32877 ! primary amine
+relationship: is_conjugate_acid_of CHEBI:50994 ! primary amino compound
 property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "H3NR" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "17.031" xsd:string
