@@ -3,7 +3,7 @@ pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalConcentr
 description: ""
 
 classes:
-  concentration: PATO:0000033
+  concentration of: PATO:0000033
   abnormal: PATO:0000460
   chemical: CHEBI:24431
 
@@ -30,7 +30,7 @@ def:
     - chemical
 
 equivalentTo:
-  text: "'has_part' some ('concentration' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  text: "'has_part' some ('concentration of' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
   vars:
     - chemical
 
