@@ -1,0 +1,37 @@
+pattern_name: abnormallyDecreasedVolumeOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedVolumeOfAnatomicalEntity.yaml
+description: "Decreased volume of an anatomical entity, e.g. HP:0012695 Decreased thalamic volume."
+
+contributors:
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  decreased volume: PATO:0000596
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "decreased volume of the %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "An abnormal reduction in the volume of the %s."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('decreased volume' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity
