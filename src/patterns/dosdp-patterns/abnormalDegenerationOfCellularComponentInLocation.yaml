@@ -1,0 +1,47 @@
+pattern_name: abnormalDegenerationOfCellularComponentInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalDegenerationOfCellularComponentInLocation.yaml
+description: "Deterioration or loss of function of a cellular component that was once present in a location, such as HP_0007305 CNS demyelination."
+
+classes:
+  degenerate: PATO:0000639
+  abnormal: PATO:0000460
+  cellular component: GO:0005575
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  cellular_component: "'cellular component'"
+  location: "'independent continuant'"
+
+name:
+  text: "%s degeneration in %s"
+  vars:
+  - cellular_component
+  - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "degeneration of the %s in %s"
+  vars:
+  - cellular_component
+  - location
+
+def:
+  text: "Partial or complete degeneration of %s tissue in the %s that was once present."
+  vars:
+  - cellular_component
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('degenerate' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - cellular_component
+  - location

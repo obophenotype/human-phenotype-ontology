@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-10-21/imports/go_import.owl
+data-version: hp/releases/2019-11-01/imports/go_import.owl
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr "AGR slim"
@@ -51,6 +51,14 @@ is_a: GO:0051052 ! regulation of DNA metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006310 ! DNA recombination
 relationship: regulates GO:0006310 ! DNA recombination
+
+[Term]
+id: GO:0000052
+name: citrulline metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving citrulline, N5-carbamoyl-L-ornithine, an alpha amino acid not found in proteins." [ISBN:0198506732]
+synonym: "citrulline metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
 id: GO:0000070
@@ -3960,6 +3968,15 @@ is_a: GO:0006023 ! aminoglycan biosynthetic process
 is_a: GO:0030203 ! glycosaminoglycan metabolic process
 
 [Term]
+id: GO:0006029
+name: proteoglycan metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving proteoglycans, any glycoprotein in which the carbohydrate units are glycosaminoglycans." [GOC:mah, ISBN:0198506732]
+synonym: "proteoglycan metabolism" EXACT []
+synonym: "proteoglycan sulfate transfer" NARROW []
+is_a: GO:0009100 ! glycoprotein metabolic process
+
+[Term]
 id: GO:0006066
 name: alcohol metabolic process
 namespace: biological_process
@@ -4500,6 +4517,17 @@ xref: Wikipedia:Arginine
 is_a: GO:0009064 ! glutamine family amino acid metabolic process
 
 [Term]
+id: GO:0006534
+name: cysteine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving cysteine, 2-amino-3-mercaptopropanoic acid." [GOC:go_curators]
+synonym: "cysteine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.03
+xref: Wikipedia:Cysteine_metabolism
+is_a: GO:0000096 ! sulfur amino acid metabolic process
+is_a: GO:0009069 ! serine family amino acid metabolic process
+
+[Term]
 id: GO:0006541
 name: glutamine metabolic process
 namespace: biological_process
@@ -4507,6 +4535,59 @@ def: "The chemical reactions and pathways involving glutamine, 2-amino-4-carbamo
 synonym: "glutamine metabolism" EXACT []
 xref: MIPS_funcat:01.01.03.01
 is_a: GO:0009064 ! glutamine family amino acid metabolic process
+
+[Term]
+id: GO:0006544
+name: glycine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving glycine, aminoethanoic acid." [GOC:go_curators]
+synonym: "glycine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.01
+is_a: GO:0009069 ! serine family amino acid metabolic process
+is_a: GO:0017144 ! drug metabolic process
+is_a: GO:0042133 ! neurotransmitter metabolic process
+
+[Term]
+id: GO:0006547
+name: histidine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving histidine, 2-amino-3-(1H-imidazol-4-yl)propanoic acid." [GOC:go_curators]
+synonym: "histidine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.07
+xref: Wikipedia:Histidine
+is_a: GO:0009072 ! aromatic amino acid family metabolic process
+is_a: GO:0052803 ! imidazole-containing compound metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006549
+name: isoleucine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving isoleucine, (2R*,3R*)-2-amino-3-methylpentanoic acid." [GOC:ai]
+synonym: "isoleucine metabolism" EXACT []
+xref: MIPS_funcat:01.01.11.02
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006551
+name: leucine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving leucine, 2-amino-4-methylpentanoic acid." [GOC:ai]
+synonym: "leucine metabolism" EXACT []
+xref: MIPS_funcat:01.01.11.04
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006553
+name: lysine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving lysine, 2,6-diaminohexanoic acid." [GOC:go_curators]
+synonym: "lysine metabolism" EXACT []
+xref: MIPS_funcat:01.01.06.06
+xref: Wikipedia:Lysine
+is_a: GO:0009066 ! aspartate family amino acid metabolic process
 
 [Term]
 id: GO:0006555
@@ -4546,6 +4627,29 @@ is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 
 [Term]
+id: GO:0006563
+name: L-serine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving L-serine, the L-enantiomer of serine, i.e. (2S)-2-amino-3-hydroxypropanoic acid." [CHEBI:17115, GOC:ai, GOC:jsg]
+synonym: "L-serine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.02
+xref: MIPS_funcat:01.01.11.07
+is_a: GO:0009069 ! serine family amino acid metabolic process
+
+[Term]
+id: GO:0006566
+name: threonine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving threonine (2-amino-3-hydroxybutyric acid), a polar, uncharged, essential amino acid found in peptide linkage in proteins." [GOC:jl, ISBN:0198506732]
+synonym: "methionine and threonine metabolic process" BROAD []
+synonym: "methionine and threonine metabolism" BROAD []
+synonym: "threonine metabolism" EXACT []
+xref: MIPS_funcat:01.01.06.04
+xref: MIPS_funcat:01.01.11.07
+xref: UM-BBD_pathwayID:met
+is_a: GO:0009066 ! aspartate family amino acid metabolic process
+
+[Term]
 id: GO:0006568
 name: tryptophan metabolic process
 namespace: biological_process
@@ -4567,6 +4671,16 @@ xref: MIPS_funcat:01.01.09.05
 xref: UM-BBD_pathwayID:tyr
 xref: Wikipedia:Tyrosine
 is_a: GO:0009072 ! aromatic amino acid family metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006573
+name: valine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving valine, 2-amino-3-methylbutanoic acid." [GOC:ai]
+synonym: "valine metabolism" EXACT []
+xref: MIPS_funcat:01.01.11.03
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
@@ -4621,6 +4735,14 @@ synonym: "indolamine metabolic process" BROAD []
 synonym: "indolamine metabolism" BROAD []
 is_a: GO:0006576 ! cellular biogenic amine metabolic process
 is_a: GO:0042430 ! indole-containing compound metabolic process
+
+[Term]
+id: GO:0006591
+name: ornithine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving ornithine, an amino acid only rarely found in proteins, but which is important in living organisms as an intermediate in the reactions of the urea cycle and in arginine biosynthesis." [GOC:jl, ISBN:0192801023]
+synonym: "ornithine metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
 id: GO:0006600
@@ -4710,6 +4832,34 @@ def: "The chemical reactions and pathways involving glycosphingolipids, any comp
 synonym: "glycosphingolipid metabolism" EXACT []
 is_a: GO:0006664 ! glycolipid metabolic process
 is_a: GO:0006665 ! sphingolipid metabolic process
+
+[Term]
+id: GO:0006690
+name: icosanoid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving icosanoids, any of a group of C20 polyunsaturated fatty acids." [GOC:ma]
+synonym: "eicosanoid metabolic process" EXACT []
+synonym: "eicosanoid metabolism" EXACT []
+synonym: "icosanoid metabolism" EXACT []
+is_a: GO:0019752 ! carboxylic acid metabolic process
+is_a: GO:1901568 ! fatty acid derivative metabolic process
+
+[Term]
+id: GO:0006692
+name: prostanoid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving prostanoids, any compound based on or derived from the prostanoate structure." [ISBN:0198506732]
+synonym: "prostanoid metabolism" EXACT []
+is_a: GO:0006690 ! icosanoid metabolic process
+is_a: GO:0033559 ! unsaturated fatty acid metabolic process
+
+[Term]
+id: GO:0006693
+name: prostaglandin metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving prostaglandins, any of a group of biologically active metabolites which contain a cyclopentane ring due to the formation of a bond between two carbons of a fatty acid. They have a wide range of biological activities." [ISBN:0198506732]
+synonym: "prostaglandin metabolism" EXACT []
+is_a: GO:0006692 ! prostanoid metabolic process
 
 [Term]
 id: GO:0006694
@@ -5047,6 +5197,36 @@ is_a: GO:0071702 ! organic substance transport
 relationship: part_of GO:0010876 ! lipid localization
 
 [Term]
+id: GO:0006873
+name: cellular ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of ions at the level of a cell." [GOC:mah]
+subset: goslim_yeast
+xref: MIPS_funcat:34.01
+is_a: GO:0050801 ! ion homeostasis
+is_a: GO:0055082 ! cellular chemical homeostasis
+
+[Term]
+id: GO:0006874
+name: cellular calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions at the level of a cell." [GOC:ceb, GOC:mah]
+synonym: "regulation of calcium ion concentration" BROAD []
+is_a: GO:0006875 ! cellular metal ion homeostasis
+is_a: GO:0055074 ! calcium ion homeostasis
+is_a: GO:0072503 ! cellular divalent inorganic cation homeostasis
+
+[Term]
+id: GO:0006875
+name: cellular metal ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of metal ions at the level of a cell." [GOC:ai, GOC:mah]
+synonym: "cellular heavy metal ion homeostasis" NARROW []
+xref: MIPS_funcat:34.01.01.01
+is_a: GO:0030003 ! cellular cation homeostasis
+is_a: GO:0055065 ! metal ion homeostasis
+
+[Term]
 id: GO:0006886
 name: intracellular protein transport
 namespace: biological_process
@@ -5370,6 +5550,16 @@ def: "A microtubule-based process that results in the movement of organelles, ot
 xref: MIPS_funcat:20.09.14.01
 is_a: GO:0006928 ! movement of cell or subcellular component
 is_a: GO:0007017 ! microtubule-based process
+
+[Term]
+id: GO:0007036
+name: vacuolar calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions in the vacuole or between a vacuole and its surroundings." [GOC:ai, GOC:mah]
+is_a: GO:0006874 ! cellular calcium ion homeostasis
+intersection_of: GO:0055074 ! calcium ion homeostasis
+intersection_of: occurs_in GO:0005773 ! vacuole
+relationship: occurs_in GO:0005773 ! vacuole
 
 [Term]
 id: GO:0007049
@@ -6529,6 +6719,15 @@ xref: MIPS_funcat:01.01.06
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
+id: GO:0009069
+name: serine family amino acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving amino acids of the serine family, comprising cysteine, glycine, homoserine, selenocysteine and serine." [GOC:ai]
+synonym: "serine family amino acid metabolism" EXACT []
+xref: MIPS_funcat:01.01.09
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0009072
 name: aromatic amino acid family metabolic process
 namespace: biological_process
@@ -6538,6 +6737,15 @@ xref: MIPS_funcat:01.01.09
 is_a: GO:0006520 ! cellular amino acid metabolic process
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
+
+[Term]
+id: GO:0009081
+name: branched-chain amino acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving amino acids containing a branched carbon skeleton, comprising isoleucine, leucine and valine." [CHEBI:22918, GOC:ai]
+synonym: "branched chain family amino acid metabolism" EXACT [GOC:ai]
+xref: MIPS_funcat:01.01.11
+is_a: GO:0006520 ! cellular amino acid metabolic process
 
 [Term]
 id: GO:0009100
@@ -9867,6 +10075,15 @@ intersection_of: GO:0032940 ! secretion by cell
 intersection_of: part_of GO:0007267 ! cell-cell signaling
 relationship: part_of GO:0007267 ! cell-cell signaling
 creation_date: 2010-02-16T09:30:50Z
+
+[Term]
+id: GO:0030003
+name: cellular cation homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of cations at the level of a cell." [GOC:ceb, GOC:mah]
+xref: MIPS_funcat:34.01.01
+is_a: GO:0006873 ! cellular ion homeostasis
+is_a: GO:0055080 ! cation homeostasis
 
 [Term]
 id: GO:0030016
@@ -13786,6 +14003,17 @@ namespace: cellular_component
 def: "A large lipoprotein particle (diameter 75-1200 nm) composed of a central core of triglycerides and cholesterol surrounded by a protein-phospholipid coating. The proteins include one molecule of apolipoprotein B-48 and may include a variety of apolipoproteins, including APOAs, APOCs and APOE. Chylomicrons are found in blood or lymph and carry lipids from the intestines into other body tissues." [GOC:jl, GOC:rl, http://biotech.icmb.utexas.edu/search/dict-search.html, PMID:10580165]
 xref: Wikipedia:Chylomicron
 is_a: GO:0034358 ! plasma lipoprotein particle
+
+[Term]
+id: GO:0042632
+name: cholesterol homeostasis
+namespace: biological_process
+alt_id: GO:2000188
+alt_id: GO:2000189
+def: "Any process involved in the maintenance of an internal steady state of cholesterol within an organism or cell." [GOC:go_curators]
+synonym: "positive regulation of cholesterol homeostasis" RELATED []
+synonym: "regulation of cholesterol homeostasis" RELATED []
+is_a: GO:0055092 ! sterol homeostasis
 
 [Term]
 id: GO:0042645
@@ -18808,6 +19036,68 @@ is_a: GO:0009306 ! protein secretion
 relationship: part_of GO:0001816 ! cytokine production
 
 [Term]
+id: GO:0050666
+name: regulation of homocysteine metabolic process
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving homocysteine, the amino acid alpha-amino-gamma-mercaptobutanoic acid." [GOC:ai]
+synonym: "regulation of Hcy metabolic process" EXACT []
+synonym: "regulation of Hcy metabolism" EXACT []
+synonym: "regulation of homocysteine metabolism" EXACT []
+is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0050667 ! homocysteine metabolic process
+relationship: regulates GO:0050667 ! homocysteine metabolic process
+
+[Term]
+id: GO:0050667
+name: homocysteine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving homocysteine, the amino acid alpha-amino-gamma-mercaptobutanoic acid. Homocysteine is an important intermediate in the metabolic reactions of its S-methyl derivative, methionine." [ISBN:0198506732]
+synonym: "Hcy metabolic process" EXACT []
+synonym: "Hcy metabolism" EXACT []
+synonym: "homocysteine metabolism" EXACT []
+xref: MIPS_funcat:01.01.06.05.01.01
+is_a: GO:0000096 ! sulfur amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0050668
+name: positive regulation of homocysteine metabolic process
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving homocysteine." [GOC:ai]
+synonym: "activation of homocysteine metabolic process" NARROW []
+synonym: "positive regulation of Hcy metabolic process" EXACT []
+synonym: "positive regulation of Hcy metabolism" EXACT []
+synonym: "positive regulation of homocysteine metabolism" EXACT []
+synonym: "stimulation of homocysteine metabolic process" NARROW []
+synonym: "up regulation of homocysteine metabolic process" EXACT []
+synonym: "up-regulation of homocysteine metabolic process" EXACT []
+synonym: "upregulation of homocysteine metabolic process" EXACT []
+is_a: GO:0031337 ! positive regulation of sulfur amino acid metabolic process
+is_a: GO:0050666 ! regulation of homocysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0050667 ! homocysteine metabolic process
+relationship: positively_regulates GO:0050667 ! homocysteine metabolic process
+
+[Term]
+id: GO:0050669
+name: negative regulation of homocysteine metabolic process
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving homocysteine." [GOC:ai]
+synonym: "down regulation of homocysteine metabolic process" EXACT []
+synonym: "down-regulation of homocysteine metabolic process" EXACT []
+synonym: "downregulation of homocysteine metabolic process" EXACT []
+synonym: "inhibition of homocysteine metabolic process" NARROW []
+synonym: "negative regulation of Hcy metabolic process" EXACT []
+synonym: "negative regulation of Hcy metabolism" EXACT []
+synonym: "negative regulation of homocysteine metabolism" EXACT []
+is_a: GO:0031336 ! negative regulation of sulfur amino acid metabolic process
+is_a: GO:0050666 ! regulation of homocysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0050667 ! homocysteine metabolic process
+relationship: negatively_regulates GO:0050667 ! homocysteine metabolic process
+
+[Term]
 id: GO:0050707
 name: regulation of cytokine secretion
 namespace: biological_process
@@ -20910,6 +21200,22 @@ intersection_of: positively_regulates GO:0007010 ! cytoskeleton organization
 relationship: positively_regulates GO:0007010 ! cytoskeleton organization
 
 [Term]
+id: GO:0051560
+name: mitochondrial calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions within the cytoplasm of a cell or between mitochondria and their surroundings." [GOC:ai, GOC:mah]
+synonym: "calcium ion homeostasis in mitochondria" EXACT []
+synonym: "calcium ion homeostasis in mitochondrion" EXACT []
+synonym: "mitochondrial calcium ion concentration regulation" EXACT []
+synonym: "regulation of calcium ion concentration in mitochondria" EXACT []
+synonym: "regulation of calcium ion concentration in mitochondrion" EXACT []
+synonym: "regulation of mitochondrial calcium ion concentration" EXACT []
+is_a: GO:0006874 ! cellular calcium ion homeostasis
+intersection_of: GO:0055074 ! calcium ion homeostasis
+intersection_of: occurs_in GO:0005739 ! mitochondrion
+relationship: occurs_in GO:0005739 ! mitochondrion
+
+[Term]
 id: GO:0051588
 name: regulation of neurotransmitter transport
 namespace: biological_process
@@ -21548,6 +21854,18 @@ intersection_of: GO:0051851 ! modification by host of symbiont morphology or phy
 intersection_of: positively_regulates GO:0006909 ! phagocytosis
 
 [Term]
+id: GO:0052803
+name: imidazole-containing compound metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving imidazoles, five-membered organic heterocycle containing two nitrogen atoms at positions 1 and 3, or any of its derivatives; compounds containing an imidazole skeleton." [CHEBI:24780]
+synonym: "imidazole metabolism" EXACT []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
 id: GO:0055007
 name: cardiac muscle cell differentiation
 namespace: biological_process
@@ -21653,6 +21971,15 @@ synonym: "manganese homeostasis" BROAD []
 is_a: GO:0055076 ! transition metal ion homeostasis
 
 [Term]
+id: GO:0055074
+name: calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions within an organism or cell." [GOC:ceb, GOC:jid, GOC:mah]
+synonym: "regulation of calcium ion concentration" EXACT []
+is_a: GO:0055065 ! metal ion homeostasis
+is_a: GO:0072507 ! divalent inorganic cation homeostasis
+
+[Term]
 id: GO:0055076
 name: transition metal ion homeostasis
 namespace: biological_process
@@ -21672,6 +21999,14 @@ name: anion homeostasis
 namespace: biological_process
 def: "Any process involved in the maintenance of an internal steady state of anions within an organism or cell." [GOC:ceb, GOC:jid, GOC:mah]
 is_a: GO:0050801 ! ion homeostasis
+
+[Term]
+id: GO:0055082
+name: cellular chemical homeostasis
+namespace: biological_process
+def: "Any biological process involved in the maintenance of an internal steady state of a chemical at the level of the cell." [GOC:isa_complete, GOC:jid]
+is_a: GO:0019725 ! cellular homeostasis
+is_a: GO:0048878 ! chemical homeostasis
 
 [Term]
 id: GO:0055083
@@ -21709,6 +22044,20 @@ synonym: "nucleobase, nucleoside and nucleotide metabolic process" RELATED []
 synonym: "nucleobase, nucleoside and nucleotide metabolism" EXACT []
 is_a: GO:0006139 ! nucleobase-containing compound metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
+
+[Term]
+id: GO:0055088
+name: lipid homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of lipid within an organism or cell." [GOC:BHF, GOC:rl]
+is_a: GO:0048878 ! chemical homeostasis
+
+[Term]
+id: GO:0055092
+name: sterol homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of sterol within an organism or cell." [GOC:BHF, GOC:rl]
+is_a: GO:0055088 ! lipid homeostasis
 
 [Term]
 id: GO:0055114
@@ -23931,6 +24280,16 @@ created_by: midori
 creation_date: 2010-11-02T04:51:32Z
 
 [Term]
+id: GO:0072350
+name: tricarboxylic acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving dicarboxylic acids, any organic acid containing three carboxyl (COOH) groups or anions (COO-)." [CHEBI:27093, GOC:mah]
+synonym: "tricarboxylic acid metabolism" EXACT [GOC:mah]
+is_a: GO:0019752 ! carboxylic acid metabolic process
+created_by: midori
+creation_date: 2010-11-11T05:07:30Z
+
+[Term]
 id: GO:0072358
 name: cardiovascular system development
 namespace: biological_process
@@ -23982,6 +24341,17 @@ is_a: GO:0072376 ! protein activation cascade
 relationship: part_of GO:0007596 ! blood coagulation
 created_by: midori
 creation_date: 2010-11-22T03:09:32Z
+
+[Term]
+id: GO:0072503
+name: cellular divalent inorganic cation homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of divalent cations at the level of a cell." [GOC:mah]
+comment: Note that this term was split from 'cellular di-, tri-valent inorganic cation homeostasis ; GO:0030005' (sibling term 'cellular trivalent inorganic cation homeostasis' ; GO:0072504').
+is_a: GO:0030003 ! cellular cation homeostasis
+is_a: GO:0072507 ! divalent inorganic cation homeostasis
+created_by: midori
+creation_date: 2010-12-16T01:25:40Z
 
 [Term]
 id: GO:0072505
@@ -24508,6 +24878,18 @@ intersection_of: positively_regulates GO:0006568 ! tryptophan metabolic process
 relationship: positively_regulates GO:0006568 ! tryptophan metabolic process
 created_by: tanyaberardini
 creation_date: 2010-06-29T02:38:48Z
+
+[Term]
+id: GO:0090368
+name: regulation of ornithine metabolic process
+namespace: biological_process
+def: "Any process that modulates the rate, frequency, or extent of the chemical reactions and pathways involving ornithine, an amino acid only rarely found in proteins, but which is important in living organisms as an intermediate in the reactions of the urea cycle and in arginine biosynthesis." [GOC:dph, GOC:jp, GOC:tb]
+is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006591 ! ornithine metabolic process
+relationship: regulates GO:0006591 ! ornithine metabolic process
+created_by: tanyaberardini
+creation_date: 2010-07-12T11:14:12Z
 
 [Term]
 id: GO:0090594
@@ -26065,6 +26447,17 @@ created_by: krc
 creation_date: 2012-05-11T05:44:43Z
 
 [Term]
+id: GO:1901052
+name: sarcosine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving sarcosine." [GOC:TermGenie, GOC:yaf, UniPathway:UPA00292]
+synonym: "sarcosine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0006575 ! cellular modified amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+created_by: yaf
+creation_date: 2012-06-28T04:52:04Z
+
+[Term]
 id: GO:1901135
 name: carbohydrate derivative metabolic process
 namespace: biological_process
@@ -26350,6 +26743,63 @@ intersection_of: positively_regulates GO:0033014 ! tetrapyrrole biosynthetic pro
 relationship: positively_regulates GO:0033014 ! tetrapyrrole biosynthetic process
 created_by: tt
 creation_date: 2012-10-02T14:35:43Z
+
+[Term]
+id: GO:1901494
+name: regulation of cysteine metabolic process
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of cysteine metabolic process." [GOC:TermGenie]
+synonym: "regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006534 ! cysteine metabolic process
+relationship: regulates GO:0006534 ! cysteine metabolic process
+created_by: vw
+creation_date: 2012-10-16T14:28:42Z
+
+[Term]
+id: GO:1901495
+name: negative regulation of cysteine metabolic process
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cysteine metabolic process." [GOC:TermGenie]
+synonym: "down regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "down regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "down-regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "down-regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "downregulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "downregulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "inhibition of cysteine metabolic process" NARROW [GOC:TermGenie]
+synonym: "inhibition of cysteine metabolism" NARROW [GOC:TermGenie]
+synonym: "negative regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031336 ! negative regulation of sulfur amino acid metabolic process
+is_a: GO:1901494 ! regulation of cysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0006534 ! cysteine metabolic process
+relationship: negatively_regulates GO:0006534 ! cysteine metabolic process
+created_by: vw
+creation_date: 2012-10-16T14:28:47Z
+
+[Term]
+id: GO:1901496
+name: positive regulation of cysteine metabolic process
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of cysteine metabolic process." [GOC:TermGenie]
+synonym: "activation of cysteine metabolic process" NARROW [GOC:TermGenie]
+synonym: "activation of cysteine metabolism" NARROW [GOC:TermGenie]
+synonym: "positive regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "up regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "up regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "up-regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "up-regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "upregulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "upregulation of cysteine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031337 ! positive regulation of sulfur amino acid metabolic process
+is_a: GO:1901494 ! regulation of cysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0006534 ! cysteine metabolic process
+relationship: positively_regulates GO:0006534 ! cysteine metabolic process
+created_by: vw
+creation_date: 2012-10-16T14:28:51Z
 
 [Term]
 id: GO:1901532
@@ -28003,6 +28453,17 @@ synonym: "mucopolysaccharide metabolism" EXACT [GOC:TermGenie]
 is_a: GO:0030203 ! glycosaminoglycan metabolic process
 created_by: dph
 creation_date: 2014-10-01T21:55:47Z
+
+[Term]
+id: GO:1903511
+name: orotic acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving orotic acid." [GO_REF:0000068, GOC:dph, GOC:TermGenie, PMID:10727948]
+synonym: "orotic acid metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+is_a: GO:0072527 ! pyrimidine-containing compound metabolic process
+created_by: dph
+creation_date: 2014-10-01T21:58:06Z
 
 [Term]
 id: GO:1903522

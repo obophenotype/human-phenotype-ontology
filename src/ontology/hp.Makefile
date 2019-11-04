@@ -132,3 +132,15 @@ $(ONT).obo: $(ONT)-simple-non-classified.owl
 #imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 #	echo "PRO IMPORT currently skipped!"
 #.PRECIOUS: imports/pr_import.owl
+
+#######################################################
+##### Code for removing patternised classes ###########
+#######################################################
+
+patternised_classes.txt: .FORCE
+	$(ROBOT) query -f csv -i ../patterns/definitions.owl --query ../sparql/$(ONT)_terms.sparql $@
+	sed -i 's/http[:][/][/]purl.obolibrary.org[/]obo[/]//g' $@
+	sed -i '/^[^H]/d' $@
+
+remove_patternised_classes: $(SRC) patternised_classes.txt
+	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | xargs | sed -e 's/ /\|/g'))/d" $<

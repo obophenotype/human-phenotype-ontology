@@ -1,0 +1,37 @@
+pattern_name: abnormallyDecreasedRateOfBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedRateOfBiologicalProcess.yaml
+description: "Decreased frequency of a biological process occuring (per some unit of time)."
+
+contributors: 
+  - https://orcid.org/0000-0001-9076-6015
+  
+classes:
+  decreased rate: PATO:0000911
+  abnormal: PATO:0000460
+  biological_process: GO:0008150
+
+relations: 
+  inheres_in: RO:0000052
+  qualifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  biological_process: "'biological_process'"
+ 
+name:
+  text: "decreased %s"
+  vars:
+   - biological_process
+
+def:
+  text: "decreased %s."
+  vars:
+    - biological_process
+
+equivalentTo:
+  text: "'has_part' some ('decreased rate' and ('inheres_in' some %s) and ('qualifier' some 'abnormal'))"
+  vars:
+    - biological_process
