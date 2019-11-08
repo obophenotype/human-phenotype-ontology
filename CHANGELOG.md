@@ -2,10 +2,22 @@
 # Change Log
 
 All notable changes to the HPO project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/).
+
+## [Unreleased] - 2019-11-08
+
+Here we write upgrading notes. It's a team effort to make them as
+straightforward as possible.
+
+### Added
+
+### Changed
+
+### Fixed
+
+
+## v2019-11-08
  
-## [Unreleased] - 2019-09-09
- 
- Here we write upgrading notes. It's a team effort to make them as
+Here we write upgrading notes. It's a team effort to make them as
 straightforward as possible.
 
 ### Added
@@ -14,6 +26,8 @@ straightforward as possible.
 - added over 2000 annotations
 
 ### Changed
+- >1500 logical definitions now patternised 
+- merged two equiv that were both about abnormal cartilage morphology
 
 ### Fixed
 - multiple typos in synonyms and definitions
