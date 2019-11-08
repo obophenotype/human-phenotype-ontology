@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-09-06/imports/go_import.owl
+data-version: hp/releases/2019-11-08/imports/go_import.owl
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr "AGR slim"
@@ -53,6 +53,14 @@ intersection_of: regulates GO:0006310 ! DNA recombination
 relationship: regulates GO:0006310 ! DNA recombination
 
 [Term]
+id: GO:0000052
+name: citrulline metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving citrulline, N5-carbamoyl-L-ornithine, an alpha amino acid not found in proteins." [ISBN:0198506732]
+synonym: "citrulline metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0000070
 name: mitotic sister chromatid segregation
 namespace: biological_process
@@ -100,7 +108,6 @@ subset: goslim_chembl
 subset: goslim_generic
 synonym: "nuclear interphase chromosome" NARROW []
 is_a: GO:0005694 ! chromosome
-is_a: GO:0044428 ! nuclear part
 intersection_of: GO:0005694 ! chromosome
 intersection_of: part_of GO:0005634 ! nucleus
 relationship: part_of GO:0031981 ! nuclear lumen
@@ -114,9 +121,9 @@ subset: goslim_chembl
 subset: goslim_generic
 synonym: "cytoplasmic interphase chromosome" NARROW []
 is_a: GO:0005694 ! chromosome
-is_a: GO:0044444 ! cytoplasmic part
 intersection_of: GO:0005694 ! chromosome
 intersection_of: part_of GO:0005737 ! cytoplasm
+relationship: part_of GO:0005737 ! cytoplasm
 
 [Term]
 id: GO:0000262
@@ -128,7 +135,6 @@ synonym: "mitochondrial genome" RELATED []
 synonym: "mtDNA" NARROW []
 xref: NIF_Subcellular:sao1186327184
 is_a: GO:0000229 ! cytoplasmic chromosome
-is_a: GO:0044429 ! mitochondrial part
 intersection_of: GO:0005694 ! chromosome
 intersection_of: part_of GO:0005739 ! mitochondrion
 relationship: part_of GO:0042645 ! mitochondrial nucleoid
@@ -168,9 +174,9 @@ name: organellar ribosome
 namespace: cellular_component
 def: "A ribosome contained within a subcellular membrane-bounded organelle." [GOC:mah, GOC:mcc]
 is_a: GO:0005840 ! ribosome
-is_a: GO:0044422 ! organelle part
 intersection_of: GO:0005840 ! ribosome
 intersection_of: part_of GO:0043226 ! organelle
+relationship: part_of GO:0043226 ! organelle
 
 [Term]
 id: GO:0000323
@@ -188,7 +194,8 @@ def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that
 comment: Chromosomes include parts that are not part of the chromatin.  Examples include the kinetochore.
 synonym: "chromosome scaffold" RELATED []
 xref: NIF_Subcellular:sao1615953555
-is_a: GO:0044427 ! chromosomal part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0005694 ! chromosome
 
 [Term]
 id: GO:0000789
@@ -196,7 +203,6 @@ name: cytoplasmic chromatin
 namespace: cellular_component
 def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome in the cytoplasm." [GOC:elh, PMID:20404130]
 is_a: GO:0000785 ! chromatin
-is_a: GO:0044444 ! cytoplasmic part
 intersection_of: GO:0000785 ! chromatin
 intersection_of: part_of GO:0005737 ! cytoplasm
 relationship: part_of GO:0000229 ! cytoplasmic chromosome
@@ -207,9 +213,9 @@ name: nuclear chromatin
 namespace: cellular_component
 def: "The ordered and organized complex of DNA, protein, and sometimes RNA, that forms the chromosome in the nucleus." [GOC:elh, PMID:20404130]
 is_a: GO:0000785 ! chromatin
-is_a: GO:0044454 ! nuclear chromosome part
 intersection_of: GO:0000785 ! chromatin
 intersection_of: part_of GO:0005634 ! nucleus
+relationship: part_of GO:0000228 ! nuclear chromosome
 
 [Term]
 id: GO:0000791
@@ -2724,6 +2730,7 @@ id: GO:0003824
 name: catalytic activity
 namespace: molecular_function
 def: "Catalysis of a biochemical reaction at physiological temperatures. In biologically catalyzed reactions, the reactants are known as substrates, and the catalysts are naturally occurring macromolecular substances known as enzymes. Enzymes possess specific binding sites for substrates, and are usually composed wholly or largely of protein, but RNA that has catalytic activity (ribozyme) is often also regarded as enzymatic." [GOC:vw, ISBN:0198506732]
+subset: goslim_agr
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
 subset: goslim_metagenomics
@@ -3048,6 +3055,24 @@ xref: EC:3.2.1
 xref: Reactome:R-HSA-5694563 "ABHD10 hydrolyses MPAG"
 xref: Reactome:R-HSA-6786652 "CHIT1 hydrolyses CHIT to 3xADGP"
 is_a: GO:0016798 ! hydrolase activity, acting on glycosyl bonds
+
+[Term]
+id: GO:0004556
+name: alpha-amylase activity
+namespace: molecular_function
+def: "Catalysis of the endohydrolysis of (1->4)-alpha-D-glucosidic linkages in polysaccharides containing three or more alpha-(1->4)-linked D-glucose units." [EC:3.2.1.1]
+synonym: "1,4-alpha-D-glucan glucanohydrolase activity" EXACT [EC:3.2.1.1]
+synonym: "alpha amylase activity" EXACT [EC:3.2.1.1]
+synonym: "endoamylase activity" EXACT [EC:3.2.1.1]
+synonym: "glycogenase activity" BROAD [EC:3.2.1.1]
+synonym: "taka-amylase A" RELATED [EC:3.2.1.1]
+xref: EC:3.2.1.1
+xref: MetaCyc:ALPHA-AMYL-RXN
+xref: MetaCyc:RXN-1823
+xref: MetaCyc:RXN-1825
+xref: Reactome:R-HSA-188979 "Digestion of linear starch (amylose) by extracellular amylase"
+xref: Reactome:R-HSA-191114 "Digestion of branched starch (amylopectin) by extracellular amylase"
+is_a: GO:0016160 ! amylase activity
 
 [Term]
 id: GO:0004565
@@ -3385,7 +3410,7 @@ id: GO:0005575
 name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
-def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao-1337158144]
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
 comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
@@ -3398,7 +3423,6 @@ subset: goslim_yeast
 synonym: "cell or subcellular entity" EXACT []
 synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
-xref: NIF_Subcellular:sao-1337158144
 xref: NIF_Subcellular:sao1337158144
 
 [Term]
@@ -3421,7 +3445,7 @@ subset: goslim_yeast
 synonym: "extracellular" EXACT []
 xref: MIPS_funcat:70.27
 xref: Wikipedia:Extracellular
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0005604
@@ -3447,7 +3471,8 @@ subset: goslim_chembl
 subset: goslim_generic
 synonym: "intercellular space" RELATED []
 xref: NIF_Subcellular:sao1425028079
-is_a: GO:0044421 ! extracellular region part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0005576 ! extracellular region
 
 [Term]
 id: GO:0005622
@@ -3464,7 +3489,7 @@ synonym: "nucleocytoplasm" RELATED [GOC:mah]
 synonym: "protoplasm" EXACT []
 synonym: "protoplast" RELATED [GOC:mah]
 xref: Wikipedia:Intracellular
-is_a: GO:0044464 ! cell part
+is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0005623
@@ -3560,7 +3585,6 @@ xref: MIPS_funcat:70.10.07
 xref: NIF_Subcellular:sao1820400233
 xref: Wikipedia:Nucleolus
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
-is_a: GO:0044428 ! nuclear part
 relationship: part_of GO:0031981 ! nuclear lumen
 
 [Term]
@@ -3577,7 +3601,8 @@ subset: goslim_plant
 subset: goslim_yeast
 xref: MIPS_funcat:70.03
 xref: Wikipedia:Cytoplasm
-is_a: GO:0044424 ! intracellular part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0005622 ! intracellular
 
 [Term]
 id: GO:0005739
@@ -3600,7 +3625,7 @@ xref: MIPS_funcat:70.16
 xref: NIF_Subcellular:sao1860313010
 xref: Wikipedia:Mitochondrion
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
-is_a: GO:0044444 ! cytoplasmic part
+relationship: part_of GO:0005737 ! cytoplasm
 
 [Term]
 id: GO:0005740
@@ -3610,7 +3635,7 @@ def: "The double lipid bilayer enclosing the mitochondrion and separating its co
 subset: goslim_candida
 subset: goslim_yeast
 is_a: GO:0031967 ! organelle envelope
-is_a: GO:0044429 ! mitochondrial part
+relationship: part_of GO:0005739 ! mitochondrion
 
 [Term]
 id: GO:0005743
@@ -3636,7 +3661,6 @@ synonym: "mitochondrial respirasome" RELATED []
 synonym: "mitochondrial respiratory chain" EXACT []
 synonym: "mitochondrial respiratory chain supercomplex" EXACT []
 synonym: "mitochondrial respiratory supercomplex" EXACT []
-is_a: GO:0044455 ! mitochondrial membrane part
 is_a: GO:0070469 ! respirasome
 intersection_of: GO:0070469 ! respirasome
 intersection_of: part_of GO:0005743 ! mitochondrial inner membrane
@@ -3665,11 +3689,10 @@ def: "The gel-like material, with considerable fine structure, that lies in the 
 synonym: "mitochondrial lumen" EXACT []
 synonym: "mitochondrial stroma" NARROW []
 xref: MIPS_funcat:70.16.07
-xref: NIF_Subcellular:sao-1899375636
 xref: NIF_Subcellular:sao1804523077
 xref: Wikipedia:Mitochondrial_matrix
-is_a: GO:0044429 ! mitochondrial part
 is_a: GO:0070013 ! intracellular organelle lumen
+relationship: part_of GO:0005739 ! mitochondrion
 
 [Term]
 id: GO:0005761
@@ -3678,7 +3701,6 @@ namespace: cellular_component
 def: "A ribosome found in the mitochondrion of a eukaryotic cell; contains a characteristic set of proteins distinct from those of cytosolic ribosomes." [GOC:mah, ISBN:0198506732]
 synonym: "55S ribosome, mitochondrial" NARROW []
 is_a: GO:0000313 ! organellar ribosome
-is_a: GO:0098798 ! mitochondrial protein complex
 intersection_of: GO:0005840 ! ribosome
 intersection_of: part_of GO:0005739 ! mitochondrion
 relationship: part_of GO:0005759 ! mitochondrial matrix
@@ -3723,17 +3745,17 @@ synonym: "vacuolar carboxypeptidase Y" RELATED []
 xref: MIPS_funcat:70.25
 xref: Wikipedia:Vacuole
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
-is_a: GO:0044444 ! cytoplasmic part
+relationship: part_of GO:0005737 ! cytoplasm
 
 [Term]
 id: GO:0005775
 name: vacuolar lumen
 namespace: cellular_component
 def: "The volume enclosed within the vacuolar membrane." [ISBN:0198506732]
-is_a: GO:0044437 ! vacuolar part
 is_a: GO:0070013 ! intracellular organelle lumen
 intersection_of: GO:0031974 ! membrane-enclosed lumen
 intersection_of: part_of GO:0005773 ! vacuole
+relationship: part_of GO:0005773 ! vacuole
 
 [Term]
 id: GO:0005840
@@ -3755,8 +3777,6 @@ synonym: "ribosomal RNA" RELATED []
 xref: NIF_Subcellular:sao1429207766
 xref: Wikipedia:Ribosome
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
-is_a: GO:0044444 ! cytoplasmic part
-is_a: GO:1990904 ! ribonucleoprotein complex
 
 [Term]
 id: GO:0005886
@@ -3784,7 +3804,6 @@ synonym: "plasmalemma" EXACT []
 xref: NIF_Subcellular:sao1663586795
 xref: Wikipedia:Cell_membrane
 is_a: GO:0016020 ! membrane
-is_a: GO:0044464 ! cell part
 relationship: part_of GO:0071944 ! cell periphery
 
 [Term]
@@ -3818,6 +3837,22 @@ xref: Wikipedia:Cilium
 is_a: GO:0043226 ! organelle
 is_a: GO:0120025 ! plasma membrane bounded cell projection
 relationship: has_part GO:0030990 ! intraciliary transport particle
+
+[Term]
+id: GO:0005938
+name: cell cortex
+namespace: cellular_component
+def: "The region of a cell that lies just beneath the plasma membrane and often, but not always, contains a network of actin filaments and associated proteins." [GOC:mah, ISBN:0815316194]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_yeast
+synonym: "cell periphery" RELATED []
+synonym: "peripheral cytoplasm" RELATED []
+xref: Wikipedia:Cell_cortex
+is_a: GO:0005737 ! cytoplasm
+intersection_of: GO:0005737 ! cytoplasm
+intersection_of: part_of GO:0071944 ! cell periphery
+relationship: part_of GO:0071944 ! cell periphery
 
 [Term]
 id: GO:0005975
@@ -3931,6 +3966,15 @@ synonym: "glycosaminoglycan formation" EXACT []
 synonym: "glycosaminoglycan synthesis" EXACT []
 is_a: GO:0006023 ! aminoglycan biosynthetic process
 is_a: GO:0030203 ! glycosaminoglycan metabolic process
+
+[Term]
+id: GO:0006029
+name: proteoglycan metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving proteoglycans, any glycoprotein in which the carbohydrate units are glycosaminoglycans." [GOC:mah, ISBN:0198506732]
+synonym: "proteoglycan metabolism" EXACT []
+synonym: "proteoglycan sulfate transfer" NARROW []
+is_a: GO:0009100 ! glycoprotein metabolic process
 
 [Term]
 id: GO:0006066
@@ -4283,6 +4327,78 @@ is_a: GO:0071103 ! DNA conformation change
 relationship: has_part GO:0008301 ! DNA binding, bending
 
 [Term]
+id: GO:0006412
+name: translation
+namespace: biological_process
+alt_id: GO:0006416
+alt_id: GO:0006453
+alt_id: GO:0043037
+def: "The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome." [GOC:go_curators]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+synonym: "protein anabolism" EXACT []
+synonym: "protein biosynthesis" EXACT []
+synonym: "protein biosynthetic process" EXACT [GOC:curators]
+synonym: "protein formation" EXACT []
+synonym: "protein synthesis" EXACT []
+synonym: "protein translation" EXACT []
+xref: MIPS_funcat:12
+xref: Wikipedia:Translation_(genetics)
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+is_a: GO:0043043 ! peptide biosynthetic process
+is_a: GO:0044267 ! cellular protein metabolic process
+relationship: has_part GO:0006414 ! translational elongation
+relationship: part_of GO:0010467 ! gene expression
+
+[Term]
+id: GO:0006414
+name: translational elongation
+namespace: biological_process
+alt_id: GO:0006442
+alt_id: GO:0006455
+def: "The successive addition of amino acid residues to a nascent polypeptide chain during protein biosynthesis." [GOC:ems]
+subset: goslim_yeast
+synonym: "protein synthesis elongation" BROAD []
+synonym: "translation elongation" EXACT []
+xref: MIPS_funcat:12.04.02
+is_a: GO:0034645 ! cellular macromolecule biosynthetic process
+relationship: part_of GO:0006412 ! translation
+
+[Term]
+id: GO:0006417
+name: regulation of translation
+namespace: biological_process
+alt_id: GO:0006445
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of proteins by the translation of mRNA or circRNA." [GOC:isa_complete]
+subset: goslim_yeast
+synonym: "regulation of protein anabolism" EXACT []
+synonym: "regulation of protein biosynthesis" EXACT []
+synonym: "regulation of protein formation" EXACT []
+synonym: "regulation of protein synthesis" EXACT []
+is_a: GO:0010608 ! posttranscriptional regulation of gene expression
+is_a: GO:0032268 ! regulation of cellular protein metabolic process
+is_a: GO:0034248 ! regulation of cellular amide metabolic process
+is_a: GO:2000112 ! regulation of cellular macromolecule biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006412 ! translation
+relationship: regulates GO:0006412 ! translation
+
+[Term]
+id: GO:0006448
+name: regulation of translational elongation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, extent or accuracy of translational elongation." [GOC:go_curators]
+is_a: GO:0006417 ! regulation of translation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006414 ! translational elongation
+relationship: regulates GO:0006414 ! translational elongation
+
+[Term]
 id: GO:0006464
 name: cellular protein modification process
 namespace: biological_process
@@ -4346,6 +4462,16 @@ xref: RESID:AA0212
 is_a: GO:0006486 ! protein glycosylation
 
 [Term]
+id: GO:0006518
+name: peptide metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving peptides, compounds of two or more amino acids where the alpha carboxyl group of one is bound to the alpha amino group of another." [CHEBI:16670, GOC:go_curators]
+subset: goslim_pir
+synonym: "peptide metabolism" EXACT []
+is_a: GO:0043603 ! cellular amide metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
 id: GO:0006520
 name: cellular amino acid metabolic process
 namespace: biological_process
@@ -4391,6 +4517,17 @@ xref: Wikipedia:Arginine
 is_a: GO:0009064 ! glutamine family amino acid metabolic process
 
 [Term]
+id: GO:0006534
+name: cysteine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving cysteine, 2-amino-3-mercaptopropanoic acid." [GOC:go_curators]
+synonym: "cysteine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.03
+xref: Wikipedia:Cysteine_metabolism
+is_a: GO:0000096 ! sulfur amino acid metabolic process
+is_a: GO:0009069 ! serine family amino acid metabolic process
+
+[Term]
 id: GO:0006541
 name: glutamine metabolic process
 namespace: biological_process
@@ -4398,6 +4535,59 @@ def: "The chemical reactions and pathways involving glutamine, 2-amino-4-carbamo
 synonym: "glutamine metabolism" EXACT []
 xref: MIPS_funcat:01.01.03.01
 is_a: GO:0009064 ! glutamine family amino acid metabolic process
+
+[Term]
+id: GO:0006544
+name: glycine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving glycine, aminoethanoic acid." [GOC:go_curators]
+synonym: "glycine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.01
+is_a: GO:0009069 ! serine family amino acid metabolic process
+is_a: GO:0017144 ! drug metabolic process
+is_a: GO:0042133 ! neurotransmitter metabolic process
+
+[Term]
+id: GO:0006547
+name: histidine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving histidine, 2-amino-3-(1H-imidazol-4-yl)propanoic acid." [GOC:go_curators]
+synonym: "histidine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.07
+xref: Wikipedia:Histidine
+is_a: GO:0009072 ! aromatic amino acid family metabolic process
+is_a: GO:0052803 ! imidazole-containing compound metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006549
+name: isoleucine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving isoleucine, (2R*,3R*)-2-amino-3-methylpentanoic acid." [GOC:ai]
+synonym: "isoleucine metabolism" EXACT []
+xref: MIPS_funcat:01.01.11.02
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006551
+name: leucine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving leucine, 2-amino-4-methylpentanoic acid." [GOC:ai]
+synonym: "leucine metabolism" EXACT []
+xref: MIPS_funcat:01.01.11.04
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006553
+name: lysine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving lysine, 2,6-diaminohexanoic acid." [GOC:go_curators]
+synonym: "lysine metabolism" EXACT []
+xref: MIPS_funcat:01.01.06.06
+xref: Wikipedia:Lysine
+is_a: GO:0009066 ! aspartate family amino acid metabolic process
 
 [Term]
 id: GO:0006555
@@ -4437,6 +4627,29 @@ is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 
 [Term]
+id: GO:0006563
+name: L-serine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving L-serine, the L-enantiomer of serine, i.e. (2S)-2-amino-3-hydroxypropanoic acid." [CHEBI:17115, GOC:ai, GOC:jsg]
+synonym: "L-serine metabolism" EXACT []
+xref: MIPS_funcat:01.01.09.02
+xref: MIPS_funcat:01.01.11.07
+is_a: GO:0009069 ! serine family amino acid metabolic process
+
+[Term]
+id: GO:0006566
+name: threonine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving threonine (2-amino-3-hydroxybutyric acid), a polar, uncharged, essential amino acid found in peptide linkage in proteins." [GOC:jl, ISBN:0198506732]
+synonym: "methionine and threonine metabolic process" BROAD []
+synonym: "methionine and threonine metabolism" BROAD []
+synonym: "threonine metabolism" EXACT []
+xref: MIPS_funcat:01.01.06.04
+xref: MIPS_funcat:01.01.11.07
+xref: UM-BBD_pathwayID:met
+is_a: GO:0009066 ! aspartate family amino acid metabolic process
+
+[Term]
 id: GO:0006568
 name: tryptophan metabolic process
 namespace: biological_process
@@ -4458,6 +4671,16 @@ xref: MIPS_funcat:01.01.09.05
 xref: UM-BBD_pathwayID:tyr
 xref: Wikipedia:Tyrosine
 is_a: GO:0009072 ! aromatic amino acid family metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0006573
+name: valine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving valine, 2-amino-3-methylbutanoic acid." [GOC:ai]
+synonym: "valine metabolism" EXACT []
+xref: MIPS_funcat:01.01.11.03
+is_a: GO:0009081 ! branched-chain amino acid metabolic process
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
@@ -4512,6 +4735,14 @@ synonym: "indolamine metabolic process" BROAD []
 synonym: "indolamine metabolism" BROAD []
 is_a: GO:0006576 ! cellular biogenic amine metabolic process
 is_a: GO:0042430 ! indole-containing compound metabolic process
+
+[Term]
+id: GO:0006591
+name: ornithine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving ornithine, an amino acid only rarely found in proteins, but which is important in living organisms as an intermediate in the reactions of the urea cycle and in arginine biosynthesis." [GOC:jl, ISBN:0192801023]
+synonym: "ornithine metabolism" EXACT []
+is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
 id: GO:0006600
@@ -4601,6 +4832,34 @@ def: "The chemical reactions and pathways involving glycosphingolipids, any comp
 synonym: "glycosphingolipid metabolism" EXACT []
 is_a: GO:0006664 ! glycolipid metabolic process
 is_a: GO:0006665 ! sphingolipid metabolic process
+
+[Term]
+id: GO:0006690
+name: icosanoid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving icosanoids, any of a group of C20 polyunsaturated fatty acids." [GOC:ma]
+synonym: "eicosanoid metabolic process" EXACT []
+synonym: "eicosanoid metabolism" EXACT []
+synonym: "icosanoid metabolism" EXACT []
+is_a: GO:0019752 ! carboxylic acid metabolic process
+is_a: GO:1901568 ! fatty acid derivative metabolic process
+
+[Term]
+id: GO:0006692
+name: prostanoid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving prostanoids, any compound based on or derived from the prostanoate structure." [ISBN:0198506732]
+synonym: "prostanoid metabolism" EXACT []
+is_a: GO:0006690 ! icosanoid metabolic process
+is_a: GO:0033559 ! unsaturated fatty acid metabolic process
+
+[Term]
+id: GO:0006693
+name: prostaglandin metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving prostaglandins, any of a group of biologically active metabolites which contain a cyclopentane ring due to the formation of a bond between two carbons of a fatty acid. They have a wide range of biological activities." [ISBN:0198506732]
+synonym: "prostaglandin metabolism" EXACT []
+is_a: GO:0006692 ! prostanoid metabolic process
 
 [Term]
 id: GO:0006694
@@ -4938,6 +5197,36 @@ is_a: GO:0071702 ! organic substance transport
 relationship: part_of GO:0010876 ! lipid localization
 
 [Term]
+id: GO:0006873
+name: cellular ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of ions at the level of a cell." [GOC:mah]
+subset: goslim_yeast
+xref: MIPS_funcat:34.01
+is_a: GO:0050801 ! ion homeostasis
+is_a: GO:0055082 ! cellular chemical homeostasis
+
+[Term]
+id: GO:0006874
+name: cellular calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions at the level of a cell." [GOC:ceb, GOC:mah]
+synonym: "regulation of calcium ion concentration" BROAD []
+is_a: GO:0006875 ! cellular metal ion homeostasis
+is_a: GO:0055074 ! calcium ion homeostasis
+is_a: GO:0072503 ! cellular divalent inorganic cation homeostasis
+
+[Term]
+id: GO:0006875
+name: cellular metal ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of metal ions at the level of a cell." [GOC:ai, GOC:mah]
+synonym: "cellular heavy metal ion homeostasis" NARROW []
+xref: MIPS_funcat:34.01.01.01
+is_a: GO:0030003 ! cellular cation homeostasis
+is_a: GO:0055065 ! metal ion homeostasis
+
+[Term]
 id: GO:0006886
 name: intracellular protein transport
 namespace: biological_process
@@ -5263,6 +5552,16 @@ is_a: GO:0006928 ! movement of cell or subcellular component
 is_a: GO:0007017 ! microtubule-based process
 
 [Term]
+id: GO:0007036
+name: vacuolar calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions in the vacuole or between a vacuole and its surroundings." [GOC:ai, GOC:mah]
+is_a: GO:0006874 ! cellular calcium ion homeostasis
+intersection_of: GO:0055074 ! calcium ion homeostasis
+intersection_of: occurs_in GO:0005773 ! vacuole
+relationship: occurs_in GO:0005773 ! vacuole
+
+[Term]
 id: GO:0007049
 name: cell cycle
 namespace: biological_process
@@ -5466,7 +5765,7 @@ id: GO:0007186
 name: G protein-coupled receptor signaling pathway
 namespace: biological_process
 alt_id: GO:0038042
-def: "A series of molecular signals that proceeds with an activated receptor promoting the exchange of GDP for GTP on the alpha-subunit of an associated heterotrimeric G-protein complex. The GTP-bound activated alpha-G-protein then dissociates from the beta- and gamma-subunits to further transmit the signal within the cell. The pathway begins with receptor-ligand interaction, or for basal GPCR signaling the pathway begins with the receptor activating its G protein in the absence of an agonist, and ends with regulation of a downstream cellular process, e.g. transcription.  The pathway can start from the plasma membrane, Golgi or nuclear membrane (PMID:24568158 and PMID:16902576)." [GOC:bf, GOC:mah, PMID:16902576, PMID:24568158, Wikipedia:G_protein-coupled_receptor]
+def: "A series of molecular signals that proceeds with an activated receptor promoting the exchange of GDP for GTP on the alpha-subunit of an associated heterotrimeric G-protein complex. The GTP-bound activated alpha-G-protein then dissociates from the beta- and gamma-subunits to further transmit the signal within the cell. The pathway begins with receptor-ligand interaction, or for basal GPCR signaling the pathway begins with the receptor activating its G protein in the absence of an agonist, and ends with regulation of a downstream cellular process, e.g. transcription.  The pathway can start from the plasma membrane, Golgi or nuclear membrane." [GOC:bf, GOC:mah, PMID:16902576, PMID:24568158, Wikipedia:G_protein-coupled_receptor]
 synonym: "dimeric G-protein coupled receptor signaling pathway" NARROW []
 synonym: "dimeric G-protein coupled receptor signalling pathway" NARROW [GOC:mah]
 synonym: "G protein coupled receptor protein signaling pathway" EXACT []
@@ -5563,9 +5862,10 @@ relationship: part_of GO:0007276 ! gamete generation
 id: GO:0007283
 name: spermatogenesis
 namespace: biological_process
-def: "The process of formation of spermatozoa, including spermatocytogenesis and spermiogenesis." [GOC:jid, ISBN:9780878933846]
+def: "The developmental process by which male germ line stem cells self renew or give rise to successive cell types resulting in the development of a spermatozoa." [GOC:jid, ISBN:9780878933846, PMID:28073824, PMID:30990821]
 synonym: "generation of spermatozoa" EXACT systematic_synonym []
 xref: Wikipedia:Spermatogenesis
+is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0048232 ! male gamete generation
 
 [Term]
@@ -6419,6 +6719,15 @@ xref: MIPS_funcat:01.01.06
 is_a: GO:1901605 ! alpha-amino acid metabolic process
 
 [Term]
+id: GO:0009069
+name: serine family amino acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving amino acids of the serine family, comprising cysteine, glycine, homoserine, selenocysteine and serine." [GOC:ai]
+synonym: "serine family amino acid metabolism" EXACT []
+xref: MIPS_funcat:01.01.09
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
 id: GO:0009072
 name: aromatic amino acid family metabolic process
 namespace: biological_process
@@ -6428,6 +6737,15 @@ xref: MIPS_funcat:01.01.09
 is_a: GO:0006520 ! cellular amino acid metabolic process
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
+
+[Term]
+id: GO:0009081
+name: branched-chain amino acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving amino acids containing a branched carbon skeleton, comprising isoleucine, leucine and valine." [CHEBI:22918, GOC:ai]
+synonym: "branched chain family amino acid metabolism" EXACT [GOC:ai]
+xref: MIPS_funcat:01.01.11
+is_a: GO:0006520 ! cellular amino acid metabolic process
 
 [Term]
 id: GO:0009100
@@ -6544,7 +6862,7 @@ name: nucleoid
 namespace: cellular_component
 def: "The region of a virus, bacterial cell, mitochondrion or chloroplast to which the nucleic acid is confined." [GOC:bm, GOC:ma, ISBN:3540076689]
 xref: Wikipedia:Nucleoid
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0009306
@@ -7030,6 +7348,29 @@ synonym: "endomembrane system organisation" EXACT [GOC:mah]
 is_a: GO:0016043 ! cellular component organization
 
 [Term]
+id: GO:0010467
+name: gene expression
+namespace: biological_process
+def: "The process in which a gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+subset: goslim_flybase_ribbon
+xref: Wikipedia:Gene_expression
+is_a: GO:0043170 ! macromolecule metabolic process
+
+[Term]
+id: GO:0010468
+name: regulation of gene expression
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+comment: This class covers any process that regulates the rate of production of a mature gene product, and so includes processes that regulate that rate by regulating the level, stability or availability of intermediates in the process of gene expression.  For example, it covers any process that regulates the level, stability or availability of mRNA or circRNA for translation and thereby regulates the rate of production of the encoded protein via translation.
+synonym: "regulation of gene product expression" RELATED [GOC:curators]
+synonym: "regulation of protein expression" NARROW [GOC:curators]
+xref: Wikipedia:Regulation_of_gene_expression
+is_a: GO:0060255 ! regulation of macromolecule metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0010467 ! gene expression
+relationship: regulates GO:0010467 ! gene expression
+
+[Term]
 id: GO:0010469
 name: regulation of signaling receptor activity
 namespace: biological_process
@@ -7224,6 +7565,13 @@ intersection_of: negatively_regulates GO:0043170 ! macromolecule metabolic proce
 relationship: negatively_regulates GO:0043170 ! macromolecule metabolic process
 
 [Term]
+id: GO:0010608
+name: posttranscriptional regulation of gene expression
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gene expression after the production of an RNA transcript." [GOC:dph, GOC:tb]
+is_a: GO:0010468 ! regulation of gene expression
+
+[Term]
 id: GO:0010623
 name: programmed cell death involved in cell development
 namespace: biological_process
@@ -7236,6 +7584,29 @@ is_a: GO:0048869 ! cellular developmental process
 intersection_of: GO:0012501 ! programmed cell death
 intersection_of: part_of GO:0048468 ! cell development
 relationship: part_of GO:0048468 ! cell development
+
+[Term]
+id: GO:0010628
+name: positive regulation of gene expression
+namespace: biological_process
+def: "Any process that increases the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+is_a: GO:0010468 ! regulation of gene expression
+is_a: GO:0010604 ! positive regulation of macromolecule metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0010467 ! gene expression
+relationship: positively_regulates GO:0010467 ! gene expression
+
+[Term]
+id: GO:0010629
+name: negative regulation of gene expression
+namespace: biological_process
+def: "Any process that decreases the frequency, rate or extent of gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [GOC:dph, GOC:tb]
+comment: This term covers any process that negatively regulates the rate of production of a mature gene product, and so includes processes that negatively regulate that rate by reducing the level, stability or availability of intermediates in the process of gene expression. For example, it covers any process that reduces the level, stability or availability of mRNA or circRNA for translation and thereby reduces the rate of production of the encoded protein via translation.
+is_a: GO:0010468 ! regulation of gene expression
+is_a: GO:0010605 ! negative regulation of macromolecule metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0010467 ! gene expression
+relationship: negatively_regulates GO:0010467 ! gene expression
 
 [Term]
 id: GO:0010638
@@ -7713,7 +8084,7 @@ subset: goslim_candida
 subset: goslim_flybase_ribbon
 subset: goslim_yeast
 xref: Wikipedia:Endomembrane_system
-is_a: GO:0044464 ! cell part
+is_a: GO:0110165 ! cellular anatomical entity
 relationship: has_part GO:0005773 ! vacuole
 relationship: has_part GO:0005886 ! plasma membrane
 
@@ -8042,7 +8413,7 @@ subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
 xref: Wikipedia:Biological_membrane
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0016021
@@ -8191,6 +8562,13 @@ synonym: "O-glycoside metabolism" EXACT []
 is_a: GO:1901657 ! glycosyl compound metabolic process
 
 [Term]
+id: GO:0016160
+name: amylase activity
+namespace: molecular_function
+def: "Catalysis of the hydrolysis of amylose or an amylose derivative." [GOC:ai]
+is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
+
+[Term]
 id: GO:0016192
 name: vesicle-mediated transport
 namespace: biological_process
@@ -8242,7 +8620,8 @@ synonym: "cellular inclusion" RELATED [NIF_Subcellular:sao120573470]
 synonym: "neuronal cytoplasmic inclusion" NARROW []
 xref: NIF_Subcellular:sao120573470
 xref: Wikipedia:Inclusion_bodies
-is_a: GO:0044424 ! intracellular part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0005622 ! intracellular
 
 [Term]
 id: GO:0016301
@@ -8372,7 +8751,6 @@ name: oxidoreductase activity
 namespace: molecular_function
 def: "Catalysis of an oxidation-reduction (redox) reaction, a reversible chemical reaction in which the oxidation state of an atom or atoms within a molecule is altered. One substrate acts as a hydrogen or electron donor and becomes oxidized, while the other acts as hydrogen or electron acceptor and becomes reduced." [GOC:go_curators]
 comment: Note that enzymes of class EC:1.97.-.- should also be annotated to this term.
-subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -8541,7 +8919,6 @@ id: GO:0016740
 name: transferase activity
 namespace: molecular_function
 def: "Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2." [ISBN:0198506732]
-subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -8645,7 +9022,6 @@ id: GO:0016787
 name: hydrolase activity
 namespace: molecular_function
 def: "Catalysis of the hydrolysis of various bonds, e.g. C-O, C-N, C-C, phosphoric anhydride bonds, etc. Hydrolase is the systematic name for any enzyme of EC class 3." [ISBN:0198506732]
-subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -8894,7 +9270,6 @@ id: GO:0016874
 name: ligase activity
 namespace: molecular_function
 def: "Catalysis of the joining of two substances, or two groups within a single molecule, with the concomitant hydrolysis of the diphosphate bond in ATP or a similar triphosphate." [EC:6, GOC:mah]
-subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -8966,6 +9341,32 @@ namespace: biological_process
 def: "The self-renewing division of a stem cell. A stem cell is an undifferentiated cell, in the embryo or adult, that can undergo unlimited division and give rise to one or several different cell types." [GOC:jid, ISBN:0582227089]
 synonym: "stem cell renewal" EXACT []
 is_a: GO:0051301 ! cell division
+
+[Term]
+id: GO:0017148
+name: negative regulation of translation
+namespace: biological_process
+alt_id: GO:0016478
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of proteins by the translation of mRNA or circRNA." [GOC:isa_complete]
+synonym: "down regulation of protein biosynthetic process" EXACT []
+synonym: "down-regulation of protein biosynthetic process" EXACT []
+synonym: "downregulation of protein biosynthetic process" EXACT []
+synonym: "inhibition of protein biosynthetic process" NARROW []
+synonym: "negative regulation of protein anabolism" EXACT []
+synonym: "negative regulation of protein biosynthesis" EXACT []
+synonym: "negative regulation of protein biosynthetic process" EXACT []
+synonym: "negative regulation of protein formation" EXACT []
+synonym: "negative regulation of protein synthesis" EXACT []
+synonym: "protein biosynthesis inhibitor activity" RELATED []
+synonym: "protein biosynthetic process inhibitor activity" RELATED []
+is_a: GO:0006417 ! regulation of translation
+is_a: GO:0010629 ! negative regulation of gene expression
+is_a: GO:0032269 ! negative regulation of cellular protein metabolic process
+is_a: GO:0034249 ! negative regulation of cellular amide metabolic process
+is_a: GO:2000113 ! negative regulation of cellular macromolecule biosynthetic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0006412 ! translation
+relationship: negatively_regulates GO:0006412 ! translation
 
 [Term]
 id: GO:0017168
@@ -9353,7 +9754,6 @@ namespace: cellular_component
 def: "The inner, i.e. lumen-facing, lipid bilayer of an organelle envelope; usually highly selective to most ions and metabolites." [GOC:mah]
 comment: See also the cellular component term 'outer membrane ; GO:0019867'.
 is_a: GO:0031090 ! organelle membrane
-is_a: GO:0044424 ! intracellular part
 relationship: part_of GO:0031967 ! organelle envelope
 
 [Term]
@@ -9589,6 +9989,18 @@ is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
 
 [Term]
+id: GO:0023019
+name: signal transduction involved in regulation of gene expression
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gene expression as a consequence of a process in which a signal is released and/or conveyed from one location to another." [GOC:mtg_signal]
+synonym: "regulation of gene expression as a consequence of signal transmission" RELATED [GOC:bf]
+is_a: GO:0007165 ! signal transduction
+intersection_of: GO:0007165 ! signal transduction
+intersection_of: part_of GO:0010468 ! regulation of gene expression
+relationship: part_of GO:0010468 ! regulation of gene expression
+creation_date: 2010-02-16T09:30:50Z
+
+[Term]
 id: GO:0023051
 name: regulation of signaling
 namespace: biological_process
@@ -9665,6 +10077,15 @@ relationship: part_of GO:0007267 ! cell-cell signaling
 creation_date: 2010-02-16T09:30:50Z
 
 [Term]
+id: GO:0030003
+name: cellular cation homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of cations at the level of a cell." [GOC:ceb, GOC:mah]
+xref: MIPS_funcat:34.01.01
+is_a: GO:0006873 ! cellular ion homeostasis
+is_a: GO:0055080 ! cation homeostasis
+
+[Term]
 id: GO:0030016
 name: myofibril
 namespace: cellular_component
@@ -9680,7 +10101,7 @@ name: sarcomere
 namespace: cellular_component
 def: "The repeating unit of a myofibril in a muscle cell, composed of an array of overlapping thick and thin filaments between two adjacent Z discs." [ISBN:0815316194]
 xref: Wikipedia:Sarcomere
-is_a: GO:0044449 ! contractile fiber part
+is_a: GO:0110165 ! cellular anatomical entity
 relationship: part_of GO:0030016 ! myofibril
 
 [Term]
@@ -10195,7 +10616,6 @@ def: "A neuron projection that has a short, tapering, morphology. Dendrites rece
 xref: NIF_Subcellular:sao1211023249
 xref: Wikipedia:Dendrite
 is_a: GO:0043005 ! neuron projection
-is_a: GO:0120038 ! plasma membrane bounded cell projection part
 relationship: part_of GO:0097447 ! dendritic tree
 
 [Term]
@@ -10298,7 +10718,7 @@ name: cytoplasmic vesicle membrane
 namespace: cellular_component
 def: "The lipid bilayer surrounding a cytoplasmic vesicle." [GOC:mah]
 is_a: GO:0012506 ! vesicle membrane
-is_a: GO:0044433 ! cytoplasmic vesicle part
+relationship: part_of GO:0031410 ! cytoplasmic vesicle
 
 [Term]
 id: GO:0030667
@@ -10496,7 +10916,8 @@ synonym: "proteinaceous extracellular matrix" EXACT []
 xref: MIPS_funcat:70.27.01
 xref: NIF_Subcellular:nlx_subcell_20090513
 xref: Wikipedia:Extracellular_matrix
-is_a: GO:0044421 ! extracellular region part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0005576 ! extracellular region
 
 [Term]
 id: GO:0031049
@@ -10524,7 +10945,6 @@ def: "A membrane that is one of the two lipid bilayers of an organelle envelope 
 synonym: "intracellular membrane" RELATED [NIF_Subcellular:sao830981606]
 xref: NIF_Subcellular:sao830981606
 is_a: GO:0016020 ! membrane
-is_a: GO:0044422 ! organelle part
 relationship: part_of GO:0043227 ! membrane-bounded organelle
 
 [Term]
@@ -10545,7 +10965,8 @@ def: "The component of a membrane consisting of the gene products having some co
 comment: Note that proteins intrinsic to membranes cannot be removed without disrupting the membrane, e.g. by detergent.
 subset: goslim_metagenomics
 synonym: "intrinsic to membrane" NARROW []
-is_a: GO:0044425 ! membrane part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0016020 ! membrane
 
 [Term]
 id: GO:0031226
@@ -10554,9 +10975,9 @@ namespace: cellular_component
 def: "The component of the plasma membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." [GOC:dos, GOC:mah]
 synonym: "intrinsic to plasma membrane" NARROW []
 is_a: GO:0031224 ! intrinsic component of membrane
-is_a: GO:0044459 ! plasma membrane part
 intersection_of: GO:0031224 ! intrinsic component of membrane
 intersection_of: part_of GO:0005886 ! plasma membrane
+relationship: part_of GO:0005886 ! plasma membrane
 
 [Term]
 id: GO:0031268
@@ -10574,7 +10995,6 @@ namespace: cellular_component
 def: "The component of the organelle membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." [GOC:dos, GOC:mah]
 synonym: "intrinsic to organelle membrane" NARROW []
 is_a: GO:0031224 ! intrinsic component of membrane
-is_a: GO:0044422 ! organelle part
 intersection_of: GO:0031224 ! intrinsic component of membrane
 intersection_of: part_of GO:0031090 ! organelle membrane
 relationship: part_of GO:0031090 ! organelle membrane
@@ -11003,10 +11423,10 @@ synonym: "cytoplasmic membrane bounded vesicle" RELATED []
 synonym: "cytoplasmic membrane-enclosed vesicle" RELATED []
 synonym: "cytoplasmic, membrane-bounded vesicle" RELATED []
 xref: NIF_Subcellular:sao180601769
-is_a: GO:0044444 ! cytoplasmic part
 is_a: GO:0097708 ! intracellular vesicle
 intersection_of: GO:0031982 ! vesicle
 intersection_of: part_of GO:0005737 ! cytoplasm
+relationship: part_of GO:0005737 ! cytoplasm
 
 [Term]
 id: GO:0031424
@@ -11175,7 +11595,6 @@ namespace: cellular_component
 def: "Either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope." [GOC:mah, NIF_Subcellular:sao1045389829]
 xref: NIF_Subcellular:sao1045389829
 is_a: GO:0031090 ! organelle membrane
-is_a: GO:0044429 ! mitochondrial part
 relationship: part_of GO:0005740 ! mitochondrial envelope
 
 [Term]
@@ -11185,30 +11604,30 @@ namespace: cellular_component
 def: "A double membrane structure enclosing an organelle, including two lipid bilayers and the region between them. In some cases, an organelle envelope may have more than two membranes." [GOC:mah, GOC:pz]
 subset: goslim_mouse
 is_a: GO:0031975 ! envelope
-is_a: GO:0044446 ! intracellular organelle part
 relationship: part_of GO:0043227 ! membrane-bounded organelle
+relationship: part_of GO:0043229 ! intracellular organelle
 
 [Term]
 id: GO:0031974
 name: membrane-enclosed lumen
 namespace: cellular_component
 def: "The enclosed volume within a sealed membrane or between two sealed membranes. Encompasses the volume enclosed by the membranes of a particular organelle, e.g. endoplasmic reticulum lumen, or the space between the two lipid bilayers of a double membrane surrounding an organelle, e.g. nuclear envelope lumen." [GOC:add, GOC:mah]
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0031975
 name: envelope
 namespace: cellular_component
 def: "A multilayered structure surrounding all or part of a cell; encompasses one or more lipid bilayers, and may include a cell wall layer; also includes the space between layers." [GOC:mah, GOC:pz]
-is_a: GO:0044464 ! cell part
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0031981
 name: nuclear lumen
 namespace: cellular_component
 def: "The volume enclosed by the nuclear inner membrane." [GOC:mah, GOC:pz]
-is_a: GO:0044428 ! nuclear part
 is_a: GO:0070013 ! intracellular organelle lumen
+relationship: part_of GO:0005634 ! nucleus
 
 [Term]
 id: GO:0031982
@@ -11681,6 +12100,24 @@ is_a: GO:0000003 ! reproduction
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
+id: GO:0032543
+name: mitochondrial translation
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of a protein in a mitochondrion. This is a ribosome-mediated process in which the information in messenger RNA (mRNA) is used to specify the sequence of amino acids in the protein; the mitochondrion has its own ribosomes and transfer RNAs, and uses a genetic code that differs from the nuclear code." [GOC:go_curators]
+subset: goslim_yeast
+synonym: "mitochondrial protein anabolism" EXACT []
+synonym: "mitochondrial protein biosynthesis" EXACT []
+synonym: "mitochondrial protein formation" EXACT []
+synonym: "mitochondrial protein synthesis" EXACT []
+synonym: "mitochondrial protein translation" EXACT []
+is_a: GO:0006412 ! translation
+intersection_of: GO:0006412 ! translation
+intersection_of: occurs_in GO:0005739 ! mitochondrion
+intersection_of: part_of GO:0140053 ! mitochondrial gene expression
+relationship: occurs_in GO:0005739 ! mitochondrion
+relationship: part_of GO:0140053 ! mitochondrial gene expression
+
+[Term]
 id: GO:0032592
 name: integral component of mitochondrial membrane
 namespace: cellular_component
@@ -11864,9 +12301,9 @@ name: plasma membrane bounded cell projection cytoplasm
 namespace: cellular_component
 def: "All of the contents of a plasma membrane bounded cell projection, excluding the plasma membrane surrounding the projection." [GOC:krc, GOC:mah]
 is_a: GO:0099568 ! cytoplasmic region
-is_a: GO:0120038 ! plasma membrane bounded cell projection part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0120025 ! plasma membrane bounded cell projection
+relationship: part_of GO:0120025 ! plasma membrane bounded cell projection
 
 [Term]
 id: GO:0032839
@@ -12189,17 +12626,14 @@ relationship: positively_regulates GO:0044106 ! cellular amine metabolic process
 
 [Term]
 id: GO:0033267
-name: axon part
+name: obsolete axon part
 namespace: cellular_component
-def: "A part of an axon, a cell projection of a neuron." [GOC:jl]
+def: "OBSOLETE. A part of an axon, a cell projection of a neuron." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 xref: NIF_Subcellular:sao280355188
-is_a: GO:0097458 ! neuron part
-is_a: GO:0120038 ! plasma membrane bounded cell projection part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0030424 ! axon
-relationship: part_of GO:0030424 ! axon
+is_obsolete: true
+consider: GO:0030424
 
 [Term]
 id: GO:0033363
@@ -12424,7 +12858,6 @@ id: GO:0034358
 name: plasma lipoprotein particle
 namespace: cellular_component
 def: "A spherical particle with a hydrophobic core of triglycerides and/or cholesterol esters, surrounded by an amphipathic monolayer of phospholipids, cholesterol and apolipoproteins. Plasma lipoprotein particles transport lipids, which are non-covalently associated with the particles, in the blood or lymph." [GOC:BHF, GOC:expert_pt, GOC:rl]
-is_a: GO:0044421 ! extracellular region part
 is_a: GO:1990777 ! lipoprotein particle
 relationship: part_of GO:0005615 ! extracellular space
 
@@ -12840,7 +13273,7 @@ id: GO:0036477
 name: somatodendritic compartment
 namespace: cellular_component
 def: "The region of a neuron that includes the cell body (cell soma) and dendrite(s), but excludes the axon." [GOC:pad, GOC:PARL]
-is_a: GO:0097458 ! neuron part
+is_a: GO:0110165 ! cellular anatomical entity
 created_by: rebeccafoulger
 creation_date: 2014-07-24T10:06:19Z
 
@@ -13027,7 +13460,7 @@ synonym: "T-lymphocyte receptor complex" EXACT []
 synonym: "TCR" RELATED []
 synonym: "TCR complex" EXACT [GOC:bf]
 xref: Wikipedia:T_cell_receptor
-is_a: GO:0098802 ! plasma membrane receptor complex
+is_a: GO:0098802 ! plasma membrane signaling receptor complex
 
 [Term]
 id: GO:0042105
@@ -13285,9 +13718,9 @@ name: nuclear inclusion body
 namespace: cellular_component
 def: "An intranuclear focus at which aggregated proteins have been sequestered." [GOC:jl]
 is_a: GO:0016234 ! inclusion body
-is_a: GO:0044428 ! nuclear part
 intersection_of: GO:0016234 ! inclusion body
 intersection_of: part_of GO:0005634 ! nucleus
+relationship: part_of GO:0005634 ! nucleus
 
 [Term]
 id: GO:0042430
@@ -13488,7 +13921,6 @@ comment: Note that an immunoglobulin complex has the function of antigen binding
 synonym: "antibody" EXACT [GOC:add]
 xref: Wikipedia:Antibody
 is_a: GO:0019814 ! immunoglobulin complex
-is_a: GO:0044421 ! extracellular region part
 relationship: part_of GO:0005615 ! extracellular space
 
 [Term]
@@ -13496,7 +13928,6 @@ id: GO:0042578
 name: phosphoric ester hydrolase activity
 namespace: molecular_function
 def: "Catalysis of the reaction: RPO-R' + H2O = RPOOH + R'H. This reaction is the hydrolysis of any phosphoric ester bond, any ester formed from orthophosphoric acid, O=P(OH)3." [GOC:jl]
-xref: EC:3.1
 is_a: GO:0016788 ! hydrolase activity, acting on ester bonds
 
 [Term]
@@ -13574,13 +14005,23 @@ xref: Wikipedia:Chylomicron
 is_a: GO:0034358 ! plasma lipoprotein particle
 
 [Term]
+id: GO:0042632
+name: cholesterol homeostasis
+namespace: biological_process
+alt_id: GO:2000188
+alt_id: GO:2000189
+def: "Any process involved in the maintenance of an internal steady state of cholesterol within an organism or cell." [GOC:go_curators]
+synonym: "positive regulation of cholesterol homeostasis" RELATED []
+synonym: "regulation of cholesterol homeostasis" RELATED []
+is_a: GO:0055092 ! sterol homeostasis
+
+[Term]
 id: GO:0042645
 name: mitochondrial nucleoid
 namespace: cellular_component
 def: "The region of a mitochondrion to which the DNA is confined." [GOC:jl]
 is_a: GO:0009295 ! nucleoid
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
-is_a: GO:0044429 ! mitochondrial part
 intersection_of: GO:0009295 ! nucleoid
 intersection_of: part_of GO:0005739 ! mitochondrion
 relationship: part_of GO:0005759 ! mitochondrial matrix
@@ -13780,7 +14221,7 @@ subset: goslim_pir
 synonym: "cell process" BROAD []
 synonym: "cellular process" BROAD []
 synonym: "cellular projection" EXACT []
-is_a: GO:0044464 ! cell part
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0043005
@@ -13791,10 +14232,9 @@ subset: goslim_pir
 synonym: "nerve fiber" RELATED [GOC:dph]
 synonym: "neurite" NARROW []
 synonym: "neuron process" EXACT []
-synonym: "neuron protrusion" EXACT [NIF_Subcellular:sao-250931889]
+synonym: "neuron protrusion" EXACT [NIF_Subcellular:sao250931889]
 synonym: "neuronal cell projection" EXACT []
-xref: NIF_Subcellular:sao-867568886
-is_a: GO:0097458 ! neuron part
+xref: NIF_Subcellular:sao867568886
 is_a: GO:0120025 ! plasma membrane bounded cell projection
 
 [Term]
@@ -13814,6 +14254,19 @@ xref: Wikipedia:Dendritic_cell
 is_a: GO:0001773 ! myeloid dendritic cell activation
 is_a: GO:0002573 ! myeloid leukocyte differentiation
 is_a: GO:0097028 ! dendritic cell differentiation
+
+[Term]
+id: GO:0043043
+name: peptide biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of peptides, compounds of 2 or more (but usually less than 100) amino acids where the alpha carboxyl group of one is bound to the alpha amino group of another. This may include the translation of a precursor protein and its subsequent processing into a functional peptide." [CHEBI:16670, GOC:dph, GOC:jl]
+synonym: "peptide anabolism" EXACT []
+synonym: "peptide biosynthesis" EXACT []
+synonym: "peptide formation" EXACT []
+synonym: "peptide synthesis" EXACT []
+is_a: GO:0006518 ! peptide metabolic process
+is_a: GO:0043604 ! amide biosynthetic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
 
 [Term]
 id: GO:0043062
@@ -13971,6 +14424,22 @@ intersection_of: negatively_regulates GO:0003824 ! catalytic activity
 relationship: negatively_regulates GO:0003824 ! catalytic activity
 
 [Term]
+id: GO:0043143
+name: regulation of translation by machinery localization
+namespace: biological_process
+def: "Any process in which proteins and protein complexes involved in translation are transported to, or maintained in, a specific location." [GOC:jl]
+synonym: "establishment and maintenance of translational machinery localization" EXACT []
+synonym: "establishment and maintenance of translational protein localization" EXACT []
+synonym: "regulation of translation by machinery localisation" EXACT [GOC:mah]
+synonym: "translational machinery localization" EXACT [GOC:dph, GOC:tb]
+synonym: "translational protein localization" EXACT []
+is_a: GO:0006417 ! regulation of translation
+is_a: GO:0034613 ! cellular protein localization
+intersection_of: GO:0008104 ! protein localization
+intersection_of: part_of GO:0006412 ! translation
+relationship: part_of GO:0006412 ! translation
+
+[Term]
 id: GO:0043170
 name: macromolecule metabolic process
 namespace: biological_process
@@ -13996,14 +14465,14 @@ is_a: GO:0009607 ! response to biotic stimulus
 id: GO:0043209
 name: myelin sheath
 namespace: cellular_component
-def: "An electrically insulating fatty layer that surrounds the axons of many neurons. It is an outgrowth of glial cells: Schwann cells supply the myelin for peripheral neurons while oligodendrocytes supply it to those of the central nervous system." [GOC:cjm, GOC:jl, NIF_Subcellular:sao-593830697, Wikipedia:Myelin]
+def: "An electrically insulating fatty layer that surrounds the axons of many neurons. It is an outgrowth of glial cells: Schwann cells supply the myelin for peripheral neurons while oligodendrocytes supply it to those of the central nervous system." [GOC:cjm, GOC:jl, NIF_Subcellular:sao593830697, Wikipedia:Myelin]
 synonym: "astrocyte sheath" NARROW [NIF_Subcellular:nlx_subcell_20090204]
 synonym: "oligodendrocyte myelin sheath" NARROW [NIF_Subcellular:sao1279474730]
 synonym: "Schwann cell myelin sheath" NARROW []
 xref: FMA:62983
-xref: NIF_Subcellular:sao-593830697
+xref: NIF_Subcellular:sao593830697
 xref: Wikipedia:Myelin
-is_a: GO:0044464 ! cell part
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0043217
@@ -14023,7 +14492,7 @@ subset: goslim_generic
 subset: goslim_pir
 xref: NIF_Subcellular:sao1539965131
 xref: Wikipedia:Organelle
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0043227
@@ -14050,9 +14519,9 @@ namespace: cellular_component
 def: "Organized structure of distinctive morphology and function, occurring within the cell. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." [GOC:go_curators]
 subset: goslim_pir
 is_a: GO:0043226 ! organelle
-is_a: GO:0044424 ! intracellular part
 intersection_of: GO:0043226 ! organelle
 intersection_of: part_of GO:0005622 ! intracellular
+relationship: part_of GO:0005622 ! intracellular
 
 [Term]
 id: GO:0043230
@@ -14061,9 +14530,9 @@ namespace: cellular_component
 def: "Organized structure of distinctive morphology and function, occurring outside the cell. Includes, for example, extracellular membrane vesicles (EMVs) and the cellulosomes of anaerobic bacteria and fungi." [GOC:jl, PMID:9914479]
 subset: goslim_pir
 is_a: GO:0043226 ! organelle
-is_a: GO:0044421 ! extracellular region part
 intersection_of: GO:0043226 ! organelle
 intersection_of: part_of GO:0005576 ! extracellular region
+relationship: part_of GO:0005576 ! extracellular region
 
 [Term]
 id: GO:0043231
@@ -14094,9 +14563,9 @@ name: organelle lumen
 namespace: cellular_component
 def: "The internal volume enclosed by the membranes of a particular organelle; includes the volume enclosed by a single organelle membrane, e.g. endoplasmic reticulum lumen, or the volume enclosed by the innermost of the two lipid bilayers of an organelle envelope, e.g. nuclear lumen." [GOC:jl, GOC:mah]
 is_a: GO:0031974 ! membrane-enclosed lumen
-is_a: GO:0044422 ! organelle part
 intersection_of: GO:0031974 ! membrane-enclosed lumen
 intersection_of: part_of GO:0043226 ! organelle
+relationship: part_of GO:0043226 ! organelle
 
 [Term]
 id: GO:0043235
@@ -14171,8 +14640,8 @@ synonym: "contractile fibre" EXACT []
 synonym: "muscle fiber" BROAD []
 synonym: "muscle fibre" BROAD []
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
-is_a: GO:0044444 ! cytoplasmic part
 is_a: GO:0099512 ! supramolecular fiber
+relationship: part_of GO:0005737 ! cytoplasm
 
 [Term]
 id: GO:0043368
@@ -14193,7 +14662,7 @@ synonym: "pre-T lymphocyte receptor complex" EXACT []
 synonym: "pre-T-cell receptor complex" EXACT []
 synonym: "pre-T-lymphocyte receptor complex" EXACT []
 synonym: "pre-TCR complex" EXACT []
-is_a: GO:0098802 ! plasma membrane receptor complex
+is_a: GO:0098802 ! plasma membrane signaling receptor complex
 relationship: part_of GO:0005887 ! integral component of plasma membrane
 
 [Term]
@@ -14383,6 +14852,14 @@ def: "The chemical reactions and pathways involving an amide, any derivative of 
 subset: goslim_pir
 synonym: "amide metabolism" EXACT []
 is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+
+[Term]
+id: GO:0043604
+name: amide biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of an amide, any derivative of an oxoacid in which an acidic hydroxy group has been replaced by an amino or substituted amino group." [CHEBI:32988]
+is_a: GO:0043603 ! cellular amide metabolic process
+is_a: GO:0044271 ! cellular nitrogen compound biosynthetic process
 
 [Term]
 id: GO:0043648
@@ -14602,10 +15079,7 @@ synonym: "growth during symbiotic interaction" RELATED [GOC:dph]
 synonym: "growth on or near surface of other organism during symbiotic interaction" RELATED [GOC:tb]
 synonym: "growth on or near surface of other organism involved in symbiotic interaction" RELATED []
 is_a: GO:0040007 ! growth
-is_a: GO:0051704 ! multi-organism process
-intersection_of: GO:0040007 ! growth
-intersection_of: part_of GO:0044403 ! symbiotic process
-relationship: part_of GO:0044403 ! symbiotic process
+is_a: GO:0044419 ! interspecies interaction between organisms
 created_by: jane
 creation_date: 2009-07-30T02:22:33Z
 
@@ -14622,8 +15096,8 @@ synonym: "development on or near surface of other organism involved in symbiotic
 is_a: GO:0032502 ! developmental process
 is_a: GO:0051704 ! multi-organism process
 intersection_of: GO:0032502 ! developmental process
-intersection_of: part_of GO:0044403 ! symbiotic process
-relationship: part_of GO:0044403 ! symbiotic process
+intersection_of: part_of GO:0044419 ! interspecies interaction between organisms
+relationship: part_of GO:0044419 ! interspecies interaction between organisms
 created_by: jane
 creation_date: 2009-07-30T02:26:46Z
 
@@ -14834,146 +15308,123 @@ is_a: GO:0051704 ! multi-organism process
 
 [Term]
 id: GO:0044420
-name: extracellular matrix component
+name: obsolete extracellular matrix component
 namespace: cellular_component
-def: "Any constituent part of the extracellular matrix, the structure lying external to one or more cells, which provides structural support for cells or tissues; may be completely external to the cell (as in animals) or be part of the cell (as often seen in plants)." [GOC:jl]
+def: "OBSOLETE. Any constituent part of the extracellular matrix, the structure lying external to one or more cells, which provides structural support for cells or tissues; may be completely external to the cell (as in animals) or be part of the cell (as often seen in plants)." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "extracellular matrix part" EXACT []
-is_a: GO:0044421 ! extracellular region part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0031012 ! extracellular matrix
-relationship: part_of GO:0031012 ! extracellular matrix
+is_obsolete: true
+consider: GO:0031012
 
 [Term]
 id: GO:0044421
-name: extracellular region part
+name: obsolete extracellular region part
 namespace: cellular_component
-def: "Any constituent part of the extracellular region, the space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers constituent parts of the host cell environment outside an intracellular parasite." [GOC:jl]
+def: "OBSOLETE. Any constituent part of the extracellular region, the space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers constituent parts of the host cell environment outside an intracellular parasite." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "extracellular structure" RELATED [NIF_Subcellular:sao9117790637]
 xref: NIF_Subcellular:sao9117790637
-is_a: GO:0005575 ! cellular_component
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005576 ! extracellular region
-relationship: part_of GO:0005576 ! extracellular region
+is_obsolete: true
+consider: GO:0005576
 
 [Term]
 id: GO:0044422
-name: organelle part
+name: obsolete organelle part
 namespace: cellular_component
-def: "Any constituent part of an organelle, an organized structure of distinctive morphology and function. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, but excludes the plasma membrane." [GOC:jl]
+def: "OBSOLETE. Any constituent part of an organelle, an organized structure of distinctive morphology and function. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, but excludes the plasma membrane." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0005575 ! cellular_component
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0043226 ! organelle
-relationship: part_of GO:0043226 ! organelle
+is_obsolete: true
+consider: GO:0043226
 
 [Term]
 id: GO:0044424
-name: intracellular part
+name: obsolete intracellular part
 namespace: cellular_component
-def: "Any constituent part of the living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." [GOC:jl]
+def: "OBSOLETE. Any constituent part of the living contents of a cell; the matter contained within (but not including) the plasma membrane, usually taken to exclude large vacuoles and masses of secretory or ingested material. In eukaryotes it includes the nucleus and cytoplasm." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044464 ! cell part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005622 ! intracellular
-relationship: part_of GO:0005622 ! intracellular
+is_obsolete: true
+consider: GO:0005622
 
 [Term]
 id: GO:0044425
-name: membrane part
+name: obsolete membrane part
 namespace: cellular_component
-def: "Any constituent part of a membrane, a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a membrane, a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0005575 ! cellular_component
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0016020 ! membrane
-relationship: part_of GO:0016020 ! membrane
+is_obsolete: true
+consider: GO:0016020
 
 [Term]
 id: GO:0044427
-name: chromosomal part
+name: obsolete chromosomal part
 namespace: cellular_component
-def: "Any constituent part of a chromosome, a structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a chromosome, a structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "chromosomal component" EXACT []
 synonym: "chromosome component" EXACT []
 synonym: "chromosome part" EXACT []
-is_a: GO:0044446 ! intracellular organelle part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005694 ! chromosome
-relationship: part_of GO:0005694 ! chromosome
+is_obsolete: true
+consider: GO:0005694
 
 [Term]
 id: GO:0044428
-name: nuclear part
+name: obsolete nuclear part
 namespace: cellular_component
-def: "Any constituent part of the nucleus, a membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated." [GOC:jl]
+def: "OBSOLETE. Any constituent part of the nucleus, a membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "nuclear subcomponent" EXACT [NIF_Subcellular:sao1499850686]
 synonym: "nucleus component" EXACT []
 xref: NIF_Subcellular:sao1499850686
-is_a: GO:0044446 ! intracellular organelle part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005634 ! nucleus
-relationship: part_of GO:0005634 ! nucleus
+is_obsolete: true
+consider: GO:0005634
 
 [Term]
 id: GO:0044429
-name: mitochondrial part
+name: obsolete mitochondrial part
 namespace: cellular_component
-def: "Any constituent part of a mitochondrion, a semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a mitochondrion, a semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells. It is notably the site of tissue respiration." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "mitochondrial subcomponent" EXACT [NIF_Subcellular:sao666410040]
 synonym: "mitochondrion component" EXACT []
 xref: NIF_Subcellular:sao666410040
-is_a: GO:0044444 ! cytoplasmic part
-is_a: GO:0044446 ! intracellular organelle part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005739 ! mitochondrion
-relationship: part_of GO:0005739 ! mitochondrion
+is_obsolete: true
+consider: GO:0005739
 
 [Term]
 id: GO:0044433
-name: cytoplasmic vesicle part
+name: obsolete cytoplasmic vesicle part
 namespace: cellular_component
-def: "Any constituent part of cytoplasmic vesicle, a vesicle formed of membrane or protein, found in the cytoplasm of a cell." [GOC:jl]
+def: "OBSOLETE. Any constituent part of cytoplasmic vesicle, a vesicle formed of membrane or protein, found in the cytoplasm of a cell." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044444 ! cytoplasmic part
-is_a: GO:0044446 ! intracellular organelle part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0031410 ! cytoplasmic vesicle
-relationship: part_of GO:0031410 ! cytoplasmic vesicle
+is_obsolete: true
+consider: GO:0031410
 
 [Term]
 id: GO:0044437
-name: vacuolar part
+name: obsolete vacuolar part
 namespace: cellular_component
-def: "Any constituent part of a vacuole, a closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a vacuole, a closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "vacuole component" EXACT []
-is_a: GO:0044444 ! cytoplasmic part
-is_a: GO:0044446 ! intracellular organelle part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005773 ! vacuole
-relationship: part_of GO:0005773 ! vacuole
+is_obsolete: true
+consider: GO:0005773
 
 [Term]
 id: GO:0044441
-name: ciliary part
+name: obsolete ciliary part
 namespace: cellular_component
 alt_id: GO:0044442
-def: "Any constituent part of a cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface. Each cilium is bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored basally in a centriole." [GOC:cilia, GOC:jl]
+def: "OBSOLETE. Any constituent part of a cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface. Each cilium is bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored basally in a centriole." [GOC:cilia, GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC. Also note that cilia and eukaryotic flagella are deemed to be equivalent.
 subset: gocheck_do_not_annotate
 synonym: "cilial part" EXACT []
@@ -14982,145 +15433,119 @@ synonym: "flagellar part" NARROW []
 synonym: "flagellum component" NARROW []
 synonym: "flagellum part" NARROW []
 synonym: "microtubule-based flagellum part" EXACT []
-is_a: GO:0044422 ! organelle part
-is_a: GO:0120038 ! plasma membrane bounded cell projection part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005929 ! cilium
-relationship: part_of GO:0005929 ! cilium
+is_obsolete: true
+consider: GO:0005929
 
 [Term]
 id: GO:0044444
-name: cytoplasmic part
+name: obsolete cytoplasmic part
 namespace: cellular_component
-def: "Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [GOC:jl]
+def: "OBSOLETE. Any constituent part of the cytoplasm, all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "cytoplasm component" EXACT []
-is_a: GO:0044424 ! intracellular part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005737 ! cytoplasm
-relationship: part_of GO:0005737 ! cytoplasm
+is_obsolete: true
+consider: GO:0005737
 
 [Term]
 id: GO:0044446
-name: intracellular organelle part
+name: obsolete intracellular organelle part
 namespace: cellular_component
-def: "A constituent part of an intracellular organelle, an organized structure of distinctive morphology and function, occurring within the cell. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton but excludes the plasma membrane." [GOC:jl]
+def: "OBSOLETE. A constituent part of an intracellular organelle, an organized structure of distinctive morphology and function, occurring within the cell. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton but excludes the plasma membrane." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044422 ! organelle part
-is_a: GO:0044424 ! intracellular part
-relationship: part_of GO:0043229 ! intracellular organelle
+is_obsolete: true
+consider: GO:0043229
 
 [Term]
 id: GO:0044449
-name: contractile fiber part
+name: obsolete contractile fiber part
 namespace: cellular_component
-def: "Any constituent part of a contractile fiber, a fiber composed of actin, myosin, and associated proteins, found in cells of smooth or striated muscle." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a contractile fiber, a fiber composed of actin, myosin, and associated proteins, found in cells of smooth or striated muscle." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "contractile fibre component" EXACT []
 synonym: "muscle fiber component" BROAD []
 synonym: "muscle fibre component" BROAD []
-is_a: GO:0044422 ! organelle part
-is_a: GO:0044444 ! cytoplasmic part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0043292 ! contractile fiber
-relationship: part_of GO:0043292 ! contractile fiber
+is_obsolete: true
+consider: GO:0043292
 
 [Term]
 id: GO:0044452
-name: nucleolar part
+name: obsolete nucleolar part
 namespace: cellular_component
-def: "Any constituent part of a nucleolus, a small, dense body one or more of which are present in the nucleus of eukaryotic cells. It is rich in RNA and protein, is not bounded by a limiting membrane, and is not seen during mitosis." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a nucleolus, a small, dense body one or more of which are present in the nucleus of eukaryotic cells. It is rich in RNA and protein, is not bounded by a limiting membrane, and is not seen during mitosis." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "nucleolus component" EXACT []
-is_a: GO:0044428 ! nuclear part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005730 ! nucleolus
-relationship: part_of GO:0005730 ! nucleolus
+is_obsolete: true
+consider: GO:0005730
 
 [Term]
 id: GO:0044454
-name: nuclear chromosome part
+name: obsolete nuclear chromosome part
 namespace: cellular_component
-def: "Any constituent part of a nuclear chromosome, a chromosome that encodes the nuclear genome and is found in the nucleus of a eukaryotic cell during the cell cycle phases when the nucleus is intact." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a nuclear chromosome, a chromosome that encodes the nuclear genome and is found in the nucleus of a eukaryotic cell during the cell cycle phases when the nucleus is intact." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044427 ! chromosomal part
-is_a: GO:0044428 ! nuclear part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0000228 ! nuclear chromosome
-relationship: part_of GO:0000228 ! nuclear chromosome
+is_obsolete: true
+consider: GO:0000228
 
 [Term]
 id: GO:0044455
-name: mitochondrial membrane part
+name: obsolete mitochondrial membrane part
 namespace: cellular_component
-def: "Any constituent part of a mitochondrial membrane, either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a mitochondrial membrane, either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044425 ! membrane part
-is_a: GO:0044429 ! mitochondrial part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0031966 ! mitochondrial membrane
-relationship: part_of GO:0031966 ! mitochondrial membrane
+is_obsolete: true
+consider: GO:0031966
 
 [Term]
 id: GO:0044456
-name: synapse part
+name: obsolete synapse part
 namespace: cellular_component
-def: "Any constituent part of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 synonym: "synaptic component" RELATED [NIF_Subcellular:sao1784069613]
 xref: NIF_Subcellular:sao1784069613
-is_a: GO:0005575 ! cellular_component
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0045202 ! synapse
-relationship: part_of GO:0045202 ! synapse
+is_obsolete: true
+consider: GO:0045202
 
 [Term]
 id: GO:0044459
-name: plasma membrane part
+name: obsolete plasma membrane part
 namespace: cellular_component
-def: "Any constituent part of the plasma membrane, the membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." [GOC:jl]
+def: "OBSOLETE. Any constituent part of the plasma membrane, the membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044425 ! membrane part
-is_a: GO:0044464 ! cell part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005886 ! plasma membrane
-relationship: part_of GO:0005886 ! plasma membrane
+is_obsolete: true
+consider: GO:0005886
 
 [Term]
 id: GO:0044463
-name: cell projection part
+name: obsolete cell projection part
 namespace: cellular_component
-def: "Any constituent part of a cell projection, a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a cell projection, a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
-is_a: GO:0044464 ! cell part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0042995 ! cell projection
-relationship: part_of GO:0042995 ! cell projection
+is_obsolete: true
+consider: GO:0042995
 
 [Term]
 id: GO:0044464
-name: cell part
+name: obsolete cell part
 namespace: cellular_component
-def: "Any constituent part of a cell, the basic structural and functional unit of all organisms." [GOC:jl]
+def: "OBSOLETE. Any constituent part of a cell, the basic structural and functional unit of all organisms." [GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "cellular subcomponent" EXACT [NIF_Subcellular:sao628508602]
 synonym: "protoplast" RELATED [GOC:mah]
 xref: NIF_Subcellular:sao628508602
-is_a: GO:0005575 ! cellular_component
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0005623 ! cell
-relationship: part_of GO:0005623 ! cell
+is_obsolete: true
+consider: CL:0000000
 
 [Term]
 id: GO:0044703
@@ -15281,6 +15706,21 @@ intersection_of: part_of GO:0007135 ! meiosis II
 relationship: part_of GO:0007135 ! meiosis II
 
 [Term]
+id: GO:0045182
+name: translation regulator activity
+namespace: molecular_function
+def: "Any molecular function involved in the initiation, activation, perpetuation, repression or termination of polypeptide synthesis at the ribosome." [GOC:ai]
+subset: goslim_aspergillus
+subset: goslim_candida
+subset: goslim_pir
+subset: goslim_plant
+synonym: "translation factor activity" EXACT []
+is_a: GO:0003674 ! molecular_function
+intersection_of: GO:0003674 ! molecular_function
+intersection_of: part_of GO:0006417 ! regulation of translation
+relationship: part_of GO:0006417 ! regulation of translation
+
+[Term]
 id: GO:0045184
 name: establishment of protein localization
 namespace: biological_process
@@ -15317,7 +15757,7 @@ synonym: "mixed synapse" NARROW [NIF_Subcellular:sao1506103497]
 synonym: "synaptic junction" EXACT []
 xref: NIF_Subcellular:sao914572699
 xref: Wikipedia:Chemical_synapse
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0045259
@@ -15330,7 +15770,7 @@ synonym: "hydrogen-translocating F-type ATPase complex" EXACT []
 synonym: "hydrogen-transporting ATP synthase complex" EXACT []
 synonym: "proton-transporting F-type ATPase complex" RELATED []
 is_a: GO:0016469 ! proton-transporting two-sector ATPase complex
-is_a: GO:0044424 ! intracellular part
+relationship: part_of GO:0005622 ! intracellular
 
 [Term]
 id: GO:0045260
@@ -16326,6 +16766,32 @@ intersection_of: positively_regulates GO:0060271 ! cilium assembly
 relationship: positively_regulates GO:0060271 ! cilium assembly
 
 [Term]
+id: GO:0045727
+name: positive regulation of translation
+namespace: biological_process
+alt_id: GO:0045946
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of proteins by the translation of mRNA or circRNA." [GOC:dph, GOC:go_curators, GOC:tb]
+synonym: "activation of protein biosynthetic process" NARROW []
+synonym: "positive regulation of protein anabolism" EXACT []
+synonym: "positive regulation of protein biosynthesis" EXACT []
+synonym: "positive regulation of protein biosynthetic process" EXACT [GOC:tb]
+synonym: "positive regulation of protein formation" EXACT []
+synonym: "positive regulation of protein synthesis" EXACT []
+synonym: "stimulation of protein biosynthetic process" NARROW []
+synonym: "up regulation of protein biosynthetic process" EXACT []
+synonym: "up-regulation of protein biosynthetic process" EXACT []
+synonym: "upregulation of protein biosynthetic process" EXACT []
+is_a: GO:0006417 ! regulation of translation
+is_a: GO:0010557 ! positive regulation of macromolecule biosynthetic process
+is_a: GO:0010628 ! positive regulation of gene expression
+is_a: GO:0031328 ! positive regulation of cellular biosynthetic process
+is_a: GO:0032270 ! positive regulation of cellular protein metabolic process
+is_a: GO:0034250 ! positive regulation of cellular amide metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0006412 ! translation
+relationship: positively_regulates GO:0006412 ! translation
+
+[Term]
 id: GO:0045728
 name: respiratory burst after phagocytosis
 namespace: biological_process
@@ -16868,6 +17334,37 @@ is_a: GO:1901863 ! positive regulation of muscle tissue development
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0014706 ! striated muscle tissue development
 relationship: positively_regulates GO:0014706 ! striated muscle tissue development
+
+[Term]
+id: GO:0045900
+name: negative regulation of translational elongation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of translational elongation." [GOC:go_curators]
+synonym: "down regulation of translational elongation" EXACT []
+synonym: "down-regulation of translational elongation" EXACT []
+synonym: "downregulation of translational elongation" EXACT []
+synonym: "inhibition of translational elongation" NARROW []
+is_a: GO:0006448 ! regulation of translational elongation
+is_a: GO:0017148 ! negative regulation of translation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0006414 ! translational elongation
+relationship: negatively_regulates GO:0006414 ! translational elongation
+
+[Term]
+id: GO:0045901
+name: positive regulation of translational elongation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of translational elongation." [GOC:go_curators]
+synonym: "activation of translational elongation" NARROW []
+synonym: "stimulation of translational elongation" NARROW []
+synonym: "up regulation of translational elongation" EXACT []
+synonym: "up-regulation of translational elongation" EXACT []
+synonym: "upregulation of translational elongation" EXACT []
+is_a: GO:0006448 ! regulation of translational elongation
+is_a: GO:0045727 ! positive regulation of translation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0006414 ! translational elongation
+relationship: positively_regulates GO:0006414 ! translational elongation
 
 [Term]
 id: GO:0045910
@@ -17826,7 +18323,6 @@ synonym: "single organism intracellular transport" RELATED [GOC:TermGenie]
 synonym: "single-organism intracellular transport" RELATED []
 is_a: GO:0006810 ! transport
 is_a: GO:0051641 ! cellular localization
-is_a: GO:0051649 ! establishment of localization in cell
 intersection_of: GO:0006810 ! transport
 intersection_of: occurs_in GO:0005622 ! intracellular
 relationship: occurs_in GO:0005622 ! intracellular
@@ -18540,6 +19036,68 @@ is_a: GO:0009306 ! protein secretion
 relationship: part_of GO:0001816 ! cytokine production
 
 [Term]
+id: GO:0050666
+name: regulation of homocysteine metabolic process
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving homocysteine, the amino acid alpha-amino-gamma-mercaptobutanoic acid." [GOC:ai]
+synonym: "regulation of Hcy metabolic process" EXACT []
+synonym: "regulation of Hcy metabolism" EXACT []
+synonym: "regulation of homocysteine metabolism" EXACT []
+is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0050667 ! homocysteine metabolic process
+relationship: regulates GO:0050667 ! homocysteine metabolic process
+
+[Term]
+id: GO:0050667
+name: homocysteine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving homocysteine, the amino acid alpha-amino-gamma-mercaptobutanoic acid. Homocysteine is an important intermediate in the metabolic reactions of its S-methyl derivative, methionine." [ISBN:0198506732]
+synonym: "Hcy metabolic process" EXACT []
+synonym: "Hcy metabolism" EXACT []
+synonym: "homocysteine metabolism" EXACT []
+xref: MIPS_funcat:01.01.06.05.01.01
+is_a: GO:0000096 ! sulfur amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+
+[Term]
+id: GO:0050668
+name: positive regulation of homocysteine metabolic process
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving homocysteine." [GOC:ai]
+synonym: "activation of homocysteine metabolic process" NARROW []
+synonym: "positive regulation of Hcy metabolic process" EXACT []
+synonym: "positive regulation of Hcy metabolism" EXACT []
+synonym: "positive regulation of homocysteine metabolism" EXACT []
+synonym: "stimulation of homocysteine metabolic process" NARROW []
+synonym: "up regulation of homocysteine metabolic process" EXACT []
+synonym: "up-regulation of homocysteine metabolic process" EXACT []
+synonym: "upregulation of homocysteine metabolic process" EXACT []
+is_a: GO:0031337 ! positive regulation of sulfur amino acid metabolic process
+is_a: GO:0050666 ! regulation of homocysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0050667 ! homocysteine metabolic process
+relationship: positively_regulates GO:0050667 ! homocysteine metabolic process
+
+[Term]
+id: GO:0050669
+name: negative regulation of homocysteine metabolic process
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving homocysteine." [GOC:ai]
+synonym: "down regulation of homocysteine metabolic process" EXACT []
+synonym: "down-regulation of homocysteine metabolic process" EXACT []
+synonym: "downregulation of homocysteine metabolic process" EXACT []
+synonym: "inhibition of homocysteine metabolic process" NARROW []
+synonym: "negative regulation of Hcy metabolic process" EXACT []
+synonym: "negative regulation of Hcy metabolism" EXACT []
+synonym: "negative regulation of homocysteine metabolism" EXACT []
+is_a: GO:0031336 ! negative regulation of sulfur amino acid metabolic process
+is_a: GO:0050666 ! regulation of homocysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0050667 ! homocysteine metabolic process
+relationship: negatively_regulates GO:0050667 ! homocysteine metabolic process
+
+[Term]
 id: GO:0050707
 name: regulation of cytokine secretion
 namespace: biological_process
@@ -18812,7 +19370,6 @@ namespace: biological_process
 alt_id: GO:0050791
 def: "Any process that modulates the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." [GOC:ai, GOC:go_curators]
 subset: gocheck_do_not_annotate
-subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_pir
@@ -20643,6 +21200,22 @@ intersection_of: positively_regulates GO:0007010 ! cytoskeleton organization
 relationship: positively_regulates GO:0007010 ! cytoskeleton organization
 
 [Term]
+id: GO:0051560
+name: mitochondrial calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions within the cytoplasm of a cell or between mitochondria and their surroundings." [GOC:ai, GOC:mah]
+synonym: "calcium ion homeostasis in mitochondria" EXACT []
+synonym: "calcium ion homeostasis in mitochondrion" EXACT []
+synonym: "mitochondrial calcium ion concentration regulation" EXACT []
+synonym: "regulation of calcium ion concentration in mitochondria" EXACT []
+synonym: "regulation of calcium ion concentration in mitochondrion" EXACT []
+synonym: "regulation of mitochondrial calcium ion concentration" EXACT []
+is_a: GO:0006874 ! cellular calcium ion homeostasis
+intersection_of: GO:0055074 ! calcium ion homeostasis
+intersection_of: occurs_in GO:0005739 ! mitochondrion
+relationship: occurs_in GO:0005739 ! mitochondrion
+
+[Term]
 id: GO:0051588
 name: regulation of neurotransmitter transport
 namespace: biological_process
@@ -21023,9 +21596,6 @@ synonym: "regulation of morphology or physiology of other organism during symbio
 synonym: "regulation of physiological process in other organism during symbiotic interaction" NARROW []
 synonym: "regulation of physiology of other organism during symbiotic interaction" NARROW []
 is_a: GO:0035821 ! modification of morphology or physiology of other organism
-intersection_of: GO:0035821 ! modification of morphology or physiology of other organism
-intersection_of: part_of GO:0044403 ! symbiotic process
-relationship: part_of GO:0044403 ! symbiotic process
 
 [Term]
 id: GO:0051818
@@ -21284,6 +21854,18 @@ intersection_of: GO:0051851 ! modification by host of symbiont morphology or phy
 intersection_of: positively_regulates GO:0006909 ! phagocytosis
 
 [Term]
+id: GO:0052803
+name: imidazole-containing compound metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving imidazoles, five-membered organic heterocycle containing two nitrogen atoms at positions 1 and 3, or any of its derivatives; compounds containing an imidazole skeleton." [CHEBI:24780]
+synonym: "imidazole metabolism" EXACT []
+is_a: GO:0006725 ! cellular aromatic compound metabolic process
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
+is_a: GO:0046483 ! heterocycle metabolic process
+is_a: GO:1901360 ! organic cyclic compound metabolic process
+is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
 id: GO:0055007
 name: cardiac muscle cell differentiation
 namespace: biological_process
@@ -21389,6 +21971,15 @@ synonym: "manganese homeostasis" BROAD []
 is_a: GO:0055076 ! transition metal ion homeostasis
 
 [Term]
+id: GO:0055074
+name: calcium ion homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of calcium ions within an organism or cell." [GOC:ceb, GOC:jid, GOC:mah]
+synonym: "regulation of calcium ion concentration" EXACT []
+is_a: GO:0055065 ! metal ion homeostasis
+is_a: GO:0072507 ! divalent inorganic cation homeostasis
+
+[Term]
 id: GO:0055076
 name: transition metal ion homeostasis
 namespace: biological_process
@@ -21408,6 +21999,14 @@ name: anion homeostasis
 namespace: biological_process
 def: "Any process involved in the maintenance of an internal steady state of anions within an organism or cell." [GOC:ceb, GOC:jid, GOC:mah]
 is_a: GO:0050801 ! ion homeostasis
+
+[Term]
+id: GO:0055082
+name: cellular chemical homeostasis
+namespace: biological_process
+def: "Any biological process involved in the maintenance of an internal steady state of a chemical at the level of the cell." [GOC:isa_complete, GOC:jid]
+is_a: GO:0019725 ! cellular homeostasis
+is_a: GO:0048878 ! chemical homeostasis
 
 [Term]
 id: GO:0055083
@@ -21445,6 +22044,20 @@ synonym: "nucleobase, nucleoside and nucleotide metabolic process" RELATED []
 synonym: "nucleobase, nucleoside and nucleotide metabolism" EXACT []
 is_a: GO:0006139 ! nucleobase-containing compound metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
+
+[Term]
+id: GO:0055088
+name: lipid homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of lipid within an organism or cell." [GOC:BHF, GOC:rl]
+is_a: GO:0048878 ! chemical homeostasis
+
+[Term]
+id: GO:0055092
+name: sterol homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of sterol within an organism or cell." [GOC:BHF, GOC:rl]
+is_a: GO:0055088 ! lipid homeostasis
 
 [Term]
 id: GO:0055114
@@ -22498,7 +23111,7 @@ name: pituitary gonadotropin complex
 namespace: cellular_component
 def: "A protein complex that is a protein hormone secreted by gonadotrope cells of the anterior pituitary of vertebrates. capable of regulating normal growth, sexual development, and reproductive function." [GOC:dph, PMID:11420129]
 is_a: GO:0032991 ! protein-containing complex
-is_a: GO:0044421 ! extracellular region part
+relationship: part_of GO:0005576 ! extracellular region
 created_by: dph
 creation_date: 2015-05-06T13:11:18Z
 
@@ -22588,6 +23201,18 @@ created_by: dph
 creation_date: 2018-04-23T14:32:23Z
 
 [Term]
+id: GO:0062125
+name: regulation of mitochondrial gene expression
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of mitochondrial gene expression. Gene expression is the process in which a gene's coding sequence is converted into a mature gene product or products (proteins or RNA)." [PMID:28285835]
+is_a: GO:0010468 ! regulation of gene expression
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0140053 ! mitochondrial gene expression
+relationship: regulates GO:0140053 ! mitochondrial gene expression
+created_by: dph
+creation_date: 2019-05-30T16:45:04Z
+
+[Term]
 id: GO:0065007
 name: biological regulation
 namespace: biological_process
@@ -22613,7 +23238,6 @@ name: regulation of molecular function
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of a molecular function, an elemental biological activity occurring at the molecular level, such as catalysis or binding." [GOC:isa_complete]
 subset: gocheck_do_not_annotate
-subset: goslim_agr
 subset: goslim_pir
 subset: goslim_plant
 synonym: "regulation of a molecular function" EXACT []
@@ -22629,7 +23253,6 @@ namespace: cellular_component
 def: "An organelle lumen that is part of an intracellular organelle." [GOC:mah]
 subset: goslim_mouse
 is_a: GO:0043233 ! organelle lumen
-is_a: GO:0044424 ! intracellular part
 intersection_of: GO:0031974 ! membrane-enclosed lumen
 intersection_of: part_of GO:0043229 ! intracellular organelle
 relationship: part_of GO:0043229 ! intracellular organelle
@@ -22641,6 +23264,63 @@ namespace: biological_process
 def: "The covalent attachment and further modification of carbohydrate residues to a substrate molecule." [GOC:hjd, GOC:mah]
 xref: Wikipedia:Glycosylation
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0070125
+name: mitochondrial translational elongation
+namespace: biological_process
+def: "The successive addition of amino acid residues to a nascent polypeptide chain during protein biosynthesis in a mitochondrion." [GOC:mah]
+synonym: "mitochondrial translation elongation" EXACT [GOC:mah]
+is_a: GO:0006414 ! translational elongation
+intersection_of: GO:0006414 ! translational elongation
+intersection_of: occurs_in GO:0005739 ! mitochondrion
+relationship: occurs_in GO:0005739 ! mitochondrion
+relationship: part_of GO:0032543 ! mitochondrial translation
+
+[Term]
+id: GO:0070129
+name: regulation of mitochondrial translation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of proteins by the translation of mRNA in a mitochondrion." [GOC:mah]
+synonym: "regulation of mitochondrial protein anabolism" EXACT [GOC:mah]
+synonym: "regulation of mitochondrial protein biosynthesis" EXACT [GOC:mah]
+synonym: "regulation of mitochondrial protein formation" EXACT [GOC:mah]
+synonym: "regulation of mitochondrial protein synthesis" EXACT [GOC:mah]
+is_a: GO:0006417 ! regulation of translation
+is_a: GO:0062125 ! regulation of mitochondrial gene expression
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0032543 ! mitochondrial translation
+relationship: regulates GO:0032543 ! mitochondrial translation
+
+[Term]
+id: GO:0070130
+name: negative regulation of mitochondrial translation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of proteins by the translation of mRNA in a mitochondrion." [GOC:mah]
+synonym: "negative regulation of mitochondrial protein anabolism" EXACT [GOC:mah]
+synonym: "negative regulation of mitochondrial protein biosynthesis" EXACT [GOC:mah]
+synonym: "negative regulation of mitochondrial protein formation" EXACT [GOC:mah]
+synonym: "negative regulation of mitochondrial protein synthesis" EXACT [GOC:mah]
+is_a: GO:0017148 ! negative regulation of translation
+is_a: GO:0070129 ! regulation of mitochondrial translation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0032543 ! mitochondrial translation
+relationship: negatively_regulates GO:0032543 ! mitochondrial translation
+
+[Term]
+id: GO:0070131
+name: positive regulation of mitochondrial translation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways resulting in the formation of proteins by the translation of mRNA in a mitochondrion." [GOC:mah]
+synonym: "positive regulation of mitochondrial protein anabolism" EXACT [GOC:mah]
+synonym: "positive regulation of mitochondrial protein biosynthesis" EXACT [GOC:mah]
+synonym: "positive regulation of mitochondrial protein formation" EXACT [GOC:mah]
+synonym: "positive regulation of mitochondrial protein synthesis" EXACT [GOC:mah]
+is_a: GO:0045727 ! positive regulation of translation
+is_a: GO:0070129 ! regulation of mitochondrial translation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0032543 ! mitochondrial translation
+relationship: positively_regulates GO:0032543 ! mitochondrial translation
 
 [Term]
 id: GO:0070166
@@ -22931,7 +23611,8 @@ def: "The protein complexes that form the electron transport system (the respira
 comment: Changed label as requested\nhttps://github.com/geneontology/go-ontology/issues/12846
 synonym: "membrane electron transport chain" EXACT [GOC:mah]
 synonym: "respiratory chain" EXACT []
-is_a: GO:0044425 ! membrane part
+is_a: GO:0110165 ! cellular anatomical entity
+relationship: part_of GO:0016020 ! membrane
 
 [Term]
 id: GO:0070507
@@ -23558,7 +24239,7 @@ name: cell periphery
 namespace: cellular_component
 def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." [GOC:mah]
 subset: goslim_flybase_ribbon
-is_a: GO:0044464 ! cell part
+is_a: GO:0110165 ! cellular anatomical entity
 created_by: midori
 creation_date: 2010-10-04T01:51:47Z
 
@@ -23569,7 +24250,6 @@ namespace: biological_process
 def: "The aggregation, arrangement and bonding together of a set of components to form an extracellular vesicular exosome, a membrane-bounded vesicle that is released into the extracellular region by fusion of the limiting endosomal membrane of a multivesicular body with the plasma membrane. Exosomes are defined by their size, which generally ranges from 30 nm to 100 nm." [GOC:mah, GOC:tfm, PMID:19442504, PMID:27462458]
 synonym: "extracellular vesicular exosome assembly" EXACT [GOC:vesicles]
 is_a: GO:0016050 ! vesicle organization
-is_a: GO:0043062 ! extracellular structure organization
 is_a: GO:0070925 ! organelle assembly
 relationship: part_of GO:0097734 ! extracellular exosome biogenesis
 created_by: midori
@@ -23598,6 +24278,16 @@ is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:0046394 ! carboxylic acid biosynthetic process
 created_by: midori
 creation_date: 2010-11-02T04:51:32Z
+
+[Term]
+id: GO:0072350
+name: tricarboxylic acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving dicarboxylic acids, any organic acid containing three carboxyl (COOH) groups or anions (COO-)." [CHEBI:27093, GOC:mah]
+synonym: "tricarboxylic acid metabolism" EXACT [GOC:mah]
+is_a: GO:0019752 ! carboxylic acid metabolic process
+created_by: midori
+creation_date: 2010-11-11T05:07:30Z
 
 [Term]
 id: GO:0072358
@@ -23651,6 +24341,17 @@ is_a: GO:0072376 ! protein activation cascade
 relationship: part_of GO:0007596 ! blood coagulation
 created_by: midori
 creation_date: 2010-11-22T03:09:32Z
+
+[Term]
+id: GO:0072503
+name: cellular divalent inorganic cation homeostasis
+namespace: biological_process
+def: "Any process involved in the maintenance of an internal steady state of divalent cations at the level of a cell." [GOC:mah]
+comment: Note that this term was split from 'cellular di-, tri-valent inorganic cation homeostasis ; GO:0030005' (sibling term 'cellular trivalent inorganic cation homeostasis' ; GO:0072504').
+is_a: GO:0030003 ! cellular cation homeostasis
+is_a: GO:0072507 ! divalent inorganic cation homeostasis
+created_by: midori
+creation_date: 2010-12-16T01:25:40Z
 
 [Term]
 id: GO:0072505
@@ -24179,6 +24880,18 @@ created_by: tanyaberardini
 creation_date: 2010-06-29T02:38:48Z
 
 [Term]
+id: GO:0090368
+name: regulation of ornithine metabolic process
+namespace: biological_process
+def: "Any process that modulates the rate, frequency, or extent of the chemical reactions and pathways involving ornithine, an amino acid only rarely found in proteins, but which is important in living organisms as an intermediate in the reactions of the urea cycle and in arginine biosynthesis." [GOC:dph, GOC:jp, GOC:tb]
+is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006591 ! ornithine metabolic process
+relationship: regulates GO:0006591 ! ornithine metabolic process
+created_by: tanyaberardini
+creation_date: 2010-07-12T11:14:12Z
+
+[Term]
 id: GO:0090594
 name: inflammatory response to wounding
 namespace: biological_process
@@ -24203,9 +24916,9 @@ synonym: "microtubule-based flagellar matrix" NARROW []
 synonym: "microtubule-based flagellum cytoplasm" RELATED []
 synonym: "microtubule-based flagellum matrix" NARROW []
 is_a: GO:0032838 ! plasma membrane bounded cell projection cytoplasm
-is_a: GO:0044441 ! ciliary part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0005929 ! cilium
+relationship: part_of GO:0005929 ! cilium
 created_by: paola
 creation_date: 2011-03-23T01:52:31Z
 
@@ -24225,10 +24938,10 @@ name: synaptic membrane
 namespace: cellular_component
 def: "A specialized area of membrane on either the presynaptic or the postsynaptic side of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:BHF, PMID:20410104]
 subset: goslim_synapse
-is_a: GO:0044456 ! synapse part
 is_a: GO:0098590 ! plasma membrane region
 intersection_of: GO:0098590 ! plasma membrane region
 intersection_of: part_of GO:0045202 ! synapse
+relationship: part_of GO:0045202 ! synapse
 created_by: paola
 creation_date: 2011-06-07T11:22:09Z
 
@@ -24300,12 +25013,13 @@ creation_date: 2012-12-17T12:31:49Z
 
 [Term]
 id: GO:0097458
-name: neuron part
+name: obsolete neuron part
 namespace: cellular_component
-def: "Any constituent part of a neuron, the basic cellular unit of nervous tissue. A typical neuron consists of a cell body (often called the soma), an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [GOC:pr, http://en.wikipedia.org/wiki/Neuron]
+def: "OBSOLETE. Any constituent part of a neuron, the basic cellular unit of nervous tissue. A typical neuron consists of a cell body (often called the soma), an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [GOC:pr, http://en.wikipedia.org/wiki/Neuron]
 subset: gocheck_do_not_annotate
 subset: goslim_flybase_ribbon
-is_a: GO:0044464 ! cell part
+is_obsolete: true
+consider: CL:0000540
 created_by: paola
 creation_date: 2012-12-19T16:53:50Z
 
@@ -24383,9 +25097,9 @@ namespace: cellular_component
 def: "The component of the mitochondrial membrane consisting of the gene products and protein complexes having either part of their peptide sequence embedded in the hydrophobic region of the membrane or some other covalently attached group such as a GPI anchor that is similarly embedded in the membrane." [GOC:dos]
 synonym: "intrinsic to mitochondrial membrane" NARROW []
 is_a: GO:0031300 ! intrinsic component of organelle membrane
-is_a: GO:0044455 ! mitochondrial membrane part
 intersection_of: GO:0031224 ! intrinsic component of membrane
 intersection_of: part_of GO:0031966 ! mitochondrial membrane
+relationship: part_of GO:0031966 ! mitochondrial membrane
 
 [Term]
 id: GO:0098588
@@ -24406,7 +25120,6 @@ comment: Note that this term should not be used for direct manual annotation as 
 subset: gocheck_do_not_manually_annotate
 synonym: "region of membrane" EXACT []
 is_a: GO:0016020 ! membrane
-is_a: GO:0044425 ! membrane part
 intersection_of: GO:0016020 ! membrane
 intersection_of: part_of GO:0098805 ! whole membrane
 disjoint_from: GO:0098805 ! whole membrane
@@ -24422,9 +25135,9 @@ comment: Note that this term should not be used for direct manual annotation as 
 subset: gocheck_do_not_manually_annotate
 synonym: "region of plasma membrane" EXACT []
 is_a: GO:0016020 ! membrane
-is_a: GO:0044459 ! plasma membrane part
 intersection_of: GO:0016020 ! membrane
 intersection_of: part_of GO:0005886 ! plasma membrane
+relationship: part_of GO:0005886 ! plasma membrane
 created_by: davidos
 creation_date: 2014-03-06T11:55:32Z
 
@@ -24496,19 +25209,19 @@ namespace: cellular_component
 def: "Any protein complex that is part of a membrane." [GOC:dos]
 subset: goslim_metagenomics
 is_a: GO:0032991 ! protein-containing complex
-is_a: GO:0044425 ! membrane part
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: part_of GO:0016020 ! membrane
+relationship: part_of GO:0016020 ! membrane
 
 [Term]
 id: GO:0098797
 name: plasma membrane protein complex
 namespace: cellular_component
 def: "Any protein complex that is part of the plasma membrane." [GOC:dos]
-is_a: GO:0044459 ! plasma membrane part
 is_a: GO:0098796 ! membrane protein complex
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: part_of GO:0005886 ! plasma membrane
+relationship: part_of GO:0005886 ! plasma membrane
 
 [Term]
 id: GO:0098798
@@ -24518,16 +25231,15 @@ def: "A protein complex that is part of a mitochondrion." [GOC:dos]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0032991 ! protein-containing complex
-is_a: GO:0044429 ! mitochondrial part
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: part_of GO:0005739 ! mitochondrion
+relationship: part_of GO:0005739 ! mitochondrion
 
 [Term]
 id: GO:0098800
 name: inner mitochondrial membrane protein complex
 namespace: cellular_component
 def: "Any protein complex that is part of the inner mitochondrial membrane." [GOC:dos]
-is_a: GO:0044455 ! mitochondrial membrane part
 is_a: GO:0098796 ! membrane protein complex
 is_a: GO:0098798 ! mitochondrial protein complex
 intersection_of: GO:0032991 ! protein-containing complex
@@ -24546,9 +25258,9 @@ relationship: regulates GO:0003014 ! renal system process
 
 [Term]
 id: GO:0098802
-name: plasma membrane receptor complex
+name: plasma membrane signaling receptor complex
 namespace: cellular_component
-def: "Any protein complex that is part of the plasma membrane and which functions as a receptor." [GOC:dos]
+def: "Any protein complex that is part of the plasma membrane and which functions as a signaling receptor." [GOC:dos]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0043235 ! receptor complex
@@ -24633,7 +25345,7 @@ id: GO:0099080
 name: supramolecular complex
 namespace: cellular_component
 def: "A cellular component that consists of an indeterminate number of proteins or macromolecular complexes, organized into a regular, higher-order structure such as a polymer, sheet, network or a fiber." [GOC:dos]
-is_a: GO:0005575 ! cellular_component
+is_a: GO:0110165 ! cellular anatomical entity
 
 [Term]
 id: GO:0099081
@@ -24677,7 +25389,6 @@ def: "The component of the synaptic membrane consisting of the gene products and
 subset: goslim_synapse
 synonym: "intrinsic to synaptic membrane" NARROW []
 is_a: GO:0031226 ! intrinsic component of plasma membrane
-is_a: GO:0044456 ! synapse part
 intersection_of: GO:0031224 ! intrinsic component of membrane
 intersection_of: part_of GO:0097060 ! synaptic membrane
 relationship: part_of GO:0097060 ! synaptic membrane
@@ -24704,9 +25415,12 @@ is_a: GO:0099081 ! supramolecular polymer
 id: GO:0099536
 name: synaptic signaling
 namespace: biological_process
-def: "Cell-cell signaling to, from or or within a synapse." [GOC:dos]
+def: "Cell-cell signaling to, from or within a synapse." [GOC:dos]
 subset: goslim_synapse
 is_a: GO:0007267 ! cell-cell signaling
+intersection_of: GO:0007267 ! cell-cell signaling
+intersection_of: occurs_in GO:0045202 ! synapse
+relationship: occurs_in GO:0045202 ! synapse
 
 [Term]
 id: GO:0099537
@@ -24715,6 +25429,20 @@ namespace: biological_process
 def: "Cell-cell signaling in either direction across the synaptic cleft." [GOC:dos]
 subset: goslim_synapse
 is_a: GO:0099536 ! synaptic signaling
+
+[Term]
+id: GO:0099547
+name: regulation of translation at synapse, modulating synaptic transmission
+namespace: biological_process
+def: "Any process that modulates synaptic transmission by regulating translation occurring at the synapse." [GOC:dos]
+comment: Note that this term was created for the SynGO project, and will be obsoleted when the SynGO annotations are made in Noctua.
+subset: goslim_synapse
+is_a: GO:0050804 ! modulation of chemical synaptic transmission
+is_a: GO:0140243 ! regulation of translation at synapse
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: occurs_in GO:0045202 ! synapse
+intersection_of: regulates GO:0006412 ! translation
+intersection_of: regulates GO:0007268 ! chemical synaptic transmission
 
 [Term]
 id: GO:0099550
@@ -24734,9 +25462,9 @@ name: cytoplasmic region
 namespace: cellular_component
 def: "Any (proper) part of the cytoplasm of a single cell of sufficient size to still be considered cytoplasm\"" [GOC:dos]
 is_a: GO:0005737 ! cytoplasm
-is_a: GO:0044444 ! cytoplasmic part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0005737 ! cytoplasm
+relationship: part_of GO:0005737 ! cytoplasm
 
 [Term]
 id: GO:0099643
@@ -24762,6 +25490,18 @@ intersection_of: GO:0016021 ! integral component of membrane
 intersection_of: part_of GO:0097060 ! synaptic membrane
 created_by: dos
 creation_date: 2017-05-25T17:22:18Z
+
+[Term]
+id: GO:0099738
+name: cell cortex region
+namespace: cellular_component
+def: "The complete extent of cell cortex that underlies some some region of the plasma membrane" [GOC:dos]
+synonym: "perimembrane region" EXACT []
+is_a: GO:0005938 ! cell cortex
+is_a: GO:0099568 ! cytoplasmic region
+intersection_of: GO:0005938 ! cell cortex
+intersection_of: part_of GO:0005938 ! cell cortex
+relationship: part_of GO:0005938 ! cell cortex
 
 [Term]
 id: GO:0100001
@@ -24953,6 +25693,15 @@ created_by: kmv
 creation_date: 2019-06-10T18:18:01Z
 
 [Term]
+id: GO:0110165
+name: cellular anatomical entity
+namespace: cellular_component
+def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex." [GOC:kmv]
+is_a: GO:0005575 ! cellular_component
+created_by: kmv
+creation_date: 2019-08-12T18:01:37Z
+
+[Term]
 id: GO:0120025
 name: plasma membrane bounded cell projection
 namespace: cellular_component
@@ -24969,6 +25718,7 @@ id: GO:0120031
 name: plasma membrane bounded cell projection assembly
 namespace: biological_process
 def: "Formation of a prolongation or process extending and that is bounded by plasma membrane, e.g. a cilium, lamellipodium, or axon." [GOC:krc]
+synonym: "eupodium" NARROW [GOC:krc, GOC:rjd, PMID:10328951, PMID:9096956]
 is_a: GO:0030031 ! cell projection assembly
 is_a: GO:0120036 ! plasma membrane bounded cell projection organization
 created_by: kchris
@@ -25037,13 +25787,11 @@ creation_date: 2017-04-26T16:07:02Z
 
 [Term]
 id: GO:0120038
-name: plasma membrane bounded cell projection part
+name: obsolete plasma membrane bounded cell projection part
 namespace: cellular_component
-def: "Any constituent part of a plasma membrane bounded cell projection, a prolongation or process extending from a cell, e.g. a cilium or axon." [GOC:krc]
-is_a: GO:0044463 ! cell projection part
-intersection_of: GO:0005575 ! cellular_component
-intersection_of: part_of GO:0120025 ! plasma membrane bounded cell projection
-relationship: part_of GO:0120025 ! plasma membrane bounded cell projection
+def: "OBSOLETE. Any constituent part of a plasma membrane bounded cell projection, a prolongation or process extending from a cell, e.g. a cilium or axon." [GOC:krc]
+is_obsolete: true
+consider: GO:0120025
 created_by: kchris
 creation_date: 2017-04-28T17:20:43Z
 
@@ -25062,7 +25810,6 @@ name: neuron projection cytoplasm
 namespace: cellular_component
 def: "All of the contents of a plasma membrane bounded neuron projection, excluding the plasma membrane surrounding the projection." [GOC:ha]
 is_a: GO:0032838 ! plasma membrane bounded cell projection cytoplasm
-is_a: GO:0097458 ! neuron part
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0043005 ! neuron projection
 relationship: part_of GO:0043005 ! neuron projection
@@ -25097,6 +25844,19 @@ created_by: pg
 creation_date: 2017-03-23T14:44:23Z
 
 [Term]
+id: GO:0140053
+name: mitochondrial gene expression
+namespace: biological_process
+def: "The process in which a mitochondrial gene's sequence is converted into a mature gene product or products (proteins or RNA). This includes the production of an RNA transcript as well as any processing to produce a mature RNA product or an mRNA or circRNA (for protein-coding genes) and the translation of that mRNA or circRNA into protein. Protein maturation is included when required to form an active form of a product from an inactive precursor form." [PMID:27058308]
+subset: goslim_pombe
+is_a: GO:0010467 ! gene expression
+intersection_of: GO:0010467 ! gene expression
+intersection_of: occurs_in GO:0005739 ! mitochondrion
+relationship: occurs_in GO:0005739 ! mitochondrion
+created_by: pg
+creation_date: 2017-06-26T10:57:45Z
+
+[Term]
 id: GO:0140096
 name: catalytic activity, acting on a protein
 namespace: molecular_function
@@ -25127,6 +25887,35 @@ created_by: pg
 creation_date: 2017-10-23T11:53:42Z
 
 [Term]
+id: GO:0140241
+name: translation at synapse
+namespace: biological_process
+def: "Translation that occurs at the synapse." [PMID:23083742]
+comment: Note that this term was created for the SynGO project, and will be obsoleted when the SynGO annotations are made in Noctua. Discussion for term creation is here: https://github.com/geneontology/synapse/issues/210.
+subset: goslim_synapse
+is_a: GO:0006412 ! translation
+intersection_of: GO:0006412 ! translation
+intersection_of: occurs_in GO:0045202 ! synapse
+relationship: occurs_in GO:0045202 ! synapse
+created_by: pg
+creation_date: 2018-07-15T09:23:12Z
+
+[Term]
+id: GO:0140243
+name: regulation of translation at synapse
+namespace: biological_process
+def: "Any process that regulates translation occurring at the synapse." [PMID:20427644]
+comment: Note that this term was created for the SynGO project, and will be obsoleted when the SynGO annotations are made in Noctua. Discussion for term creation is here: https://github.com/geneontology/synapse/issues/210.
+subset: goslim_synapse
+is_a: GO:0006417 ! regulation of translation
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: occurs_in GO:0045202 ! synapse
+intersection_of: regulates GO:0006412 ! translation
+relationship: occurs_in GO:0045202 ! synapse
+created_by: pg
+creation_date: 2018-07-15T09:38:26Z
+
+[Term]
 id: GO:0140352
 name: export from cell
 namespace: biological_process
@@ -25147,6 +25936,20 @@ is_a: GO:0006869 ! lipid transport
 is_a: GO:0140352 ! export from cell
 created_by: pg
 creation_date: 2019-05-22T11:33:07Z
+
+[Term]
+id: GO:0150110
+name: negative regulation of cholesterol esterification
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cholesterol esterification." [GOC:aruk, GOC:bc, PMID:21810484, PMID:24201375]
+is_a: GO:0010872 ! regulation of cholesterol esterification
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:0045939 ! negative regulation of steroid metabolic process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: negatively_regulates GO:0034435 ! cholesterol esterification
+relationship: negatively_regulates GO:0034435 ! cholesterol esterification
+created_by: BarbaraCzub
+creation_date: 2019-07-23T15:34:42Z
 
 [Term]
 id: GO:1900015
@@ -25644,6 +26447,17 @@ created_by: krc
 creation_date: 2012-05-11T05:44:43Z
 
 [Term]
+id: GO:1901052
+name: sarcosine metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving sarcosine." [GOC:TermGenie, GOC:yaf, UniPathway:UPA00292]
+synonym: "sarcosine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0006575 ! cellular modified amino acid metabolic process
+is_a: GO:1901605 ! alpha-amino acid metabolic process
+created_by: yaf
+creation_date: 2012-06-28T04:52:04Z
+
+[Term]
 id: GO:1901135
 name: carbohydrate derivative metabolic process
 namespace: biological_process
@@ -25929,6 +26743,63 @@ intersection_of: positively_regulates GO:0033014 ! tetrapyrrole biosynthetic pro
 relationship: positively_regulates GO:0033014 ! tetrapyrrole biosynthetic process
 created_by: tt
 creation_date: 2012-10-02T14:35:43Z
+
+[Term]
+id: GO:1901494
+name: regulation of cysteine metabolic process
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of cysteine metabolic process." [GOC:TermGenie]
+synonym: "regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031335 ! regulation of sulfur amino acid metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0006534 ! cysteine metabolic process
+relationship: regulates GO:0006534 ! cysteine metabolic process
+created_by: vw
+creation_date: 2012-10-16T14:28:42Z
+
+[Term]
+id: GO:1901495
+name: negative regulation of cysteine metabolic process
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cysteine metabolic process." [GOC:TermGenie]
+synonym: "down regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "down regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "down-regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "down-regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "downregulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "downregulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "inhibition of cysteine metabolic process" NARROW [GOC:TermGenie]
+synonym: "inhibition of cysteine metabolism" NARROW [GOC:TermGenie]
+synonym: "negative regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031336 ! negative regulation of sulfur amino acid metabolic process
+is_a: GO:1901494 ! regulation of cysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0006534 ! cysteine metabolic process
+relationship: negatively_regulates GO:0006534 ! cysteine metabolic process
+created_by: vw
+creation_date: 2012-10-16T14:28:47Z
+
+[Term]
+id: GO:1901496
+name: positive regulation of cysteine metabolic process
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of cysteine metabolic process." [GOC:TermGenie]
+synonym: "activation of cysteine metabolic process" NARROW [GOC:TermGenie]
+synonym: "activation of cysteine metabolism" NARROW [GOC:TermGenie]
+synonym: "positive regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "up regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "up regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "up-regulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "up-regulation of cysteine metabolism" EXACT [GOC:TermGenie]
+synonym: "upregulation of cysteine metabolic process" EXACT [GOC:TermGenie]
+synonym: "upregulation of cysteine metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0031337 ! positive regulation of sulfur amino acid metabolic process
+is_a: GO:1901494 ! regulation of cysteine metabolic process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0006534 ! cysteine metabolic process
+relationship: positively_regulates GO:0006534 ! cysteine metabolic process
+created_by: vw
+creation_date: 2012-10-16T14:28:51Z
 
 [Term]
 id: GO:1901532
@@ -27584,6 +28455,17 @@ created_by: dph
 creation_date: 2014-10-01T21:55:47Z
 
 [Term]
+id: GO:1903511
+name: orotic acid metabolic process
+namespace: biological_process
+def: "The chemical reactions and pathways involving orotic acid." [GO_REF:0000068, GOC:dph, GOC:TermGenie, PMID:10727948]
+synonym: "orotic acid metabolism" EXACT [GOC:TermGenie]
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+is_a: GO:0072527 ! pyrimidine-containing compound metabolic process
+created_by: dph
+creation_date: 2014-10-01T21:58:06Z
+
+[Term]
 id: GO:1903522
 name: regulation of blood circulation
 namespace: biological_process
@@ -28455,10 +29337,10 @@ name: axon cytoplasm
 namespace: cellular_component
 def: "Any cytoplasm that is part of a axon." [GO_REF:0000064, GOC:TermGenie, PMID:18667152]
 synonym: "axoplasm" EXACT []
-is_a: GO:0033267 ! axon part
 is_a: GO:0120111 ! neuron projection cytoplasm
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0030424 ! axon
+relationship: part_of GO:0030424 ! axon
 created_by: sl
 creation_date: 2015-04-06T18:13:14Z
 
@@ -29204,6 +30086,66 @@ intersection_of: regulates GO:0006643 ! membrane lipid metabolic process
 relationship: regulates GO:0006643 ! membrane lipid metabolic process
 created_by: tb
 creation_date: 2016-03-08T20:41:32Z
+
+[Term]
+id: GO:1905082
+name: regulation of mitochondrial translational elongation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of mitochondrial translational elongation." [GO_REF:0000058, GOC:TermGenie, PMID:25738458]
+synonym: "regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+is_a: GO:0006448 ! regulation of translational elongation
+is_a: GO:0070129 ! regulation of mitochondrial translation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0070125 ! mitochondrial translational elongation
+relationship: regulates GO:0070125 ! mitochondrial translational elongation
+created_by: hjd
+creation_date: 2016-03-25T17:37:03Z
+
+[Term]
+id: GO:1905083
+name: negative regulation of mitochondrial translational elongation
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of mitochondrial translational elongation." [GO_REF:0000058, GOC:TermGenie, PMID:25738458]
+synonym: "down regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "down regulation of mitochondrial translational elongation" EXACT [GOC:TermGenie]
+synonym: "down-regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "down-regulation of mitochondrial translational elongation" EXACT [GOC:TermGenie]
+synonym: "downregulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "downregulation of mitochondrial translational elongation" EXACT [GOC:TermGenie]
+synonym: "inhibition of mitochondrial translation elongation" NARROW [GOC:TermGenie]
+synonym: "inhibition of mitochondrial translational elongation" NARROW [GOC:TermGenie]
+synonym: "negative regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+is_a: GO:0045900 ! negative regulation of translational elongation
+is_a: GO:0070130 ! negative regulation of mitochondrial translation
+is_a: GO:1905082 ! regulation of mitochondrial translational elongation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0070125 ! mitochondrial translational elongation
+relationship: negatively_regulates GO:0070125 ! mitochondrial translational elongation
+created_by: hjd
+creation_date: 2016-03-25T17:37:13Z
+
+[Term]
+id: GO:1905084
+name: positive regulation of mitochondrial translational elongation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of mitochondrial translational elongation." [GO_REF:0000058, GOC:TermGenie, PMID:25738458]
+synonym: "activation of mitochondrial translation elongation" NARROW [GOC:TermGenie]
+synonym: "activation of mitochondrial translational elongation" NARROW [GOC:TermGenie]
+synonym: "positive regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "up regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "up regulation of mitochondrial translational elongation" EXACT [GOC:TermGenie]
+synonym: "up-regulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "up-regulation of mitochondrial translational elongation" EXACT [GOC:TermGenie]
+synonym: "upregulation of mitochondrial translation elongation" EXACT [GOC:TermGenie]
+synonym: "upregulation of mitochondrial translational elongation" EXACT [GOC:TermGenie]
+is_a: GO:0045901 ! positive regulation of translational elongation
+is_a: GO:0070131 ! positive regulation of mitochondrial translation
+is_a: GO:1905082 ! regulation of mitochondrial translational elongation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0070125 ! mitochondrial translational elongation
+relationship: positively_regulates GO:0070125 ! mitochondrial translational elongation
+created_by: hjd
+creation_date: 2016-03-25T17:37:22Z
 
 [Term]
 id: GO:1905114
