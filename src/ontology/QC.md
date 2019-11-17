@@ -112,6 +112,7 @@ There are three sources for tests:
   - obsolete term is mentioned in consider annotation 
   - consider term is mentioned in replace by annotation
   - obsolete term does not have replacement
+  - obsolete term has "true" annotation value
   
 
 ## Command line tests
