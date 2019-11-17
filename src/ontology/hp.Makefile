@@ -69,8 +69,15 @@ test_obo: test.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o test.tmp.obo && grep -v ^owl-axioms test.tmp.obo > hp.obo && rm test.tmp.obo
 
-test: sparql_test all_reports test_obo hp_error
-	$(ROBOT) reason --input $(SRC) --reasoner ELK --equivalent-classes-allowed asserted-only --output test.owl && rm test.owl && echo "Success"
+# Tests that the full hp.owl including imports is logically consistent
+consistency:
+	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success"
+
+# Tests that the EDIT file does not have any non-asserted equivalent classes
+noequivalents:
+	$(ROBOT) reason --input $(SRC) remove --select imports reason --reasoner ELK --equivalent-classes-allowed asserted-only --output test.owl && rm test.owl && echo "Success"
+
+test: sparql_test all_reports test_obo hp_error consistency noequivalents
 
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
