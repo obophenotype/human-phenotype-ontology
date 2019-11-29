@@ -153,17 +153,15 @@ remove_patternised_classes: $(SRC) patternised_classes.txt
 	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | xargs | sed -e 's/ /\|/g'))/d" $<
 
 tmp/eqs.ofn: #../patterns/definitions.owl
-	echo "Not regenerating definitions.owl.. Is it up to date?"
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
 	sed -i '/^Declaration/d' $@
 
 migrate_definitions_to_edit: #$(SRC) tmp/eqs.ofn
+	echo "Not regenerating definitions.owl.. Is it up to date?"
 	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/][^H]/d' hp-edit.owl
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]Hs/d' hp-edit.owl
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/][^p]/d' hp-edit.owl
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]hp[/]patterns[/]definitions[.]owl[>][)]/d' hp-edit.owl
 	$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
-	mv ../patterns/data/default ../patterns/data/_default
-	mv ../patterns/data/default_ ../patterns/data/default
 	
