@@ -56,13 +56,13 @@ reports/%-obo-report.tsv: %.owl
 	$(ROBOT) report -i $< --profile qc-profile.txt --fail-on $(REPORT_FAIL_ON) -o $@
 
 test.owl: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/hp_terms.sparql ontologyterms-test.txt && \
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/hp_terms.sparql tmp/ontologyterms-test.txt && \
 	$(ROBOT) remove --input $< --select imports \
 		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
 		remove --axioms equivalent \
 		relax \
 		reduce -r ELK \
-		filter --select ontology --term-file ontologyterms-test.txt --trim false \
+		filter --select ontology --term-file tmp/ontologyterms-test.txt --trim false \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
 test_obo: test.owl
