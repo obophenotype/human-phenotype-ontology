@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-11-08/imports/chebi_import.owl
+data-version: hp/releases/2020-01-02/imports/chebi_import.owl
 subsetdef: 1_STAR "Preliminary entries"
 subsetdef: 2_STAR "Annotated by 3rd party"
 subsetdef: 3_STAR "Manually annotated by ChEBI Team"
@@ -2923,7 +2923,6 @@ xref: KNApSAcK:C00029462
 xref: LIPID_MAPS_instance:LMFA01020071 "LIPID MAPS"
 xref: MetaCyc:ISOBUTYRATE
 xref: PDBeChem:ALQ
-xref: PDBeChem:ISB
 xref: PMID:10757489 "Europe PMC"
 xref: PMID:17580301 "Europe PMC"
 xref: PMID:17877388 "Europe PMC"
@@ -5698,7 +5697,7 @@ name: sulfite
 namespace: chebi_ontology
 alt_id: CHEBI:15139
 alt_id: CHEBI:45548
-def: "Sulfite is an inorganic anion, which is the conjugate base of hydrogen sulfite." []
+def: "A sulfur oxoanion that is the conjugate base of hydrogen sulfite (H2SO3)." []
 subset: 3_STAR
 synonym: "[SO3](2-)" RELATED [IUPAC]
 synonym: "SO3" RELATED [ChEBI]
@@ -5969,7 +5968,6 @@ xref: KEGG:C00803
 xref: KNApSAcK:C00001208
 xref: LIPID_MAPS_instance:LMFA01010005 "LIPID MAPS"
 xref: PDBeChem:LEA
-xref: PDBeChem:PEI
 xref: PMID:20507156 "Europe PMC"
 xref: PPDB:3130
 xref: Reaxys:969454 "Reaxys"
@@ -7578,9 +7576,9 @@ property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C5H9NO3" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3-,4+/m1/s1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchikey "PMMYEEVYMWASQN-DMTCNVIQSA-N" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/mass "131.12990" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "131.131" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "131.05824" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "O[C@H]1CN[C@@H](C1)C(O)=O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@H]1(C[C@@H](O)CN1)C(O)=O" xsd:string
 
 [Term]
 id: CHEBI:18101
@@ -8699,6 +8697,7 @@ name: N-acetylneuraminic acids
 namespace: chebi_ontology
 subset: 3_STAR
 is_a: CHEBI:16498 ! N-acylneuraminic acid
+is_a: CHEBI:22160 ! acetamides
 
 [Term]
 id: CHEBI:21644
@@ -8733,6 +8732,14 @@ namespace: chebi_ontology
 def: "An N-alkylglycine that is sarcosine and derivatives of sarcosine arising by replacement of the hydrogen attached to the nitrogen by a hydrocarbyl group." []
 subset: 3_STAR
 is_a: CHEBI:66933 ! N-alkylglycine
+
+[Term]
+id: CHEBI:22160
+name: acetamides
+namespace: chebi_ontology
+def: "Compounds with the general formula RNHC(=O)CH3." []
+subset: 3_STAR
+is_a: CHEBI:37622 ! carboxamide
 
 [Term]
 id: CHEBI:22221
@@ -12870,9 +12877,9 @@ property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C4H8N2O3" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H2,6,7)(H,8,9)/t2-/m1/s1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchikey "DCXYFEDJOCDNAF-UWTATZPHSA-N" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/mass "132.11800" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "132.119" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "132.05349" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "N[C@H](CC(N)=O)C(O)=O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "OC([C@@H](CC(N)=O)N)=O" xsd:string
 
 [Term]
 id: CHEBI:28260
@@ -22403,7 +22410,7 @@ synonym: "-CH2-COOH" RELATED [ChEBI]
 synonym: "aspartic acid side-chain" RELATED [ChEBI]
 synonym: "carboxymethyl" EXACT IUPAC_NAME [IUPAC]
 synonym: "CARBOXYMETHYL GROUP" EXACT [PDBeChem]
-xref: PDBeChem:CBM
+xref: PDBeChem:ACY
 is_a: CHEBI:50325 ! proteinogenic amino-acid side-chain group
 relationship: is_substituent_group_from CHEBI:15366 ! acetic acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
@@ -22791,8 +22798,7 @@ synonym: "HYDROXY GROUP" EXACT [PDBeChem]
 synonym: "hydroxy group" EXACT [UniProt]
 synonym: "hydroxyl" RELATED [ChEBI]
 synonym: "hydroxyl group" RELATED [ChEBI]
-synonym: "oxidanyl" EXACT IUPAC_NAME [IUPAC]
-xref: PDBeChem:HYD
+xref: PDBeChem:OH
 is_a: CHEBI:33246 ! inorganic group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "HO" xsd:string
@@ -22829,8 +22835,8 @@ synonym: "INORGANIC PHOSPHATE GROUP" RELATED [PDBeChem]
 synonym: "phosphate" RELATED [UniProt]
 xref: Gmelin:1998 "Gmelin"
 xref: MolBase:1628
-xref: PDBeChem:IPS
 xref: PDBeChem:PI
+xref: PDBeChem:PO4
 is_a: CHEBI:35780 ! phosphate ion
 is_a: CHEBI:79388 ! divalent inorganic anion
 relationship: has_role CHEBI:23357 ! cofactor
@@ -22941,7 +22947,7 @@ synonym: "isoleucine side-chain" RELATED [ChEBI]
 synonym: "s-butyl" RELATED [ChEBI]
 synonym: "sec-butyl" EXACT IUPAC_NAME [IUPAC]
 synonym: "SEC-BUTYL GROUP" EXACT [PDBeChem]
-xref: PDBeChem:SBU
+xref: PDBeChem:NBU
 is_a: CHEBI:22323 ! alkyl group
 is_a: CHEBI:50325 ! proteinogenic amino-acid side-chain group
 relationship: is_substituent_group_from CHEBI:37808 ! butane
@@ -23014,7 +23020,6 @@ synonym: "hydrogentetraoxosulfate(1-)" EXACT IUPAC_NAME [IUPAC]
 synonym: "hydrogentetraoxosulfate(VI)" EXACT IUPAC_NAME [IUPAC]
 synonym: "hydroxidotrioxidosulfate(1-)" EXACT IUPAC_NAME [IUPAC]
 xref: Gmelin:2121 "Gmelin"
-xref: PDBeChem:SOH
 is_a: CHEBI:33482 ! sulfur oxoanion
 relationship: is_conjugate_acid_of CHEBI:16189 ! sulfate
 relationship: is_conjugate_base_of CHEBI:26836 ! sulfuric acid
@@ -23036,7 +23041,7 @@ subset: 3_STAR
 synonym: "=O" RELATED [IUPAC]
 synonym: "oxo" EXACT IUPAC_NAME [IUPAC]
 synonym: "OXO GROUP" EXACT [PDBeChem]
-xref: PDBeChem:OXO
+xref: PDBeChem:O
 is_a: CHEBI:33246 ! inorganic group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "O" xsd:string
@@ -23149,7 +23154,7 @@ synonym: "-COOH" RELATED [IUPAC]
 synonym: "carboxy" EXACT IUPAC_NAME [IUPAC]
 synonym: "CARBOXY GROUP" EXACT [PDBeChem]
 synonym: "carboxyl group" RELATED [ChEBI]
-xref: PDBeChem:CBX
+xref: PDBeChem:FMT
 is_a: CHEBI:33249 ! organyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CHO2" xsd:string
@@ -23389,6 +23394,7 @@ subset: 3_STAR
 synonym: "steroid acids" RELATED [ChEBI]
 is_a: CHEBI:35341 ! steroid
 is_a: CHEBI:64709 ! organic acid
+relationship: is_conjugate_acid_of CHEBI:50160 ! steroid acid anion
 
 [Term]
 id: CHEBI:47909
@@ -23987,6 +23993,16 @@ synonym: "oestrogenes" RELATED [ChEBI]
 synonym: "oestrogens" RELATED [ChEBI]
 xref: Wikipedia:Estrogen
 is_a: CHEBI:50112 ! sex hormone
+
+[Term]
+id: CHEBI:50160
+name: steroid acid anion
+namespace: chebi_ontology
+def: "Any anion formed by loss of a proton from a steroid acid." []
+subset: 3_STAR
+synonym: "steroid acid anions" RELATED [ChEBI]
+is_a: CHEBI:29067 ! carboxylic acid anion
+relationship: is_conjugate_base_of CHEBI:47891 ! steroid acid
 
 [Term]
 id: CHEBI:50176
@@ -25312,7 +25328,7 @@ id: CHEBI:57560
 name: long-chain fatty acid anion
 namespace: chebi_ontology
 alt_id: CHEBI:13652
-def: "A fatty acid anion with a chain length of C13 or greater." []
+def: "A fatty acid anion with a chain length of C13 to C22." []
 subset: 3_STAR
 synonym: "a long-chain carboxylate" RELATED [ChEBI]
 synonym: "a long-chain fatty acid" RELATED [UniProt]
@@ -26114,9 +26130,9 @@ is_a: CHEBI:33558 ! alpha-amino-acid anion
 relationship: is_conjugate_base_of CHEBI:15705 ! L-alpha-amino acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H3NO2R" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/mass "88.08520" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "73.051" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "73.01638" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "C[C@H](N)C([O-])=O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@H](C(=O)[O-])(N)*" xsd:string
 
 [Term]
 id: CHEBI:59826
@@ -26534,9 +26550,9 @@ is_a: CHEBI:33558 ! alpha-amino-acid anion
 relationship: is_conjugate_base_of CHEBI:16733 ! D-alpha-amino acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H3NO2R" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/mass "88.08520" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "73.051" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "73.01638" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "C[C@@H](N)C([O-])=O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@@H](C(=O)[O-])(N)*" xsd:string
 
 [Term]
 id: CHEBI:60911
@@ -29516,8 +29532,8 @@ name: pregnane
 namespace: chebi_ontology
 subset: 3_STAR
 synonym: "pregnane" EXACT IUPAC_NAME [IUPAC]
-xref: CAS:481-26-5 "KEGG COMPOUND"
-xref: KEGG:C01523
+xref: LIPID_MAPS_instance:LMST02030000 "LIPID MAPS"
+xref: Wikipedia:Pregnane
 is_a: CHEBI:35508 ! steroid fundamental parent
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C21H36" xsd:string

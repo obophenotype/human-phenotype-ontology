@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-11-08/imports/ro_import.owl
+data-version: hp/releases/2020-01-02/imports/ro_import.owl
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 ontology: hp/imports/ro_import
@@ -169,6 +169,11 @@ id: CL:0000540
 name: neuron
 is_a: CL:0000000 ! cell
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/cl.owl
+
+[Term]
+id: ENVO:01000254
+name: environmental system
+is_a: RO:0002577 ! system
 
 [Term]
 id: GO:0003674
@@ -1004,6 +1009,7 @@ property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constr
 range: CARO:0001010 ! organism or virus or viroid
 holds_over_chain: BFO:0000050 RO:0002162
 holds_over_chain: BFO:0000051 RO:0002162
+holds_over_chain: results_in_developmental_progression_of RO:0002162
 holds_over_chain: RO:0002202 RO:0002162
 holds_over_chain: RO:0002215 RO:0002162
 holds_over_chain: RO:0002217 RO:0002162
@@ -1576,6 +1582,19 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
 
 [Typedef]
+id: RO:0002326
+name: contributes to
+property_value: IAO:0000112 "ATP citrate lyase (ACL) in Arabidopsis: it is a heterooctamer, composed of two types of subunits, ACLA and ACLB in a A(4)B(4) stoichiometry. Neither of the subunits expressed alone give ACL activity, but co-expression results in ACL activity. Both subunits contribute_to the ATP citrate lyase activity." xsd:string
+property_value: IAO:0000112 "eIF2: has three subunits (alpha, beta, gamma); one binds GTP; one binds RNA; the whole complex binds the ribosome (all three subunits are required for ribosome binding). So one subunit is annotated to GTP binding and one to RNA binding without qualifiers, and all three stand in the contributes_to relationship to \"ribosome binding\". And all three are part_of an eIF2 complex" xsd:string
+property_value: IAO:0000112 "Subunits of nuclear RNA polymerases: none of the individual subunits have RNA polymerase activity, yet all of these subunits contribute_to DNA-dependent RNA polymerase activity." xsd:string
+property_value: IAO:0000116 "We would like to say\n\nif and only if\n exists c', p'\n  c part_of c' and c' capable_of p\n   and\n  c capable_of p' and p' part_of p\nthen\n c contributes_to p\n\nHowever, this is not possible in OWL. We instead make this relation a sub-relation of the two chains, which gives us the inference in the one direction." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.geneontology.org/GO.annotation.conventions.shtml#contributes_to xsd:string
+property_value: IAO:0000232 "In the context of the Gene Ontology, contributes_to may be used only with classes from the molecular function ontology. " xsd:string
+is_a: RO:0002216 ! capable of part of
+is_a: RO:0002329 ! part of structure that is capable of
+
+[Typedef]
 id: RO:0002327
 name: enables
 property_value: IAO:0000112 "a particular instances of akt-2 enables some instance of protein kinase activity" xsd:string
@@ -1696,6 +1715,12 @@ subset: RO:0002259
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0000056 ! participates in
 is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002354
+name: formed as result of
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002353 ! output of
 
 [Typedef]
 id: RO:0002371
@@ -2211,6 +2236,47 @@ range: BFO:0000040 ! material entity
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
+id: RO:0002507
+name: determined by
+def: "s determined by f if and only if s is a type of system, and f is a material entity that is part of s, such that f exerts a strong causal influence on the functioning of s, and the removal of f would cause the collapse of s." []
+subset: ro-eco
+property_value: http://purl.org/dc/terms/creator "Chris Mungall" xsd:string
+property_value: http://purl.org/dc/terms/creator "Pier Buttigieg" xsd:string
+property_value: IAO:0000112 "A coral reef environment is determined by a particular coral reef" xsd:string
+property_value: IAO:0000116 "The label for this relation is probably too general for its restricted use, where the domain is a system. It may be relabeled in future" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/24330602
+property_value: IAO:0000589 "determined by (system to material entity)" xsd:string
+domain: RO:0002577 ! system
+range: BFO:0000040 ! material entity
+is_a: BFO:0000050 ! part of
+is_a: RO:0002509 ! determined by part of
+is_a: RO:0002559 ! causally influenced by
+inverse_of: RO:0002508 ! determines
+
+[Typedef]
+id: RO:0002508
+name: determines
+def: "inverse of determined by" []
+subset: ro-eco
+subset: RO:0002259
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000589 "determines (material entity to system)" xsd:string
+is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0002509
+name: determined by part of
+def: "s 'determined by part of' w if and only if there exists some f such that (1) s 'determined by' f and (2) f part_of w, or f=w." []
+subset: ro-eco
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+domain: RO:0002577 ! system
+range: BFO:0000040 ! material entity
+holds_over_chain: RO:0002507 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: RO:0002131 ! overlaps
+is_a: RO:0002506 ! causal relation between material entities
+
+[Typedef]
 id: RO:0002551
 name: has skeleton
 def: "A relation between a segment or subdivision of an organism and the maximal subdivision of material entities that provides structural support for that segment or subdivision." []
@@ -2389,6 +2455,13 @@ property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relati
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
+id: RO:0002609
+name: obsolete related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+is_obsolete: true
+
+[Typedef]
 id: RO:0002629
 name: directly positively regulates
 def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
@@ -2497,4 +2570,28 @@ property_value: RO:0004049 RO:0002418
 is_a: RO:0002418 ! causally upstream of or within
 created_by: cjm
 creation_date: 2018-03-13T23:55:19Z
+
+[Typedef]
+id: results_in_developmental_progression_of
+name: results in developmental progression of
+def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This property and its subproperties are being used primarily for the definition of GO developmental processes. The property hierarchy mirrors the core GO hierarchy. In future we may be able to make do with a more minimal set of properties, but due to the way GO is currently structured we require highly specific relations to avoid incorrect entailments. To avoid this, the corresponding genus terms in GO should be declared mutually disjoint." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso Ontology:extensions
+domain: GO:0008150 ! biological_process
+range: CARO:0000003 ! connected anatomical structure
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: results_in_formation_of
+name: results in formation of
+property_value: IAO:0000112 "an annotation of gene X to anatomical structure formation with results_in_formation_of UBERON:0000007 (pituitary gland) means that at the beginning of the process a pituitary gland does not exist and at the end of the process a pituitary gland exists." xsd:string
+property_value: IAO:0000112 "every \"endocardial cushion formation\" (GO:0003272) results_in_formation_of some \"endocardial cushion\" (UBERON:0002062)" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: results_in_developmental_progression_of ! results in developmental progression of
+is_a: RO:0002234 ! has output
+inverse_of: RO:0002354 ! formed as result of
 
