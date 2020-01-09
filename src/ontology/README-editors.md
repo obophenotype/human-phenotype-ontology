@@ -193,3 +193,7 @@ Note: if you have only just created this project you will need to authorize trav
  3. Click the tick symbol next to human-phenotype-ontology
 
 Travis builds should now be activated
+
+# Quality Control
+
+Documentation of the current QC pipelines for the HPO - executed tests and used test frameworks - can be found [here](https://github.com/obophenotype/human-phenotype-ontology/blob/master/src/ontology/QC.md).
