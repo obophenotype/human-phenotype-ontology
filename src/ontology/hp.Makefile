@@ -183,4 +183,4 @@ tmp/british_synonyms.owl: tmp/be_synonyms.csv $(SRC)
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
-	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl -o hp-edit.owl && mv hp-edit.ofn hp-edit.owl
+	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
