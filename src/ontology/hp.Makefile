@@ -164,4 +164,23 @@ migrate_definitions_to_edit: #$(SRC) tmp/eqs.ofn
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/][^p]/d' hp-edit.owl
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]hp[/]patterns[/]definitions[.]owl[>][)]/d' hp-edit.owl
 	$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
-	
+
+#######################################################
+##### British synonyms pipeline #######################
+#######################################################
+
+tmp/synonyms.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/hp_synonyms.sparql $@
+
+tmp/labels.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/hp_labels.sparql $@
+
+tmp/be_synonyms.csv: tmp/labels.csv tmp/synonyms.csv
+	python3 ../scripts/compute_british_synonyms.py tmp/labels.csv tmp/synonyms.csv hpo_british_english_dictionary.csv $@
+
+tmp/british_synonyms.owl: tmp/be_synonyms.csv $(SRC)
+	$(ROBOT) merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
+	$(ROBOT) merge -i hp-edit.owl -i british_synonyms.owl -o hp-edit.owl && mv hp-edit.ofn hp-edit.owl
