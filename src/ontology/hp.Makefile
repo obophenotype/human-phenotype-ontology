@@ -184,3 +184,16 @@ tmp/british_synonyms.owl: tmp/be_synonyms.csv $(SRC)
 
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
+#######################################################
+##### Convert input ontology HPO NTR TSV format #######
+#######################################################
+
+INPUT=../../scratch/HPOSeizures_OWL_v11_20191205.owl
+
+tmp/%.csv: $(INPUT)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/$*.sparql $@
+	
+tmp/ntr_tsv.tsv: tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_siblings.csv tmp/terms_parents.csv
+	python3 ../scripts/ntr_tsv.py tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_parents.csv tmp/terms_siblings.csv ../scripts/hpo_field_mappings.yaml $@
+
