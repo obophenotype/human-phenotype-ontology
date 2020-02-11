@@ -21,6 +21,8 @@ for x in field_mappings['default_annotations']:
 	for anno in field_mappings['default_annotations'][x]:
 		mapped_annos.append(anno)
 
+editors = field_mappings['editors']
+
 print(mapped_annos)
 
 data = []
@@ -49,6 +51,8 @@ for term in df_annotations.term.unique():
 	for anno in df_a_rest.annotation.unique():
 		value = df_a[df_a['annotation']==anno]["value"].iloc[0]
 		column2.append("{}: {}".format(anno,value))
+	for editor in editors:
+		column2.append("@{}".format(editor))
 	column2_str = "\n".join(column2)
 	data.append([column1,column2_str])
 
