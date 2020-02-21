@@ -94,6 +94,11 @@ hp_error: hp_report
 hp_foreign_obsoletes.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/hp_foreign_obsolete.sparql $@
 
+remove_foreign_declarations: $(SRC)
+	sed -i '/^Declaration[(]Class[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/][^H]/d' $(SRC)
+	sed -i '/^Declaration[(]Class[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]H[^P]/d' $(SRC)
+	sed -i '/^Declaration[(]Class[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]HP[^_]/d' $(SRC)
+
 #imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt hp_foreign_obsoletes.csv
 #	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
 #		remove --term-file hp_foreign_obsoletes.csv --trim false \ 
