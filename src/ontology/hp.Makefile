@@ -202,3 +202,30 @@ tmp/%.csv: $(INPUT)
 tmp/ntr_tsv.tsv: tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_siblings.csv tmp/terms_parents.csv
 	python3 ../scripts/ntr_tsv.py tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_parents.csv tmp/terms_siblings.csv ../scripts/hpo_field_mappings.yaml $@
 
+#######################################################
+##### Generate a nicely readable diff for HPO   #######
+#######################################################
+
+# This pipeline generates @drseb nice diff as part of the release process.
+
+# This is the version of the HPODIFF
+HPODIFFVERSION=0.0.1
+HPODIFFJAR=../scripts/hpodiff.jar
+
+hpo_jar: .FORCE
+	wget https://github.com/Phenomics/ontodiff/releases/download/$(HPODIFFVERSION)/hpodiff.jar -O $(HPODIFFJAR)
+
+# The new version is the version that was just created by the release
+tmp/$(ONT).obo.new:
+	cp ../../$(ONT).obo $@
+
+# The old version is the version that is currently published
+tmp/$(ONT).obo.old: .FORCE
+	wget http://purl.obolibrary.org/obo/hp.obo -O $@
+
+# As said before, we create this dummy file (reports/hpo_nice_diff.md) that will
+# simply list all previously created reports that are copied into the reports folder
+hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
+	echo "Using version $(HPODIFFVERSION) of the HPO Nice Diff Tool (@drseb)."
+	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
+	cp tmp/hpodiff*.xlsx reports
