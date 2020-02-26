@@ -208,12 +208,6 @@ tmp/ntr_tsv.tsv: tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_sibl
 
 # This pipeline generates @drseb nice diff as part of the release process.
 
-# In the following line, we create a dummy report (which is just a list of previously created reports)
-# That we can add to the list of REPORTS the ODK needs to generate as part of a release. This is necessary
-# Because the hpo_diff jar generates the file names dynamically, while ODK needs to know the names 
-# Of the files it is generating.
-REPORT_FILES:=$(REPORT_FILES) reports/hpo_nice_diff.md
-
 # This is the version of the HPODIFF
 HPODIFFVERSION=0.0.1
 HPODIFFJAR=../scripts/hpodiff.jar
@@ -222,8 +216,8 @@ hpo_jar: .FORCE
 	wget https://github.com/Phenomics/ontodiff/releases/download/$(HPODIFFVERSION)/hpodiff.jar -O $(HPODIFFJAR)
 
 # The new version is the version that was just created by the release
-tmp/$(ONT).obo.new: $(ONT).obo
-	cp $(ONT).obo $@
+tmp/$(ONT).obo.new:
+	cp ../../$(ONT).obo $@
 
 # The old version is the version that is currently published
 tmp/$(ONT).obo.old: .FORCE
@@ -231,11 +225,7 @@ tmp/$(ONT).obo.old: .FORCE
 
 # As said before, we create this dummy file (reports/hpo_nice_diff.md) that will
 # simply list all previously created reports that are copied into the reports folder
-reports/hpo_nice_diff.md: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
+hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	echo "Using version $(HPODIFFVERSION) of the HPO Nice Diff Tool (@drseb)."
 	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
-	cp tmp/*.xlsx reports
-	echo "# List of HPO diffs" > $@
-	for file in reports/*.xlsx ; do \
-      echo "- https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/src/ontology/reports/"$${file} >> $@ ; \
-  done
+	cp tmp/hpodiff*.xlsx reports
