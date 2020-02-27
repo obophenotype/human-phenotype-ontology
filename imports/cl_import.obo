@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2019-11-08/imports/cl_import.owl
+data-version: hp/releases/2020-02-27/imports/cl_import.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 ontology: hp/imports/cl_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (ILC1)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\n)
@@ -119,9 +119,6 @@ xref: FBbt:00004954
 xref: FMA:67338
 xref: WBbt:0006798
 is_a: CL:0000408 {is_inferred="true"} ! male gamete
-intersection_of: CL:0000408 ! male gamete
-intersection_of: RO:0002215 GO:0030317
-intersection_of: RO:0002215 GO:0048240
 relationship: BFO:0000051 GO:0005929
 relationship: RO:0002202 CL:0000018 ! spermatid
 
@@ -248,7 +245,7 @@ namespace: cell
 def: "A cell that is within the developmental lineage of gametes and is able to pass along its genetic material to offspring." [GOC:tfm, ISBN:0721662544]
 comment: Originally this term had some plant germ line cell children.
 subset: ubprop:upper_level
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000003 ! native cell
 disjoint_from: CL:0002371 ! somatic cell
 relationship: RO:0002215 GO:0022414
 
@@ -1154,6 +1151,13 @@ namespace: cell
 def: "A cell with a single nucleus." [FB:ma, GOC:tfm]
 intersection_of: CL:0000003 ! native cell
 intersection_of: RO:0000053 PATO:0001407
+
+[Term]
+id: CL:0000227
+name: binucleate cell
+namespace: cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0000053 PATO:0001406
 
 [Term]
 id: CL:0000228
@@ -2143,6 +2147,7 @@ is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: RO:0002215 GO:0001667
 relationship: BFO:0000050 UBERON:0002405
+relationship: RO:0002160 NCBITaxon:7742
 relationship: RO:0002202 CL:0000037 ! hematopoietic stem cell
 
 [Term]
@@ -2550,6 +2555,7 @@ synonym: "suppressor T cell" BROAD []
 synonym: "suppressor T lymphocyte" BROAD []
 synonym: "suppressor T-cell" BROAD []
 synonym: "suppressor T-lymphocyte" BROAD []
+synonym: "Treg" EXACT []
 xref: BTO:0004520
 xref: FMA:84070
 is_a: CL:0002419 {is_inferred="true"} ! mature T cell
@@ -5349,7 +5355,9 @@ id: CL:0002489
 name: double negative thymocyte
 namespace: cell
 def: "A thymocyte that lacks expression of CD4 and CD8." [GOC:tfm, MP:0002407]
-synonym: "double negative T cell" BROAD []
+comment: These are precursors to mature T cells; normally, they do not circulate, but are found in the thymus and they have not undergone rearrangement of the alpha and beta T cell receptor genes.
+synonym: "CD4-CD8- T cell" EXACT [MP:0002407]
+synonym: "double negative T cell" EXACT []
 is_a: CL:0000893 {is_inferred="true"} ! thymocyte
 intersection_of: CL:0000893 ! thymocyte
 intersection_of: lacks_plasma_membrane_part PR:000001004
@@ -6249,6 +6257,24 @@ is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
+id: CL:0011013
+name: motile sperm cell
+def: "A sperm cell that is cabaple of motion (motility)." [PMID:30612620]
+is_a: CL:0000019 ! sperm
+intersection_of: CL:0000019 ! sperm
+intersection_of: RO:0002215 GO:0097722
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011016
+name: flagellated sperm cell
+def: "A motile sperm cell that contains a slender threadlike microscopic appendage that enables motion." [https://www.lexico.com/en/definition/flagellum, PMID:30612620]
+is_a: CL:0011013 ! motile sperm cell
+intersection_of: CL:0011013 ! motile sperm cell
+intersection_of: RO:0002215 GO:0030317
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
 id: CL:0011101
 name: chorionic trophoblast cell
 def: "Cells of the uterine chorion that acquire specialized structural and/or functional features that characterize chorionic trophoblasts. These cells will migrate towards the spongiotrophoblast layer and give rise to syncytiotrophoblasts of the labyrinthine layer." [GOC:NV]
@@ -6707,6 +6733,16 @@ intersection_of: BFO:0000050 UBERON:0005185
 relationship: BFO:0000050 UBERON:0005185
 
 [Term]
+id: CL:1000547
+name: kidney inner medulla collecting duct epithelial cell
+namespace: cell
+xref: KUPO:0001061
+is_a: CL:1000497 {is_inferred="true"} ! kidney cell
+intersection_of: CL:1000497 ! kidney cell
+intersection_of: BFO:0000050 UBERON:0004205
+relationship: BFO:0000050 UBERON:0004205
+
+[Term]
 id: CL:1000549
 name: kidney cortex collecting duct epithelial cell
 namespace: cell
@@ -6756,6 +6792,16 @@ intersection_of: BFO:0000050 UBERON:0001229
 relationship: BFO:0000050 UBERON:0001229
 
 [Term]
+id: CL:1000617
+name: kidney inner medulla cell
+namespace: cell
+xref: KUPO:0001026
+is_a: CL:1000504 {is_inferred="true"} ! kidney medulla cell
+intersection_of: CL:1000504 ! kidney medulla cell
+intersection_of: BFO:0000050 UBERON:0001294
+relationship: BFO:0000050 UBERON:0001294
+
+[Term]
 id: CL:1000681
 name: kidney cortex interstitial cell
 namespace: cell
@@ -6799,6 +6845,17 @@ is_a: CL:1000612 {is_inferred="true"} ! kidney corpuscule cell
 intersection_of: CL:1000612 ! kidney corpuscule cell
 intersection_of: BFO:0000050 UBERON:0000074
 relationship: BFO:0000050 UBERON:0000074
+
+[Term]
+id: CL:1000803
+name: kidney inner medulla interstitial cell
+namespace: cell
+xref: KUPO:0001093
+is_a: CL:1000617 {is_inferred="true"} ! kidney inner medulla cell
+is_a: CL:1000682 {is_inferred="true"} ! kidney medulla interstitial cell
+intersection_of: CL:1000682 ! kidney medulla interstitial cell
+intersection_of: BFO:0000050 UBERON:0005214
+relationship: BFO:0000050 UBERON:0005214
 
 [Term]
 id: CL:1000854

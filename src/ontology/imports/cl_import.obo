@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-01-02/imports/cl_import.owl
+data-version: hp/releases/2020-02-27/imports/cl_import.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 ontology: hp/imports/cl_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (ILC1)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\n)
@@ -119,9 +119,6 @@ xref: FBbt:00004954
 xref: FMA:67338
 xref: WBbt:0006798
 is_a: CL:0000408 {is_inferred="true"} ! male gamete
-intersection_of: CL:0000408 ! male gamete
-intersection_of: RO:0002215 GO:0030317
-intersection_of: RO:0002215 GO:0048240
 relationship: BFO:0000051 GO:0005929
 relationship: RO:0002202 CL:0000018 ! spermatid
 
@@ -248,7 +245,7 @@ namespace: cell
 def: "A cell that is within the developmental lineage of gametes and is able to pass along its genetic material to offspring." [GOC:tfm, ISBN:0721662544]
 comment: Originally this term had some plant germ line cell children.
 subset: ubprop:upper_level
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000003 ! native cell
 disjoint_from: CL:0002371 ! somatic cell
 relationship: RO:0002215 GO:0022414
 
@@ -2150,6 +2147,7 @@ is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: RO:0002215 GO:0001667
 relationship: BFO:0000050 UBERON:0002405
+relationship: RO:0002160 NCBITaxon:7742
 relationship: RO:0002202 CL:0000037 ! hematopoietic stem cell
 
 [Term]
@@ -2557,6 +2555,7 @@ synonym: "suppressor T cell" BROAD []
 synonym: "suppressor T lymphocyte" BROAD []
 synonym: "suppressor T-cell" BROAD []
 synonym: "suppressor T-lymphocyte" BROAD []
+synonym: "Treg" EXACT []
 xref: BTO:0004520
 xref: FMA:84070
 is_a: CL:0002419 {is_inferred="true"} ! mature T cell
@@ -5356,7 +5355,9 @@ id: CL:0002489
 name: double negative thymocyte
 namespace: cell
 def: "A thymocyte that lacks expression of CD4 and CD8." [GOC:tfm, MP:0002407]
-synonym: "double negative T cell" BROAD []
+comment: These are precursors to mature T cells; normally, they do not circulate, but are found in the thymus and they have not undergone rearrangement of the alpha and beta T cell receptor genes.
+synonym: "CD4-CD8- T cell" EXACT [MP:0002407]
+synonym: "double negative T cell" EXACT []
 is_a: CL:0000893 {is_inferred="true"} ! thymocyte
 intersection_of: CL:0000893 ! thymocyte
 intersection_of: lacks_plasma_membrane_part PR:000001004
@@ -6254,6 +6255,24 @@ namespace: cell
 def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-9900-7880]
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002321 ! embryonic cell
+
+[Term]
+id: CL:0011013
+name: motile sperm cell
+def: "A sperm cell that is cabaple of motion (motility)." [PMID:30612620]
+is_a: CL:0000019 ! sperm
+intersection_of: CL:0000019 ! sperm
+intersection_of: RO:0002215 GO:0097722
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011016
+name: flagellated sperm cell
+def: "A motile sperm cell that contains a slender threadlike microscopic appendage that enables motion." [https://www.lexico.com/en/definition/flagellum, PMID:30612620]
+is_a: CL:0011013 ! motile sperm cell
+intersection_of: CL:0011013 ! motile sperm cell
+intersection_of: RO:0002215 GO:0030317
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: CL:0011101

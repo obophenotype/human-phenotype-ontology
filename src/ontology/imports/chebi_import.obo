@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-01-02/imports/chebi_import.owl
+data-version: hp/releases/2020-02-27/imports/chebi_import.owl
 subsetdef: 1_STAR "Preliminary entries"
 subsetdef: 2_STAR "Annotated by 3rd party"
 subsetdef: 3_STAR "Manually annotated by ChEBI Team"
@@ -984,6 +984,22 @@ property_value: http://purl.obolibrary.org/obo/chebi/inchikey "PMMYEEVYMWASQN-SR
 property_value: http://purl.obolibrary.org/obo/chebi/mass "131.131" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "131.05824" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "[C@@H]1(CC(O)CN1)C(O)=O" xsd:string
+
+[Term]
+id: CHEBI:145810
+name: insulin
+namespace: chebi_ontology
+def: "A peptide hormone which consists of two polypeptide chains, A- and B- chains which are linked together by disulfide bonds. The amino acid sequence of insulin varies across species and certain segments of the molecule are highly conserved. In most species, the A chain consists of 21 amino acids and the B chain consists of 30 amino acids. In mammals, insulin is synthesised in the pancreas within the beta cells whereas in certain species of fish, the insulin-producing tissue is uniquely located in separate structures called Brockmann bodies." []
+subset: 3_STAR
+xref: PMID:12137720 "Europe PMC"
+xref: PMID:19251032 "Europe PMC"
+xref: PMID:25848166 "Europe PMC"
+xref: PMID:5941964 "Europe PMC"
+xref: PMID:6069707 "Europe PMC"
+xref: Wikipedia:Insulin
+is_a: CHEBI:15841 ! polypeptide
+is_a: CHEBI:24533 ! heterodetic cyclic peptide
+is_a: CHEBI:25905 ! peptide hormone
 
 [Term]
 id: CHEBI:15035
@@ -2266,11 +2282,13 @@ xref: Beilstein:1281607 "Beilstein"
 xref: CAS:492-61-5 "KEGG COMPOUND"
 xref: Drug_Central:845 "DrugCentral"
 xref: DrugBank:DB02379
+xref: GlyTouCan:G71142DF
 xref: Gmelin:648637 "Gmelin"
 xref: KEGG:C00221
 xref: PDBeChem:BGC
 xref: PMID:19443021 "Europe PMC"
 xref: PMID:25568069 "Europe PMC"
+xref: PMID:31537530 "Europe PMC"
 xref: Reaxys:1281607 "Reaxys"
 is_a: CHEBI:4167 ! D-glucopyranose
 relationship: has_role CHEBI:53000 ! epitope
@@ -4721,6 +4739,7 @@ synonym: "NeuAc" RELATED [ChEBI]
 synonym: "O-sialic acid" RELATED [MetaCyc]
 xref: Beilstein:2951361 "Beilstein"
 xref: CAS:131-48-6 "KEGG COMPOUND"
+xref: GlyTouCan:G81533KY
 xref: KEGG:C00270
 xref: KNApSAcK:C00019584
 xref: PMID:14960498 "Europe PMC"
@@ -7194,6 +7213,7 @@ xref: PMID:23683321 "Europe PMC"
 xref: PMID:24643482 "Europe PMC"
 xref: PMID:25108762 "Europe PMC"
 xref: PMID:25568069 "Europe PMC"
+xref: PMID:31537530 "Europe PMC"
 xref: PPDB:1320
 xref: Reaxys:1721899 "Reaxys"
 xref: Wikipedia:Sorbitol
@@ -8461,6 +8481,7 @@ synonym: "Funacomide" RELATED [KEGG_COMPOUND]
 synonym: "Vitamin B12 coenzyme" RELATED [KEGG_COMPOUND]
 xref: Beilstein:4122932 "ChemIDplus"
 xref: CAS:13870-90-1 "KEGG COMPOUND"
+xref: DrugBank:DB11191
 xref: Gmelin:439994 "Gmelin"
 xref: HMDB:HMDB0002086
 xref: KEGG:C00194
@@ -8758,6 +8779,7 @@ is_a: CHEBI:33247 ! organic group
 id: CHEBI:22299
 name: aldonate
 namespace: chebi_ontology
+def: "A monocarboxylic acid anion resulting from the deprotonation of the carboxy group of an aldonic acid." []
 subset: 3_STAR
 synonym: "aldonate" EXACT [ChEBI]
 synonym: "aldonates" RELATED [ChEBI]
@@ -21548,6 +21570,7 @@ def: "The L-enantiomer of glucopyranose." []
 subset: 3_STAR
 synonym: "L-glucopyranose" EXACT IUPAC_NAME [IUPAC]
 xref: Beilstein:2206321 "Beilstein"
+xref: GlyTouCan:G16038XU
 xref: Reaxys:2206321 "Reaxys"
 is_a: CHEBI:37624 ! L-glucose
 is_a: CHEBI:37661 ! glucopyranose
@@ -21567,6 +21590,7 @@ def: "A L-glucopyranose with a beta-configuration at the anomeric position." []
 subset: 3_STAR
 synonym: "beta-L-glucopyranose" EXACT IUPAC_NAME [IUPAC]
 xref: Beilstein:1907373 "Beilstein"
+xref: GlyTouCan:G59396XU
 xref: Reaxys:1907373 "Reaxys"
 is_a: CHEBI:37627 ! L-glucopyranose
 relationship: is_enantiomer_of CHEBI:15903 ! beta-D-glucose
@@ -22463,6 +22487,7 @@ synonym: "glucose" RELATED [ChEBI]
 synonym: "Grape sugar" RELATED [KEGG_COMPOUND]
 xref: Beilstein:1281604 "Beilstein"
 xref: CAS:2280-44-6 "ChemIDplus"
+xref: GlyTouCan:G15021LG
 xref: Gmelin:83256 "Gmelin"
 xref: HMDB:HMDB0000122
 xref: KEGG:C00031
@@ -25156,6 +25181,7 @@ synonym: "TF epitope" RELATED [ChEBI]
 synonym: "Thomsen-Friedenreich epitope" RELATED [ChEBI]
 xref: Beilstein:4788642 "Beilstein"
 xref: CAS:20972-29-6 "KEGG COMPOUND"
+xref: GlyTouCan:G78436BB
 xref: KEGG:C07278
 xref: KEGG:G10607
 xref: PMID:11294842 "Europe PMC"
@@ -25934,21 +25960,53 @@ namespace: chebi_ontology
 alt_id: CHEBI:85038
 def: "An amino trisaccharide that is the carbohydrate portion of ganglioside GM3. It comprises a linear sequence of alpha-N-acetylneuraminyl, beta-D-galactosyl and beta-D-glucose residues linked (2->3) and (1->4)." []
 subset: 3_STAR
+synonym: "(2->3')-a-Sialyllactose" RELATED [HMDB]
+synonym: "(2->3')-alpha-Sialyllactose" RELATED [HMDB]
+synonym: "(2S,4S,5R,6R)-2-{[(2R,3S,4S,5R,6S)-3,5-dihydroxy-2-(hydroxymethyl)-6-{[(2R,3R,4R,5R)-1,2,4,5-tetrahydroxy-6-oxohexan-3-yl]oxy}oxan-4-yl]oxy}-5-acetamido-4-hydroxy-6-[(1R,2R)-1,2,3-trihydroxypropyl]oxane-2-carboxylic acid" RELATED [HMDB]
 synonym: "(6R)-5-(acetylamino)-3,5-dideoxy-6-[(1R,2R)-1,2,3-trihydroxypropyl]-beta-L-threo-hex-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "3'-(N-Acetyl-a-neuraminosyl)lactose" RELATED [HMDB]
+synonym: "3'-(N-Acetyl-alpha-neuraminosyl)lactose" RELATED [HMDB]
+synonym: "3'-a-Sialyllactose" RELATED [HMDB]
+synonym: "3'-alpha-Sialyllactose" RELATED [HMDB]
+synonym: "3'-Monosialyllactose" RELATED [HMDB]
+synonym: "3'-N-Acetylneuraminyl-D-lactose" RELATED [HMDB]
+synonym: "3'-N-Acetylneuraminyl-delta-lactose" RELATED [HMDB]
+synonym: "3'-Sialyl-D-lactose" RELATED [HMDB]
+synonym: "3'-Sialyl-delta-lactose" RELATED [HMDB]
 synonym: "3'-sialyllactose" RELATED [HMDB]
+synonym: "32-N-Acetyl-a-neuraminyllactose" RELATED [HMDB]
+synonym: "32-N-Acetyl-alpha-neuraminyllactose" RELATED [HMDB]
 synonym: "5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->3)-beta-D-galactopyranosyl-(1->4)-beta-D-glucopyranose" EXACT IUPAC_NAME [IUPAC]
+synonym: "a-Neu5Ac-(2->3)-b-D-Gal-(1->4)-D-Glc" RELATED [HMDB]
+synonym: "A2,3-Sialyllactose" RELATED [HMDB]
 synonym: "alpha-N-acetylneuraminyl-(2->3)-beta-D-galactosyl-(1->4)-beta-D-glucose" RELATED [ChEBI]
+synonym: "alpha-Neu5Ac-(2->3)-beta-D-Gal-(->4)-D-Glc" RELATED [HMDB]
 synonym: "alpha-Neu5Ac-(2->3)-beta-D-Gal-(1->4)-beta-D-Glc" RELATED [ChEBI]
+synonym: "alpha-Neu5Ac-(2->3)-beta-delta-Gal-(1->4)-delta-Glc" RELATED [HMDB]
 synonym: "alpha-Neup5Ac-(2->3)-beta-D-Galp-(1->4)-beta-D-Glcp" RELATED [ChEBI]
 synonym: "GM3 carbohydrate moiety" RELATED [ChEBI]
 synonym: "N-Acetylneuraminoyllactose" RELATED [HMDB]
 synonym: "Neu5Aca2-3Galb1-4Glcb" RELATED [ChEBI]
 synonym: "Neu5Acalpha2-3Galbeta1-4Glcbeta" RELATED [ChEBI]
 xref: Beilstein:4632263 "Beilstein"
+xref: GlyTouCan:G91237TK
 xref: HMDB:HMDB0000825
 xref: PMID:11164910 "Europe PMC"
+xref: PMID:12058986 "Europe PMC"
+xref: PMID:12950597 "Europe PMC"
+xref: PMID:14613940 "Europe PMC"
+xref: PMID:15179041 "Europe PMC"
 xref: PMID:19443021 "Europe PMC"
+xref: PMID:24027187 "Europe PMC"
 xref: PMID:25568069 "Europe PMC"
+xref: PMID:3142362 "Europe PMC"
+xref: PMID:31537530 "Europe PMC"
+xref: PMID:3768140 "Europe PMC"
+xref: PMID:510308 "Europe PMC"
+xref: PMID:599156 "Europe PMC"
+xref: PMID:6672002 "Europe PMC"
+xref: PMID:7507746 "Europe PMC"
+xref: PMID:7706301 "Europe PMC"
 xref: Reaxys:4632263 "Reaxys"
 is_a: CHEBI:59266 ! amino trisaccharide
 relationship: has_role CHEBI:53000 ! epitope
@@ -26000,8 +26058,9 @@ is_a: CHEBI:63571 ! trisaccharide derivative
 id: CHEBI:5931
 name: insulin (human)
 namespace: chebi_ontology
-def: "A peptide hormone produced in the pancreas and involved in regulating the metabolism of carbohydrates (particularly glucose) and fats. Commonly thought of as a protein, it consists of two petide chains, one containing 21 amino acid residues and the other containing 30; the chains are joined together by 2 disulfide bonds. Recombinant insulin is identical to human insulin, but is synthesised by inserting the human insulin gene into E. coli, which then produces insulin for human use. It is used in the treatment of type I and type II diabetes." []
+def: "An insulin that is produced in the pancreas and involved in regulating the metabolism of carbohydrates (particularly glucose) and fats. Commonly thought of as a protein, it consists of two peptide chains, one containing 21 amino acid residues and the other containing 30; the chains are joined together by 2 disulfide bonds. Recombinant insulin is identical to human insulin, but is synthesised by inserting the human insulin gene into E. coli, which then produces insulin for human use. It is used in the treatment of type I and type II diabetes." []
 subset: 3_STAR
+synonym: "human insulin" RELATED [ChEBI]
 synonym: "Insulin" RELATED [KEGG_COMPOUND]
 synonym: "insulin (recombinant)" RELATED [ChEBI]
 synonym: "Insulin recombinant" RELATED [DrugBank]
@@ -26014,12 +26073,8 @@ xref: PMID:22617471 "Europe PMC"
 xref: PMID:22715632 "Europe PMC"
 xref: PMID:22843207 "Europe PMC"
 xref: PMID:8019699 "Europe PMC"
-xref: Wikipedia:Insulin
-is_a: CHEBI:15841 ! polypeptide
-is_a: CHEBI:24533 ! heterodetic cyclic peptide
-is_a: CHEBI:25905 ! peptide hormone
+is_a: CHEBI:145810 ! insulin
 relationship: has_role CHEBI:35526 ! hypoglycemic agent
-relationship: has_role CHEBI:75771 ! mouse metabolite
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C256H381N65O77S6" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C256H381N65O77S6/c1-29-130(23)202(311-190(337)103-258)250(391)315-200(128(19)20)246(387)286-158(75-82-197(347)348)216(357)281-154(70-77-186(261)333)220(361)306-181-115-402-403-116-182-241(382)303-176(110-323)238(379)293-161(88-122(7)8)224(365)294-167(95-139-53-61-145(328)62-54-139)227(368)282-153(69-76-185(260)332)217(358)289-160(87-121(5)6)222(363)283-157(74-81-196(345)346)219(360)301-173(101-188(263)335)233(374)297-169(97-141-57-65-147(330)66-58-141)230(371)307-180(240(381)302-174(254(395)396)102-189(264)336)114-401-400-113-179(213(354)272-106-191(338)277-152(72-79-194(341)342)215(356)280-150(51-42-84-270-256(266)267)211(352)271-107-192(339)278-165(93-137-46-36-32-37-47-137)226(367)296-166(94-138-48-38-33-39-49-138)229(370)298-170(98-142-59-67-148(331)68-60-142)236(377)318-205(134(27)326)253(394)321-85-43-52-184(321)244(385)284-151(50-40-41-83-257)221(362)319-206(135(28)327)255(397)398)309-247(388)199(127(17)18)314-234(375)163(90-124(11)12)291-228(369)168(96-140-55-63-146(329)64-56-140)295-223(364)159(86-120(3)4)288-209(350)132(25)276-214(355)156(73-80-195(343)344)285-245(386)198(126(15)16)313-235(376)164(91-125(13)14)292-232(373)172(100-144-105-269-119-275-144)300-237(378)175(109-322)279-193(340)108-273-212(353)178(112-399-404-117-183(308-242(181)383)243(384)317-204(133(26)325)251(392)304-177(111-324)239(380)316-203(131(24)30-2)249(390)310-182)305-225(366)162(89-123(9)10)290-231(372)171(99-143-104-268-118-274-143)299-218(359)155(71-78-187(262)334)287-252(393)207(208(265)349)320-248(389)201(129(21)22)312-210(351)149(259)92-136-44-34-31-35-45-136/h31-39,44-49,53-68,104-105,118-135,149-184,198-207,322-331H,29-30,40-43,50-52,69-103,106-117,257-259H2,1-28H3,(H2,260,332)(H2,261,333)(H2,262,334)(H2,263,335)(H2,264,336)(H2,265,349)(H,268,274)(H,269,275)(H,271,352)(H,272,354)(H,273,353)(H,276,355)(H,277,338)(H,278,339)(H,279,340)(H,280,356)(H,281,357)(H,282,368)(H,283,363)(H,284,385)(H,285,386)(H,286,387)(H,287,393)(H,288,350)(H,289,358)(H,290,372)(H,291,369)(H,292,373)(H,293,379)(H,294,365)(H,295,364)(H,296,367)(H,297,374)(H,298,370)(H,299,359)(H,300,378)(H,301,360)(H,302,381)(H,303,382)(H,304,392)(H,305,366)(H,306,361)(H,307,371)(H,308,383)(H,309,388)(H,310,390)(H,311,337)(H,312,351)(H,313,376)(H,314,375)(H,315,391)(H,316,380)(H,317,384)(H,318,377)(H,319,362)(H,320,389)(H,341,342)(H,343,344)(H,345,346)(H,347,348)(H,395,396)(H,397,398)(H4,266,267,270)/t130-,131-,132+,133+,134+,135+,149+,150+,151+,152+,153+,154+,155+,156+,157+,158+,159+,160+,161+,162+,163+,164+,165+,166+,167+,168+,169+,170+,171+,172+,173+,174+,175+,176+,177+,178+,179+,180+,181+,182-,183+,184+,198+,199+,200+,201+,202+,203+,204+,205+,206+,207+/m1/s1" xsd:string
@@ -26596,6 +26651,7 @@ synonym: "Galalpha1-4Gal-beta1-4Glc" RELATED [ChEBI]
 synonym: "Galalpha1-4Gal-beta1-4Glc~OH" RELATED [ChEBI]
 synonym: "Pk" RELATED [ChEBI]
 xref: CAS:80446-87-3 "ChemIDplus"
+xref: GlyTouCan:G06000DZ
 xref: KEGG:G03416
 xref: PMID:12020649 "Europe PMC"
 xref: PMID:16133831 "Europe PMC"
@@ -27820,8 +27876,10 @@ synonym: "alpha-D-galactopyranosyl-(1->4)-beta-D-galactopyranosyl-(1->4)-beta-D-
 synonym: "alpha-D-galactosyl-(1->4)-beta-D-galactosyl-(1->4)-beta-D-glucose" RELATED [ChEBI]
 synonym: "Gala1-4Galb1-4Glcb" RELATED [ChEBI]
 synonym: "Galalpha1-4Galbeta1-4Glcbeta" RELATED [ChEBI]
+xref: GlyTouCan:G00059MO
 xref: PMID:19443021 "Europe PMC"
 xref: PMID:25568069 "Europe PMC"
+xref: PMID:31537530 "Europe PMC"
 is_a: CHEBI:60948 ! alpha-D-Gal-(1->4)-beta-D-Gal-(1->4)-D-Glc
 relationship: has_role CHEBI:53000 ! epitope
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
