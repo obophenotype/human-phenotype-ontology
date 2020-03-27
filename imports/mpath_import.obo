@@ -1,0 +1,603 @@
+format-version: 1.2
+data-version: hp/releases/2020-03-27/imports/mpath_import.owl
+ontology: hp/imports/mpath_import
+
+[Term]
+id: MPATH:0
+name: pathological entity
+namespace: mouse_pathology.ontology
+def: "Pathological structure or process" [Pathbase: Curation]
+
+[Term]
+id: MPATH:1
+name: cell and tissue damage
+namespace: mouse_pathology.ontology
+def: "The sum of morphological and functional disturbances induced by cell and tissue damage, either from intrinsic gene dysfunction or as a result of external factors." [Pathbase: Pathology Committee]
+is_a: MPATH:603 ! pathological anatomical entity
+
+[Term]
+id: MPATH:105
+name: circulatory disorder
+namespace: mouse_pathology.ontology
+def: "Lesions leading to or consequent on failure of, or atypical movement of, blood throughout the body." [Pathbase: Pathology Committee]
+is_a: MPATH:603 ! pathological anatomical entity
+
+[Term]
+id: MPATH:119
+name: hemorrhage and non-specified extravasation
+namespace: mouse_pathology.ontology
+def: "Abnormal release of whole blood or the cellular component from the circulation." [Pathbase: Curation]
+is_a: MPATH:105 ! circulatory disorder
+
+[Term]
+id: MPATH:120
+name: ecchymosis
+namespace: mouse_pathology.ontology
+def: "A red/purple patch caused by extravasation of blood into the skin. Larger than petechiae." [ISBN:0781727286]
+comment: May also be used for any organ, although more generally used with respect to the skin.
+is_a: MPATH:119 ! hemorrhage and non-specified extravasation
+
+[Term]
+id: MPATH:124
+name: infarct
+namespace: mouse_pathology.ontology
+def: "An area of necrosis resulting from a sudden cessation of arterial or venous blood supply." [Pathbase: Pathology Committee]
+is_a: MPATH:105 ! circulatory disorder
+
+[Term]
+id: MPATH:126
+name: growth and differentiation defect
+namespace: mouse_pathology.ontology
+def: "Defects in growth (changes in proliferation or mass) and differentiation of cells tissues or organs." [Pathbase: Pathology Committee]
+is_a: MPATH:603 ! pathological anatomical entity
+
+[Term]
+id: MPATH:14
+name: process of degenerative change
+namespace: mouse_pathology.ontology
+def: "A pathological process of loss or degradation of function, or structural integrity, of a tissue, organ or cell." [Pathbase: Pathology Committee]
+is_a: MPATH:597 ! cell and tissue damage process
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:149
+name: squamous hyperplasia
+namespace: mouse_pathology.ontology
+def: "Benign proliferation of epidermal cells with hyperkeratosis. Variable growth pattern, regular to papillary (exophytic squamous cell hyperplasia)." [Pathbase: Pathology Committee]
+synonym: "epidermal hyperplasia." RELATED [Pathbase: Curation]
+synonym: "squamous cell hyperplasia" RELATED [Pathbase: Curation]
+is_a: MPATH:602 ! hyperplastic tissue
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:154
+name: hyperkeratosis
+namespace: mouse_pathology.ontology
+def: "Thickening of the surface layers (stratum corneum) in the skin or other stratified squamous epithelium. Cf. ortho- and para-keratosis." [Pathbase: Pathology Committee]
+synonym: "cornification" RELATED [Pathbase: Curation]
+synonym: "hyperorthokeratosis" RELATED [Pathbase: Curation]
+synonym: "hyperparakeratosis" RELATED [Pathbase: Curation]
+is_a: MPATH:149 ! squamous hyperplasia
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:156
+name: parakeratosis
+namespace: mouse_pathology.ontology
+def: "Thickening of the surface cell layer of a stratified squamous epithelium with retention of nuclei in the cells of the stratum corneum." [Pathbase: Pathology Committee]
+is_a: MPATH:154 ! hyperkeratosis
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:175
+name: healing and repair process
+namespace: mouse_pathology.ontology
+def: "The process, normal or abnormal, of damage repair or wound closure." [Pathbase: Pathology Committee]
+is_a: MPATH:596 ! pathological process
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:176
+name: connective tissue replacement
+namespace: mouse_pathology.ontology
+def: "Replacement of connective tissue by fibro-fatty deposits and scar tissue." [Pathbase: Curation]
+is_a: MPATH:175 ! healing and repair process
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:181
+name: fibrosis
+namespace: mouse_pathology.ontology
+def: "Reactive formation of fibrous tissue." [Pathbase: Curation]
+is_a: MPATH:176 ! connective tissue replacement
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:184
+name: sclerosis
+namespace: mouse_pathology.ontology
+def: "Any pathological thickening or hardening of a tissue." [Pathbase: Curation]
+synonym: "Induration" RELATED [Pathbase: Curation]
+is_a: MPATH:176 ! connective tissue replacement
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:188
+name: immunopathological process
+namespace: mouse_pathology.ontology
+def: "Inappropriate or aberrant activation or suppression of the immune or inflammatory response." [Pathbase: Pathology Committee]
+is_a: MPATH:596 ! pathological process
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:194
+name: immune mediated disease
+namespace: mouse_pathology.ontology
+def: "Tissue response to inappropriate immune/inflammatory process." [Pathbase: Curation]
+is_a: MPATH:188 ! immunopathological process
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:195
+name: arthritis
+namespace: mouse_pathology.ontology
+def: "Inflammation of a joint." [Pathbase: Curation]
+is_a: MPATH:212 ! inflammation
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:196
+name: dermatitis
+namespace: mouse_pathology.ontology
+def: "Inflammation of the skin." [Pathbase: Curation]
+is_a: MPATH:212 ! inflammation
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:197
+name: glomerulonephritis
+namespace: mouse_pathology.ontology
+def: "Renal disease characterised by diffuse inflammatory changes in glomeruli not in response to an infectious agent or treatment." [Pathbase: Curation]
+is_a: MPATH:212 ! inflammation
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:198
+name: immune mediated hemolytic anaemia
+namespace: mouse_pathology.ontology
+def: "An anemic/erythrocytopenic condition resulting from an increased rate of immune mediated erythrocyte destruction." [ISBN:0781727286]
+is_a: MPATH:212 ! inflammation
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:201
+name: vasculitis
+namespace: mouse_pathology.ontology
+def: "Inflammation of a blood vessel." [Pathbase: Pathology Committee]
+synonym: "angiitis" RELATED [Pathbase: Curation]
+synonym: "arteritis" RELATED [Pathbase: Curation]
+synonym: "lymphangiitis" RELATED [Pathbase: Curation]
+synonym: "phlebitis" RELATED [Pathbase: Curation]
+is_a: MPATH:212 ! inflammation
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:212
+name: inflammation
+namespace: mouse_pathology.ontology
+def: "A tissue reaction to an internal or external injury." [Pathbase: Pathology Committee]
+is_a: MPATH:194 ! immune mediated disease
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:218
+name: neoplasm
+namespace: mouse_pathology.ontology
+def: "A tumor resulting from abnormal and uncontrolled autonomous new cell growth (proliferation)that may be benign or malignant." [Pathbase: Pathology Committee]
+is_a: MPATH:603 ! pathological anatomical entity
+created_by: George Gkoutos
+
+[Term]
+id: MPATH:25
+name: tissue specific degenerative process
+namespace: mouse_pathology.ontology
+def: "Degenerative process characteristic of a particular tissue." [Pathbase: Curation]
+is_a: MPATH:14 ! process of degenerative change
+
+[Term]
+id: MPATH:254
+name: complex tumor
+namespace: mouse_pathology.ontology
+def: "Tumors showing multiple histological componants/differentiation." [Pathbase: Pathology Committee]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:267
+name: glandular tumor
+namespace: mouse_pathology.ontology
+def: "Neoplasms derived from glandular epithelial cells." [Pathbase: Curation]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:27
+name: arthrosis
+namespace: mouse_pathology.ontology
+def: "Changes characterized by erosion of articular cartilage, either primary or secondary to trauma or other conditions. Not primarily an inflammatory process." [ISBN:0781727286]
+synonym: "Degenerative joint disease" RELATED [Pathbase: Curation]
+synonym: "osteoarthrosis" RELATED [Pathbase: Curation]
+is_a: MPATH:25 ! tissue specific degenerative process
+
+[Term]
+id: MPATH:270
+name: adenoma
+namespace: mouse_pathology.ontology
+def: "A benign epithelial neoplasm in which the tumor cells may form glands or glandlike structures. In different instances this may remain a benign tumor or progress to malignancy." [Pathbase: Pathology Committee]
+is_a: MPATH:267 ! glandular tumor
+is_a: MPATH:556 ! potentially cancerous lesions
+
+[Term]
+id: MPATH:28
+name: atherosclerosis
+namespace: mouse_pathology.ontology
+def: "Characterised by irregular lipid deposits in the wall of arteries, causing narrowing of their lumens and proceeding eventually to fibrosis and calcification." [Pathbase: Pathology Committee]
+comment: Note that in mouse and rats the initial lesions are mostly in the medial layer while in human they occur in the intima.
+is_a: MPATH:25 ! tissue specific degenerative process
+
+[Term]
+id: MPATH:287
+name: islet cell adenoma
+namespace: mouse_pathology.ontology
+def: "Usually pancreatic B cell derived tumors mostly producing insulin. (M- 8150/0)." [Pathbase: Curation]
+synonym: "Adenoma, endocrine pancreas" RELATED [Pathbase: Curation]
+synonym: "adenomatosis" RELATED [Pathbase: Curation]
+synonym: "islet (pancreatic) cell tumor benign" RELATED [Pathbase: Curation]
+is_a: MPATH:270 ! adenoma
+
+[Term]
+id: MPATH:309
+name: gonadal tumor
+namespace: mouse_pathology.ontology
+def: "Germ cell and non-germ cell tumors of the testis and ovary." [Pathbase: Pathology Committee]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:31
+name: emphysema
+namespace: mouse_pathology.ontology
+def: "Abnormal accumulation of air in the interstitial connective tissue of a structure. Sensu Lung: Pulmonary emphysema; characterised by abnormal increase in the size of air (alveolar) spaces distal to the terminal bronchiole with degenerative changes in their walls and reduction in their number." [ISBN:0781727286]
+is_a: MPATH:25 ! tissue specific degenerative process
+
+[Term]
+id: MPATH:310
+name: germ cell tumor
+namespace: mouse_pathology.ontology
+def: "Neoplasms derived from germ cells. May be gonadal or extragonadal and are derived from primordial germ cells." [Pathbase: Pathology Committee]
+is_a: MPATH:309 ! gonadal tumor
+
+[Term]
+id: MPATH:322
+name: teratoma
+namespace: mouse_pathology.ontology
+def: "Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Malignant tumors are highly metatstatic. (M-9080/1)." [Pathbase: Pathology Committee]
+is_a: MPATH:254 ! complex tumor
+is_a: MPATH:310 ! germ cell tumor
+
+[Term]
+id: MPATH:33
+name: intracellular and extracellular accumulation
+namespace: mouse_pathology.ontology
+def: "Accumulation of substances within, on the surface of or between cells." [Pathbase: Pathology Committee]
+is_a: MPATH:1 ! cell and tissue damage
+
+[Term]
+id: MPATH:335
+name: hematopoietic/lymphoid malignancies/disorder
+namespace: mouse_pathology.ontology
+def: "Proliferative disorders and malignancies of the lymphoid and non lymphoid haematopoietic lineages." [URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:34
+name: amyloid deposition
+namespace: mouse_pathology.ontology
+def: "Extracellular deposition of amyloid protein." [ISBN:0781727286]
+comment: Any group of chemically diverse proteins that appears microscopically homogeneous, but is composed of linear non-branching aggregated fibrils aranged in sheets when see under the electron microscope.
+synonym: "Amyloidosis" RELATED [Pathbase: Curation]
+is_a: MPATH:33 ! intracellular and extracellular accumulation
+
+[Term]
+id: MPATH:342
+name: myeloid leukaemia
+namespace: mouse_pathology.ontology
+def: "Leukaemias of the myeloid lineage." [PMID:12070033]
+synonym: "granulocytic leukaemia" RELATED [Pathbase: Curation]
+xref: URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2
+is_a: MPATH:496 ! Non-Lymphoid leukaemias
+
+[Term]
+id: MPATH:346
+name: autoimmune mediated disease
+namespace: mouse_pathology.ontology
+is_a: MPATH:194 ! immune mediated disease
+created_by: George Gkoutos
+creation_date: 2011-03-22T01:12:01Z
+
+[Term]
+id: MPATH:36
+name: calcium deposition
+namespace: mouse_pathology.ontology
+def: "Intra or extracellular deposition of calcium usually as calcium phosphate." [Pathbase: Curation]
+is_a: MPATH:555 ! mineralisation
+
+[Term]
+id: MPATH:379
+name: odontogenic tumor
+namespace: mouse_pathology.ontology
+def: "Neoplasm arising from the tissues of the odontogenic apparatus. These tumors are derived from ectodermal tissue (epithelial tumors) or from mesodermal tissue (connective tissue tumors) or are composed of both components (mixed or composite odontogenic tumors) ." [Pathbase: Pathology Committee]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:387
+name: odontoma
+namespace: mouse_pathology.ontology
+def: "Hamartomatous malformation of odontogenic tissue. It may vary from nondescript masses of dental tissue (complex odontoma) to multiple well-formed teeth (compound odontoma). Cf ameloblastic fibro-odontoma. (M-9280/0)." [ISBN:0781727286]
+is_a: MPATH:254 ! complex tumor
+is_a: MPATH:379 ! odontogenic tumor
+is_a: MPATH:74 ! hamartoma
+
+[Term]
+id: MPATH:404
+name: soft tissue tumor
+namespace: mouse_pathology.ontology
+def: "Neoplasms of the soft and connective tissues." [Pathbase: Curation]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:429
+name: myxomatous tumor
+namespace: mouse_pathology.ontology
+def: "Neoplasms resembling primitive mesenchymal tissue with a soft mucous matrix." [Pathbase: Curation]
+is_a: MPATH:404 ! soft tissue tumor
+
+[Term]
+id: MPATH:474
+name: ectasia
+namespace: mouse_pathology.ontology
+def: "Dilation of a tubular structure." [Pathbase: Pathology Committee]
+comment: Often associated with an obstruction.
+is_a: MPATH:66 ! dilatation
+
+[Term]
+id: MPATH:476
+name: telangiectasia
+namespace: mouse_pathology.ontology
+def: "A lesion formed by a dilated capillary or terminal artery." [Pathbase: Curation]
+is_a: MPATH:474 ! ectasia
+
+[Term]
+id: MPATH:496
+name: Non-Lymphoid leukaemias
+namespace: mouse_pathology.ontology
+def: "Neoplasms of non-lymphoid haematopoietic lineage. Must have at least 20% blast cells to meet this definition." [PMID:12070033]
+xref: URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2
+is_a: MPATH:515 ! Non-Lymphoid neoplasias
+
+[Term]
+id: MPATH:502
+name: monocytic leukaemia
+namespace: mouse_pathology.ontology
+def: "Leukaemia in which neoplastic cells are poorly or moderately differentiated with a monocytic but no neutrophilic component. At least 20% of the cells must be blasts." [PMID:12070033]
+xref: URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2
+is_a: MPATH:342 ! myeloid leukaemia
+
+[Term]
+id: MPATH:515
+name: Non-Lymphoid neoplasias
+namespace: mouse_pathology.ontology
+def: "Hematological neoplasias of non-lymphoid origin." [PMID:12070033]
+xref: URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2
+is_a: MPATH:335 ! hematopoietic/lymphoid malignancies/disorder
+
+[Term]
+id: MPATH:55
+name: developmental and structural abnormality
+namespace: mouse_pathology.ontology
+def: "Developmental and structural abnormalities occurring during embryonic development or during adult life." [Pathbase: Pathology Committee]
+is_a: MPATH:603 ! pathological anatomical entity
+
+[Term]
+id: MPATH:555
+name: mineralisation
+namespace: mouse_pathology.ontology
+def: "Deposition of any homogeneous inorganic material." [ISBN:0781727286]
+is_a: MPATH:33 ! intracellular and extracellular accumulation
+
+[Term]
+id: MPATH:556
+name: potentially cancerous lesions
+namespace: mouse_pathology.ontology
+def: "Lesions which in some cases have the potential to become progressively growing malignant tumors." [Pathbase: Pathology Committee]
+is_a: MPATH:218 ! neoplasm
+
+[Term]
+id: MPATH:56
+name: developmental or adult structural  defect
+namespace: mouse_pathology.ontology
+def: "Structural, physical or other general defect of prenatal development of the embryo and the placenta, or such as are acquired in the adult." [Pathbase: Pathology Committee]
+is_a: MPATH:55 ! developmental and structural abnormality
+
+[Term]
+id: MPATH:574
+name: nephroblastomatosis
+namespace: mouse_pathology.ontology
+def: "Persistence of metanephrogenic blastema or its presence in the wrong place or at the wrong time. Associated with hyperplastic nephrogenic rests." [PMID:8383276]
+is_a: MPATH:64 ! developmental dysplasia
+
+[Term]
+id: MPATH:579
+name: ulcer
+namespace: mouse_pathology.ontology
+def: "Loss of epithelium and the basement membrane (full thickness). Cf Erosion." [Pathbase: Pathology Committee]
+is_a: MPATH:1 ! cell and tissue damage
+
+[Term]
+id: MPATH:596
+name: pathological process
+namespace: mouse_pathology.ontology
+def: "The organic response of tissues to external insult, injury or underlying genetic or epigenetic lesion." [Pathbase: Pathology Committee]
+is_a: MPATH:0 ! pathological entity
+
+[Term]
+id: MPATH:597
+name: cell and tissue damage process
+namespace: mouse_pathology.ontology
+def: "Processes occurring during cell and tissue damage of either intrinsic or extrinsic etiology." [Pathbase: Pathology Committee]
+is_a: MPATH:596 ! pathological process
+
+[Term]
+id: MPATH:599
+name: developmental process abnormalities
+namespace: mouse_pathology.ontology
+def: "developmental process abnormalities" [Pathbase: Pathology Committee]
+is_a: MPATH:596 ! pathological process
+
+[Term]
+id: MPATH:602
+name: hyperplastic tissue
+namespace: mouse_pathology.ontology
+def: "An organ or a tissue with an abnormal increase in the number of cells as a consequence of cell proliferation." [Pathbase: Pathology Committee]
+is_a: MPATH:126 ! growth and differentiation defect
+
+[Term]
+id: MPATH:603
+name: pathological anatomical entity
+namespace: mouse_pathology.ontology
+def: "Anatomically located instance of pathological response or entity." [Pathbase: Pathology Committee]
+is_a: MPATH:0 ! pathological entity
+
+[Term]
+id: MPATH:607
+name: healing and repair structure
+namespace: mouse_pathology.ontology
+def: "Physical entity or structure associated with normal or abnormal tissue healing or repair following extrinsic or intrinsic damage." [Pathbase: Pathology Committee]
+is_a: MPATH:603 ! pathological anatomical entity
+
+[Term]
+id: MPATH:608
+name: abscess
+namespace: mouse_pathology.ontology
+def: "A circumscribed collection of purulent exudate frequently associated with swelling and other signs of inflammation." [ISBN:0781727286]
+comment: Generally occur following damage or infection with subsequent inflammatory response. Result of the body`s defensive reaction to foreign material.
+is_a: MPATH:607 ! healing and repair structure
+
+[Term]
+id: MPATH:615
+name: cardiomyopathy
+namespace: mouse_pathology.ontology
+def: "A disease of the heart muscle or myocardium proper." [\:NCI Thesaurus / A7567983]
+comment: Cardiomyopathies may be classified as either primary or secondary, on the basis of etiology, or on the pathophysiology of the lesion: hypertrophic, dilated, or restrictive.
+is_a: MPATH:25 ! tissue specific degenerative process
+
+[Term]
+id: MPATH:62
+name: cyst
+namespace: mouse_pathology.ontology
+def: "Formation of an epithelium bounded cavity not associated with neoplasia." [Pathbase: Pathology Committee]
+is_a: MPATH:56 ! developmental or adult structural  defect
+
+[Term]
+id: MPATH:622
+name: steatosis
+namespace: mouse_pathology.ontology
+def: "Abnormal retention of lipids within a cell. Physically apparent as lipid within liposomes of parenchymal cells." [Pathbase: Curation]
+comment: Most commonly associated with degenerative change in the liver.
+synonym: "adipose degeneration" RELATED [Pathbase: Curation]
+synonym: "fatty change" RELATED [Pathbase: Curation]
+synonym: "fatty degeneration" RELATED [Pathbase: Curation]
+synonym: "lipidosis" EXACT []
+is_a: MPATH:33 ! intracellular and extracellular accumulation
+
+[Term]
+id: MPATH:64
+name: developmental dysplasia
+namespace: mouse_pathology.ontology
+def: "Abnormal development (of organs or tissues) or an abnormal structure resulting from such growth." [Pathbase: Pathology Committee]
+comment: The word dysplasia as commonly used refers to a precursor state to neoplasia. This is not the context used for this MPATH term.
+is_a: MPATH:599 ! developmental process abnormalities
+
+[Term]
+id: MPATH:66
+name: dilatation
+namespace: mouse_pathology.ontology
+def: "Increase in the diameter of an orifice or tubular structure beyond its normal dimensions." [Pathbase: Pathology Committee]
+is_a: MPATH:56 ! developmental or adult structural  defect
+
+[Term]
+id: MPATH:675
+name: psoriasiform dermatitis
+namespace: mouse_pathology.ontology
+is_a: MPATH:196 ! dermatitis
+created_by: George Gkoutos
+creation_date: 2011-02-19T04:09:12Z
+
+[Term]
+id: MPATH:68
+name: diverticulum
+namespace: mouse_pathology.ontology
+def: "A blind ended outpouching through the wall of a tubular organ or bounded cavity." [Pathbase: Curation]
+is_a: MPATH:56 ! developmental or adult structural  defect
+
+[Term]
+id: MPATH:70
+name: fistula
+namespace: mouse_pathology.ontology
+def: "An abnormal passage between two internal organs or leading from a cavity to the body surface." [Pathbase: Curation]
+is_a: MPATH:56 ! developmental or adult structural  defect
+
+[Term]
+id: MPATH:718
+name: pre-sacral teratoma
+namespace: mouse_pathology.ontology
+def: "Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Pre-sacral tumors located in the retrorectal space between the rectum and the sacrococcygeal part of the spine." [\:]
+is_a: MPATH:322 ! teratoma
+created_by: Paul
+creation_date: 2011-06-06T03:39:01Z
+
+[Term]
+id: MPATH:74
+name: hamartoma
+namespace: mouse_pathology.ontology
+def: "A focal malformation resembling a neoplasm which results from faulty development of an organ; composed of an abnormal mixture of tissue elements, or an abnormal proportion of a single element. Growth and location are usually normal for that tissue cf. Heterotopia/Choristoma MPATH:76/MPATH:477." [ISBN:0781727286]
+is_a: MPATH:56 ! developmental or adult structural  defect
+
+[Term]
+id: MPATH:86
+name: organ specific developmental defect
+namespace: mouse_pathology.ontology
+def: "Developmental defect characteristic of a particular organ or organ system which may be a recognised syndrome or a complex defect showing multiple manifestations." [Pathbase: Curation]
+is_a: MPATH:55 ! developmental and structural abnormality
+
+[Term]
+id: MPATH:89
+name: cardiovascular developmental defect
+namespace: mouse_pathology.ontology
+def: "Abnormal development of the heart or vascular tissue resulting in morphological abnormality." [Pathbase: Curation]
+is_a: MPATH:86 ! organ specific developmental defect
+
+[Term]
+id: MPATH:90
+name: aneurysm
+namespace: mouse_pathology.ontology
+def: "Localised dilation of an artery or heart chamber usually due to an acquired or congenital weakness of the wall of the artery or chamber." [Pathbase: Pathology Committee]
+is_a: MPATH:56 ! developmental or adult structural  defect
+
+[Term]
+id: MPATH:98
+name: lymphangiectasis
+namespace: mouse_pathology.ontology
+def: "A stretching and widening of the lymphatic vessels." [Pathbase: Pathology Committee]
+synonym: "Lymphectasia" RELATED [Pathbase: Curation]
+synonym: "telangiectasia lymphatica" RELATED [Pathbase: Curation]
+is_a: MPATH:474 ! ectasia
+is_a: MPATH:89 ! cardiovascular developmental defect
+

@@ -1,0 +1,284 @@
+format-version: 1.2
+data-version: hp/releases/2020-03-27/imports/hsapdv_import.owl
+ontology: hp/imports/hsapdv_import
+
+[Term]
+id: HsapDv:0000000
+name: human life cycle stage
+namespace: human_stages_ontology
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+xref: UBERON:0000105
+
+[Term]
+id: HsapDv:0000001
+name: human life cycle
+namespace: human_developmental_stage
+def: "Temporal interval that defines human life from the prenatal stage until late adulthood." [Bgee:curator]
+xref: UBERON:0000104
+is_a: HsapDv:0000000 ! human life cycle stage
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000002
+name: embryonic human stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage." [Bgee:curator]
+comment: By embryo we mean in the sense of up to the 8th week postfertilization (over 7 and under 8 weeks), we treat fetus as a separate stage.
+synonym: "embryo stage" RELATED []
+synonym: "first trimester" RELATED [http://en.wikipedia.org/wiki/Gestational_age]
+xref: EV:0300001
+xref: FMA:72652
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000045 ! prenatal stage
+property_value: end_dpf "56.0" xsd:float
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000037
+name: fetal stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
+comment: Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term "fetus" generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective. [Wikipedia:Fetus]
+synonym: "fetus stage" RELATED []
+synonym: "foetus stage" RELATED []
+synonym: "second and third trimester" RELATED [http://en.wikipedia.org/wiki/Gestational_age]
+xref: EV:0300011
+xref: UBERON:0007220
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000002 ! embryonic human stage
+relationship: part_of HsapDv:0000045 ! prenatal stage
+property_value: end_dpf "266.0" xsd:float
+property_value: start_dpf "56.0" xsd:float
+
+[Term]
+id: HsapDv:0000045
+name: prenatal stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with fertilization and ends at birth." [UBERON:0000068]
+xref: UBERON:0000068
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000001 ! human life cycle
+property_value: end_dpf "266.0" xsd:float
+property_value: end_ypb "0.0" xsd:float
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000080
+name: immature stage
+namespace: human_developmental_stage
+def: "Human developmental stage that covers the period from birth until 12 years old." [Bgee:curator]
+synonym: "0-12 years" EXACT []
+synonym: "child" RELATED []
+xref: UBERON:0000112
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000001 ! human life cycle
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000081
+name: child stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to child who is over 2 and under 13 years old." [Bgee:curator]
+synonym: "2-12 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000083 ! infant stage
+relationship: part_of HsapDv:0000080 ! immature stage
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "2.0" xsd:float
+
+[Term]
+id: HsapDv:0000082
+name: newborn human stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to a newborn who is under 32 days old." [Bgee:curator]
+synonym: "0-1 month" EXACT []
+synonym: "neonatal stage" RELATED []
+synonym: "neonate" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000080 ! immature stage
+property_value: end_mpb "1.0" xsd:float
+property_value: end_ypb "0.083" xsd:float
+property_value: start_mpb "0.0" xsd:float
+property_value: start_ypb "0.0" xsd:float
+
+[Term]
+id: HsapDv:0000083
+name: infant stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to an infant who is over 31 days and is under 24 months old." [Bgee:curator]
+synonym: "1-23 months" EXACT []
+synonym: "infantile stage" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000082 ! newborn human stage
+relationship: part_of HsapDv:0000080 ! immature stage
+property_value: end_mpb "24.0" xsd:float
+property_value: end_ypb "2.0" xsd:float
+property_value: start_mpb "1.0" xsd:float
+property_value: start_ypb "0.083" xsd:float
+
+[Term]
+id: HsapDv:0000086
+name: adolescent stage
+namespace: human_developmental_stage
+def: "Mature stage that refers to an adolescent who is over 13 and under 19 years old." [Bgee:curator]
+synonym: "13-18 years" EXACT []
+synonym: "teen" RELATED []
+synonym: "teenager" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000204 ! mature stage
+property_value: end_ypb "19.0" xsd:float
+property_value: start_ypb "13.0" xsd:float
+
+[Term]
+id: HsapDv:0000087
+name: human adult stage
+namespace: human_developmental_stage
+def: "Human developmental stage that refers to an adult who is over 19." [Bgee:curator]
+synonym: "19+ years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000086 ! adolescent stage
+relationship: part_of HsapDv:0000204 ! mature stage
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000088
+name: human early adulthood stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is under 45." [Bgee:curator]
+synonym: "19-44 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000087 ! human adult stage
+property_value: end_ypb "45.0" xsd:float
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000089
+name: young adult stage
+namespace: human_developmental_stage
+def: "Early adulthood that refers to an adult who is under 25." [Bgee:curator]
+synonym: "19-24 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000088 ! human early adulthood stage
+property_value: end_ypb "25.0" xsd:float
+property_value: start_ypb "19.0" xsd:float
+
+[Term]
+id: HsapDv:0000091
+name: human late adulthood stage
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 45." [Bgee:curator]
+synonym: "45+ years" EXACT []
+synonym: "Middle Aged + Aged" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: immediately_preceded_by HsapDv:0000088 ! human early adulthood stage
+relationship: part_of HsapDv:0000087 ! human adult stage
+property_value: start_ypb "45.0" xsd:float
+
+[Term]
+id: HsapDv:0000092
+name: human middle aged stage
+namespace: human_developmental_stage
+def: "Late adulthood that refers to an adult who is over 45 and under 65." [Bgee:curator]
+synonym: "45-64 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000091 ! human late adulthood stage
+property_value: end_ypb "65.0" xsd:float
+property_value: start_ypb "45.0" xsd:float
+
+[Term]
+id: HsapDv:0000204
+name: mature stage
+namespace: human_developmental_stage
+def: "Human developmental stage that refers to a sexually mature human." [Bgee:curator]
+xref: UBERON:0000113
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: part_of HsapDv:0000001 ! human life cycle
+property_value: start_ypb "13.0" xsd:float
+
+[Typedef]
+id: end_dpf
+name: end, days post fertilization
+namespace: human_stages_ontology
+def: "Count of number of days intervening between the end of the stage and the time of fertilization according to a reference model. Note that the first day of development has the value of 1 for this property." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000033
+is_metadata_tag: true
+
+[Typedef]
+id: end_mpb
+name: end, months post birth
+namespace: human_stages_ontology
+def: "Count of number of months intervening between the end of the stage and the time of birth according to a reference model. Note that the first month of post-birth development has the value of 1 for this property, and the period during which the child is one month old has the value 2" []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000035
+is_metadata_tag: true
+
+[Typedef]
+id: end_ypb
+name: end, years post birth
+namespace: human_stages_ontology
+def: "Count of number of years intervening between the end of the stage and the time of birth according to a reference model. Note that the first year of post-birth development has the value of 1 for this property, and the period during which the child is one year old has the value 2" []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000036
+is_metadata_tag: true
+
+[Typedef]
+id: has_unit
+name: has unit
+namespace: human_stages_ontology
+comment: Used to associate a measurement property (e.g. days post fertilization) with a unit (e.g. days)
+is_metadata_tag: true
+
+[Typedef]
+id: immediately_preceded_by
+name: immediately_preceded_by
+namespace: human_stages_ontology
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+xref: RO:0002087
+is_a: preceded_by ! preceded_by
+
+[Typedef]
+id: part_of
+name: part of
+namespace: human_stages_ontology
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: preceded_by
+name: preceded_by
+namespace: human_stages_ontology
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+xref: BFO:0000062
+is_transitive: true
+
+[Typedef]
+id: start_dpf
+name: start, days post fertilization
+namespace: human_stages_ontology
+def: "Count of number of days intervening between the start of the stage and the time of fertilization according to a reference model. Note that the first day of development has the value of 0 for this property." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000033
+is_metadata_tag: true
+
+[Typedef]
+id: start_mpb
+name: start, months post birth
+namespace: human_stages_ontology
+def: "Count of number of months intervening between the start of the stage and the time of birth according to a reference model. Note that the first month of post-birth development has the value of 0 for this property, and the period during which the child is one month old has the value 1." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000035
+is_metadata_tag: true
+
+[Typedef]
+id: start_ypb
+name: start, years post birth
+namespace: human_stages_ontology
+def: "Count of number of years intervening between the start of the stage and the time of birth according to a reference model. Note that the first year of post-birth development has the value of 0 for this property, and the period during which the child is one year old has the value 1." []
+comment: This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.
+property_value: has_unit UO:0000036
+is_metadata_tag: true
+
