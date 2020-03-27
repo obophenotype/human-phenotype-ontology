@@ -11,7 +11,7 @@
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-02-27/imports/cl_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-03-27/imports/cl_import.owl"/>
     </owl:Ontology>
     
 
@@ -47,6 +47,14 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000424">
         <rdfs:label>expand expression to</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000425 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000425">
+        <rdfs:label>expand assertion to</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -364,6 +372,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002202 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -419,7 +433,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:19243617</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19243617</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -435,7 +449,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/cl#has_low_plasma_membrane_amount"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:19243617</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19243617</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -523,7 +537,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>CARO:mah</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -544,7 +558,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell that is found in a natural setting, which includes multicellular organism cells &apos;in vivo&apos; (i.e. part of an organism), and unicellular organisms &apos;in environment&apos; (i.e. part of a natural environment).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>CARO:mah</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -580,9 +594,17 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000008">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
+        <obo:IAO_0000115>Cell that is part of the migratory cranial neural crest population. Migratory cranial neural crest cells develop from premigratory cranial neural crest cells and have undergone epithelial to mesenchymal transition and delamination.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <rdfs:label>migratory cranial neural crest cell</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000008"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Cell that is part of the migratory cranial neural crest population. Migratory cranial neural crest cells develop from premigratory cranial neural crest cells and have undergone epithelial to mesenchymal transition and delamination.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ZFA:0007091</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -694,7 +716,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A male germ cell that develops from spermatogonia. The euploid primary spermatocytes undergo meiosis and give rise to the haploid secondary spermatocytes which in turn give rise to spermatids.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A05.360.490.890.880</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A05.360.490.890.880</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -892,14 +914,14 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000031 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000031">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000047"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000055"/>
         <obo:IAO_0000115>A cell that will develop into a neuron often after a migration phase.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId>CL:0000337</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>BTO:0000930</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FBbt:00005146</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:70563</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>neuroblast</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
-        <rdfs:label>neuroblast</rdfs:label>
+        <rdfs:label>neuroblast (sensu Vertebrata)</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
@@ -2352,7 +2374,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000337"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
@@ -3228,7 +3250,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:12050120</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12050120</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3301,9 +3323,9 @@
         <owl:annotatedTarget>The main structural component of the liver. They are specialized epithelial cells that are organized into interconnected plates called lobules. Majority of cell population of liver, polygonal in shape, arranged in plates or trabeculae between sinusoids; may have single nucleus or binucleated.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0412046911</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MESH:A11.436.348</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:19717280</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Hepatocyte</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.436.348</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19717280</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Hepatocyte</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3354,7 +3376,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000187"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MESH:A11.620</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.620</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3956,8 +3978,8 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:16213494</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:1919437</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16213494</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:1919437</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3983,7 +4005,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000826"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</obo:IAO_0000115>
+        <obo:IAO_0000115>A lymphocyte of B lineage that is capable of B cell mediated immunity.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BTO:0000776</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-0068</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:62869</oboInOwl:hasDbXref>
@@ -4003,7 +4025,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lymphocyte of B lineage that is capable of B cell mediated immunity.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
@@ -4285,23 +4307,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CL_0000337 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000337">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
-        <obo:IAO_0000115>An embryonic cell that develops into a nerve cell or neuron.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
-        <rdfs:label>neuroblast (sensu Vertebrata)</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000337"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An embryonic cell that develops into a nerve cell or neuron.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:70563</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/CL_0000339 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000339">
@@ -4347,18 +4352,13 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000351 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000351">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000349"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000358"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000349"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000358"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A cell lining the outside of the blastocyst. After binding to the endometrium, trophoblast cells develop into two distinct layers, an inner layer of mononuclear cytotrophoblast cells and an outer layer of continuous multinuclear cytoplasm, the syncytiotrophoblast cells, which form the early fetal-maternal interface.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:83028</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>trophoblastic cell</oboInOwl:hasExactSynonym>
@@ -4720,7 +4720,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19923473</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19923473</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9354811</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -4902,6 +4902,44 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000525 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000525">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000351"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001908"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo, directly associated with the maternal blood supply. It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>FMA:83043</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>plasmidotrophoblast</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>syncytial trophoblast</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>syntrophoblast</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
+        <rdfs:label>syncytiotrophoblast cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000525"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo, directly associated with the maternal blood supply. It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0323052908</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000527 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000527">
@@ -4981,8 +5019,8 @@
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0000792"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_part"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030141"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001407"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -5038,11 +5076,11 @@
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005730"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005730"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
@@ -5649,12 +5687,12 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721601464</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D055014</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:D055014</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC2213186</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC548021</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16551251</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16647566</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/CFU-GM</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/CFU-GM</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.copewithcytokines.de</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -5785,8 +5823,8 @@
         <owl:annotatedTarget>An immature erythrocyte that changes the protein composition of its plasma membrane by exosome formation and extrusion. The types of protein removed differ between species though removal of the transferrin receptor is apparent in mammals and birds.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15946868</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:2037622</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15946868</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:2037622</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -5851,8 +5889,8 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000232"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -5881,7 +5919,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An erythrocyte having a nucleus.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOc:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOc:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6009,10 +6047,6 @@
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043011"/>
                     </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_part"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030141"/>
-                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -6074,7 +6108,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000586"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The reproductive cell in multicellular organisms.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A05.360.490</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A05.360.490</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6336,7 +6370,7 @@
         <owl:annotatedTarget>A lymphocyte that can spontaneously kill a variety of target cells without prior antigenic activation via germline encoded activation receptors and also regulate immune responses via cytokine release and direct contact with other cells.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781735149</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15771571</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15771571</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6593,7 +6627,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A primordial germ cell is a diploid germ cell precursors that transiently exist in the embryo before they enter into close association with the somatic cells of the gonad and become irreversibly committed as germ cells.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:1381289</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:1381289</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6772,6 +6806,10 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000988"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
+                    </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001667"/>
@@ -8079,7 +8117,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000236"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001201"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001898"/>
@@ -8091,7 +8129,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/CL_0000826"/>
         <obo:IAO_0000115>A precursor B cell is a B cell with the phenotype CD10-positive.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BTO:0001133</oboInOwl:hasDbXref>
@@ -8103,7 +8141,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000817"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
         <oboInOwl:is_inferred rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</oboInOwl:is_inferred>
     </owl:Axiom>
     <owl:Axiom>
@@ -8869,10 +8907,6 @@
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001407"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_part"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030141"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -9747,6 +9781,10 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002419"/>
                     <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0045026"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#has_completed"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030217"/>
                     </owl:Restriction>
@@ -9949,7 +9987,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16551251</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17100874</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:17100874</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9957,21 +9995,6 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000945 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000945">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000542"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001002"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001020"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -9979,7 +10002,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000826"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A lymphocyte of B lineage is a lymphocyte that expresses CD19 on the cell surface. An additional defining characteristic is the commitment to express an immunoglobulin complex.</obo:IAO_0000115>
+        <obo:IAO_0000115>A lymphocyte of B lineage with the commitment to express an immunoglobulin complex.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <rdfs:comment>Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).</rdfs:comment>
         <rdfs:label>lymphocyte of B lineage</rdfs:label>
@@ -9993,7 +10016,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000945"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A lymphocyte of B lineage is a lymphocyte that expresses CD19 on the cell surface. An additional defining characteristic is the commitment to express an immunoglobulin complex.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lymphocyte of B lineage with the commitment to express an immunoglobulin complex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:rhs</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
@@ -10388,7 +10411,7 @@
         <oboInOwl:hasDbXref>PMID:10430905</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11750107</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16551251</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20024907</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20024907</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:9389721</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -11390,6 +11413,86 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0001200 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001200">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000945"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001002"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001020"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000945"/>
+        <obo:IAO_0000115>A lymphocyte of B lineage that is CD19-positive.</obo:IAO_0000115>
+        <dc:creator>https://orcid.org/0000-0001-9990-8331</dc:creator>
+        <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
+        <rdfs:comment>Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).</rdfs:comment>
+        <rdfs:label>lymphocyte of B lineage, CD19-positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001200"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A lymphocyte of B lineage that is CD19-positive.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001201 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001201">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001200"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001002"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0019724"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <obo:IAO_0000115>A B cell that is CD19-positive.</obo:IAO_0000115>
+        <dc:creator>https://orcid.org/0000-0001-9990-8331</dc:creator>
+        <oboInOwl:hasExactSynonym>B lymphocyte, CD19-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>B-cell, CD19-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>B-lymphocyte, CD19-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>CD19+ B cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>CD19-positive B cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
+        <rdfs:label>B cell, CD19-positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A B cell that is CD19-positive.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0002000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002000">
@@ -11586,7 +11689,7 @@
         <owl:annotatedTarget>A granulocyte monocyte progenitor that is Kit-positive, CD34-positive, Fc-gamma receptor II/II-positive, and is Sca-1-negative, Il7ra-negative, Cxc3r1-negative, and CD90-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12615892</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16322423</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:16322423</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19022770</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19273628</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.immgen.org/index_content.html</oboInOwl:hasDbXref>
@@ -12868,7 +12971,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A hematopoietic stem cell capable of rapid replenishment of myeloerythroid progenitors and limited self renewal capability. This cell is Kit-positive, Sca1-positive, CD34-positive, CD150-positive, and is Flt3-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:15572596</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15572596</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19022770</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -12921,7 +13024,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A hematopoietic stem cell with long term self renewal capability. This cell is Kit-positive, Sca1-positive, CD150-positive, CD90-low, CD34-negative and Flt3-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:15572596</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15572596</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17582345</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -13501,7 +13604,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A T cell with a receptor of limited diversity that is capable of immediate effector functions upon stimulation.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20581831</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:20581831</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14065,7 +14168,7 @@
         <owl:annotatedTarget>A large epithelial cell with an extremely acidophilic and granular cytoplasm, containing vast numbers of mitochondria; such cells may undergo neoplastic transformation. From the Greek word onkos meaning swelling, this cell type is found in parathyroid, salivary and thyroid glands.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721662544</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20013317</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20013317</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14098,7 +14201,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An oncocyte located in the thyroid.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:20013317</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20013317</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14381,8 +14484,8 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000003"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -14756,7 +14859,7 @@
         <oboInOwl:creation_date>2010-09-13T02:34:22Z</oboInOwl:creation_date>
         <oboInOwl:hasAlternativeId>CL:1000459</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>CALOHA:TS-1040</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FMA:72208</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:72208</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>epithelial cell of thymus gland</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>epithelial reticular cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>epithelial reticular cell of thymus</oboInOwl:hasExactSynonym>
@@ -14774,7 +14877,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002293"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An epithelial cell of the thymus. Epithelial reticular cells are pleomorphic, stellate, non-phagocytic cells which seem to be supportive in function and are held together by desmosomes. They replace the fibroblastoid reticular cells found in other lymphoid organs. Other epithelial cells in the medulla have the ultrastructure of secretory cells. Although different epithelial cells throughout the thymus appear alike by light microscopy their ultrastructure and function varies.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:72208</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:72208</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -14981,9 +15084,9 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002323"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell of a fetus which is suspended in the amniotic fluid. Amniocytes are considered to arise from several tissues including fetal skin, the fetal urinary tract, umbilical cord, and the inner amniotic surface.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000066</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>BFO:0000066</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:3211847</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:3211847</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -15084,7 +15187,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A ciliated cell of the bronchus.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18757316</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:18757316</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16093,8 +16196,8 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000558"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -16117,9 +16220,9 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A reticulocyte that retains the nucleus and other organelles. Found in birds, fish, amphibians and reptiles.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:18182572</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9011180</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9046052</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18182572</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9011180</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9046052</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16162,7 +16265,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A reticulocyte lacking a nucleus and showing a basophilic reticulum under vital staining due to the presence of ribosomes.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:0-12203-052-4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0-12203-052-4</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721601464</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -16931,13 +17034,13 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A thymocyte that lacks expression of CD4 and CD8.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0002407</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0002407</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002489"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD4-CD8- T cell</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0002407</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0002407</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19027,7 +19130,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A skeletal muscle cell that is part of the tongue.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18816858</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:18816858</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19035,7 +19138,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0002676 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002676">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000337"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -19270,7 +19373,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0007011"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Neuron that is part of the enteric nervous system.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>CL:MAH</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:MAH</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20229,8 +20332,11 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002262"/>
         <obo:IAO_0000115>An endothelial cell that is part of the hepatic sinusoid.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>BTO:000125</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:62911</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>LSEC</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>endotheliocyte of hepatic sinusoid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>liver senusoidal endothelial cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <rdfs:label>endothelial cell of hepatic sinusoid</rdfs:label>
     </owl:Class>
@@ -20249,8 +20355,20 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_1000398"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>LSEC</owl:annotatedTarget>
+        <oboInOwl:hasExactSynonym>PMID:30348985</oboInOwl:hasExactSynonym>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_1000398"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>endotheliocyte of hepatic sinusoid</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:62911</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_1000398"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>liver senusoidal endothelial cell</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:30348985</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -22142,7 +22260,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_1001516"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0010802</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0010802</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -23274,7 +23392,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_1001598"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A glandular cell found in the epithelium of the small intestine. Example: Enterocytes, Goblet cells, enteroendocrine cells; Paneth cells; M cells; Somatostatin-secreting Cells (D-cells) .</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI_Thesaurus:Small_Intestinal_Glandular_Cell</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>NCI_Thesaurus:Small_Intestinal_Glandular_Cell</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NPX:PDR</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -24375,24 +24493,35 @@
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000351"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001987"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115>Any trophoblast cell that is part of a placenta.</obo:IAO_0000115>
+        <obo:IAO_0000115>A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua.</obo:IAO_0000115>
         <oboInOwl:created_by>TermGenie</oboInOwl:created_by>
         <oboInOwl:creation_date>2014-10-07T17:48:27Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>BTO:0006119</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>BTO:0006208</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>vCTB</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>villous cytotrophoblast</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id>CL:2000060</oboInOwl:id>
+        <rdfs:comment>Same as synctial trophoblast?</rdfs:comment>
         <rdfs:comment>http://www.sciencellonline.com/site/productInformation.php?keyword=7120</rdfs:comment>
         <rdfs:label>placental villous trophoblast</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_2000060"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Any trophoblast cell that is part of a placenta.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:TermGenie</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:31049600</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_2000060"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>vCTB</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:31049600</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -24437,7 +24566,7 @@
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002144"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001987"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -24972,7 +25101,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_3000000"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A ciliated epithelial cell of the esophagus.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:CellBLAST</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:CellBLAST</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:29802404</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -25165,6 +25294,18 @@
     <!-- http://purl.obolibrary.org/obo/GO_0002244 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0002244"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0002286 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0002286"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0002292 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0002292"/>
     
 
 
@@ -25924,9 +26065,27 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_7742 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000050 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000050"/>
     
 
 
@@ -26053,6 +26212,21 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002478 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002478"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002505 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002505"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0045026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0045026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000050"/>
+        <rdfs:label>normal life span</rdfs:label>
+    </owl:Class>
     
 
 
@@ -28474,6 +28648,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004872 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004872"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0004880 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004880"/>
@@ -28693,6 +28873,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0009970 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009970"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010005"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010523 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010523"/>
     
 
 

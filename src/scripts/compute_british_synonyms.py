@@ -60,7 +60,7 @@ df_be_syns.drop_duplicates(inplace=True)
 
 df_be_syns=df_be_syns[~df_be_syns['be'].isin(df_synonyms['annotation'].tolist())]
 df_be_syns=df_be_syns[~df_be_syns['be'].isin(df_labels['annotation'].tolist())]
-df_be_syns['Type']="http://purl.obolibrary.org/obo/HP_0045076"
+df_be_syns['Type']="http://purl.obolibrary.org/obo/hp#uk_spelling"
 df_be_syns.loc[-1] = ['ID', 'A http://www.geneontology.org/formats/oboInOwl#hasExactSynonym','>AI http://www.geneontology.org/formats/oboInOwl#hasSynonymType']  # adding a row
 df_be_syns.index = df_be_syns.index + 1  # shifting index
 df_be_syns.sort_index(inplace=True) 

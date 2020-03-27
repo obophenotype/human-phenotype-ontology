@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-02-27/imports/cl_import.owl
+data-version: hp/releases/2020-03-27/imports/cl_import.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 ontology: hp/imports/cl_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (ILC1)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\n)
@@ -44,6 +44,7 @@ relationship: RO:0002202 CL:0000008 ! migratory cranial neural crest cell
 id: CL:0000008
 name: migratory cranial neural crest cell
 namespace: cell
+def: "Cell that is part of the migratory cranial neural crest population. Migratory cranial neural crest cells develop from premigratory cranial neural crest cells and have undergone epithelial to mesenchymal transition and delamination." [https://orcid.org/0000-0001-5208-3432, ZFA:0007091]
 is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -155,13 +156,13 @@ relationship: RO:0002202 CL:0000133 ! neurectodermal cell
 
 [Term]
 id: CL:0000031
-name: neuroblast
+name: neuroblast (sensu Vertebrata)
 namespace: cell
+alt_id: CL:0000337
 def: "A cell that will develop into a neuron often after a migration phase." [GOC:NV, http://en.wikipedia.org/wiki/Neuroblast]
+synonym: "neuroblast" EXACT []
 xref: BTO:0000930
-xref: FBbt:00005146
 xref: FMA:70563
-is_a: CL:0000047 ! neuronal stem cell
 is_a: CL:0000055 ! non-terminally differentiated cell
 
 [Term]
@@ -672,7 +673,7 @@ name: CNS neuron (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000540 ! neuron
 relationship: BFO:0000050 UBERON:0001017
-relationship: RO:0002202 CL:0000337 ! neuroblast (sensu Vertebrata)
+relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
 
 [Term]
 id: CL:0000121
@@ -1246,7 +1247,7 @@ relationship: RO:0002202 CL:0000576 ! monocyte
 id: CL:0000236
 name: B cell
 namespace: cell
-def: "A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+def: "A lymphocyte of B lineage that is capable of B cell mediated immunity." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
 synonym: "B lymphocyte" EXACT []
 synonym: "B-cell" EXACT []
 synonym: "B-lymphocyte" EXACT []
@@ -1364,13 +1365,6 @@ is_a: CL:0011012 ! neural crest cell
 relationship: RO:0002202 CL:0007004 ! premigratory neural crest cell
 
 [Term]
-id: CL:0000337
-name: neuroblast (sensu Vertebrata)
-namespace: cell
-def: "An embryonic cell that develops into a nerve cell or neuron." [FMA:70563]
-is_a: CL:0000031 ! neuroblast
-
-[Term]
 id: CL:0000339
 name: glioblast (sensu Vertebrata)
 namespace: cell
@@ -1396,8 +1390,7 @@ def: "A cell lining the outside of the blastocyst. After binding to the endometr
 synonym: "trophoblastic cell" EXACT []
 xref: FMA:83028
 is_a: CL:0000349 {is_inferred="true"} ! extraembryonic cell
-intersection_of: CL:0000349 ! extraembryonic cell
-intersection_of: BFO:0000050 UBERON:0000358
+relationship: BFO:0000050 UBERON:0000358
 
 [Term]
 id: CL:0000355
@@ -1583,6 +1576,19 @@ def: "A phagocyte in vertebrates that is able to phagocytosis." [GOC:tfm]
 is_a: CL:0000234 ! phagocyte
 
 [Term]
+id: CL:0000525
+name: syncytiotrophoblast cell
+namespace: cell
+def: "A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo, directly associated with the maternal blood supply. It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy." [GOC:tfm, ISBN:0323052908]
+synonym: "plasmidotrophoblast" EXACT []
+synonym: "syncytial trophoblast" EXACT []
+synonym: "syntrophoblast" EXACT []
+xref: FMA:83043
+intersection_of: CL:0000351 ! trophoblast cell
+intersection_of: RO:0000053 PATO:0001908
+relationship: BFO:0000050 UBERON:0010005
+
+[Term]
 id: CL:0000527
 name: efferent neuron
 namespace: cell
@@ -1606,7 +1612,7 @@ xref: WBbt:0003679
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
-relationship: RO:0002202 CL:0000031 ! neuroblast
+relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
 relationship: RO:0002215 GO:0019226
 
 [Term]
@@ -1624,7 +1630,7 @@ intersection_of: CL:0000738 ! leukocyte
 intersection_of: BFO:0000051 CP:0000000 ! neutrophillic cytoplasm
 intersection_of: BFO:0000051 CP:0000037 ! increased nucleus size
 intersection_of: BFO:0000051 GO:0000792
-intersection_of: lacks_part GO:0030141
+intersection_of: RO:0000053 PATO:0001407
 disjoint_from: CL:0000766 ! myeloid leukocyte
 relationship: RO:0002202 CL:0000051 ! common lymphoid progenitor
 
@@ -1640,7 +1646,6 @@ is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
 intersection_of: CL:0000764 ! erythroid lineage cell
 intersection_of: BFO:0000051 CP:0000028 ! basophilic cytoplasm
 intersection_of: BFO:0000051 CP:0000037 ! increased nucleus size
-intersection_of: BFO:0000051 GO:0005634
 intersection_of: BFO:0000051 GO:0005730
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001004
@@ -1653,6 +1658,7 @@ intersection_of: lacks_plasma_membrane_part PR:000001289
 intersection_of: lacks_plasma_membrane_part PR:000001839
 intersection_of: lacks_plasma_membrane_part PR:000001889
 intersection_of: lacks_plasma_membrane_part PR:000002978
+intersection_of: RO:0000053 PATO:0002505
 intersection_of: RO:0002104 PR:000001945
 relationship: RO:0002202 CL:0000038 ! erythroid progenitor cell
 
@@ -1845,7 +1851,7 @@ synonym: "RBC" BROAD []
 synonym: "red blood cell" BROAD []
 is_a: CL:0000232 {is_inferred="true"} ! erythrocyte
 intersection_of: CL:0000232 ! erythrocyte
-intersection_of: BFO:0000051 GO:0005634
+intersection_of: RO:0000053 PATO:0002505
 relationship: RO:0002202 CL:0002421 ! nucleated reticulocyte
 
 [Term]
@@ -1890,7 +1896,6 @@ xref: CALOHA:TS-0638
 xref: FMA:62864
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
 intersection_of: CL:0000766 ! myeloid leukocyte
-intersection_of: lacks_part GO:0030141
 intersection_of: RO:0000053 PATO:0001407
 intersection_of: RO:0002215 GO:0030225
 intersection_of: RO:0002215 GO:0030316
@@ -2145,6 +2150,7 @@ xref: CALOHA:TS-0549
 xref: FMA:62852
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
+intersection_of: RO:0000053 PATO:0002505
 intersection_of: RO:0002215 GO:0001667
 relationship: BFO:0000050 UBERON:0002405
 relationship: RO:0002160 NCBITaxon:7742
@@ -2570,8 +2576,8 @@ def: "A precursor B cell is a B cell with the phenotype CD10-positive." [GO_REF:
 synonym: "pre-B cell" RELATED []
 xref: BTO:0001133
 xref: CALOHA:TS-0819
-is_a: CL:0000236 {is_inferred="true"} ! B cell
-intersection_of: CL:0000236 ! B cell
+is_a: CL:0001201 {is_inferred="true"} ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
 intersection_of: lacks_plasma_membrane_part GO:0071753
 intersection_of: RO:0002104 PR:000001898
 disjoint_from: CL:0000826 ! pro-B cell
@@ -2796,7 +2802,6 @@ xref: CALOHA:TS-0768
 xref: FMA:86713
 is_a: CL:0000738 {is_inferred="true"} ! leukocyte
 intersection_of: CL:0000738 ! leukocyte
-intersection_of: lacks_part GO:0030141
 intersection_of: RO:0000053 PATO:0001407
 
 [Term]
@@ -3053,6 +3058,7 @@ is_a: CL:0002419 {is_inferred="true"} ! mature T cell
 intersection_of: CL:0002419 ! mature T cell
 intersection_of: has_completed GO:0030217
 intersection_of: has_completed GO:0045058
+intersection_of: RO:0000053 PATO:0045026 ! normal life span
 
 [Term]
 id: CL:0000912
@@ -3107,12 +3113,9 @@ disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural kille
 id: CL:0000945
 name: lymphocyte of B lineage
 namespace: cell
-def: "A lymphocyte of B lineage is a lymphocyte that expresses CD19 on the cell surface. An additional defining characteristic is the commitment to express an immunoglobulin complex." [GO_REF:0000031, GOC:add, GOC:rhs, GOC:tfm, ISBN:0781735149]
+def: "A lymphocyte of B lineage with the commitment to express an immunoglobulin complex." [GO_REF:0000031, GOC:add, GOC:rhs, GOC:tfm, ISBN:0781735149]
 comment: Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).
 is_a: CL:0000542 {is_inferred="true"} ! lymphocyte
-intersection_of: CL:0000542 ! lymphocyte
-intersection_of: lacks_plasma_membrane_part PR:000001020
-intersection_of: RO:0002104 PR:000001002
 relationship: RO:0002202 CL:0000826 ! pro-B cell
 
 [Term]
@@ -3536,6 +3539,36 @@ def: "A group 1 innate lymphoid cell that is non-cytotoxic." [GOC:add, GOC:dsd, 
 is_a: CL:0001067 ! group 1 innate lymphoid cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T20:54:12Z xsd:dateTime
+
+[Term]
+id: CL:0001200
+name: lymphocyte of B lineage, CD19-positive
+namespace: cell
+def: "A lymphocyte of B lineage that is CD19-positive." [GOC:add]
+comment: Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).
+is_a: CL:0000945 ! lymphocyte of B lineage
+intersection_of: CL:0000945 ! lymphocyte of B lineage
+intersection_of: lacks_plasma_membrane_part PR:000001020
+intersection_of: RO:0002104 PR:000001002
+intersection_of: RO:0002162 NCBITaxon:40674
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
+
+[Term]
+id: CL:0001201
+name: B cell, CD19-positive
+namespace: cell
+def: "A B cell that is CD19-positive." [GOC:add]
+synonym: "B lymphocyte, CD19-positive" EXACT []
+synonym: "B-cell, CD19-positive" EXACT []
+synonym: "B-lymphocyte, CD19-positive" EXACT []
+synonym: "CD19+ B cell" EXACT []
+synonym: "CD19-positive B cell" EXACT []
+is_a: CL:0000236 ! B cell
+intersection_of: CL:0001200 ! lymphocyte of B lineage, CD19-positive
+intersection_of: RO:0002104 PR:000001002
+intersection_of: RO:0002162 NCBITaxon:40674
+intersection_of: RO:0002215 GO:0019724
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
 
 [Term]
 id: CL:0002000
@@ -4514,7 +4547,7 @@ namespace: cell
 def: "A cell containing at least one nucleus." [GOC:tfm]
 xref: FMA:67513
 intersection_of: CL:0000003 ! native cell
-intersection_of: BFO:0000051 GO:0005634
+intersection_of: RO:0000053 PATO:0002505
 created_by: tmeehan
 creation_date: 2010-09-07T03:32:33Z
 
@@ -5114,7 +5147,7 @@ namespace: cell
 def: "A reticulocyte that retains the nucleus and other organelles. Found in birds, fish, amphibians and reptiles." [GOC:tfm, PMID:18182572, PMID:9011180, PMID:9046052]
 is_a: CL:0000558 {is_inferred="true"} ! reticulocyte
 intersection_of: CL:0000558 ! reticulocyte
-intersection_of: BFO:0000051 GO:0005634
+intersection_of: RO:0000053 PATO:0002505
 created_by: tmeehan
 creation_date: 2010-10-15T09:24:05Z
 
@@ -6041,7 +6074,7 @@ id: CL:0002676
 name: neural crest derived neuroblast
 namespace: cell
 def: "A neuroblast derived from a neural crest cell." [GOC:tfm, PMID:17407019]
-is_a: CL:0000337 ! neuroblast (sensu Vertebrata)
+is_a: CL:0000031 ! neuroblast (sensu Vertebrata)
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-08-22T09:24:15Z
@@ -6333,7 +6366,7 @@ created_by: tberardini
 [Term]
 id: CL:1000042
 name: forebrain neuroblast
-intersection_of: CL:0000031 ! neuroblast
+intersection_of: CL:0000031 ! neuroblast (sensu Vertebrata)
 intersection_of: BFO:0000050 UBERON:0001890
 
 [Term]
@@ -6421,6 +6454,9 @@ name: endothelial cell of hepatic sinusoid
 namespace: cell
 def: "An endothelial cell that is part of the hepatic sinusoid." [GOC:tfm]
 synonym: "endotheliocyte of hepatic sinusoid" EXACT [FMA:62911]
+synonym: "liver senusoidal endothelial cell" EXACT [PMID:30348985]
+synonym: "LSEC" EXACT [] {EXACT="PMID:30348985"}
+xref: BTO:000125
 xref: FMA:62911
 is_a: CL:0002262 {is_inferred="true"} ! endothelial cell of sinusoid
 intersection_of: CL:0002262 ! endothelial cell of sinusoid
@@ -7587,10 +7623,15 @@ creation_date: 2014-10-06T19:06:04Z
 id: CL:2000060
 name: placental villous trophoblast
 namespace: cell
-def: "Any trophoblast cell that is part of a placenta." [GOC:TermGenie]
+def: "A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua." [PMID:31049600]
 comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7120
+comment: Same as synctial trophoblast?
+synonym: "vCTB" EXACT [PMID:31049600]
+synonym: "villous cytotrophoblast" EXACT []
+xref: BTO:0006119
+xref: BTO:0006208
 intersection_of: CL:0000351 ! trophoblast cell
-intersection_of: BFO:0000050 UBERON:0001987
+intersection_of: BFO:0000050 UBERON:0010005
 created_by: TermGenie
 creation_date: 2014-10-07T17:48:27Z
 
@@ -7612,7 +7653,7 @@ namespace: cell
 def: "Any capillary endothelial cell that is part of a placenta." [GOC:TermGenie]
 comment: http://www.ncbi.nlm.nih.gov/books/NBK53245/
 intersection_of: CL:0002144 ! capillary endothelial cell
-intersection_of: BFO:0000050 UBERON:0001987
+intersection_of: BFO:0000050 UBERON:0010005
 created_by: TermGenie
 creation_date: 2014-10-07T17:55:56Z
 
@@ -7843,6 +7884,11 @@ intersection_of: GO:0005634
 intersection_of: RO:0000053 PATO:0000586
 created_by: tmeehan
 creation_date: 2009-12-23T10:53:24Z
+
+[Term]
+id: PATO:0045026
+name: normal life span
+is_a: PATO:0000050
 
 [Typedef]
 id: has_completed
