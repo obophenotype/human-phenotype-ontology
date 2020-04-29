@@ -90,7 +90,7 @@ pipeline {
 		// data environment.
 		dir('.') {
 			checkout([$class: 'GitSCM', branches: [[name: 'master']],
-					extensions: [[$class: 'CloneOption', timeout: 120]], gitTool: 'Default', 
+					extensions: [[$class: 'CloneOption', timeout: 120, shallow: true]], gitTool: 'Default', 
 					userRemoteConfigs: [[url: 'https://github.com/obophenotype/human-phenotype-ontology.git']]
 			])
 
