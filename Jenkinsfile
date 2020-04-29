@@ -90,7 +90,7 @@ pipeline {
 		// data environment.
 		dir('.') {
 		    git branch: TARGET_ONTOLOGY_BRANCH,
-			url: TARGET_ONTOLOGY_URL, timeout: 60
+			url: TARGET_ONTOLOGY_URL
 
 		    dir('./src/ontology') {
 					retry(1){
