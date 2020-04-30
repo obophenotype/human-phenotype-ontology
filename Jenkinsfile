@@ -89,11 +89,8 @@ pipeline {
 		// Create a relative working directory and setup our
 		// data environment.
 		dir('.') {
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']],
-					extensions: scm.extensions + [[$class: 'CloneOption', timeout: 120, shallow: true]] + [[$class: 'CheckoutOption', timeout: 120]], 
-					gitTool: 'Default', 
-					userRemoteConfigs: [[url: 'https://github.com/obophenotype/human-phenotype-ontology.git']]
-			])
+		    git branch: TARGET_ONTOLOGY_BRANCH,
+			url: TARGET_ONTOLOGY_URL
 
 		    dir('./src/ontology') {
 					retry(1){
