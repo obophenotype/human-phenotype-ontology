@@ -1,0 +1,41 @@
+pattern_name: fracturedAnatomicalEntityByFractureType
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/fracturedAnatomicalEntityByFractureType.yaml
+description: "This pattern is for generating fractured bone terms, such as Linear fracture in tibia or Spiral fracture in humerus."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  fractured: PATO:0040034
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  fractured: "fractured"
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "%s %s"
+  vars:
+   - fractured
+   - anatomical_entity
+
+def:
+  text: "A %s that is %s."
+  vars:
+    - anatomical_entity
+    - fractured
+
+equivalentTo:
+  text: "'has_part' some (%s and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - fractured
+    - anatomical_entity
