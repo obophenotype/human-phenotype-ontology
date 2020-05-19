@@ -467,21 +467,27 @@ pattern_term_lists_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.txt
 
 
 
+individual_patterns_full := $(patsubst %.tsv, $(PATTERNDIR)/data/full/%.ofn, $(notdir $(wildcard $(PATTERNDIR)/data/full/*.tsv)))
+pattern_term_lists_full := $(patsubst %.tsv, $(PATTERNDIR)/data/full/%.txt, $(notdir $(wildcard $(PATTERNDIR)/data/full/*.tsv)))
+
 
 
 # Generating the individual pattern modules and merging them into definitions.owl
-$(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns $(individual_patterns_default)  
-	@if [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl -o definitions.ofn && mv definitions.ofn $@; fi
+$(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns $(individual_patterns_default)   $(individual_patterns_full)
+	@if [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   $(addprefix -i , $(individual_patterns_full)) annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl -o definitions.ofn && mv definitions.ofn $@; fi
 
 $(PATTERNDIR)/data/default/%.ofn: $(PATTERNDIR)/data/default/%.tsv $(PATTERNDIR)/dosdp-patterns/%.yaml $(SRC) all_imports .FORCE
 	@if [ $(PAT) = true ]; then $(DOSDPT) generate --catalog=catalog-v001.xml --infile=$< --template=$(word 2, $^) --ontology=$(word 3, $^) --obo-prefixes=true --restrict-axioms-to=logical --outfile=$@; fi
 
 
 
+$(PATTERNDIR)/data/full/%.ofn: $(PATTERNDIR)/data/full/%.tsv $(PATTERNDIR)/dosdp-patterns/%.yaml $(SRC) all_imports .FORCE
+	@if [ $(PAT) = true ]; then $(DOSDPT) generate --catalog=catalog-v001.xml --infile=$< --template=$(word 2, $^) --ontology=$(word 3, $^) --obo-prefixes=true --outfile=$@; fi
+
 
 
 # Generating the seed file from all the TSVs. If Pattern generation is deactivated, we still extract a seed from definitions.owl
-$(PATTERNDIR)/all_pattern_terms.txt: $(pattern_term_lists_default)   $(PATTERNDIR)/pattern_owl_seed.txt
+$(PATTERNDIR)/all_pattern_terms.txt: $(pattern_term_lists_default)   $(pattern_term_lists_full) $(PATTERNDIR)/pattern_owl_seed.txt
 	@if [ $(PAT) = true ]; then cat $^ | sort | uniq > $@; else $(ROBOT) query --use-graphs true -f csv -i ../patterns/definitions.owl --query ../sparql/terms.sparql $@; fi
 
 $(PATTERNDIR)/pattern_owl_seed.txt: $(PATTERNDIR)/pattern.owl
@@ -492,9 +498,12 @@ $(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERND
 
 .PHONY: prepare_patterns
 prepare_patterns:
-	touch $(pattern_term_lists_default)   &&\
-  touch $(individual_patterns_default)  
+	touch $(pattern_term_lists_default)   $(pattern_term_lists_full) &&\
+  touch $(individual_patterns_default)   $(individual_patterns_full)
 
+
+$(PATTERNDIR)/data/full/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/full/%.tsv .FORCE
+	@if [ $(PAT) = true ]; then $(DOSDPT) terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@; fi
 
 
 

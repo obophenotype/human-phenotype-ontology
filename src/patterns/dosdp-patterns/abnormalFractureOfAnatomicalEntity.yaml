@@ -1,0 +1,44 @@
+pattern_name: abnormalFractureOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalFractureOfAnatomicalEntity.yaml
+description: "An abnormal fracture in an anatomical entity. A normal fracture is when you fall off your bike and break your arm. A pathological or abnormal fracture means that for instance you have cancer and a metastasis has weakened a bone that then fractures without an adequate trauma."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-8169-9049
+
+classes:
+  broken: PATO:0001444
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "fractured %s "
+  vars:
+   - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "bone %s"
+    vars:
+     - anatomical_entity     
+
+def:
+  text: "A partial or complete breakage of the %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('broken' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity
