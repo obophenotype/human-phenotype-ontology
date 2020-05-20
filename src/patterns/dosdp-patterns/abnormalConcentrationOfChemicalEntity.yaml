@@ -7,13 +7,13 @@ classes:
   abnormal: PATO:0000460
   chemical: CHEBI:24431
 
-relations: 
+relations:
   inheres_in: RO:0000052
   has_modifier: RO:0002573
   has_part: BFO:0000051
 
 annotationProperties:
-  exact_synonym: oio:hasExactSynonym 
+  exact_synonym: oio:hasExactSynonym
 
 vars:
   chemical: "chemical"
@@ -21,16 +21,18 @@ vars:
 name:
   text: "abnormal %s concentration"
   vars:
-   - chemical
+  - chemical
 
 
 def:
   text: "An abnormal concentration of %s."
   vars:
-    - chemical
+  - chemical
 
 equivalentTo:
   text: "'has_part' some ('concentration of' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
   vars:
-    - chemical
+  - chemical
 
+contributors:
+- https://orcid.org/0000-0002-3528-5267
