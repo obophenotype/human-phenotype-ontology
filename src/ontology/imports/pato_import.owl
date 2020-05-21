@@ -18,7 +18,7 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-05-19/imports/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-05-21/imports/pato_import.owl"/>
     </owl:Ontology>
     
 
@@ -3148,7 +3148,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0042995"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A prolongation or process extending from a cell, e.g. a flagellum or axon.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:jl</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://www.cogsci.princeton.edu/~wn/</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -3448,7 +3448,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0120025"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A prolongation or process extending from a cell and that is bounded by plasma membrane, e.g. a cilium, lamellipodium, or axon.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:krc</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:krc</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8767,6 +8767,32 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A curvature quality inhering in a bearer by virtue of the bearer&apos;s being curved towards the abdomen of an organism.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATOC:GVG</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001470 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001470">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s magnitude in respect to a related entity.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>proportion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>proportionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>quotient</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ratio</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>rate</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PATO:0001470</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/pato#attribute_slim"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/pato#relational_slim"/>
+        <rdfs:comment>Examples: height to weight; brain size to body size. These could all be children of proportionality. Proportions can be measured as ratios. Some measures may be dimensionless. Not all ratios measure proportionality, eg m/s measures velocity which is not a proportion in the sense defined above, it is a quality in its own right.</rdfs:comment>
+        <rdfs:label>proportionality to</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0001470"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A quality inhering in a bearer by virtue of the bearer&apos;s magnitude in respect to a related entity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATOC:nw</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14968,7 +14994,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0002212"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A shape quality inhering in a bearer by virtue of the bearer&apos;s being small or narrow in circumference or width in proportion to length or height.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">merriam-webster:http://www.merriam-webster.com/dictionary/slender</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>merriam-webster:http://www.merriam-webster.com/dictionary/slender</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16093,7 +16119,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0002403"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Affecting all regions without specificity of distribution.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PATOC:MPTH</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PATOC:MPTH</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16344,6 +16370,54 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A fractured quality in which the fragment of bone tears away from the main mass of bone as a result of physical trauma.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Avulsion_fracture</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0040042 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0040042">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001470"/>
+        <obo:IAO_0000115>A proportionality quality inhering in a bearer by virtue of the bearer&apos;s decreased magnitude in respect to a related entity.</obo:IAO_0000115>
+        <oboInOwl:created_by>http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>decreased proportion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>decreased proportionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>decreased quotient</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>decreased ratio</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PATO:0040042</oboInOwl:id>
+        <rdfs:comment>Example: decreased proportion of CD4 T cells relative to total T cells.</rdfs:comment>
+        <rdfs:label>decreased proportionality to</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0040042"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A proportionality quality inhering in a bearer by virtue of the bearer&apos;s decreased magnitude in respect to a related entity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0040043 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0040043">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001470"/>
+        <obo:IAO_0000115>A proportionality quality inhering in a bearer by virtue of the bearer&apos;s increased magnitude in respect to a related entity.</obo:IAO_0000115>
+        <oboInOwl:created_by>http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>increased proportion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>increased proportionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>increased quotient</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>increased ratio</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PATO:0040043</oboInOwl:id>
+        <rdfs:comment>Example: increased proportion of CD4 T cells relative to total T cells.</rdfs:comment>
+        <rdfs:label>increased proportionality to</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0040043"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A proportionality quality inhering in a bearer by virtue of the bearer&apos;s increased magnitude in respect to a related entity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
