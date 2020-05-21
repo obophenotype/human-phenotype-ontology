@@ -153,9 +153,11 @@ patternised_classes.txt: .FORCE
 	$(ROBOT) query -f csv -i ../patterns/definitions.owl --query ../sparql/$(ONT)_terms.sparql $@
 	sed -i 's/http[:][/][/]purl.obolibrary.org[/]obo[/]//g' $@
 	sed -i '/^[^H]/d' $@
+	truncate -s -1 $@
 
+# make sure no empty lines pin 
 remove_patternised_classes: $(SRC) patternised_classes.txt
-	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | xargs | sed -e 's/ /\|/g'))/d" $<
+	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | tr -d '\r' | tr '\n' '-' | sed -r 's/[-]+/\|/g' ))/d" $<
 
 tmp/eqs.ofn: #../patterns/definitions.owl
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
