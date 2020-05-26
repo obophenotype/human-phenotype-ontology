@@ -229,3 +229,16 @@ hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	echo "Using version $(HPODIFFVERSION) of the HPO Nice Diff Tool (@drseb)."
 	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	cp tmp/hpodiff*.xlsx reports
+	
+GSHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWuS7_dNiXJgL0lGg0Lgz60TpTk-Z5S6q-By38QQw_Tc-V25zwO9iEbqVtCfHZZ4MlTichpJpXLkc8/pub?gid=0&single=true&output=tsv"
+
+tmp/add_tsv_terms.tsv:
+	wget $(GSHEET) -O $@
+
+tmp/add_tsv.owl: tmp/add_tsv_terms.tsv
+	$(ROBOT) merge -i $(SRC) remove --select "<http://purl.obolibrary.org/obo/HP_*>" -o tmp/merged.owl
+	$(ROBOT) template -i tmp/merged.owl --prefix "HP: http://purl.obolibrary.org/obo/HP_" --prefix "hpo: http://purl.obolibrary.org/obo/hp#" --template $< --output $@
+
+add_tsv_terms: #$(SRC) tmp/add_tsv.owl
+	$(ROBOT) merge -i $(SRC) -i tmp/add_tsv.owl --collapse-import-closure false \
+	--output $(SRC).tmp.ofn && mv $(SRC).tmp.ofn $(SRC)
