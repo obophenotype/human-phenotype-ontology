@@ -7,33 +7,34 @@ classes:
   abnormal: PATO:0000460
   anatomical entity: UBERON:0001062
 
-relations: 
+relations:
   inheres_in: RO:0000052
   has_modifier: RO:0002573
   has_part: BFO:0000051
 
 annotationProperties:
-  exact_synonym: oio:hasExactSynonym 
+  exact_synonym: oio:hasExactSynonym
 
 vars:
   anatomical_entity: "'anatomical entity'"
- 
 name:
   text: "%s fibrosis"
   vars:
-   - anatomical_entity
+  - anatomical_entity
 
 annotations:
-  - annotationProperty: exact_synonym
-    text: "Fibrosis of the %s"
-    vars:
-     - anatomical_entity
+- annotationProperty: exact_synonym
+  text: "Fibrosis of the %s"
+  vars:
+  - anatomical_entity
 def:
   text: "The presence of excessive fibrous connective tissue in the %s."
   vars:
-    - anatomical_entity
+  - anatomical_entity
 
 equivalentTo:
   text: "'has_part' some ('fibrotic' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
   vars:
-    - anatomical_entity
+  - anatomical_entity
+contributors:
+- https://orcid.org/0000-0002-3528-5267

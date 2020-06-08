@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-03-27/imports/cl_import.owl
+data-version: hp/releases/2020-06-08/imports/cl_import.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 ontology: hp/imports/cl_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (ILC1)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\n)
@@ -35,6 +35,7 @@ is_a: CL:0000000 ! cell
 id: CL:0000005
 name: fibroblast neural crest derived
 namespace: cell
+def: "Any fibroblast that is deriived from the neural crest." [https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000057 ! fibroblast
 intersection_of: CL:0000057 ! fibroblast
 intersection_of: RO:0002202 CL:0000333 ! migratory neural crest cell
@@ -61,6 +62,7 @@ intersection_of: RO:0002215 GO:0017145
 id: CL:0000015
 name: male germ cell
 namespace: cell
+def: "Male germ cell is a germ cell that supports male gamete production." [https://orcid.org/0000-0001-5208-3432]
 xref: FMA:72290
 xref: MA:0002765
 xref: ncithesaurus:Spermatogenic_Cell
@@ -120,7 +122,6 @@ xref: FBbt:00004954
 xref: FMA:67338
 xref: WBbt:0006798
 is_a: CL:0000408 {is_inferred="true"} ! male gamete
-relationship: BFO:0000051 GO:0005929
 relationship: RO:0002202 CL:0000018 ! spermatid
 
 [Term]
@@ -438,6 +439,7 @@ intersection_of: BFO:0000051 GO:0005929
 id: CL:0000068
 name: duct epithelial cell
 namespace: cell
+def: "An epithelial cell that is part of a duct." [https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
@@ -466,6 +468,7 @@ relationship: RO:0002202 CL:0002546 ! embryonic blood vessel endothelial progeni
 id: CL:0000075
 name: columnar/cuboidal epithelial cell
 namespace: cell
+def: "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." [GO:0002065, https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
 
@@ -509,6 +512,7 @@ intersection_of: RO:0002215 GO:0008015
 id: CL:0000082
 name: epithelial cell of lung
 namespace: cell
+def: "An epithelial cell of the lung." [https://orcid.org/0000-0001-5208-3432]
 synonym: "lung epithelial cell" EXACT []
 xref: BTO:0004299
 intersection_of: CL:0000066 ! epithelial cell
@@ -822,6 +826,17 @@ intersection_of: RO:0002215 GO:0030855
 intersection_of: RO:0002215 GO:0045444
 intersection_of: RO:0002215 GO:0055007
 intersection_of: RO:0002215 GO:0060591
+
+[Term]
+id: CL:0000145
+name: professional antigen presenting cell
+namespace: cell
+def: "A cell capable of processing and presenting lipid and protein antigens to T cells in order to initiate an immune response." [GOC:add, ISBN:0781735149]
+comment: Note change of name; nearly all somatic cells can present antigens to T cells via MHC Class I complexes leading to effector responses, but professional antigen presenting cells constitutively express MHC Class II as well as costimulatory molecules, and thus can initiate immune responses via T cells.
+synonym: "APC" BROAD []
+is_a: CL:0000738 ! leukocyte
+intersection_of: CL:0000738 ! leukocyte
+intersection_of: RO:0002215 GO:0002504
 
 [Term]
 id: CL:0000147
@@ -1239,6 +1254,7 @@ xref: FMA:63261
 xref: FMA:83585
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
 intersection_of: CL:0000766 ! myeloid leukocyte
+intersection_of: RO:0002215 GO:0002504
 intersection_of: RO:0002215 GO:0006909
 intersection_of: RO:0002215 GO:0031268
 relationship: RO:0002202 CL:0000576 ! monocyte
@@ -2814,7 +2830,6 @@ synonym: "inflammatory monocyte" EXACT []
 is_a: CL:0000576 {is_inferred="true"} ! monocyte
 intersection_of: CL:0000576 ! monocyte
 intersection_of: has_high_plasma_membrane_amount PR:000001199
-intersection_of: has_low_plasma_membrane_amount PR:000001206
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001020
 intersection_of: lacks_plasma_membrane_part PR:000001289
@@ -3910,7 +3925,6 @@ intersection_of: BFO:0000051 PR:000007858
 intersection_of: lacks_plasma_membrane_part PR:000007431
 intersection_of: lacks_plasma_membrane_part PR:000016401
 intersection_of: RO:0002104 PR:000001867
-intersection_of: RO:0002104 PR:000002065
 intersection_of: RO:0002215 GO:0030221
 intersection_of: RO:0002215 GO:0060374
 relationship: RO:0002202 CL:0000557 ! granulocyte monocyte progenitor cell
@@ -3967,7 +3981,7 @@ creation_date: 2010-01-06T03:43:20Z
 id: CL:0002032
 name: hematopoietic oligopotent progenitor cell
 namespace: cell
-def: "A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities. Cell lacks hematopoeitic lineage markers." [GOC:tfm, PMID:19022770]
+def: "A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities." [GOC:tfm, https://orcid.org/0000-0001-5208-3432, PMID:19022770]
 comment: This cell type is intended to be compatible with any vertebrate hematopoietic oligopotent progenitor cell.  For mammalian hematopoietic oligopotent progenitor cells known to be lineage-negative, please use the term 'hematopoietic oligopotent progenitor cell' (CL_0001060).
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 is_a: CL:0008001 ! hematopoietic precursor cell
@@ -4812,7 +4826,7 @@ creation_date: 2010-09-20T02:21:12Z
 id: CL:0002338
 name: CD56-positive, CD161-positive immature natural killer cell
 namespace: cell
-def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-negative, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12457618]
+def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-positive, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, https://orcid.org/0000-0001-5208-3432, ISBN:0781735149, PMID:12457618]
 comment: Human markers; killer cell immunoglobulin-like receptor 2DL1 is used as a representative example (PRO at this time lacks a KIR superfamily).
 synonym: "p-NK" RELATED [PMID:12457618]
 is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
@@ -5269,7 +5283,7 @@ creation_date: 2010-10-21T02:29:19Z
 id: CL:0002431
 name: CD4-positive, CD8-intermediate double-positive thymocyte
 namespace: cell
-def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD8 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "T.4int8+.th" EXACT []
 is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
@@ -5332,7 +5346,7 @@ creation_date: 2010-10-21T02:59:10Z
 id: CL:0002435
 name: CD69-positive, CD8-positive single-positive thymocyte
 namespace: cell
-def: "A CD4-positive, CD8-negative thymocyte that expresses high levels of the alpha-beta T cell receptor and is CD69-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A CD8-positive, CD4-negative thymocyte that expresses high levels of the alpha-beta T cell receptor and is CD69-positive." [GOC:tfm, http://www.immgen.org/index_content.html, https://orcid.org/0000-0001-5208-3432]
 synonym: "intermediate CD8-single-positive" EXACT []
 synonym: "T.8SP69+.Th" EXACT []
 is_a: CL:0000811 {is_inferred="true"} ! CD8-positive, alpha-beta thymocyte
@@ -6209,7 +6223,7 @@ intersection_of: BFO:0000050 UBERON:0005388
 [Term]
 id: CL:0010002
 name: epithelial cell of umbilical artery
-def: "a epithelial cell that is part_of a umbilical artery" []
+def: "An epithelial cell that is part_of a umbilical artery." []
 synonym: "umbilical artery epithelial cell" EXACT []
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: BFO:0000050 UBERON:0001310
@@ -6218,7 +6232,7 @@ created_by: GOC:cjm
 [Term]
 id: CL:0010004
 name: mononuclear cell of bone marrow
-def: "a mononuclear cell that is part_of a bone marrow" []
+def: "A mononuclear cell that is part_of a bone marrow." []
 synonym: "bone marrow mononuclear cell" EXACT []
 intersection_of: CL:0000842 ! mononuclear cell
 intersection_of: BFO:0000050 UBERON:0002371
@@ -6239,7 +6253,7 @@ intersection_of: BFO:0000050 UBERON:0000948
 [Term]
 id: CL:0010012
 name: cerebral cortex neuron
-def: "a neuron that is part_of a cerebral cortex" []
+def: "A neuron that is part_of a cerebral cortex." []
 intersection_of: CL:0000540 ! neuron
 intersection_of: BFO:0000050 UBERON:0000956
 
@@ -6305,6 +6319,57 @@ def: "A motile sperm cell that contains a slender threadlike microscopic appenda
 is_a: CL:0011013 ! motile sperm cell
 intersection_of: CL:0011013 ! motile sperm cell
 intersection_of: RO:0002215 GO:0030317
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011019
+name: mesothelial cell of epicardium
+def: "A mesothelial cell that is part of the epicardium." []
+is_a: CL:0000077 ! mesothelial cell
+intersection_of: CL:0000077 ! mesothelial cell
+intersection_of: BFO:0000050 UBERON:0002348
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011021
+name: fibroblast of upper back skin
+def: "A fibroblast that is part of upper back skin." []
+is_a: CL:0011022 ! fibroblast of skin of back
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: BFO:0000050 UBERON:0009015
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011022
+name: fibroblast of skin of back
+def: "A fibroblast that is part of skin of back." []
+is_a: CL:0000057 ! fibroblast
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: BFO:0000050 UBERON:0001068
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011023
+name: CD25+ mast cell
+def: "A mast cell that is CD25+." []
+comment: Mast cells do not normally express CD25, but neoplastic mast cells may be CD25-positive.
+synonym: "CD25+ neoplastic mast cell" EXACT []
+is_a: CL:0001063 ! neoplastic cell
+intersection_of: CL:0001063 ! neoplastic cell
+intersection_of: RO:0001000 CL:0000097 ! mast cell
+intersection_of: RO:0002104 PR:000001380
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011024
+name: double negative T regulatory cell
+def: "A double negative thymocyte that is CD3-positive, CD4-negative, CD8-negative, that that are present in the periphery in very low numbers and predominantly produce INF-gamma, TNF-alpha, and a low amount of TGF-beta, but not IL-2, IL-4, IL-10 or IL-13 upon activation." [PMID:16285891]
+synonym: "CD4-negative, CD8-negative, alpha-beta regulatory T cells" EXACT []
+synonym: "DN Treg" EXACT []
+synonym: "double-negative alpha-beta regulatory T cell" EXACT []
+is_a: CL:0002489 ! double negative thymocyte
+intersection_of: CL:0002489 ! double negative thymocyte
+intersection_of: RO:0002215 GO:0050777
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -7012,7 +7077,7 @@ intersection_of: BFO:0000050 UBERON:0000017
 id: CL:1001516
 name: intestinal enteroendocrine cell
 namespace: cl
-def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract" [MP:0010802]
+def: "The various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract." [MP:0010802]
 intersection_of: CL:0000164 ! enteroendocrine cell
 intersection_of: BFO:0000050 UBERON:0001242
 
@@ -7039,7 +7104,7 @@ relationship: BFO:0000050 UBERON:0005317
 [Term]
 id: CL:1001572
 name: colon endothelial cell
-def: "Vascular endothelium found in colon blood vessels." [NPX:PDR]
+def: "A vascular endothelial cell found in colon blood vessels." [https://orcid.org/0000-0001-5208-3432, NPX:PDR]
 synonym: "colon endothelial cells" RELATED PLURAL [CALOHA:TS-2397]
 synonym: "colonic endothelial cell" RELATED [CALOHA:TS-2397]
 xref: CALOHA:TS-2397

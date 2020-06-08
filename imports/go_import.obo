@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-03-27/imports/go_import.owl
+data-version: hp/releases/2020-06-08/imports/go_import.owl
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr "AGR slim"
@@ -42,6 +42,20 @@ synonym: "reproductive physiological process" EXACT []
 xref: Wikipedia:Reproduction
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
+
+[Term]
+id: GO:0000016
+name: lactase activity
+namespace: molecular_function
+def: "Catalysis of the reaction: lactose + H2O = D-glucose + D-galactose." [PMID:12023280]
+synonym: "lactase-phlorizin hydrolase activity" BROAD []
+synonym: "lactose galactohydrolase activity" EXACT []
+xref: EC:3.2.1.108
+xref: MetaCyc:LACTASE-RXN
+xref: Reactome:R-HSA-189062 "lactose + H2O => D-glucose + D-galactose"
+xref: Reactome:R-HSA-5658001 "Defective LCT does not hydrolyze Lac"
+xref: RHEA:10076
+is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
 id: GO:0000018
@@ -441,13 +455,16 @@ comment: Note that this term is intended for use when a gene product is seen to 
 subset: goslim_pir
 synonym: "interferon production" NARROW [GOC:add, GOC:mah]
 synonym: "interleukin production" NARROW [GOC:add, GOC:mah, http://wiki.geneontology.org/index.php/Why_isn%27t_interleukin_in_GO%3F]
+is_a: GO:0010467 ! gene expression
 is_a: GO:0032501 ! multicellular organismal process
+property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/19116 xsd:anyURI
 
 [Term]
 id: GO:0001817
 name: regulation of cytokine production
 namespace: biological_process
 def: "Any process that modulates the frequency, rate, or extent of production of a cytokine." [GOC:add, ISBN:0781735149]
+is_a: GO:0010468 ! regulation of gene expression
 is_a: GO:0051239 ! regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0001816 ! cytokine production
@@ -463,6 +480,7 @@ synonym: "down-regulation of cytokine production" EXACT []
 synonym: "downregulation of cytokine production" EXACT []
 synonym: "inhibition of cytokine production" NARROW []
 is_a: GO:0001817 ! regulation of cytokine production
+is_a: GO:0010629 ! negative regulation of gene expression
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0001816 ! cytokine production
@@ -479,6 +497,7 @@ synonym: "up regulation of cytokine production" EXACT []
 synonym: "up-regulation of cytokine production" EXACT []
 synonym: "upregulation of cytokine production" EXACT []
 is_a: GO:0001817 ! regulation of cytokine production
+is_a: GO:0010628 ! positive regulation of gene expression
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0001816 ! cytokine production
@@ -2123,8 +2142,12 @@ relationship: positively_regulates GO:0002228 ! natural killer cell mediated imm
 id: GO:0002718
 name: regulation of cytokine production involved in immune response
 namespace: biological_process
+alt_id: GO:0002739
+alt_id: GO:0002742
 def: "Any process that modulates the frequency, rate, or extent of cytokine production that contributes to an immune response." [GOC:add]
+synonym: "regulation of cytokine biosynthetic process involved in immune response" NARROW []
 synonym: "regulation of cytokine production during immune response" RELATED [GOC:dph]
+synonym: "regulation of cytokine secretion involved in immune response" NARROW []
 is_a: GO:0001817 ! regulation of cytokine production
 is_a: GO:0002700 ! regulation of production of molecular mediator of immune response
 is_a: GO:0050776 ! regulation of immune response
@@ -2136,12 +2159,16 @@ relationship: regulates GO:0002367 ! cytokine production involved in immune resp
 id: GO:0002719
 name: negative regulation of cytokine production involved in immune response
 namespace: biological_process
+alt_id: GO:0002740
+alt_id: GO:0002743
 def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of cytokine production contributing to an immune response." [GOC:add]
 synonym: "down regulation of cytokine production during immune response" RELATED []
 synonym: "down-regulation of cytokine production during immune response" EXACT []
 synonym: "downregulation of cytokine production during immune response" RELATED []
 synonym: "inhibition of cytokine production during immune response" RELATED []
+synonym: "negative regulation of cytokine biosynthetic process involved in immune response" NARROW []
 synonym: "negative regulation of cytokine production during immune response" RELATED [GOC:dph]
+synonym: "negative regulation of cytokine secretion involved in immune response" NARROW []
 is_a: GO:0001818 ! negative regulation of cytokine production
 is_a: GO:0002701 ! negative regulation of production of molecular mediator of immune response
 is_a: GO:0002718 ! regulation of cytokine production involved in immune response
@@ -2154,9 +2181,13 @@ relationship: negatively_regulates GO:0002367 ! cytokine production involved in 
 id: GO:0002720
 name: positive regulation of cytokine production involved in immune response
 namespace: biological_process
+alt_id: GO:0002741
+alt_id: GO:0002744
 def: "Any process that activates or increases the frequency, rate, or extent of cytokine production that contributes to an immune response." [GOC:add]
 synonym: "activation of cytokine production during immune response" NARROW []
+synonym: "positive regulation of cytokine biosynthetic process involved in immune response" NARROW []
 synonym: "positive regulation of cytokine production during immune response" RELATED [GOC:dph]
+synonym: "positive regulation of cytokine secretion involved in immune response" NARROW []
 synonym: "stimulation of cytokine production during immune response" NARROW []
 synonym: "up regulation of cytokine production during immune response" RELATED []
 synonym: "up-regulation of cytokine production during immune response" RELATED []
@@ -2168,53 +2199,6 @@ is_a: GO:0050778 ! positive regulation of immune response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0002367 ! cytokine production involved in immune response
 relationship: positively_regulates GO:0002367 ! cytokine production involved in immune response
-
-[Term]
-id: GO:0002739
-name: regulation of cytokine secretion involved in immune response
-namespace: biological_process
-def: "Any process that modulates the frequency, rate, or extent of cytokine secretion contributing to an immune response." [GOC:add]
-synonym: "regulation of cytokine secretion during immune response" RELATED [GOC:dph]
-is_a: GO:0002718 ! regulation of cytokine production involved in immune response
-is_a: GO:0050707 ! regulation of cytokine secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0002374 ! cytokine secretion involved in immune response
-relationship: regulates GO:0002374 ! cytokine secretion involved in immune response
-
-[Term]
-id: GO:0002740
-name: negative regulation of cytokine secretion involved in immune response
-namespace: biological_process
-def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of cytokine secretion contributing to an immune response." [GOC:add]
-synonym: "down regulation of cytokine secretion during immune response" RELATED []
-synonym: "down-regulation of cytokine secretion during immune response" RELATED []
-synonym: "downregulation of cytokine secretion during immune response" RELATED []
-synonym: "inhibition of cytokine secretion during immune response" NARROW []
-synonym: "negative regulation of cytokine secretion during immune response" RELATED [GOC:dph]
-is_a: GO:0002719 ! negative regulation of cytokine production involved in immune response
-is_a: GO:0002739 ! regulation of cytokine secretion involved in immune response
-is_a: GO:0050710 ! negative regulation of cytokine secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0002374 ! cytokine secretion involved in immune response
-relationship: negatively_regulates GO:0002374 ! cytokine secretion involved in immune response
-
-[Term]
-id: GO:0002741
-name: positive regulation of cytokine secretion involved in immune response
-namespace: biological_process
-def: "Any process that activates or increases the frequency, rate, or extent of cytokine secretion contributing to an immune response." [GOC:add]
-synonym: "activation of cytokine secretion during immune response" NARROW []
-synonym: "positive regulation of cytokine secretion during immune response" RELATED [GOC:dph]
-synonym: "stimulation of cytokine secretion during immune response" NARROW []
-synonym: "up regulation of cytokine secretion during immune response" RELATED []
-synonym: "up-regulation of cytokine secretion during immune response" RELATED []
-synonym: "upregulation of cytokine secretion during immune response" RELATED []
-is_a: GO:0002720 ! positive regulation of cytokine production involved in immune response
-is_a: GO:0002739 ! regulation of cytokine secretion involved in immune response
-is_a: GO:0050715 ! positive regulation of cytokine secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0002374 ! cytokine secretion involved in immune response
-relationship: positively_regulates GO:0002374 ! cytokine secretion involved in immune response
 
 [Term]
 id: GO:0002761
@@ -2728,7 +2712,7 @@ name: molecular_function
 namespace: molecular_function
 alt_id: GO:0005554
 def: "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process." [GOC:pdt]
-comment: Note that, in addition to forming the root of the molecular function ontology, this term is recommended for use for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this. Despite its name, this is not a type of 'function' in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex.
+comment: Note that, in addition to forming the root of the molecular function ontology, this term is recommended for use for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this. Despite its name, this is not a type of 'function' in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -2789,6 +2773,41 @@ subset: goslim_plant
 synonym: "enzyme activity" EXACT [GOC:dph, GOC:tb]
 xref: Wikipedia:Enzyme
 is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0003857
+name: 3-hydroxyacyl-CoA dehydrogenase activity
+namespace: molecular_function
+def: "Catalysis of the reaction: (S)-3-hydroxyacyl-CoA + NAD+ = 3-oxoacyl-CoA + NADH + H(+)." [EC:1.1.1.35]
+comment: See also 'long-chain-3-hydroxyacyl-CoA dehydrogenase activity ; GO:0016509'.
+synonym: "3-oxoacyl-thioester reductase activity" RELATED [PMID:19685079]
+synonym: "beta-hydroxyacyl dehydrogenase activity" EXACT [EC:1.1.1.35]
+synonym: "beta-hydroxyacyl-coenzyme A synthetase activity" EXACT [EC:1.1.1.35]
+synonym: "beta-hydroxyacylcoenzyme A dehydrogenase activity" EXACT [EC:1.1.1.35]
+synonym: "beta-hydroxybutyrylcoenzyme A dehydrogenase activity" NARROW [EC:1.1.1.35]
+synonym: "beta-keto-reductase activity" EXACT [EC:1.1.1.35]
+synonym: "beta-ketoacyl-CoA reductase" BROAD [EC:1.1.1.35]
+synonym: "L-3-hydroxyacyl CoA dehydrogenase activity" EXACT [EC:1.1.1.35]
+synonym: "L-3-hydroxyacyl coenzyme A dehydrogenase activity" EXACT [EC:1.1.1.35]
+xref: EC:1.1.1.35
+xref: MetaCyc:OHACYL-COA-DEHYDROG-RXN
+xref: Reactome:R-HSA-193455 "(24R, 25R) 3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA is oxidized to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-one-CoA"
+xref: Reactome:R-HSA-193508 "(24R, 25R) 3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA is oxidized to 3alpha,7alpha-dihydroxy-5beta-cholest-24-one-CoA"
+xref: Reactome:R-HSA-389995 "3-hydroxypristanoyl-CoA + NAD+ => 3-ketoxypristanoyl-CoA + NADH + H+"
+xref: Reactome:R-HSA-390251 "HSD17B4 dehydrogenates 3-hydroxyhexacosanoyl-CoA"
+xref: Reactome:R-HSA-508369 "alpha-methylacetoacetyl-CoA + NADH + H+ <=> alpha-methyl-beta-hydroxybutyryl-CoA + NAD+"
+xref: Reactome:R-HSA-6809264 "EHHADH dehydrogenates 3-hydroxyhexacosanoyl-CoA"
+xref: Reactome:R-HSA-70837 "alpha-methyl-beta-hydroxybutyryl-CoA + NAD+ <=> alpha-methylacetoacetyl-CoA + NADH + H+"
+xref: Reactome:R-HSA-77254 "(S)-3-Hydroxydodecanoyl-CoA+NAD<=>3-Oxododecanoyl-CoA+NADH+H"
+xref: Reactome:R-HSA-77283 "(S)-3-Hydroxytetradecanoyl-CoA+NAD<=>3-Oxotetradecanoyl-CoA+NADH+H"
+xref: Reactome:R-HSA-77303 "(S)-3-Hydroxyhexadecanoyl-CoA+NAD<=>3-Oxopalmitoyl-CoA+NADH+H"
+xref: Reactome:R-HSA-77312 "(S)-Hydroxybutanoyl-CoA+NAD<=>Acetoacetyl-CoA+NADH+H"
+xref: Reactome:R-HSA-77323 "(S)-Hydroxyhexanoyl-CoA+NAD<=>3-Oxohexanoyl-CoA+NADH+H"
+xref: Reactome:R-HSA-77331 "(S)-Hydroxyoctanoyl-CoA+NAD<=>3-Oxooctanoyl-CoA+NADH+H"
+xref: Reactome:R-HSA-77342 "(S)-Hydroxydecanoyl-CoA+NAD<=>3-Oxodecanoyl-CoA+NADH+H"
+xref: RHEA:22432
+xref: UM-BBD_enzymeID:e0664
+is_a: GO:0016616 ! oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
 
 [Term]
 id: GO:0003868
@@ -3457,7 +3476,7 @@ name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
 def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
-comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -3539,16 +3558,14 @@ is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0005623
-name: cell
+name: obsolete cell
 namespace: cellular_component
-def: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:go_curators]
-subset: goslim_chembl
-subset: goslim_generic
-subset: goslim_plant
+def: "OBSOLETE. The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." [GOC:go_curators]
+comment: This term was obsoleted because it was redundant with the root class of the cell ontology, CL:0000000.
 xref: NIF_Subcellular:sao1813327414
 xref: Wikipedia:Cell_(biology)
-is_a: GO:0005575 ! cellular_component
 property_value: IAO:0000589 "cell and encapsulating structures" xsd:string
+is_obsolete: true
 
 [Term]
 id: GO:0005634
@@ -3709,7 +3726,7 @@ intersection_of: GO:0070469 ! respirasome
 intersection_of: part_of GO:0005743 ! mitochondrial inner membrane
 relationship: part_of GO:0005743 ! mitochondrial inner membrane
 property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/12846 xsd:anyURI
-created_by: paola
+created_by: pr
 creation_date: 2012-02-23T05:13:54Z
 
 [Term]
@@ -3928,7 +3945,7 @@ synonym: "single-organism carbohydrate metabolic process" RELATED []
 xref: Wikipedia:Carbohydrate_metabolism
 is_a: GO:0044238 ! primary metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-10-23T15:40:34Z
 
 [Term]
@@ -4193,7 +4210,7 @@ is_a: GO:0043255 ! regulation of carbohydrate biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006094 ! gluconeogenesis
 relationship: regulates GO:0006094 ! gluconeogenesis
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2013-01-18T12:47:43Z
 
 [Term]
@@ -4570,8 +4587,6 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving glycine, aminoethanoic acid." [GOC:go_curators]
 synonym: "glycine metabolism" EXACT []
 is_a: GO:0009069 ! serine family amino acid metabolic process
-is_a: GO:0017144 ! drug metabolic process
-is_a: GO:0042133 ! neurotransmitter metabolic process
 
 [Term]
 id: GO:0006547
@@ -4632,7 +4647,6 @@ synonym: "L-phenylalanine metabolism" EXACT []
 synonym: "phenylalanine metabolic process" BROAD []
 synonym: "phenylalanine metabolism" BROAD []
 is_a: GO:0009072 ! aromatic amino acid family metabolic process
-is_a: GO:0017144 ! drug metabolic process
 is_a: GO:1902221 ! erythrose 4-phosphate/phosphoenolpyruvate family amino acid metabolic process
 
 [Term]
@@ -4763,7 +4777,6 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving creatine (N-(aminoiminomethyl)-N-methylglycine), a compound synthesized from the amino acids arginine, glycine, and methionine that occurs in muscle." [GOC:jl, ISBN:0192801023]
 synonym: "creatine metabolism" EXACT []
 is_a: GO:0006575 ! cellular modified amino acid metabolic process
-is_a: GO:0017144 ! drug metabolic process
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
 
 [Term]
@@ -4933,16 +4946,17 @@ is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0006732
-name: coenzyme metabolic process
+name: obsolete coenzyme metabolic process
 namespace: biological_process
 alt_id: GO:0006752
-def: "The chemical reactions and pathways involving coenzymes, any of various nonprotein organic cofactors that are required, in addition to an enzyme and a substrate, for an enzymatic reaction to proceed." [ISBN:0198506732]
+def: "OBSOLETE. The chemical reactions and pathways involving coenzymes, any of various nonprotein organic cofactors that are required, in addition to an enzyme and a substrate, for an enzymatic reaction to proceed." [ISBN:0198506732]
+comment: 1. Making inferences in GO about compounds based on the coenzyme role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all metabolically related by the fact that they may be used as a coenzyme.
 synonym: "coenzyme and prosthetic group metabolic process" BROAD []
 synonym: "coenzyme and prosthetic group metabolism" BROAD []
 synonym: "coenzyme metabolism" EXACT []
 synonym: "group transfer coenzyme metabolic process" NARROW []
 synonym: "group transfer coenzyme metabolism" NARROW []
-is_a: GO:0051186 ! cofactor metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0006753
@@ -5011,7 +5025,6 @@ def: "The chemical reactions and pathways involving any member of a large group 
 synonym: "porphyrin metabolic process" RELATED []
 synonym: "porphyrin metabolism" RELATED []
 is_a: GO:0033013 ! tetrapyrrole metabolic process
-is_a: GO:0051186 ! cofactor metabolic process
 
 [Term]
 id: GO:0006779
@@ -5025,7 +5038,6 @@ synonym: "porphyrin formation" RELATED []
 synonym: "porphyrin synthesis" RELATED []
 is_a: GO:0006778 ! porphyrin-containing compound metabolic process
 is_a: GO:0033014 ! tetrapyrrole biosynthetic process
-is_a: GO:0051188 ! cofactor biosynthetic process
 
 [Term]
 id: GO:0006783
@@ -5120,7 +5132,7 @@ synonym: "single-organism transport" RELATED []
 synonym: "small molecule transport" NARROW []
 synonym: "solute:solute exchange" NARROW []
 is_a: GO:0051234 ! establishment of localization
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-13T16:25:32Z
 
 [Term]
@@ -5158,7 +5170,6 @@ name: serotonin transport
 namespace: biological_process
 def: "The directed movement of serotonin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Serotonin (5-hydroxytryptamine) is a monoamine neurotransmitter occurring in the peripheral and central nervous systems." [GOC:ai]
 is_a: GO:0006812 ! cation transport
-is_a: GO:0006836 ! neurotransmitter transport
 is_a: GO:0015844 ! monoamine transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 
@@ -5715,7 +5726,7 @@ synonym: "single organism cell adhesion" RELATED []
 xref: Wikipedia:Cell_adhesion
 is_a: GO:0009987 ! cellular process
 is_a: GO:0022610 ! biological adhesion
-created_by: davidos
+created_by: dos
 creation_date: 2014-04-15T15:59:10Z
 
 [Term]
@@ -6185,7 +6196,7 @@ synonym: "single-organism behavior" RELATED []
 xref: Wikipedia:Behavior
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0032502 ! developmental process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-20T14:06:08Z
 
 [Term]
@@ -6284,7 +6295,7 @@ synonym: "taking of blood meal" NARROW []
 xref: Wikipedia:List_of_feeding_behaviours
 is_a: GO:0007610 ! behavior
 property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/18547 xsd:anyURI
-created_by: janelomax
+created_by: jl
 creation_date: 2011-10-27T03:53:33Z
 
 [Term]
@@ -6329,7 +6340,7 @@ alt_id: GO:0000004
 alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
-comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -6344,7 +6355,7 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
 [Term]
@@ -6368,7 +6379,7 @@ synonym: "single-organism metabolic process" RELATED []
 xref: Wikipedia:Metabolism
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-10-17T15:46:40Z
 
 [Term]
@@ -6656,7 +6667,7 @@ synonym: "hexose transport" RELATED []
 synonym: "high-affinity hexose transport" NARROW []
 synonym: "low-affinity hexose transport" NARROW []
 is_a: GO:0015749 ! monosaccharide transmembrane transport
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-04-08T10:27:23Z
 
 [Term]
@@ -6677,7 +6688,7 @@ synonym: "multicellular organismal catabolic process" NARROW []
 synonym: "single-organism catabolic process" RELATED []
 xref: Wikipedia:Catabolism
 is_a: GO:0008152 ! metabolic process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-10-17T15:52:35Z
 
 [Term]
@@ -6699,7 +6710,7 @@ synonym: "single-organism biosynthetic process" RELATED []
 synonym: "synthesis" EXACT []
 xref: Wikipedia:Anabolism
 is_a: GO:0008152 ! metabolic process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-10-17T15:52:18Z
 
 [Term]
@@ -6863,9 +6874,7 @@ synonym: "vitamin B12 metabolic process" EXACT []
 synonym: "vitamin B12 metabolism" EXACT []
 synonym: "vitamin B12 reduction" NARROW []
 is_a: GO:0006767 ! water-soluble vitamin metabolic process
-is_a: GO:0017144 ! drug metabolic process
 is_a: GO:0033013 ! tetrapyrrole metabolic process
-is_a: GO:0051186 ! cofactor metabolic process
 
 [Term]
 id: GO:0009259
@@ -7300,7 +7309,7 @@ synonym: "cellular physiological process" EXACT []
 synonym: "single-organism cellular process" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-11T16:56:55Z
 
 [Term]
@@ -8064,7 +8073,7 @@ is_a: GO:0045786 ! negative regulation of cell cycle
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0022402 ! cell cycle process
 relationship: negatively_regulates GO:0022402 ! cell cycle process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-04-27T09:53:22Z
 
 [Term]
@@ -8074,7 +8083,7 @@ namespace: biological_process
 def: "Any process involved in the maintenance of an internal steady state of magnesium ions within an organism or cell." [GOC:dph, GOC:tb]
 is_a: GO:0055065 ! metal ion homeostasis
 is_a: GO:0072507 ! divalent inorganic cation homeostasis
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-05-06T11:47:17Z
 
 [Term]
@@ -8087,7 +8096,7 @@ synonym: "microtubule-based transport" BROAD []
 synonym: "movement along microtubule" EXACT []
 is_a: GO:0030705 ! cytoskeleton-dependent intracellular transport
 is_a: GO:0099111 ! microtubule-based transport
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-05-27T10:56:08Z
 
 [Term]
@@ -8256,7 +8265,6 @@ synonym: "regulation of serotonin release" RELATED [GOC:tb]
 is_a: GO:0010646 ! regulation of cell communication
 is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0043269 ! regulation of ion transport
-is_a: GO:0051588 ! regulation of neurotransmitter transport
 is_a: GO:1903530 ! regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0001820 ! serotonin secretion
@@ -8276,7 +8284,6 @@ is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0014062 ! regulation of serotonin secretion
 is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0043271 ! negative regulation of ion transport
-is_a: GO:0051589 ! negative regulation of neurotransmitter transport
 is_a: GO:1903531 ! negative regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0001820 ! serotonin secretion
@@ -8297,7 +8304,6 @@ is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0014062 ! regulation of serotonin secretion
 is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0043270 ! positive regulation of ion transport
-is_a: GO:0051590 ! positive regulation of neurotransmitter transport
 is_a: GO:1903532 ! positive regulation of secretion by cell
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0001820 ! serotonin secretion
@@ -8397,7 +8403,6 @@ name: oxygen transport
 namespace: biological_process
 def: "The directed movement of oxygen (O2) into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 is_a: GO:0015669 ! gas transport
-is_a: GO:0015893 ! drug transport
 
 [Term]
 id: GO:0015672
@@ -8586,7 +8591,7 @@ synonym: "multicellular organismal carbohydrate catabolic process" NARROW []
 synonym: "single-organism carbohydrate catabolic process" RELATED []
 is_a: GO:0005975 ! carbohydrate metabolic process
 is_a: GO:1901575 ! organic substance catabolic process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-10-23T16:34:39Z
 
 [Term]
@@ -8854,6 +8859,25 @@ xref: Reactome:R-HSA-9026917 "Lipoxygenase dehydrogenates 7(S),17(S)-diHp-DHA to
 xref: Reactome:R-HSA-9027033 "Hydroperoxy reducatase reduces 14(S)-Hp-DHA to 14(S)-HDHA"
 is_a: GO:0003824 ! catalytic activity
 relationship: part_of GO:0055114 ! oxidation-reduction process
+
+[Term]
+id: GO:0016614
+name: oxidoreductase activity, acting on CH-OH group of donors
+namespace: molecular_function
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-OH group act as a hydrogen or electron donor and reduces a hydrogen or electron acceptor." [GOC:ai]
+synonym: "oxidoreductase activity, acting on the CH-OH group of donors, other acceptors" NARROW []
+xref: EC:1.1
+xref: Reactome:R-HSA-1500781 "Fgd1 reactivates F420"
+is_a: GO:0016491 ! oxidoreductase activity
+
+[Term]
+id: GO:0016616
+name: oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+namespace: molecular_function
+def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-OH group acts as a hydrogen or electron donor and reduces NAD+ or NADP." [EC:1.1.1.-, GOC:ai]
+xref: EC:1.1.1
+xref: Reactome:R-HSA-975629 "RDH11 reduces RBP2:atRAL to RBP2:atROL"
+is_a: GO:0016614 ! oxidoreductase activity, acting on CH-OH group of donors
 
 [Term]
 id: GO:0016620
@@ -9128,7 +9152,7 @@ name: phosphatase activity
 namespace: molecular_function
 alt_id: GO:0003869
 alt_id: GO:0016302
-def: "Catalysis of the hydrolysis of phosphoric monoesters, releasing inorganic phosphate." [EC:3.1.3, GOC:curators, GOC:pg]
+def: "Catalysis of the hydrolysis of phosphoric monoesters, releasing inorganic phosphate." [GOC:curators, GOC:pg]
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -9137,21 +9161,20 @@ subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_yeast
 synonym: "4-nitrophenylphosphatase activity" NARROW []
-synonym: "4-nitrophenylphosphate phosphohydrolase activity" NARROW [EC:3.1.3.41]
-synonym: "ecto-p-nitrophenyl phosphatase activity" NARROW [EC:3.1.3.41]
-synonym: "K-pNPPase activity" NARROW [EC:3.1.3.41]
-synonym: "nitrophenyl phosphatase activity" NARROW [EC:3.1.3.41]
-synonym: "NPPase activity" NARROW [EC:3.1.3.41]
-synonym: "p-nitrophenylphosphatase activity" NARROW [EC:3.1.3.41]
-synonym: "p-nitrophenylphosphate phosphohydrolase activity" NARROW [EC:3.1.3.41]
-synonym: "para-nitrophenyl phosphatase activity" NARROW [EC:3.1.3.41]
+synonym: "4-nitrophenylphosphate phosphohydrolase activity" NARROW []
+synonym: "ecto-p-nitrophenyl phosphatase activity" NARROW []
+synonym: "K-pNPPase activity" NARROW []
+synonym: "nitrophenyl phosphatase activity" NARROW []
+synonym: "NPPase activity" NARROW []
+synonym: "p-nitrophenylphosphatase activity" NARROW []
+synonym: "p-nitrophenylphosphate phosphohydrolase activity" NARROW []
+synonym: "para-nitrophenyl phosphatase activity" NARROW []
 synonym: "phosphatase" RELATED []
 synonym: "phosphoric monoester hydrolase activity" EXACT []
-synonym: "PNPPase activity" NARROW [EC:3.1.3.41]
+synonym: "PNPPase activity" NARROW []
 xref: EC:3.1.3
 xref: MetaCyc:4-NITROPHENYLPHOSPHATASE-RXN
 xref: Reactome:R-HSA-4419986 "Unknown pPPP phosphatase dephosphorylates pPPP to pPNOL"
-xref: RHEA:21664
 is_a: GO:0042578 ! phosphoric ester hydrolase activity
 relationship: part_of GO:0016311 ! dephosphorylation
 
@@ -9504,18 +9527,20 @@ is_a: GO:0007610 ! behavior
 is_a: GO:0048609 ! multicellular organismal reproductive process
 intersection_of: GO:0007610 ! behavior
 intersection_of: part_of GO:0000003 ! reproduction
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T16:01:37Z
 
 [Term]
 id: GO:0019172
 name: glyoxalase III activity
 namespace: molecular_function
-def: "Catalysis of the reaction: methylglyoxal + H2O = D-lactate." [EC:4.2.1.130, GOC:mcc, http://www.brenda-enzymes.org/php/result_flat.php4?ecno=4.2.1.130, MetaCyc:GLYOXIII-RXN, PMID:21696459, PMID:7848303, RHEA:27754]
+def: "Catalysis of the reaction: methylglyoxal + H2O = D-lactate." [GOC:mcc, http://www.brenda-enzymes.org/php/result_flat.php4?ecno=4.2.1.130, PMID:21696459, PMID:7848303, RHEA:27754]
 comment: Note that this term was reinstated from obsolete. Also note that this enzymatic activity converts methylglyoxal to D-lactate in a single glutathione (GSH)-independent step. The other known route for this conversion is the two-step GSH-dependent pathway catalyzed by EC:4.4.1.5 (lactoylglutathione lyase) and EC:3.1.2.6 (hydroxyacylglutathione hydrolase).
 synonym: "(R)-lactate hydro-lyase" EXACT []
 synonym: "D-lactate dehydratase" EXACT []
 synonym: "glutathione-independent glyoxalase activity" RELATED []
+xref: EC:4.2.1.130
+xref: http://www.brenda-enzymes.org/php/result_flat.php4?ecno=4.2.1.130
 xref: MetaCyc:GLYOXIII-RXN
 xref: RHEA:27754
 is_a: GO:0016836 ! hydro-lyase activity
@@ -9763,6 +9788,7 @@ subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_pombe
 synonym: "secondary metabolism" EXACT []
 synonym: "secondary metabolite metabolic process" EXACT []
 synonym: "secondary metabolite metabolism" EXACT []
@@ -9798,7 +9824,6 @@ synonym: "L-ascorbic acid metabolism" EXACT []
 synonym: "vitamin C metabolic process" EXACT []
 synonym: "vitamin C metabolism" EXACT []
 is_a: GO:0005996 ! monosaccharide metabolic process
-is_a: GO:0006732 ! coenzyme metabolic process
 is_a: GO:0006767 ! water-soluble vitamin metabolic process
 is_a: GO:0019752 ! carboxylic acid metabolic process
 
@@ -9982,7 +10007,7 @@ intersection_of: GO:0008150 ! biological_process
 intersection_of: part_of GO:0000003 ! reproduction
 disjoint_from: GO:0044848 ! biological phase
 relationship: part_of GO:0000003 ! reproduction
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:56:06Z
 
 [Term]
@@ -10082,7 +10107,7 @@ synonym: "signalling process" RELATED [GOC:mah]
 synonym: "single organism signaling" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2010-02-16T09:30:50Z
 
 [Term]
@@ -11607,6 +11632,7 @@ subset: goslim_pir
 synonym: "killing of cells of another organism" EXACT [GOC:bf]
 synonym: "killing of cells of another, non-host, organism" NARROW []
 is_a: GO:0001906 ! cell killing
+is_a: GO:0044419 ! interspecies interaction between organisms
 
 [Term]
 id: GO:0031641
@@ -12198,7 +12224,7 @@ is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
 property_value: RO:0002161 NCBITaxon:4896
 property_value: RO:0002161 NCBITaxon:4932
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T16:07:47Z
 
 [Term]
@@ -12215,7 +12241,7 @@ synonym: "development" NARROW []
 synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0044848 ! biological phase
-created_by: janelomax
+created_by: jl
 creation_date: 2012-12-19T12:21:31Z
 
 [Term]
@@ -12624,6 +12650,7 @@ id: GO:0033013
 name: tetrapyrrole metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving tetrapyrroles, natural pigments containing four pyrrole rings joined by one-carbon units linking position 2 of one pyrrole ring to position 5 of the next." [GOC:mah]
+subset: goslim_pombe
 synonym: "tetrapyrrole metabolism" EXACT []
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
@@ -13302,7 +13329,7 @@ is_a: GO:0007165 ! signal transduction
 intersection_of: GO:0007165 ! signal transduction
 intersection_of: occurs_in GO:0005622 ! intracellular
 relationship: occurs_in GO:0005622 ! intracellular
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-05-14T01:14:37Z
 
 [Term]
@@ -13314,7 +13341,7 @@ synonym: "establishment of protein localisation in extracellular region" EXACT [
 synonym: "establishment of protein localization in extracellular region" EXACT []
 is_a: GO:0045184 ! establishment of protein localization
 is_a: GO:0071692 ! protein localization to extracellular region
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-11-09T10:25:08Z
 
 [Term]
@@ -13327,7 +13354,7 @@ is_a: GO:0030282 ! bone mineralization
 intersection_of: GO:0030282 ! bone mineralization
 intersection_of: part_of GO:0043931 ! ossification involved in bone maturation
 relationship: part_of GO:0043931 ! ossification involved in bone maturation
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-12-20T01:57:31Z
 
 [Term]
@@ -13338,7 +13365,7 @@ def: "The transfer of information occurring at the level of a multicellular orga
 synonym: "multicellular organismal signalling" EXACT [GOC:bf]
 is_a: GO:0023052 ! signaling
 is_a: GO:0032501 ! multicellular organismal process
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-01-14T10:13:50Z
 
 [Term]
@@ -13354,7 +13381,7 @@ is_a: GO:0042073 ! intraciliary transport
 intersection_of: GO:0042073 ! intraciliary transport
 intersection_of: part_of GO:0060271 ! cilium assembly
 relationship: part_of GO:0060271 ! cilium assembly
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-03-17T10:55:42Z
 
 [Term]
@@ -13369,7 +13396,7 @@ synonym: "regulation of physiological process of other organism" NARROW [GOC:bf]
 synonym: "regulation of physiology of other organism" NARROW [GOC:bf]
 is_a: GO:0044419 ! interspecies interaction between organisms
 property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/18605 xsd:anyURI
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-04-21T01:31:51Z
 
 [Term]
@@ -13379,7 +13406,7 @@ namespace: biological_process
 def: "The process whose specific outcome is the progression of a nail over time, from its formation to the mature structure. A nail is a horn-like envelope covering the outer end of a finger or toe, and consists of the nail plate, the nail matrix and the nail bed below it, and the grooves surrounding it." [GOC:bf, ISBN:0323025781, UBERON:0001705, Wikipedia:Nail_(anatomy)]
 is_a: GO:0048856 ! anatomical structure development
 relationship: part_of GO:0060173 ! limb development
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-05-31T02:30:34Z
 
 [Term]
@@ -13389,7 +13416,7 @@ namespace: biological_process
 def: "The regulated release of any steroid that acts as a hormone into the circulatory system." [GOC:sl]
 is_a: GO:0060986 ! endocrine hormone secretion
 is_a: GO:0140353 ! lipid export from cell
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-20T01:01:00Z
 
 [Term]
@@ -13400,7 +13427,7 @@ def: "The regulated release of testosterone into the circulatory system. Testost
 is_a: GO:0015850 ! organic hydroxy compound transport
 is_a: GO:0046879 ! hormone secretion
 is_a: GO:0140353 ! lipid export from cell
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-20T01:13:13Z
 
 [Term]
@@ -13409,7 +13436,7 @@ name: fucosylation
 namespace: biological_process
 def: "The covalent attachment of a fucosyl group to an acceptor molecule." [GOC:sart, PMID:19948734]
 is_a: GO:0070085 ! glycosylation
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-12-15T11:16:19Z
 
 [Term]
@@ -13419,7 +13446,7 @@ namespace: biological_process
 def: "The process of transferring a fucosyl group to a serine or threonine residues in a protein acceptor molecule, to form an O-linked protein-sugar linkage." [GOC:sart, PMID:19948734]
 is_a: GO:0006493 ! protein O-linked glycosylation
 is_a: GO:0036065 ! fucosylation
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-12-15T11:17:20Z
 
 [Term]
@@ -13429,7 +13456,7 @@ namespace: biological_process
 def: "Ossification that requires the replacement of a preexisting tissue prior to bone tissue formation." [GO_REF:0000034]
 synonym: "indirect ossification" EXACT [GO_REF:0000034]
 is_a: GO:0001503 ! ossification
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-12-19T01:53:16Z
 
 [Term]
@@ -13440,7 +13467,7 @@ def: "The covalent alteration of one or more amino acids occurring in proteins, 
 synonym: "protein modification" EXACT [GOC:bf]
 is_a: GO:0019538 ! protein metabolic process
 is_a: GO:0043412 ! macromolecule modification
-created_by: rfoulger
+created_by: bf
 creation_date: 2012-04-26T01:47:12Z
 
 [Term]
@@ -13452,7 +13479,7 @@ is_a: GO:0006323 ! DNA packaging
 intersection_of: GO:0006323 ! DNA packaging
 intersection_of: occurs_in GO:0009295 ! nucleoid
 relationship: occurs_in GO:0009295 ! nucleoid
-created_by: rfoulger
+created_by: bf
 creation_date: 2013-05-30T10:36:05Z
 
 [Term]
@@ -13461,7 +13488,7 @@ name: somatodendritic compartment
 namespace: cellular_component
 def: "The region of a neuron that includes the cell body (cell soma) and dendrite(s), but excludes the axon." [GOC:pad, GOC:PARL]
 is_a: GO:0110165 ! cellular anatomical entity
-created_by: rebeccafoulger
+created_by: bf
 creation_date: 2014-07-24T10:06:19Z
 
 [Term]
@@ -13482,7 +13509,7 @@ subset: goslim_plant
 synonym: "receptor activity" BROAD []
 synonym: "receptor activity involved in signal transduction" EXACT [GOC:bf]
 is_a: GO:0060089 ! molecular transducer activity
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-08-01T02:45:27Z
 
 [Term]
@@ -15193,13 +15220,17 @@ relationship: positively_regulates GO:0051704 ! multi-organism process
 
 [Term]
 id: GO:0043903
-name: regulation of symbiosis, encompassing mutualism through parasitism
+name: regulation of symbiotic process
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of symbiosis, an interaction between two organisms living together in more or less intimate association." [GOC:jl]
+comment: regulation of interspecies interactions between organisms
+synonym: "regulation of interspecies interactions between organisms" BROAD []
+synonym: "regulation of symbiosis, encompassing mutualism through parasitism" RELATED []
 is_a: GO:0050789 ! regulation of biological process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0044403 ! symbiotic process
 relationship: regulates GO:0044403 ! symbiotic process
+property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/19028 xsd:anyURI
 
 [Term]
 id: GO:0043931
@@ -15317,7 +15348,7 @@ is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0003674 ! molecular_function
 relationship: negatively_regulates GO:0003674 ! molecular_function
-created_by: jane
+created_by: jl
 creation_date: 2009-04-21T04:07:27Z
 
 [Term]
@@ -15329,7 +15360,7 @@ is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0003674 ! molecular_function
 relationship: positively_regulates GO:0003674 ! molecular_function
-created_by: jane
+created_by: jl
 creation_date: 2009-04-21T04:11:06Z
 
 [Term]
@@ -15339,7 +15370,7 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving any organic compound that is weakly basic in character and contains an amino or a substituted amino group, as carried out by individual cells. Amines are called primary, secondary, or tertiary according to whether one, two, or three carbon atoms are attached to the nitrogen atom." [GOC:jl]
 is_a: GO:0009308 ! amine metabolic process
 is_a: GO:0034641 ! cellular nitrogen compound metabolic process
-created_by: jane
+created_by: jl
 creation_date: 2009-07-15T11:55:44Z
 
 [Term]
@@ -15354,7 +15385,7 @@ synonym: "growth on or near surface of other organism during symbiotic interacti
 synonym: "growth on or near surface of other organism involved in symbiotic interaction" RELATED []
 is_a: GO:0040007 ! growth
 is_a: GO:0044419 ! interspecies interaction between organisms
-created_by: jane
+created_by: jl
 creation_date: 2009-07-30T02:22:33Z
 
 [Term]
@@ -15372,7 +15403,7 @@ is_a: GO:0051704 ! multi-organism process
 intersection_of: GO:0032502 ! developmental process
 intersection_of: part_of GO:0044419 ! interspecies interaction between organisms
 relationship: part_of GO:0044419 ! interspecies interaction between organisms
-created_by: jane
+created_by: jl
 creation_date: 2009-07-30T02:26:46Z
 
 [Term]
@@ -15497,7 +15528,7 @@ subset: goslim_generic
 subset: goslim_metagenomics
 synonym: "small molecule metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
-created_by: jane
+created_by: jl
 creation_date: 2010-01-26T12:05:20Z
 
 [Term]
@@ -15509,7 +15540,7 @@ comment: Small molecules in GO include monosaccharides but exclude disaccharides
 synonym: "small molecule catabolism" EXACT []
 is_a: GO:0009056 ! catabolic process
 is_a: GO:0044281 ! small molecule metabolic process
-created_by: jane
+created_by: jl
 creation_date: 2010-01-26T12:06:10Z
 
 [Term]
@@ -15521,7 +15552,7 @@ comment: Small molecules in GO include monosaccharides but exclude disaccharides
 synonym: "small molecule biosynthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0044281 ! small molecule metabolic process
-created_by: jane
+created_by: jl
 creation_date: 2010-01-26T12:06:49Z
 
 [Term]
@@ -15533,7 +15564,7 @@ synonym: "dendrite branch" EXACT []
 synonym: "secondary dendrite" NARROW [PMID:25431552]
 xref: NIF_Subcellular:sao884265541
 is_a: GO:0030425 ! dendrite
-created_by: jane
+created_by: jl
 creation_date: 2010-02-05T04:18:53Z
 
 [Term]
@@ -15542,7 +15573,7 @@ name: disruption of cells of other organism
 namespace: biological_process
 def: "A process in which an organism has a negative effect on the functioning of the second organism's cells." [GOC:jl]
 is_a: GO:0035821 ! modulation of process of other organism
-created_by: janelomax
+created_by: jl
 creation_date: 2011-10-27T02:27:48Z
 
 [Term]
@@ -15829,7 +15860,7 @@ namespace: biological_process
 def: "A biological process that directly contributes to the process of producing new individuals, involving another organism." [GOC:jl]
 is_a: GO:0022414 ! reproductive process
 is_a: GO:0051704 ! multi-organism process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:56:30Z
 
 [Term]
@@ -15839,7 +15870,7 @@ namespace: biological_process
 def: "A multicellular organism process which involves another multicellular organism of the same or different species." [GOC:jl]
 is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0051704 ! multi-organism process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T16:06:16Z
 
 [Term]
@@ -15852,7 +15883,7 @@ subset: goslim_drosophila
 synonym: "microtubule-based flagellum organization" EXACT []
 is_a: GO:0006996 ! organelle organization
 is_a: GO:0120036 ! plasma membrane bounded cell projection organization
-created_by: janelomax
+created_by: jl
 creation_date: 2013-03-27T15:09:58Z
 
 [Term]
@@ -15869,7 +15900,7 @@ disjoint_from: GO:0050896 ! response to stimulus
 disjoint_from: GO:0051179 ! localization
 disjoint_from: GO:0051704 ! multi-organism process
 disjoint_from: GO:0071840 ! cellular component organization or biogenesis
-created_by: janelomax
+created_by: jl
 creation_date: 2014-07-16T13:12:40Z
 
 [Term]
@@ -18727,7 +18758,7 @@ is_a: GO:0005102 ! signaling receptor binding
 is_a: GO:0030546 ! signaling receptor activator activity
 relationship: part_of GO:0007165 ! signal transduction
 property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/14220 xsd:anyURI
-created_by: midori
+created_by: mah
 creation_date: 2010-09-13T04:51:59Z
 
 [Term]
@@ -20018,6 +20049,17 @@ intersection_of: positively_regulates GO:0050817 ! coagulation
 relationship: positively_regulates GO:0050817 ! coagulation
 
 [Term]
+id: GO:0050839
+name: cell adhesion molecule binding
+namespace: molecular_function
+def: "Interacting selectively and non-covalently with a cell adhesion molecule." [GOC:ai]
+synonym: "adhesive extracellular matrix constituent" RELATED []
+synonym: "CAM binding" EXACT []
+synonym: "cell adhesion molecule activity" RELATED []
+synonym: "cell adhesion receptor activity" RELATED []
+is_a: GO:0005515 ! protein binding
+
+[Term]
 id: GO:0050863
 name: regulation of T cell activation
 namespace: biological_process
@@ -20828,92 +20870,78 @@ creation_date: 2013-12-18T13:51:04Z
 
 [Term]
 id: GO:0051186
-name: cofactor metabolic process
+name: obsolete cofactor metabolic process
 namespace: biological_process
-def: "The chemical reactions and pathways involving a cofactor, a substance that is required for the activity of an enzyme or other protein. Cofactors may be inorganic, such as the metal atoms zinc, iron, and copper in certain forms, or organic, in which case they are referred to as coenzymes. Cofactors may either be bound tightly to active sites or bind loosely with the substrate." [GOC:ai]
-subset: goslim_chembl
-subset: goslim_drosophila
-subset: goslim_generic
-subset: goslim_pir
-subset: goslim_pombe
-subset: goslim_yeast
+def: "OBSOLETE. The chemical reactions and pathways involving a cofactor, a substance that is required for the activity of an enzyme or other protein. Cofactors may be inorganic, such as the metal atoms zinc, iron, and copper in certain forms, or organic, in which case they are referred to as coenzymes. Cofactors may either be bound tightly to active sites or bind loosely with the substrate." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the cofactor role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all chemically related by the fact that they may be used as a cofactor.
 synonym: "cofactor metabolism" EXACT []
-is_a: GO:0044237 ! cellular metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051188
-name: cofactor biosynthetic process
+name: obsolete cofactor biosynthetic process
 namespace: biological_process
-def: "The chemical reactions and pathways resulting in the formation of a cofactor, a substance that is required for the activity of an enzyme or other protein." [GOC:ai]
+def: "OBSOLETE. The chemical reactions and pathways resulting in the formation of a cofactor, a substance that is required for the activity of an enzyme or other protein." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the cofactor role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all chemically related by the fact that they may be used as a cofactor.
 synonym: "cofactor anabolism" EXACT []
 synonym: "cofactor biosynthesis" EXACT []
 synonym: "cofactor formation" EXACT []
 synonym: "cofactor synthesis" EXACT []
-is_a: GO:0044249 ! cellular biosynthetic process
-is_a: GO:0051186 ! cofactor metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051193
-name: regulation of cofactor metabolic process
+name: obsolete regulation of cofactor metabolic process
 namespace: biological_process
-def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+def: "OBSOLETE. Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the cofactor role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all chemically related by the fact that they may be used as a cofactor.
 synonym: "regulation of cofactor metabolism" EXACT []
-is_a: GO:0031323 ! regulation of cellular metabolic process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0051186 ! cofactor metabolic process
-relationship: regulates GO:0051186 ! cofactor metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051194
-name: positive regulation of cofactor metabolic process
+name: obsolete positive regulation of cofactor metabolic process
 namespace: biological_process
-def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+def: "OBSOLETE. Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the cofactor role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all chemically related by the fact that they may be used as a cofactor.
 synonym: "activation of cofactor metabolic process" NARROW []
 synonym: "positive regulation of cofactor metabolism" EXACT []
 synonym: "stimulation of cofactor metabolic process" NARROW []
 synonym: "up regulation of cofactor metabolic process" EXACT []
 synonym: "up-regulation of cofactor metabolic process" EXACT []
 synonym: "upregulation of cofactor metabolic process" EXACT []
-is_a: GO:0031325 ! positive regulation of cellular metabolic process
-is_a: GO:0051193 ! regulation of cofactor metabolic process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0051186 ! cofactor metabolic process
-relationship: positively_regulates GO:0051186 ! cofactor metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051195
-name: negative regulation of cofactor metabolic process
+name: obsolete negative regulation of cofactor metabolic process
 namespace: biological_process
-def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+def: "OBSOLETE. Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving a cofactor." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the cofactor role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all chemically related by the fact that they may be used as a cofactor.
 synonym: "down regulation of cofactor metabolic process" EXACT []
 synonym: "down-regulation of cofactor metabolic process" EXACT []
 synonym: "downregulation of cofactor metabolic process" EXACT []
 synonym: "inhibition of cofactor metabolic process" NARROW []
 synonym: "negative regulation of cofactor metabolism" EXACT []
-is_a: GO:0031324 ! negative regulation of cellular metabolic process
-is_a: GO:0051193 ! regulation of cofactor metabolic process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0051186 ! cofactor metabolic process
-relationship: negatively_regulates GO:0051186 ! cofactor metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051196
-name: regulation of coenzyme metabolic process
+name: obsolete regulation of coenzyme metabolic process
 namespace: biological_process
-def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+def: "OBSOLETE. Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the coenzyme role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all metabolically related by the fact that they may be used as a coenzyme.
 synonym: "regulation of coenzyme and prosthetic group metabolic process" BROAD []
 synonym: "regulation of coenzyme and prosthetic group metabolism" BROAD []
 synonym: "regulation of coenzyme metabolism" EXACT []
-is_a: GO:0051193 ! regulation of cofactor metabolic process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0006732 ! coenzyme metabolic process
-relationship: regulates GO:0006732 ! coenzyme metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051197
-name: positive regulation of coenzyme metabolic process
+name: obsolete positive regulation of coenzyme metabolic process
 namespace: biological_process
-def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+def: "OBSOLETE. Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the coenzyme role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all metabolically related by the fact that they may be used as a coenzyme.
 synonym: "activation of coenzyme metabolic process" NARROW []
 synonym: "positive regulation of coenzyme and prosthetic group metabolic process" BROAD []
 synonym: "positive regulation of coenzyme and prosthetic group metabolism" BROAD []
@@ -20922,17 +20950,14 @@ synonym: "stimulation of coenzyme metabolic process" NARROW []
 synonym: "up regulation of coenzyme metabolic process" EXACT []
 synonym: "up-regulation of coenzyme metabolic process" EXACT []
 synonym: "upregulation of coenzyme metabolic process" EXACT []
-is_a: GO:0051194 ! positive regulation of cofactor metabolic process
-is_a: GO:0051196 ! regulation of coenzyme metabolic process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0006732 ! coenzyme metabolic process
-relationship: positively_regulates GO:0006732 ! coenzyme metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051198
-name: negative regulation of coenzyme metabolic process
+name: obsolete negative regulation of coenzyme metabolic process
 namespace: biological_process
-def: "Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+def: "OBSOLETE. Any process that stops, prevents, or reduces the frequency, rate or extent of the chemical reactions and pathways involving a coenzyme." [GOC:ai]
+comment: 1. Making inferences in GO about compounds based on the coenzyme role curated by ChEBI creates relationships that are not always true which violates ontological principles for GO; therefore we will cease making these inferences. 2. It is not meaningful to group metabolic processes that are not all metabolically related by the fact that they may be used as a coenzyme.
 synonym: "down regulation of coenzyme metabolic process" EXACT []
 synonym: "down-regulation of coenzyme metabolic process" EXACT []
 synonym: "downregulation of coenzyme metabolic process" EXACT []
@@ -20940,11 +20965,7 @@ synonym: "inhibition of coenzyme metabolic process" NARROW []
 synonym: "negative regulation of coenzyme and prosthetic group metabolic process" BROAD []
 synonym: "negative regulation of coenzyme and prosthetic group metabolism" BROAD []
 synonym: "negative regulation of coenzyme metabolism" EXACT []
-is_a: GO:0051195 ! negative regulation of cofactor metabolic process
-is_a: GO:0051196 ! regulation of coenzyme metabolic process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0006732 ! coenzyme metabolic process
-relationship: negatively_regulates GO:0006732 ! coenzyme metabolic process
+is_obsolete: true
 
 [Term]
 id: GO:0051213
@@ -21713,7 +21734,6 @@ name: histamine transport
 namespace: biological_process
 def: "The directed movement of histamine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Histamine is a physiologically active amine, found in plant and animal tissue and released from mast cells as part of an allergic reaction in humans." [GOC:ai]
 is_a: GO:0006812 ! cation transport
-is_a: GO:0006836 ! neurotransmitter transport
 is_a: GO:0071702 ! organic substance transport
 is_a: GO:0071705 ! nitrogen compound transport
 
@@ -22070,7 +22090,6 @@ namespace: biological_process
 def: "Any process mediated by an organism that results in the death of cells in a second organism, where the two organisms are in a symbiotic interaction." [GOC:add]
 synonym: "killing of cells in other organism during symbiotic interaction" RELATED [GOC:tb]
 is_a: GO:0031640 ! killing of cells of other organism
-is_a: GO:0044419 ! interspecies interaction between organisms
 
 [Term]
 id: GO:0051917
@@ -22460,7 +22479,7 @@ synonym: "ATP hydrolysis coupled transmembrane transport" NARROW []
 synonym: "membrane transport" EXACT []
 is_a: GO:0006810 ! transport
 is_a: GO:0009987 ! cellular process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2015-10-21T13:22:47Z
 
 [Term]
@@ -22531,7 +22550,7 @@ namespace: biological_process
 def: "The transmission of vibrations via ossicles to the inner ear." [GOC:mh]
 is_a: GO:0032501 ! multicellular organismal process
 relationship: part_of GO:0007605 ! sensory perception of sound
-created_by: Jennifer I Deegan
+created_by: jid
 creation_date: 2009-10-13T10:59:39Z
 
 [Term]
@@ -23422,7 +23441,7 @@ synonym: "membrane organisation" EXACT [GOC:mah]
 synonym: "membrane organization and biogenesis" RELATED [GOC:mah]
 synonym: "single-organism membrane organization" RELATED []
 is_a: GO:0016043 ! cellular component organization
-created_by: janelomax
+created_by: jl
 creation_date: 2010-02-08T02:43:11Z
 
 [Term]
@@ -24015,7 +24034,6 @@ synonym: "regulation of heme anabolism" EXACT [GOC:mah]
 synonym: "regulation of heme biosynthesis" EXACT [GOC:mah]
 synonym: "regulation of heme formation" EXACT [GOC:mah]
 synonym: "regulation of heme synthesis" EXACT [GOC:mah]
-is_a: GO:0051193 ! regulation of cofactor metabolic process
 is_a: GO:1901463 ! regulation of tetrapyrrole biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006783 ! heme biosynthetic process
@@ -24035,7 +24053,6 @@ synonym: "negative regulation of heme anabolism" EXACT [GOC:mah]
 synonym: "negative regulation of heme biosynthesis" EXACT [GOC:mah]
 synonym: "negative regulation of heme formation" EXACT [GOC:mah]
 synonym: "negative regulation of heme synthesis" EXACT [GOC:mah]
-is_a: GO:0051195 ! negative regulation of cofactor metabolic process
 is_a: GO:0070453 ! regulation of heme biosynthetic process
 is_a: GO:1901464 ! negative regulation of tetrapyrrole biosynthetic process
 intersection_of: GO:0008150 ! biological_process
@@ -24057,7 +24074,6 @@ synonym: "stimulation of heme biosynthetic process" NARROW [GOC:mah]
 synonym: "up regulation of heme biosynthetic process" EXACT [GOC:mah]
 synonym: "up-regulation of heme biosynthetic process" EXACT [GOC:mah]
 synonym: "upregulation of heme biosynthetic process" EXACT [GOC:mah]
-is_a: GO:0051194 ! positive regulation of cofactor metabolic process
 is_a: GO:0070453 ! regulation of heme biosynthetic process
 is_a: GO:1901465 ! positive regulation of tetrapyrrole biosynthetic process
 intersection_of: GO:0008150 ! biological_process
@@ -24104,7 +24120,7 @@ name: leukocyte proliferation
 namespace: biological_process
 def: "The expansion of a leukocyte population by cell division." [GOC:add]
 is_a: GO:0008283 ! cell population proliferation
-created_by: midori
+created_by: mah
 creation_date: 2009-05-28T05:25:28Z
 
 [Term]
@@ -24116,7 +24132,7 @@ is_a: GO:0042127 ! regulation of cell population proliferation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0070661 ! leukocyte proliferation
 relationship: regulates GO:0070661 ! leukocyte proliferation
-created_by: midori
+created_by: mah
 creation_date: 2009-05-28T05:30:39Z
 
 [Term]
@@ -24133,7 +24149,7 @@ is_a: GO:0070663 ! regulation of leukocyte proliferation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0070661 ! leukocyte proliferation
 relationship: negatively_regulates GO:0070661 ! leukocyte proliferation
-created_by: midori
+created_by: mah
 creation_date: 2009-05-28T05:34:50Z
 
 [Term]
@@ -24151,7 +24167,7 @@ is_a: GO:0070663 ! regulation of leukocyte proliferation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0070661 ! leukocyte proliferation
 relationship: positively_regulates GO:0070661 ! leukocyte proliferation
-created_by: midori
+created_by: mah
 creation_date: 2009-05-28T05:36:46Z
 
 [Term]
@@ -24162,7 +24178,7 @@ def: "Any process in which a macromolecule is transported to, and/or maintained 
 synonym: "cellular macromolecule localisation" EXACT [GOC:mah]
 is_a: GO:0033036 ! macromolecule localization
 is_a: GO:0051641 ! cellular localization
-created_by: midori
+created_by: mah
 creation_date: 2009-06-16T04:08:29Z
 
 [Term]
@@ -24181,7 +24197,7 @@ is_a: GO:1904251 ! regulation of bile acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006699 ! bile acid biosynthetic process
 relationship: regulates GO:0006699 ! bile acid biosynthetic process
-created_by: midori
+created_by: mah
 creation_date: 2009-08-14T03:09:02Z
 
 [Term]
@@ -24204,7 +24220,7 @@ is_a: GO:1904252 ! negative regulation of bile acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0006699 ! bile acid biosynthetic process
 relationship: negatively_regulates GO:0006699 ! bile acid biosynthetic process
-created_by: midori
+created_by: mah
 creation_date: 2009-08-14T03:16:40Z
 
 [Term]
@@ -24228,7 +24244,7 @@ is_a: GO:1904253 ! positive regulation of bile acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0006699 ! bile acid biosynthetic process
 relationship: positively_regulates GO:0006699 ! bile acid biosynthetic process
-created_by: midori
+created_by: mah
 creation_date: 2009-08-14T03:22:58Z
 
 [Term]
@@ -24240,7 +24256,7 @@ comment: Note that this term is in the subset of terms that should not be used f
 subset: gocheck_do_not_manually_annotate
 is_a: GO:0042221 ! response to chemical
 is_a: GO:0051716 ! cellular response to stimulus
-created_by: midori
+created_by: mah
 creation_date: 2009-08-27T04:41:45Z
 
 [Term]
@@ -24251,7 +24267,7 @@ def: "The aggregation, arrangement and bonding together of a set of components t
 subset: goslim_yeast
 is_a: GO:0006996 ! organelle organization
 is_a: GO:0022607 ! cellular component assembly
-created_by: midori
+created_by: mah
 creation_date: 2009-09-15T03:00:51Z
 
 [Term]
@@ -24262,7 +24278,7 @@ def: "The directed killing of a target cell by a neutrophil." [GOC:add, ISBN:078
 synonym: "neutrophil mediated cell killing" EXACT [GOC:add]
 is_a: GO:0001909 ! leukocyte mediated cytotoxicity
 is_a: GO:0002446 ! neutrophil mediated immunity
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T01:49:30Z
 
 [Term]
@@ -24273,7 +24289,7 @@ def: "The directed killing of a symbiont target cell by a neutrophil. The symbio
 synonym: "neutrophil mediated killing of symbiont cell" EXACT []
 is_a: GO:0051873 ! killing by host of symbiont cells
 is_a: GO:0070942 ! neutrophil mediated cytotoxicity
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T01:52:03Z
 
 [Term]
@@ -24284,7 +24300,7 @@ def: "The directed killing of a bacterium by a neutrophil." [GOC:add, ISBN:07817
 synonym: "neutrophil mediated killing of bacterium" EXACT []
 is_a: GO:0070943 ! neutrophil-mediated killing of symbiont cell
 relationship: part_of GO:0042742 ! defense response to bacterium
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T01:55:56Z
 
 [Term]
@@ -24298,7 +24314,7 @@ is_a: GO:0002886 ! regulation of myeloid leukocyte mediated immunity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0070942 ! neutrophil mediated cytotoxicity
 relationship: regulates GO:0070942 ! neutrophil mediated cytotoxicity
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:14:36Z
 
 [Term]
@@ -24309,13 +24325,13 @@ def: "Any process that modulates the rate, frequency or extent of neutrophil med
 is_a: GO:0002831 ! regulation of response to biotic stimulus
 is_a: GO:0031347 ! regulation of defense response
 is_a: GO:0032101 ! regulation of response to external stimulus
-is_a: GO:0043903 ! regulation of symbiosis, encompassing mutualism through parasitism
+is_a: GO:0043903 ! regulation of symbiotic process
 is_a: GO:0051709 ! regulation of killing of cells of other organism
 is_a: GO:0070948 ! regulation of neutrophil mediated cytotoxicity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0070943 ! neutrophil-mediated killing of symbiont cell
 relationship: regulates GO:0070943 ! neutrophil-mediated killing of symbiont cell
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:14:36Z
 
 [Term]
@@ -24328,7 +24344,7 @@ is_a: GO:1900424 ! regulation of defense response to bacterium
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0070944 ! neutrophil-mediated killing of bacterium
 relationship: regulates GO:0070944 ! neutrophil-mediated killing of bacterium
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:14:36Z
 
 [Term]
@@ -24347,7 +24363,7 @@ is_a: GO:0070948 ! regulation of neutrophil mediated cytotoxicity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0070942 ! neutrophil mediated cytotoxicity
 relationship: negatively_regulates GO:0070942 ! neutrophil mediated cytotoxicity
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:20:17Z
 
 [Term]
@@ -24368,7 +24384,7 @@ is_a: GO:0070954 ! negative regulation of neutrophil mediated cytotoxicity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0070943 ! neutrophil-mediated killing of symbiont cell
 relationship: negatively_regulates GO:0070943 ! neutrophil-mediated killing of symbiont cell
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:20:17Z
 
 [Term]
@@ -24386,7 +24402,7 @@ is_a: GO:1900425 ! negative regulation of defense response to bacterium
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0070944 ! neutrophil-mediated killing of bacterium
 relationship: negatively_regulates GO:0070944 ! neutrophil-mediated killing of bacterium
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:20:17Z
 
 [Term]
@@ -24406,7 +24422,7 @@ is_a: GO:0070948 ! regulation of neutrophil mediated cytotoxicity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0070942 ! neutrophil mediated cytotoxicity
 relationship: positively_regulates GO:0070942 ! neutrophil mediated cytotoxicity
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:28:49Z
 
 [Term]
@@ -24428,7 +24444,7 @@ is_a: GO:0070960 ! positive regulation of neutrophil mediated cytotoxicity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0070943 ! neutrophil-mediated killing of symbiont cell
 relationship: positively_regulates GO:0070943 ! neutrophil-mediated killing of symbiont cell
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:28:49Z
 
 [Term]
@@ -24447,7 +24463,7 @@ is_a: GO:1900426 ! positive regulation of defense response to bacterium
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0070944 ! neutrophil-mediated killing of bacterium
 relationship: positively_regulates GO:0070944 ! neutrophil-mediated killing of bacterium
-created_by: midori
+created_by: mah
 creation_date: 2009-10-01T02:28:49Z
 
 [Term]
@@ -24457,7 +24473,7 @@ namespace: biological_process
 def: "A developmental process, independent of morphogenetic (shape) change, that is required for bone to attain its fully functional state." [GOC:dph, GOC:mah]
 is_a: GO:0048799 ! animal organ maturation
 relationship: part_of GO:0060348 ! bone development
-created_by: midori
+created_by: mah
 creation_date: 2009-10-05T04:35:31Z
 
 [Term]
@@ -24468,7 +24484,7 @@ def: "A cellular process that results in a change in the spatial configuration o
 subset: goslim_metagenomics
 synonym: "DNA conformation modification" EXACT [GOC:mah]
 is_a: GO:0051276 ! chromosome organization
-created_by: midori
+created_by: mah
 creation_date: 2009-11-09T11:36:34Z
 
 [Term]
@@ -24478,7 +24494,7 @@ namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of an organic substance stimulus." [GOC:mah]
 is_a: GO:0010033 ! response to organic substance
 is_a: GO:0070887 ! cellular response to chemical stimulus
-created_by: midori
+created_by: mah
 creation_date: 2009-12-10T04:46:04Z
 
 [Term]
@@ -24488,7 +24504,7 @@ namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a cytokine stimulus." [GOC:mah]
 is_a: GO:0034097 ! response to cytokine
 is_a: GO:0071310 ! cellular response to organic substance
-created_by: midori
+created_by: mah
 creation_date: 2009-12-11T02:41:12Z
 
 [Term]
@@ -24497,7 +24513,7 @@ name: mononuclear cell migration
 namespace: biological_process
 def: "The movement of a mononuclear cell within or between different tissues and organs of the body." [GOC:mah]
 is_a: GO:0050900 ! leukocyte migration
-created_by: midori
+created_by: mah
 creation_date: 2010-02-16T02:11:00Z
 
 [Term]
@@ -24509,7 +24525,7 @@ is_a: GO:0002685 ! regulation of leukocyte migration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0071674 ! mononuclear cell migration
 relationship: regulates GO:0071674 ! mononuclear cell migration
-created_by: midori
+created_by: mah
 creation_date: 2010-02-16T02:11:53Z
 
 [Term]
@@ -24526,7 +24542,7 @@ is_a: GO:0071675 ! regulation of mononuclear cell migration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0071674 ! mononuclear cell migration
 relationship: negatively_regulates GO:0071674 ! mononuclear cell migration
-created_by: midori
+created_by: mah
 creation_date: 2010-02-16T02:13:55Z
 
 [Term]
@@ -24544,7 +24560,7 @@ is_a: GO:0071675 ! regulation of mononuclear cell migration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0071674 ! mononuclear cell migration
 relationship: positively_regulates GO:0071674 ! mononuclear cell migration
-created_by: midori
+created_by: mah
 creation_date: 2010-02-16T02:15:29Z
 
 [Term]
@@ -24555,7 +24571,7 @@ def: "Any process in which a protein is transported from one specific location i
 synonym: "protein localisation in extracellular region" EXACT [GOC:mah]
 synonym: "protein localization in extracellular region" EXACT []
 is_a: GO:0008104 ! protein localization
-created_by: midori
+created_by: mah
 creation_date: 2010-02-25T04:00:13Z
 
 [Term]
@@ -24565,7 +24581,7 @@ namespace: biological_process
 def: "A developmental process, independent of morphogenetic (shape) change, that is required for an anatomical structure to attain its fully functional state." [GOC:mah]
 is_a: GO:0021700 ! developmental maturation
 relationship: part_of GO:0048856 ! anatomical structure development
-created_by: midori
+created_by: mah
 creation_date: 2010-03-02T11:43:38Z
 
 [Term]
@@ -24574,7 +24590,7 @@ name: organic substance transport
 namespace: biological_process
 def: "The directed movement of organic substances into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore. An organic substance is a molecular entity that contains carbon." [GOC:mah]
 is_a: GO:0006810 ! transport
-created_by: midori
+created_by: mah
 creation_date: 2010-03-08T02:15:14Z
 
 [Term]
@@ -24586,7 +24602,7 @@ synonym: "organic molecular entity metabolic process" EXACT []
 synonym: "organic molecular entity metabolism" EXACT []
 synonym: "organic substance metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2010-03-08T03:32:18Z
 
 [Term]
@@ -24595,7 +24611,7 @@ name: nitrogen compound transport
 namespace: biological_process
 def: "The directed movement of nitrogen-containing compounds into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:mah]
 is_a: GO:0006810 ! transport
-created_by: midori
+created_by: mah
 creation_date: 2010-03-08T03:56:28Z
 
 [Term]
@@ -24612,7 +24628,7 @@ synonym: "IgG2c" NARROW [GOC:add]
 synonym: "IgG3" NARROW [GOC:add]
 synonym: "IgG4" NARROW [GOC:add]
 is_a: GO:0019814 ! immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24631,7 +24647,7 @@ synonym: "IgG3 antibody" NARROW [GOC:add]
 synonym: "IgG4 antibody" NARROW [GOC:add]
 is_a: GO:0042571 ! immunoglobulin complex, circulating
 is_a: GO:0071735 ! IgG immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24641,7 +24657,7 @@ namespace: cellular_component
 def: "A protein complex composed of two identical immunoglobulin heavy chains of the IgD isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgD immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." [GOC:add, ISBN:0781765196, PMID:11282392]
 comment: Note that an IgD immunoglobulin complex has the function of antigen binding if a suitable antigen is available.
 is_a: GO:0019814 ! immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24653,7 +24669,7 @@ comment: Note that an IgD immunoglobulin complex has the function of antigen bin
 synonym: "IgD antibody" EXACT [GOC:add]
 is_a: GO:0042571 ! immunoglobulin complex, circulating
 is_a: GO:0071738 ! IgD immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24663,7 +24679,7 @@ namespace: cellular_component
 def: "A protein complex composed of two identical immunoglobulin heavy chains of the IgE isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgE immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." [GOC:add, ISBN:0781765196]
 comment: Note that an IgE immunoglobulin complex has the function of antigen binding if a suitable antigen is available.
 is_a: GO:0019814 ! immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24675,7 +24691,7 @@ comment: Note that an IgE immunoglobulin complex has the function of antigen bin
 synonym: "IgE antibody" EXACT [GOC:add]
 is_a: GO:0042571 ! immunoglobulin complex, circulating
 is_a: GO:0071742 ! IgE immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24687,7 +24703,7 @@ comment: Note that an IgA immunoglobulin complex has the function of antigen bin
 synonym: "IgA1 antibody" NARROW [GOC:add]
 synonym: "IgA2 antibody" NARROW [GOC:add]
 is_a: GO:0019814 ! immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24701,7 +24717,7 @@ synonym: "IgA1 antibody" NARROW [GOC:add]
 synonym: "IgA2 antibody" NARROW [GOC:add]
 is_a: GO:0042571 ! immunoglobulin complex, circulating
 is_a: GO:0071745 ! IgA immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24711,7 +24727,7 @@ namespace: cellular_component
 def: "A protein complex composed of two identical immunoglobulin heavy chains of the IgM isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and in its circulating form complexed with J chain in polymeric forms. An IgM immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." [GOC:add, ISBN:0781765196, PMID:20176268]
 comment: Note that an IgM immunoglobulin complex has the function of antigen binding if a suitable antigen is available.
 is_a: GO:0019814 ! immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24723,7 +24739,7 @@ comment: Note that an IgM immunoglobulin complex has the function of antigen bin
 synonym: "IgM antibody" EXACT [GOC:add]
 is_a: GO:0042571 ! immunoglobulin complex, circulating
 is_a: GO:0071753 ! IgM immunoglobulin complex
-created_by: midori
+created_by: mah
 creation_date: 2010-03-24T01:44:53Z
 
 [Term]
@@ -24738,7 +24754,7 @@ synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
 synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organization or biogenesis at cellular level" EXACT []
 is_a: GO:0009987 ! cellular process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-10T01:39:16Z
 
 [Term]
@@ -24749,7 +24765,7 @@ def: "Any apoptotic process in a leukocyte, an achromatic cell of the myeloid or
 comment: Note that a lymphocyte is a cell of the B cell, T cell, or natural killer cell lineage (CL:0000542).
 synonym: "leukocyte apoptosis" NARROW []
 is_a: GO:0006915 ! apoptotic process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-14T12:44:09Z
 
 [Term]
@@ -24759,7 +24775,7 @@ namespace: cellular_component
 def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." [GOC:mah]
 subset: goslim_flybase_ribbon
 is_a: GO:0110165 ! cellular anatomical entity
-created_by: midori
+created_by: mah
 creation_date: 2010-10-04T01:51:47Z
 
 [Term]
@@ -24771,7 +24787,7 @@ synonym: "extracellular vesicular exosome assembly" EXACT [GOC:vesicles]
 is_a: GO:0016050 ! vesicle organization
 is_a: GO:0070925 ! organelle assembly
 relationship: part_of GO:0097734 ! extracellular exosome biogenesis
-created_by: midori
+created_by: mah
 creation_date: 2010-10-18T03:44:18Z
 
 [Term]
@@ -24781,7 +24797,7 @@ namespace: biological_process
 def: "The developmental process pertaining to the initial formation of an epithelial tube." [GOC:mtg_kidney_jan10]
 is_a: GO:0035148 ! tube formation
 relationship: part_of GO:0060562 ! epithelial tube morphogenesis
-created_by: midori
+created_by: mah
 creation_date: 2010-02-26T02:15:40Z
 
 [Term]
@@ -24795,7 +24811,7 @@ synonym: "monocarboxylic acid formation" EXACT [GOC:mah]
 synonym: "monocarboxylic acid synthesis" EXACT [GOC:mah]
 is_a: GO:0032787 ! monocarboxylic acid metabolic process
 is_a: GO:0046394 ! carboxylic acid biosynthetic process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-02T04:51:32Z
 
 [Term]
@@ -24805,7 +24821,7 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving dicarboxylic acids, any organic acid containing three carboxyl (COOH) groups or anions (COO-)." [GOC:mah]
 synonym: "tricarboxylic acid metabolism" EXACT [GOC:mah]
 is_a: GO:0019752 ! carboxylic acid metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-11T05:07:30Z
 
 [Term]
@@ -24815,7 +24831,7 @@ namespace: biological_process
 def: "The process whose specific outcome is the progression of the cardiovascular system over time, from its formation to the mature structure. The cardiovascular system is the anatomical system that has as its parts the heart and blood vessels." [GOC:mah, UBERON:0004535]
 is_a: GO:0048731 ! system development
 relationship: part_of GO:0072359 ! circulatory system development
-created_by: midori
+created_by: mah
 creation_date: 2010-11-16T11:25:49Z
 
 [Term]
@@ -24824,7 +24840,7 @@ name: circulatory system development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of the circulatory system over time, from its formation to the mature structure. The circulatory system is the organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis." [GOC:mah, UBERON:0001009]
 is_a: GO:0048731 ! system development
-created_by: midori
+created_by: mah
 creation_date: 2010-11-16T11:27:39Z
 
 [Term]
@@ -24836,7 +24852,7 @@ synonym: "protein activation pathway" EXACT [GOC:add]
 synonym: "protein activitory cascade" EXACT [GOC:add]
 is_a: GO:0019538 ! protein metabolic process
 is_a: GO:0050896 ! response to stimulus
-created_by: midori
+created_by: mah
 creation_date: 2010-11-22T02:54:18Z
 
 [Term]
@@ -24847,7 +24863,7 @@ def: "A protein activation cascade that contributes to blood coagulation and con
 comment: See also the biological process term 'blood coagulation, intrinsic pathway ; GO:0007597'.
 is_a: GO:0072376 ! protein activation cascade
 relationship: part_of GO:0072378 ! blood coagulation, fibrin clot formation
-created_by: midori
+created_by: mah
 creation_date: 2010-11-22T03:01:12Z
 
 [Term]
@@ -24858,7 +24874,7 @@ def: "A protein activation cascade that contributes to blood coagulation and con
 comment: See also the biological process term 'blood coagulation, intrinsic pathway ; GO:0007597'.
 is_a: GO:0072376 ! protein activation cascade
 relationship: part_of GO:0007596 ! blood coagulation
-created_by: midori
+created_by: mah
 creation_date: 2010-11-22T03:09:32Z
 
 [Term]
@@ -24869,7 +24885,7 @@ def: "Any process involved in the maintenance of an internal steady state of div
 comment: Note that this term was split from 'cellular di-, tri-valent inorganic cation homeostasis ; GO:0030005' (sibling term 'cellular trivalent inorganic cation homeostasis' ; GO:0072504').
 is_a: GO:0030003 ! cellular cation homeostasis
 is_a: GO:0072507 ! divalent inorganic cation homeostasis
-created_by: midori
+created_by: mah
 creation_date: 2010-12-16T01:25:40Z
 
 [Term]
@@ -24880,7 +24896,7 @@ def: "Any process involved in the maintenance of an internal steady state of div
 comment: Note that this term was split from 'di-, tri-valent inorganic anion homeostasis ; GO:0055061' (sibling term 'trivalent inorganic anion homeostasis' ; GO:0072506').
 is_a: GO:0055081 ! anion homeostasis
 is_a: GO:0098771 ! inorganic ion homeostasis
-created_by: midori
+created_by: mah
 creation_date: 2010-12-16T01:39:00Z
 
 [Term]
@@ -24891,7 +24907,7 @@ def: "Any process involved in the maintenance of an internal steady state of tri
 comment: Note that this term was split from 'di-, tri-valent inorganic anion homeostasis ; GO:0055061' (sibling term 'divalent inorganic anion homeostasis' ; GO:0072505').
 is_a: GO:0055081 ! anion homeostasis
 is_a: GO:0098771 ! inorganic ion homeostasis
-created_by: midori
+created_by: mah
 creation_date: 2010-12-16T01:39:39Z
 
 [Term]
@@ -24902,7 +24918,7 @@ def: "Any process involved in the maintenance of an internal steady state of div
 comment: Note that this term was split from 'di-, tri-valent inorganic cation homeostasis ; GO:0055066' (sibling term 'trivalent inorganic cation homeostasis' ; GO:0072508').
 is_a: GO:0055080 ! cation homeostasis
 is_a: GO:0098771 ! inorganic ion homeostasis
-created_by: midori
+created_by: mah
 creation_date: 2010-12-16T03:22:48Z
 
 [Term]
@@ -24917,7 +24933,7 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2011-01-04T03:03:59Z
 
 [Term]
@@ -24931,7 +24947,7 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2011-01-04T03:27:19Z
 
 [Term]
@@ -24942,7 +24958,7 @@ def: "The chemical reactions and pathways involving a reactive oxygen species, a
 synonym: "reactive oxygen species metabolism" EXACT [GOC:mah]
 synonym: "ROS metabolic process" EXACT [CHEBI:26523, GOC:mah]
 is_a: GO:0044237 ! cellular metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2011-02-11T10:50:06Z
 
 [Term]
@@ -24954,7 +24970,7 @@ is_a: GO:0019222 ! regulation of metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0044238 ! primary metabolic process
 relationship: regulates GO:0044238 ! primary metabolic process
-created_by: donghui
+created_by: dhl
 creation_date: 2009-04-22T04:30:52Z
 
 [Term]
@@ -24968,7 +24984,7 @@ is_a: GO:0048583 ! regulation of response to stimulus
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006950 ! response to stress
 relationship: regulates GO:0006950 ! response to stress
-created_by: donghui
+created_by: dhl
 creation_date: 2009-05-06T04:51:28Z
 
 [Term]
@@ -24981,7 +24997,7 @@ is_a: GO:0080134 ! regulation of response to stress
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0033554 ! cellular response to stress
 relationship: regulates GO:0033554 ! cellular response to stress
-created_by: donghui
+created_by: dhl
 creation_date: 2009-05-06T05:02:52Z
 
 [Term]
@@ -24994,7 +25010,7 @@ is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0009566 ! fertilization
 relationship: regulates GO:0009566 ! fertilization
-created_by: donghui
+created_by: dhl
 creation_date: 2010-09-01T03:44:27Z
 
 [Term]
@@ -25010,7 +25026,7 @@ is_a: GO:0007186 ! G protein-coupled receptor signaling pathway
 intersection_of: GO:0007186 ! G protein-coupled receptor signaling pathway
 intersection_of: part_of GO:0003015 ! heart process
 relationship: part_of GO:0003015 ! heart process
-created_by: rfoulger
+created_by: bf
 creation_date: 2012-03-19T01:28:23Z
 
 [Term]
@@ -25023,7 +25039,7 @@ is_a: GO:0071675 ! regulation of mononuclear cell migration
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0002548 ! monocyte chemotaxis
 relationship: regulates GO:0002548 ! monocyte chemotaxis
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-08-03T10:17:03Z
 
 [Term]
@@ -25037,7 +25053,7 @@ is_a: GO:0090025 ! regulation of monocyte chemotaxis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0002548 ! monocyte chemotaxis
 relationship: positively_regulates GO:0002548 ! monocyte chemotaxis
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-08-03T10:18:54Z
 
 [Term]
@@ -25051,7 +25067,7 @@ is_a: GO:0090025 ! regulation of monocyte chemotaxis
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0002548 ! monocyte chemotaxis
 relationship: negatively_regulates GO:0002548 ! monocyte chemotaxis
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-08-03T10:19:40Z
 
 [Term]
@@ -25064,7 +25080,7 @@ is_a: GO:0045787 ! positive regulation of cell cycle
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0022402 ! cell cycle process
 relationship: positively_regulates GO:0022402 ! cell cycle process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-09-09T11:39:52Z
 
 [Term]
@@ -25076,7 +25092,7 @@ is_a: GO:0051049 ! regulation of transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0015833 ! peptide transport
 relationship: regulates GO:0015833 ! peptide transport
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-10-23T11:21:38Z
 
 [Term]
@@ -25088,7 +25104,7 @@ is_a: GO:0036385 ! nucleoid DNA packaging
 intersection_of: GO:0006323 ! DNA packaging
 intersection_of: occurs_in GO:0005739 ! mitochondrion
 relationship: occurs_in GO:0005739 ! mitochondrion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-08T02:12:19Z
 
 [Term]
@@ -25101,7 +25117,7 @@ is_a: GO:0062012 ! regulation of small molecule metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0008203 ! cholesterol metabolic process
 relationship: regulates GO:0008203 ! cholesterol metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-18T10:33:49Z
 
 [Term]
@@ -25111,7 +25127,7 @@ namespace: biological_process
 def: "The regulated release of chemokines from a cell." [GOC:BHF, GOC:rl]
 is_a: GO:0050663 ! cytokine secretion
 relationship: part_of GO:0032602 ! chemokine production
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-18T11:26:20Z
 
 [Term]
@@ -25124,7 +25140,7 @@ is_a: GO:0050707 ! regulation of cytokine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0090195 ! chemokine secretion
 relationship: regulates GO:0090195 ! chemokine secretion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-18T11:28:00Z
 
 [Term]
@@ -25138,7 +25154,7 @@ is_a: GO:0090196 ! regulation of chemokine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0090195 ! chemokine secretion
 relationship: positively_regulates GO:0090195 ! chemokine secretion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-18T11:28:00Z
 
 [Term]
@@ -25152,7 +25168,7 @@ is_a: GO:0090196 ! regulation of chemokine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0090195 ! chemokine secretion
 relationship: negatively_regulates GO:0090195 ! chemokine secretion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-18T11:28:00Z
 
 [Term]
@@ -25166,7 +25182,7 @@ is_a: GO:0090181 ! regulation of cholesterol metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0008203 ! cholesterol metabolic process
 relationship: positively_regulates GO:0008203 ! cholesterol metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-23T10:27:37Z
 
 [Term]
@@ -25180,7 +25196,7 @@ is_a: GO:0090181 ! regulation of cholesterol metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0008203 ! cholesterol metabolic process
 relationship: negatively_regulates GO:0008203 ! cholesterol metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2009-12-23T10:27:37Z
 
 [Term]
@@ -25192,7 +25208,7 @@ is_a: GO:0044057 ! regulation of system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0003012 ! muscle system process
 relationship: regulates GO:0003012 ! muscle system process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-02-03T11:48:13Z
 
 [Term]
@@ -25205,7 +25221,7 @@ is_a: GO:0046883 ! regulation of hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0030072 ! peptide hormone secretion
 relationship: regulates GO:0030072 ! peptide hormone secretion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-02-05T02:56:39Z
 
 [Term]
@@ -25219,7 +25235,7 @@ is_a: GO:0090276 ! regulation of peptide hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0030072 ! peptide hormone secretion
 relationship: positively_regulates GO:0030072 ! peptide hormone secretion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-02-05T02:56:39Z
 
 [Term]
@@ -25233,7 +25249,7 @@ is_a: GO:0090276 ! regulation of peptide hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0030072 ! peptide hormone secretion
 relationship: negatively_regulates GO:0030072 ! peptide hormone secretion
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-02-05T02:56:39Z
 
 [Term]
@@ -25246,7 +25262,7 @@ is_a: GO:1903036 ! positive regulation of response to wounding
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0042060 ! wound healing
 relationship: positively_regulates GO:0042060 ! wound healing
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-03-22T02:12:03Z
 
 [Term]
@@ -25256,7 +25272,7 @@ namespace: biological_process
 def: "Any cellular metabolic process involving nucleic acids." [GOC:dph, GOC:tb]
 is_a: GO:0006139 ! nucleobase-containing compound metabolic process
 is_a: GO:0043170 ! macromolecule metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-04-07T10:18:47Z
 
 [Term]
@@ -25271,7 +25287,7 @@ is_a: GO:1903829 ! positive regulation of cellular protein localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0006886 ! intracellular protein transport
 relationship: positively_regulates GO:0006886 ! intracellular protein transport
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-04-16T03:45:07Z
 
 [Term]
@@ -25286,7 +25302,7 @@ is_a: GO:1903828 ! negative regulation of cellular protein localization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0006886 ! intracellular protein transport
 relationship: negatively_regulates GO:0006886 ! intracellular protein transport
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-04-16T03:45:07Z
 
 [Term]
@@ -25299,7 +25315,7 @@ is_a: GO:2000377 ! regulation of reactive oxygen species metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006801 ! superoxide metabolic process
 relationship: regulates GO:0006801 ! superoxide metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-05-06T02:29:05Z
 
 [Term]
@@ -25312,7 +25328,7 @@ is_a: GO:0050795 ! regulation of behavior
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0031987 ! locomotion involved in locomotory behavior
 relationship: regulates GO:0031987 ! locomotion involved in locomotory behavior
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-05-14T10:24:29Z
 
 [Term]
@@ -25326,7 +25342,7 @@ is_a: GO:0090325 ! regulation of locomotion involved in locomotory behavior
 intersection_of: GO:0050789 ! regulation of biological process
 intersection_of: positively_regulates GO:0031987 ! locomotion involved in locomotory behavior
 relationship: positively_regulates GO:0031987 ! locomotion involved in locomotory behavior
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-05-14T10:26:58Z
 
 [Term]
@@ -25340,7 +25356,7 @@ is_a: GO:0090325 ! regulation of locomotion involved in locomotory behavior
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0031987 ! locomotion involved in locomotory behavior
 relationship: negatively_regulates GO:0031987 ! locomotion involved in locomotory behavior
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-05-14T10:26:58Z
 
 [Term]
@@ -25353,7 +25369,7 @@ is_a: GO:0034110 ! regulation of homotypic cell-cell adhesion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0070527 ! platelet aggregation
 relationship: regulates GO:0070527 ! platelet aggregation
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-05-14T10:46:08Z
 
 [Term]
@@ -25368,7 +25384,7 @@ is_a: GO:0090330 ! regulation of platelet aggregation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0070527 ! platelet aggregation
 relationship: negatively_regulates GO:0070527 ! platelet aggregation
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-05-14T10:46:08Z
 
 [Term]
@@ -25381,7 +25397,7 @@ is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006568 ! tryptophan metabolic process
 relationship: regulates GO:0006568 ! tryptophan metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-06-29T02:38:48Z
 
 [Term]
@@ -25395,7 +25411,7 @@ is_a: GO:0090357 ! regulation of tryptophan metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0006568 ! tryptophan metabolic process
 relationship: positively_regulates GO:0006568 ! tryptophan metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-06-29T02:38:48Z
 
 [Term]
@@ -25407,7 +25423,7 @@ is_a: GO:0006521 ! regulation of cellular amino acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006591 ! ornithine metabolic process
 relationship: regulates GO:0006591 ! ornithine metabolic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-07-12T11:14:12Z
 
 [Term]
@@ -25417,7 +25433,7 @@ namespace: biological_process
 def: "The immediate defensive reaction by vertebrate tissue to injury caused by chemical or physical agents." [GOC:add]
 is_a: GO:0006954 ! inflammatory response
 is_a: GO:0009611 ! response to wounding
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2014-08-12T12:13:53Z
 
 [Term]
@@ -25438,7 +25454,7 @@ is_a: GO:0032838 ! plasma membrane bounded cell projection cytoplasm
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0005929 ! cilium
 relationship: part_of GO:0005929 ! cilium
-created_by: paola
+created_by: pr
 creation_date: 2011-03-23T01:52:31Z
 
 [Term]
@@ -25448,7 +25464,7 @@ namespace: biological_process
 def: "The process in which a precursor cell type acquires the specialized features of a dendritic cell. A dendritic cell is a leukocyte of dendritic lineage specialized in the uptake, processing, and transport of antigens to lymph nodes for the purpose of stimulating an immune response via T cell activation." [CL:0000451, GOC:pr]
 comment: Note that immunologists typically use the word 'maturation' to refer to dendritic cells undergoing the process that GO describes as 'cell differentiation'.
 is_a: GO:0002521 ! leukocyte differentiation
-created_by: paola
+created_by: pr
 creation_date: 2011-04-01T10:08:42Z
 
 [Term]
@@ -25461,7 +25477,7 @@ is_a: GO:0098590 ! plasma membrane region
 intersection_of: GO:0098590 ! plasma membrane region
 intersection_of: part_of GO:0045202 ! synapse
 relationship: part_of GO:0045202 ! synapse
-created_by: paola
+created_by: pr
 creation_date: 2011-06-07T11:22:09Z
 
 [Term]
@@ -25470,7 +25486,7 @@ name: organic cyclic compound binding
 namespace: molecular_function
 def: "Interacting selectively and non-covalently with an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." [GOC:sjw, PMID:7583672]
 is_a: GO:0005488 ! binding
-created_by: paola
+created_by: pr
 creation_date: 2011-09-23T02:31:01Z
 
 [Term]
@@ -25481,7 +25497,7 @@ def: "The chemical reactions and pathways involving the ammonium ion." [GOC:dhl,
 synonym: "ammonium ion metabolism" EXACT []
 synonym: "ammonium metabolic process" RELATED []
 is_a: GO:0006807 ! nitrogen compound metabolic process
-created_by: paola
+created_by: pr
 creation_date: 2011-09-28T04:21:30Z
 
 [Term]
@@ -25492,7 +25508,7 @@ def: "The process whose specific outcome is the formation of tooth enamel, occur
 synonym: "enamel development" EXACT []
 is_a: GO:0042475 ! odontogenesis of dentin-containing tooth
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
-created_by: paola
+created_by: pr
 creation_date: 2011-11-21T09:01:24Z
 
 [Term]
@@ -25505,7 +25521,7 @@ synonym: "execution phase of apoptotic process" EXACT []
 is_a: GO:0009987 ! cellular process
 relationship: has_part GO:0032060 ! bleb assembly
 relationship: part_of GO:0006915 ! apoptotic process
-created_by: paola
+created_by: pr
 creation_date: 2011-11-23T09:45:24Z
 
 [Term]
@@ -25515,7 +25531,7 @@ namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a toxic stimulus." [GOC:pr]
 is_a: GO:0009636 ! response to toxic substance
 is_a: GO:0070887 ! cellular response to chemical stimulus
-created_by: paola
+created_by: pr
 creation_date: 2012-02-02T12:23:31Z
 
 [Term]
@@ -25527,7 +25543,7 @@ xref: NIF_Subcellular:sao172297168
 is_a: GO:0043005 ! neuron projection
 relationship: has_part GO:0030425 ! dendrite
 relationship: part_of GO:0036477 ! somatodendritic compartment
-created_by: paola
+created_by: pr
 creation_date: 2012-12-17T12:31:49Z
 
 [Term]
@@ -25539,7 +25555,7 @@ subset: gocheck_do_not_annotate
 subset: goslim_flybase_ribbon
 is_obsolete: true
 consider: CL:0000540
-created_by: paola
+created_by: pr
 creation_date: 2012-12-19T16:53:50Z
 
 [Term]
@@ -25548,7 +25564,7 @@ name: myeloid leukocyte migration
 namespace: biological_process
 def: "The movement of a myeloid leukocyte within or between different tissues and organs of the body." [GOC:cvs, PMID:22342843, PMID:24157461]
 is_a: GO:0050900 ! leukocyte migration
-created_by: paola
+created_by: pr
 creation_date: 2013-11-11T13:59:43Z
 
 [Term]
@@ -25560,7 +25576,7 @@ is_a: GO:0031982 ! vesicle
 is_a: GO:0043229 ! intracellular organelle
 intersection_of: GO:0031982 ! vesicle
 intersection_of: part_of GO:0005622 ! intracellular
-created_by: paola
+created_by: pr
 creation_date: 2016-03-29T17:39:45Z
 
 [Term]
@@ -25570,7 +25586,7 @@ namespace: biological_process
 def: "The process in which vesicles formed at the trans-Golgi network are directed to the plasma membrane surrounding the base of the cilium, including the ciliary pocket, mediated by molecules at the vesicle membrane and target membrane surfaces." [GOC:cilia, PMID:20106869, PMID:23351793, PMID:24814148, PMID:26485645, Reactome:R-HSA-5620920.1]
 is_a: GO:0048199 ! vesicle targeting, to, from or within Golgi
 relationship: part_of GO:0060271 ! cilium assembly
-created_by: paola
+created_by: pr
 creation_date: 2016-08-05T16:16:28Z
 
 [Term]
@@ -25582,7 +25598,7 @@ subset: gocheck_do_not_annotate
 synonym: "sperm movement" EXACT []
 is_a: GO:0022414 ! reproductive process
 is_a: GO:0048870 ! cell motility
-created_by: paola
+created_by: pr
 creation_date: 2016-09-01T12:00:45Z
 
 [Term]
@@ -25596,7 +25612,7 @@ synonym: "exosome production" EXACT []
 synonym: "ILV assembly" RELATED []
 synonym: "intraluminal vesicle assembly" RELATED []
 is_a: GO:0140112 ! extracellular vesicle biogenesis
-created_by: paola
+created_by: pr
 creation_date: 2016-10-03T14:35:25Z
 
 [Term]
@@ -25606,7 +25622,7 @@ namespace: biological_process
 def: "Reactions triggered in response to the presence of another organism that act to protect the cell or organism from damage caused by that organism." [GOC:dos]
 is_a: GO:0006952 ! defense response
 is_a: GO:0051707 ! response to other organism
-created_by: davidos
+created_by: dos
 creation_date: 2013-11-11T12:59:11Z
 
 [Term]
@@ -25627,7 +25643,7 @@ namespace: cellular_component
 def: "The lipid bilayer that forms the outer-most layer of an organelle." [GOC:dos]
 comment: Examples include the outer membranes of double membrane bound organelles such as mitochondria as well as the bounding membranes of single-membrane bound organelles such as lysosomes.
 is_a: GO:0031090 ! organelle membrane
-created_by: davidos
+created_by: dos
 creation_date: 2014-02-26T13:41:31Z
 
 [Term]
@@ -25657,7 +25673,7 @@ is_a: GO:0016020 ! membrane
 intersection_of: GO:0016020 ! membrane
 intersection_of: part_of GO:0005886 ! plasma membrane
 relationship: part_of GO:0005886 ! plasma membrane
-created_by: davidos
+created_by: dos
 creation_date: 2014-03-06T11:55:32Z
 
 [Term]
@@ -25668,17 +25684,17 @@ alt_id: GO:0016337
 def: "The attachment of one cell to another cell via adhesion molecules." [GOC:dos]
 synonym: "single organismal cell-cell adhesion" RELATED []
 is_a: GO:0007155 ! cell adhesion
-created_by: davidos
+created_by: dos
 creation_date: 2014-04-16T13:40:03Z
 
 [Term]
 id: GO:0098631
 name: cell adhesion mediator activity
 namespace: molecular_function
-def: "The binding by a cell-adhesion protein on the cell surface to an extracellular matrix component, to mediate adhesion of the cell to the external substrate or to another cell." [Wikipedia:Cell_adhesion]
+def: "The binding by a cell-adhesion protein on a cell surface to an adhesion molecule on another cell surface, to mediate adhesion of the cell to the external substrate or to another cell." [GOC:vw, Wikipedia:Cell_adhesion]
 synonym: "cell adhesion molecule" EXACT []
 synonym: "protein binding involved in cell adhesion" EXACT []
-is_a: GO:0005488 ! binding
+is_a: GO:0050839 ! cell adhesion molecule binding
 intersection_of: GO:0005488 ! binding
 intersection_of: part_of GO:0007155 ! cell adhesion
 relationship: part_of GO:0007155 ! cell adhesion
@@ -25690,7 +25706,6 @@ namespace: molecular_function
 def: "The binding by a cell-adhesion protein on the cell surface to an extracellular matrix component, to mediate adhesion of the cell to another cell." [Wikipedia:Cell_adhesion]
 synonym: "cell-cell adhesion molecule" EXACT []
 synonym: "protein binding involved in cell-cell adhesion" EXACT []
-is_a: GO:0005515 ! protein binding
 is_a: GO:0098631 ! cell adhesion mediator activity
 intersection_of: GO:0005515 ! protein binding
 intersection_of: part_of GO:0098609 ! cell-cell adhesion
@@ -25789,7 +25804,7 @@ is_a: GO:0098797 ! plasma membrane protein complex
 id: GO:0098803
 name: respiratory chain complex
 namespace: cellular_component
-def: "Any protein complex that is part of a respiratory chain" [GOC:dos]
+def: "Any protein complex that is part of a respiratory chain." [GOC:dos]
 is_a: GO:0098796 ! membrane protein complex
 intersection_of: GO:0032991 ! protein-containing complex
 intersection_of: part_of GO:0070469 ! respirasome
@@ -25845,14 +25860,14 @@ relationship: regulates GO:0001508 ! action potential
 id: GO:0098916
 name: anterograde trans-synaptic signaling
 namespace: biological_process
-def: "Cell-cell signaling from pre to post-synapse, across the synaptic cleft" [GOC:dos]
+def: "Cell-cell signaling from pre to post-synapse, across the synaptic cleft." [GOC:dos]
 is_a: GO:0099537 ! trans-synaptic signaling
 
 [Term]
 id: GO:0099003
 name: vesicle-mediated transport in synapse
 namespace: biological_process
-def: "Any vesicle-mediated transport that occurs in a synapse" [GOC:dos]
+def: "Any vesicle-mediated transport that occurs in a synapse." [GOC:dos]
 subset: goslim_synapse
 is_a: GO:0016192 ! vesicle-mediated transport
 intersection_of: GO:0016192 ! vesicle-mediated transport
@@ -25981,7 +25996,7 @@ intersection_of: regulates GO:0007268 ! chemical synaptic transmission
 id: GO:0099568
 name: cytoplasmic region
 namespace: cellular_component
-def: "Any (proper) part of the cytoplasm of a single cell of sufficient size to still be considered cytoplasm\"" [GOC:dos]
+def: "Any (proper) part of the cytoplasm of a single cell of sufficient size to still be considered cytoplasm." [GOC:dos]
 is_a: GO:0005737 ! cytoplasm
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0005737 ! cytoplasm
@@ -26016,7 +26031,7 @@ creation_date: 2017-05-25T17:22:18Z
 id: GO:0099738
 name: cell cortex region
 namespace: cellular_component
-def: "The complete extent of cell cortex that underlies some some region of the plasma membrane" [GOC:dos]
+def: "The complete extent of cell cortex that underlies some some region of the plasma membrane." [GOC:dos]
 synonym: "perimembrane region" EXACT []
 is_a: GO:0005938 ! cell cortex
 is_a: GO:0099568 ! cytoplasmic region
@@ -26028,7 +26043,7 @@ relationship: part_of GO:0005938 ! cell cortex
 id: GO:0100001
 name: regulation of skeletal muscle contraction by action potential
 namespace: biological_process
-def: "Any action potential process that regulates skeletal muscle contraction" [GOC:cjm, GOC:obol]
+def: "Any action potential process that regulates skeletal muscle contraction." [GOC:cjm, GOC:obol]
 is_a: GO:0001508 ! action potential
 is_a: GO:0014819 ! regulation of skeletal muscle contraction
 intersection_of: GO:0001508 ! action potential
@@ -26083,7 +26098,6 @@ name: regulation of cobalamin metabolic process
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving cobalamin (vitamin B12), a water-soluble vitamin characterized by possession of a corrin nucleus containing a cobalt atom." [PMID:29056341]
 is_a: GO:0030656 ! regulation of vitamin metabolic process
-is_a: GO:0051193 ! regulation of cofactor metabolic process
 is_a: GO:1901401 ! regulation of tetrapyrrole metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0009235 ! cobalamin metabolic process
@@ -26097,7 +26111,6 @@ name: positive regulation of cobalamin metabolic process
 namespace: biological_process
 def: "Any process that activates or increases the frequency, rate or extent of a cobalamin metabolic process." [PMID:29056341]
 is_a: GO:0046136 ! positive regulation of vitamin metabolic process
-is_a: GO:0051194 ! positive regulation of cofactor metabolic process
 is_a: GO:0106064 ! regulation of cobalamin metabolic process
 is_a: GO:1901403 ! positive regulation of tetrapyrrole metabolic process
 intersection_of: GO:0065007 ! biological regulation
@@ -26112,7 +26125,6 @@ name: negative regulation of cobalamin metabolic process
 namespace: biological_process
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of a cobalamin metabolic process." [PMID:29056341]
 is_a: GO:0046137 ! negative regulation of vitamin metabolic process
-is_a: GO:0051195 ! negative regulation of cofactor metabolic process
 is_a: GO:0106064 ! regulation of cobalamin metabolic process
 is_a: GO:1901402 ! negative regulation of tetrapyrrole metabolic process
 intersection_of: GO:0065007 ! biological regulation
@@ -26231,7 +26243,7 @@ is_a: GO:0042995 ! cell projection
 intersection_of: GO:0042995 ! cell projection
 intersection_of: has_part GO:0098590 ! plasma membrane region
 relationship: has_part GO:0098590 ! plasma membrane region
-created_by: kchris
+created_by: krc
 creation_date: 2017-03-21T17:26:07Z
 
 [Term]
@@ -26242,7 +26254,7 @@ def: "Formation of a prolongation or process extending and that is bounded by pl
 synonym: "eupodium" NARROW [GOC:krc, GOC:rjd, PMID:10328951, PMID:9096956]
 is_a: GO:0030031 ! cell projection assembly
 is_a: GO:0120036 ! plasma membrane bounded cell projection organization
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-24T23:56:08Z
 
 [Term]
@@ -26255,7 +26267,7 @@ is_a: GO:0120035 ! regulation of plasma membrane bounded cell projection organiz
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0120031 ! plasma membrane bounded cell projection assembly
 relationship: regulates GO:0120031 ! plasma membrane bounded cell projection assembly
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-26T04:27:04Z
 
 [Term]
@@ -26268,7 +26280,7 @@ is_a: GO:0120032 ! regulation of plasma membrane bounded cell projection assembl
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0120031 ! plasma membrane bounded cell projection assembly
 relationship: negatively_regulates GO:0120031 ! plasma membrane bounded cell projection assembly
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-26T04:34:31Z
 
 [Term]
@@ -26282,7 +26294,7 @@ is_a: GO:0120032 ! regulation of plasma membrane bounded cell projection assembl
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0120031 ! plasma membrane bounded cell projection assembly
 relationship: positively_regulates GO:0120031 ! plasma membrane bounded cell projection assembly
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-26T04:34:45Z
 
 [Term]
@@ -26294,7 +26306,7 @@ is_a: GO:0031344 ! regulation of cell projection organization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0120036 ! plasma membrane bounded cell projection organization
 relationship: regulates GO:0120036 ! plasma membrane bounded cell projection organization
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-26T16:02:06Z
 
 [Term]
@@ -26303,7 +26315,7 @@ name: plasma membrane bounded cell projection organization
 namespace: biological_process
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a plasma membrane bounded prolongation or process extending from a cell, e.g. a cilium or axon." [GOC:krc]
 is_a: GO:0030030 ! cell projection organization
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-26T16:07:02Z
 
 [Term]
@@ -26313,7 +26325,7 @@ namespace: cellular_component
 def: "OBSOLETE. Any constituent part of a plasma membrane bounded cell projection, a prolongation or process extending from a cell, e.g. a cilium or axon." [GOC:krc]
 is_obsolete: true
 consider: GO:0120025
-created_by: kchris
+created_by: krc
 creation_date: 2017-04-28T17:20:43Z
 
 [Term]
@@ -26322,7 +26334,7 @@ name: intestinal motility
 namespace: biological_process
 def: "Contractions of the intestinal tract that include peristalsis (moving contents onward) and non-peristaltic movement (moving contents back and forth)." [GOC:sl, PMID:15890336]
 is_a: GO:0022600 ! digestive system process
-created_by: kchris
+created_by: krc
 creation_date: 2017-06-13T20:42:24Z
 
 [Term]
@@ -26334,7 +26346,7 @@ is_a: GO:0032838 ! plasma membrane bounded cell projection cytoplasm
 intersection_of: GO:0005737 ! cytoplasm
 intersection_of: part_of GO:0043005 ! neuron projection
 relationship: part_of GO:0043005 ! neuron projection
-created_by: kchris
+created_by: krc
 creation_date: 2017-11-01T18:58:12Z
 
 [Term]
@@ -26471,7 +26483,7 @@ is_a: GO:0045939 ! negative regulation of steroid metabolic process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: negatively_regulates GO:0034435 ! cholesterol esterification
 relationship: negatively_regulates GO:0034435 ! cholesterol esterification
-created_by: BarbaraCzub
+created_by: bc
 creation_date: 2019-07-23T15:34:42Z
 
 [Term]
@@ -28014,7 +28026,6 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving ketone body." [GOC:pr, GOC:TermGenie]
 synonym: "ketone body metabolism" EXACT [GOC:TermGenie]
 is_a: GO:0006091 ! generation of precursor metabolites and energy
-is_a: GO:0017144 ! drug metabolic process
 is_a: GO:1901568 ! fatty acid derivative metabolic process
 created_by: pr
 creation_date: 2013-06-13T10:37:54Z
@@ -28846,7 +28857,7 @@ name: mononuclear cell differentiation
 namespace: biological_process
 def: "The process in which a relatively unspecialized cell acquires the specialized features of a mononuclear cell." [CL:0000842, GO_REF:0000086, GOC:TermGenie, PMID:24759906]
 is_a: GO:0002521 ! leukocyte differentiation
-created_by: cynthia.smith
+created_by: cls
 creation_date: 2014-06-25T15:47:09Z
 
 [Term]
@@ -29394,17 +29405,15 @@ creation_date: 2014-12-10T18:59:44Z
 
 [Term]
 id: GO:1903759
-name: signal transduction involved in regulation of aerobic respiration
+name: obsolete signal transduction involved in regulation of aerobic respiration
 namespace: biological_process
-def: "Any signal transduction that is involved in regulation of aerobic respiration." [GO_REF:0000060, GOC:TermGenie, PMID:19266076]
+def: "OBSOLETE. Any signal transduction that is involved in regulation of aerobic respiration." [GO_REF:0000060, GOC:TermGenie, PMID:19266076]
+comment: The reason for obsoletion is that this represents a GO-CAM model.
 synonym: "signaling cascade involved in regulation of aerobic respiration" NARROW [GOC:TermGenie]
 synonym: "signaling pathway involved in regulation of aerobic respiration" RELATED [GOC:TermGenie]
 synonym: "signalling cascade involved in regulation of aerobic respiration" NARROW [GOC:TermGenie]
 synonym: "signalling pathway involved in regulation of aerobic respiration" RELATED [GOC:TermGenie]
-is_a: GO:0007165 ! signal transduction
-intersection_of: GO:0007165 ! signal transduction
-intersection_of: part_of GO:1903715 ! regulation of aerobic respiration
-relationship: part_of GO:1903715 ! regulation of aerobic respiration
+is_obsolete: true
 created_by: al
 creation_date: 2014-12-18T16:37:50Z
 
@@ -31185,7 +31194,7 @@ is_a: GO:0060457 ! negative regulation of digestive system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0046541 ! saliva secretion
 relationship: negatively_regulates GO:0046541 ! saliva secretion
-created_by: pgarmiri
+created_by: pga
 creation_date: 2016-12-09T10:24:00Z
 
 [Term]
@@ -31212,7 +31221,7 @@ is_a: GO:2001252 ! positive regulation of chromosome organization
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0030261 ! chromosome condensation
 relationship: positively_regulates GO:0030261 ! chromosome condensation
-created_by: bmeldal
+created_by: bhm
 creation_date: 2017-01-13T14:13:44Z
 
 [Term]
@@ -31225,7 +31234,7 @@ is_a: GO:0006310 ! DNA recombination
 is_a: GO:0032042 ! mitochondrial DNA metabolic process
 intersection_of: GO:0006310 ! DNA recombination
 intersection_of: occurs_in GO:0005739 ! mitochondrion
-created_by: ValWood
+created_by: vw
 creation_date: 2017-02-19T10:48:17Z
 
 [Term]
@@ -31238,7 +31247,7 @@ is_a: GO:0032879 ! regulation of localization
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: regulates GO:0010876 ! lipid localization
 relationship: regulates GO:0010876 ! lipid localization
-created_by: rozaru
+created_by: rz
 creation_date: 2017-02-21T12:12:22Z
 
 [Term]
@@ -31260,7 +31269,7 @@ is_a: GO:1905952 ! regulation of lipid localization
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: negatively_regulates GO:0010876 ! lipid localization
 relationship: negatively_regulates GO:0010876 ! lipid localization
-created_by: rozaru
+created_by: rz
 creation_date: 2017-02-21T12:12:41Z
 
 [Term]
@@ -31282,7 +31291,7 @@ is_a: GO:1905952 ! regulation of lipid localization
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: positively_regulates GO:0010876 ! lipid localization
 relationship: positively_regulates GO:0010876 ! lipid localization
-created_by: rozaru
+created_by: rz
 creation_date: 2017-02-21T12:12:49Z
 
 [Term]
@@ -31353,7 +31362,7 @@ is_a: GO:0051239 ! regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0007275 ! multicellular organism development
 relationship: regulates GO:0007275 ! multicellular organism development
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-08-05T11:25:59Z
 
 [Term]
@@ -31367,7 +31376,7 @@ is_a: GO:2000026 ! regulation of multicellular organismal development
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: regulates GO:0009887 ! animal organ morphogenesis
 relationship: regulates GO:0009887 ! animal organ morphogenesis
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-08-05T11:26:27Z
 
 [Term]
@@ -31380,7 +31389,7 @@ is_a: GO:0051302 ! regulation of cell division
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0017145 ! stem cell division
 relationship: regulates GO:0017145 ! stem cell division
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-08-05T11:34:53Z
 
 [Term]
@@ -31393,7 +31402,7 @@ is_a: GO:0042981 ! regulation of apoptotic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0071887 ! leukocyte apoptotic process
 relationship: regulates GO:0071887 ! leukocyte apoptotic process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-15T01:42:05Z
 
 [Term]
@@ -31407,7 +31416,7 @@ is_a: GO:2000106 ! regulation of leukocyte apoptotic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0071887 ! leukocyte apoptotic process
 relationship: negatively_regulates GO:0071887 ! leukocyte apoptotic process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-15T01:42:09Z
 
 [Term]
@@ -31421,7 +31430,7 @@ is_a: GO:2000106 ! regulation of leukocyte apoptotic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0071887 ! leukocyte apoptotic process
 relationship: positively_regulates GO:0071887 ! leukocyte apoptotic process
-created_by: midori
+created_by: mah
 creation_date: 2010-09-15T01:42:12Z
 
 [Term]
@@ -31439,7 +31448,7 @@ is_a: GO:0031326 ! regulation of cellular biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0034645 ! cellular macromolecule biosynthetic process
 relationship: regulates GO:0034645 ! cellular macromolecule biosynthetic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-09-15T08:55:45Z
 
 [Term]
@@ -31458,7 +31467,7 @@ is_a: GO:2000112 ! regulation of cellular macromolecule biosynthetic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0034645 ! cellular macromolecule biosynthetic process
 relationship: negatively_regulates GO:0034645 ! cellular macromolecule biosynthetic process
-created_by: tanyaberardini
+created_by: tb
 creation_date: 2010-09-15T08:55:48Z
 
 [Term]
@@ -31474,7 +31483,7 @@ is_a: GO:0051270 ! regulation of cellular component movement
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0048870 ! cell motility
 relationship: regulates GO:0048870 ! cell motility
-created_by: midori
+created_by: mah
 creation_date: 2010-10-01T09:41:21Z
 
 [Term]
@@ -31491,7 +31500,7 @@ is_a: GO:2000145 ! regulation of cell motility
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0048870 ! cell motility
 relationship: negatively_regulates GO:0048870 ! cell motility
-created_by: midori
+created_by: mah
 creation_date: 2010-10-01T09:41:26Z
 
 [Term]
@@ -31508,7 +31517,7 @@ is_a: GO:2000145 ! regulation of cell motility
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0048870 ! cell motility
 relationship: positively_regulates GO:0048870 ! cell motility
-created_by: midori
+created_by: mah
 creation_date: 2010-10-01T09:41:30Z
 
 [Term]
@@ -31522,7 +31531,7 @@ is_a: GO:2000147 ! positive regulation of cell motility
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0060285 ! cilium-dependent cell motility
 relationship: positively_regulates GO:0060285 ! cilium-dependent cell motility
-created_by: midori
+created_by: mah
 creation_date: 2010-10-04T12:41:05Z
 
 [Term]
@@ -31548,7 +31557,7 @@ is_a: GO:0000820 ! regulation of glutamine family amino acid metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006560 ! proline metabolic process
 relationship: regulates GO:0006560 ! proline metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-03T02:45:20Z
 
 [Term]
@@ -31562,7 +31571,7 @@ is_a: GO:2000214 ! regulation of proline metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0006560 ! proline metabolic process
 relationship: negatively_regulates GO:0006560 ! proline metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-03T02:45:24Z
 
 [Term]
@@ -31576,7 +31585,7 @@ is_a: GO:2000214 ! regulation of proline metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0006560 ! proline metabolic process
 relationship: positively_regulates GO:0006560 ! proline metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-03T02:45:27Z
 
 [Term]
@@ -31588,7 +31597,7 @@ is_a: GO:0050789 ! regulation of biological process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0022414 ! reproductive process
 relationship: regulates GO:0022414 ! reproductive process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-10T02:44:02Z
 
 [Term]
@@ -31601,7 +31610,7 @@ is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0022414 ! reproductive process
 relationship: negatively_regulates GO:0022414 ! reproductive process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-10T02:44:05Z
 
 [Term]
@@ -31614,7 +31623,7 @@ is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0022414 ! reproductive process
 relationship: positively_regulates GO:0022414 ! reproductive process
-created_by: midori
+created_by: mah
 creation_date: 2010-11-10T02:44:08Z
 
 [Term]
@@ -31665,7 +31674,7 @@ is_a: GO:0051246 ! regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0072376 ! protein activation cascade
 relationship: regulates GO:0072376 ! protein activation cascade
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:33:46Z
 
 [Term]
@@ -31681,7 +31690,7 @@ is_a: GO:2000257 ! regulation of protein activation cascade
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0072376 ! protein activation cascade
 relationship: negatively_regulates GO:0072376 ! protein activation cascade
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:33:51Z
 
 [Term]
@@ -31697,7 +31706,7 @@ is_a: GO:2000257 ! regulation of protein activation cascade
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0072376 ! protein activation cascade
 relationship: positively_regulates GO:0072376 ! protein activation cascade
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:33:55Z
 
 [Term]
@@ -31710,7 +31719,7 @@ is_a: GO:2000257 ! regulation of protein activation cascade
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0072377 ! blood coagulation, common pathway
 relationship: regulates GO:0072377 ! blood coagulation, common pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:42:40Z
 
 [Term]
@@ -31724,7 +31733,7 @@ is_a: GO:2000260 ! regulation of blood coagulation, common pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0072377 ! blood coagulation, common pathway
 relationship: negatively_regulates GO:0072377 ! blood coagulation, common pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:42:44Z
 
 [Term]
@@ -31738,7 +31747,7 @@ is_a: GO:2000260 ! regulation of blood coagulation, common pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0072377 ! blood coagulation, common pathway
 relationship: positively_regulates GO:0072377 ! blood coagulation, common pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:42:48Z
 
 [Term]
@@ -31751,7 +31760,7 @@ is_a: GO:2000257 ! regulation of protein activation cascade
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0007598 ! blood coagulation, extrinsic pathway
 relationship: regulates GO:0007598 ! blood coagulation, extrinsic pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:44:35Z
 
 [Term]
@@ -31765,7 +31774,7 @@ is_a: GO:2000263 ! regulation of blood coagulation, extrinsic pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0007598 ! blood coagulation, extrinsic pathway
 relationship: negatively_regulates GO:0007598 ! blood coagulation, extrinsic pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:44:42Z
 
 [Term]
@@ -31779,7 +31788,7 @@ is_a: GO:2000263 ! regulation of blood coagulation, extrinsic pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0007598 ! blood coagulation, extrinsic pathway
 relationship: positively_regulates GO:0007598 ! blood coagulation, extrinsic pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:44:46Z
 
 [Term]
@@ -31792,7 +31801,7 @@ is_a: GO:2000257 ! regulation of protein activation cascade
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0007597 ! blood coagulation, intrinsic pathway
 relationship: regulates GO:0007597 ! blood coagulation, intrinsic pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:45:40Z
 
 [Term]
@@ -31806,7 +31815,7 @@ is_a: GO:2000266 ! regulation of blood coagulation, intrinsic pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0007597 ! blood coagulation, intrinsic pathway
 relationship: negatively_regulates GO:0007597 ! blood coagulation, intrinsic pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:45:46Z
 
 [Term]
@@ -31820,7 +31829,7 @@ is_a: GO:2000266 ! regulation of blood coagulation, intrinsic pathway
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0007597 ! blood coagulation, intrinsic pathway
 relationship: positively_regulates GO:0007597 ! blood coagulation, intrinsic pathway
-created_by: midori
+created_by: mah
 creation_date: 2010-11-23T11:45:51Z
 
 [Term]
@@ -31834,7 +31843,7 @@ is_a: GO:0044092 ! negative regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0038023 ! signaling receptor activity
 relationship: negatively_regulates GO:0038023 ! signaling receptor activity
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-12-02T09:28:47Z
 
 [Term]
@@ -31847,7 +31856,7 @@ is_a: GO:0044093 ! positive regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0038023 ! signaling receptor activity
 relationship: positively_regulates GO:0038023 ! signaling receptor activity
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-12-02T09:28:50Z
 
 [Term]
@@ -31859,7 +31868,7 @@ is_a: GO:0044062 ! regulation of excretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0030421 ! defecation
 relationship: regulates GO:0030421 ! defecation
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-12-21T09:23:08Z
 
 [Term]
@@ -31873,7 +31882,7 @@ is_a: GO:2000292 ! regulation of defecation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0030421 ! defecation
 relationship: negatively_regulates GO:0030421 ! defecation
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-12-21T09:23:13Z
 
 [Term]
@@ -31887,7 +31896,7 @@ is_a: GO:2000292 ! regulation of defecation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0030421 ! defecation
 relationship: positively_regulates GO:0030421 ! defecation
-created_by: rfoulger
+created_by: bf
 creation_date: 2010-12-21T09:23:16Z
 
 [Term]
@@ -31901,7 +31910,7 @@ is_a: GO:0031323 ! regulation of cellular metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0072593 ! reactive oxygen species metabolic process
 relationship: regulates GO:0072593 ! reactive oxygen species metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2011-02-11T02:06:36Z
 
 [Term]
@@ -31916,7 +31925,7 @@ is_a: GO:2000377 ! regulation of reactive oxygen species metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0072593 ! reactive oxygen species metabolic process
 relationship: negatively_regulates GO:0072593 ! reactive oxygen species metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2011-02-11T02:06:49Z
 
 [Term]
@@ -31931,7 +31940,7 @@ is_a: GO:2000377 ! regulation of reactive oxygen species metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0072593 ! reactive oxygen species metabolic process
 relationship: positively_regulates GO:0072593 ! reactive oxygen species metabolic process
-created_by: midori
+created_by: mah
 creation_date: 2011-02-11T02:06:57Z
 
 [Term]
@@ -31948,7 +31957,7 @@ is_a: GO:0051341 ! regulation of oxidoreductase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0004601 ! peroxidase activity
 relationship: regulates GO:0004601 ! peroxidase activity
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-03-08T02:18:18Z
 
 [Term]
@@ -31966,7 +31975,7 @@ is_a: GO:2000468 ! regulation of peroxidase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0004601 ! peroxidase activity
 relationship: negatively_regulates GO:0004601 ! peroxidase activity
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-03-08T02:18:59Z
 
 [Term]
@@ -31984,7 +31993,7 @@ is_a: GO:2000468 ! regulation of peroxidase activity
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0004601 ! peroxidase activity
 relationship: positively_regulates GO:0004601 ! peroxidase activity
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-03-08T02:19:25Z
 
 [Term]
@@ -32048,7 +32057,7 @@ is_a: GO:0046883 ! regulation of hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0035929 ! steroid hormone secretion
 relationship: regulates GO:0035929 ! steroid hormone secretion
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-26T08:38:46Z
 
 [Term]
@@ -32063,7 +32072,7 @@ is_a: GO:2000831 ! regulation of steroid hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0035929 ! steroid hormone secretion
 relationship: negatively_regulates GO:0035929 ! steroid hormone secretion
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-26T08:38:50Z
 
 [Term]
@@ -32078,7 +32087,7 @@ is_a: GO:2000831 ! regulation of steroid hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0035929 ! steroid hormone secretion
 relationship: positively_regulates GO:0035929 ! steroid hormone secretion
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-26T08:38:51Z
 
 [Term]
@@ -32091,7 +32100,7 @@ is_a: GO:0046883 ! regulation of hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0035936 ! testosterone secretion
 relationship: regulates GO:0035936 ! testosterone secretion
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-26T08:42:29Z
 
 [Term]
@@ -32105,7 +32114,7 @@ is_a: GO:2000843 ! regulation of testosterone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0035936 ! testosterone secretion
 relationship: negatively_regulates GO:0035936 ! testosterone secretion
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-26T08:42:33Z
 
 [Term]
@@ -32119,7 +32128,7 @@ is_a: GO:2000843 ! regulation of testosterone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0035936 ! testosterone secretion
 relationship: positively_regulates GO:0035936 ! testosterone secretion
-created_by: rfoulger
+created_by: bf
 creation_date: 2011-07-26T08:42:36Z
 
 [Term]
