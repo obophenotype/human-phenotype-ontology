@@ -231,3 +231,21 @@ hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	echo "Using version $(HPODIFFVERSION) of the HPO Nice Diff Tool (@drseb)."
 	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	cp tmp/hpodiff*.xlsx reports
+
+
+tmp/hp-build.owl:
+	wget https://ci.monarchinitiative.org/view/pipelines/job/hpo-pipeline-dev2/lastSuccessfulBuild/artifact/hp-full.owl -O $@
+
+tmp/patternised_classes.txt: patternised_classes.txt
+	cp $< $@
+	sed -i 's/[_]/:/g' $@
+	echo '' >> $@
+	echo 'http://www.geneontology.org/formats/oboInOwl#hasExactSynonym' >> $@
+	echo 'http://purl.obolibrary.org/obo/IAO_0000115' >> $@
+	echo 'rdfs:label' >> $@
+
+reports/hpo_dosdp_table.csv: tmp/hp-build.owl tmp/patternised_classes.txt
+	$(ROBOT) merge -i $< filter -T tmp/patternised_classes.txt --signature true --preserve-structure false query --use-graphs true -f csv --query ../sparql/hp_term_table.sparql $@
+	
+	
+	
