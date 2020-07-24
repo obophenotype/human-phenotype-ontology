@@ -1,11 +1,11 @@
 # Ontology comparison
 
-## Old
+## New
 - Ontology IRI: `http://purl.obolibrary.org/obo/hp.owl`
 - Version IRI: *None*
 - Loaded from: `file:/work/src/ontology/hp-edit.owl`
 
-## New
+## Old (current master branch)
 - Ontology IRI: `http://purl.obolibrary.org/obo/hp.owl`
 - Version IRI: *None*
 - Loaded from: `file:/work/src/ontology/main-hp-edit.owl`
@@ -20,24 +20,24 @@
 
 ### 3-hydroxyacyl-CoA dehydrogenase activity `http://purl.obolibrary.org/obo/GO_0003857`
 
-#### Added
+#### Removed
 - Class: [3-hydroxyacyl-CoA dehydrogenase activity](http://purl.obolibrary.org/obo/GO_0003857) 
 
 
 ### 4-hydroxyphenylpyruvate dioxygenase (human) `http://purl.obolibrary.org/obo/PR_P32754`
 
-#### Added
+#### Removed
 - Class: [4-hydroxyphenylpyruvate dioxygenase (human)](http://purl.obolibrary.org/obo/PR_P32754) 
 
 
 ### 5-oxoprolinase (human) `http://purl.obolibrary.org/obo/PR_O14841`
 
-#### Added
+#### Removed
 - Class: [5-oxoprolinase (human)](http://purl.obolibrary.org/obo/PR_O14841) 
 
 
 ### Abnormal CD4+CD25+ regulatory T cell proportion `http://purl.obolibrary.org/obo/HP_0020111`
-#### Removed
+#### Added
 - [Abnormal CD4+CD25+ regulatory T cell proportion](http://purl.obolibrary.org/obo/HP_0020111) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, CD25-positive, alpha-beta regulatory T cell](http://purl.obolibrary.org/obo/CL_0000792) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [cell](http://purl.obolibrary.org/obo/CL_0000000)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -45,7 +45,7 @@
 
 
 ### Abnormal helper T cell proportion `http://purl.obolibrary.org/obo/HP_0500263`
-#### Removed
+#### Added
 - [Abnormal helper T cell proportion](http://purl.obolibrary.org/obo/HP_0500263) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([helper T cell](http://purl.obolibrary.org/obo/CL_0000912) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -53,7 +53,7 @@
 
 
 ### Abnormal plasmablast proportion `http://purl.obolibrary.org/obo/HP_0032127`
-#### Removed
+#### Added
 - [Abnormal plasmablast proportion](http://purl.obolibrary.org/obo/HP_0032127) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([plasmablast](http://purl.obolibrary.org/obo/CL_0000980) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -61,7 +61,7 @@
 
 
 ### Abnormal proportion of CD4+ central memory cells `http://purl.obolibrary.org/obo/HP_0025620`
-#### Removed
+#### Added
 - [Abnormal proportion of CD4+ central memory cells](http://purl.obolibrary.org/obo/HP_0025620) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([central memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000904) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -71,7 +71,7 @@
 
 
 ### Abnormal proportion of CD4+ effector memory cells `http://purl.obolibrary.org/obo/HP_0025623`
-#### Removed
+#### Added
 - [Abnormal proportion of CD4+ effector memory cells](http://purl.obolibrary.org/obo/HP_0025623) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0001044) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -81,7 +81,7 @@
 
 
 ### Abnormal proportion of CD4-positive T cells `http://purl.obolibrary.org/obo/HP_0031392`
-#### Removed
+#### Added
 - [Abnormal proportion of CD4-positive T cells](http://purl.obolibrary.org/obo/HP_0031392) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000624) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -89,7 +89,7 @@
 
 
 ### Abnormal proportion of CD4-positive helper T cells `http://purl.obolibrary.org/obo/HP_0500267`
-#### Removed
+#### Added
 - [Abnormal proportion of CD4-positive helper T cells](http://purl.obolibrary.org/obo/HP_0500267) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive helper T cell](http://purl.obolibrary.org/obo/CL_0000492) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -99,7 +99,7 @@
 
 
 ### Abnormal proportion of CD4-positive, alpha-beta memory T cells `http://purl.obolibrary.org/obo/HP_0410379`
-#### Removed
+#### Added
 - [Abnormal proportion of CD4-positive, alpha-beta memory T cells](http://purl.obolibrary.org/obo/HP_0410379) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, alpha-beta memory T cell](http://purl.obolibrary.org/obo/CL_0000897) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -109,7 +109,7 @@
 
 
 ### Abnormal proportion of CD8-positive T cells `http://purl.obolibrary.org/obo/HP_0031393`
-#### Removed
+#### Added
 - [Abnormal proportion of CD8-positive T cells](http://purl.obolibrary.org/obo/HP_0031393) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000625) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -117,7 +117,7 @@
 
 
 ### Abnormal proportion of CD8-positive, alpha-beta TEMRA T cells `http://purl.obolibrary.org/obo/HP_0020177`
-#### Removed
+#### Added
 - [Abnormal proportion of CD8-positive, alpha-beta TEMRA T cells](http://purl.obolibrary.org/obo/HP_0020177) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector memory CD8-positive, alpha-beta T cell, terminally differentiated](http://purl.obolibrary.org/obo/CL_0001062) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -125,7 +125,7 @@
 
 
 ### Abnormal proportion of CD8-positive, alpha-beta memory T cells `http://purl.obolibrary.org/obo/HP_0410380`
-#### Removed
+#### Added
 - [Abnormal proportion of CD8-positive, alpha-beta memory T cells](http://purl.obolibrary.org/obo/HP_0410380) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD8-positive, alpha-beta memory T cell](http://purl.obolibrary.org/obo/CL_0000909) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -135,7 +135,7 @@
 
 
 ### Abnormal proportion of central memory CD8-positive, alpha-beta T cells `http://purl.obolibrary.org/obo/HP_0410384`
-#### Removed
+#### Added
 - [Abnormal proportion of central memory CD8-positive, alpha-beta T cells](http://purl.obolibrary.org/obo/HP_0410384) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([central memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000907) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -143,7 +143,7 @@
 
 
 ### Abnormal proportion of class-switched memory B cells `http://purl.obolibrary.org/obo/HP_0030386`
-#### Removed
+#### Added
 - [Abnormal proportion of class-switched memory B cells](http://purl.obolibrary.org/obo/HP_0030386) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([class switched memory B cell](http://purl.obolibrary.org/obo/CL_0000972) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -151,7 +151,7 @@
 
 
 ### Abnormal proportion of effector memory CD8-positive, alpha-beta T cells `http://purl.obolibrary.org/obo/HP_0410383`
-#### Removed
+#### Added
 - [Abnormal proportion of effector memory CD8-positive, alpha-beta T cells](http://purl.obolibrary.org/obo/HP_0410383) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000913) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -159,7 +159,7 @@
 
 
 ### Abnormal proportion of exhausted T cell relative to T cell in blood `http://purl.obolibrary.org/obo/HP_0041080`
-#### Removed
+#### Added
 - [Abnormal proportion of exhausted T cell relative to T cell in blood](http://purl.obolibrary.org/obo/HP_0041080) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A deviation from the normal proportion of exhausted T cell relative to T cell in the blood."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Abnormal proportion of exhausted T cell relative to T cell in blood](http://purl.obolibrary.org/obo/HP_0041080) [label](http://www.w3.org/2000/01/rdf-schema#label) "Abnormal proportion of exhausted T cell relative to T cell in blood"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -179,7 +179,7 @@
 
 
 ### Abnormal proportion of immature B cells `http://purl.obolibrary.org/obo/HP_0030376`
-#### Removed
+#### Added
 - [Abnormal proportion of immature B cells](http://purl.obolibrary.org/obo/HP_0030376) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([immature B cell](http://purl.obolibrary.org/obo/CL_0000816) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -187,7 +187,7 @@
 
 
 ### Abnormal proportion of marginal zone B cells `http://purl.obolibrary.org/obo/HP_0030383`
-#### Removed
+#### Added
 - [Abnormal proportion of marginal zone B cells](http://purl.obolibrary.org/obo/HP_0030383) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([marginal zone B cell](http://purl.obolibrary.org/obo/CL_0000845) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -195,7 +195,7 @@
 
 
 ### Abnormal proportion of memory B cells `http://purl.obolibrary.org/obo/HP_0030373`
-#### Removed
+#### Added
 - [Abnormal proportion of memory B cells](http://purl.obolibrary.org/obo/HP_0030373) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([memory B cell](http://purl.obolibrary.org/obo/CL_0000787) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -203,7 +203,7 @@
 
 
 ### Abnormal proportion of memory T cells `http://purl.obolibrary.org/obo/HP_0032182`
-#### Removed
+#### Added
 - [Abnormal proportion of memory T cells](http://purl.obolibrary.org/obo/HP_0032182) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([memory T cell](http://purl.obolibrary.org/obo/CL_0000813) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -211,7 +211,7 @@
 
 
 ### Abnormal proportion of naive B cells `http://purl.obolibrary.org/obo/HP_0030370`
-#### Removed
+#### Added
 - [Abnormal proportion of naive B cells](http://purl.obolibrary.org/obo/HP_0030370) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive B cell](http://purl.obolibrary.org/obo/CL_0000788) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -219,7 +219,7 @@
 
 
 ### Abnormal proportion of naive CD4 T cells `http://purl.obolibrary.org/obo/HP_0410373`
-#### Removed
+#### Added
 - [Abnormal proportion of naive CD4 T cells](http://purl.obolibrary.org/obo/HP_0410373) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive thymus-derived CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000895) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -229,7 +229,7 @@
 
 
 ### Abnormal proportion of naive T cells `http://purl.obolibrary.org/obo/HP_0031396`
-#### Removed
+#### Added
 - [Abnormal proportion of naive T cells](http://purl.obolibrary.org/obo/HP_0031396) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive T cell](http://purl.obolibrary.org/obo/CL_0000898) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -237,7 +237,7 @@
 
 
 ### Abnormal proportion of transitional B cells `http://purl.obolibrary.org/obo/HP_0030379`
-#### Removed
+#### Added
 - [Abnormal proportion of transitional B cells](http://purl.obolibrary.org/obo/HP_0030379) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([transitional stage B cell](http://purl.obolibrary.org/obo/CL_0000818) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -245,7 +245,7 @@
 
 
 ### Abnormal proportion of unswitched memory B cells `http://purl.obolibrary.org/obo/HP_0032124`
-#### Removed
+#### Added
 - [Abnormal proportion of unswitched memory B cells](http://purl.obolibrary.org/obo/HP_0032124) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([proportionality to](http://purl.obolibrary.org/obo/PATO_0001470) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([unswitched memory B cell](http://purl.obolibrary.org/obo/CL_0000970) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -253,13 +253,13 @@
 
 
 ### Abnormality of the fontanelles or cranial sutures `http://purl.obolibrary.org/obo/HP_0000235`
-#### Removed
+#### Added
 - [Abnormality of the fontanelles or cranial sutures](http://purl.obolibrary.org/obo/HP_0000235) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any abnormality of the fontanelles (the regions covered by a thick membrane that normally ossify in the first two years of life) or the cranial sutures (the fibrous joints in which the articulating bones or cartilages of the skull are connected by sutural ligaments)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HPO:probinson"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:12825844"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-#### Added
+#### Removed
 - [Abnormality of the fontanelles or cranial sutures](http://purl.obolibrary.org/obo/HP_0000235) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any abnormality of the fontanelles (the regions covered by a thick membrane that normally ossify in the first two years of life) or the cranial sutures (the fibrous joints in which the articulating bones or cartilages of the skull are connected by sutural ligaments )."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HPO:probinson"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -267,18 +267,18 @@
 
 
 ### Decreased helper T cell proportion `http://purl.obolibrary.org/obo/HP_0008165`
-#### Removed
+#### Added
 - [Decreased helper T cell proportion](http://purl.obolibrary.org/obo/HP_0008165) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([helper T cell](http://purl.obolibrary.org/obo/CL_0000912) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
-#### Added
+#### Removed
 - [Decreased helper T cell proportion](http://purl.obolibrary.org/obo/HP_0008165) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased amount](http://purl.obolibrary.org/obo/PATO_0001997) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some [helper T cell](http://purl.obolibrary.org/obo/CL_0000912)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 
 ### Decreased proportion of CD4+CD25+ regulatory T cells `http://purl.obolibrary.org/obo/HP_0020113`
-#### Removed
+#### Added
 - [Decreased proportion of CD4+CD25+ regulatory T cells](http://purl.obolibrary.org/obo/HP_0020113) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, CD25-positive, alpha-beta regulatory T cell](http://purl.obolibrary.org/obo/CL_0000792) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [cell](http://purl.obolibrary.org/obo/CL_0000000)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -286,7 +286,7 @@
 
 
 ### Decreased proportion of CD4-positive T cells `http://purl.obolibrary.org/obo/HP_0032218`
-#### Removed
+#### Added
 - [Decreased proportion of CD4-positive T cells](http://purl.obolibrary.org/obo/HP_0032218) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000624) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -294,20 +294,20 @@
 
 
 ### Decreased proportion of CD4-positive helper T cells `http://purl.obolibrary.org/obo/HP_0005407`
-#### Removed
+#### Added
 - [Decreased proportion of CD4-positive helper T cells](http://purl.obolibrary.org/obo/HP_0005407) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive helper T cell](http://purl.obolibrary.org/obo/CL_0000492) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 - [Decreased proportion of CD4-positive helper T cells](http://purl.obolibrary.org/obo/HP_0005407) SubClassOf [Decreased proportion of CD4-positive T cells](http://purl.obolibrary.org/obo/HP_0032218) 
 
-#### Added
+#### Removed
 - [Decreased proportion of CD4-positive helper T cells](http://purl.obolibrary.org/obo/HP_0005407) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased amount](http://purl.obolibrary.org/obo/PATO_0001997) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some [CD4-positive helper T cell](http://purl.obolibrary.org/obo/CL_0000492)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 
 ### Decreased proportion of CD4-positive, alpha-beta memory T cells `http://purl.obolibrary.org/obo/HP_0410386`
-#### Removed
+#### Added
 - [Decreased proportion of CD4-positive, alpha-beta memory T cells](http://purl.obolibrary.org/obo/HP_0410386) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, alpha-beta memory T cell](http://purl.obolibrary.org/obo/CL_0000897) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -319,18 +319,18 @@
 
 
 ### Decreased proportion of CD8-positive T cells `http://purl.obolibrary.org/obo/HP_0005415`
-#### Removed
+#### Added
 - [Decreased proportion of CD8-positive T cells](http://purl.obolibrary.org/obo/HP_0005415) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000625) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
-#### Added
+#### Removed
 - [Decreased proportion of CD8-positive T cells](http://purl.obolibrary.org/obo/HP_0005415) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased amount](http://purl.obolibrary.org/obo/PATO_0001997) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some [CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000625)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 
 ### Decreased proportion of CD8-positive, alpha-beta TEMRA T cells `http://purl.obolibrary.org/obo/HP_0500266`
-#### Removed
+#### Added
 - [Decreased proportion of CD8-positive, alpha-beta TEMRA T cells](http://purl.obolibrary.org/obo/HP_0500266) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector memory CD8-positive, alpha-beta T cell, terminally differentiated](http://purl.obolibrary.org/obo/CL_0001062) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -340,7 +340,7 @@
 
 
 ### Decreased proportion of CD8-positive, alpha-beta memory T cells `http://purl.obolibrary.org/obo/HP_0410385`
-#### Removed
+#### Added
 - [Decreased proportion of CD8-positive, alpha-beta memory T cells](http://purl.obolibrary.org/obo/HP_0410385) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD8-positive, alpha-beta memory T cell](http://purl.obolibrary.org/obo/CL_0000909) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -352,7 +352,7 @@
 
 
 ### Decreased proportion of central memory CD8-positive, alpha-beta T cells `http://purl.obolibrary.org/obo/HP_0410389`
-#### Removed
+#### Added
 - [Decreased proportion of central memory CD8-positive, alpha-beta T cells](http://purl.obolibrary.org/obo/HP_0410389) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([central memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000907) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -360,7 +360,7 @@
 
 
 ### Decreased proportion of class-switched memory B cells `http://purl.obolibrary.org/obo/HP_0030388`
-#### Removed
+#### Added
 - [Decreased proportion of class-switched memory B cells](http://purl.obolibrary.org/obo/HP_0030388) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([class switched memory B cell](http://purl.obolibrary.org/obo/CL_0000972) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -370,7 +370,7 @@
 
 
 ### Decreased proportion of effector memory CD8-positive, alpha-beta T cells `http://purl.obolibrary.org/obo/HP_0410390`
-#### Removed
+#### Added
 - [Decreased proportion of effector memory CD8-positive, alpha-beta T cells](http://purl.obolibrary.org/obo/HP_0410390) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000913) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -380,7 +380,7 @@
 
 
 ### Decreased proportion of gamma-delta T cells `http://purl.obolibrary.org/obo/HP_0500271`
-#### Removed
+#### Added
 - [Decreased proportion of gamma-delta T cells](http://purl.obolibrary.org/obo/HP_0500271) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000798) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -388,7 +388,7 @@
 
 
 ### Decreased proportion of immature B cells `http://purl.obolibrary.org/obo/HP_0030378`
-#### Removed
+#### Added
 - [Decreased proportion of immature B cells](http://purl.obolibrary.org/obo/HP_0030378) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([immature B cell](http://purl.obolibrary.org/obo/CL_0000816) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -396,7 +396,7 @@
 
 
 ### Decreased proportion of immature gamma-delta T cells `http://purl.obolibrary.org/obo/HP_0500274`
-#### Removed
+#### Added
 - [Decreased proportion of immature gamma-delta T cells](http://purl.obolibrary.org/obo/HP_0500274) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([immature gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000799) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -406,7 +406,7 @@
 
 
 ### Decreased proportion of marginal zone B cells `http://purl.obolibrary.org/obo/HP_0030384`
-#### Removed
+#### Added
 - [Decreased proportion of marginal zone B cells](http://purl.obolibrary.org/obo/HP_0030384) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([marginal zone B cell](http://purl.obolibrary.org/obo/CL_0000845) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -414,7 +414,7 @@
 
 
 ### Decreased proportion of memory B cells `http://purl.obolibrary.org/obo/HP_0030374`
-#### Removed
+#### Added
 - [Decreased proportion of memory B cells](http://purl.obolibrary.org/obo/HP_0030374) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([memory B cell](http://purl.obolibrary.org/obo/CL_0000787) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -422,7 +422,7 @@
 
 
 ### Decreased proportion of memory T cells `http://purl.obolibrary.org/obo/HP_0032183`
-#### Removed
+#### Added
 - [Decreased proportion of memory T cells](http://purl.obolibrary.org/obo/HP_0032183) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([memory T cell](http://purl.obolibrary.org/obo/CL_0000813) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -430,7 +430,7 @@
 
 
 ### Decreased proportion of naive B cells `http://purl.obolibrary.org/obo/HP_0030372`
-#### Removed
+#### Added
 - [Decreased proportion of naive B cells](http://purl.obolibrary.org/obo/HP_0030372) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive B cell](http://purl.obolibrary.org/obo/CL_0000788) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -438,7 +438,7 @@
 
 
 ### Decreased proportion of naive CD4 T cells `http://purl.obolibrary.org/obo/HP_0410378`
-#### Removed
+#### Added
 - [Decreased proportion of naive CD4 T cells](http://purl.obolibrary.org/obo/HP_0410378) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive thymus-derived CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000895) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -450,7 +450,7 @@
 
 
 ### Decreased proportion of naive T cells `http://purl.obolibrary.org/obo/HP_0031397`
-#### Removed
+#### Added
 - [Decreased proportion of naive T cells](http://purl.obolibrary.org/obo/HP_0031397) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive T cell](http://purl.obolibrary.org/obo/CL_0000898) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -458,7 +458,7 @@
 
 
 ### Decreased proportion of plasmablasts `http://purl.obolibrary.org/obo/HP_0032129`
-#### Removed
+#### Added
 - [Decreased proportion of plasmablasts](http://purl.obolibrary.org/obo/HP_0032129) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([plasmablast](http://purl.obolibrary.org/obo/CL_0000980) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -466,7 +466,7 @@
 
 
 ### Decreased proportion of transitional B cells `http://purl.obolibrary.org/obo/HP_0030380`
-#### Removed
+#### Added
 - [Decreased proportion of transitional B cells](http://purl.obolibrary.org/obo/HP_0030380) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([transitional stage B cell](http://purl.obolibrary.org/obo/CL_0000818) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -474,7 +474,7 @@
 
 
 ### Decreased proportion of unswitched memory B cells `http://purl.obolibrary.org/obo/HP_0032126`
-#### Removed
+#### Added
 - [Decreased proportion of unswitched memory B cells](http://purl.obolibrary.org/obo/HP_0032126) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([unswitched memory B cell](http://purl.obolibrary.org/obo/CL_0000970) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -484,13 +484,13 @@
 
 
 ### Dissociated vertical deviation `http://purl.obolibrary.org/obo/HP_0500074`
-#### Removed
+#### Added
 - [Dissociated vertical deviation](http://purl.obolibrary.org/obo/HP_0500074) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Dissociated vertical deviation (DVD) occurs when the level of illumination received by either eye is reduced sufficiently and as a result eye deviates progressively upwards, but reverts to its original position when the level of illumination returns to normally acceptable levels. It may sometimes be so asymmetrical as to be virtually unilateral and is associated with heterotropia usually of early onset." 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN-13:978-0199679980" 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ORCID:0000-0003-0986-4123" 
 
-#### Added
+#### Removed
 - [Dissociated vertical deviation](http://purl.obolibrary.org/obo/HP_0500074) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Dissociated vertical deviation (DVD ) occurs when the level of illumination received by either eye is reduced sufficiently and as a result eye deviates progressively upwards, but reverts to its original position when the level of illumination returns to normally acceptable levels. It may sometimes be so asymmetrical as to be virtually unilateral and is associated with heterotropia usually of early onset." 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN-13:978-0199679980" 
 
@@ -498,7 +498,7 @@
 
 
 ### Elevated proportion of CD4+ effector memory T cells `http://purl.obolibrary.org/obo/HP_0025625`
-#### Removed
+#### Added
 - [Elevated proportion of CD4+ effector memory T cells](http://purl.obolibrary.org/obo/HP_0025625) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0001044) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -508,15 +508,15 @@
 
 
 ### Elevated tissue non-specific alkaline phosphatase `http://purl.obolibrary.org/obo/HP_0010679`
-#### Removed
+#### Added
 - [Elevated tissue non-specific alkaline phosphatase](http://purl.obolibrary.org/obo/HP_0010679) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Tissue non-specific alkaline phosphatase (ALPP) is one of four distinct but related alkaline phosphatases. Entrez Gene ID 249, Uniprot P05186 (PPBT_HUMAN). The gene is also known as alkaline phosphatase, liver/bone/kidney (ALPL)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-#### Added
+#### Removed
 - [Elevated tissue non-specific alkaline phosphatase](http://purl.obolibrary.org/obo/HP_0010679) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Tissue non-specific alkaline phosphatase (ALPP) is one of four distinct but related alkaline phosphatases. Entrez Gene ID 249, Uniprot P05186 (PPBT_HUMAN). The gene is also known as alkaline phosphatase, liver/bone/kidney (ALPL )."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### Fractured acetabular part of hip bone `http://purl.obolibrary.org/obo/HP_0041145`
-#### Removed
+#### Added
 - [Fractured acetabular part of hip bone](http://purl.obolibrary.org/obo/HP_0041145) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone acetabular part of hip bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured acetabular part of hip bone](http://purl.obolibrary.org/obo/HP_0041145) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the acetabular part of hip bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -533,7 +533,7 @@
 
 
 ### Fractured ankle joint `http://purl.obolibrary.org/obo/HP_0041153`
-#### Removed
+#### Added
 - [Fractured ankle joint](http://purl.obolibrary.org/obo/HP_0041153) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the ankle joint."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured ankle joint](http://purl.obolibrary.org/obo/HP_0041153) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured ankle joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -552,7 +552,7 @@
 
 
 ### Fractured bone of jaw `http://purl.obolibrary.org/obo/HP_0041234`
-#### Removed
+#### Added
 - [Fractured bone of jaw](http://purl.obolibrary.org/obo/HP_0041234) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured bone of jaw"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured bone of jaw](http://purl.obolibrary.org/obo/HP_0041234) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone bone of jaw"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -571,7 +571,7 @@
 
 
 ### Fractured calcaneus `http://purl.obolibrary.org/obo/HP_0041061`
-#### Removed
+#### Added
 - [Fractured calcaneus](http://purl.obolibrary.org/obo/HP_0041061) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone calcaneus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured calcaneus](http://purl.obolibrary.org/obo/HP_0041061) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured calcaneus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -590,7 +590,7 @@
 
 
 ### Fractured carpal bone `http://purl.obolibrary.org/obo/HP_0041248`
-#### Removed
+#### Added
 - [Fractured carpal bone](http://purl.obolibrary.org/obo/HP_0041248) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured carpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured carpal bone](http://purl.obolibrary.org/obo/HP_0041248) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the carpal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -613,7 +613,7 @@
 
 
 ### Fractured cervical vertebra `http://purl.obolibrary.org/obo/HP_0041167`
-#### Removed
+#### Added
 - [Fractured cervical vertebra](http://purl.obolibrary.org/obo/HP_0041167) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone cervical vertebra"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured cervical vertebra](http://purl.obolibrary.org/obo/HP_0041167) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the cervical vertebra."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -632,7 +632,7 @@
 
 
 ### Fractured clavicle bone `http://purl.obolibrary.org/obo/HP_0041144`
-#### Removed
+#### Added
 - [Fractured clavicle bone](http://purl.obolibrary.org/obo/HP_0041144) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the clavicle bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured clavicle bone](http://purl.obolibrary.org/obo/HP_0041144) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone clavicle bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -653,7 +653,7 @@
 
 
 ### Fractured coccyx `http://purl.obolibrary.org/obo/HP_0041146`
-#### Removed
+#### Added
 - [Fractured coccyx](http://purl.obolibrary.org/obo/HP_0041146) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone coccyx"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured coccyx](http://purl.obolibrary.org/obo/HP_0041146) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the coccyx."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -672,7 +672,7 @@
 
 
 ### Fractured cuboid bone `http://purl.obolibrary.org/obo/HP_0041150`
-#### Removed
+#### Added
 - [Fractured cuboid bone](http://purl.obolibrary.org/obo/HP_0041150) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone cuboid bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured cuboid bone](http://purl.obolibrary.org/obo/HP_0041150) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured cuboid bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -689,7 +689,7 @@
 
 
 ### Fractured distal epiphysis of distal phalanx of manual digit 1 `http://purl.obolibrary.org/obo/HP_0041216`
-#### Removed
+#### Added
 - [Fractured distal epiphysis of distal phalanx of manual digit 1](http://purl.obolibrary.org/obo/HP_0041216) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal epiphysis of distal phalanx of manual digit 1."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal epiphysis of distal phalanx of manual digit 1](http://purl.obolibrary.org/obo/HP_0041216) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal epiphysis of distal phalanx of manual digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -708,7 +708,7 @@
 
 
 ### Fractured distal epiphysis of radius `http://purl.obolibrary.org/obo/HP_0041196`
-#### Removed
+#### Added
 - [Fractured distal epiphysis of radius](http://purl.obolibrary.org/obo/HP_0041196) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal epiphysis of radius"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal epiphysis of radius](http://purl.obolibrary.org/obo/HP_0041196) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal epiphysis of radius."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -731,7 +731,7 @@
 
 
 ### Fractured distal phalanx `http://purl.obolibrary.org/obo/HP_0041218`
-#### Removed
+#### Added
 - [Fractured distal phalanx](http://purl.obolibrary.org/obo/HP_0041218) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal phalanx"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx](http://purl.obolibrary.org/obo/HP_0041218) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal phalanx."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -748,7 +748,7 @@
 
 
 ### Fractured distal phalanx of manual digit 2 `http://purl.obolibrary.org/obo/HP_0041176`
-#### Removed
+#### Added
 - [Fractured distal phalanx of manual digit 2](http://purl.obolibrary.org/obo/HP_0041176) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal phalanx of manual digit 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of manual digit 2](http://purl.obolibrary.org/obo/HP_0041176) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal phalanx of manual digit 2."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -767,7 +767,7 @@
 
 
 ### Fractured distal phalanx of manual digit 3 `http://purl.obolibrary.org/obo/HP_0041177`
-#### Removed
+#### Added
 - [Fractured distal phalanx of manual digit 3](http://purl.obolibrary.org/obo/HP_0041177) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal phalanx of manual digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of manual digit 3](http://purl.obolibrary.org/obo/HP_0041177) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal phalanx of manual digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -786,7 +786,7 @@
 
 
 ### Fractured distal phalanx of manual digit 4 `http://purl.obolibrary.org/obo/HP_0041178`
-#### Removed
+#### Added
 - [Fractured distal phalanx of manual digit 4](http://purl.obolibrary.org/obo/HP_0041178) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal phalanx of manual digit 4"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of manual digit 4](http://purl.obolibrary.org/obo/HP_0041178) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal phalanx of manual digit 4."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -805,7 +805,7 @@
 
 
 ### Fractured distal phalanx of manual digit 5 `http://purl.obolibrary.org/obo/HP_0041179`
-#### Removed
+#### Added
 - [Fractured distal phalanx of manual digit 5](http://purl.obolibrary.org/obo/HP_0041179) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal phalanx of manual digit 5"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of manual digit 5](http://purl.obolibrary.org/obo/HP_0041179) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal phalanx of manual digit 5."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -824,7 +824,7 @@
 
 
 ### Fractured distal phalanx of manus `http://purl.obolibrary.org/obo/HP_0041174`
-#### Removed
+#### Added
 - [Fractured distal phalanx of manus](http://purl.obolibrary.org/obo/HP_0041174) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal phalanx of manus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of manus](http://purl.obolibrary.org/obo/HP_0041174) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal phalanx of manus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -845,7 +845,7 @@
 
 
 ### Fractured distal phalanx of pedal digit 1 `http://purl.obolibrary.org/obo/HP_0041180`
-#### Removed
+#### Added
 - [Fractured distal phalanx of pedal digit 1](http://purl.obolibrary.org/obo/HP_0041180) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal phalanx of pedal digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of pedal digit 1](http://purl.obolibrary.org/obo/HP_0041180) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal phalanx of pedal digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -866,7 +866,7 @@
 
 
 ### Fractured distal phalanx of pedal digit 3 `http://purl.obolibrary.org/obo/HP_0041181`
-#### Removed
+#### Added
 - [Fractured distal phalanx of pedal digit 3](http://purl.obolibrary.org/obo/HP_0041181) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal phalanx of pedal digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal phalanx of pedal digit 3](http://purl.obolibrary.org/obo/HP_0041181) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal phalanx of pedal digit 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -887,7 +887,7 @@
 
 
 ### Fractured distal tarsal bone `http://purl.obolibrary.org/obo/HP_0041226`
-#### Removed
+#### Added
 - [Fractured distal tarsal bone](http://purl.obolibrary.org/obo/HP_0041226) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal tarsal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal tarsal bone](http://purl.obolibrary.org/obo/HP_0041226) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the distal tarsal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -904,7 +904,7 @@
 
 
 ### Fractured distal tarsal bone 2 `http://purl.obolibrary.org/obo/HP_0041227`
-#### Removed
+#### Added
 - [Fractured distal tarsal bone 2](http://purl.obolibrary.org/obo/HP_0041227) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal tarsal bone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal tarsal bone 2](http://purl.obolibrary.org/obo/HP_0041227) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal tarsal bone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -921,7 +921,7 @@
 
 
 ### Fractured distal tarsal bone 3 `http://purl.obolibrary.org/obo/HP_0041228`
-#### Removed
+#### Added
 - [Fractured distal tarsal bone 3](http://purl.obolibrary.org/obo/HP_0041228) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone distal tarsal bone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured distal tarsal bone 3](http://purl.obolibrary.org/obo/HP_0041228) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured distal tarsal bone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -938,7 +938,7 @@
 
 
 ### Fractured elbow `http://purl.obolibrary.org/obo/HP_0041219`
-#### Removed
+#### Added
 - [Fractured elbow](http://purl.obolibrary.org/obo/HP_0041219) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the elbow."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured elbow](http://purl.obolibrary.org/obo/HP_0041219) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured elbow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -957,7 +957,7 @@
 
 
 ### Fractured elbow joint `http://purl.obolibrary.org/obo/HP_0041154`
-#### Removed
+#### Added
 - [Fractured elbow joint](http://purl.obolibrary.org/obo/HP_0041154) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone elbow joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured elbow joint](http://purl.obolibrary.org/obo/HP_0041154) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured elbow joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -976,7 +976,7 @@
 
 
 ### Fractured epiphysis `http://purl.obolibrary.org/obo/HP_0041147`
-#### Removed
+#### Added
 - [Fractured epiphysis](http://purl.obolibrary.org/obo/HP_0041147) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis](http://purl.obolibrary.org/obo/HP_0041147) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the epiphysis."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -995,7 +995,7 @@
 
 
 ### Fractured epiphysis of femur `http://purl.obolibrary.org/obo/HP_0041189`
-#### Removed
+#### Added
 - [Fractured epiphysis of femur](http://purl.obolibrary.org/obo/HP_0041189) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured epiphysis of femur"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of femur](http://purl.obolibrary.org/obo/HP_0041189) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of femur"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1014,7 +1014,7 @@
 
 
 ### Fractured epiphysis of fifth metacarpal bone `http://purl.obolibrary.org/obo/HP_0041121`
-#### Removed
+#### Added
 - [Fractured epiphysis of fifth metacarpal bone](http://purl.obolibrary.org/obo/HP_0041121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of fifth metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of fifth metacarpal bone](http://purl.obolibrary.org/obo/HP_0041121) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured epiphysis of fifth metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1035,7 +1035,7 @@
 
 
 ### Fractured epiphysis of first metatarsal bone `http://purl.obolibrary.org/obo/HP_0041193`
-#### Removed
+#### Added
 - [Fractured epiphysis of first metatarsal bone](http://purl.obolibrary.org/obo/HP_0041193) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of first metatarsal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of first metatarsal bone](http://purl.obolibrary.org/obo/HP_0041193) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured epiphysis of first metatarsal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1054,7 +1054,7 @@
 
 
 ### Fractured epiphysis of fourth metacarpal bone `http://purl.obolibrary.org/obo/HP_0041192`
-#### Removed
+#### Added
 - [Fractured epiphysis of fourth metacarpal bone](http://purl.obolibrary.org/obo/HP_0041192) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured epiphysis of fourth metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of fourth metacarpal bone](http://purl.obolibrary.org/obo/HP_0041192) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of fourth metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1075,7 +1075,7 @@
 
 
 ### Fractured epiphysis of middle phalanx of manus `http://purl.obolibrary.org/obo/HP_0041209`
-#### Removed
+#### Added
 - [Fractured epiphysis of middle phalanx of manus](http://purl.obolibrary.org/obo/HP_0041209) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the epiphysis of middle phalanx of manus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of middle phalanx of manus](http://purl.obolibrary.org/obo/HP_0041209) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of middle phalanx of manus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1094,7 +1094,7 @@
 
 
 ### Fractured epiphysis of second metacarpal bone `http://purl.obolibrary.org/obo/HP_0041190`
-#### Removed
+#### Added
 - [Fractured epiphysis of second metacarpal bone](http://purl.obolibrary.org/obo/HP_0041190) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the epiphysis of second metacarpal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of second metacarpal bone](http://purl.obolibrary.org/obo/HP_0041190) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of second metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1115,7 +1115,7 @@
 
 
 ### Fractured epiphysis of second metatarsal bone `http://purl.obolibrary.org/obo/HP_0041194`
-#### Removed
+#### Added
 - [Fractured epiphysis of second metatarsal bone](http://purl.obolibrary.org/obo/HP_0041194) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the epiphysis of second metatarsal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of second metatarsal bone](http://purl.obolibrary.org/obo/HP_0041194) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of second metatarsal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1136,7 +1136,7 @@
 
 
 ### Fractured epiphysis of third metacarpal bone `http://purl.obolibrary.org/obo/HP_0041191`
-#### Removed
+#### Added
 - [Fractured epiphysis of third metacarpal bone](http://purl.obolibrary.org/obo/HP_0041191) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of third metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of third metacarpal bone](http://purl.obolibrary.org/obo/HP_0041191) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the epiphysis of third metacarpal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1157,7 +1157,7 @@
 
 
 ### Fractured epiphysis of third metatarsal bone `http://purl.obolibrary.org/obo/HP_0041195`
-#### Removed
+#### Added
 - [Fractured epiphysis of third metatarsal bone](http://purl.obolibrary.org/obo/HP_0041195) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone epiphysis of third metatarsal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured epiphysis of third metatarsal bone](http://purl.obolibrary.org/obo/HP_0041195) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the epiphysis of third metatarsal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1178,7 +1178,7 @@
 
 
 ### Fractured facial bone `http://purl.obolibrary.org/obo/HP_0041220`
-#### Removed
+#### Added
 - [Fractured facial bone](http://purl.obolibrary.org/obo/HP_0041220) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the facial bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured facial bone](http://purl.obolibrary.org/obo/HP_0041220) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured facial bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1197,7 +1197,7 @@
 
 
 ### Fractured fibula `http://purl.obolibrary.org/obo/HP_0041222`
-#### Removed
+#### Added
 - [Fractured fibula](http://purl.obolibrary.org/obo/HP_0041222) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the fibula."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured fibula](http://purl.obolibrary.org/obo/HP_0041222) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured fibula"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1218,7 +1218,7 @@
 
 
 ### Fractured fused metatarsal bones 2-4 `http://purl.obolibrary.org/obo/HP_0041215`
-#### Removed
+#### Added
 - [Fractured fused metatarsal bones 2-4](http://purl.obolibrary.org/obo/HP_0041215) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured fused metatarsal bones 2-4"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured fused metatarsal bones 2-4](http://purl.obolibrary.org/obo/HP_0041215) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the fused metatarsal bones 2-4."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1239,7 +1239,7 @@
 
 
 ### Fractured fused sacrum `http://purl.obolibrary.org/obo/HP_0041172`
-#### Removed
+#### Added
 - [Fractured fused sacrum](http://purl.obolibrary.org/obo/HP_0041172) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the fused sacrum."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured fused sacrum](http://purl.obolibrary.org/obo/HP_0041172) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured fused sacrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1258,7 +1258,7 @@
 
 
 ### Fractured head `http://purl.obolibrary.org/obo/HP_0041053`
-#### Removed
+#### Added
 - [Fractured head](http://purl.obolibrary.org/obo/HP_0041053) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured head](http://purl.obolibrary.org/obo/HP_0041053) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1275,7 +1275,7 @@
 
 
 ### Fractured head of femur `http://purl.obolibrary.org/obo/HP_0041221`
-#### Removed
+#### Added
 - [Fractured head of femur](http://purl.obolibrary.org/obo/HP_0041221) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the head of femur."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured head of femur](http://purl.obolibrary.org/obo/HP_0041221) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone head of femur"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1294,7 +1294,7 @@
 
 
 ### Fractured hindlimb bone `http://purl.obolibrary.org/obo/HP_0041235`
-#### Removed
+#### Added
 - [Fractured hindlimb bone](http://purl.obolibrary.org/obo/HP_0041235) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured hindlimb bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured hindlimb bone](http://purl.obolibrary.org/obo/HP_0041235) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone hindlimb bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1313,7 +1313,7 @@
 
 
 ### Fractured humerus `http://purl.obolibrary.org/obo/HP_0041055`
-#### Removed
+#### Added
 - [Fractured humerus](http://purl.obolibrary.org/obo/HP_0041055) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone humerus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured humerus](http://purl.obolibrary.org/obo/HP_0041055) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the humerus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1334,7 +1334,7 @@
 
 
 ### Fractured ilium `http://purl.obolibrary.org/obo/HP_0041233`
-#### Removed
+#### Added
 - [Fractured ilium](http://purl.obolibrary.org/obo/HP_0041233) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone ilium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured ilium](http://purl.obolibrary.org/obo/HP_0041233) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the ilium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1355,7 +1355,7 @@
 
 
 ### Fractured interphalangeal joint `http://purl.obolibrary.org/obo/HP_0041199`
-#### Removed
+#### Added
 - [Fractured interphalangeal joint](http://purl.obolibrary.org/obo/HP_0041199) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone interphalangeal joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured interphalangeal joint](http://purl.obolibrary.org/obo/HP_0041199) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured interphalangeal joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1374,7 +1374,7 @@
 
 
 ### Fractured knee `http://purl.obolibrary.org/obo/HP_0041064`
-#### Removed
+#### Added
 - [Fractured knee](http://purl.obolibrary.org/obo/HP_0041064) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the knee."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured knee](http://purl.obolibrary.org/obo/HP_0041064) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone knee"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1393,7 +1393,7 @@
 
 
 ### Fractured larynx `http://purl.obolibrary.org/obo/HP_0041157`
-#### Removed
+#### Added
 - [Fractured larynx](http://purl.obolibrary.org/obo/HP_0041157) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the larynx."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured larynx](http://purl.obolibrary.org/obo/HP_0041157) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone larynx"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1410,7 +1410,7 @@
 
 
 ### Fractured lateral malleolus of fibula `http://purl.obolibrary.org/obo/HP_0041210`
-#### Removed
+#### Added
 - [Fractured lateral malleolus of fibula](http://purl.obolibrary.org/obo/HP_0041210) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the lateral malleolus of fibula."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured lateral malleolus of fibula](http://purl.obolibrary.org/obo/HP_0041210) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone lateral malleolus of fibula"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1431,7 +1431,7 @@
 
 
 ### Fractured left clavicle `http://purl.obolibrary.org/obo/HP_0041116`
-#### Removed
+#### Added
 - [Fractured left clavicle](http://purl.obolibrary.org/obo/HP_0041116) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the left clavicle."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured left clavicle](http://purl.obolibrary.org/obo/HP_0041116) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured left clavicle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1448,7 +1448,7 @@
 
 
 ### Fractured lower limb segment `http://purl.obolibrary.org/obo/HP_0041117`
-#### Removed
+#### Added
 - [Fractured lower limb segment](http://purl.obolibrary.org/obo/HP_0041117) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured lower limb segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured lower limb segment](http://purl.obolibrary.org/obo/HP_0041117) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the lower limb segment."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1465,7 +1465,7 @@
 
 
 ### Fractured lumbar vertebra `http://purl.obolibrary.org/obo/HP_0041168`
-#### Removed
+#### Added
 - [Fractured lumbar vertebra](http://purl.obolibrary.org/obo/HP_0041168) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the lumbar vertebra."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured lumbar vertebra](http://purl.obolibrary.org/obo/HP_0041168) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone lumbar vertebra"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1484,7 +1484,7 @@
 
 
 ### Fractured mandible `http://purl.obolibrary.org/obo/HP_0041155`
-#### Removed
+#### Added
 - [Fractured mandible](http://purl.obolibrary.org/obo/HP_0041155) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the mandible."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured mandible](http://purl.obolibrary.org/obo/HP_0041155) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured mandible"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1503,7 +1503,7 @@
 
 
 ### Fractured manual digit `http://purl.obolibrary.org/obo/HP_0041163`
-#### Removed
+#### Added
 - [Fractured manual digit](http://purl.obolibrary.org/obo/HP_0041163) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured manual digit"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured manual digit](http://purl.obolibrary.org/obo/HP_0041163) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the manual digit."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1522,7 +1522,7 @@
 
 
 ### Fractured manual digit 1 phalanx `http://purl.obolibrary.org/obo/HP_0041239`
-#### Removed
+#### Added
 - [Fractured manual digit 1 phalanx](http://purl.obolibrary.org/obo/HP_0041239) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured manual digit 1 phalanx"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured manual digit 1 phalanx](http://purl.obolibrary.org/obo/HP_0041239) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone manual digit 1 phalanx"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1541,7 +1541,7 @@
 
 
 ### Fractured manual digit bone `http://purl.obolibrary.org/obo/HP_0041224`
-#### Removed
+#### Added
 - [Fractured manual digit bone](http://purl.obolibrary.org/obo/HP_0041224) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone manual digit bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured manual digit bone](http://purl.obolibrary.org/obo/HP_0041224) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the manual digit bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1564,7 +1564,7 @@
 
 
 ### Fractured maxilla `http://purl.obolibrary.org/obo/HP_0041165`
-#### Removed
+#### Added
 - [Fractured maxilla](http://purl.obolibrary.org/obo/HP_0041165) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the maxilla."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured maxilla](http://purl.obolibrary.org/obo/HP_0041165) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured maxilla"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1583,7 +1583,7 @@
 
 
 ### Fractured metacarpal bone of digit 1 `http://purl.obolibrary.org/obo/HP_0041225`
-#### Removed
+#### Added
 - [Fractured metacarpal bone of digit 1](http://purl.obolibrary.org/obo/HP_0041225) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured metacarpal bone of digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metacarpal bone of digit 1](http://purl.obolibrary.org/obo/HP_0041225) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone metacarpal bone of digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1606,7 +1606,7 @@
 
 
 ### Fractured metacarpophalangeal joint `http://purl.obolibrary.org/obo/HP_0041173`
-#### Removed
+#### Added
 - [Fractured metacarpophalangeal joint](http://purl.obolibrary.org/obo/HP_0041173) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone metacarpophalangeal joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metacarpophalangeal joint](http://purl.obolibrary.org/obo/HP_0041173) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the metacarpophalangeal joint."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1627,7 +1627,7 @@
 
 
 ### Fractured metacarpus skeleton `http://purl.obolibrary.org/obo/HP_0041119`
-#### Removed
+#### Added
 - [Fractured metacarpus skeleton](http://purl.obolibrary.org/obo/HP_0041119) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the metacarpus skeleton."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metacarpus skeleton](http://purl.obolibrary.org/obo/HP_0041119) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone metacarpus skeleton"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1644,7 +1644,7 @@
 
 
 ### Fractured metaphysis of femur `http://purl.obolibrary.org/obo/HP_0041114`
-#### Removed
+#### Added
 - [Fractured metaphysis of femur](http://purl.obolibrary.org/obo/HP_0041114) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured metaphysis of femur"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metaphysis of femur](http://purl.obolibrary.org/obo/HP_0041114) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone metaphysis of femur"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1663,7 +1663,7 @@
 
 
 ### Fractured metatarsal bone of digit 1 `http://purl.obolibrary.org/obo/HP_0041231`
-#### Removed
+#### Added
 - [Fractured metatarsal bone of digit 1](http://purl.obolibrary.org/obo/HP_0041231) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone metatarsal bone of digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metatarsal bone of digit 1](http://purl.obolibrary.org/obo/HP_0041231) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured metatarsal bone of digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1684,7 +1684,7 @@
 
 
 ### Fractured metatarsal bone of digit 4 `http://purl.obolibrary.org/obo/HP_0041230`
-#### Removed
+#### Added
 - [Fractured metatarsal bone of digit 4](http://purl.obolibrary.org/obo/HP_0041230) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the metatarsal bone of digit 4."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metatarsal bone of digit 4](http://purl.obolibrary.org/obo/HP_0041230) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured metatarsal bone of digit 4"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1705,7 +1705,7 @@
 
 
 ### Fractured metatarsal bone of digit 5 `http://purl.obolibrary.org/obo/HP_0041223`
-#### Removed
+#### Added
 - [Fractured metatarsal bone of digit 5](http://purl.obolibrary.org/obo/HP_0041223) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone metatarsal bone of digit 5"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured metatarsal bone of digit 5](http://purl.obolibrary.org/obo/HP_0041223) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the metatarsal bone of digit 5."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1726,7 +1726,7 @@
 
 
 ### Fractured middle phalanx of manual digit 2 `http://purl.obolibrary.org/obo/HP_0041182`
-#### Removed
+#### Added
 - [Fractured middle phalanx of manual digit 2](http://purl.obolibrary.org/obo/HP_0041182) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone middle phalanx of manual digit 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of manual digit 2](http://purl.obolibrary.org/obo/HP_0041182) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured middle phalanx of manual digit 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1745,7 +1745,7 @@
 
 
 ### Fractured middle phalanx of manual digit 3 `http://purl.obolibrary.org/obo/HP_0041183`
-#### Removed
+#### Added
 - [Fractured middle phalanx of manual digit 3](http://purl.obolibrary.org/obo/HP_0041183) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the middle phalanx of manual digit 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of manual digit 3](http://purl.obolibrary.org/obo/HP_0041183) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured middle phalanx of manual digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1764,7 +1764,7 @@
 
 
 ### Fractured middle phalanx of manual digit 4 `http://purl.obolibrary.org/obo/HP_0041184`
-#### Removed
+#### Added
 - [Fractured middle phalanx of manual digit 4](http://purl.obolibrary.org/obo/HP_0041184) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the middle phalanx of manual digit 4."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of manual digit 4](http://purl.obolibrary.org/obo/HP_0041184) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone middle phalanx of manual digit 4"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1783,7 +1783,7 @@
 
 
 ### Fractured middle phalanx of manual digit 5 `http://purl.obolibrary.org/obo/HP_0041185`
-#### Removed
+#### Added
 - [Fractured middle phalanx of manual digit 5](http://purl.obolibrary.org/obo/HP_0041185) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone middle phalanx of manual digit 5"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of manual digit 5](http://purl.obolibrary.org/obo/HP_0041185) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the middle phalanx of manual digit 5."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1802,7 +1802,7 @@
 
 
 ### Fractured middle phalanx of manus `http://purl.obolibrary.org/obo/HP_0041236`
-#### Removed
+#### Added
 - [Fractured middle phalanx of manus](http://purl.obolibrary.org/obo/HP_0041236) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the middle phalanx of manus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of manus](http://purl.obolibrary.org/obo/HP_0041236) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured middle phalanx of manus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1821,7 +1821,7 @@
 
 
 ### Fractured middle phalanx of pedal digit 3 `http://purl.obolibrary.org/obo/HP_0041186`
-#### Removed
+#### Added
 - [Fractured middle phalanx of pedal digit 3](http://purl.obolibrary.org/obo/HP_0041186) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone middle phalanx of pedal digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of pedal digit 3](http://purl.obolibrary.org/obo/HP_0041186) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the middle phalanx of pedal digit 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1840,7 +1840,7 @@
 
 
 ### Fractured middle phalanx of pes `http://purl.obolibrary.org/obo/HP_0041175`
-#### Removed
+#### Added
 - [Fractured middle phalanx of pes](http://purl.obolibrary.org/obo/HP_0041175) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured middle phalanx of pes"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured middle phalanx of pes](http://purl.obolibrary.org/obo/HP_0041175) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone middle phalanx of pes"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1859,7 +1859,7 @@
 
 
 ### Fractured navicular bone of pes `http://purl.obolibrary.org/obo/HP_0041149`
-#### Removed
+#### Added
 - [Fractured navicular bone of pes](http://purl.obolibrary.org/obo/HP_0041149) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone navicular bone of pes"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured navicular bone of pes](http://purl.obolibrary.org/obo/HP_0041149) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the navicular bone of pes."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1878,7 +1878,7 @@
 
 
 ### Fractured nose `http://purl.obolibrary.org/obo/HP_0041249`
-#### Removed
+#### Added
 - [Fractured nose](http://purl.obolibrary.org/obo/HP_0041249) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone nose"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured nose](http://purl.obolibrary.org/obo/HP_0041249) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured nose"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1895,7 +1895,7 @@
 
 
 ### Fractured orbit of skull `http://purl.obolibrary.org/obo/HP_0041156`
-#### Removed
+#### Added
 - [Fractured orbit of skull](http://purl.obolibrary.org/obo/HP_0041156) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone orbit of skull"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured orbit of skull](http://purl.obolibrary.org/obo/HP_0041156) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the orbit of skull."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1912,7 +1912,7 @@
 
 
 ### Fractured patella `http://purl.obolibrary.org/obo/HP_0041237`
-#### Removed
+#### Added
 - [Fractured patella](http://purl.obolibrary.org/obo/HP_0041237) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the patella."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured patella](http://purl.obolibrary.org/obo/HP_0041237) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone patella"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1931,7 +1931,7 @@
 
 
 ### Fractured pelvic region of trunk `http://purl.obolibrary.org/obo/HP_0041161`
-#### Removed
+#### Added
 - [Fractured pelvic region of trunk](http://purl.obolibrary.org/obo/HP_0041161) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured pelvic region of trunk"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured pelvic region of trunk](http://purl.obolibrary.org/obo/HP_0041161) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the pelvic region of trunk."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1948,7 +1948,7 @@
 
 
 ### Fractured pes `http://purl.obolibrary.org/obo/HP_0041162`
-#### Removed
+#### Added
 - [Fractured pes](http://purl.obolibrary.org/obo/HP_0041162) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the pes."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured pes](http://purl.obolibrary.org/obo/HP_0041162) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone pes"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1967,7 +1967,7 @@
 
 
 ### Fractured phalanx `http://purl.obolibrary.org/obo/HP_0041083`
-#### Removed
+#### Added
 - [Fractured phalanx](http://purl.obolibrary.org/obo/HP_0041083) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone phalanx"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured phalanx](http://purl.obolibrary.org/obo/HP_0041083) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the phalanx."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1986,7 +1986,7 @@
 
 
 ### Fractured phalanx of manus `http://purl.obolibrary.org/obo/HP_0041241`
-#### Removed
+#### Added
 - [Fractured phalanx of manus](http://purl.obolibrary.org/obo/HP_0041241) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured phalanx of manus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured phalanx of manus](http://purl.obolibrary.org/obo/HP_0041241) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone phalanx of manus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2007,7 +2007,7 @@
 
 
 ### Fractured phalanx of pes `http://purl.obolibrary.org/obo/HP_0041240`
-#### Removed
+#### Added
 - [Fractured phalanx of pes](http://purl.obolibrary.org/obo/HP_0041240) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured phalanx of pes"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured phalanx of pes](http://purl.obolibrary.org/obo/HP_0041240) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone phalanx of pes"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2028,7 +2028,7 @@
 
 
 ### Fractured proximal epiphysis of first metacarpal bone `http://purl.obolibrary.org/obo/HP_0041197`
-#### Removed
+#### Added
 - [Fractured proximal epiphysis of first metacarpal bone](http://purl.obolibrary.org/obo/HP_0041197) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured proximal epiphysis of first metacarpal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal epiphysis of first metacarpal bone](http://purl.obolibrary.org/obo/HP_0041197) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal epiphysis of first metacarpal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2047,7 +2047,7 @@
 
 
 ### Fractured proximal epiphysis of middle phalanx of manual digit 3 `http://purl.obolibrary.org/obo/HP_0041198`
-#### Removed
+#### Added
 - [Fractured proximal epiphysis of middle phalanx of manual digit 3](http://purl.obolibrary.org/obo/HP_0041198) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured proximal epiphysis of middle phalanx of manual digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal epiphysis of middle phalanx of manual digit 3](http://purl.obolibrary.org/obo/HP_0041198) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal epiphysis of middle phalanx of manual digit 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2066,7 +2066,7 @@
 
 
 ### Fractured proximal phalanx of digit 2 `http://purl.obolibrary.org/obo/HP_0041211`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of digit 2](http://purl.obolibrary.org/obo/HP_0041211) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of digit 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of digit 2](http://purl.obolibrary.org/obo/HP_0041211) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of digit 2."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2083,7 +2083,7 @@
 
 
 ### Fractured proximal phalanx of digit 3 `http://purl.obolibrary.org/obo/HP_0041212`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of digit 3](http://purl.obolibrary.org/obo/HP_0041212) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of digit 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of digit 3](http://purl.obolibrary.org/obo/HP_0041212) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of digit 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2100,7 +2100,7 @@
 
 
 ### Fractured proximal phalanx of digit 4 `http://purl.obolibrary.org/obo/HP_0041213`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of digit 4](http://purl.obolibrary.org/obo/HP_0041213) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of digit 4."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of digit 4](http://purl.obolibrary.org/obo/HP_0041213) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of digit 4"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2117,7 +2117,7 @@
 
 
 ### Fractured proximal phalanx of digit 5 `http://purl.obolibrary.org/obo/HP_0041214`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of digit 5](http://purl.obolibrary.org/obo/HP_0041214) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of digit 5."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of digit 5](http://purl.obolibrary.org/obo/HP_0041214) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of digit 5"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2134,7 +2134,7 @@
 
 
 ### Fractured proximal phalanx of manual digit 1 `http://purl.obolibrary.org/obo/HP_0041188`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of manual digit 1](http://purl.obolibrary.org/obo/HP_0041188) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of manual digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of manual digit 1](http://purl.obolibrary.org/obo/HP_0041188) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of manual digit 1."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2153,7 +2153,7 @@
 
 
 ### Fractured proximal phalanx of manus `http://purl.obolibrary.org/obo/HP_0041243`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of manus](http://purl.obolibrary.org/obo/HP_0041243) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of manus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of manus](http://purl.obolibrary.org/obo/HP_0041243) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of manus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2172,7 +2172,7 @@
 
 
 ### Fractured proximal phalanx of pedal digit 1 `http://purl.obolibrary.org/obo/HP_0041187`
-#### Removed
+#### Added
 - [Fractured proximal phalanx of pedal digit 1](http://purl.obolibrary.org/obo/HP_0041187) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the proximal phalanx of pedal digit 1."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured proximal phalanx of pedal digit 1](http://purl.obolibrary.org/obo/HP_0041187) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone proximal phalanx of pedal digit 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2191,7 +2191,7 @@
 
 
 ### Fractured rib `http://purl.obolibrary.org/obo/HP_0041159`
-#### Removed
+#### Added
 - [Fractured rib](http://purl.obolibrary.org/obo/HP_0041159) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured rib"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured rib](http://purl.obolibrary.org/obo/HP_0041159) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the rib."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2210,7 +2210,7 @@
 
 
 ### Fractured right clavicle `http://purl.obolibrary.org/obo/HP_0041115`
-#### Removed
+#### Added
 - [Fractured right clavicle](http://purl.obolibrary.org/obo/HP_0041115) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the right clavicle."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured right clavicle](http://purl.obolibrary.org/obo/HP_0041115) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone right clavicle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2227,7 +2227,7 @@
 
 
 ### Fractured scapula `http://purl.obolibrary.org/obo/HP_0041244`
-#### Removed
+#### Added
 - [Fractured scapula](http://purl.obolibrary.org/obo/HP_0041244) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured scapula"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured scapula](http://purl.obolibrary.org/obo/HP_0041244) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone scapula"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2246,7 +2246,7 @@
 
 
 ### Fractured shoulder bone `http://purl.obolibrary.org/obo/HP_0041245`
-#### Removed
+#### Added
 - [Fractured shoulder bone](http://purl.obolibrary.org/obo/HP_0041245) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone shoulder bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured shoulder bone](http://purl.obolibrary.org/obo/HP_0041245) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the shoulder bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2265,7 +2265,7 @@
 
 
 ### Fractured shoulder joint `http://purl.obolibrary.org/obo/HP_0041217`
-#### Removed
+#### Added
 - [Fractured shoulder joint](http://purl.obolibrary.org/obo/HP_0041217) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the shoulder joint."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured shoulder joint](http://purl.obolibrary.org/obo/HP_0041217) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured shoulder joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2284,7 +2284,7 @@
 
 
 ### Fractured skeleton of manual acropodium `http://purl.obolibrary.org/obo/HP_0041232`
-#### Removed
+#### Added
 - [Fractured skeleton of manual acropodium](http://purl.obolibrary.org/obo/HP_0041232) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone skeleton of manual acropodium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured skeleton of manual acropodium](http://purl.obolibrary.org/obo/HP_0041232) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the skeleton of manual acropodium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2301,7 +2301,7 @@
 
 
 ### Fractured skull `http://purl.obolibrary.org/obo/HP_0041082`
-#### Removed
+#### Added
 - [Fractured skull](http://purl.obolibrary.org/obo/HP_0041082) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the skull."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured skull](http://purl.obolibrary.org/obo/HP_0041082) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured skull"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2318,7 +2318,7 @@
 
 
 ### Fractured sternal end of clavicle `http://purl.obolibrary.org/obo/HP_0041200`
-#### Removed
+#### Added
 - [Fractured sternal end of clavicle](http://purl.obolibrary.org/obo/HP_0041200) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured sternal end of clavicle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured sternal end of clavicle](http://purl.obolibrary.org/obo/HP_0041200) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone sternal end of clavicle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2339,7 +2339,7 @@
 
 
 ### Fractured sternoclavicular joint `http://purl.obolibrary.org/obo/HP_0041152`
-#### Removed
+#### Added
 - [Fractured sternoclavicular joint](http://purl.obolibrary.org/obo/HP_0041152) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured sternoclavicular joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured sternoclavicular joint](http://purl.obolibrary.org/obo/HP_0041152) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone sternoclavicular joint"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2360,7 +2360,7 @@
 
 
 ### Fractured sternum `http://purl.obolibrary.org/obo/HP_0041246`
-#### Removed
+#### Added
 - [Fractured sternum](http://purl.obolibrary.org/obo/HP_0041246) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured sternum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured sternum](http://purl.obolibrary.org/obo/HP_0041246) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the sternum."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2377,7 +2377,7 @@
 
 
 ### Fractured talus `http://purl.obolibrary.org/obo/HP_0041164`
-#### Removed
+#### Added
 - [Fractured talus](http://purl.obolibrary.org/obo/HP_0041164) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured talus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured talus](http://purl.obolibrary.org/obo/HP_0041164) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone talus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2396,7 +2396,7 @@
 
 
 ### Fractured tarsal bone `http://purl.obolibrary.org/obo/HP_0041247`
-#### Removed
+#### Added
 - [Fractured tarsal bone](http://purl.obolibrary.org/obo/HP_0041247) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the tarsal bone."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured tarsal bone](http://purl.obolibrary.org/obo/HP_0041247) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured tarsal bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2415,7 +2415,7 @@
 
 
 ### Fractured thoracic segment of trunk `http://purl.obolibrary.org/obo/HP_0041054`
-#### Removed
+#### Added
 - [Fractured thoracic segment of trunk](http://purl.obolibrary.org/obo/HP_0041054) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone thoracic segment of trunk"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured thoracic segment of trunk](http://purl.obolibrary.org/obo/HP_0041054) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured thoracic segment of trunk"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2432,7 +2432,7 @@
 
 
 ### Fractured thoracic vertebra `http://purl.obolibrary.org/obo/HP_0041073`
-#### Removed
+#### Added
 - [Fractured thoracic vertebra](http://purl.obolibrary.org/obo/HP_0041073) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured thoracic vertebra"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured thoracic vertebra](http://purl.obolibrary.org/obo/HP_0041073) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A partial or complete breakage of the thoracic vertebra."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2451,7 +2451,7 @@
 
 
 ### Fractured tibia `http://purl.obolibrary.org/obo/HP_0041143`
-#### Removed
+#### Added
 - [Fractured tibia](http://purl.obolibrary.org/obo/HP_0041143) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured tibia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured tibia](http://purl.obolibrary.org/obo/HP_0041143) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone tibia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2472,7 +2472,7 @@
 
 
 ### Fractured trunk `http://purl.obolibrary.org/obo/HP_0041158`
-#### Removed
+#### Added
 - [Fractured trunk](http://purl.obolibrary.org/obo/HP_0041158) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone trunk"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured trunk](http://purl.obolibrary.org/obo/HP_0041158) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured trunk"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2489,19 +2489,19 @@
 
 
 ### Fractured ulna `http://purl.obolibrary.org/obo/HP_0003987`
-#### Removed
+#### Added
 - [Fractured ulna](http://purl.obolibrary.org/obo/HP_0003987) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([fractured](http://purl.obolibrary.org/obo/PATO_0040034) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some [ulna](http://purl.obolibrary.org/obo/UBERON_0001424)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 - [Fractured ulna](http://purl.obolibrary.org/obo/HP_0003987) SubClassOf [Abnormal morphology of ulna](http://purl.obolibrary.org/obo/HP_0040071) 
 
-#### Added
+#### Removed
 - [Fractured ulna](http://purl.obolibrary.org/obo/HP_0003987) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([broken](http://purl.obolibrary.org/obo/PATO_0001444) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some [ulna](http://purl.obolibrary.org/obo/UBERON_0001424)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 
 ### Fractured upper limb segment `http://purl.obolibrary.org/obo/HP_0041118`
-#### Removed
+#### Added
 - [Fractured upper limb segment](http://purl.obolibrary.org/obo/HP_0041118) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone upper limb segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured upper limb segment](http://purl.obolibrary.org/obo/HP_0041118) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured upper limb segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2518,7 +2518,7 @@
 
 
 ### Fractured vertebra `http://purl.obolibrary.org/obo/HP_0041166`
-#### Removed
+#### Added
 - [Fractured vertebra](http://purl.obolibrary.org/obo/HP_0041166) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "bone vertebra"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [Fractured vertebra](http://purl.obolibrary.org/obo/HP_0041166) [label](http://www.w3.org/2000/01/rdf-schema#label) "Fractured vertebra"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2537,17 +2537,17 @@
 
 
 ### Fractures of the long bones `http://purl.obolibrary.org/obo/HP_0003084`
-#### Removed
+#### Added
 - [Fractures of the long bones](http://purl.obolibrary.org/obo/HP_0003084) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([fractured](http://purl.obolibrary.org/obo/PATO_0040034) and ([inheres in part of](http://purl.obolibrary.org/obo/RO_0002314) some [long bone](http://purl.obolibrary.org/obo/UBERON_0002495)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
-#### Added
+#### Removed
 - [Fractures of the long bones](http://purl.obolibrary.org/obo/HP_0003084) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([broken](http://purl.obolibrary.org/obo/PATO_0001444) and ([inheres in part of](http://purl.obolibrary.org/obo/RO_0002314) some [long bone](http://purl.obolibrary.org/obo/UBERON_0002495)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
 
 
 ### Increased helper T cell proportion `http://purl.obolibrary.org/obo/HP_0500264`
-#### Removed
+#### Added
 - [Increased helper T cell proportion](http://purl.obolibrary.org/obo/HP_0500264) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([helper T cell](http://purl.obolibrary.org/obo/CL_0000912) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2555,7 +2555,7 @@
 
 
 ### Increased proportion of CD4+CD25+ regulatory T cells `http://purl.obolibrary.org/obo/HP_0020112`
-#### Removed
+#### Added
 - [Increased proportion of CD4+CD25+ regulatory T cells](http://purl.obolibrary.org/obo/HP_0020112) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, CD25-positive, alpha-beta regulatory T cell](http://purl.obolibrary.org/obo/CL_0000792) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [cell](http://purl.obolibrary.org/obo/CL_0000000)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2563,7 +2563,7 @@
 
 
 ### Increased proportion of CD4-positive T cells `http://purl.obolibrary.org/obo/HP_0032219`
-#### Removed
+#### Added
 - [Increased proportion of CD4-positive T cells](http://purl.obolibrary.org/obo/HP_0032219) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000624) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2571,7 +2571,7 @@
 
 
 ### Increased proportion of CD4-positive, alpha-beta memory T cells `http://purl.obolibrary.org/obo/HP_0410391`
-#### Removed
+#### Added
 - [Increased proportion of CD4-positive, alpha-beta memory T cells](http://purl.obolibrary.org/obo/HP_0410391) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD4-positive, alpha-beta memory T cell](http://purl.obolibrary.org/obo/CL_0000897) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2583,7 +2583,7 @@
 
 
 ### Increased proportion of CD8-positive, alpha-beta TEMRA T cells `http://purl.obolibrary.org/obo/HP_0500265`
-#### Removed
+#### Added
 - [Increased proportion of CD8-positive, alpha-beta TEMRA T cells](http://purl.obolibrary.org/obo/HP_0500265) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector memory CD8-positive, alpha-beta T cell, terminally differentiated](http://purl.obolibrary.org/obo/CL_0001062) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2593,7 +2593,7 @@
 
 
 ### Increased proportion of CD8-positive, alpha-beta memory T cells `http://purl.obolibrary.org/obo/HP_0410392`
-#### Removed
+#### Added
 - [Increased proportion of CD8-positive, alpha-beta memory T cells](http://purl.obolibrary.org/obo/HP_0410392) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([CD8-positive, alpha-beta memory T cell](http://purl.obolibrary.org/obo/CL_0000909) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2603,7 +2603,7 @@
 
 
 ### Increased proportion of central memory CD8-positive, alpha-beta T cells `http://purl.obolibrary.org/obo/HP_0410396`
-#### Removed
+#### Added
 - [Increased proportion of central memory CD8-positive, alpha-beta T cells](http://purl.obolibrary.org/obo/HP_0410396) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([central memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000907) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2611,7 +2611,7 @@
 
 
 ### Increased proportion of class-switched memory B cells `http://purl.obolibrary.org/obo/HP_0030387`
-#### Removed
+#### Added
 - [Increased proportion of class-switched memory B cells](http://purl.obolibrary.org/obo/HP_0030387) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([class switched memory B cell](http://purl.obolibrary.org/obo/CL_0000972) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2621,7 +2621,7 @@
 
 
 ### Increased proportion of effector memory CD8-positive, alpha-beta T cells `http://purl.obolibrary.org/obo/HP_0410395`
-#### Removed
+#### Added
 - [Increased proportion of effector memory CD8-positive, alpha-beta T cells](http://purl.obolibrary.org/obo/HP_0410395) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0001050) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2629,7 +2629,7 @@
 
 
 ### Increased proportion of exhausted T cells `http://purl.obolibrary.org/obo/HP_0031514`
-#### Removed
+#### Added
 - [Increased proportion of exhausted T cells](http://purl.obolibrary.org/obo/HP_0031514) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([exhausted T cell](http://purl.obolibrary.org/obo/CL_0011025) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2639,7 +2639,7 @@
 
 
 ### Increased proportion of gamma-delta T cells `http://purl.obolibrary.org/obo/HP_0500270`
-#### Removed
+#### Added
 - [Increased proportion of gamma-delta T cells](http://purl.obolibrary.org/obo/HP_0500270) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000798) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2647,7 +2647,7 @@
 
 
 ### Increased proportion of immature B cells `http://purl.obolibrary.org/obo/HP_0030377`
-#### Removed
+#### Added
 - [Increased proportion of immature B cells](http://purl.obolibrary.org/obo/HP_0030377) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([immature B cell](http://purl.obolibrary.org/obo/CL_0000816) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2655,7 +2655,7 @@
 
 
 ### Increased proportion of immature gamma-delta T cells `http://purl.obolibrary.org/obo/HP_0500273`
-#### Removed
+#### Added
 - [Increased proportion of immature gamma-delta T cells](http://purl.obolibrary.org/obo/HP_0500273) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([immature gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000799) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2665,7 +2665,7 @@
 
 
 ### Increased proportion of marginal zone B cells `http://purl.obolibrary.org/obo/HP_0030385`
-#### Removed
+#### Added
 - [Increased proportion of marginal zone B cells](http://purl.obolibrary.org/obo/HP_0030385) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([marginal zone B cell](http://purl.obolibrary.org/obo/CL_0000845) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2673,7 +2673,7 @@
 
 
 ### Increased proportion of memory B cells `http://purl.obolibrary.org/obo/HP_0030375`
-#### Removed
+#### Added
 - [Increased proportion of memory B cells](http://purl.obolibrary.org/obo/HP_0030375) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([memory B cell](http://purl.obolibrary.org/obo/CL_0000787) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2681,7 +2681,7 @@
 
 
 ### Increased proportion of memory T cells `http://purl.obolibrary.org/obo/HP_0032184`
-#### Removed
+#### Added
 - [Increased proportion of memory T cells](http://purl.obolibrary.org/obo/HP_0032184) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([memory T cell](http://purl.obolibrary.org/obo/CL_0000813) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2689,7 +2689,7 @@
 
 
 ### Increased proportion of naive B cells `http://purl.obolibrary.org/obo/HP_0030371`
-#### Removed
+#### Added
 - [Increased proportion of naive B cells](http://purl.obolibrary.org/obo/HP_0030371) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive B cell](http://purl.obolibrary.org/obo/CL_0000788) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2697,7 +2697,7 @@
 
 
 ### Increased proportion of naive CD4 T cells `http://purl.obolibrary.org/obo/HP_0410375`
-#### Removed
+#### Added
 - [Increased proportion of naive CD4 T cells](http://purl.obolibrary.org/obo/HP_0410375) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive thymus-derived CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000895) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2709,7 +2709,7 @@
 
 
 ### Increased proportion of naive T cells `http://purl.obolibrary.org/obo/HP_0031398`
-#### Removed
+#### Added
 - [Increased proportion of naive T cells](http://purl.obolibrary.org/obo/HP_0031398) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([naive T cell](http://purl.obolibrary.org/obo/CL_0000898) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2717,7 +2717,7 @@
 
 
 ### Increased proportion of plasmablasts `http://purl.obolibrary.org/obo/HP_0032128`
-#### Removed
+#### Added
 - [Increased proportion of plasmablasts](http://purl.obolibrary.org/obo/HP_0032128) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([plasmablast](http://purl.obolibrary.org/obo/CL_0000980) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2725,7 +2725,7 @@
 
 
 ### Increased proportion of transitional B cells `http://purl.obolibrary.org/obo/HP_0030381`
-#### Removed
+#### Added
 - [Increased proportion of transitional B cells](http://purl.obolibrary.org/obo/HP_0030381) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([transitional stage B cell](http://purl.obolibrary.org/obo/CL_0000818) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [B cell](http://purl.obolibrary.org/obo/CL_0000236)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2733,7 +2733,7 @@
 
 
 ### Increased proportion of unswitched memory B cells `http://purl.obolibrary.org/obo/HP_0032125`
-#### Removed
+#### Added
 - [Increased proportion of unswitched memory B cells](http://purl.obolibrary.org/obo/HP_0032125) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([unswitched memory B cell](http://purl.obolibrary.org/obo/CL_0000970) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [cell](http://purl.obolibrary.org/obo/CL_0000000)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2741,7 +2741,7 @@
 
 
 ### Reduced proportion of CD4+ effector memory T cells `http://purl.obolibrary.org/obo/HP_0025624`
-#### Removed
+#### Added
 - [Reduced proportion of CD4+ effector memory T cells](http://purl.obolibrary.org/obo/HP_0025624) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([effector CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0001044) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2752,18 +2752,18 @@
 
 ### UDP-glucose 4-epimerase `http://purl.obolibrary.org/obo/PR_000007812`
 
-#### Added
+#### Removed
 - Class: [UDP-glucose 4-epimerase](http://purl.obolibrary.org/obo/PR_000007812) 
 
 
 ### Ungual fibroma `http://purl.obolibrary.org/obo/HP_0100804`
-#### Removed
+#### Added
 - [Ungual fibroma](http://purl.obolibrary.org/obo/HP_0100804) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Flesh-colored papule in or around the nail bed. Ungual fibromas may be periungual (arising under the proximal nail fold) or subungual (originating under the nail plate)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HPO:probinson"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18815399"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-#### Added
+#### Removed
 - [Ungual fibroma](http://purl.obolibrary.org/obo/HP_0100804) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Flesh-colored papule in or around the nail bed. Ungual fibromas may be periungual (arising under the proximal nail fold ) or subungual (originating under the nail plate)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HPO:probinson"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -2772,66 +2772,66 @@
 
 ### adiponectin (human) `http://purl.obolibrary.org/obo/PR_Q15848`
 
-#### Added
+#### Removed
 - Class: [adiponectin (human)](http://purl.obolibrary.org/obo/PR_Q15848) 
 
 
 ### aldehyde oxidase `http://purl.obolibrary.org/obo/PR_000004089`
 
-#### Added
+#### Removed
 - Class: [aldehyde oxidase](http://purl.obolibrary.org/obo/PR_000004089) 
 
 
 ### alpha-1,6-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase (human) `http://purl.obolibrary.org/obo/PR_Q10469`
 
-#### Added
+#### Removed
 - Class: [alpha-1,6-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase (human)](http://purl.obolibrary.org/obo/PR_Q10469) 
 
 
 ### catalase `http://purl.obolibrary.org/obo/PR_000005061`
 
-#### Added
+#### Removed
 - Class: [catalase](http://purl.obolibrary.org/obo/PR_000005061) 
 
 
 ### decreased width and length `http://purl.obolibrary.org/obo/PATO_0040030`
 
-#### Added
+#### Removed
 - Class: [decreased width and length](http://purl.obolibrary.org/obo/PATO_0040030) 
 
 
 ### dihydropyrimidine dehydrogenase [NADP(+)] (human) `http://purl.obolibrary.org/obo/PR_Q12882`
 
-#### Added
+#### Removed
 - Class: [dihydropyrimidine dehydrogenase [NADP(+)] (human)](http://purl.obolibrary.org/obo/PR_Q12882) 
 
 
 ### glucagon `http://purl.obolibrary.org/obo/PR_000007891`
 
-#### Added
+#### Removed
 - Class: [glucagon](http://purl.obolibrary.org/obo/PR_000007891) 
 
 
 ### glucose-6-phosphate isomerase `http://purl.obolibrary.org/obo/PR_000008175`
 
-#### Added
+#### Removed
 - Class: [glucose-6-phosphate isomerase](http://purl.obolibrary.org/obo/PR_000008175) 
 
 
 ### iduronate 2-sulfatase `http://purl.obolibrary.org/obo/PR_000008894`
 
-#### Added
+#### Removed
 - Class: [iduronate 2-sulfatase](http://purl.obolibrary.org/obo/PR_000008894) 
 
 
 ### lactase activity `http://purl.obolibrary.org/obo/GO_0000016`
 
-#### Added
+#### Removed
 - Class: [lactase activity](http://purl.obolibrary.org/obo/GO_0000016) 
 
 
 ### obsolete Decreased proportion of CD4+ central memory cells `http://purl.obolibrary.org/obo/HP_0025622`
-#### Removed
+#### Added
 - [obsolete Decreased proportion of CD4+ central memory cells](http://purl.obolibrary.org/obo/HP_0025622) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([decreased proportionality to](http://purl.obolibrary.org/obo/PATO_0040042) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([central memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000904) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2843,7 +2843,7 @@
 
 
 ### obsolete Increased proportion of CD4+ central memory cells `http://purl.obolibrary.org/obo/HP_0025621`
-#### Removed
+#### Added
 - [obsolete Increased proportion of CD4+ central memory cells](http://purl.obolibrary.org/obo/HP_0025621) EquivalentTo [has part](http://purl.obolibrary.org/obo/BFO_0000051) some 
 ([increased proportionality to](http://purl.obolibrary.org/obo/PATO_0040043) and ([inheres in](http://purl.obolibrary.org/obo/RO_0000052) some 
 ([central memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000904) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178)))) and ([towards](http://purl.obolibrary.org/obo/RO_0002503) some [T cell](http://purl.obolibrary.org/obo/CL_0000084)) and ([has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [abnormal](http://purl.obolibrary.org/obo/PATO_0000460))) 
@@ -2856,17 +2856,17 @@
 
 ### orotidine 5'-phosphate decarboxylase `http://purl.obolibrary.org/obo/PR_000023661`
 
-#### Added
+#### Removed
 - Class: [orotidine 5'-phosphate decarboxylase](http://purl.obolibrary.org/obo/PR_000023661) 
 
 
 ### phenylalanine-4-hydroxylase `http://purl.obolibrary.org/obo/PR_000012234`
 
-#### Added
+#### Removed
 - Class: [phenylalanine-4-hydroxylase](http://purl.obolibrary.org/obo/PR_000012234) 
 
 
 ### xanthine dehydrogenase/oxidase (human) `http://purl.obolibrary.org/obo/PR_P47989`
 
-#### Added
+#### Removed
 - Class: [xanthine dehydrogenase/oxidase (human)](http://purl.obolibrary.org/obo/PR_P47989) 
