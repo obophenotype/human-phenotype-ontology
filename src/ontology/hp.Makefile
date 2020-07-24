@@ -177,7 +177,7 @@ migrate_subsumptions_to_edit: #$(SRC) tmp/hp_pattern_subclasses.owl
 	$(ROBOT) merge -i $(SRC) -i tmp/hp_pattern_subclasses.owl --collapse-import-closure false -o hp-edit.ofn # && mv hp-edit.ofn hp-edit.owl
 
 diff_migration:
-	$(ROBOT) diff --left $(SRC) --right hp-edit.ofn -f html -o $@.html
+	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
 
 
 #######################################################
