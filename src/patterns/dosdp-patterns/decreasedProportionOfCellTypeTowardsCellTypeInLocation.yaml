@@ -1,0 +1,49 @@
+pattern_name: decreasedProportionOfCellTypeTowardsCellTypeInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/decreasedProportionOfCellTypeTowardsCellTypeInLocation.yaml
+description: "A decreased proportion of a cell type relative to another cell type, in a location, like the blood. For example: 'decreased CD4+CD25+ regulatory T cell proportion relative to T cells in the blood'."
+
+contributors:
+- https://orcid.org/0000-0001-5208-3432
+
+classes:
+  decreased proportionality to: PATO:0040042
+  abnormal: PATO:0000460
+  cell: CL:0000000
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+  towards: RO:0002503
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  cell: "'cell'"
+  compared_cell: "'cell'"
+  location: "'independent continuant'"
+
+name:
+  text: "decreased proportion of %s relative to %s in %s"
+  vars:
+  - cell
+  - compared_cell
+  - location
+
+def:
+  text: "A decreased proportion of %s relative to %s in the %s."
+  vars:
+  - cell
+  - compared_cell
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('decreased proportionality to' and ('inheres_in' some (%s and ('part_of' some %s))) and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - cell
+  - location
+  - compared_cell
+

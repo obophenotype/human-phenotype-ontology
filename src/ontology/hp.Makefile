@@ -95,9 +95,11 @@ hp_foreign_obsoletes.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/hp_foreign_obsolete.sparql $@
 
 remove_foreign_declarations: $(SRC)
-	sed -i '/^Declaration[(]Class[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/][^H]/d' $(SRC)
-	sed -i '/^Declaration[(]Class[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]H[^P]/d' $(SRC)
-	sed -i '/^Declaration[(]Class[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]HP[^_]/d' $(SRC)
+	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/][^H]/d' $(SRC)
+	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]H[^P]/d' $(SRC)
+	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]HP[^_]/d' $(SRC)
+	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/][^p]/d' $(SRC)
+	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]hp[/]patterns[/]definitions[.]owl[>][)]/d' $(SRC)
 
 #imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt hp_foreign_obsoletes.csv
 #	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
@@ -153,9 +155,11 @@ patternised_classes.txt: .FORCE
 	$(ROBOT) query -f csv -i ../patterns/definitions.owl --query ../sparql/$(ONT)_terms.sparql $@
 	sed -i 's/http[:][/][/]purl.obolibrary.org[/]obo[/]//g' $@
 	sed -i '/^[^H]/d' $@
+	truncate -s -1 $@
 
+# make sure no empty lines pin 
 remove_patternised_classes: $(SRC) patternised_classes.txt
-	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | xargs | sed -e 's/ /\|/g'))/d" $<
+	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | tr -d '\r' | tr '\n' '-' | sed -r 's/[-]+/\|/g' ))/d" $<
 
 tmp/eqs.ofn: #../patterns/definitions.owl
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
@@ -164,11 +168,17 @@ tmp/eqs.ofn: #../patterns/definitions.owl
 migrate_definitions_to_edit: #$(SRC) tmp/eqs.ofn
 	echo "Not regenerating definitions.owl.. Is it up to date?"
 	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
-	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/][^H]/d' hp-edit.owl
-	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]Hs/d' hp-edit.owl
-	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/][^p]/d' hp-edit.owl
-	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]hp[/]patterns[/]definitions[.]owl[>][)]/d' hp-edit.owl
-	$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
+	#$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
+
+tmp/hp_pattern_subclasses.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason --reasoner ELK reduce --reasoner ELK filter -T patternised_classes.txt --select "self parents" --trim true remove -T patternised_classes.txt --select complement --select "self parents" --trim false -o $@
+
+migrate_subsumptions_to_edit: #$(SRC) tmp/hp_pattern_subclasses.owl
+	$(ROBOT) merge -i $(SRC) -i tmp/hp_pattern_subclasses.owl --collapse-import-closure false -o hp-edit.ofn # && mv hp-edit.ofn hp-edit.owl
+
+diff_migration:
+	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
+
 
 #######################################################
 ##### British synonyms pipeline #######################
@@ -229,3 +239,21 @@ hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	echo "Using version $(HPODIFFVERSION) of the HPO Nice Diff Tool (@drseb)."
 	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	cp tmp/hpodiff*.xlsx reports
+
+
+tmp/hp-build.owl:
+	wget https://ci.monarchinitiative.org/view/pipelines/job/hpo-pipeline-dev2/lastSuccessfulBuild/artifact/hp-full.owl -O $@
+
+tmp/patternised_classes.txt: patternised_classes.txt
+	cp $< $@
+	sed -i 's/[_]/:/g' $@
+	echo '' >> $@
+	echo 'http://www.geneontology.org/formats/oboInOwl#hasExactSynonym' >> $@
+	echo 'http://purl.obolibrary.org/obo/IAO_0000115' >> $@
+	echo 'rdfs:label' >> $@
+
+reports/hpo_dosdp_table.csv: tmp/hp-build.owl tmp/patternised_classes.txt
+	$(ROBOT) merge -i $< filter -T tmp/patternised_classes.txt --signature true --preserve-structure false query --use-graphs true -f csv --query ../sparql/hp_term_table.sparql $@
+	
+	
+	
