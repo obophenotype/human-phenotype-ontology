@@ -170,6 +170,16 @@ migrate_definitions_to_edit: #$(SRC) tmp/eqs.ofn
 	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 	#$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
 
+tmp/hp_pattern_subclasses.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason --reasoner ELK reduce --reasoner ELK filter -T patternised_classes.txt --select "self parents" --trim true remove -T patternised_classes.txt --select complement --select "self parents" --trim false -o $@
+
+migrate_subsumptions_to_edit: #$(SRC) tmp/hp_pattern_subclasses.owl
+	$(ROBOT) merge -i $(SRC) -i tmp/hp_pattern_subclasses.owl --collapse-import-closure false -o hp-edit.ofn # && mv hp-edit.ofn hp-edit.owl
+
+diff_migration:
+	$(ROBOT) diff --left $(SRC) --right hp-edit.ofn -f html -o $@.html
+
+
 #######################################################
 ##### British synonyms pipeline #######################
 #######################################################
