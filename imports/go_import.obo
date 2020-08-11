@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-06-08/imports/go_import.owl
+data-version: hp/releases/2020-08-11/imports/go_import.owl
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr "AGR slim"
@@ -641,7 +641,7 @@ namespace: biological_process
 def: "The process whose specific outcome is the progression of the vasculature over time, from its formation to the mature structure. The vasculature is an interconnected tubular multi-tissue structure that contains fluid that is actively transported around the organism." [GOC:dph, UBERON:0002409]
 synonym: "vascular system development" RELATED []
 is_a: GO:0048731 ! system development
-relationship: part_of GO:0072358 ! cardiovascular system development
+relationship: part_of GO:0072359 ! circulatory system development
 
 [Term]
 id: GO:0001958
@@ -764,6 +764,26 @@ def: "The somatic process allowing for the production of immune receptors whose 
 comment: Note that this process covers somatic recombination, gene conversion, hypermutation, N-region addition, and alternate splicing processes of immune receptor diversification.
 is_a: GO:0002376 ! immune system process
 relationship: part_of GO:0002520 ! immune system development
+
+[Term]
+id: GO:0002204
+name: somatic recombination of immunoglobulin genes involved in immune response
+namespace: biological_process
+def: "The process in which immunoglobulin genes are formed through recombination of the germline genetic elements, also known as immunoglobulin gene segments, within a single locus following the induction of and contributing to an immune response." [GOC:add, ISBN:0781735149]
+synonym: "somatic recombination of antibody genes during immune response" RELATED []
+synonym: "somatic recombination of immunoglobulin genes during immune response" RELATED [GOC:dph]
+is_a: GO:0002208 ! somatic diversification of immunoglobulins involved in immune response
+is_a: GO:0016447 ! somatic recombination of immunoglobulin gene segments
+
+[Term]
+id: GO:0002208
+name: somatic diversification of immunoglobulins involved in immune response
+namespace: biological_process
+def: "The somatic process that results in the generation of sequence diversity of immunoglobulins after induction, and contributes to an immune response." [GOC:add, ISBN:0781735149, PMID:14991701]
+synonym: "somatic diversification of antibodies during immune response" RELATED []
+synonym: "somatic diversification of immunoglobulins during immune response" RELATED [GOC:dph]
+is_a: GO:0016445 ! somatic diversification of immunoglobulins
+relationship: part_of GO:0002381 ! immunoglobulin production involved in immunoglobulin mediated immune response
 
 [Term]
 id: GO:0002228
@@ -944,6 +964,20 @@ intersection_of: GO:0042110 ! T cell activation
 intersection_of: part_of GO:0006955 ! immune response
 
 [Term]
+id: GO:0002290
+name: gamma-delta T cell activation involved in immune response
+namespace: biological_process
+def: "The change in morphology and behavior of a gamma-delta T cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific, leading to the initiation or perpetuation of an immune response." [GOC:add, PMID:8717523]
+synonym: "gamma-delta T cell activation during immune response" RELATED [GOC:tb]
+synonym: "gamma-delta T lymphocyte activation during immune response" RELATED []
+synonym: "gamma-delta T-cell activation during immune response" RELATED []
+synonym: "gamma-delta T-lymphocyte activation during immune response" RELATED []
+is_a: GO:0002286 ! T cell activation involved in immune response
+is_a: GO:0046629 ! gamma-delta T cell activation
+intersection_of: GO:0046629 ! gamma-delta T cell activation
+intersection_of: part_of GO:0006955 ! immune response
+
+[Term]
 id: GO:0002292
 name: T cell differentiation involved in immune response
 namespace: biological_process
@@ -957,6 +991,23 @@ synonym: "T-lymphocyte differentiation during immune response" RELATED []
 is_a: GO:0002286 ! T cell activation involved in immune response
 is_a: GO:0030217 ! T cell differentiation
 intersection_of: GO:0030217 ! T cell differentiation
+intersection_of: part_of GO:0006955 ! immune response
+
+[Term]
+id: GO:0002303
+name: gamma-delta T cell differentiation involved in immune response
+namespace: biological_process
+def: "The process in which an antigenically naive gamma-delta T cell acquires the specialized features of an effector, regulatory, or memory T cell and contributes to an immune response. Effector T cells include cells which provide T cell help or exhibit cytotoxicity towards other cells." [GOC:add]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "gamma-delta T cell development involved in immune response" RELATED [GOC:add]
+synonym: "gamma-delta T cell differentiation during immune response" RELATED [GOC:dph]
+synonym: "gamma-delta T lymphocyte differentiation during immune response" RELATED []
+synonym: "gamma-delta T-cell differentiation during immune response" RELATED []
+synonym: "gamma-delta T-lymphocyte differentiation during immune response" RELATED []
+is_a: GO:0002290 ! gamma-delta T cell activation involved in immune response
+is_a: GO:0002292 ! T cell differentiation involved in immune response
+is_a: GO:0042492 ! gamma-delta T cell differentiation
+intersection_of: GO:0042492 ! gamma-delta T cell differentiation
 intersection_of: part_of GO:0006955 ! immune response
 
 [Term]
@@ -988,6 +1039,22 @@ intersection_of: GO:0042113 ! B cell activation
 intersection_of: part_of GO:0006955 ! immune response
 
 [Term]
+id: GO:0002313
+name: mature B cell differentiation involved in immune response
+namespace: biological_process
+def: "The process in which a naive B cell acquires the specialized features of a mature or memory B cell during an immune response." [GOC:jal]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "mature B cell development involved in immune response" RELATED [GOC:add]
+synonym: "mature B cell differentiation during immune response" RELATED [GOC:tb]
+synonym: "mature B lymphocyte differentiation during immune response" RELATED []
+synonym: "mature B-cell differentiation during immune response" RELATED []
+synonym: "mature B-lymphocyte differentiation during immune response" RELATED []
+is_a: GO:0002312 ! B cell activation involved in immune response
+is_a: GO:0002335 ! mature B cell differentiation
+intersection_of: GO:0002335 ! mature B cell differentiation
+intersection_of: part_of GO:0006955 ! immune response
+
+[Term]
 id: GO:0002322
 name: B cell proliferation involved in immune response
 namespace: biological_process
@@ -1000,6 +1067,50 @@ is_a: GO:0002312 ! B cell activation involved in immune response
 is_a: GO:0042100 ! B cell proliferation
 intersection_of: GO:0042100 ! B cell proliferation
 intersection_of: part_of GO:0006955 ! immune response
+
+[Term]
+id: GO:0002335
+name: mature B cell differentiation
+namespace: biological_process
+def: "The process in which transitional stage B cells acquire the specialized features of mature B cells in the spleen." [GOC:jal, ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "mature B lymphocyte differentiation" EXACT []
+synonym: "mature B-cell differentiation" EXACT []
+synonym: "mature B-lymphocyte differentiation" EXACT []
+synonym: "mature cell development" RELATED [GOC:add]
+is_a: GO:0030183 ! B cell differentiation
+
+[Term]
+id: GO:0002339
+name: B cell selection
+namespace: biological_process
+def: "The process dependent upon B cell antigen receptor signaling in response to self or foreign antigen through which B cells are selected for survival." [GOC:jal]
+synonym: "B lymphocyte selection" EXACT []
+synonym: "B-cell selection" EXACT []
+synonym: "B-lymphocyte selection" EXACT []
+is_a: GO:0002376 ! immune system process
+relationship: part_of GO:0030183 ! B cell differentiation
+
+[Term]
+id: GO:0002343
+name: peripheral B cell selection
+namespace: biological_process
+def: "Any B cell selection process that occurs in the periphery." [GOC:jal]
+synonym: "peripheral B lymphocyte selection" EXACT []
+synonym: "peripheral B-cell selection" EXACT []
+synonym: "peripheral B-lymphocyte selection" EXACT []
+is_a: GO:0002339 ! B cell selection
+
+[Term]
+id: GO:0002344
+name: B cell affinity maturation
+namespace: biological_process
+def: "The process in which B cells produce antibodies with increased antigen affinity. This is accomplished by somatic hypermutation and selection for B cells which produce higher affinity antibodies to antigen." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
+synonym: "B lymphocyte affinity maturation" EXACT []
+synonym: "B-cell affinity maturation" EXACT []
+synonym: "B-lymphocyte affinity maturation" EXACT []
+is_a: GO:0002343 ! peripheral B cell selection
+relationship: part_of GO:0002381 ! immunoglobulin production involved in immunoglobulin mediated immune response
 
 [Term]
 id: GO:0002349
@@ -1078,6 +1189,19 @@ namespace: biological_process
 def: "The appearance of immunoglobulin due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." [GOC:add, ISBN:0781735149]
 synonym: "antibody production" EXACT []
 is_a: GO:0002440 ! production of molecular mediator of immune response
+
+[Term]
+id: GO:0002381
+name: immunoglobulin production involved in immunoglobulin mediated immune response
+namespace: biological_process
+def: "The appearance of immunoglobulin due to biosynthesis or secretion following a cellular stimulus during an immune response, resulting in an increase in its intracellular or extracellular levels." [GOC:add, ISBN:0781735149]
+synonym: "antibody production during immune response" RELATED []
+synonym: "immunoglobulin production during immune response" RELATED [GOC:dph]
+synonym: "immunoglobulin production involved in immune response" RELATED [GOC:dph]
+is_a: GO:0002377 ! immunoglobulin production
+intersection_of: GO:0002377 ! immunoglobulin production
+intersection_of: part_of GO:0016064 ! immunoglobulin mediated immune response
+relationship: part_of GO:0016064 ! immunoglobulin mediated immune response
 
 [Term]
 id: GO:0002440
@@ -1188,6 +1312,22 @@ name: peripheral tolerance induction
 namespace: biological_process
 def: "Tolerance induction in the peripheral lymphoid tissues: blood, lymph nodes, spleen, and mucosal-associated lymphoid tissues." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 is_a: GO:0002461 ! tolerance induction dependent upon immune response
+
+[Term]
+id: GO:0002467
+name: germinal center formation
+namespace: biological_process
+def: "The process in which germinal centers form. A germinal center is a specialized microenvironment formed when activated B cells enter lymphoid follicles. Germinal centers are the foci for B cell proliferation and somatic hypermutation." [GO_REF:0000022, GOC:jal, ISBN:081533642X]
+is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
+
+[Term]
+id: GO:0002504
+name: antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+namespace: biological_process
+def: "The process in which an antigen-presenting cell expresses antigen (peptide or polysaccharide) on its cell surface in association with an MHC class II protein complex." [GOC:add, ISBN:0781735149, PMID:15531770, PMID:15771591, PMID:16153240]
+synonym: "peptide or polysaccharide antigen processing and presentation of via MHC class II" EXACT []
+is_a: GO:0019882 ! antigen processing and presentation
 
 [Term]
 id: GO:0002507
@@ -1332,6 +1472,13 @@ is_a: GO:0002200 ! somatic diversification of immune receptors
 is_a: GO:0016444 ! somatic cell DNA recombination
 
 [Term]
+id: GO:0002566
+name: somatic diversification of immune receptors via somatic mutation
+namespace: biological_process
+def: "The process in which immune receptor genes are diversified through somatic mutation." [ISBN:0781735149, PMID:16102575]
+is_a: GO:0002200 ! somatic diversification of immune receptors
+
+[Term]
 id: GO:0002573
 name: myeloid leukocyte differentiation
 namespace: biological_process
@@ -1347,6 +1494,135 @@ namespace: biological_process
 def: "The process in which a relatively unspecialized myeloid precursor cell acquires the specialized features of a thrombocyte, a nucleated cell found in all vertebrates but mammals involved in hemostasis." [GOC:add]
 comment: Note that platelets are the non-nucleated mammalian functional equivalent of the nucleated thrombocytes of non-mammalian vertebrates and are sometimes also referred to as thrombocytes. Platelet formation in mammals is covered by the biological_process term platelet formation ; GO:0030220.
 is_a: GO:0030099 ! myeloid cell differentiation
+
+[Term]
+id: GO:0002577
+name: regulation of antigen processing and presentation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, or extent of antigen processing and presentation." [GOC:add]
+is_a: GO:0002682 ! regulation of immune system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0019882 ! antigen processing and presentation
+relationship: regulates GO:0019882 ! antigen processing and presentation
+
+[Term]
+id: GO:0002578
+name: negative regulation of antigen processing and presentation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of antigen processing and presentation." [GOC:add]
+synonym: "down regulation of antigen processing and presentation" EXACT []
+synonym: "down-regulation of antigen processing and presentation" EXACT []
+synonym: "downregulation of antigen processing and presentation" EXACT []
+synonym: "inhibition of antigen processing and presentation" NARROW []
+is_a: GO:0002577 ! regulation of antigen processing and presentation
+is_a: GO:0002683 ! negative regulation of immune system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0019882 ! antigen processing and presentation
+relationship: negatively_regulates GO:0019882 ! antigen processing and presentation
+
+[Term]
+id: GO:0002579
+name: positive regulation of antigen processing and presentation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate, or extent of antigen processing and presentation." [GOC:add]
+synonym: "activation of antigen processing and presentation" NARROW []
+synonym: "stimulation of antigen processing and presentation" NARROW []
+synonym: "up regulation of antigen processing and presentation" EXACT []
+synonym: "up-regulation of antigen processing and presentation" EXACT []
+synonym: "upregulation of antigen processing and presentation" EXACT []
+is_a: GO:0002577 ! regulation of antigen processing and presentation
+is_a: GO:0002684 ! positive regulation of immune system process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0019882 ! antigen processing and presentation
+relationship: positively_regulates GO:0019882 ! antigen processing and presentation
+
+[Term]
+id: GO:0002580
+name: regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, or extent of antigen processing and presentation of antigen (peptide or polysaccharide) via MHC class II." [GOC:add]
+synonym: "regulation of peptide or polysaccharide antigen processing and presentation via MHC class II" EXACT []
+is_a: GO:0002577 ! regulation of antigen processing and presentation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+relationship: regulates GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+
+[Term]
+id: GO:0002581
+name: negative regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of antigen processing and presentation of antigen (peptide or polysaccharide) via MHC class II." [GOC:add]
+synonym: "down regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" EXACT []
+synonym: "down-regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" EXACT []
+synonym: "downregulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" EXACT []
+synonym: "inhibition of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" NARROW []
+synonym: "negative regulation of peptide or polysaccharide antigen processing and presentation via MHC class II" EXACT []
+is_a: GO:0002578 ! negative regulation of antigen processing and presentation
+is_a: GO:0002580 ! regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+relationship: negatively_regulates GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+
+[Term]
+id: GO:0002582
+name: positive regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate, or extent of antigen processing and presentation of antigen (peptide or polysaccharide) via MHC class II." [GOC:add]
+synonym: "activation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" NARROW []
+synonym: "positive regulation of peptide or polysaccharide antigen processing and presentation via MHC class II" EXACT []
+synonym: "stimulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" NARROW []
+synonym: "up regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" EXACT []
+synonym: "up-regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" EXACT []
+synonym: "upregulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II" EXACT []
+is_a: GO:0002579 ! positive regulation of antigen processing and presentation
+is_a: GO:0002580 ! regulation of antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+relationship: positively_regulates GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
+
+[Term]
+id: GO:0002634
+name: regulation of germinal center formation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, or extent of germinal center formation." [GOC:add]
+is_a: GO:0002822 ! regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0022603 ! regulation of anatomical structure morphogenesis
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0002467 ! germinal center formation
+relationship: regulates GO:0002467 ! germinal center formation
+
+[Term]
+id: GO:0002635
+name: negative regulation of germinal center formation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of germinal center formation." [GOC:add]
+synonym: "down regulation of germinal center formation" EXACT []
+synonym: "down-regulation of germinal center formation" EXACT []
+synonym: "downregulation of germinal center formation" EXACT []
+synonym: "inhibition of germinal center formation" NARROW []
+is_a: GO:0002634 ! regulation of germinal center formation
+is_a: GO:0002823 ! negative regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0051093 ! negative regulation of developmental process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0002467 ! germinal center formation
+relationship: negatively_regulates GO:0002467 ! germinal center formation
+
+[Term]
+id: GO:0002636
+name: positive regulation of germinal center formation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate, or extent of germinal center formation." [GOC:add]
+synonym: "activation of germinal center formation" NARROW []
+synonym: "stimulation of germinal center formation" NARROW []
+synonym: "up regulation of germinal center formation" EXACT []
+synonym: "up-regulation of germinal center formation" EXACT []
+synonym: "upregulation of germinal center formation" EXACT []
+is_a: GO:0002634 ! regulation of germinal center formation
+is_a: GO:0002824 ! positive regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+is_a: GO:0051094 ! positive regulation of developmental process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0002467 ! germinal center formation
+relationship: positively_regulates GO:0002467 ! germinal center formation
 
 [Term]
 id: GO:0002637
@@ -2503,6 +2779,47 @@ intersection_of: positively_regulates GO:0002444 ! myeloid leukocyte mediated im
 relationship: positively_regulates GO:0002444 ! myeloid leukocyte mediated immunity
 
 [Term]
+id: GO:0002889
+name: regulation of immunoglobulin mediated immune response
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, or extent of an immunoglobulin mediated immune response." [GOC:add]
+is_a: GO:0002712 ! regulation of B cell mediated immunity
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0016064 ! immunoglobulin mediated immune response
+relationship: regulates GO:0016064 ! immunoglobulin mediated immune response
+
+[Term]
+id: GO:0002890
+name: negative regulation of immunoglobulin mediated immune response
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of an immunoglobulin mediated immune response." [GOC:add]
+synonym: "down regulation of immunoglobulin mediated immune response" EXACT []
+synonym: "down-regulation of immunoglobulin mediated immune response" EXACT []
+synonym: "downregulation of immunoglobulin mediated immune response" EXACT []
+synonym: "inhibition of immunoglobulin mediated immune response" NARROW []
+is_a: GO:0002713 ! negative regulation of B cell mediated immunity
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0016064 ! immunoglobulin mediated immune response
+relationship: negatively_regulates GO:0016064 ! immunoglobulin mediated immune response
+
+[Term]
+id: GO:0002891
+name: positive regulation of immunoglobulin mediated immune response
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate, or extent of an immunoglobulin mediated immune response." [GOC:add]
+synonym: "activation of immunoglobulin mediated immune response" NARROW []
+synonym: "stimulation of immunoglobulin mediated immune response" NARROW []
+synonym: "up regulation of immunoglobulin mediated immune response" EXACT []
+synonym: "up-regulation of immunoglobulin mediated immune response" EXACT []
+synonym: "upregulation of immunoglobulin mediated immune response" EXACT []
+is_a: GO:0002714 ! positive regulation of B cell mediated immunity
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0016064 ! immunoglobulin mediated immune response
+relationship: positively_regulates GO:0016064 ! immunoglobulin mediated immune response
+
+[Term]
 id: GO:0002920
 name: regulation of humoral immune response
 namespace: biological_process
@@ -3108,7 +3425,7 @@ synonym: "phenylalanine hydroxylase activity" EXACT []
 xref: EC:1.14.16.1
 xref: MetaCyc:PHENYLALANINE-4-MONOOXYGENASE-RXN
 xref: Reactome:R-HSA-5649483 "Defective PAH does not hydroxylate L-Phe to L-Tyr"
-xref: Reactome:R-HSA-71118 "PAH tetramer hydroxylates L-Phe to L-Tyr"
+xref: Reactome:R-HSA-71118 "PAH:Fe2+ tetramer hydroxylates L-Phe to L-Tyr"
 xref: RHEA:20273
 is_a: GO:0016714 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced pteridine as one donor, and incorporation of one atom of oxygen
 
@@ -3122,6 +3439,7 @@ synonym: "O-glucosyl hydrolase activity" EXACT []
 xref: EC:3.2.1
 xref: Reactome:R-HSA-5694563 "ABHD10 hydrolyses MPAG"
 xref: Reactome:R-HSA-6786652 "CHIT1 hydrolyses CHIT to 3xADGP"
+xref: Reactome:R-HSA-9661820 "Bacterial GUSB hydrolyses BDG to BIL"
 is_a: GO:0016798 ! hydrolase activity, acting on glycosyl bonds
 
 [Term]
@@ -3278,7 +3596,7 @@ xref: EC:2.7.2.3
 xref: KEGG_REACTION:R01512
 xref: MetaCyc:PHOSGLYPHOS-RXN
 xref: Reactome:R-HSA-70486 "ATP + 3-Phospho-D-glycerate <=> ADP + 1,3-bisphospho-D-glycerate"
-xref: Reactome:R-HSA-71850 "1,3-bisphospho-D-glycerate + ADP <=> 3-phospho-D-glycerate + ADP"
+xref: Reactome:R-HSA-71850 "1,3-bisphospho-D-glycerate + ADP <=> 3-phospho-D-glycerate + ATP"
 xref: RHEA:14801
 is_a: GO:0016301 ! kinase activity
 is_a: GO:0016774 ! phosphotransferase activity, carboxyl group as acceptor
@@ -3371,6 +3689,7 @@ synonym: "xanthine/NAD+ oxidoreductase activity" EXACT [EC:1.17.1.4]
 synonym: "xanthine:NAD+ oxidoreductase activity" EXACT [EC:1.17.1.4]
 xref: EC:1.17.1.4
 xref: MetaCyc:RXN0-901
+xref: RHEA:16669
 is_a: GO:0016726 ! oxidoreductase activity, acting on CH or CH2 groups, NAD or NADP as acceptor
 
 [Term]
@@ -3466,8 +3785,6 @@ subset: goslim_pir
 subset: goslim_plant
 synonym: "glycoprotein binding" NARROW []
 synonym: "protein amino acid binding" EXACT []
-xref: Reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
-xref: Reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -5169,7 +5486,7 @@ id: GO:0006837
 name: serotonin transport
 namespace: biological_process
 def: "The directed movement of serotonin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Serotonin (5-hydroxytryptamine) is a monoamine neurotransmitter occurring in the peripheral and central nervous systems." [GOC:ai]
-is_a: GO:0006812 ! cation transport
+is_a: GO:0015695 ! organic cation transport
 is_a: GO:0015844 ! monoamine transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 
@@ -6552,6 +6869,7 @@ def: "Catalysis of the transfer of an N-acetylglucosaminyl residue from UDP-N-ac
 synonym: "GlcNAc transferase activity" EXACT []
 xref: Reactome:R-HSA-5694487 "A4GNT transfers GlcNAc to core 2 mucins"
 xref: Reactome:R-HSA-8879117 "POMGNT2 transfers GlcNAc to Man-DAG1"
+xref: Reactome:R-HSA-9683648 "Spike trimer glycoside chains are extended"
 is_a: GO:0008194 ! UDP-glycosyltransferase activity
 is_a: GO:0016758 ! transferase activity, transferring hexosyl groups
 
@@ -6606,6 +6924,7 @@ def: "Catalysis of the transfer of an amino group to an acceptor, usually a 2-ox
 synonym: "aminotransferase activity" EXACT []
 xref: EC:2.6.1
 xref: Reactome:R-HSA-1237102 "Transamination of MOB to methionine"
+xref: RHEA:31763
 is_a: GO:0016769 ! transferase activity, transferring nitrogenous groups
 
 [Term]
@@ -8412,6 +8731,14 @@ def: "The directed movement of inorganic cations with a valency of one into, out
 is_a: GO:0006812 ! cation transport
 
 [Term]
+id: GO:0015695
+name: organic cation transport
+namespace: biological_process
+def: "The directed movement of organic cations into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Organic cations are atoms or small molecules with a positive charge which contain carbon in covalent linkage." [GOC:ai]
+is_a: GO:0006812 ! cation transport
+is_a: GO:0071702 ! organic substance transport
+
+[Term]
 id: GO:0015696
 name: ammonium transport
 namespace: biological_process
@@ -8609,6 +8936,14 @@ is_a: GO:0044283 ! small molecule biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
+id: GO:0016064
+name: immunoglobulin mediated immune response
+namespace: biological_process
+def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." [GO_REF:0000022, GOC:add, ISBN:0781735149]
+synonym: "antibody-mediated immune response" EXACT []
+is_a: GO:0019724 ! B cell mediated immunity
+
+[Term]
 id: GO:0016101
 name: diterpenoid metabolic process
 namespace: biological_process
@@ -8796,6 +9131,15 @@ is_a: GO:0002200 ! somatic diversification of immune receptors
 relationship: part_of GO:0002377 ! immunoglobulin production
 
 [Term]
+id: GO:0016446
+name: somatic hypermutation of immunoglobulin genes
+namespace: biological_process
+def: "Mutations occurring somatically that result in amino acid changes in the rearranged V regions of immunoglobulins." [GOC:add, ISBN:0781735149, PMID:11205330, PMID:11205333, PMID:14975236, PMID:7813007]
+synonym: "somatic hypermutation of antibody genes" EXACT []
+is_a: GO:0002566 ! somatic diversification of immune receptors via somatic mutation
+is_a: GO:0016445 ! somatic diversification of immunoglobulins
+
+[Term]
 id: GO:0016447
 name: somatic recombination of immunoglobulin gene segments
 namespace: biological_process
@@ -8857,6 +9201,7 @@ xref: Reactome:R-HSA-9025007 "Hydroperoxy reductase reduces 7(S),14(S)-diHp-DHA 
 xref: Reactome:R-HSA-9026001 "Hydroperoxy reductase reduces 7,17-diHp-DPAn-3 to RvD5n-3DPA"
 xref: Reactome:R-HSA-9026917 "Lipoxygenase dehydrogenates 7(S),17(S)-diHp-DHA to 7S(8)-epoxy-17(S)-HDHA"
 xref: Reactome:R-HSA-9027033 "Hydroperoxy reducatase reduces 14(S)-Hp-DHA to 14(S)-HDHA"
+xref: RHEA:27453
 is_a: GO:0003824 ! catalytic activity
 relationship: part_of GO:0055114 ! oxidation-reduction process
 
@@ -8904,6 +9249,7 @@ def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-CH grou
 synonym: "oxidoreductase activity, acting on the CH-CH group of donors, other acceptors" NARROW []
 xref: EC:1.3
 xref: Reactome:R-HSA-2995334 "COX15 transforms heme O to heme A"
+xref: Reactome:R-HSA-9661710 "An unknown oxidase oxidises D-UBGN to UBN"
 is_a: GO:0016491 ! oxidoreductase activity
 
 [Term]
@@ -8914,6 +9260,8 @@ def: "Catalysis of an oxidation-reduction (redox) reaction in which a CH-CH grou
 xref: EC:1.3.1
 xref: Reactome:R-HSA-4419979 "SRD5A3 reduces pPNOL to DCHOL"
 xref: Reactome:R-HSA-4755572 "Defective SRD5A3 does not reduce pPNOL to DCHOL"
+xref: Reactome:R-HSA-9661726 "An unknown reductase reduces D-UBGN to STBN"
+xref: Reactome:R-HSA-9661745 "An unknown BILR reduces BIL to D-UBGN"
 is_a: GO:0016627 ! oxidoreductase activity, acting on the CH-CH group of donors
 
 [Term]
@@ -9023,7 +9371,6 @@ xref: EC:2
 xref: Reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
 xref: Reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
 xref: Reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
-xref: Reactome:R-HSA-6787403 "GTPBP3 and MTO1 transform uridine-34 yielding 5-taurinomethyluridine-34 in tRNA"
 xref: Reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
 is_a: GO:0003824 ! catalytic activity
 
@@ -9175,6 +9522,7 @@ synonym: "PNPPase activity" NARROW []
 xref: EC:3.1.3
 xref: MetaCyc:4-NITROPHENYLPHOSPHATASE-RXN
 xref: Reactome:R-HSA-4419986 "Unknown pPPP phosphatase dephosphorylates pPPP to pPNOL"
+xref: Reactome:R-HSA-9636457 "SapM dephosphorylates PI3P"
 is_a: GO:0042578 ! phosphoric ester hydrolase activity
 relationship: part_of GO:0016311 ! dephosphorylation
 
@@ -9206,6 +9554,7 @@ subset: goslim_generic
 synonym: "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in other compounds" NARROW []
 xref: EC:3.5
 xref: Reactome:R-HSA-6803753 "NAAA hydrolyses NAEs to FAs and ethanolamine"
+xref: RHEA:45456
 is_a: GO:0016787 ! hydrolase activity
 
 [Term]
@@ -9232,8 +9581,9 @@ subset: goslim_pir
 subset: goslim_yeast
 synonym: "other lyase activity" NARROW []
 xref: EC:4
-xref: Reactome:R-HSA-5696408 "PHYKPL tetramer hydrolyses 5PHL"
+xref: Reactome:R-HSA-5696408 "PXLP-K278-PHYKPL tetramer hydrolyses 5PHL"
 xref: Reactome:R-HSA-6782895 "TYW1:FMN:4Fe-4S  transforms 1-methylguanosine yielding yW-187 (4-demethylwyosine) at nucleotide 37 of tRNA(Phe)"
+xref: RHEA:34091
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -9244,17 +9594,18 @@ def: "Catalysis of the cleavage of C-C bonds by other means than by hydrolysis o
 synonym: "other carbon-carbon lyase activity" NARROW []
 xref: EC:4.1
 xref: Reactome:R-HSA-389611 "2-hydroxyphytanoyl-CoA => pristanal + formyl-CoA"
+xref: RHEA:25355
 is_a: GO:0016829 ! lyase activity
 
 [Term]
 id: GO:0016831
 name: carboxy-lyase activity
 namespace: molecular_function
-def: "Catalysis of the nonhydrolytic addition or removal of a carboxyl group to or from a compound." [http://www.mercksource.com/]
+def: "Catalysis of the nonhydrolytic addition or removal of a carboxyl group to or from a compound." [GOC:curators]
 synonym: "decarboxylase activity" EXACT []
 xref: EC:4.1.1
-xref: Reactome:R-HSA-6787757 "GADL1 decarboxylates acidic AAs"
-xref: Reactome:R-HSA-6814165 "GADL1 decarboxylates CSA to HTAU"
+xref: Reactome:R-HSA-6787757 "PXLP-K333-GADL1 decarboxylates acidic AAs"
+xref: Reactome:R-HSA-6814165 "PXLP-K333-GADL1 decarboxylates CSA to HTAU"
 xref: Reactome:R-HSA-71223 "2-amino-3-carboxymuconate semialdehyde => 2-aminomuconate semialdehyde + CO2"
 is_a: GO:0016830 ! carbon-carbon lyase activity
 
@@ -9322,6 +9673,7 @@ synonym: "intramolecular isomerase activity" EXACT []
 synonym: "intramolecular oxidoreductase activity, other intramolecular oxidoreductases" NARROW []
 xref: EC:5.3
 xref: Reactome:R-HSA-109998 "Isomerization of 3-trans-decenoyl-CoA to form trans-dec-2-enoyl-CoA"
+xref: RHEA:45752
 is_a: GO:0016853 ! isomerase activity
 
 [Term]
@@ -9358,7 +9710,7 @@ is_a: GO:0016866 ! intramolecular transferase activity
 id: GO:0016874
 name: ligase activity
 namespace: molecular_function
-def: "Catalysis of the joining of two substances, or two groups within a single molecule, with the concomitant hydrolysis of the diphosphate bond in ATP or a similar triphosphate." [EC:6, GOC:mah]
+def: "Catalysis of the joining of two molecules, or two groups within a single molecule, using the energy from the hydrolysis of ATP, a similar triphosphate, or a pH gradient." [EC:6, GOC:mah]
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -9371,6 +9723,7 @@ subset: goslim_yeast
 synonym: "synthetase activity" EXACT [GOC:jh2]
 xref: EC:6
 is_a: GO:0003824 ! catalytic activity
+property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/19380 xsd:anyURI
 
 [Term]
 id: GO:0016885
@@ -9814,6 +10167,23 @@ synonym: "antibody" NARROW []
 is_a: GO:0032991 ! protein-containing complex
 
 [Term]
+id: GO:0019815
+name: B cell receptor complex
+namespace: cellular_component
+alt_id: GO:0042570
+def: "An immunoglobulin complex that is present in the plasma membrane of B cells and that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains and a signaling subunit, a heterodimer of the Ig-alpha and Ig-beta proteins." [GOC:add, ISBN:0781735149]
+comment: Note that an immunoglobulin complex has the function of antigen binding if a suitable antigen is available.
+synonym: "antibody" RELATED [GOC:mah]
+synonym: "B cell receptor accessory molecule complex" RELATED []
+synonym: "B lymphocyte receptor complex" EXACT []
+synonym: "B-cell receptor complex" EXACT []
+synonym: "B-lymphocyte receptor complex" EXACT []
+synonym: "BCR complex" EXACT []
+synonym: "immunoglobulin complex, membrane bound" EXACT []
+is_a: GO:0019814 ! immunoglobulin complex
+is_a: GO:0098802 ! plasma membrane signaling receptor complex
+
+[Term]
 id: GO:0019852
 name: L-ascorbic acid metabolic process
 namespace: biological_process
@@ -9835,6 +10205,17 @@ def: "The inner, i.e. lumen-facing, lipid bilayer of an organelle envelope; usua
 comment: See also the cellular component term 'outer membrane ; GO:0019867'.
 is_a: GO:0031090 ! organelle membrane
 relationship: part_of GO:0031967 ! organelle envelope
+
+[Term]
+id: GO:0019882
+name: antigen processing and presentation
+namespace: biological_process
+alt_id: GO:0030333
+def: "The process in which an antigen-presenting cell expresses antigen (peptide or lipid) on its cell surface in association with an MHC protein complex." [GO_REF:0000022, GOC:add, ISBN:0781735149, PMID:15771591, PMID:15928678]
+synonym: "antigen presentation" EXACT []
+synonym: "antigen processing" EXACT []
+xref: Wikipedia:Antigen_presentation
+is_a: GO:0002376 ! immune system process
 
 [Term]
 id: GO:0019953
@@ -10604,12 +10985,18 @@ is_a: GO:0002573 ! myeloid leukocyte differentiation
 id: GO:0030317
 name: flagellated sperm motility
 namespace: biological_process
-def: "Any process involved in the controlled movement of a flagellated sperm cell." [GOC:cilia, GOC:jl, GOC:krc]
+alt_id: GO:0097724
+alt_id: GO:1905419
+def: "The directed, self-propelled movement of a cilium (aka flagellum) that contributes to the movement of a flagellated sperm." [GO_REF:0000060, GOC:cilia, GOC:krc, GOC:TermGenie, PMID:26680031]
 synonym: "flagellated sperm movement" EXACT []
+synonym: "sperm flagellum movement" EXACT [GOC:cilia, GOC:krc]
+synonym: "sperm flagellum movement involved in flagellated sperm motility" EXACT []
+synonym: "sperm flagellum movement involved in flagellated sperm movement" EXACT [GOC:TermGenie]
 synonym: "sperm motility" BROAD []
 synonym: "sperm movement" BROAD []
 xref: Wikipedia:Sperm_motility
 is_a: GO:0060285 ! cilium-dependent cell motility
+is_a: GO:0060294 ! cilium movement involved in cell motility
 is_a: GO:0097722 ! sperm motility
 
 [Term]
@@ -12307,8 +12694,12 @@ is_a: GO:0001816 ! cytokine production
 id: GO:0032609
 name: interferon-gamma production
 namespace: biological_process
-def: "The appearance of interferon-gamma due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah]
+alt_id: GO:0042095
+alt_id: GO:0072643
+def: "The appearance of interferon-gamma due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah, PMID:15546383]
 synonym: "IFNG production" EXACT [GOC:mah]
+synonym: "interferon-gamma biosynthetic process" NARROW []
+synonym: "interferon-gamma secretion" NARROW []
 synonym: "type II IFN production" BROAD [GOC:mah]
 synonym: "type II interferon production" BROAD []
 is_a: GO:0001816 ! cytokine production
@@ -12327,7 +12718,11 @@ relationship: regulates GO:0032602 ! chemokine production
 id: GO:0032649
 name: regulation of interferon-gamma production
 namespace: biological_process
-def: "Any process that modulates the frequency, rate, or extent of interferon-gamma production. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah]
+alt_id: GO:0045072
+alt_id: GO:1902713
+def: "Any process that modulates the frequency, rate, or extent of interferon-gamma production. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah, PMID:15546383]
+synonym: "regulation of interferon-gamma biosynthetic process" NARROW []
+synonym: "regulation of interferon-gamma secretion" NARROW []
 synonym: "regulation of type II interferon production" BROAD []
 is_a: GO:0001817 ! regulation of cytokine production
 intersection_of: GO:0008150 ! biological_process
@@ -12353,11 +12748,15 @@ relationship: negatively_regulates GO:0032602 ! chemokine production
 id: GO:0032689
 name: negative regulation of interferon-gamma production
 namespace: biological_process
-def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of interferon-gamma production. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah]
+alt_id: GO:0045077
+alt_id: GO:1902714
+def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of interferon-gamma production. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah, PMID:15546383]
 synonym: "down regulation of interferon-gamma production" EXACT []
 synonym: "down-regulation of interferon-gamma production" EXACT []
 synonym: "downregulation of interferon-gamma production" EXACT []
 synonym: "inhibition of interferon-gamma production" NARROW []
+synonym: "negative regulation of interferon-gamma biosynthetic process" NARROW []
+synonym: "negative regulation of interferon-gamma secretion" NARROW []
 synonym: "negative regulation of type II interferon production" BROAD []
 is_a: GO:0001818 ! negative regulation of cytokine production
 is_a: GO:0032649 ! regulation of interferon-gamma production
@@ -12385,8 +12784,12 @@ relationship: positively_regulates GO:0032602 ! chemokine production
 id: GO:0032729
 name: positive regulation of interferon-gamma production
 namespace: biological_process
-def: "Any process that activates or increases the frequency, rate, or extent of interferon-gamma production. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah]
+alt_id: GO:0045078
+alt_id: GO:1902715
+def: "Any process that activates or increases the frequency, rate, or extent of interferon-gamma production. Interferon-gamma is also known as type II interferon." [GOC:add, GOC:mah, PMID:15546383]
 synonym: "activation of interferon-gamma production" NARROW []
+synonym: "positive regulation of interferon-gamma biosynthetic process" NARROW []
+synonym: "positive regulation of interferon-gamma secretion" NARROW []
 synonym: "positive regulation of type II interferon production" BROAD []
 synonym: "stimulation of interferon-gamma production" NARROW []
 synonym: "up regulation of interferon-gamma production" EXACT []
@@ -13308,6 +13711,17 @@ intersection_of: positively_regulates GO:0016311 ! dephosphorylation
 relationship: positively_regulates GO:0016311 ! dephosphorylation
 
 [Term]
+id: GO:0035369
+name: pre-B cell receptor complex
+namespace: cellular_component
+def: "An immunoglobulin-like complex that is present in at least the plasma membrane of pre-B cells, and that is composed of two identical immunoglobulin heavy chains and two surrogate light chains, each composed of the lambda-5 and VpreB proteins, and a signaling subunit, a heterodimer of the Ig-alpha and Ig-beta proteins." [GOC:add, ISBN:0781765196, PMID:16464608, PMID:17306522]
+comment: Despite its name, the pre-BCR is not a receptor complex, as it appears to provide a low level of signal not dependent on a ligand, but rather simply on correct assembly of the complex as a measure for correct Ig heavy chain recombination and folding. A significant proportion of pre-BCR complexes fail to reach the cell surface, and in some cases may provide their signaling function from the trans-Golgi network or lysosome.
+synonym: "pre-BCR" EXACT []
+is_a: GO:0098796 ! membrane protein complex
+created_by: bf
+creation_date: 2010-03-11T10:46:10Z
+
+[Term]
 id: GO:0035556
 name: intracellular signal transduction
 namespace: biological_process
@@ -13743,6 +14157,17 @@ synonym: "alpha-beta T lymphocyte receptor complex" EXACT []
 synonym: "alpha-beta T-cell receptor complex" EXACT []
 synonym: "alpha-beta T-lymphocyte receptor complex" EXACT []
 synonym: "alpha-beta TCR complex" EXACT []
+is_a: GO:0042101 ! T cell receptor complex
+
+[Term]
+id: GO:0042106
+name: gamma-delta T cell receptor complex
+namespace: cellular_component
+def: "A T cell receptor complex in which the TCR heterodimer comprises gamma and delta chains, associated with the CD3 complex; recognizes antigen directly, without a requirement for processing and presentation by an MHC protein." [GOC:mah, ISBN:0781735149]
+synonym: "gamma-delta T lymphocyte receptor complex" EXACT []
+synonym: "gamma-delta T-cell receptor complex" EXACT []
+synonym: "gamma-delta T-lymphocyte receptor complex" EXACT []
+synonym: "gamma-delta TCR complex" EXACT []
 is_a: GO:0042101 ! T cell receptor complex
 
 [Term]
@@ -14198,6 +14623,19 @@ is_a: GO:0042487 ! regulation of odontogenesis of dentin-containing tooth
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0042475 ! odontogenesis of dentin-containing tooth
 relationship: negatively_regulates GO:0042475 ! odontogenesis of dentin-containing tooth
+
+[Term]
+id: GO:0042492
+name: gamma-delta T cell differentiation
+namespace: biological_process
+def: "The process in which a relatively unspecialized hemopoietic cell acquires specialized features of a gamma-delta T cell. A gamma-delta T cell is a T cell that expresses a gamma-delta T cell receptor complex." [CL:0000798, GOC:jl]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "gamma-delta T cell development" RELATED [GOC:add]
+synonym: "gamma-delta T lymphocyte differentiation" EXACT []
+synonym: "gamma-delta T-cell differentiation" EXACT []
+synonym: "gamma-delta T-lymphocyte differentiation" EXACT []
+is_a: GO:0030217 ! T cell differentiation
+is_a: GO:0046629 ! gamma-delta T cell activation
 
 [Term]
 id: GO:0042493
@@ -14957,6 +15395,81 @@ synonym: "positive T lymphocyte selection" EXACT []
 synonym: "positive T-cell selection" EXACT []
 synonym: "positive T-lymphocyte selection" EXACT []
 is_a: GO:0045058 ! T cell selection
+
+[Term]
+id: GO:0043379
+name: memory T cell differentiation
+namespace: biological_process
+def: "The process in which a newly activated T cell acquires specialized features of a memory T cell." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "memory T cell development" RELATED [GOC:add]
+synonym: "memory T lymphocyte differentiation" EXACT []
+synonym: "memory T-cell differentiation" EXACT []
+synonym: "memory T-lymphocyte differentiation" EXACT []
+is_a: GO:0002292 ! T cell differentiation involved in immune response
+is_a: GO:0090715 ! immunological memory formation process
+
+[Term]
+id: GO:0043380
+name: regulation of memory T cell differentiation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, or extent of memory T cell differentiation." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "regulation of memory T cell development" RELATED [GOC:add]
+synonym: "regulation of memory T lymphocyte differentiation" EXACT []
+synonym: "regulation of memory T-cell differentiation" EXACT []
+synonym: "regulation of memory T-lymphocyte differentiation" EXACT []
+is_a: GO:0002697 ! regulation of immune effector process
+is_a: GO:0045580 ! regulation of T cell differentiation
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0043379 ! memory T cell differentiation
+relationship: regulates GO:0043379 ! memory T cell differentiation
+
+[Term]
+id: GO:0043381
+name: negative regulation of memory T cell differentiation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the rate of memory T cell differentiation." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "down regulation of memory T cell differentiation" EXACT []
+synonym: "down-regulation of memory T cell differentiation" EXACT []
+synonym: "downregulation of memory T cell differentiation" EXACT []
+synonym: "inhibition of memory T cell differentiation" NARROW []
+synonym: "negative regulation of memory T cell development" RELATED [GOC:add]
+synonym: "negative regulation of memory T lymphocyte differentiation" EXACT []
+synonym: "negative regulation of memory T-cell differentiation" EXACT []
+synonym: "negative regulation of memory T-lymphocyte differentiation" EXACT []
+is_a: GO:0002698 ! negative regulation of immune effector process
+is_a: GO:0043380 ! regulation of memory T cell differentiation
+is_a: GO:0045581 ! negative regulation of T cell differentiation
+is_a: GO:0050777 ! negative regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0043379 ! memory T cell differentiation
+relationship: negatively_regulates GO:0043379 ! memory T cell differentiation
+
+[Term]
+id: GO:0043382
+name: positive regulation of memory T cell differentiation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of memory T cell differentiation." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "activation of memory T cell differentiation" NARROW []
+synonym: "positive regulation of memory T cell development" RELATED [GOC:add]
+synonym: "positive regulation of memory T lymphocyte differentiation" EXACT []
+synonym: "positive regulation of memory T-cell differentiation" EXACT []
+synonym: "positive regulation of memory T-lymphocyte differentiation" EXACT []
+synonym: "stimulation of memory T cell differentiation" NARROW []
+synonym: "up regulation of memory T cell differentiation" EXACT []
+synonym: "up-regulation of memory T cell differentiation" EXACT []
+synonym: "upregulation of memory T cell differentiation" EXACT []
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0043380 ! regulation of memory T cell differentiation
+is_a: GO:0045582 ! positive regulation of T cell differentiation
+is_a: GO:0050778 ! positive regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0043379 ! memory T cell differentiation
+relationship: positively_regulates GO:0043379 ! memory T cell differentiation
 
 [Term]
 id: GO:0043384
@@ -16050,6 +16563,36 @@ intersection_of: regulates GO:0050802 ! circadian sleep/wake cycle, sleep
 relationship: regulates GO:0050802 ! circadian sleep/wake cycle, sleep
 
 [Term]
+id: GO:0045190
+name: isotype switching
+namespace: biological_process
+def: "The switching of activated B cells from IgM biosynthesis to biosynthesis of other isotypes of immunoglobulin, accomplished through a recombination process involving an intrachromosomal deletion involving switch regions that reside 5' of each constant region gene segment in the immunoglobulin heavy chain locus." [ISBN:0781735149]
+comment: Note that IgM and IgD can be coexpressed by B cells via an alternate splicing mechanism, but true recombinational isotype switching to IgD has been demonstrated as well. Note that this term is best used to annotate gene products which are involved in the mechanism of DNA recombination used in isotype switching, like the B cell specific Swap70 factor in the mouse, rather than gene products which promote isotype switching such as cytokines or co-stimulatory molecules, which should instead be annotated to 'regulation of isotype switching ; GO:0045191'.
+synonym: "class switch recombination" EXACT []
+synonym: "class switching" EXACT []
+synonym: "isotype switch recombination" EXACT []
+xref: Wikipedia:Immunoglobulin_class_switching
+is_a: GO:0002204 ! somatic recombination of immunoglobulin genes involved in immune response
+is_a: GO:0002312 ! B cell activation involved in immune response
+
+[Term]
+id: GO:0045191
+name: regulation of isotype switching
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of isotype switching." [GOC:ai]
+synonym: "regulation of class switch recombination" EXACT []
+synonym: "regulation of class switching" EXACT []
+synonym: "regulation of isotype switch recombination" EXACT []
+is_a: GO:0000018 ! regulation of DNA recombination
+is_a: GO:0002637 ! regulation of immunoglobulin production
+is_a: GO:0002889 ! regulation of immunoglobulin mediated immune response
+is_a: GO:0050864 ! regulation of B cell activation
+is_a: GO:2000026 ! regulation of multicellular organismal development
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0045190 ! isotype switching
+relationship: regulates GO:0045190 ! isotype switching
+
+[Term]
 id: GO:0045202
 name: synapse
 namespace: cellular_component
@@ -16258,6 +16801,65 @@ is_a: GO:0050870 ! positive regulation of T cell activation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0030217 ! T cell differentiation
 relationship: positively_regulates GO:0030217 ! T cell differentiation
+
+[Term]
+id: GO:0045586
+name: regulation of gamma-delta T cell differentiation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gamma-delta T cell differentiation." [GOC:go_curators]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "regulation of gamma-delta T cell development" RELATED [GOC:add]
+synonym: "regulation of gamma-delta T lymphocyte differentiation" EXACT []
+synonym: "regulation of gamma-delta T-cell differentiation" EXACT []
+synonym: "regulation of gamma-delta T-lymphocyte differentiation" EXACT []
+is_a: GO:0045580 ! regulation of T cell differentiation
+is_a: GO:0046643 ! regulation of gamma-delta T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0042492 ! gamma-delta T cell differentiation
+relationship: regulates GO:0042492 ! gamma-delta T cell differentiation
+
+[Term]
+id: GO:0045587
+name: negative regulation of gamma-delta T cell differentiation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of gamma-delta T cell differentiation." [GOC:go_curators]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "down regulation of gamma-delta T cell differentiation" EXACT []
+synonym: "down-regulation of gamma-delta T cell differentiation" EXACT []
+synonym: "downregulation of gamma-delta T cell differentiation" EXACT []
+synonym: "inhibition of gamma-delta T cell differentiation" NARROW []
+synonym: "negative regulation of gamma-delta T cell development" RELATED [GOC:add]
+synonym: "negative regulation of gamma-delta T lymphocyte differentiation" EXACT []
+synonym: "negative regulation of gamma-delta T-cell differentiation" EXACT []
+synonym: "negative regulation of gamma-delta T-lymphocyte differentiation" EXACT []
+is_a: GO:0045581 ! negative regulation of T cell differentiation
+is_a: GO:0045586 ! regulation of gamma-delta T cell differentiation
+is_a: GO:0046644 ! negative regulation of gamma-delta T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0042492 ! gamma-delta T cell differentiation
+relationship: negatively_regulates GO:0042492 ! gamma-delta T cell differentiation
+
+[Term]
+id: GO:0045588
+name: positive regulation of gamma-delta T cell differentiation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of gamma-delta T cell differentiation." [GOC:go_curators]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "activation of gamma-delta T cell differentiation" NARROW []
+synonym: "positive regulation of gamma-delta T cell development" RELATED [GOC:add]
+synonym: "positive regulation of gamma-delta T lymphocyte differentiation" EXACT []
+synonym: "positive regulation of gamma-delta T-cell differentiation" EXACT []
+synonym: "positive regulation of gamma-delta T-lymphocyte differentiation" EXACT []
+synonym: "stimulation of gamma-delta T cell differentiation" NARROW []
+synonym: "up regulation of gamma-delta T cell differentiation" EXACT []
+synonym: "up-regulation of gamma-delta T cell differentiation" EXACT []
+synonym: "upregulation of gamma-delta T cell differentiation" EXACT []
+is_a: GO:0045582 ! positive regulation of T cell differentiation
+is_a: GO:0045586 ! regulation of gamma-delta T cell differentiation
+is_a: GO:0046645 ! positive regulation of gamma-delta T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0042492 ! gamma-delta T cell differentiation
+relationship: positively_regulates GO:0042492 ! gamma-delta T cell differentiation
 
 [Term]
 id: GO:0045595
@@ -17501,6 +18103,53 @@ intersection_of: positively_regulates GO:0006720 ! isoprenoid metabolic process
 relationship: positively_regulates GO:0006720 ! isoprenoid metabolic process
 
 [Term]
+id: GO:0045829
+name: negative regulation of isotype switching
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of isotype switching." [GOC:go_curators]
+synonym: "down regulation of isotype switching" EXACT []
+synonym: "down-regulation of isotype switching" EXACT []
+synonym: "downregulation of isotype switching" EXACT []
+synonym: "inhibition of isotype switching" NARROW []
+synonym: "negative regulation of class switch recombination" EXACT []
+synonym: "negative regulation of class switching" EXACT []
+synonym: "negative regulation of isotype switch recombination" EXACT []
+is_a: GO:0002638 ! negative regulation of immunoglobulin production
+is_a: GO:0002890 ! negative regulation of immunoglobulin mediated immune response
+is_a: GO:0045191 ! regulation of isotype switching
+is_a: GO:0045910 ! negative regulation of DNA recombination
+is_a: GO:0050869 ! negative regulation of B cell activation
+is_a: GO:0051093 ! negative regulation of developmental process
+is_a: GO:0051241 ! negative regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0045190 ! isotype switching
+relationship: negatively_regulates GO:0045190 ! isotype switching
+
+[Term]
+id: GO:0045830
+name: positive regulation of isotype switching
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of isotype switching." [GOC:go_curators]
+synonym: "activation of isotype switching" NARROW []
+synonym: "positive regulation of class switch recombination" EXACT []
+synonym: "positive regulation of class switching" EXACT []
+synonym: "positive regulation of isotype switch recombination" EXACT []
+synonym: "stimulation of isotype switching" NARROW []
+synonym: "up regulation of isotype switching" EXACT []
+synonym: "up-regulation of isotype switching" EXACT []
+synonym: "upregulation of isotype switching" EXACT []
+is_a: GO:0002639 ! positive regulation of immunoglobulin production
+is_a: GO:0002891 ! positive regulation of immunoglobulin mediated immune response
+is_a: GO:0045191 ! regulation of isotype switching
+is_a: GO:0045911 ! positive regulation of DNA recombination
+is_a: GO:0050871 ! positive regulation of B cell activation
+is_a: GO:0051094 ! positive regulation of developmental process
+is_a: GO:0051240 ! positive regulation of multicellular organismal process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0045190 ! isotype switching
+relationship: positively_regulates GO:0045190 ! isotype switching
+
+[Term]
 id: GO:0045833
 name: negative regulation of lipid metabolic process
 namespace: biological_process
@@ -18472,6 +19121,66 @@ is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0035265 ! organ growth
 relationship: positively_regulates GO:0035265 ! organ growth
+
+[Term]
+id: GO:0046629
+name: gamma-delta T cell activation
+namespace: biological_process
+def: "The change in morphology and behavior of a gamma-delta T cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific." [GOC:add]
+synonym: "gamma-delta T lymphocyte activation" EXACT []
+synonym: "gamma-delta T-cell activation" EXACT []
+synonym: "gamma-delta T-lymphocyte activation" EXACT []
+is_a: GO:0042110 ! T cell activation
+
+[Term]
+id: GO:0046643
+name: regulation of gamma-delta T cell activation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gamma-delta T cell activation." [GOC:ai]
+synonym: "regulation of gamma-delta T lymphocyte activation" EXACT []
+synonym: "regulation of gamma-delta T-cell activation" EXACT []
+synonym: "regulation of gamma-delta T-lymphocyte activation" EXACT []
+is_a: GO:0050863 ! regulation of T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0046629 ! gamma-delta T cell activation
+relationship: regulates GO:0046629 ! gamma-delta T cell activation
+
+[Term]
+id: GO:0046644
+name: negative regulation of gamma-delta T cell activation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the frequency, rate or extent of gamma-delta T cell activation." [GOC:ai]
+synonym: "down regulation of gamma-delta T cell activation" EXACT []
+synonym: "down-regulation of gamma-delta T cell activation" EXACT []
+synonym: "downregulation of gamma-delta T cell activation" EXACT []
+synonym: "inhibition of gamma-delta T cell activation" NARROW []
+synonym: "negative regulation of gamma-delta T lymphocyte activation" EXACT []
+synonym: "negative regulation of gamma-delta T-cell activation" EXACT []
+synonym: "negative regulation of gamma-delta T-lymphocyte activation" EXACT []
+is_a: GO:0046643 ! regulation of gamma-delta T cell activation
+is_a: GO:0050868 ! negative regulation of T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0046629 ! gamma-delta T cell activation
+relationship: negatively_regulates GO:0046629 ! gamma-delta T cell activation
+
+[Term]
+id: GO:0046645
+name: positive regulation of gamma-delta T cell activation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of gamma-delta T cell activation." [GOC:ai]
+synonym: "activation of gamma-delta T cell activation" NARROW []
+synonym: "positive regulation of gamma-delta T lymphocyte activation" EXACT []
+synonym: "positive regulation of gamma-delta T-cell activation" EXACT []
+synonym: "positive regulation of gamma-delta T-lymphocyte activation" EXACT []
+synonym: "stimulation of gamma-delta T cell activation" NARROW []
+synonym: "up regulation of gamma-delta T cell activation" EXACT []
+synonym: "up-regulation of gamma-delta T cell activation" EXACT []
+synonym: "upregulation of gamma-delta T cell activation" EXACT []
+is_a: GO:0046643 ! regulation of gamma-delta T cell activation
+is_a: GO:0050870 ! positive regulation of T cell activation
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0046629 ! gamma-delta T cell activation
+relationship: positively_regulates GO:0046629 ! gamma-delta T cell activation
 
 [Term]
 id: GO:0046649
@@ -24615,6 +25324,30 @@ created_by: mah
 creation_date: 2010-03-08T03:56:28Z
 
 [Term]
+id: GO:0071707
+name: immunoglobulin heavy chain V-D-J recombination
+namespace: biological_process
+def: "The process in which immunoglobulin heavy chain V, D, and J gene segments are recombined within a single locus utilizing the conserved heptamer and nonomer recombination signal sequences (RSS)." [GOC:add, ISBN:0781735149]
+synonym: "immunoglobulin V(D)J joining" BROAD [GOC:add]
+synonym: "immunoglobulin V(D)J recombination" BROAD [GOC:add]
+synonym: "immunoglobulin V-D-J joining" EXACT [GOC:add]
+is_a: GO:0033152 ! immunoglobulin V(D)J recombination
+created_by: mah
+creation_date: 2010-03-09T04:20:31Z
+
+[Term]
+id: GO:0071708
+name: immunoglobulin light chain V-J recombination
+namespace: biological_process
+def: "The process in which immunoglobulin light chain V and J gene segments are recombined within a single locus utilizing the conserved heptamer and nonomer recombination signal sequences (RSS)." [GOC:add, ISBN:0781735149]
+synonym: "immunoglobulin V(D)J joining" BROAD [GOC:add]
+synonym: "immunoglobulin V(D)J recombination" BROAD [GOC:add]
+synonym: "immunoglobulin V-J joining" EXACT [GOC:add]
+is_a: GO:0033152 ! immunoglobulin V(D)J recombination
+created_by: mah
+creation_date: 2010-03-09T04:22:29Z
+
+[Term]
 id: GO:0071735
 name: IgG immunoglobulin complex
 namespace: cellular_component
@@ -24825,20 +25558,12 @@ created_by: mah
 creation_date: 2010-11-11T05:07:30Z
 
 [Term]
-id: GO:0072358
-name: cardiovascular system development
-namespace: biological_process
-def: "The process whose specific outcome is the progression of the cardiovascular system over time, from its formation to the mature structure. The cardiovascular system is the anatomical system that has as its parts the heart and blood vessels." [GOC:mah, UBERON:0004535]
-is_a: GO:0048731 ! system development
-relationship: part_of GO:0072359 ! circulatory system development
-created_by: mah
-creation_date: 2010-11-16T11:25:49Z
-
-[Term]
 id: GO:0072359
 name: circulatory system development
 namespace: biological_process
+alt_id: GO:0072358
 def: "The process whose specific outcome is the progression of the circulatory system over time, from its formation to the mature structure. The circulatory system is the organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis." [GOC:mah, UBERON:0001009]
+synonym: "cardiovascular system development" NARROW []
 is_a: GO:0048731 ! system development
 created_by: mah
 creation_date: 2010-11-16T11:27:39Z
@@ -25435,6 +26160,25 @@ is_a: GO:0006954 ! inflammatory response
 is_a: GO:0009611 ! response to wounding
 created_by: tb
 creation_date: 2014-08-12T12:13:53Z
+
+[Term]
+id: GO:0090713
+name: immunological memory process
+namespace: biological_process
+def: "Any process of the immune system that can contribute to the formation of immunological memory or an immune response based upon activation of immunological memory." [GOC:add, PMID:26086132, PMID:26831526]
+is_a: GO:0002376 ! immune system process
+relationship: part_of GO:0006955 ! immune response
+created_by: tb
+creation_date: 2016-11-11T12:20:30Z
+
+[Term]
+id: GO:0090715
+name: immunological memory formation process
+namespace: biological_process
+def: "Any immunological memory process that can contribute to the formation of immunological memory." [GOC:add, PMID:26086132, PMID:26831526]
+is_a: GO:0090713 ! immunological memory process
+created_by: tb
+creation_date: 2016-11-11T12:25:47Z
 
 [Term]
 id: GO:0097014
@@ -27022,7 +27766,7 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of flagellated sperm motility." [GOC:cilia, GOC:krc, GOC:TermGenie]
 synonym: "regulation of sperm motility" BROAD []
 synonym: "regulation of sperm movement" BROAD [GOC:TermGenie]
-is_a: GO:1902019 ! regulation of cilium-dependent cell motility
+is_a: GO:0060295 ! regulation of cilium movement involved in cell motility
 is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0030317 ! flagellated sperm motility
@@ -27045,6 +27789,7 @@ synonym: "inhibition of sperm motility" NARROW [GOC:TermGenie]
 synonym: "inhibition of sperm movement" BROAD [GOC:TermGenie]
 synonym: "negative regulation of sperm motility" BROAD []
 synonym: "negative regulation of sperm movement" BROAD [GOC:TermGenie]
+is_a: GO:0003354 ! negative regulation of cilium movement
 is_a: GO:1901317 ! regulation of flagellated sperm motility
 is_a: GO:1902020 ! negative regulation of cilium-dependent cell motility
 is_a: GO:2000242 ! negative regulation of reproductive process
@@ -27869,6 +28614,7 @@ synonym: "up-regulation of sperm motility" BROAD [GOC:TermGenie]
 synonym: "up-regulation of sperm movement" BROAD [GOC:TermGenie]
 synonym: "upregulation of sperm motility" BROAD [GOC:TermGenie]
 synonym: "upregulation of sperm movement" BROAD [GOC:TermGenie]
+is_a: GO:0003353 ! positive regulation of cilium movement
 is_a: GO:1901317 ! regulation of flagellated sperm motility
 is_a: GO:2000155 ! positive regulation of cilium-dependent cell motility
 is_a: GO:2000243 ! positive regulation of reproductive process
@@ -31071,22 +31817,6 @@ created_by: pr
 creation_date: 2016-08-04T14:49:43Z
 
 [Term]
-id: GO:1905419
-name: sperm flagellum movement involved in flagellated sperm motility
-namespace: biological_process
-alt_id: GO:0097724
-def: "The directed, self-propelled movement of a cilium (aka flagellum) that contributes to the movement of a flagellated sperm." [GO_REF:0000060, GOC:cilia, GOC:krc, GOC:TermGenie, PMID:26680031]
-synonym: "sperm flagellum movement" EXACT [GOC:cilia, GOC:krc]
-synonym: "sperm flagellum movement involved in flagellated sperm movement" EXACT [GOC:TermGenie]
-is_a: GO:0022414 ! reproductive process
-is_a: GO:0060294 ! cilium movement involved in cell motility
-intersection_of: GO:0003341 ! cilium movement
-intersection_of: part_of GO:0030317 ! flagellated sperm motility
-relationship: part_of GO:0030317 ! flagellated sperm motility
-created_by: krc
-creation_date: 2016-09-01T17:52:39Z
-
-[Term]
 id: GO:1905427
 name: intracellular signal transduction involved in positive regulation of cell growth
 namespace: biological_process
@@ -32226,6 +32956,62 @@ intersection_of: positively_regulates GO:0042493 ! response to drug
 relationship: positively_regulates GO:0042493 ! response to drug
 created_by: yaf
 creation_date: 2011-08-19T01:47:27Z
+
+[Term]
+id: GO:2001191
+name: regulation of gamma-delta T cell activation involved in immune response
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of gamma-delta T cell activation involved in immune response." [GOC:obol]
+synonym: "regulation of gamma-delta T cell activation during immune response" RELATED [GOC:obol]
+synonym: "regulation of gamma-delta T lymphocyte activation during immune response" RELATED [GOC:obol]
+synonym: "regulation of gamma-delta T-cell activation during immune response" RELATED [GOC:obol]
+synonym: "regulation of gamma-delta T-lymphocyte activation during immune response" RELATED [GOC:obol]
+is_a: GO:0002697 ! regulation of immune effector process
+is_a: GO:0046643 ! regulation of gamma-delta T cell activation
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0002290 ! gamma-delta T cell activation involved in immune response
+relationship: regulates GO:0002290 ! gamma-delta T cell activation involved in immune response
+created_by: yaf
+creation_date: 2011-11-03T04:28:38Z
+
+[Term]
+id: GO:2001192
+name: negative regulation of gamma-delta T cell activation involved in immune response
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of gamma-delta T cell activation involved in immune response." [GOC:obol]
+synonym: "negative regulation of gamma-delta T cell activation during immune response" RELATED [GOC:obol]
+synonym: "negative regulation of gamma-delta T lymphocyte activation during immune response" RELATED [GOC:obol]
+synonym: "negative regulation of gamma-delta T-cell activation during immune response" RELATED [GOC:obol]
+synonym: "negative regulation of gamma-delta T-lymphocyte activation during immune response" RELATED [GOC:obol]
+is_a: GO:0002698 ! negative regulation of immune effector process
+is_a: GO:0046644 ! negative regulation of gamma-delta T cell activation
+is_a: GO:0050777 ! negative regulation of immune response
+is_a: GO:2001191 ! regulation of gamma-delta T cell activation involved in immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0002290 ! gamma-delta T cell activation involved in immune response
+relationship: negatively_regulates GO:0002290 ! gamma-delta T cell activation involved in immune response
+created_by: yaf
+creation_date: 2011-11-03T04:28:44Z
+
+[Term]
+id: GO:2001193
+name: positive regulation of gamma-delta T cell activation involved in immune response
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of gamma-delta T cell activation involved in immune response." [GOC:obol]
+synonym: "positive regulation of gamma-delta T cell activation during immune response" RELATED [GOC:obol]
+synonym: "positive regulation of gamma-delta T lymphocyte activation during immune response" RELATED [GOC:obol]
+synonym: "positive regulation of gamma-delta T-cell activation during immune response" RELATED [GOC:obol]
+synonym: "positive regulation of gamma-delta T-lymphocyte activation during immune response" RELATED [GOC:obol]
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0046645 ! positive regulation of gamma-delta T cell activation
+is_a: GO:0050778 ! positive regulation of immune response
+is_a: GO:2001191 ! regulation of gamma-delta T cell activation involved in immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0002290 ! gamma-delta T cell activation involved in immune response
+relationship: positively_regulates GO:0002290 ! gamma-delta T cell activation involved in immune response
+created_by: yaf
+creation_date: 2011-11-03T04:28:48Z
 
 [Term]
 id: GO:2001198

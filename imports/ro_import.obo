@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-06-08/imports/ro_import.owl
+data-version: hp/releases/2020-08-11/imports/ro_import.owl
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 ontology: hp/imports/ro_import
@@ -568,40 +568,39 @@ is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000300
-name: in neural circuit with
-def: "A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons." []
+name: obsolete in neural circuit with
+def: "OBSOLETE A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons." []
+comment: Obsoleted as no longer a useful relationship (all neurons in an organism are in a neural circuit with each other).
 property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000426 "(forall (?x ?y) \n	(iff \n		(neural_circuit_path  ?x ?y)\n		(and\n			(\"neuron ; CL_0000540\" ?x)\n			(\"neuron ; CL_0000540\" ?y)\n			(or \n				(synapsed_by ?x ?y) \n				(synapsed_to ?x ?y))))) \n\n(forall (...s ?x ?y ?z) \n	(iff \n		(neural_circuit_path  ...s ?x ?y ?z)\n		(and\n			(neural_circuit_path  ...s ?x ?y)\n			(\"neuron ; CL_0000540\" ?z)\n			(or \n				(synapsed_by ?y ?z) \n				(synapsed_to ?y ?z))))) \n\n(forall (?x ?y) \n	(iff \n		(in_neural_circuit_with ?x ?y)\n		(exists (...s)\n			(neural_circuit_path  ?x ...s ?y)))) " xsd:string
 property_value: RO:0001900 RO:0001901
-domain: CL:0000540 ! neuron
-range: CL:0000540 ! neuron
 is_transitive: true
+is_obsolete: true
 
 [Typedef]
 id: RO:0000301
-name: upstream in neural circuit with
-def: "A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next, in which the direction is from the last to the first." []
+name: obsolete upstream in neural circuit with
+def: "OBSOLETE A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next, in which the direction is from the last to the first." []
+comment: Obsoleted as no longer a useful relationship (all neurons in an organism are in a neural circuit with each other).
 property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000426 "(forall (?x ?y) \n	(iff \n		(upstream_neural_circuit_path  ?x ?y)\n		(and\n			(\"neuron ; CL_0000540\" ?x)\n			(\"neuron ; CL_0000540\" ?y)\n			(synapsed_to ?x ?y))))\n\n\n(forall (...s ?x ?y ?z) \n	(iff \n		(upstream_neural_circuit_path ...s ?x ?y ?z )\n		(and\n			(upstream_neural_circuit_path ...s ?x ?y)\n			(\"neuron ; CL_0000540\" ?z)\n			(synapsed_to ?y ?z))))\n			\n(forall (?x ?y) \n	(iff \n		(upstream_in_neural_circuit_with ?x ?y)\n		(exists (...s)\n			(upstream_neural_circuit_path  ?x ...s ?y))))" xsd:string
 property_value: RO:0001900 RO:0001901
 is_transitive: true
-is_a: RO:0000300 ! in neural circuit with
+is_obsolete: true
 
 [Typedef]
 id: RO:0000302
-name: downstream in neural circuit with
-def: "A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next, in which the direction is from the first to the last." []
+name: obsolete downstream in neural circuit with
+def: "OBSOLETE A relation that holds between a neuron that is synapsed_by another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_by the next, in which the direction is from the last to the first." []
+comment: Obsoleted as no longer a useful relationship (all neurons in an organism are in a neural circuit with each other).
 property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000426 "(forall (?x ?y) \n	(iff \n		(downstream_neural_circuit_path  ?x ?y)\n		(and\n			(\"neuron ; CL_0000540\" ?x)\n			(\"neuron ; CL_0000540\" ?y)\n			(synapsed_by ?x ?y))))\n\n\n(forall (...s ?x ?y ?z) \n	(iff \n		(downstream_neural_circuit_path ...s ?x ?y ?z )\n		(and\n			(downstream_neural_circuit_path ...s ?x ?y)\n			(\"neuron ; CL_0000540\" ?z)\n			(synapsed_by ?y ?z))))\n			\n(forall (?x ?y) \n	(iff \n		(downstream_in_neural_circuit_with ?x ?y)\n		(exists (...s)\n			(downstream_neural_circuit_path  ?x ...s ?y)))) \n			" xsd:string
 property_value: RO:0001900 RO:0001901
 is_transitive: true
-is_a: RO:0000300 ! in neural circuit with
+is_obsolete: true
 
 [Typedef]
 id: RO:0001000
@@ -779,7 +778,6 @@ creation_date: 2017-05-24T09:49:21Z
 id: RO:0002019
 name: has ligand
 def: "A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function." []
-domain: GO:0004872
 is_a: RO:0002233 ! has input
 created_by: dos
 creation_date: 2017-07-19T17:30:36Z
@@ -818,7 +816,6 @@ def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003
 comment: This relation is designed for constructing compound molecular functions, typically in combination with one or more regulatory component activity relations.
 is_functional: true
 is_a: RO:0002017 ! has component activity
-is_a: RO:0002211 ! regulates
 created_by: dos
 creation_date: 2017-09-22T14:14:36Z
 
@@ -862,7 +859,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: RO:0001900 RO:0001901
-is_a: RO:0000301 ! upstream in neural circuit with
+is_a: RO:0002485 ! receives input from
 inverse_of: RO:0002120 ! synapsed to
 expand_expression_to: "BFO_0000051 some (GO_0045211 that part_of some (GO_0045202 that has_part some (GO_0042734 that BFO_0000050 some Y?)))" []
 
@@ -892,7 +889,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: RO:0001900 RO:0001901
-is_a: RO:0000302 ! downstream in neural circuit with
+is_a: RO:0002486 ! sends output to
 expand_expression_to: "BFO_0000051 some (GO_0042734 that part_of some (GO_0045202 that BFO_0000051 some (GO_0045211 that BFO_0000050 some Y?)))" []
 
 [Typedef]
@@ -1160,6 +1157,7 @@ holds_over_chain: RO:0002578 RO:0002578
 is_transitive: true
 is_a: RO:0002411 ! causally upstream of
 inverse_of: RO:0002334 ! regulated by
+transitive_over: RO:0002025 ! has effector activity
 
 [Typedef]
 id: RO:0002212
@@ -2100,6 +2098,21 @@ id: RO:0002481
 name: is kinase activity
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002564 ! molecular interaction relation helper property
+
+[Typedef]
+id: RO:0002485
+name: receives input from
+property_value: IAO:0000116 "See notes for inverse relation" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002170 ! connected to
+inverse_of: RO:0002486 ! sends output to
+
+[Typedef]
+id: RO:0002486
+name: sends output to
+property_value: IAO:0000116 "This is an exploratory relation. The label is taken from the FMA. It needs aligned with the neuron-specific relations such as has postsynaptic terminal in." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002170 ! connected to
 
 [Typedef]
 id: RO:0002487

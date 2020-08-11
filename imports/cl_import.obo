@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-06-08/imports/cl_import.owl
+data-version: hp/releases/2020-08-11/imports/cl_import.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 ontology: hp/imports/cl_import
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001067>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0001068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0001909>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002215>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/CL_0001068> (ILC1)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/CL_0001068> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001067> ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0001909>))))\n\n\n)
@@ -1498,6 +1498,31 @@ namespace: cell
 is_a: CL:0000412 ! polyploid cell
 
 [Term]
+id: CL:0000451
+name: dendritic cell
+namespace: cell
+def: "A cell of hematopoietic origin, typically resident in particular tissues, specialized in the uptake, processing, and transport of antigens to lymph nodes for the purpose of stimulating an immune response via T cell activation. These cells are lineage negative (CD3-negative, CD19-negative, CD34-negative, and CD56-negative)." [GOC:add, ISBN:0781735149]
+synonym: "interdigitating cell" RELATED []
+synonym: "veiled cell" RELATED []
+xref: BTO:0002042
+xref: CALOHA:TS-0194
+xref: FMA:83036
+is_a: CL:0000738 {is_inferred="true"} ! leukocyte
+intersection_of: CL:0000738 ! leukocyte
+intersection_of: BFO:0000051 GO:0042613
+intersection_of: lacks_plasma_membrane_part PR:000001002
+intersection_of: lacks_plasma_membrane_part PR:000001003
+intersection_of: lacks_plasma_membrane_part PR:000001020
+intersection_of: lacks_plasma_membrane_part PR:000001024
+intersection_of: lacks_plasma_membrane_part PR:000001289
+intersection_of: RO:0000053 PATO:0001407
+intersection_of: RO:0002215 GO:0001816
+intersection_of: RO:0002215 GO:0002504
+intersection_of: RO:0002215 GO:0019882
+intersection_of: RO:0002215 GO:0045580
+disjoint_from: CL:0000542 ! lymphocyte
+
+[Term]
 id: CL:0000457
 name: biogenic amine secreting cell
 namespace: cell
@@ -2345,6 +2370,59 @@ intersection_of: CL:0000518 ! phagocyte (sensu Vertebrata)
 intersection_of: RO:0000053 PATO:0001908
 
 [Term]
+id: CL:0000785
+name: mature B cell
+namespace: cell
+def: "A B cell that is mature, having left the bone marrow. Initially, these cells are IgM-positive and IgD-positive, and they can be activated by antigen." [GOC:add, GOC:dsd, ISBN:0781735149]
+comment: Mature B cells are also reportedly CD10-negative, CD19-positive, CD22-positive, CD34-negative, CD48-positive, CD79a-positive, CD84-positive, CD127-negative, CD352-positive, RAG-negative, TdT-negative, Vpre-B-negative, and pre-BCR-negative. Transcription factors expressed: Pax5-positive.
+synonym: "mature B lymphocyte" EXACT []
+synonym: "mature B-cell" EXACT []
+synonym: "mature B-lymphocyte" EXACT []
+is_a: CL:0001201 {is_inferred="true"} ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
+intersection_of: has_completed GO:0002335
+intersection_of: RO:0002215 GO:0002504
+intersection_of: RO:0002215 GO:0042113
+disjoint_from: CL:0000816 ! immature B cell
+disjoint_from: CL:0000817 ! precursor B cell
+disjoint_from: CL:0000818 ! transitional stage B cell
+relationship: RO:0002202 CL:0000818 ! transitional stage B cell
+
+[Term]
+id: CL:0000787
+name: memory B cell
+namespace: cell
+def: "A memory B cell is a mature B cell that is long-lived, readily activated upon re-encounter of its antigenic determinant, and has been selected for expression of higher affinity immunoglobulin. This cell type has the phenotype CD19-positive, CD20-positive, MHC Class II-positive, and CD138-negative." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, http://en.wikipedia.org/wiki/Memory_B_cell, ISBN:0781735149, PMID:20081059, PMID:20839338]
+comment: Memory B-cells are also reportedly CD5-negative, CD10-negative, CD21-positive, CD22-positive, CD23-negative, CD24-positive, CD25-positive, CD27-positive, CD34-negative, CD38-negative, CD40-positive, CD43-negative, CD44-positive, CD45-positive, CD53-positive, CD80-negative, CD81-negative, CD86-positive, and CD196/CCR6-positive.
+synonym: "memory B lymphocyte" EXACT []
+synonym: "memory B-cell" EXACT []
+synonym: "memory B-lymphocyte" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: has_completed GO:0002344
+intersection_of: lacks_plasma_membrane_part PR:000001935
+intersection_of: RO:0002104 GO:0042613
+intersection_of: RO:0002104 PR:000001289
+
+[Term]
+id: CL:0000788
+name: naive B cell
+namespace: cell
+def: "A naive B cell is a mature B cell that has the phenotype surface IgD-positive, surface IgM-positive, CD20-positive, CD27-negative and that has not yet been activated by antigen in the periphery." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676, PMID:20081059, PMID:20839338, PMID:20933013, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'naive B cell'. Per DSD: Naive B cells are also reportedly CD10-negative, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD25-negative, CD27-negative, CD34-negative, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD80-negative, CD81-positive, CD84-positive, CD86-negative, CD95-negative, CD138-negative, CD150-positive, CD184/CXCR4-positive, CD185/CXCR5-positive, CD196/CCR6-positive, CD200-positive, CD229-positive, CD243-positive, CD289-positive, CD290-positive, CD352-positive, MHCII/HLA-DR-positive, cadherin 9-positive, and sIgH-positive, Transcription factors: Pax5-positive, ETS1-positive, FOXO1A-positive, KLF4-positive, KLF9-positive, MiTF-positive, OBF1-positive, PLZF-positive, and SpiB-positive.
+synonym: "naive B lymphocyte" EXACT []
+synonym: "naive B-cell" EXACT []
+synonym: "naive B-lymphocyte" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: has_not_completed GO:0002344
+intersection_of: lacks_plasma_membrane_part PR:000001963
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001289
+relationship: RO:0002202 CL:0000818 ! transitional stage B cell
+
+[Term]
 id: CL:0000789
 name: alpha-beta T cell
 namespace: cell
@@ -2355,6 +2433,7 @@ synonym: "alpha-beta T-lymphocyte" EXACT []
 is_a: CL:0000084 {is_inferred="true"} ! T cell
 intersection_of: CL:0000084 ! T cell
 intersection_of: RO:0002104 GO:0042105
+disjoint_from: CL:0000798 ! gamma-delta T cell
 
 [Term]
 id: CL:0000790
@@ -2422,6 +2501,49 @@ synonym: "suppressor T-lymphocyte" BROAD []
 is_a: CL:0000625 {is_inferred="true"} ! CD8-positive, alpha-beta T cell
 intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
 intersection_of: RO:0002215 GO:0050777
+
+[Term]
+id: CL:0000798
+name: gamma-delta T cell
+namespace: cell
+def: "A T cell that expresses a gamma-delta T cell receptor complex." [GOC:add, GOC:tfm, ISBN:0781735149]
+comment: Note that gamma-delta T cells have both thymic and extrathymic differentiation pathways.
+synonym: "gamma-delta T lymphocyte" EXACT []
+synonym: "gamma-delta T-cell" EXACT []
+synonym: "gamma-delta T-lymphocyte" EXACT []
+synonym: "gammadelta T cell" EXACT []
+synonym: "gd T cell" RELATED []
+is_a: CL:0000084 {is_inferred="true"} ! T cell
+intersection_of: CL:0000084 ! T cell
+intersection_of: RO:0002104 GO:0042106
+
+[Term]
+id: CL:0000799
+name: immature gamma-delta T cell
+namespace: cell
+def: "A gamma-delta T cell that has an immature phenotype." [GOC:add, ISBN:0781735149]
+comment: Note that gamma-delta T cells have both thymic and extrathymic differentiation pathways.
+synonym: "immature gamma-delta T lymphocyte" EXACT []
+synonym: "immature gamma-delta T-cell" EXACT []
+synonym: "immature gamma-delta T-lymphocyte" EXACT []
+is_a: CL:0000798 {is_inferred="true"} ! gamma-delta T cell
+intersection_of: CL:0000798 ! gamma-delta T cell
+intersection_of: has_not_completed GO:0042492
+intersection_of: has_not_completed GO:0045058
+relationship: RO:0002202 CL:0000807 ! DN3 thymocyte
+
+[Term]
+id: CL:0000800
+name: mature gamma-delta T cell
+namespace: cell
+def: "A gamma-delta T cell that has a mature phenotype. These cells can be found in tissues and circulation where they express unique TCR repertoire depending on their location." [GOC:add, GOC:tfm, ISBN:0781735149]
+synonym: "mature gamma-delta T lymphocyte" EXACT []
+synonym: "mature gamma-delta T-cell" EXACT []
+synonym: "mature gamma-delta T-lymphocyte" EXACT []
+is_a: CL:0000798 {is_inferred="true"} ! gamma-delta T cell
+intersection_of: CL:0000798 ! gamma-delta T cell
+intersection_of: has_completed GO:0045058
+relationship: RO:0002202 CL:0000799 ! immature gamma-delta T cell
 
 [Term]
 id: CL:0000805
@@ -2565,6 +2687,22 @@ intersection_of: RO:0002104 PR:000025402
 relationship: RO:0002202 CL:0000809 ! double-positive, alpha-beta thymocyte
 
 [Term]
+id: CL:0000813
+name: memory T cell
+namespace: cell
+def: "A long-lived, antigen-experienced T cell that has acquired a memory phenotype including distinct surface markers and the ability to differentiate into an effector T cell upon antigen reexposure." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, ISBN:0781735149]
+synonym: "memory T lymphocyte" EXACT []
+synonym: "memory T-cell" EXACT []
+synonym: "memory T-lymphocyte" EXACT []
+xref: BTO:0003435
+is_a: CL:0002419 {is_inferred="true"} ! mature T cell
+intersection_of: CL:0002419 ! mature T cell
+intersection_of: has_completed GO:0002286
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: RO:0000053 PATO:0001603
+disjoint_from: CL:0000898 ! naive T cell
+
+[Term]
 id: CL:0000815
 name: regulatory T cell
 namespace: cell
@@ -2585,6 +2723,24 @@ intersection_of: CL:0002419 ! mature T cell
 intersection_of: RO:0002215 GO:0050777
 
 [Term]
+id: CL:0000816
+name: immature B cell
+namespace: cell
+def: "An immature B cell is a B cell that has the phenotype surface IgM-positive and surface IgD-negative, and have not undergone class immunoglobulin class switching or peripheral encounter with antigen and activation." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, GOC:tfm, ISBN:0781735149, PMID:20081059, PMID:20839338]
+comment: Immature B cells are also reportedly CD5-positive, CD10-positive, CD19-positive, CD20-positive, CD21-positive, CD22-positive, CD24-positive, CD25-negative, CD27-negative, CD34-negative, CD38-positive, CD40-positive, CD43-negative, CD45-positive, CD48-positive, CD53-positive, CD79a-positive, CD80-negative, CD81-positive, CD86-negative, CD95-negative, CD127-negative, CD138-negative, CD185-positive, CD196-positive, MHCII/HLA-DR-positive, RAG-positive, TdT-negative, Vpre-B-negative, and preBCR-negative. Transcription factors expressed: Pax5-positive.
+synonym: "immature B lymphocyte" EXACT []
+synonym: "immature B-cell" EXACT []
+synonym: "immature B-lymphocyte" EXACT []
+synonym: "newly formed B cell" EXACT [ISBN:781735149]
+is_a: CL:0001201 ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
+intersection_of: has_not_completed GO:0045190
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001289
+relationship: RO:0002202 CL:0000954 ! small pre-B-II cell
+
+[Term]
 id: CL:0000817
 name: precursor B cell
 namespace: cell
@@ -2597,6 +2753,108 @@ intersection_of: CL:0001201 ! B cell, CD19-positive
 intersection_of: lacks_plasma_membrane_part GO:0071753
 intersection_of: RO:0002104 PR:000001898
 disjoint_from: CL:0000826 ! pro-B cell
+
+[Term]
+id: CL:0000818
+name: transitional stage B cell
+namespace: cell
+def: "An immature B cell of an intermediate stage between the pre-B cell stage and the mature naive stage with the phenotype surface IgM-positive and CD19-positive, and are subject to the process of B cell selection. A transitional B cell migrates from the bone marrow into the peripheral circulation, and then to the spleen." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12810111, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'transitional B cell'.
+synonym: "T1 B cell" NARROW []
+synonym: "T2 B cell" NARROW []
+synonym: "T3 B cell" NARROW []
+synonym: "transitional B cell" EXACT [PMID:22343568]
+synonym: "transitional stage B lymphocyte" EXACT []
+synonym: "transitional stage B-cell" EXACT []
+synonym: "transitional stage B-lymphocyte" EXACT []
+is_a: CL:0001201 {is_inferred="true"} ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
+intersection_of: has_high_plasma_membrane_amount PR:000001408
+intersection_of: has_high_plasma_membrane_amount PR:000001932
+intersection_of: has_not_completed GO:0002335
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001289
+relationship: RO:0002202 CL:0000816 ! immature B cell
+
+[Term]
+id: CL:0000819
+name: B-1 B cell
+namespace: cell
+def: "A B cell of distinct lineage and surface marker expression. B-1 B cells are thought to be the primary source of natural IgM immunoglobulin, that is, IgM produced in large quantities without prior antigenic stimulation and generally reactive against various microorganisms, as well as the source of T-independent IgA immunoglobulin in the mucosal areas. These cells are CD43-positive." [GO_REF:0000031, GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/B-1_cell, PMID:11861604, PMID:20933013, PMID:21220451]
+comment: There are small numbers of B-1 cells found in the lymph nodes and spleen, while larger numbers can be found in the peritoneal and pleural cavities. B-1 B cells are reportedly CD11b-positive, CD20-positive, CD21-positive, CD27-positive, CD44-positive, CD45RB-positive, CD48-positive, CD70-negative, CD150-positive, CD244-negative, CD352-positive, sIgM-positive, and sIgD-low.
+synonym: "B-1 B lymphocyte" EXACT []
+synonym: "B-1 B-cell" EXACT []
+synonym: "B-1 B-lymphocyte" EXACT []
+synonym: "B-1 cell" EXACT []
+synonym: "B1 B cell" EXACT []
+synonym: "B1 B lymphocyte" EXACT []
+synonym: "B1 B-cell" EXACT []
+synonym: "B1 B-lymphocyte" EXACT []
+synonym: "B1 cell" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: has_high_plasma_membrane_amount GO:0071753
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001289
+intersection_of: RO:0002104 PR:000001879
+intersection_of: RO:0002215 GO:0045087
+
+[Term]
+id: CL:0000820
+name: B-1a B cell
+namespace: cell
+def: "A B-1 B cell that has the phenotype CD5-positive." [GOC:add, PMID:11861604]
+synonym: "B-1a B lymphocyte" EXACT []
+synonym: "B-1a B-cell" EXACT []
+synonym: "B-1a B-lymphocyte" EXACT []
+synonym: "B1a B cell" EXACT []
+synonym: "B1a B lymphocyte" EXACT []
+synonym: "B1a B-cell" EXACT []
+synonym: "B1a B-lymphocyte" EXACT []
+synonym: "B1a cell" EXACT []
+synonym: "CD5(+) B1 cell" EXACT []
+synonym: "CD5+ B1 cell" EXACT []
+synonym: "CD5-positive B1 cell" EXACT []
+is_a: CL:0000819 {is_inferred="true"} ! B-1 B cell
+intersection_of: CL:0000819 ! B-1 B cell
+intersection_of: RO:0002104 PR:000001839
+
+[Term]
+id: CL:0000821
+name: B-1b B cell
+namespace: cell
+def: "A B-1 B cell that has the phenotype CD5-negative, but having other phenotypic attributes of a B-1 B cell." [GOC:add, PMID:11861604]
+synonym: "B-1b B lymphocyte" EXACT []
+synonym: "B-1b B-cell" EXACT []
+synonym: "B-1b B-lymphocyte" EXACT []
+synonym: "B1b B cell" EXACT []
+synonym: "B1b B lymphocyte" EXACT []
+synonym: "B1b B-cell" EXACT []
+synonym: "B1b B-lymphocyte" EXACT []
+synonym: "B1b cell" EXACT []
+is_a: CL:0000819 {is_inferred="true"} ! B-1 B cell
+intersection_of: CL:0000819 ! B-1 B cell
+intersection_of: lacks_plasma_membrane_part PR:000001839
+
+[Term]
+id: CL:0000822
+name: B-2 B cell
+namespace: cell
+def: "A conventional B cell subject to antigenic stimulation and dependent on T cell help and with a distinct surface marker expression pattern from B-1 B cells. These cells are CD43-negative." [GOC:add, GOC:dsd, GOC:tfm, ISBN:0781735149, PMID:11861604, PMID:20933013]
+comment: B-2 B cells are reportedly CD48-positive, CD244-negative, and CD352-positive.
+synonym: "B-0 B cell" RELATED []
+synonym: "B-2 B lymphocyte" EXACT []
+synonym: "B-2 B-cell" EXACT []
+synonym: "B-2 B-lymphocyte" EXACT []
+synonym: "B2 B cell" EXACT []
+synonym: "B2 B lymphocyte" EXACT []
+synonym: "B2 B-cell" EXACT []
+synonym: "B2 B-lymphocyte" EXACT []
+synonym: "B2 cell" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: lacks_plasma_membrane_part PR:000001879
+intersection_of: RO:0002104 PR:000001289
 
 [Term]
 id: CL:0000823
@@ -2821,6 +3079,70 @@ intersection_of: CL:0000738 ! leukocyte
 intersection_of: RO:0000053 PATO:0001407
 
 [Term]
+id: CL:0000843
+name: follicular B cell
+namespace: cell
+def: "A resting mature B cell that has the phenotype IgM-positive, IgD-positive, CD23-positive and CD21-positive, and found in the B cell follicles of the white pulp of the spleen or the corticol areas of the peripheral lymph nodes. This cell type is also described as being CD19-positive, B220-positive, AA4-negative, CD43-negative, and CD5-negative." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Follicular_B_Cells, ISBN:0781735149, PMCID:PMC2193793, PMID:20933013]
+comment: Follicular B cells are also reportedly CD48-positive, CD84-positive, CD229-positive, and CD352-positive.
+synonym: "Fo B cell" EXACT []
+synonym: "Fo B-cell" EXACT []
+synonym: "follicular B lymphocyte" EXACT []
+synonym: "follicular B-cell" EXACT []
+synonym: "follicular B-lymphocyte" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: lacks_plasma_membrane_part PR:000001839
+intersection_of: lacks_plasma_membrane_part PR:000001879
+intersection_of: lacks_plasma_membrane_part PR:000002037
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001289
+intersection_of: RO:0002104 PR:000001338
+
+[Term]
+id: CL:0000844
+name: germinal center B cell
+namespace: cell
+def: "A rapidly cycling mature B cell that has distinct phenotypic characteristics and is involved in T-dependent immune responses and located typically in the germinal centers of lymph nodes. This cell type expresses Ly77 after activation." [GOC:add, GOC:dsd, GOC:tfm, ISBN:0781735149, PMID:19447676, PMID:20933013]
+comment: Germinal center B cells are also reportedly CD10-positive, CD19-positive, CD20-positive, CD38-positive, CD44-low, CD45-positive, CD48-positive, CD95-positive, CD352-positive, and HLA-DR-positive. Transcription factors: BCL6-positive, Ets1-positive, IRF8-positive, MTA3-positive, OBF1-positive, PAX5-positive, SpiB-positive, and STAT3-positive.
+synonym: "GC B cell" EXACT []
+synonym: "GC B lymphocyte" EXACT []
+synonym: "GC B-cell" EXACT []
+synonym: "GC B-lymphocyte" EXACT []
+synonym: "germinal center B lymphocyte" EXACT []
+synonym: "germinal center B-cell" EXACT []
+synonym: "germinal center B-lymphocyte" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: BFO:0000050 UBERON:0001745
+intersection_of: RO:0002104 PR:000001289
+relationship: RO:0002202 CL:0000843 ! follicular B cell
+
+[Term]
+id: CL:0000845
+name: marginal zone B cell
+namespace: cell
+def: "A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD35-high." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Marginal-zone_B_cell, ISBN:0781735149, PMID:10933592, PMID:20933013]
+comment: MZ B cells are reportedly CD1-positive (mice), CD20-positive, CD48-positive, CD84-positive, CD150-positive, CD229-positive, and CD352-positive.
+synonym: "marginal zone B lymphocyte" EXACT []
+synonym: "marginal zone B-cell" EXACT []
+synonym: "marginal zone B-lymphocyte" EXACT []
+synonym: "MZ B cell" EXACT []
+synonym: "MZ B lymphocyte" EXACT []
+synonym: "MZ B-cell" EXACT []
+synonym: "MZ B-lymphocyte" EXACT []
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: BFO:0000050 UBERON:0001251
+intersection_of: has_high_plasma_membrane_amount GO:0071753
+intersection_of: lacks_plasma_membrane_part PR:000001880
+intersection_of: lacks_plasma_membrane_part PR:000002037
+intersection_of: RO:0002104 PR:000001289
+intersection_of: RO:0002104 PR:000001338
+intersection_of: RO:0002215 GO:0042742
+
+[Term]
 id: CL:0000860
 name: classical monocyte
 namespace: cell
@@ -2989,6 +3311,22 @@ intersection_of: RO:0002104 PR:000001380
 relationship: RO:0002202 CL:0000895 ! naive thymus-derived CD4-positive, alpha-beta T cell
 
 [Term]
+id: CL:0000897
+name: CD4-positive, alpha-beta memory T cell
+namespace: cell
+def: "A CD4-positive, alpha-beta T cell that has differentiated into a memory T cell." [GOC:add, http://www.immgen.org/index_content.html, ISBN:0781735149]
+synonym: "CD4-positive, alpha-beta memory T lymphocyte" EXACT []
+synonym: "CD4-positive, alpha-beta memory T-cell" EXACT []
+synonym: "CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "T4.Mem.Sp" RELATED []
+is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
+intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
+intersection_of: has_completed GO:0002286
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: RO:0000053 PATO:0001603
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
+
+[Term]
 id: CL:0000898
 name: naive T cell
 namespace: cell
@@ -3027,6 +3365,46 @@ intersection_of: RO:0002104 PR:000001869
 relationship: RO:0002202 CL:0002437 ! mature CD8 single-positive thymocyte
 
 [Term]
+id: CL:0000904
+name: central memory CD4-positive, alpha-beta T cell
+namespace: cell
+def: "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'central memory CD4+ T cell', but includes additional markers known to be expressed on central memory CD4+ T cells.
+synonym: "central CD4-positive, alpha-beta memory T cell" EXACT []
+synonym: "central CD4-positive, alpha-beta memory T lymphocyte" EXACT []
+synonym: "central CD4-positive, alpha-beta memory T-cell" EXACT []
+synonym: "central CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "central memory CD4+ T cell" BROAD [PMID:22343568]
+synonym: "central memory CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "central memory CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "central memory CD4-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0001204 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001204 ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: lacks_plasma_membrane_part PR:000001015
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: RO:0002104 PR:000001203
+
+[Term]
+id: CL:0000905
+name: effector memory CD4-positive, alpha-beta T cell
+namespace: cell
+def: "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'effector memory CD4+ T cell', but includes additional markers known to be expressed on effector memory CD4+ T cells.
+synonym: "effector CD4-positive, alpha-beta memory T cell" EXACT []
+synonym: "effector CD4-positive, alpha-beta memory T lymphocyte" EXACT []
+synonym: "effector CD4-positive, alpha-beta memory T-cell" EXACT []
+synonym: "effector CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "effector memory CD4+ T cell" BROAD [PMID:22343568]
+synonym: "effector memory CD4-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "effector memory CD4-positive, alpha-beta T-cell" EXACT []
+synonym: "effector memory CD4-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0001204 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001204 ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: lacks_plasma_membrane_part PR:000001015
+intersection_of: lacks_plasma_membrane_part PR:000001203
+intersection_of: lacks_plasma_membrane_part PR:000001380
+
+[Term]
 id: CL:0000906
 name: activated CD8-positive, alpha-beta T cell
 namespace: cell
@@ -3042,6 +3420,26 @@ intersection_of: lacks_plasma_membrane_part PR:000001869
 intersection_of: RO:0002104 PR:000001343
 intersection_of: RO:0002104 PR:000001380
 relationship: RO:0002202 CL:0000900 ! naive thymus-derived CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0000907
+name: central memory CD8-positive, alpha-beta T cell
+namespace: cell
+def: "CD8-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:20146720, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'central memory CD8+ T cell', but includes additional markers known to be expressed on central memory CD8+ T cells.
+synonym: "central CD8-positive, alpha-beta memory T cell" EXACT []
+synonym: "central CD8-positive, alpha-beta memory T lymphocyte" EXACT []
+synonym: "central CD8-positive, alpha-beta memory T-cell" EXACT []
+synonym: "central CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "central memory CD8+ T cell" BROAD [PMID:22343568]
+synonym: "central memory CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "central memory CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "central memory CD8-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0001203 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001203 ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: lacks_plasma_membrane_part PR:000001015
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: RO:0002104 PR:000001203
 
 [Term]
 id: CL:0000908
@@ -3060,6 +3458,21 @@ intersection_of: RO:0002104 PR:000001343
 intersection_of: RO:0002104 PR:000001380
 intersection_of: RO:0002215 GO:0001816
 relationship: RO:0002202 CL:0000906 ! activated CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0000909
+name: CD8-positive, alpha-beta memory T cell
+namespace: cell
+def: "A CD8-positive, alpha-beta T cell that has differentiated into a memory T cell." [GOC:add, PMID:20146720]
+synonym: "CD8-positive, alpha-beta memory T lymphocyte" EXACT []
+synonym: "CD8-positive, alpha-beta memory T-cell" EXACT []
+synonym: "CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "T.8Mem.Sp" RELATED []
+intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
+intersection_of: has_completed GO:0002286
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: RO:0000053 PATO:0001603
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
 
 [Term]
 id: CL:0000911
@@ -3088,6 +3501,26 @@ xref: BTO:0002417
 is_a: CL:0000911 {is_inferred="true"} ! effector T cell
 intersection_of: CL:0000911 ! effector T cell
 intersection_of: RO:0002215 GO:0001816
+
+[Term]
+id: CL:0000913
+name: effector memory CD8-positive, alpha-beta T cell
+namespace: cell
+def: "CD8-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative." [GO_REF:0000031, GOC:add, GOC:pam, PMID:20146720, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'effector memory CD8+ T cell', but includes additional markers known to be expressed on effector memory CD8+ T cells.
+synonym: "effector CD8-positive, alpha-beta memory T cell" EXACT []
+synonym: "effector CD8-positive, alpha-beta memory T lymphocyte" EXACT []
+synonym: "effector CD8-positive, alpha-beta memory T-cell" EXACT []
+synonym: "effector CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
+synonym: "effector memory CD8+ T cell" BROAD [PMID:22343568]
+synonym: "effector memory CD8-positive, alpha-beta T lymphocyte" EXACT []
+synonym: "effector memory CD8-positive, alpha-beta T-cell" EXACT []
+synonym: "effector memory CD8-positive, alpha-beta T-lymphocyte" EXACT []
+is_a: CL:0001203 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001203 ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: lacks_plasma_membrane_part PR:000001015
+intersection_of: lacks_plasma_membrane_part PR:000001203
+intersection_of: lacks_plasma_membrane_part PR:000001380
 
 [Term]
 id: CL:0000936
@@ -3141,6 +3574,421 @@ def: "A lymphocyte of B lineage that is devoted to secreting large amounts of im
 is_a: CL:0000945 {is_inferred="true"} ! lymphocyte of B lineage
 intersection_of: CL:0000945 ! lymphocyte of B lineage
 intersection_of: RO:0003000 GO:0042571
+
+[Term]
+id: CL:0000948
+name: IgE memory B cell
+namespace: cell
+def: "A class switched memory B cell that expresses IgE on the cell surface." [GO_REF:0000031, GOC:rhs, ISBN:0781765196]
+synonym: "IgE memory B lymphocyte" EXACT []
+synonym: "IgE memory B-cell" EXACT []
+synonym: "IgE memory B-lymphocyte" EXACT []
+synonym: "memory IgE B cell" EXACT []
+synonym: "memory IgE B lymphocyte" EXACT []
+synonym: "memory IgE B-cell" EXACT []
+synonym: "memory IgE B-lymphocyte" EXACT []
+is_a: CL:0000972 {is_inferred="true"} ! class switched memory B cell
+intersection_of: CL:0000972 ! class switched memory B cell
+intersection_of: RO:0002104 GO:0071742
+
+[Term]
+id: CL:0000949
+name: IgD plasmablast
+namespace: cell
+def: "A plasmablast that secretes IgD, and which occur in a small proportion of B cells in the adult." [GO_REF:0000031, GOC:msz]
+is_a: CL:0000980 {is_inferred="true"} ! plasmablast
+intersection_of: CL:0000980 ! plasmablast
+intersection_of: RO:0003000 GO:0071739
+
+[Term]
+id: CL:0000950
+name: IgE plasmablast
+namespace: cell
+def: "A plasmablast that secretes IgE." [GO_REF:0000031, GOC:msz]
+is_a: CL:0000980 {is_inferred="true"} ! plasmablast
+intersection_of: CL:0000980 ! plasmablast
+intersection_of: RO:0003000 GO:0071743
+
+[Term]
+id: CL:0000952
+name: preBCR-positive large pre-B-II cell
+namespace: cell
+def: "An preBRC-positive large pre-B-II cell is a large pre-B-II cell that is pre-B cell receptor-positive, composed of surrogate light chain protein (SL), which is composed of VpreB , Lambda 5/14.1, in complex with immunoglobulin mu heavy chain (IgHmu) on the cell surface." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
+is_a: CL:0000957 {is_inferred="true"} ! large pre-B-II cell
+intersection_of: CL:0000957 ! large pre-B-II cell
+intersection_of: has_not_completed GO:0071708
+intersection_of: RO:0002104 GO:0035369
+intersection_of: RO:0002104 PR:000001858
+intersection_of: RO:0002104 PR:000001859
+
+[Term]
+id: CL:0000953
+name: preBCR-negative large pre-B-II cell
+namespace: cell
+def: "A pre-BCR-negative large pre-B-II cell is a large pre-B-II cell that is pre-B cell receptor-negative, composed of surrogate light chain protein (SL), which is composed of VpreB and Lambda 5/14.1, in complex with immunoglobulin mu heavy chain (IgHmu), on the cell surface, and lack a DNA rearrangement of immunoglobulin light chain genes." [GO_REF:0000031, GOC:rhs, GOC:tfm, PMID:9785673]
+is_a: CL:0000957 {is_inferred="true"} ! large pre-B-II cell
+intersection_of: CL:0000957 ! large pre-B-II cell
+intersection_of: has_not_completed GO:0071708
+intersection_of: lacks_plasma_membrane_part GO:0035369
+intersection_of: lacks_plasma_membrane_part PR:000001858
+intersection_of: lacks_plasma_membrane_part PR:000001859
+
+[Term]
+id: CL:0000954
+name: small pre-B-II cell
+namespace: cell
+def: "A small pre-B-II cell is a pre-B-II cell that is Rag1-positive, Rag2-positive, pre-BCR-negative, and BCR-negative, is not proliferating, and carries a DNA rearrangement of one or more immunoglobulin light chain genes." [GO_REF:0000031, GOC:dsd, GOC:rhs, GOC:tfm, PMID:16551251, PMID:18432934, PMID:9785673]
+comment: Small pre-B-II cells are also reportedly CD10-positive, CD19-positive, CD34-negative, CD79a-positive, CD127-negative, TdT-negative, Vpre-B-negative, sIgM-negative, and sIgD-negative. Transcription factors: PU.1-positive, Ikaros-positive, E2A-positive, and PAX5-positive.
+synonym: "small pre-BII cell" EXACT []
+is_a: CL:0000955 {is_inferred="true"} ! pre-B-II cell
+intersection_of: CL:0000955 ! pre-B-II cell
+intersection_of: BFO:0000051 PR:000003457
+intersection_of: BFO:0000051 PR:000003460
+intersection_of: lacks_plasma_membrane_part GO:0019815
+intersection_of: lacks_plasma_membrane_part GO:0035369
+intersection_of: RO:0000056 GO:0071708
+
+[Term]
+id: CL:0000955
+name: pre-B-II cell
+namespace: cell
+def: "A pre-B-II cell is a precursor B cell that expresses immunoglobulin mu heavy chain (IgHmu+), and lack expression of CD34, TdT, immunoglobulin kappa light chain and immunoglobulin lambda light chain." [GO_REF:0000031, GOC:dsd, GOC:rhs, GOC:tfm, PMID:9785673]
+comment: pre-B-II cell are also reportedly CD19-positive, CD22-positive, CD38-positive, CD45-positive, and CD48-positive.
+synonym: "pre-B-lymphocyte" EXACT []
+synonym: "pre-BII cell" EXACT []
+xref: BTO:0001133
+xref: CALOHA:TS-0819
+is_a: CL:0000817 {is_inferred="true"} ! precursor B cell
+intersection_of: CL:0000817 ! precursor B cell
+intersection_of: has_completed GO:0071707
+intersection_of: lacks_part PR:000006611
+intersection_of: lacks_plasma_membrane_part PR:000001003
+disjoint_from: CL:0000956 ! pre-B-I cell
+relationship: RO:0002202 CL:0000826 ! pro-B cell
+
+[Term]
+id: CL:0000956
+name: pre-B-I cell
+namespace: cell
+def: "A pre-B-I cell is a precursor B cell that expresses CD34 and surrogate immunoglobulin light chain (VpreB , Lambda 5 (mouse)/14.1 (human)) on the cell surface, and TdT, Rag1,and Rag2 intracellularly. Cell type carries a D-JH DNA rearrangement, and lacks expression of immunglobulin heavy chain protein." [GO_REF:0000031, GOC:dsd, GOC:rhs, GOC:tfm, PMID:16551251, PMID:18432934, PMID:20839338, PMID:9785673]
+comment: Human pre-B-I cells are reportedly CD10-positive, CD19-positive, CD22-positive, CD38-positive, CD45-low, CD79a-positive, CD127-negative, pre-BCR-negative, IgM-negative, IgD-negative, and Tdt-positive. Transcription factors expressed: Pax5-positive.
+synonym: "pre-BI cell" EXACT []
+synonym: "pro-B cell (Philadelphia nomenclature)" RELATED [PMID:11244048]
+is_a: CL:0000817 {is_inferred="true"} ! precursor B cell
+intersection_of: CL:0000817 ! precursor B cell
+intersection_of: BFO:0000051 PR:000003457
+intersection_of: BFO:0000051 PR:000003460
+intersection_of: BFO:0000051 PR:000006611
+intersection_of: RO:0000056 GO:0071707
+intersection_of: RO:0002104 PR:000001003
+intersection_of: RO:0002104 PR:000001858
+intersection_of: RO:0002104 PR:000001859
+relationship: RO:0002202 CL:0000826 ! pro-B cell
+
+[Term]
+id: CL:0000957
+name: large pre-B-II cell
+namespace: cell
+def: "A large pre-B-II cell is a pre-B-II cell that is proliferating and is Rag1-negative and Rag2-negative." [GO_REF:0000031, GOC:dsd, GOC:rhs, PMID:16551251, PMID:18432934, PMID:9785673]
+comment: Large pre-B-II cells are also reportedly CD10-positive, CD19-positive, CD34-negative, CD79a-positive, CD127-negative, TdT-negative, Vpre-B-positive, pre-BCR-positive, sIgM-negative, and sIgD-negative. Transcription factors: PU.1-positive, Ikaros-positive, E2A-positive, and PAX5-positive.
+synonym: "large pre-B cell" BROAD [PMID:11244048]
+synonym: "large pre-BII cell" EXACT []
+is_a: CL:0000955 {is_inferred="true"} ! pre-B-II cell
+intersection_of: CL:0000955 ! pre-B-II cell
+intersection_of: lacks_part PR:000003457
+intersection_of: lacks_part PR:000003460
+intersection_of: RO:0000056 GO:0046651
+
+[Term]
+id: CL:0000958
+name: T1 B cell
+namespace: cell
+def: "A transitional stage B cell that migrates from the bone marrow into the peripheral circulation, and finally to the spleen. This cell type has the phenotype surface IgM-positive, surface IgD-negative, CD21-negative, CD23-negative, and CD62L-negative, and CD93-positive. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2193793, PMID:12810111]
+comment: T1 B cells are also reportedly CD10-negative/positive??, CD20-positive, CD24-positive, CD38-positive, CD48-positive, CD84-positive, CD150-positive, CD244-negative, and CD352-positive.
+synonym: "T1 B lymphocyte" EXACT []
+synonym: "T1 B-cell" EXACT []
+synonym: "T1 B-lymphocyte" EXACT []
+synonym: "transitional stage 1 B cell" EXACT []
+is_a: CL:0000818 {is_inferred="true"} ! transitional stage B cell
+intersection_of: CL:0000818 ! transitional stage B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: lacks_plasma_membrane_part PR:000001318
+intersection_of: lacks_plasma_membrane_part PR:000001338
+intersection_of: lacks_plasma_membrane_part PR:000001880
+intersection_of: RO:0002104 PR:000002037
+
+[Term]
+id: CL:0000959
+name: T2 B cell
+namespace: cell
+def: "A transitional stage B cell that has the phenotype surface IgM-positive, surface IgD-postive, CD21-positive, CD23-positive, CD62L-negative, CD93-positive and is located in the splenic B follicles. This cell type has also been described as IgM-high, CD19-positive, B220-positive, AA4-positive, and CD23-positive." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2193793, PMID:12810111]
+comment: T2 B cells are also reportedly CD20-positive, CD24-positive, CD38-positive, CD48-positive, CD84-positive, CD150-positive, CD244-negative, and CD352-positive.
+synonym: "T2 B lymphocyte" EXACT []
+synonym: "T2 B-cell" EXACT []
+synonym: "T2 B-lymphocyte" EXACT []
+synonym: "transitional stage 2 B cell" EXACT []
+is_a: CL:0000818 {is_inferred="true"} ! transitional stage B cell
+intersection_of: CL:0000818 ! transitional stage B cell
+intersection_of: lacks_plasma_membrane_part PR:000001318
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001338
+intersection_of: RO:0002104 PR:000001880
+intersection_of: RO:0002104 PR:000002037
+relationship: RO:0002202 CL:0000958 ! T1 B cell
+
+[Term]
+id: CL:0000961
+name: Bm1 B cell
+namespace: cell
+def: "A follicular B cell that is IgD-positive, CD23-negative, and CD38-negative. This naive cell type is activated in the extrafollicular areas through interaction with interdigitating dendritic cells and antigen-specific CD4-positive T cells." [GO_REF:0000031, GOC:dsd, GOC:msz, PMID:17992590, PMID:18432934, PMID:8006591]
+comment: These cells are also reportedly CD10-negative, CD39-positive, CD44-positive, CD71-negative, CD77-negative, IgM-positive, IgG-negative, IgA-negative, and IgE-negative.
+synonym: "Bm1 B lymphocyte" EXACT []
+synonym: "Bm1 B-cell" EXACT []
+synonym: "Bm1 B-lymphocyte" EXACT []
+is_a: CL:0000843 {is_inferred="true"} ! follicular B cell
+intersection_of: CL:0000843 ! follicular B cell
+intersection_of: lacks_plasma_membrane_part PR:000001408
+intersection_of: lacks_plasma_membrane_part PR:000001880
+intersection_of: RO:0002104 GO:0071738
+relationship: RO:0002202 CL:0000818 ! transitional stage B cell
+
+[Term]
+id: CL:0000962
+name: Bm2 B cell
+namespace: cell
+def: "A follicular B cell that is IgD-positive and CD23-positive and CD38-positive. This naive cell type is activated in the extrafollicular areas via interaction with dendritic cells and antigen specific T cells." [GO_REF:0000031, GOC:dsd, GOC:msz, PMID:17992590, PMID:18432934, PMID:8006591]
+comment: These cells are also CD10-negative, CD39-positive, CD44-positive, CD71-negative, CD77-negative, IgM-positive, IgG-negative, IgA-negative, and IgE-negative.
+synonym: "Bm2 B lymphocyte" EXACT []
+synonym: "Bm2 B-cell" EXACT []
+synonym: "Bm2 B-lymphocyte" EXACT []
+is_a: CL:0000843 {is_inferred="true"} ! follicular B cell
+intersection_of: CL:0000843 ! follicular B cell
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 PR:000001408
+intersection_of: RO:0002104 PR:000001880
+relationship: RO:0002202 CL:0000961 ! Bm1 B cell
+
+[Term]
+id: CL:0000963
+name: Bm3-delta B cell
+namespace: cell
+def: "A germinal center B cell that develops from a Bm3 B cell. This cell has the phenotype IgM-negative, IgD-positive, and CD38-positive." [GO_REF:0000031, GOC:add, GOC:msz, GOC:tfm, PMID:9280752]
+synonym: "Bm3-delta B lymphocyte" EXACT []
+synonym: "Bm3-delta B-cell" EXACT []
+synonym: "Bm3-delta B-lymphocyte" EXACT []
+is_a: CL:0000844 {is_inferred="true"} ! germinal center B cell
+intersection_of: CL:0000844 ! germinal center B cell
+intersection_of: lacks_plasma_membrane_part GO:0071753
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 PR:000001408
+relationship: RO:0002202 CL:0000965 ! Bm3 B cell
+
+[Term]
+id: CL:0000964
+name: Bm2' B cell
+namespace: cell
+def: "A germinal center B cell that founds a germinal center, and has the phenotype IgD-positive, CD38-positive, and CD23-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMID:17992590, PMID:18432934, PMID:8006591]
+comment: Bm2' B cells are also reportedly CD10-positive, CD39-negative, CD44-negative, CD71-positive, CD77-negative, IgM-positive, IgG-negative, IgA-negative, and IgE-negative.
+synonym: "Bm2' B lymphocyte" EXACT []
+synonym: "Bm2' B-cell" EXACT []
+synonym: "Bm2-prime B cell" EXACT []
+synonym: "Bm2-prime B-lymphocyte" EXACT []
+synonym: "germinal center founder cell" RELATED []
+is_a: CL:0000844 {is_inferred="true"} ! germinal center B cell
+intersection_of: CL:0000844 ! germinal center B cell
+intersection_of: lacks_plasma_membrane_part PR:000001880
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 PR:000001408
+intersection_of: RO:0002215 GO:0002634
+relationship: RO:0002202 CL:0000962 ! Bm2 B cell
+
+[Term]
+id: CL:0000965
+name: Bm3 B cell
+namespace: cell
+def: "A germinal center B cell that is rapidly dividing and has the phenotype IgD-negative, CD38-positive, and CD77-positive. Somatic hypermutation of the immunoglobulin V gene region can occur during proliferation of this cell type." [GO_REF:0000031, GOC:dsd, GOC:msz, PMID:18432934, PMID:8006591]
+comment: Bm3 B cells are also reportedly CD10-positive, CD23-negative, CD39-negative, CD44-negative, CD71-positive, and CD77-positive.
+synonym: "Bm3 B lymphocyte" EXACT []
+synonym: "Bm3 B-cell" EXACT []
+synonym: "Bm3 B-lymphocyte" EXACT []
+synonym: "centroblast" RELATED [PMID:8006591]
+is_a: CL:0000844 {is_inferred="true"} ! germinal center B cell
+intersection_of: CL:0000844 ! germinal center B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: RO:0002104 PR:000001408
+intersection_of: RO:0002104 PR:000003516
+intersection_of: RO:0002215 GO:0016446
+relationship: RO:0002202 CL:0000964 ! Bm2' B cell
+
+[Term]
+id: CL:0000966
+name: Bm4 B cell
+namespace: cell
+def: "A germinal center B cell that has the phenotype CD77-negative, IgD-negative, and CD38-positive. These cells have undergone somatic mutation of the B cell receptor." [GO_REF:0000031, GOC:dsd, GOC:msz, PMID:18432934, PMID:8006591]
+comment: Bm4 B cells are also reportedly CD10-positive, CD23-negative, CD39-negative, CD44-positive, and CD71-positive.
+synonym: "Bm4 B lymphocyte" EXACT []
+synonym: "Bm4 B-cell" EXACT []
+synonym: "Bm4 B-lymphocyte" EXACT []
+synonym: "centrocyte" RELATED [PMID:17992590]
+is_a: CL:0000844 {is_inferred="true"} ! germinal center B cell
+intersection_of: CL:0000844 ! germinal center B cell
+intersection_of: has_completed GO:0016446
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: lacks_plasma_membrane_part PR:000003516
+intersection_of: RO:0002104 PR:000001408
+relationship: RO:0002202 CL:0000963 ! Bm3-delta B cell
+
+[Term]
+id: CL:0000970
+name: unswitched memory B cell
+namespace: cell
+def: "An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive, IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'IgD+ memory B cell'. Per DSD: Unswitched memory B cells are also reportedly CD48-positive, CD84-positive, CD229-positive, and CD352-positive.
+synonym: "IgD+ memory B cell" BROAD [PMID:22343568]
+synonym: "non-class-switched memory B cell" EXACT [HP:0032126]
+synonym: "unswitched memory B lymphocyte" EXACT []
+synonym: "unswitched memory B-cell" EXACT []
+synonym: "unswitched memory B-lymphocyte" EXACT []
+is_a: CL:0000787 {is_inferred="true"} ! memory B cell
+intersection_of: CL:0000787 ! memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071735
+intersection_of: lacks_plasma_membrane_part GO:0071742
+intersection_of: lacks_plasma_membrane_part GO:0071745
+intersection_of: lacks_plasma_membrane_part PR:000001935
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001963
+relationship: RO:0002202 CL:0000980 ! plasmablast
+
+[Term]
+id: CL:0000971
+name: IgM memory B cell
+namespace: cell
+def: "An IgM memory B cell is an unswitched memory B cell with the phenotype IgM-positive and IgD-negative." [GO_REF:0000031, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:19447676]
+comment: IgM memory B cells are also reportedly CD1c-positive, CD95-positive, CD80-positive, CD84-positive, CD86-positive, CD150-negative, CD229-positive, CD289-positive, and CD290-positive. Transcription factors: Notch2-positive, PAX5-positive, SpiB-positive, Ets1-positive, and OBF1-positive.
+synonym: "IgM memory B lymphocyte" EXACT []
+synonym: "IgM memory B-cell" EXACT []
+synonym: "IgM memory B-lymphocyte" EXACT []
+synonym: "memory IgM B cell" EXACT []
+synonym: "memory IgM B lymphocyte" EXACT []
+synonym: "memory IgM B-cell" EXACT []
+synonym: "memory IgM B-lymphocyte" EXACT []
+is_a: CL:0000787 ! memory B cell
+intersection_of: CL:0000787 ! memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: RO:0002104 GO:0071753
+
+[Term]
+id: CL:0000972
+name: class switched memory B cell
+namespace: cell
+def: "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are CD27-positive and have either IgG, IgE, or IgA on the cell surface." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013, PMID:9295047]
+comment: Per DSD: Class switched memory B cells are also reportedly CD48-positive, CD229-positive, and CD352-positive.
+synonym: "class switched memory B lymphocyte" EXACT []
+synonym: "class switched memory B-cell" EXACT []
+synonym: "class switched memory B-lymphocyte" EXACT []
+is_a: CL:0000787 {is_inferred="true"} ! memory B cell
+intersection_of: CL:0000787 ! memory B cell
+intersection_of: has_completed GO:0045190
+intersection_of: lacks_plasma_membrane_part GO:0071753
+intersection_of: RO:0002104 PR:000001963
+relationship: RO:0002202 CL:0000970 ! unswitched memory B cell
+
+[Term]
+id: CL:0000973
+name: IgA memory B cell
+namespace: cell
+def: "A class switched memory B cell that expresses IgA." [GO_REF:0000031, GOC:dsd, GOC:msz, ISBN:0781765196]
+comment: IgA memory B cell are also reportedly RORalpha-positive.
+synonym: "IgA memory B lymphocyte" EXACT []
+synonym: "IgA memory B-cell" EXACT []
+synonym: "IgA memory B-lymphocyte" EXACT []
+synonym: "memory IgA B cell" EXACT []
+synonym: "memory IgA B lymphocyte" EXACT []
+synonym: "memory IgA B-cell" EXACT []
+synonym: "memory IgA B-lymphocyte" EXACT []
+is_a: CL:0000972 {is_inferred="true"} ! class switched memory B cell
+intersection_of: CL:0000972 ! class switched memory B cell
+intersection_of: RO:0002104 GO:0071745
+
+[Term]
+id: CL:0000979
+name: IgG memory B cell
+namespace: cell
+def: "An IgG memory B cell is a class switched memory B cell that is class switched and expresses IgG on the cell surface." [GO_REF:0000031, GOC:rhs, ISBN:0781765196]
+synonym: "IgG memory B lymphocyte" EXACT []
+synonym: "IgG memory B-cell" EXACT []
+synonym: "IgG memory B-lymphocyte" EXACT []
+synonym: "memory IgG B cell" EXACT []
+synonym: "memory IgG B lymphocyte" EXACT []
+synonym: "memory IgG B-cell" EXACT []
+synonym: "memory IgG B-lymphocyte" EXACT []
+is_a: CL:0000972 {is_inferred="true"} ! class switched memory B cell
+intersection_of: CL:0000972 ! class switched memory B cell
+intersection_of: RO:0002104 GO:0071735
+
+[Term]
+id: CL:0000980
+name: plasmablast
+namespace: cell
+def: "An activated mature (naive or memory) B cell that is secreting immunoglobulin, typified by being CD27-positive, CD38-positive, CD138-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2673126]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'plasmablast'. Plasmablasts are also reportedly CD48-positive, CD63-positive, CD229-positive, CD270-positive, CD319-positive, CD352-positive, CD361-positive, and IgD-negative.
+synonym: "CD20-negative B cell" BROAD []
+synonym: "CD27-positive, CD38-positive, CD20-negative B cell" EXACT []
+xref: FMA:84371
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: has_high_plasma_membrane_amount PR:000001408
+intersection_of: has_high_plasma_membrane_amount PR:000001963
+intersection_of: lacks_plasma_membrane_part PR:000001289
+intersection_of: lacks_plasma_membrane_part PR:000001935
+intersection_of: RO:0003000 GO:0042571
+relationship: RO:0002202 CL:0000785 ! mature B cell
+
+[Term]
+id: CL:0000981
+name: double negative memory B cell
+namespace: cell
+def: "A memory B cell with the phenotype IgD-negative and CD27-negative." [GO_REF:0000031, GOC:msz, GOC:tfm]
+synonym: "dn memory B cell" EXACT []
+synonym: "dn memory B lymphocyte" EXACT []
+synonym: "dn memory B-cell" EXACT []
+synonym: "dn memory B-lymphocyte" EXACT []
+synonym: "double negative memory B lymphocyte" EXACT []
+synonym: "double negative memory B-cell" EXACT []
+synonym: "double negative memory B-lymphocyte" EXACT []
+is_a: CL:0000787 {is_inferred="true"} ! memory B cell
+intersection_of: CL:0000787 ! memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: lacks_plasma_membrane_part PR:000001963
+
+[Term]
+id: CL:0000982
+name: IgG plasmablast
+namespace: cell
+def: "A plasmablast that secretes IgG." [GO_REF:0000031, GOC:msz]
+is_a: CL:0000980 {is_inferred="true"} ! plasmablast
+intersection_of: CL:0000980 ! plasmablast
+intersection_of: RO:0003000 GO:0071736
+
+[Term]
+id: CL:0000983
+name: IgM plasmablast
+namespace: cell
+def: "A plasmablast that secretes IgM." [GO_REF:0000031, GOC:msz]
+is_a: CL:0000980 {is_inferred="true"} ! plasmablast
+intersection_of: CL:0000980 ! plasmablast
+intersection_of: RO:0003000 GO:0071754
+
+[Term]
+id: CL:0000984
+name: IgA plasmablast
+namespace: cell
+def: "A plasmablast that secretes IgA." [GO_REF:0000031, GOC:msz]
+is_a: CL:0000980 {is_inferred="true"} ! plasmablast
+intersection_of: CL:0000980 ! plasmablast
+intersection_of: RO:0003000 GO:0071746
 
 [Term]
 id: CL:0000988
@@ -3377,6 +4225,17 @@ intersection_of: RO:0002104 PR:000001015
 intersection_of: RO:0002104 PR:000025402
 
 [Term]
+id: CL:0001053
+name: IgD-negative memory B cell
+namespace: cell
+def: "A memory B cell that lacks expression of surface IgD." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'IgD- memory B cell'.  The majority of these cells are class-switched, though some are IgM-positive.
+synonym: "IgD- memory B cell" EXACT [PMID:22343568]
+is_a: CL:0000787 ! memory B cell
+intersection_of: CL:0000787 ! memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+
+[Term]
 id: CL:0001054
 name: CD14-positive monocyte
 namespace: cell
@@ -3463,6 +4322,22 @@ intersection_of: GO:0005623
 intersection_of: RO:0000053 PATO:0000460
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T18:53:32Z xsd:dateTime
+
+[Term]
+id: CL:0001062
+name: effector memory CD8-positive, alpha-beta T cell, terminally differentiated
+namespace: cell
+def: "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, GOC:dos, PMID:15032595, PMID:16237082]
+comment: This cell type is seen human but not found in the mouse.
+synonym: "TEMRA" EXACT [PMID:16237082]
+is_a: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: lacks_plasma_membrane_part PR:000001017
+intersection_of: lacks_plasma_membrane_part PR:000001203
+intersection_of: RO:0002104 PR:000001015
+intersection_of: RO:0002160 NCBITaxon:9606
+relationship: RO:0002202 CL:0000913 ! effector memory CD8-positive, alpha-beta T cell
 
 [Term]
 id: CL:0001063
@@ -3584,6 +4459,44 @@ intersection_of: RO:0002104 PR:000001002
 intersection_of: RO:0002162 NCBITaxon:40674
 intersection_of: RO:0002215 GO:0019724
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
+
+[Term]
+id: CL:0001203
+name: CD8-positive, alpha-beta memory T cell, CD45RO-positive
+namespace: cell
+def: "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:tfm, PMID:20146720]
+synonym: "CD8-positive, alpha-beta memory T lymphocyte, CD45RO-positive" EXACT []
+synonym: "CD8-positive, alpha-beta memory T-cell, CD45RO-positive" EXACT []
+synonym: "CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive" EXACT []
+is_a: CL:0000909 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell
+intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_high_plasma_membrane_amount PR:000001307
+intersection_of: has_high_plasma_membrane_amount PR:000001381
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: RO:0002104 PR:000001017
+intersection_of: RO:0002104 PR:000001869
+intersection_of: RO:0002160 NCBITaxon:9606
+relationship: RO:0002202 CL:0000906 ! activated CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001204
+name: CD4-positive, alpha-beta memory T cell, CD45RO-positive
+namespace: cell
+def: "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
+synonym: "CD4-positive, alpha-beta memory T lymphocyte, CD45RO-positive" EXACT []
+synonym: "CD4-positive, alpha-beta memory T-cell, CD45RO-positive" EXACT []
+synonym: "CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive" EXACT []
+is_a: CL:0000897 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell
+intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_high_plasma_membrane_amount PR:000001307
+intersection_of: has_high_plasma_membrane_amount PR:000001381
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: RO:0002104 PR:000001017
+intersection_of: RO:0002104 PR:000001869
+intersection_of: RO:0002160 NCBITaxon:9606
+relationship: RO:0002202 CL:0000896 ! activated CD4-positive, alpha-beta T cell
 
 [Term]
 id: CL:0002000
@@ -4091,6 +5004,142 @@ created_by: tmeehan
 creation_date: 2010-04-27T01:22:38Z
 
 [Term]
+id: CL:0002045
+name: Fraction A pre-pro B cell
+namespace: cell
+def: "A pro-B cell that CD45R/B220-positive, CD43-positive, HSA-low, BP-1-negative and Ly6c-negative. This cell type is also described as being lin-negative, AA4-positive, Kit-positive, IL7Ra-positive and CD45R-positive." [GOC:ak, GOC:tfm, http://www.immgen.org/index_content.html, PMID:12633665, PMID:17582343]
+comment: Markers associated with mouse cells.
+synonym: "fraction A" EXACT []
+synonym: "pre pro B cell" RELATED []
+is_a: CL:0000826 {is_inferred="true"} ! pro-B cell
+intersection_of: CL:0000826 ! pro-B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001932
+intersection_of: lacks_plasma_membrane_part PR:000002039
+intersection_of: lacks_plasma_membrane_part PR:000002980
+intersection_of: RO:0002104 PR:000001015
+intersection_of: RO:0002104 PR:000001879
+intersection_of: RO:0002104 PR:000002037
+intersection_of: RO:0002104 PR:000002065
+created_by: tmeehan
+creation_date: 2010-04-28T10:50:07Z
+
+[Term]
+id: CL:0002047
+name: Fraction B precursor B cell
+namespace: cell
+def: "A precursor B cell that is CD45RA-positive, CD43-positive, CD24-positive and BP-1-negative." [GOC:ak, GOC:tfm, PMID:18432934]
+comment: Markers are commonly associated with mouse cells. These cells are also reportedly RAG1-positive and RAG2-positive.
+synonym: "Fr. B" EXACT []
+synonym: "Fraction B" EXACT []
+is_a: CL:0002400 {is_inferred="true"} ! Fraction B/C precursor B cell
+intersection_of: CL:0002400 ! Fraction B/C precursor B cell
+intersection_of: lacks_plasma_membrane_part PR:000002039
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001932
+relationship: RO:0002202 CL:0002045 ! Fraction A pre-pro B cell
+created_by: tmeehan
+creation_date: 2010-04-28T11:56:21Z
+
+[Term]
+id: CL:0002049
+name: Fraction C precursor B cell
+namespace: cell
+def: "A precursor B cell is CD45R-positive, CD43-positive, CD24-positive, and BP-positive. Intracellularly expression of surrogate light chain, Rag1 and Rag2, TdT, occurs while there is no expression of mu heavy chain." [GOC:tfm, PMID:17582343]
+synonym: "Fraction C" RELATED []
+is_a: CL:0002400 {is_inferred="true"} ! Fraction B/C precursor B cell
+intersection_of: CL:0002400 ! Fraction B/C precursor B cell
+intersection_of: BFO:0000051 PR:000001858
+intersection_of: BFO:0000051 PR:000001859
+intersection_of: has_not_completed GO:0071707
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001932
+intersection_of: RO:0002104 PR:000002039
+intersection_of: RO:0002104 PR:000003457
+intersection_of: RO:0002104 PR:000003460
+relationship: RO:0002202 CL:0002047 ! Fraction B precursor B cell
+created_by: tmeehan
+creation_date: 2010-04-28T02:04:01Z
+
+[Term]
+id: CL:0002050
+name: Fraction C' precursor B cell
+namespace: cell
+def: "A pre-BCR-positive precursor B cell that is CD24-high, CD25-positive, CD43-positive, CD45R-positive and BP-positive." [GOC:tfm, PMID:17582343]
+synonym: "Fr. C'" EXACT []
+synonym: "Fraction C-prime" EXACT []
+is_a: CL:0000817 {is_inferred="true"} ! precursor B cell
+intersection_of: CL:0000817 ! precursor B cell
+intersection_of: has_high_plasma_membrane_amount PR:000001932
+intersection_of: RO:0002104 GO:0035369
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001380
+intersection_of: RO:0002104 PR:000001879
+intersection_of: RO:0002104 PR:000002039
+relationship: RO:0002202 CL:0002049 ! Fraction C precursor B cell
+created_by: tmeehan
+creation_date: 2010-04-28T02:13:46Z
+
+[Term]
+id: CL:0002052
+name: Fraction D precursor B cell
+namespace: cell
+def: "A pre-B cell that is pre-BCR-negative, and the kappa- and lambda- light immunoglobulin light chain-negative, CD43-low, and is BP-1-positive, CD45R-positive and CD25-positive. This cell type is also described as being AA4-positive, IgM-negative, CD19-positive, CD43-low/negative, and HSA-positive." [GOC:ak, GOC:dsd, GOC:tfm, http://www.immgen.org/index_content.html, PMID:17582343, PMID:18432934]
+comment: Fraction D precursor B cells are also reportedly CD24-positive and sIgD-negative.
+synonym: "Fr. D" EXACT []
+synonym: "Fraction D pre-B cell" EXACT [GOC:tfm]
+is_a: CL:0000817 {is_inferred="true"} ! precursor B cell
+intersection_of: CL:0000817 ! precursor B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001879
+intersection_of: has_not_completed GO:0071708
+intersection_of: lacks_plasma_membrane_part GO:0035369
+intersection_of: RO:0002104 PR:000001002
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001380
+intersection_of: RO:0002104 PR:000001932
+intersection_of: RO:0002104 PR:000002037
+intersection_of: RO:0002104 PR:000002039
+relationship: RO:0002202 CL:0002050 ! Fraction C' precursor B cell
+created_by: tmeehan
+creation_date: 2010-04-28T02:55:16Z
+
+[Term]
+id: CL:0002054
+name: Fraction E immature B cell
+namespace: cell
+def: "An immature B cell that is IgM-positive, CD45R-positive, CD43-low, CD25-negative, and CD127-negative. This cell type has also been described as being AA4-positive, IgM-positive, CD19-positive, CD43-low/negative, and HSA-positive." [GOC:ak, GOC:dsd, GOC:tfm, PMID:17582343, PMID:18432934]
+comment: Markers associated with mouse cells. These cells are also reportedly sIgD-negative.
+is_a: CL:0000816 {is_inferred="true"} ! immature B cell
+intersection_of: CL:0000816 ! immature B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001879
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: lacks_plasma_membrane_part PR:000001869
+intersection_of: RO:0002104 PR:000001002
+intersection_of: RO:0002104 PR:000001932
+intersection_of: RO:0002104 PR:000002037
+relationship: RO:0002202 CL:0002052 ! Fraction D precursor B cell
+created_by: tmeehan
+creation_date: 2010-04-28T03:13:47Z
+
+[Term]
+id: CL:0002056
+name: Fraction F mature B cell
+namespace: cell
+def: "A mature B cell subset originally defined as having being CD45R-positive, IgM-positive, IgD-positive and CD43-negative. Subsequent research demonstrated being CD21-positive and CD23-negative and CD93 negative." [GOC:tfm, PMID:17582343]
+is_a: CL:0000785 {is_inferred="true"} ! mature B cell
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: lacks_plasma_membrane_part PR:000001879
+intersection_of: lacks_plasma_membrane_part PR:000001880
+intersection_of: lacks_plasma_membrane_part PR:000002037
+intersection_of: RO:0002104 GO:0071738
+intersection_of: RO:0002104 GO:0071753
+intersection_of: RO:0002104 PR:000001014
+intersection_of: RO:0002104 PR:000001289
+intersection_of: RO:0002104 PR:000001338
+relationship: RO:0002202 CL:0002054 ! Fraction E immature B cell
+created_by: tmeehan
+creation_date: 2010-04-30T03:01:48Z
+
+[Term]
 id: CL:0002064
 name: pancreatic acinar cell
 namespace: cell
@@ -4211,6 +5260,331 @@ intersection_of: CL:0002078 ! meso-epithelial cell
 intersection_of: BFO:0000050 UBERON:0001235
 created_by: tmeehan
 creation_date: 2010-08-24T01:37:44Z
+
+[Term]
+id: CL:0002101
+name: CD38-positive naive B cell
+namespace: cell
+def: "A CD38-positive naive B cell is a mature B cell that has the phenotype CD38-positive, surface IgD-positive, surface IgM-positive, and CD27-negative, and that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38+ naive B cell" EXACT []
+synonym: "CD38+ naive B lymphocyte" EXACT []
+synonym: "CD38+ naive B-cell" EXACT []
+synonym: "CD38+ naive B-lymphocyte" EXACT []
+synonym: "CD38-positive naive B lymphocyte" EXACT []
+synonym: "CD38-positive naive B-cell" EXACT []
+synonym: "CD38-positive naive B-lymphocyte" EXACT []
+is_a: CL:0000788 {is_inferred="true"} ! naive B cell
+intersection_of: CL:0000788 ! naive B cell
+intersection_of: RO:0002104 PR:000001408
+
+[Term]
+id: CL:0002102
+name: CD38-negative naive B cell
+namespace: cell
+def: "A CD38-negative naive B cell is a mature B cell that has the phenotype CD38-negative, surface IgD-positive, surface IgM-positive, and CD27-negative, that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38- naive B cell" EXACT []
+synonym: "CD38- naive B lymphocyte" EXACT []
+synonym: "CD38- naive B-cell" EXACT []
+synonym: "CD38- naive B-lymphocyte" EXACT []
+synonym: "CD38-negative naive B lymphocyte" EXACT []
+synonym: "CD38-negative naive B-cell" EXACT []
+synonym: "CD38-negative naive B-lymphocyte" EXACT []
+is_a: CL:0000788 {is_inferred="true"} ! naive B cell
+intersection_of: CL:0000788 ! naive B cell
+intersection_of: lacks_plasma_membrane_part PR:000001408
+
+[Term]
+id: CL:0002103
+name: IgG-positive double negative memory B cell
+namespace: cell
+def: "An IgG-positive double negative memory B cell is a double negative memory B cell with the phenotype IgG-positive, IgD-negative, and CD27-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "IgG+ dn memory B cell" EXACT []
+synonym: "IgG+ dn memory B lymphocyte" EXACT []
+synonym: "IgG+ dn memory B-cell" EXACT []
+synonym: "IgG+ dn memory B-lymphocyte" EXACT []
+synonym: "IgG+ double negative memory B cell" EXACT []
+synonym: "IgG+ double negative memory B lymphocyte" EXACT []
+synonym: "IgG+ double negative memory B-cell" EXACT []
+synonym: "IgG+ double negative memory B-lymphocyte" EXACT []
+synonym: "IgG-positive dn memory B cell" EXACT []
+synonym: "IgG-positive dn memory B lymphocyte" EXACT []
+synonym: "IgG-positive dn memory B-cell" EXACT []
+synonym: "IgG-positive dn memory B-lymphocyte" EXACT []
+synonym: "IgG-positive double negative memory B lymphocyte" EXACT []
+synonym: "IgG-positive double negative memory B-cell" EXACT []
+synonym: "IgG-positive double negative memory B-lymphocyte" EXACT []
+is_a: CL:0000981 {is_inferred="true"} ! double negative memory B cell
+intersection_of: CL:0000981 ! double negative memory B cell
+intersection_of: RO:0002104 GO:0071735
+
+[Term]
+id: CL:0002104
+name: IgG-negative double negative memory B cell
+namespace: cell
+def: "An IgG-negative double negative memory B cell is a double negative memory B cell with the phenotype IgG-negative, IgD-negative, and CD27-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "IgG- dn memory B cell" EXACT []
+synonym: "IgG- dn memory B lymphocyte" EXACT []
+synonym: "IgG- dn memory B-cell" EXACT []
+synonym: "IgG- dn memory B-lymphocyte" EXACT []
+synonym: "IgG- double negative memory B cell" EXACT []
+synonym: "IgG- double negative memory B lymphocyte" EXACT []
+synonym: "IgG- double negative memory B-cell" EXACT []
+synonym: "IgG- double negative memory B-lymphocyte" EXACT []
+synonym: "IgG-negative dn memory B cell" EXACT []
+synonym: "IgG-negative dn memory B lymphocyte" EXACT []
+synonym: "IgG-negative dn memory B-cell" EXACT []
+synonym: "IgG-negative dn memory B-lymphocyte" EXACT []
+synonym: "IgG-negative double negative memory B lymphocyte" EXACT []
+synonym: "IgG-negative double negative memory B-cell" EXACT []
+synonym: "IgG-negative double negative memory B-lymphocyte" EXACT []
+is_a: CL:0000981 {is_inferred="true"} ! double negative memory B cell
+intersection_of: CL:0000981 ! double negative memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071735
+
+[Term]
+id: CL:0002105
+name: CD38-positive IgG memory B cell
+namespace: cell
+def: "A CD38-positive IgG memory B cell is a class switched memory B cell that expresses IgG on the cell surface with the phenotype CD38-positive and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38+ IgG memory B cell" EXACT []
+synonym: "CD38+ IgG memory B lymphocyte" EXACT []
+synonym: "CD38+ IgG memory B-cell" EXACT []
+synonym: "CD38+ IgG memory B-lymphocyte" EXACT []
+synonym: "CD38-positive IgG memory B lymphocyte" EXACT []
+synonym: "CD38-positive IgG memory B-cell" EXACT []
+synonym: "CD38-positive IgG memory B-lymphocyte" EXACT []
+is_a: CL:0000979 {is_inferred="true"} ! IgG memory B cell
+intersection_of: CL:0000979 ! IgG memory B cell
+intersection_of: RO:0002104 PR:000001408
+
+[Term]
+id: CL:0002106
+name: IgD-positive CD38-positive IgG memory B cell
+namespace: cell
+def: "An IgD-positive CD38-positive IgG memory B cell is a CD38-positive IgG-positive class switched memory B cell that has class switched and expresses IgD on the cell surface with the phenotype IgD-positive, CD38-positive, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002105 {is_inferred="true"} ! CD38-positive IgG memory B cell
+intersection_of: CL:0002105 ! CD38-positive IgG memory B cell
+intersection_of: RO:0002104 GO:0071738
+
+[Term]
+id: CL:0002107
+name: IgD-negative CD38-positive IgG memory B cell
+namespace: cell
+def: "An IgD-negative CD38-positive IgG memory B cell is a CD38-positive IgG-positive that has class switched and lacks expression of IgD on the cell surface with the phenotype IgD-negative, CD38-positive, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002105 {is_inferred="true"} ! CD38-positive IgG memory B cell
+intersection_of: CL:0002105 ! CD38-positive IgG memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+
+[Term]
+id: CL:0002108
+name: CD38-negative IgG memory B cell
+namespace: cell
+def: "A CD38-negative IgG memory B cell is a IgG-positive class switched memory B cell that has class switched and expresses IgG on the cell surface with the phenotype CD38-negative, IgD-negative, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0000979 {is_inferred="true"} ! IgG memory B cell
+intersection_of: CL:0000979 ! IgG memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071738
+intersection_of: lacks_plasma_membrane_part PR:000001408
+
+[Term]
+id: CL:0002109
+name: B220-positive CD38-positive naive B cell
+namespace: cell
+def: "A B220-positive CD38-positive naive B cell is a CD38-positive naive B cell that has the phenotype B220-positive, CD38-positive, surface IgD-positive, surface IgM-positive, and CD27-negative, and that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "B220+CD38+ naive B cell" EXACT []
+synonym: "B220+CD38+ naive B lymphocyte" EXACT []
+synonym: "B220+CD38+ naive B-cell" EXACT []
+synonym: "B220+CD38+ naive B-lymphocyte" EXACT []
+synonym: "B220-positive CD38-positive naive B lymphocyte" EXACT []
+synonym: "B220-positive CD38-positive naive B-cell" EXACT []
+synonym: "B220-positive CD38-positive naive B-lymphocyte" EXACT []
+synonym: "CD38+B220+ naive B cell" EXACT []
+synonym: "CD38+B220+ naive B lymphocyte" EXACT []
+synonym: "CD38+B220+ naive B-cell" EXACT []
+synonym: "CD38+B220+ naive B-lymphocyte" EXACT []
+is_a: CL:0002101 {is_inferred="true"} ! CD38-positive naive B cell
+intersection_of: CL:0002101 ! CD38-positive naive B cell
+intersection_of: RO:0002104 PR:000001014
+
+[Term]
+id: CL:0002110
+name: B220-low CD38-positive naive B cell
+namespace: cell
+def: "A B220-low CD38-positive naive B cell is a CD38-positive naive B cell that has the phenotype B220-low, CD38-positive, surface IgD-positive, surface IgM-positive, and CD27-negative, that has not yet been activated by antigen in the periphery." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002101 {is_inferred="true"} ! CD38-positive naive B cell
+intersection_of: CL:0002101 ! CD38-positive naive B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001014
+
+[Term]
+id: CL:0002111
+name: CD38-negative unswitched memory B cell
+namespace: cell
+def: "An CD38-negative unswitched memory B cell is an unswitched memory B cell that has the phenotype CD38-negative, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38- unswitched memory B cell" EXACT []
+synonym: "CD38- unswitched memory B lymphocyte" EXACT []
+synonym: "CD38- unswitched memory B-cell" EXACT []
+synonym: "CD38- unswitched memory B-lymphocyte" EXACT []
+synonym: "CD38-negative unswitched memory B lymphocyte" EXACT []
+synonym: "CD38-negative unswitched memory B-cell" EXACT []
+synonym: "CD38-negative unswitched memory B-lymphocyte" EXACT []
+is_a: CL:0000970 {is_inferred="true"} ! unswitched memory B cell
+intersection_of: CL:0000970 ! unswitched memory B cell
+intersection_of: lacks_plasma_membrane_part PR:000001408
+
+[Term]
+id: CL:0002112
+name: B220-positive CD38-negative unswitched memory B cell
+namespace: cell
+def: "A B220-positive CD38-negative unswitched memory B cell is a CD38-negative unswitched memory B cell that has the phenotype B220-positive, CD38-negative, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002111 {is_inferred="true"} ! CD38-negative unswitched memory B cell
+intersection_of: CL:0002111 ! CD38-negative unswitched memory B cell
+intersection_of: RO:0002104 PR:000001014
+
+[Term]
+id: CL:0002113
+name: B220-low CD38-negative unswitched memory B cell
+namespace: cell
+def: "A B220-low CD38-negative unswitched memory B cell is a CD38-negative unswitched memory B cell that has the phenotype B220-low, CD38-negative, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002111 {is_inferred="true"} ! CD38-negative unswitched memory B cell
+intersection_of: CL:0002111 ! CD38-negative unswitched memory B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001014
+
+[Term]
+id: CL:0002114
+name: CD38-positive unswitched memory B cell
+namespace: cell
+def: "A CD38-positive unswitched memory B cell is an unswitched memory B cell that has the phenotype CD38-positive, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "CD38+ unswitched memory B cell" EXACT []
+synonym: "CD38+ unswitched memory B lymphocyte" EXACT []
+synonym: "CD38+ unswitched memory B-cell" EXACT []
+synonym: "CD38+ unswitched memory B-lymphocyte" EXACT []
+synonym: "CD38-positive unswitched memory B lymphocyte" EXACT []
+synonym: "CD38-positive unswitched memory B-cell" EXACT []
+synonym: "CD38-positive unswitched memory B-lymphocyte" EXACT []
+is_a: CL:0000970 {is_inferred="true"} ! unswitched memory B cell
+intersection_of: CL:0000970 ! unswitched memory B cell
+intersection_of: RO:0002104 PR:000001408
+
+[Term]
+id: CL:0002115
+name: B220-positive CD38-positive unswitched memory B cell
+namespace: cell
+def: "A B220-positive CD38-positive unswitched memory B cell is a CD38-positive unswitched memory B cell that has the phenotype B220-positive, CD38-positive, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002114 {is_inferred="true"} ! CD38-positive unswitched memory B cell
+intersection_of: CL:0002114 ! CD38-positive unswitched memory B cell
+intersection_of: RO:0002104 PR:000001014
+
+[Term]
+id: CL:0002116
+name: B220-low CD38-positive unswitched memory B cell
+namespace: cell
+def: "A B220-low CD38-positive unswitched memory B cell is a CD38-positive unswitched memory B cell that has the phenotype B220-low, CD38-positive, IgD-positive, CD138-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002114 {is_inferred="true"} ! CD38-positive unswitched memory B cell
+intersection_of: CL:0002114 ! CD38-positive unswitched memory B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001014
+
+[Term]
+id: CL:0002117
+name: IgG-negative class switched memory B cell
+namespace: cell
+def: "A class switched memory B cell that lacks IgG on the cell surface." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+synonym: "IgG- class switched memory B cell" EXACT []
+synonym: "IgG- class switched memory B lymphocyte" EXACT []
+synonym: "IgG- class switched memory B-cell" EXACT []
+synonym: "IgG- class switched memory B-lymphocyte" EXACT []
+synonym: "IgG-negative class switched memory B lymphocyte" EXACT []
+synonym: "IgG-negative class switched memory B-cell" EXACT []
+synonym: "IgG-negative class switched memory B-lymphocyte" EXACT []
+is_a: CL:0000972 {is_inferred="true"} ! class switched memory B cell
+intersection_of: CL:0000972 ! class switched memory B cell
+intersection_of: lacks_plasma_membrane_part GO:0071735
+
+[Term]
+id: CL:0002118
+name: CD38-negative IgG-negative class switched memory B cell
+namespace: cell
+def: "A CD38-negative IgG-negative memory B cell is a IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype CD38-negative and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002117 {is_inferred="true"} ! IgG-negative class switched memory B cell
+intersection_of: CL:0002117 ! IgG-negative class switched memory B cell
+intersection_of: lacks_plasma_membrane_part PR:000001408
+
+[Term]
+id: CL:0002119
+name: CD38-positive IgG-negative class switched memory B cell
+namespace: cell
+def: "A CD38-positive IgG-negative memory B cell is an IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype CD38-positive and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002117 {is_inferred="true"} ! IgG-negative class switched memory B cell
+intersection_of: CL:0002117 ! IgG-negative class switched memory B cell
+intersection_of: RO:0002104 PR:000001408
+
+[Term]
+id: CL:0002120
+name: CD24-positive CD38-negative IgG-negative class switched memory B cell
+namespace: cell
+def: "An CD24-positive CD38-negative IgG-negative memory B cell is a CD38-negative IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype CD24-positive, CD38-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002118 {is_inferred="true"} ! CD38-negative IgG-negative class switched memory B cell
+intersection_of: CL:0002118 ! CD38-negative IgG-negative class switched memory B cell
+intersection_of: RO:0002104 PR:000001932
+
+[Term]
+id: CL:0002121
+name: CD24-negative CD38-negative IgG-negative class switched memory B cell
+namespace: cell
+def: "A CD24-negative CD38-negative IgG-negative memory B cell is a CD38-negative IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype CD24-negative, CD38-negative, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002118 {is_inferred="true"} ! CD38-negative IgG-negative class switched memory B cell
+intersection_of: CL:0002118 ! CD38-negative IgG-negative class switched memory B cell
+intersection_of: lacks_plasma_membrane_part PR:000001932
+
+[Term]
+id: CL:0002122
+name: B220-positive CD38-positive IgG-negative class switched memory B cell
+namespace: cell
+def: "A B220-positive CD38-positive IgG-negative memory B cell is a CD38-positive IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype B220-positive, CD38-positive, and IgG-negative." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002119 {is_inferred="true"} ! CD38-positive IgG-negative class switched memory B cell
+intersection_of: CL:0002119 ! CD38-positive IgG-negative class switched memory B cell
+intersection_of: RO:0002104 PR:000001014
+
+[Term]
+id: CL:0002123
+name: B220-low CD38-positive IgG-negative class switched memory B cell
+namespace: cell
+def: "A B220-low CD38-positive IgG-negative memory B cell is a CD38-positive IgG-negative class switched memory B cell that lacks IgG on the cell surface with the phenotype B220-low, CD38-positive, and IgG-positive." [GOC:dsd, GOC:rhs, GOC:tfm, PMID:20123131]
+is_a: CL:0002119 {is_inferred="true"} ! CD38-positive IgG-negative class switched memory B cell
+intersection_of: CL:0002119 ! CD38-positive IgG-negative class switched memory B cell
+intersection_of: has_low_plasma_membrane_amount PR:000001014
+
+[Term]
+id: CL:0002124
+name: CD27-positive gamma-delta T cell
+namespace: cell
+def: "A circulating gamma-delta T cell that is CD27-positive and capable of producing IFN-gamma." [GOC:dsd, GOC:tfm, PMID:19270712]
+synonym: "gammadelta27-positive" EXACT []
+synonym: "gd27-positive" EXACT []
+is_a: CL:0000800 {is_inferred="true"} ! mature gamma-delta T cell
+intersection_of: CL:0000800 ! mature gamma-delta T cell
+intersection_of: has_completed GO:0030217
+intersection_of: RO:0002104 PR:000001963
+intersection_of: RO:0002215 GO:0032609
+relationship: RO:0002202 CL:0002126 ! CD25-positive, CD27-positive immature gamma-delta T cell
+created_by: tmeehan
+creation_date: 2010-08-18T09:57:19Z
+
+[Term]
+id: CL:0002126
+name: CD25-positive, CD27-positive immature gamma-delta T cell
+namespace: cell
+def: "A CD25-positive, CD27-positive immature gamma-delta T cell found in the thymus that has an immature phenotype (i.e. CD24-high, CD25-high, CD62L-high, CD44-high, CD2-low, CD5-low)." [GOC:tfm, PMID:19270712]
+is_a: CL:0000799 {is_inferred="true"} ! immature gamma-delta T cell
+intersection_of: CL:0000799 ! immature gamma-delta T cell
+intersection_of: BFO:0000050 UBERON:0002370
+intersection_of: has_high_plasma_membrane_amount PR:000001307
+intersection_of: has_high_plasma_membrane_amount PR:000001318
+intersection_of: has_high_plasma_membrane_amount PR:000001932
+intersection_of: has_low_plasma_membrane_amount PR:000001083
+intersection_of: has_low_plasma_membrane_amount PR:000001839
+intersection_of: RO:0002104 PR:000001380
+intersection_of: RO:0002104 PR:000001919
+created_by: tmeehan
+creation_date: 2010-08-18T10:35:37Z
 
 [Term]
 id: CL:0002127
@@ -5124,6 +6498,21 @@ intersection_of: RO:0002104 PR:000001932
 intersection_of: RO:0002104 PR:000002037
 created_by: tmeehan
 creation_date: 2010-10-05T10:11:38Z
+
+[Term]
+id: CL:0002405
+name: gamma-delta thymocyte
+namespace: cell
+def: "A post-natal thymocyte expressing components of the gamma-delta T cell receptor. This cell type is always double-negative (i.e. CD4-negative, CD8-negative)." [GOC:tfm, PMID:20725107]
+synonym: "gammadelta thymocyte" EXACT []
+synonym: "gd thymocyte" EXACT []
+is_a: CL:0000893 {is_inferred="true"} ! thymocyte
+intersection_of: CL:0000893 ! thymocyte
+intersection_of: lacks_plasma_membrane_part PR:000001004
+intersection_of: lacks_plasma_membrane_part PR:000025402
+intersection_of: RO:0002104 GO:0042106
+created_by: tmeehan
+creation_date: 2010-10-07T02:33:39Z
 
 [Term]
 id: CL:0002419
@@ -6094,6 +7483,19 @@ created_by: tmeehan
 creation_date: 2011-08-22T09:24:15Z
 
 [Term]
+id: CL:0002678
+name: memory regulatory T cell
+namespace: cell
+def: "A CD4-positive, CD25-positive alpha-beta regulatory T cell that has encountered antigen." [GOC:tfm, PMID:21739668]
+comment: Cell has been described as being CD45RA-positive in human, but this doesn't fit with our current definition memory T cell.
+is_a: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
+is_a: CL:0000813 ! memory T cell
+intersection_of: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+created_by: tmeehan
+creation_date: 2011-08-25T03:17:34Z
+
+[Term]
 id: CL:0002681
 name: kidney cortical cell
 namespace: cell
@@ -6370,6 +7772,14 @@ synonym: "double-negative alpha-beta regulatory T cell" EXACT []
 is_a: CL:0002489 ! double negative thymocyte
 intersection_of: CL:0002489 ! double negative thymocyte
 intersection_of: RO:0002215 GO:0050777
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011025
+name: exhausted T cell
+synonym: "An effector T cell that displays impaired effector functions (e.g., rapid production of effector cytokines, cytotoxicity) and has limited proliferative potential." EXACT [PMID:26544946]
+synonym: "Tex cell" EXACT []
+is_a: CL:0000911 ! effector T cell
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -7463,6 +8873,16 @@ created_by: TermGenie
 creation_date: 2014-03-28T21:35:27Z
 
 [Term]
+id: CL:2000006
+name: tonsil germinal center B cell
+namespace: cell
+def: "Any germinal center B cell that is part of a tonsil." [GOC:TermGenie]
+intersection_of: CL:0000844 ! germinal center B cell
+intersection_of: BFO:0000050 UBERON:0002372
+created_by: TermGenie
+creation_date: 2014-03-28T21:35:33Z
+
+[Term]
 id: CL:2000010
 name: dermis blood vessel endothelial cell
 namespace: cell
@@ -7683,6 +9103,17 @@ intersection_of: CL:0000115 ! endothelial cell
 intersection_of: BFO:0000050 UBERON:0002106
 created_by: TermGenie
 creation_date: 2014-10-06T19:06:04Z
+
+[Term]
+id: CL:2000055
+name: liver dendritic cell
+namespace: cell
+def: "Any dendritic cell that is part of a liver." [GOC:TermGenie]
+comment: http://www.jleukbio.org/content/66/2/322.abstract
+intersection_of: CL:0000451 ! dendritic cell
+intersection_of: BFO:0000050 UBERON:0002107
+created_by: TermGenie
+creation_date: 2014-10-06T19:16:11Z
 
 [Term]
 id: CL:2000060
@@ -7949,6 +9380,11 @@ intersection_of: GO:0005634
 intersection_of: RO:0000053 PATO:0000586
 created_by: tmeehan
 creation_date: 2009-12-23T10:53:24Z
+
+[Term]
+id: GO:0043379
+name: memory T cell differentiation
+is_a: GO:0002292
 
 [Term]
 id: PATO:0045026

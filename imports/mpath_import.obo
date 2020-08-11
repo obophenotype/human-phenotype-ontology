@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-06-08/imports/mpath_import.owl
+data-version: hp/releases/2020-08-11/imports/mpath_import.owl
 ontology: hp/imports/mpath_import
 
 [Term]
@@ -7,6 +7,7 @@ id: MPATH:0
 name: pathological entity
 namespace: mouse_pathology.ontology
 def: "Pathological structure or process" [Pathbase: Curation]
+is_a: MPATH:1000 ! pathological phenotype observation
 
 [Term]
 id: MPATH:1
@@ -14,6 +15,13 @@ name: cell and tissue damage
 namespace: mouse_pathology.ontology
 def: "The sum of morphological and functional disturbances induced by cell and tissue damage, either from intrinsic gene dysfunction or as a result of external factors." [Pathbase: Pathology Committee]
 is_a: MPATH:603 ! pathological anatomical entity
+
+[Term]
+id: MPATH:1000
+name: pathological phenotype observation
+namespace: mouse_pathology.ontology
+def: "Phenotypic observation of the presence or absence of a pathological entity." [UOB:LTS]
+created_by: Luke Slater
 
 [Term]
 id: MPATH:105
@@ -380,7 +388,7 @@ name: Non-Lymphoid leukaemias
 namespace: mouse_pathology.ontology
 def: "Neoplasms of non-lymphoid haematopoietic lineage. Must have at least 20% blast cells to meet this definition." [PMID:12070033]
 xref: URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2
-is_a: MPATH:515 ! Non-Lymphoid neoplasias
+is_a: MPATH:515 ! non-Lymphoid neoplasias
 
 [Term]
 id: MPATH:502
@@ -392,7 +400,7 @@ is_a: MPATH:342 ! myeloid leukaemia
 
 [Term]
 id: MPATH:515
-name: Non-Lymphoid neoplasias
+name: non-Lymphoid neoplasias
 namespace: mouse_pathology.ontology
 def: "Hematological neoplasias of non-lymphoid origin." [PMID:12070033]
 xref: URL:http\://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2

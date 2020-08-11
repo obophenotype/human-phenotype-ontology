@@ -27,10 +27,8 @@
           "val" : "Abnormal development (of organs or tissues) or an abnormal structure resulting from such growth.",
           "xrefs" : [ "Pathbase: Pathology Committee" ]
         },
+        "comments" : [ "The word dysplasia as commonly used refers to a precursor state to neoplasia. This is not the context used for this MPATH term." ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "The word dysplasia as commonly used refers to a precursor state to neoplasia. This is not the context used for this MPATH term."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
         } ]
@@ -103,12 +101,10 @@
           "val" : "A red/purple patch caused by extravasation of blood into the skin. Larger than petechiae.",
           "xrefs" : [ "ISBN:0781727286" ]
         },
+        "comments" : [ "May also be used for any organ, although more generally used with respect to the skin." ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
-        }, {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "May also be used for any organ, although more generally used with respect to the skin."
         } ]
       },
       "type" : "CLASS",
@@ -339,6 +335,7 @@
           "val" : "Extracellular deposition of amyloid protein.",
           "xrefs" : [ "ISBN:0781727286" ]
         },
+        "comments" : [ "Any group of chemically diverse proteins that appears microscopically homogeneous, but is composed of linear non-branching aggregated fibrils aranged in sheets when see under the electron microscope." ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Amyloidosis",
@@ -347,13 +344,27 @@
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
-        }, {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Any group of chemically diverse proteins that appears microscopically homogeneous, but is composed of linear non-branching aggregated fibrils aranged in sheets when see under the electron microscope."
         } ]
       },
       "type" : "CLASS",
       "lbl" : "amyloid deposition"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MPATH_1000",
+      "meta" : {
+        "definition" : {
+          "val" : "Phenotypic observation of the presence or absence of a pathological entity.",
+          "xrefs" : [ "UOB:LTS" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "mouse_pathology.ontology"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "Luke Slater"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "pathological phenotype observation"
     }, {
       "id" : "http://purl.obolibrary.org/obo/MPATH_33",
       "meta" : {
@@ -423,10 +434,8 @@
           "val" : "Characterised by irregular lipid deposits in the wall of arteries, causing narrowing of their lumens and proceeding eventually to fibrosis and calcification.",
           "xrefs" : [ "Pathbase: Pathology Committee" ]
         },
+        "comments" : [ "Note that in mouse and rats the initial lesions are mostly in the medial layer while in human they occur in the intima." ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Note that in mouse and rats the initial lesions are mostly in the medial layer while in human they occur in the intima."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
         } ]
@@ -603,10 +612,8 @@
           "val" : "Dilation of a tubular structure.",
           "xrefs" : [ "Pathbase: Pathology Committee" ]
         },
+        "comments" : [ "Often associated with an obstruction." ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Often associated with an obstruction."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
         } ]
@@ -737,7 +744,7 @@
         } ]
       },
       "type" : "CLASS",
-      "lbl" : "Non-Lymphoid neoplasias"
+      "lbl" : "non-Lymphoid neoplasias"
     }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
       "type" : "PROPERTY",
@@ -949,6 +956,7 @@
           "val" : "Abnormal retention of lipids within a cell. Physically apparent as lipid within liposomes of parenchymal cells.",
           "xrefs" : [ "Pathbase: Curation" ]
         },
+        "comments" : [ "Most commonly associated with degenerative change in the liver." ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "fatty degeneration",
@@ -969,9 +977,6 @@
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
-        }, {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Most commonly associated with degenerative change in the liver."
         } ]
       },
       "type" : "CLASS",
@@ -1044,10 +1049,8 @@
           "val" : "A circumscribed collection of purulent exudate frequently associated with swelling and other signs of inflammation.",
           "xrefs" : [ "ISBN:0781727286" ]
         },
+        "comments" : [ "Generally occur following damage or infection with subsequent inflammatory response. Result of the body`s defensive reaction to foreign material." ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Generally occur following damage or infection with subsequent inflammatory response. Result of the body`s defensive reaction to foreign material."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
         } ]
@@ -1278,12 +1281,10 @@
           "val" : "A disease of the heart muscle or myocardium proper.",
           "xrefs" : [ ":NCI Thesaurus / A7567983" ]
         },
+        "comments" : [ "Cardiomyopathies may be classified as either primary or secondary, on the basis of etiology, or on the pathophysiology of the lesion: hypertrophic, dilated, or restrictive." ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "mouse_pathology.ontology"
-        }, {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#comment",
-          "val" : "Cardiomyopathies may be classified as either primary or secondary, on the basis of etiology, or on the pathophysiology of the lesion: hypertrophic, dilated, or restrictive."
         } ]
       },
       "type" : "CLASS",
@@ -1326,6 +1327,10 @@
       "sub" : "http://purl.obolibrary.org/obo/MPATH_195",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_212"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MPATH_0",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MPATH_1000"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_615",
       "pred" : "is_a",
@@ -1371,13 +1376,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_14"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/MPATH_68",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MPATH_56"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_56",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_55"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MPATH_68",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MPATH_56"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_603",
       "pred" : "is_a",
@@ -1427,13 +1432,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_218"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/MPATH_218",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MPATH_603"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_476",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_474"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MPATH_218",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MPATH_603"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_98",
       "pred" : "is_a",
@@ -1451,13 +1456,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_175"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/MPATH_555",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MPATH_33"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_596",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MPATH_0"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MPATH_555",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MPATH_33"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MPATH_322",
       "pred" : "is_a",
@@ -1640,7 +1645,7 @@
       "subsets" : [ ],
       "xrefs" : [ ],
       "basicPropertyValues" : [ ],
-      "version" : "http://purl.obolibrary.org/obo/hp/releases/2020-06-08/imports/mpath_import.owl"
+      "version" : "http://purl.obolibrary.org/obo/hp/releases/2020-08-11/imports/mpath_import.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ ],

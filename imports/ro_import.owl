@@ -17,7 +17,7 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/ro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-06-08/imports/ro_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-08-11/imports/ro_import.owl"/>
     </owl:Ontology>
     
 
@@ -811,39 +811,14 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000300">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">OBSOLETE A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">David Osumi-Sutherland</obo:IAO_0000117>
-        <obo:IAO_0000426>(forall (?x ?y) 
-	(iff 
-		(neural_circuit_path  ?x ?y)
-		(and
-			(&quot;neuron ; CL_0000540&quot; ?x)
-			(&quot;neuron ; CL_0000540&quot; ?y)
-			(or 
-				(synapsed_by ?x ?y) 
-				(synapsed_to ?x ?y))))) 
-
-(forall (...s ?x ?y ?z) 
-	(iff 
-		(neural_circuit_path  ...s ?x ?y ?z)
-		(and
-			(neural_circuit_path  ...s ?x ?y)
-			(&quot;neuron ; CL_0000540&quot; ?z)
-			(or 
-				(synapsed_by ?y ?z) 
-				(synapsed_to ?y ?z))))) 
-
-(forall (?x ?y) 
-	(iff 
-		(in_neural_circuit_with ?x ?y)
-		(exists (...s)
-			(neural_circuit_path  ?x ...s ?y)))) </obo:IAO_0000426>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <cito:citesAsAuthority rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22402613"/>
-        <rdfs:label xml:lang="en">in neural circuit with</rdfs:label>
+        <rdfs:comment>Obsoleted as no longer a useful relationship (all neurons in an organism are in a neural circuit with each other).</rdfs:comment>
+        <rdfs:label xml:lang="en">obsolete in neural circuit with</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -851,36 +826,15 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0000301 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000301">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000300"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next, in which the direction is from the last to the first.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">OBSOLETE A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next, in which the direction is from the last to the first.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">David Osumi-Sutherland</obo:IAO_0000117>
-        <obo:IAO_0000426>(forall (?x ?y) 
-	(iff 
-		(upstream_neural_circuit_path  ?x ?y)
-		(and
-			(&quot;neuron ; CL_0000540&quot; ?x)
-			(&quot;neuron ; CL_0000540&quot; ?y)
-			(synapsed_to ?x ?y))))
-
-
-(forall (...s ?x ?y ?z) 
-	(iff 
-		(upstream_neural_circuit_path ...s ?x ?y ?z )
-		(and
-			(upstream_neural_circuit_path ...s ?x ?y)
-			(&quot;neuron ; CL_0000540&quot; ?z)
-			(synapsed_to ?y ?z))))
-			
-(forall (?x ?y) 
-	(iff 
-		(upstream_in_neural_circuit_with ?x ?y)
-		(exists (...s)
-			(upstream_neural_circuit_path  ?x ...s ?y))))</obo:IAO_0000426>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <cito:citesAsAuthority rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22402613"/>
-        <rdfs:label xml:lang="en">upstream in neural circuit with</rdfs:label>
+        <rdfs:comment>Obsoleted as no longer a useful relationship (all neurons in an organism are in a neural circuit with each other).</rdfs:comment>
+        <rdfs:label xml:lang="en">obsolete upstream in neural circuit with</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -888,37 +842,15 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/RO_0000302 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000302">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000300"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115 xml:lang="en">A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next, in which the direction is from the first to the last.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">OBSOLETE A relation that holds between a neuron that is synapsed_by another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_by the next, in which the direction is from the last to the first.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">David Osumi-Sutherland</obo:IAO_0000117>
-        <obo:IAO_0000426>(forall (?x ?y) 
-	(iff 
-		(downstream_neural_circuit_path  ?x ?y)
-		(and
-			(&quot;neuron ; CL_0000540&quot; ?x)
-			(&quot;neuron ; CL_0000540&quot; ?y)
-			(synapsed_by ?x ?y))))
-
-
-(forall (...s ?x ?y ?z) 
-	(iff 
-		(downstream_neural_circuit_path ...s ?x ?y ?z )
-		(and
-			(downstream_neural_circuit_path ...s ?x ?y)
-			(&quot;neuron ; CL_0000540&quot; ?z)
-			(synapsed_by ?y ?z))))
-			
-(forall (?x ?y) 
-	(iff 
-		(downstream_in_neural_circuit_with ?x ?y)
-		(exists (...s)
-			(downstream_neural_circuit_path  ?x ...s ?y)))) 
-			</obo:IAO_0000426>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <cito:citesAsAuthority rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22402613"/>
-        <rdfs:label xml:lang="en">downstream in neural circuit with</rdfs:label>
+        <rdfs:comment>Obsoleted as no longer a useful relationship (all neurons in an organism are in a neural circuit with each other).</rdfs:comment>
+        <rdfs:label xml:lang="en">obsolete downstream in neural circuit with</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:ObjectProperty>
     
 
@@ -1219,7 +1151,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002019">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/GO_0004872"/>
         <obo:IAO_0000115>A relationship that holds between between a receptor and an chemical entity, typically a small molecule or peptide, that carries information between cells or compartments of a cell and which binds the receptor and regulates its effector function.</obo:IAO_0000115>
         <oboInOwl:created_by>dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-07-19T17:30:36Z</oboInOwl:creation_date>
@@ -1289,7 +1220,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002025">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002017"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <obo:IAO_0000115>A &apos;has effector activity&apos; B if A and B are GO molecular functions (GO_0003674),  A &apos;has component activity&apos; B and B is the effector (output function) of B.  Each compound function has only one effector activity.</obo:IAO_0000115>
         <oboInOwl:created_by>dos</oboInOwl:created_by>
@@ -1358,7 +1288,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002103 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002103">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000301"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002485"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002120"/>
         <rdfs:range>
             <owl:Class>
@@ -1406,7 +1336,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002120 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002120">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000302"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002486"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1875,6 +1805,10 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002025"/>
+        </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002211"/>
@@ -3434,6 +3368,29 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002564"/>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <rdfs:label>is kinase activity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002485 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002485">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002486"/>
+        <obo:IAO_0000116>See notes for inverse relation</obo:IAO_0000116>
+        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
+        <rdfs:label>receives input from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002486 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002486">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+        <obo:IAO_0000116>This is an exploratory relation. The label is taken from the FMA. It needs aligned with the neuron-specific relations such as has postsynaptic terminal in.</obo:IAO_0000116>
+        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
+        <rdfs:label>sends output to</rdfs:label>
     </owl:ObjectProperty>
     
 

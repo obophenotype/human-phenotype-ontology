@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-06-08/imports/pato_import.owl
+data-version: hp/releases/2020-08-11/imports/pato_import.owl
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -125,7 +125,7 @@ name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
 def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
-comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -175,7 +175,6 @@ subset: goslim_plant
 subset: goslim_yeast
 synonym: "cell nucleus" EXACT []
 synonym: "horsetail nucleus" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]
-xref: MIPS_funcat:70.10
 xref: NIF_Subcellular:sao1702920020
 xref: Wikipedia:Cell_nucleus
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
@@ -247,7 +246,7 @@ alt_id: GO:0000004
 alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
-comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code "no data" (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
@@ -263,7 +262,7 @@ synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
 is_a: BFO:0000015 ! process
-created_by: janelomax
+created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
 [Term]
@@ -397,7 +396,7 @@ namespace: cellular_component
 def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." [GOC:mah]
 subset: goslim_flybase_ribbon
 is_a: GO:0110165 ! cellular anatomical entity
-created_by: midori
+created_by: mah
 creation_date: 2010-10-04T01:51:47Z
 
 [Term]
@@ -412,7 +411,7 @@ is_a: GO:0016020 ! membrane
 intersection_of: GO:0016020 ! membrane
 intersection_of: part_of GO:0005886 ! plasma membrane
 relationship: part_of GO:0005886 ! plasma membrane
-created_by: davidos
+created_by: dos
 creation_date: 2014-03-06T11:55:32Z
 
 [Term]
@@ -454,7 +453,7 @@ is_a: GO:0042995 ! cell projection
 intersection_of: GO:0042995 ! cell projection
 intersection_of: has_part GO:0098590 ! plasma membrane region
 relationship: has_part GO:0098590 ! plasma membrane region
-created_by: kchris
+created_by: krc
 creation_date: 2017-03-21T17:26:07Z
 
 [Term]
@@ -2521,6 +2520,17 @@ is_a: PATO:0001031 ! elasticity
 relationship: is_opposite_of PATO:0001171 ! elastic
 
 [Term]
+id: PATO:0001178
+name: resistant to
+namespace: quality
+def: "A resistance quality inhering in a bearer by virtue of the bearer's resistance to a stimulus." [PATOC:GVG]
+subset: disposition_slim
+subset: relational_slim
+subset: value_slim
+synonym: "resistant" EXACT []
+is_a: PATO:0001046 ! resistance to
+
+[Term]
 id: PATO:0001195
 name: proximal to
 namespace: quality
@@ -2900,14 +2910,12 @@ name: broken
 namespace: quality
 alt_id: PATO:0001443
 alt_id: PATO:0001820
-def: "A broken quality inhering in a bearer by virtue of the bearer's being broken open." [PATOC:GVG]
+def: "A structural quality inhering in a bearer by virtue of the bearer's components no longer being in a single contiguous unit." [https://orcid.org/0000-0003-4606-0597]
 subset: value_slim
-synonym: "burst" EXACT []
 synonym: "cracked" RELATED []
 synonym: "fractured" NARROW []
 synonym: "fragmented" EXACT []
 synonym: "hemorrhaged" RELATED []
-synonym: "ruptured" EXACT []
 synonym: "split" RELATED []
 synonym: "torn" RELATED []
 is_a: PATO:0001442 ! wholeness
@@ -2989,6 +2997,21 @@ subset: value_slim
 synonym: "curved anterior (human torso)" EXACT []
 synonym: "curved inferior (human head)" EXACT []
 is_a: PATO:0000406 ! curved
+
+[Term]
+id: PATO:0001470
+name: proportionality to
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the bearer's magnitude in respect to a related entity." [PATOC:nw]
+comment: Examples: height to weight; brain size to body size. These could all be children of proportionality. Proportions can be measured as ratios. Some measures may be dimensionless. Not all ratios measure proportionality, eg m/s measures velocity which is not a proportion in the sense defined above, it is a quality in its own right.
+subset: attribute_slim
+subset: relational_slim
+synonym: "proportion" EXACT []
+synonym: "proportionality" EXACT []
+synonym: "quotient" EXACT []
+synonym: "rate" RELATED []
+synonym: "ratio" EXACT []
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0001472
@@ -3778,6 +3801,38 @@ namespace: quality
 def: "A curvature quality inhering in a bearer by virtue of the bearer's being curved towards the side." [PATOC:GVG]
 subset: value_slim
 is_a: PATO:0000406 ! curved
+
+[Term]
+id: PATO:0001650
+name: increased resistance to
+namespace: quality
+def: "A resistance to a stimulus which is relatively high." [PATOC:GVG]
+subset: disposition_slim
+subset: relational_slim
+subset: value_slim
+synonym: "high resistance to" EXACT []
+synonym: "increased resistance" EXACT []
+is_a: PATO:0001178 ! resistant to
+is_a: PATO:0002305 ! increased object quality
+intersection_of: PATO:0001178 ! resistant to
+intersection_of: increased_in_magnitude_relative_to PATO:0000461 ! normal
+relationship: is_opposite_of PATO:0001651 ! decreased resistance to
+
+[Term]
+id: PATO:0001651
+name: decreased resistance to
+namespace: quality
+def: "A resistance to a stimulus which is relatively low." [PATOC:GVG]
+subset: disposition_slim
+subset: relational_slim
+subset: value_slim
+synonym: "decreased resistance" EXACT []
+synonym: "low resistance to" EXACT []
+is_a: PATO:0001178 ! resistant to
+is_a: PATO:0002303 ! decreased object quality
+intersection_of: PATO:0001178 ! resistant to
+intersection_of: decreased_in_magnitude_relative_to PATO:0000461 ! normal
+relationship: is_opposite_of PATO:0001650 ! increased resistance to
 
 [Term]
 id: PATO:0001652
@@ -6386,6 +6441,61 @@ relationship: is_opposite_of PATO:0040030 ! decreased width and length
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
+id: PATO:0040034
+name: fractured
+namespace: quality
+def: "A broken quality where an entity is cracked or broken, usually a bone." [https://medlineplus.gov/fractures.html]
+is_a: PATO:0001444 ! broken
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: PATO:0040040
+name: compression-fractured
+namespace: quality
+def: "A fractured quality that is caused by a loss of bone mass (osteoporosis) that occurs as part of aging." [https://www.mayoclinic.org/diseases-conditions/osteoporosis/multimedia/compression-fractures/img-20008995]
+synonym: "compression fractured" EXACT []
+synonym: "fractured, compression" EXACT []
+synonym: "fractured, wedge" EXACT []
+synonym: "wedge fractured" EXACT []
+is_a: PATO:0040034 ! fractured
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: PATO:0040041
+name: avulsion fractured
+namespace: quality
+def: "A fractured quality in which the fragment of bone tears away from the main mass of bone as a result of physical trauma." [https://en.wikipedia.org/wiki/Avulsion_fracture]
+synonym: "fractured, avulsion" EXACT []
+is_a: PATO:0040034 ! fractured
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: PATO:0040042
+name: decreased proportionality to
+namespace: quality
+def: "A proportionality quality inhering in a bearer by virtue of the bearer's decreased magnitude in respect to a related entity." [https://orcid.org/0000-0001-5208-3432]
+comment: Example: decreased proportion of CD4 T cells relative to total T cells.
+synonym: "decreased proportion" EXACT []
+synonym: "decreased proportionality" EXACT []
+synonym: "decreased quotient" EXACT []
+synonym: "decreased ratio" EXACT []
+is_a: PATO:0001470 ! proportionality to
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: PATO:0040043
+name: increased proportionality to
+namespace: quality
+def: "A proportionality quality inhering in a bearer by virtue of the bearer's increased magnitude in respect to a related entity." [https://orcid.org/0000-0001-5208-3432]
+comment: Example: increased proportion of CD4 T cells relative to total T cells.
+synonym: "increased proportion" EXACT []
+synonym: "increased proportionality" EXACT []
+synonym: "increased quotient" EXACT []
+synonym: "increased ratio" EXACT []
+is_a: PATO:0001470 ! proportionality to
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
 id: PATO:0045000
 name: normal rate
 namespace: quality
@@ -6701,6 +6811,21 @@ subset: value_slim
 is_a: PATO:0001025 ! pressure
 is_a: PATO:0045001 ! normal object quality
 intersection_of: PATO:0001025 ! pressure
+intersection_of: has_relative_magnitude PATO:0000461 ! normal
+created_by: Luke Slater
+creation_date: 2017-12-22T14:16:43Z
+
+[Term]
+id: PATO:0045047
+name: normal resistance to
+namespace: quality
+def: "A resistance to a stimulus which is relatively normal or average" []
+subset: disposition_slim
+subset: relational_slim
+subset: value_slim
+is_a: PATO:0001178 ! resistant to
+is_a: PATO:0045001 ! normal object quality
+intersection_of: PATO:0001178 ! resistant to
 intersection_of: has_relative_magnitude PATO:0000461 ! normal
 created_by: Luke Slater
 creation_date: 2017-12-22T14:16:43Z
