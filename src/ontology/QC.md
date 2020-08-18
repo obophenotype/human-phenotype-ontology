@@ -73,7 +73,7 @@ There are three sources for tests:
   - illegal oboInOwl#hasSynonymType syntax, i.e. should be followed by "<http://purl.obolibrary.org/obo/hp.owl#XYZ>"
   - Illegal IRI entity namespace. IRI should start with one of:
   - 60 mmHg (hacky exception... needs to be re-visited, i.e. handle string values)
-  - Annotation [Whitelist](https://github.com/Phenomics/hpo-owl-qc/blob/master/src/main/resources/AP_whitelist.txt)
+  - Annotation [Allow-List](https://github.com/Phenomics/hpo-owl-qc/blob/master/src/main/resources/AP_whitelist.txt)
   - http://purl.obolibrary.org/obo/HP_
   - http://purl.obolibrary.org/obo/PATO_
   - http://purl.obolibrary.org/obo/CHEBI_
