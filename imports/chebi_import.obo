@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-08-11/imports/chebi_import.owl
+data-version: hp/releases/2020-10-12/imports/chebi_import.owl
 subsetdef: 1_STAR "Preliminary entries"
 subsetdef: 2_STAR "Annotated by 3rd party"
 subsetdef: 3_STAR "Manually annotated by ChEBI Team"
@@ -1907,7 +1907,6 @@ synonym: "L-alpha-amino acids" RELATED [ChEBI]
 synonym: "L-Amino acid" RELATED [KEGG_COMPOUND]
 xref: KEGG:C00151
 is_a: CHEBI:33704 ! alpha-amino acid
-relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: is_conjugate_acid_of CHEBI:59814 ! L-alpha-amino acid anion
 relationship: is_tautomer_of CHEBI:59869 ! L-alpha-amino acid zwitterion
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
@@ -17277,7 +17276,7 @@ name: vitamin
 namespace: chebi_ontology
 alt_id: CHEBI:10004
 alt_id: CHEBI:27305
-def: "Any micronutrient that is an organic compound. The term \"vitamines\" (from vita + amines) was coined in 1912 by Casimir Funk, who believed that these compounds were amines." []
+def: "A biochemical role played by any micronutrient that is an organic compound. Vitamins are present in foods in small amounts and are essential to normal metabolism and biochemical functions, usually as coenzymes. The term \"vitamines\" (from vita + amines) was coined in 1912 by Casimir Funk, who believed that these compounds were amines." []
 subset: 3_STAR
 synonym: "Vitamin" EXACT [ChEBI]
 synonym: "vitamina" RELATED [ChEBI]
@@ -17628,7 +17627,7 @@ is_a: CHEBI:33286 ! agrochemical
 id: CHEBI:33290
 name: food
 namespace: chebi_ontology
-def: "Any material that can be ingested by an organism." []
+def: "A physiological role played by any substance of either plant, animal or artificial origin which contains essential body nutrients that can be ingested by an organism to provide energy, promote growth, and maintain the processes of life." []
 subset: 3_STAR
 synonym: "food material" RELATED [ChEBI]
 synonym: "food materials" RELATED [ChEBI]
@@ -20480,6 +20479,7 @@ alt_id: CHEBI:23691
 alt_id: CHEBI:6976
 subset: 3_STAR
 synonym: "dicarboxylic acid monoamides" RELATED [ChEBI]
+xref: KEGG:C04131
 is_a: CHEBI:23690 ! dicarboxylic acid amide
 relationship: is_conjugate_acid_of CHEBI:77450 ! dicarboxylic acid monoamide(1-)
 
@@ -23919,7 +23919,11 @@ is_a: CHEBI:48354 ! polar solvent
 id: CHEBI:48359
 name: protophilic solvent
 namespace: chebi_ontology
-subset: 1_STAR
+def: "Solvent that is capable of acting as a hydron (proton) acceptor." []
+subset: 3_STAR
+synonym: "HBA solvent" RELATED [ChEBI]
+synonym: "hydrogen bond acceptor solvent" RELATED [ChEBI]
+synonym: "protophilic solvent" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:39142 ! Bronsted base
 is_a: CHEBI:48354 ! polar solvent
 
@@ -23927,7 +23931,9 @@ is_a: CHEBI:48354 ! polar solvent
 id: CHEBI:48360
 name: amphiprotic solvent
 namespace: chebi_ontology
-subset: 1_STAR
+def: "Self-ionizing solvent possessing both characteristics of Bronsted acids and bases." []
+subset: 3_STAR
+synonym: "amphiprotic solvent" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:48356 ! protic solvent
 is_a: CHEBI:48359 ! protophilic solvent
 
@@ -28756,7 +28762,7 @@ is_a: CHEBI:75767 ! animal metabolite
 id: CHEBI:75769
 name: B vitamin
 namespace: chebi_ontology
-def: "Any of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B) that play important roles in cell metabolism. The group comprises vitamin B1, B2, B3, B5, B6, B7, B9, and B12. (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such.)" []
+def: "A role played by any of the group of eight water-soluble vitamins originally thought to be a single compound (vitamin B). The group comprises of vitamin B1, B2, B3, B5, B6, B7, B9, and B12 (Around 20 other compounds were once thought to be B vitamins but are no longer classified as such). B vitamins play important roles in cell metabolism." []
 subset: 3_STAR
 synonym: "B vitamins" RELATED [ChEBI]
 synonym: "B-group vitamin" RELATED [ChEBI]
@@ -29247,7 +29253,7 @@ namespace: chebi_ontology
 def: "A monocarboxylic acid anion obtained by deprotonation of the carboxy group of any dicarboxylic acid monoamide; major species at pH 7.3." []
 subset: 3_STAR
 synonym: "a monoamide of a dicarboxylate" RELATED [UniProt]
-xref: MetaCyc:dicarboxylic acid monoamide {source="SUBMITTER"}
+xref: MetaCyc:DICARBOXYLIC-ACID-MONOAMIDES
 is_a: CHEBI:35757 ! monocarboxylic acid anion
 relationship: is_conjugate_base_of CHEBI:35735 ! dicarboxylic acid monoamide
 property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
@@ -29430,7 +29436,7 @@ property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]C([*])=O" xsd:s
 id: CHEBI:78295
 name: food component
 namespace: chebi_ontology
-def: "Any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
+def: "A physiological role played by any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
 subset: 3_STAR
 synonym: "dietary component" RELATED [ChEBI]
 synonym: "dietary components" RELATED [ChEBI]
@@ -29870,7 +29876,7 @@ property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "HR" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "1.008" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "1.00783" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "[*]" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "*[H]" xsd:string
 
 [Term]
 id: CHEBI:83811

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-08-11/imports/go_import.owl
+data-version: hp/releases/2020-10-12/imports/go_import.owl
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr "AGR slim"
@@ -160,6 +160,7 @@ name: mitotic cell cycle
 namespace: biological_process
 alt_id: GO:0007067
 def: "Progression through the phases of the mitotic cell cycle, the most common eukaryotic cell cycle, which canonically comprises four successive phases called G1, S, G2, and M and includes replication of the genome and the subsequent segregation of chromosomes into daughter cells. In some variant cell cycles nuclear replication or nuclear division may not be followed by cell division, or G1 and G2 phases may be absent." [GOC:mah, ISBN:0815316194, Reactome:69278]
+comment: Note that this term should not be confused with 'GO:0140014 ; mitotic nuclear division'. 'GO:0000278 ; mitotic cell cycle represents the entire mitotic cell cycle, while 'GO:0140014 ; mitotic nuclear division' specifically represents the actual nuclear division step of the mitotic cell cycle.
 subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
@@ -12687,8 +12688,11 @@ intersection_of: occurs_in GO:0016020 ! membrane
 id: GO:0032602
 name: chemokine production
 namespace: biological_process
+alt_id: GO:0090195
 def: "The appearance of a chemokine due to biosynthesis or secretion following a cellular stimulus, resulting in an increase in its intracellular or extracellular levels." [GOC:mah]
+synonym: "chemokine secretion" NARROW []
 is_a: GO:0001816 ! cytokine production
+creation_date: 2009-12-18T11:26:20Z
 
 [Term]
 id: GO:0032609
@@ -12708,11 +12712,16 @@ is_a: GO:0001816 ! cytokine production
 id: GO:0032642
 name: regulation of chemokine production
 namespace: biological_process
+alt_id: GO:0045073
+alt_id: GO:0090196
 def: "Any process that modulates the frequency, rate, or extent of chemokine production." [GOC:mah]
+synonym: "regulation of chemokine biosynthetic process" NARROW []
+synonym: "regulation of chemokine secretion" NARROW []
 is_a: GO:0001817 ! regulation of cytokine production
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0032602 ! chemokine production
 relationship: regulates GO:0032602 ! chemokine production
+creation_date: 2009-12-18T11:28:00Z
 
 [Term]
 id: GO:0032649
@@ -12733,16 +12742,21 @@ relationship: regulates GO:0032609 ! interferon-gamma production
 id: GO:0032682
 name: negative regulation of chemokine production
 namespace: biological_process
+alt_id: GO:0045079
+alt_id: GO:0090198
 def: "Any process that stops, prevents, or reduces the frequency, rate, or extent of chemokine production." [GOC:mah]
 synonym: "down regulation of chemokine production" EXACT []
 synonym: "down-regulation of chemokine production" EXACT []
 synonym: "downregulation of chemokine production" EXACT []
 synonym: "inhibition of chemokine production" NARROW []
+synonym: "negative regulation of chemokine biosynthetic process" NARROW []
+synonym: "negative regulation of chemokine secretion" NARROW []
 is_a: GO:0001818 ! negative regulation of cytokine production
 is_a: GO:0032642 ! regulation of chemokine production
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0032602 ! chemokine production
 relationship: negatively_regulates GO:0032602 ! chemokine production
+creation_date: 2009-12-18T11:28:00Z
 
 [Term]
 id: GO:0032689
@@ -12768,8 +12782,12 @@ relationship: negatively_regulates GO:0032609 ! interferon-gamma production
 id: GO:0032722
 name: positive regulation of chemokine production
 namespace: biological_process
+alt_id: GO:0045080
+alt_id: GO:0090197
 def: "Any process that activates or increases the frequency, rate, or extent of chemokine production." [GOC:mah]
 synonym: "activation of chemokine production" NARROW []
+synonym: "positive regulation of chemokine biosynthetic process" NARROW []
+synonym: "positive regulation of chemokine secretion" NARROW []
 synonym: "stimulation of chemokine production" NARROW []
 synonym: "up regulation of chemokine production" EXACT []
 synonym: "up-regulation of chemokine production" EXACT []
@@ -12779,6 +12797,8 @@ is_a: GO:0032642 ! regulation of chemokine production
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0032602 ! chemokine production
 relationship: positively_regulates GO:0032602 ! chemokine production
+created_by: tb
+creation_date: 2009-12-18T11:28:00Z
 
 [Term]
 id: GO:0032729
@@ -15912,7 +15932,6 @@ synonym: "development during symbiotic interaction" RELATED [gOC:dph]
 synonym: "development on or near surface of other organism during symbiotic interaction" RELATED [GOC:dph]
 synonym: "development on or near surface of other organism involved in symbiotic interaction" NARROW []
 is_a: GO:0032502 ! developmental process
-is_a: GO:0051704 ! multi-organism process
 intersection_of: GO:0032502 ! developmental process
 intersection_of: part_of GO:0044419 ! interspecies interaction between organisms
 relationship: part_of GO:0044419 ! interspecies interaction between organisms
@@ -22000,6 +22019,7 @@ name: meiotic cell cycle
 namespace: biological_process
 alt_id: GO:0007126
 def: "Progression through the phases of the meiotic cell cycle, in which canonically a cell replicates to produce four offspring with half the chromosomal content of the progenitor cell via two nuclear divisions." [GOC:ai]
+comment: Note that this term should not be confused with 'GO:0140013 ; meiotic nuclear division'. 'GO:0051321 ; meiotic cell cycle represents the entire mitotic cell cycle, while 'GO:0140013 meiotic nuclear division' specifically represents the actual nuclear division step of the mitotic cell cycle.
 subset: goslim_drosophila
 subset: goslim_yeast
 synonym: "meiosis" RELATED []
@@ -25846,57 +25866,6 @@ created_by: tb
 creation_date: 2009-12-18T10:33:49Z
 
 [Term]
-id: GO:0090195
-name: chemokine secretion
-namespace: biological_process
-def: "The regulated release of chemokines from a cell." [GOC:BHF, GOC:rl]
-is_a: GO:0050663 ! cytokine secretion
-relationship: part_of GO:0032602 ! chemokine production
-created_by: tb
-creation_date: 2009-12-18T11:26:20Z
-
-[Term]
-id: GO:0090196
-name: regulation of chemokine secretion
-namespace: biological_process
-def: "Any process that modulates the rate, frequency or extent of chemokine secretion, the regulated release of chemokines from a cell." [GOC:BHF, GOC:rl]
-is_a: GO:0032642 ! regulation of chemokine production
-is_a: GO:0050707 ! regulation of cytokine secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0090195 ! chemokine secretion
-relationship: regulates GO:0090195 ! chemokine secretion
-created_by: tb
-creation_date: 2009-12-18T11:28:00Z
-
-[Term]
-id: GO:0090197
-name: positive regulation of chemokine secretion
-namespace: biological_process
-def: "Any process that increases the rate, frequency or extent of chemokine secretion, the regulated release of chemokines from a cell." [GOC:BHF, GOC:rl]
-is_a: GO:0032722 ! positive regulation of chemokine production
-is_a: GO:0050715 ! positive regulation of cytokine secretion
-is_a: GO:0090196 ! regulation of chemokine secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0090195 ! chemokine secretion
-relationship: positively_regulates GO:0090195 ! chemokine secretion
-created_by: tb
-creation_date: 2009-12-18T11:28:00Z
-
-[Term]
-id: GO:0090198
-name: negative regulation of chemokine secretion
-namespace: biological_process
-def: "Any process that decreases the rate, frequency or extent of chemokine secretion, the regulated release of chemokines from a cell." [GOC:BHF, GOC:rl]
-is_a: GO:0032682 ! negative regulation of chemokine production
-is_a: GO:0050710 ! negative regulation of cytokine secretion
-is_a: GO:0090196 ! regulation of chemokine secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0090195 ! chemokine secretion
-relationship: negatively_regulates GO:0090195 ! chemokine secretion
-created_by: tb
-creation_date: 2009-12-18T11:28:00Z
-
-[Term]
 id: GO:0090205
 name: positive regulation of cholesterol metabolic process
 namespace: biological_process
@@ -27098,10 +27067,12 @@ id: GO:0140013
 name: meiotic nuclear division
 namespace: biological_process
 def: "One of the two nuclear divisions that occur as part of the meiotic cell cycle." [PMID:9334324]
+synonym: "meiosis" EXACT []
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903046 ! meiotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0051321 ! meiotic cell cycle
+property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/19910 xsd:anyURI
 created_by: pg
 creation_date: 2017-03-23T09:40:00Z
 
@@ -27112,10 +27083,12 @@ namespace: biological_process
 def: "A mitotic cell cycle process comprising the steps by which the nucleus of a eukaryotic cell divides; the process involves condensation of chromosomal DNA into a highly compacted form. Canonically, mitosis produces two daughter nuclei whose chromosome complement is identical to that of the mother cell." [ISBN:0198547684]
 subset: goslim_chembl
 subset: goslim_generic
+synonym: "mitosis" EXACT []
 is_a: GO:0000280 ! nuclear division
 is_a: GO:1903047 ! mitotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0000278 ! mitotic cell cycle
+property_value: term_tracker_item https://github.com/geneontology/go-ontology/issues/19910 xsd:anyURI
 created_by: pg
 creation_date: 2017-03-23T14:44:23Z
 
