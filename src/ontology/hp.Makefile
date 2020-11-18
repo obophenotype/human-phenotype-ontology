@@ -255,5 +255,13 @@ tmp/patternised_classes.txt: patternised_classes.txt
 reports/hpo_dosdp_table.csv: tmp/hp-build.owl tmp/patternised_classes.txt
 	$(ROBOT) merge -i $< filter -T tmp/patternised_classes.txt --signature true --preserve-structure false query --use-graphs true -f csv --query ../sparql/hp_term_table.sparql $@
 	
-	
-	
+
+imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/ncit_terms_combined.txt --force true --method BOT \
+		remove --base-iri $(URIBASE)/NCIT_ --axioms external --preserve-structure false --trim false \
+		query --update ../sparql/inject-subset-declaration.ru \
+		remove -T imports/ncit_terms_combined.txt --select complement --select "classes individuals" \
+		remove --term rdfs:seeAlso --term rdfs:comment --select "annotation-properties" \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: imports/ncit_import.owl
