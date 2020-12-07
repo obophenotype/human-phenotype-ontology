@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-10-12/imports/ro_import.owl
+data-version: hp/releases/2020-12-07/imports/ro_import.owl
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 ontology: hp/imports/ro_import
@@ -849,6 +849,19 @@ property_value: IAO:0000118 "meets" xsd:string
 property_value: RO:0002575 BFO:0000063
 holds_over_chain: RO:0002230 RO:0002224
 is_a: BFO:0000063 ! precedes
+
+[Typedef]
+id: RO:0002100
+name: has soma location
+def: "Relation between a neuron and an anatomical structure that its soma is part of." []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: RO:0001900 RO:0001901
+domain: CL:0000540 ! neuron
+range: CARO:0000003 ! connected anatomical structure
+is_a: RO:0002131 ! overlaps
+transitive_over: BFO:0000050 ! part of
+expand_expression_to: "BFO_0000051 some (\n   GO_0043025 and   BFO_0000050 some ?Y)" []
 
 [Typedef]
 id: RO:0002103
@@ -2145,6 +2158,15 @@ def: "x existence overlaps y if and only if either (a) the start of x is part of
 comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002487 ! relation between physical entity and a process or stage
+
+[Typedef]
+id: RO:0002491
+name: existence starts and ends during
+def: "x existence starts and ends during y if and only if the start of x is part of y and the end of x is part of y. Formally: x existence starts and ends during y iff α(x) >= α(y) & α(x) <= ω(y) & ω(x) <= ω(y) & ω(x) >= α(y)" []
+comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002488 ! existence starts during
+is_a: RO:0002492 ! existence ends during
 
 [Typedef]
 id: RO:0002492

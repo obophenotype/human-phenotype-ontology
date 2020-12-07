@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: hp/releases/2020-10-12/imports/chebi_import.owl
+data-version: hp/releases/2020-12-07/imports/chebi_import.owl
 subsetdef: 1_STAR "Preliminary entries"
 subsetdef: 2_STAR "Annotated by 3rd party"
 subsetdef: 3_STAR "Manually annotated by ChEBI Team"
@@ -2103,6 +2103,32 @@ property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "256.24023
 property_value: http://purl.obolibrary.org/obo/chebi/smiles "CCCCCCCCCCCCCCCC(O)=O" xsd:string
 
 [Term]
+id: CHEBI:157668
+name: carbocyclic fatty acid anion
+namespace: chebi_ontology
+def: "Any fatty acid anion containing a ring composed of carbon atoms. Major microspecies at pH 7.3" []
+subset: 2_STAR
+synonym: "carbocyclic fatty acid" RELATED [UniProt]
+is_a: CHEBI:28868 ! fatty acid anion
+relationship: is_conjugate_base_of CHEBI:35744 ! carbocyclic fatty acid
+
+[Term]
+id: CHEBI:157750
+name: heparan sulfate polyanion
+namespace: chebi_ontology
+def: "A carbohydrate acid derivative anion that is a polyanionic form of heparan sulfate arising from global deprotonation of the carboxy and N-sulfo groups; major species at pH 7.3." []
+subset: 2_STAR
+synonym: "heparan sulfate group" RELATED [UniProt]
+is_a: CHEBI:60164 ! ionic polymer
+is_a: CHEBI:61660 ! organic sulfamate oxoanion
+is_a: CHEBI:63551 ! carbohydrate acid derivative anion
+relationship: is_conjugate_base_of CHEBI:28815 ! heparan sulfate
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-4" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "(C12H15NO20S3)n" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "0.0" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "0.0" xsd:string
+
+[Term]
 id: CHEBI:15778
 name: N-acyl-D-amino acid
 namespace: chebi_ontology
@@ -3188,7 +3214,7 @@ alt_id: CHEBI:15292
 alt_id: CHEBI:27218
 alt_id: CHEBI:46379
 alt_id: CHEBI:9888
-def: "A carbonyl group with two C-bound amine groups." []
+def: "A carbonyl group with two C-bound amine groups. The commercially available fertilizer has an analysis of 46-0-0 (N-P2O5-K2O)." []
 subset: 3_STAR
 synonym: "1728" RELATED [PPDB]
 synonym: "Carbamide" RELATED [KEGG_COMPOUND]
@@ -3760,6 +3786,23 @@ relationship: has_part CHEBI:33708 ! amino-acid residue
 relationship: is_tautomer_of CHEBI:60466 ! peptide zwitterion
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "(C2H2NOR)nC2H3NOR" xsd:string
+
+[Term]
+id: CHEBI:166902
+name: noradrenaline(1+)
+namespace: chebi_ontology
+subset: 2_STAR
+synonym: "noradrenaline" RELATED [UniProt]
+is_a: CHEBI:25697 ! organic cation
+is_a: CHEBI:35274 ! ammonium ion derivative
+relationship: is_conjugate_acid_of CHEBI:33569 ! noradrenaline
+property_value: http://purl.obolibrary.org/obo/chebi/charge "+1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C8H12NO3" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C8H11NO3/c9-4-8(12)5-1-2-6(10)7(11)3-5/h1-3,8,10-12H,4,9H2/p+1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "SFLSHLFXELFNJZ-UHFFFAOYSA-O" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "170.187" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "170.08117" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "C1=CC(=CC(=C1O)O)C(C[NH3+])O" xsd:string
 
 [Term]
 id: CHEBI:16708
@@ -5999,6 +6042,7 @@ synonym: "(S)-2-Hydroxycarboxylic acid" RELATED [KEGG_COMPOUND]
 synonym: "(S)-2-Hydroxymonocarboxylic acid" RELATED [KEGG_COMPOUND]
 is_a: CHEBI:49302 ! 2-hydroxy monocarboxylic acid
 relationship: is_conjugate_acid_of CHEBI:58123 ! (2S)-2-hydroxy monocarboxylic acid anion
+relationship: is_enantiomer_of CHEBI:17893 ! (2R)-2-hydroxy monocarboxylic acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H3O3R" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "75.044" xsd:string
@@ -7294,6 +7338,7 @@ xref: KEGG:C02489
 xref: KEGG:C15487
 is_a: CHEBI:49302 ! 2-hydroxy monocarboxylic acid
 relationship: is_conjugate_acid_of CHEBI:58314 ! (2R)-2-hydroxy monocarboxylic acid anion
+relationship: is_enantiomer_of CHEBI:17375 ! (2S)-2-hydroxy monocarboxylic acid
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C2H3O3R" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "75.04340" xsd:string
@@ -7868,6 +7913,8 @@ def: "Any six-carbon monosaccharide which in its linear form contains either an 
 subset: 3_STAR
 synonym: "Hexose" EXACT [KEGG_COMPOUND]
 synonym: "hexoses" RELATED [ChEBI]
+synonym: "WURCS=2.0/1,1,0/[axxxxh-1x_1-5_2*NCC/3=O]/1/" RELATED [GlyTouCan]
+xref: GlyTouCan:G70994MS
 xref: KEGG:C00738
 is_a: CHEBI:35381 ! monosaccharide
 
@@ -12218,6 +12265,7 @@ name: tetrapyrrole
 namespace: chebi_ontology
 def: "A natural pigment containing four pyrrole rings joined by one-carbon units linking position 2 of one pyrrole ring to position 5 of the next." []
 subset: 3_STAR
+synonym: "a tetrapyrrole" RELATED [UniProt]
 synonym: "tetrapyrrole" EXACT IUPAC_NAME [IUPAC]
 synonym: "tetrapyrroles" EXACT IUPAC_NAME [IUPAC]
 is_a: CHEBI:33833 ! heteroarene
@@ -13082,7 +13130,11 @@ synonym: "Glycogen" EXACT [KEGG_COMPOUND]
 synonym: "liver starch" RELATED [ChemIDplus]
 xref: CAS:9005-79-2 {source="KEGG COMPOUND"}
 xref: CAS:9005-79-2 {source="ChemIDplus"}
+xref: GlyTouCan:G99991IU
+xref: HMDB:HMDB0000757
 xref: KEGG:C00182
+xref: MetaCyc:CPD0-971
+xref: Wikipedia:Glycogen
 is_a: CHEBI:24384 ! glycogens
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
@@ -13581,6 +13633,7 @@ xref: PMID:8713797 {source="Europe PMC"}
 is_a: CHEBI:35721 ! heparan sulfates
 relationship: has_role CHEBI:75771 ! mouse metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
+relationship: is_conjugate_acid_of CHEBI:157750 ! heparan sulfate polyanion
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "(C12H19NO20S3)n" xsd:string
 
@@ -18299,6 +18352,7 @@ xref: Gmelin:863925 {source="Gmelin"}
 xref: LINCS:LSM-5181
 is_a: CHEBI:33567 ! catecholamine
 relationship: has_role CHEBI:76967 ! human xenobiotic metabolite
+relationship: is_conjugate_base_of CHEBI:166902 ! noradrenaline(1+)
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "C8H11NO3" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C8H11NO3/c9-4-8(12)5-1-2-6(10)7(11)3-5/h1-3,8,10-12H,4,9H2" xsd:string
@@ -20511,6 +20565,7 @@ def: "Any fatty acid containing a ring composed of carbon atoms." []
 subset: 3_STAR
 synonym: "carbocyclic fatty acids" RELATED [ChEBI]
 is_a: CHEBI:59238 ! cyclic fatty acid
+relationship: is_conjugate_acid_of CHEBI:157668 ! carbocyclic fatty acid anion
 
 [Term]
 id: CHEBI:35753
@@ -26431,12 +26486,16 @@ name: insulin (human)
 namespace: chebi_ontology
 def: "An insulin that is produced in the pancreas and involved in regulating the metabolism of carbohydrates (particularly glucose) and fats. Commonly thought of as a protein, it consists of two peptide chains, one containing 21 amino acid residues and the other containing 30; the chains are joined together by 2 disulfide bonds. Recombinant insulin is identical to human insulin, but is synthesised by inserting the human insulin gene into E. coli, which then produces insulin for human use. It is used in the treatment of type I and type II diabetes." []
 subset: 3_STAR
+synonym: "Exubera" RELATED BRAND_NAME [ChEBI]
 synonym: "human insulin" RELATED [ChEBI]
 synonym: "Insulin" RELATED [KEGG_COMPOUND]
 synonym: "insulin (recombinant)" RELATED [ChEBI]
+synonym: "insulin human" RELATED INN [WHO_MedNet]
 synonym: "Insulin recombinant" RELATED [DrugBank]
-xref: CAS:9004-10-8 {source="ChemIDplus"}
-xref: CAS:9004-10-8 {source="KEGG COMPOUND"}
+synonym: "insulina humana" RELATED INN [WHO_MedNet]
+synonym: "insuline humaine" RELATED INN [WHO_MedNet]
+synonym: "insulinum humanum" RELATED INN [WHO_MedNet]
+xref: CAS:11061-68-0 {source="ChemIDplus"}
 xref: DrugBank:DB00030
 xref: KEGG:C00723
 xref: KEGG:D00085
@@ -26444,16 +26503,23 @@ xref: PMID:22249812 {source="Europe PMC"}
 xref: PMID:22617471 {source="Europe PMC"}
 xref: PMID:22715632 {source="Europe PMC"}
 xref: PMID:22843207 {source="Europe PMC"}
+xref: PMID:31301295 {source="Europe PMC"}
+xref: PMID:31821343 {source="Europe PMC"}
+xref: PMID:31876563 {source="Europe PMC"}
+xref: PMID:32208558 {source="Europe PMC"}
+xref: PMID:32398693 {source="Europe PMC"}
+xref: PMID:32629793 {source="Europe PMC"}
+xref: PMID:32797824 {source="Europe PMC"}
 xref: PMID:8019699 {source="Europe PMC"}
 is_a: CHEBI:145810 ! insulin
 relationship: has_role CHEBI:35526 ! hypoglycemic agent
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/formula "C256H381N65O77S6" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C256H381N65O77S6/c1-29-130(23)202(311-190(337)103-258)250(391)315-200(128(19)20)246(387)286-158(75-82-197(347)348)216(357)281-154(70-77-186(261)333)220(361)306-181-115-402-403-116-182-241(382)303-176(110-323)238(379)293-161(88-122(7)8)224(365)294-167(95-139-53-61-145(328)62-54-139)227(368)282-153(69-76-185(260)332)217(358)289-160(87-121(5)6)222(363)283-157(74-81-196(345)346)219(360)301-173(101-188(263)335)233(374)297-169(97-141-57-65-147(330)66-58-141)230(371)307-180(240(381)302-174(254(395)396)102-189(264)336)114-401-400-113-179(213(354)272-106-191(338)277-152(72-79-194(341)342)215(356)280-150(51-42-84-270-256(266)267)211(352)271-107-192(339)278-165(93-137-46-36-32-37-47-137)226(367)296-166(94-138-48-38-33-39-49-138)229(370)298-170(98-142-59-67-148(331)68-60-142)236(377)318-205(134(27)326)253(394)321-85-43-52-184(321)244(385)284-151(50-40-41-83-257)221(362)319-206(135(28)327)255(397)398)309-247(388)199(127(17)18)314-234(375)163(90-124(11)12)291-228(369)168(96-140-55-63-146(329)64-56-140)295-223(364)159(86-120(3)4)288-209(350)132(25)276-214(355)156(73-80-195(343)344)285-245(386)198(126(15)16)313-235(376)164(91-125(13)14)292-232(373)172(100-144-105-269-119-275-144)300-237(378)175(109-322)279-193(340)108-273-212(353)178(112-399-404-117-183(308-242(181)383)243(384)317-204(133(26)325)251(392)304-177(111-324)239(380)316-203(131(24)30-2)249(390)310-182)305-225(366)162(89-123(9)10)290-231(372)171(99-143-104-268-118-274-143)299-218(359)155(71-78-187(262)334)287-252(393)207(208(265)349)320-248(389)201(129(21)22)312-210(351)149(259)92-136-44-34-31-35-45-136/h31-39,44-49,53-68,104-105,118-135,149-184,198-207,322-331H,29-30,40-43,50-52,69-103,106-117,257-259H2,1-28H3,(H2,260,332)(H2,261,333)(H2,262,334)(H2,263,335)(H2,264,336)(H2,265,349)(H,268,274)(H,269,275)(H,271,352)(H,272,354)(H,273,353)(H,276,355)(H,277,338)(H,278,339)(H,279,340)(H,280,356)(H,281,357)(H,282,368)(H,283,363)(H,284,385)(H,285,386)(H,286,387)(H,287,393)(H,288,350)(H,289,358)(H,290,372)(H,291,369)(H,292,373)(H,293,379)(H,294,365)(H,295,364)(H,296,367)(H,297,374)(H,298,370)(H,299,359)(H,300,378)(H,301,360)(H,302,381)(H,303,382)(H,304,392)(H,305,366)(H,306,361)(H,307,371)(H,308,383)(H,309,388)(H,310,390)(H,311,337)(H,312,351)(H,313,376)(H,314,375)(H,315,391)(H,316,380)(H,317,384)(H,318,377)(H,319,362)(H,320,389)(H,341,342)(H,343,344)(H,345,346)(H,347,348)(H,395,396)(H,397,398)(H4,266,267,270)/t130-,131-,132+,133+,134+,135+,149+,150+,151+,152+,153+,154+,155+,156+,157+,158+,159+,160+,161+,162+,163+,164+,165+,166+,167+,168+,169+,170+,171+,172+,173+,174+,175+,176+,177+,178+,179+,180+,181+,182-,183+,184+,198+,199+,200+,201+,202+,203+,204+,205+,206+,207+/m1/s1" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/inchikey "YAJCHEVQCOHZDC-QMMNLEPNSA-N" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/mass "5793.54400" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "5789.62200" xsd:string
-property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC[C@@H](C)[C@H](NC(=O)CN)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](CCC(N)=O)C(=O)N[C@H]1CSSC[C@H]2NC(=O)[C@@H](NC(=O)[C@H](CO)NC(=O)[C@@H](NC(=O)[C@H](CSSC[C@H](NC(=O)[C@H](CC(C)C)NC(=O)[C@H](Cc3c[nH]cn3)NC(=O)[C@H](CCC(N)=O)NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](N)Cc3ccccc3)C(C)C)C(N)=O)C(=O)NCC(=O)N[C@@H](CO)C(=O)N[C@@H](Cc3c[nH]cn3)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](Cc3ccc(O)cc3)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CSSC[C@H](NC(=O)[C@H](Cc3ccc(O)cc3)NC(=O)[C@H](CC(N)=O)NC(=O)[C@H](CCC(O)=O)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCC(N)=O)NC(=O)[C@H](Cc3ccc(O)cc3)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CO)NC2=O)C(=O)N[C@@H](CC(N)=O)C(O)=O)C(=O)NCC(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](CCCNC(N)=N)C(=O)NCC(=O)N[C@@H](Cc2ccccc2)C(=O)N[C@@H](Cc2ccccc2)C(=O)N[C@@H](Cc2ccc(O)cc2)C(=O)N[C@@H]([C@H](C)O)C(=O)N2CCC[C@H]2C(=O)N[C@@H](CCCCN)C(=O)N[C@@H]([C@H](C)O)C(O)=O)NC1=O)[C@H](C)O)[C@H](C)CC" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "C257H383N65O77S6" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/C257H383N65O77S6/c1-29-131(23)205(313-193(339)104-259)252(393)317-204(130(21)22)248(389)288-159(75-82-200(349)350)217(358)282-156(71-78-189(263)335)221(362)308-183-116-403-404-117-184-243(384)305-178(111-324)240(381)294-162(88-123(7)8)225(366)295-168(95-140-53-61-146(329)62-54-140)228(369)283-154(69-76-187(261)333)218(359)290-161(87-122(5)6)223(364)285-158(74-81-199(347)348)220(361)302-174(101-190(264)336)235(376)298-170(97-142-57-65-148(331)66-58-142)231(372)309-182(242(383)304-176(255(396)397)103-192(266)338)115-402-401-114-181(214(355)273-107-194(340)278-153(72-79-197(343)344)216(357)281-151(51-42-84-271-257(267)268)212(353)272-108-195(341)279-166(93-138-46-36-32-37-47-138)227(368)297-167(94-139-48-38-33-39-49-139)230(371)299-171(98-143-59-67-149(332)68-60-143)238(379)320-208(135(27)327)254(395)322-85-43-52-186(322)246(387)286-152(50-40-41-83-258)222(363)321-209(136(28)328)256(398)399)311-250(391)203(129(19)20)316-236(377)164(90-125(11)12)292-229(370)169(96-141-55-63-147(330)64-56-141)296-224(365)160(86-121(3)4)289-210(351)133(25)277-215(356)157(73-80-198(345)346)287-247(388)202(128(17)18)315-237(378)165(91-126(13)14)293-233(374)173(100-145-106-270-120-276-145)301-239(380)177(110-323)280-196(342)109-274-213(354)180(113-400-405-118-185(310-244(183)385)245(386)319-207(134(26)326)253(394)306-179(112-325)241(382)318-206(132(24)30-2)251(392)312-184)307-226(367)163(89-124(9)10)291-232(373)172(99-144-105-269-119-275-144)300-219(360)155(70-77-188(262)334)284-234(375)175(102-191(265)337)303-249(390)201(127(15)16)314-211(352)150(260)92-137-44-34-31-35-45-137/h31-39,44-49,53-68,105-106,119-136,150-186,201-209,323-332H,29-30,40-43,50-52,69-104,107-118,258-260H2,1-28H3,(H2,261,333)(H2,262,334)(H2,263,335)(H2,264,336)(H2,265,337)(H2,266,338)(H,269,275)(H,270,276)(H,272,353)(H,273,355)(H,274,354)(H,277,356)(H,278,340)(H,279,341)(H,280,342)(H,281,357)(H,282,358)(H,283,369)(H,284,375)(H,285,364)(H,286,387)(H,287,388)(H,288,389)(H,289,351)(H,290,359)(H,291,373)(H,292,370)(H,293,374)(H,294,381)(H,295,366)(H,296,365)(H,297,368)(H,298,376)(H,299,371)(H,300,360)(H,301,380)(H,302,361)(H,303,390)(H,304,383)(H,305,384)(H,306,394)(H,307,367)(H,308,362)(H,309,372)(H,310,385)(H,311,391)(H,312,392)(H,313,339)(H,314,352)(H,315,378)(H,316,377)(H,317,393)(H,318,382)(H,319,386)(H,320,379)(H,321,363)(H,343,344)(H,345,346)(H,347,348)(H,349,350)(H,396,397)(H,398,399)(H4,267,268,271)/t131-,132-,133-,134+,135+,136+,150-,151-,152-,153-,154-,155-,156-,157-,158-,159-,160-,161-,162-,163-,164-,165-,166-,167-,168-,169-,170-,171-,172-,173-,174-,175-,176-,177-,178-,179-,180-,181-,182-,183-,184-,185-,186-,201-,202-,203-,204-,205-,206-,207-,208-,209-/m0/s1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "PBGKTOXHQIOBKM-FHFVDXKLSA-N" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "5807.630" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "5803.63765" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "CC[C@H](C)[C@H](NC(=O)CN)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](CCC(N)=O)C(=O)N[C@H]1CSSC[C@@H]2NC(=O)[C@@H](NC(=O)[C@H](CO)NC(=O)[C@@H](NC(=O)[C@H](CSSC[C@H](NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CC3=CNC=N3)NC(=O)[C@H](CCC(N)=O)NC(=O)[C@H](CC(N)=O)NC(=O)[C@@H](NC(=O)[C@@H](N)CC3=CC=CC=C3)C(C)C)C(=O)NCC(=O)N[C@@H](CO)C(=O)N[C@@H](CC3=CNC=N3)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CC3=CC=C(O)C=C3)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CSSC[C@H](NC(=O)[C@H](CC3=CC=C(O)C=C3)NC(=O)[C@H](CC(N)=O)NC(=O)[C@H](CCC(O)=O)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCC(N)=O)NC(=O)[C@H](CC3=CC=C(O)C=C3)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CO)NC2=O)C(=O)N[C@@H](CC(N)=O)C(O)=O)C(=O)NCC(=O)N[C@@H](CCC(O)=O)C(=O)N[C@@H](CCCNC(N)=N)C(=O)NCC(=O)N[C@@H](CC2=CC=CC=C2)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)N[C@@H](CC2=CC=C(O)C=C2)C(=O)N[C@@H]([C@@H](C)O)C(=O)N2CCC[C@H]2C(=O)N[C@@H](CCCCN)C(=O)N[C@@H]([C@@H](C)O)C(O)=O)NC1=O)[C@@H](C)O)[C@@H](C)CC" xsd:string
 
 [Term]
 id: CHEBI:59326
@@ -27137,6 +27203,22 @@ synonym: "polyanion" RELATED [ChEBI]
 synonym: "polyanions" RELATED [ChEBI]
 is_a: CHEBI:60164 ! ionic polymer
 relationship: has_part CHEBI:53309 ! polyanionic macromolecule
+
+[Term]
+id: CHEBI:61660
+name: organic sulfamate oxoanion
+namespace: chebi_ontology
+def: "An anion resulting from the removal of a proton from an organic sulfamic acid group." []
+subset: 3_STAR
+synonym: "an organic sulfamic acid anion" RELATED [ChEBI]
+synonym: "organic sulfamic acid anions" RELATED [ChEBI]
+is_a: CHEBI:25696 ! organic anion
+is_a: CHEBI:33482 ! sulfur oxoanion
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "NO3SR2" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/mass "94.07000" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "93.95989" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[O-]S(=O)(=O)N([*])[*]" xsd:string
 
 [Term]
 id: CHEBI:61697
