@@ -65,7 +65,7 @@ script:
   # java-based owl checks on hp-edit
   - java -jar $OWL_CHECK_JAR $HP_EDIT
   # The ODK QC and build: 
-  - cd src/ontology && sh run.sh make test #&> log.txt
+  - cd src/ontology && sh run.sh make IMP=false test #&> log.txt
   #- tail -n 100 log.txt
   # now check hp.obo for duplicated labels, synonyms that are used for different classes
   - cd $CI_HOME
