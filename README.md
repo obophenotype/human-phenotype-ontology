@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/obophenotype/human-phenotype-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/human-phenotype-ontology)
+[![Build Status](https://travis-ci.com/obophenotype/human-phenotype-ontology.svg?branch=master)](https://travis-ci.com/obophenotype/human-phenotype-ontology)
 
 # License
 
