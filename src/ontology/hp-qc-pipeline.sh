@@ -36,7 +36,8 @@ iconv -f UTF-8 -t ISO-8859-15 $HP_EDIT > $TMP_DIR/converted.txt || (echo "found 
 # java-based owl checks on hp-edit
 java -jar $OWL_CHECK_JAR $HP_EDIT
 
-# The ODK QC and build: 
+# The ODK QC and build:
+docker pull obolibrary/odkfull
 sh run.sh make test #&> log.txt
 #- tail -n 100 log.txt
 # now check hp.obo for duplicated labels, synonyms that are used for different classes
