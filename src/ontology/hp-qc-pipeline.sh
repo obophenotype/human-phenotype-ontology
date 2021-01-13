@@ -19,25 +19,29 @@ mkdir -p $TMP_DIR
 rm -rf $TMP_DIR/hpo-owl-qc
 
 cd $TMP_DIR
-git clone https://github.com/Phenomics/hpo-owl-qc.git
+echo "Downloading dependencies.."
+git clone https://github.com/Phenomics/hpo-owl-qc.git --quiet
 cd hpo-owl-qc
-mvn clean install
+mvn clean install --quiet
 cd $HOME_DIR
 rm -rf $TMP_DIR/hpo-obo-qc
 cd $TMP_DIR
-git clone https://github.com/Phenomics/hpo-obo-qc.git
+git clone https://github.com/Phenomics/hpo-obo-qc.git --quiet
 cd hpo-obo-qc
-mvn clean install
+mvn clean install --quiet
 
 cd $HOME_DIR
 
+docker pull obolibrary/odkfull
+
+echo "Running tests.."
 # encoding test on hp-edit
 iconv -f UTF-8 -t ISO-8859-15 $HP_EDIT > $TMP_DIR/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 # java-based owl checks on hp-edit
 java -jar $OWL_CHECK_JAR $HP_EDIT
 
 # The ODK QC and build:
-docker pull obolibrary/odkfull
+
 sh run.sh make IMP=false test #&> log.txt
 #- tail -n 100 log.txt
 # now check hp.obo for duplicated labels, synonyms that are used for different classes
