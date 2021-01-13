@@ -38,7 +38,7 @@ java -jar $OWL_CHECK_JAR $HP_EDIT
 
 # The ODK QC and build:
 docker pull obolibrary/odkfull
-sh run.sh make test #&> log.txt
+sh run.sh make IMP=false test #&> log.txt
 #- tail -n 100 log.txt
 # now check hp.obo for duplicated labels, synonyms that are used for different classes
 java -jar $OBO_CHECK_JAR $HP_OBO
