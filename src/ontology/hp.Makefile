@@ -147,6 +147,17 @@ $(ONT).obo: $(ONT)-simple-non-classified.owl
 #	echo "PRO IMPORT currently skipped!"
 #.PRECIOUS: imports/pr_import.owl
 
+
+	
+
+imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i mirror/nbo.owl -T imports/nbo_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		query --query ../sparql/classes-without-labels.sparql tmp/classes-without-labels.txt \
+		remove -T tmp/classes-without-labels.txt \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/nbo_import.owl
+
 #######################################################
 ##### Code for removing patternised classes ###########
 #######################################################
