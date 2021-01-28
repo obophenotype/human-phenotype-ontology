@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/obophenotype/human-phenotype-ontology.svg?branch=master)](https://travis-ci.com/obophenotype/human-phenotype-ontology)
 
+
 # License
 
  * [See **license** information and instructions how to **cite** the HPO project](https://hpo.jax.org/app/license)
