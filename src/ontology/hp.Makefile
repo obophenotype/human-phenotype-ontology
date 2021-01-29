@@ -276,3 +276,6 @@ imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: imports/ncit_import.owl
+
+qc: test
+	sh ../scripts/hp-qc-pipeline.sh ../ontology
