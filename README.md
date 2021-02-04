@@ -2,6 +2,7 @@
 
 # License
 
+
  * [See **license** information and instructions how to **cite** the HPO project](https://hpo.jax.org/app/license)
 
 
