@@ -1,5 +1,4 @@
-![Build status](https://github.com/actions/obophenotype/human-phenotype-ontology/workflows/CI/badge.svg)
-
+![Build Status](https://github.com/obophenotype/human-phenotype-ontology/workflows/CI/badge.svg)
 
 
 # License
