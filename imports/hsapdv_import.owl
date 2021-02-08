@@ -10,7 +10,8 @@
      xmlns:hsapdv="http://purl.obolibrary.org/obo/hsapdv#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/hsapdv_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2020-12-07/imports/hsapdv_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2021-02-08/imports/hsapdv_import.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-02-08</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -34,105 +35,39 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/hsapdv#editor_notes -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#editor_notes"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/hsapdv#end_dpf -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_dpf">
-        <obo:IAO_0000115>Count of number of days intervening between the end of the stage and the time of fertilization according to a reference model. Note that the first day of development has the value of 1 for this property.</obo:IAO_0000115>
-        <hsapdv:has_unit rdf:resource="http://purl.obolibrary.org/obo/UO_0000033"/>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>end_dpf</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.</rdfs:comment>
-        <rdfs:label>end, days post fertilization</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_dpf"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/hsapdv#end_mpb -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_mpb">
-        <obo:IAO_0000115>Count of number of months intervening between the end of the stage and the time of birth according to a reference model. Note that the first month of post-birth development has the value of 1 for this property, and the period during which the child is one month old has the value 2</obo:IAO_0000115>
-        <hsapdv:has_unit rdf:resource="http://purl.obolibrary.org/obo/UO_0000035"/>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>end_mpb</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.</rdfs:comment>
-        <rdfs:label>end, months post birth</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_mpb"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/hsapdv#end_ypb -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_ypb">
-        <obo:IAO_0000115>Count of number of years intervening between the end of the stage and the time of birth according to a reference model. Note that the first year of post-birth development has the value of 1 for this property, and the period during which the child is one year old has the value 2</obo:IAO_0000115>
-        <hsapdv:has_unit rdf:resource="http://purl.obolibrary.org/obo/UO_0000036"/>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>end_ypb</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.</rdfs:comment>
-        <rdfs:label>end, years post birth</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#has_unit -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#has_unit">
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>has_unit</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>Used to associate a measurement property (e.g. days post fertilization) with a unit (e.g. days)</rdfs:comment>
-        <rdfs:label>has unit</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_ypb"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/hsapdv#start_dpf -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_dpf">
-        <obo:IAO_0000115>Count of number of days intervening between the start of the stage and the time of fertilization according to a reference model. Note that the first day of development has the value of 0 for this property.</obo:IAO_0000115>
-        <hsapdv:has_unit rdf:resource="http://purl.obolibrary.org/obo/UO_0000033"/>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>start_dpf</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.</rdfs:comment>
-        <rdfs:label>start, days post fertilization</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_dpf"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/hsapdv#start_mpb -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_mpb">
-        <obo:IAO_0000115>Count of number of months intervening between the start of the stage and the time of birth according to a reference model. Note that the first month of post-birth development has the value of 0 for this property, and the period during which the child is one month old has the value 1.</obo:IAO_0000115>
-        <hsapdv:has_unit rdf:resource="http://purl.obolibrary.org/obo/UO_0000035"/>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>start_mpb</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.</rdfs:comment>
-        <rdfs:label>start, months post birth</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_mpb"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/hsapdv#start_ypb -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_ypb">
-        <obo:IAO_0000115>Count of number of years intervening between the start of the stage and the time of birth according to a reference model. Note that the first year of post-birth development has the value of 0 for this property, and the period during which the child is one year old has the value 1.</obo:IAO_0000115>
-        <hsapdv:has_unit rdf:resource="http://purl.obolibrary.org/obo/UO_0000036"/>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>start_ypb</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <rdfs:comment>This is a shortcut annotation that can be expanded to an OWL axiom, or to a set of OWL axioms. The exact translation has yet to be determined, and may be application-dependent.</rdfs:comment>
-        <rdfs:label>start, years post birth</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_ypb"/>
     
 
 
@@ -141,18 +76,6 @@
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty">
         <rdfs:label>subset_property</rdfs:label>
     </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#auto-generated-by -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#auto-generated-by"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#date -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#date"/>
     
 
 
@@ -221,18 +144,6 @@
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset">
         <rdfs:label>in_subset</rdfs:label>
     </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#is_metadata_tag -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#notes -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#notes"/>
     
 
 
@@ -801,18 +712,6 @@
         <owl:annotatedTarget>Human developmental stage that refers to a sexually mature human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000105 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000105"/>
 </rdf:RDF>
 
 
