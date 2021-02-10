@@ -52,10 +52,15 @@ RELEASE_ARTEFACTS = $(sort  base simple-non-classified full base full)
 # ----------------------------------------
 
 .PHONY: .FORCE
+
+.PHONY: all
 all: odkversion all_imports patterns all_main all_subsets sparql_test all_reports all_assets
+
+.PHONY: test
 test: odkversion sparql_test all_reports
 	$(ROBOT) reason --input $(SRC) --reasoner ELK  --equivalent-classes-allowed asserted-only --exclude-tautologies structural --output test.owl && rm test.owl && echo "Success"
 
+.PHONY: odkversion
 odkversion:
 	echo "ODK Makefile version: $(ODK_VERSION_MAKEFILE) (this is the version of the ODK with which this Makefile was generated, not the version of the ODK you are running)" &&\
 	echo "ROBOT version (ODK): " && $(ROBOT) --version
@@ -71,6 +76,7 @@ MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(ONT)-$(r)) $(ONT))
 MAIN_GZIPPED = 
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(foreach f,$(FORMATS), $(n).$(f))) $(MAIN_GZIPPED)
 
+.PHONY: all_main
 all_main: $(MAIN_FILES)
 
 ## -- import targets --
@@ -85,6 +91,7 @@ IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 IMPORT_FILES = $(IMPORT_OWL_FILES)
 
 
+.PHONY: all_imports
 all_imports: $(IMPORT_FILES)
 
 ## -- subset targets --
@@ -98,12 +105,14 @@ SUBSETS =
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
 
+.PHONY: all_subsets
 all_subsets: $(SUBSET_FILES)
 
 OBO_REPORT =  $(SRC)-obo-report $(ONT).owl-obo-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
 
+.PHONY: all_reports
 all_reports: all_reports_onestep $(REPORT_FILES)
 
 ## -- all files/assets --
@@ -119,8 +128,11 @@ RELEASE_ASSETS = \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
 
+.PHONY: all_assets
 all_assets: $(ASSETS)
 
+
+.PHONY: show_assets
 show_assets:
 	echo $(ASSETS)
 	du -sh $(ASSETS)
@@ -133,6 +145,8 @@ show_assets:
 CLEANFILES=$(MAIN_FILES) $(SRCMERGED)
 # This should be executed by the release manager whenever time comes to make a release.
 # It will ensure that all assets/files are fresh, and will copy to release folder
+
+.PHONY: prepare_release
 prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
 	rsync -R $(RELEASE_ASSETS) $(RELEASEDIR) &&\
   mkdir -p $(RELEASEDIR)/patterns &&\
@@ -140,6 +154,7 @@ prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
   rm -f $(CLEANFILES) &&\
   echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on your git hosting site such as GitHub or GitLab"
 
+.PHONY: prepare_initial_release
 prepare_initial_release: prepare_release
 	cd $(RELEASEDIR) && git add $(RELEASE_ASSETS)
 
@@ -183,7 +198,7 @@ imports/%_terms_combined.txt: $(IMPORTSEED) imports/%_terms.txt
 
 imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query  -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/$*_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method STAR \
+		extract -T imports/$*_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
@@ -325,6 +340,7 @@ subsets/%.owl: $(ONT).owl
 # Release
 # ----------------------------------------
 # copy from staging area (this directory) to top-level
+.PHONY: release
 release: $(ONT).owl $(ONT).obo
 	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
 
@@ -355,18 +371,12 @@ $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
 
 SPARQL_EXPORTS_ARGS = $(foreach V,$(SPARQL_EXPORTS),-s $(SPARQLDIR)/$(V).sparql $(REPORTDIR)/$(V).tsv)
 # This combines all into one single command
+
+.PHONY: all_reports_onestep
 all_reports_onestep: $(SRC)
 ifneq ($(SPARQL_EXPORTS_ARGS),)
 	$(ROBOT) query -f tsv -i $< $(SPARQL_EXPORTS_ARGS)
 endif
-
-
-# ----------------------------------------
-# Docker (experimental)
-# ----------------------------------------
-IM=build-$(ONT)
-build-docker:
-	docker build -t $(ONT) .
 # ----------------------------------------
 # Patterns (experimental)
 # ----------------------------------------
@@ -380,10 +390,12 @@ patterns: all_imports $(PATTERNDIR)/pattern.owl $(PATTERNDIR)/definitions.owl
 pattern_clean:
 	echo "Not implemented"
 
+.PHONY: pattern_schema_checks
 pattern_schema_checks: update_patterns
 	if [ $(PAT) = true ]; then $(PATTERN_TESTER) $(PATTERNDIR)/dosdp-patterns/; fi
 
 #This command is a workaround for the absence of -N and -i in wget of alpine (the one ODK depend on now). It downloads all patterns specified in external.txt
+.PHONY: update_patterns
 update_patterns: .FORCE
 	if [ $(PAT) = true ]; then rm -f $(PATTERNDIR)/dosdp-patterns/*.yaml.1 || true; fi
 	if [ $(PAT) = true ] && [ -s $(PATTERNDIR)/dosdp-patterns/external.txt ]; then wget -i $(PATTERNDIR)/dosdp-patterns/external.txt --backups=1 -P $(PATTERNDIR)/dosdp-patterns; fi
@@ -528,9 +540,11 @@ $(ONT)-simple-non-classified.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS)
 
 
 
+.PHONY: validate_idranges
 validate_idranges:
 	amm ../scripts/validate_id_ranges.sc hp-idranges.owl
 
+.PHONY: update_repo
 update_repo:
 	sh ../scripts/update_repo.sh
 

@@ -5,6 +5,7 @@ echo "(2) and add missing files, if any."
 set -e
 
 OID=hp
+ROOTDIR=../../
 SRCDIR=../
 CONFIG=$OID"-odk.yaml"
 
@@ -18,5 +19,9 @@ cp target/$OID/src/scripts/update_repo.sh $SRCDIR/scripts/
 cp target/$OID/src/ontology/Makefile $SRCDIR/ontology/
 cp target/$OID/src/ontology/run.sh $SRCDIR/ontology/
 cp -r target/$OID/src/sparql/* $SRCDIR/sparql/
+cp -n target/$OID/.travis.yml $ROOTDIR
+mkdir -p $ROOTDIR/.github
+mkdir -p $ROOTDIR/.github/workflows
+cp -n target/$OID/.github/workflows/qc.yml $ROOTDIR/.github/workflows/qc.yml
 echo "WARNING: These files should be manually migrated: .gitignore, src/ontology/catalog.xml (if you added a new import or component)"
 echo "Update successfully completed."
