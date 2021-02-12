@@ -208,6 +208,18 @@ imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: imports/%_import.owl
+## Special treatment for large ontology: pr
+
+imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+## Special treatment for large ontology: chebi
+
+imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/chebi_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 
 
@@ -227,7 +239,6 @@ mirror/nbo.trigger: $(SRC)
 
 mirror/nbo.owl: mirror/nbo.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/nbo/nbo-base.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -236,8 +247,7 @@ mirror/nbo.owl: mirror/nbo.trigger
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/%.owl
 
 
@@ -247,7 +257,6 @@ mirror/go.trigger: $(SRC)
 
 mirror/go.owl: mirror/go.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -257,7 +266,6 @@ mirror/uberon.trigger: $(SRC)
 
 mirror/uberon.owl: mirror/uberon.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/uberon.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -267,7 +275,6 @@ mirror/ro.trigger: $(SRC)
 
 mirror/ro.owl: mirror/ro.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -276,8 +283,7 @@ mirror/ro.owl: mirror/ro.trigger
 mirror/chebi.trigger: $(SRC)
 
 mirror/chebi.owl: mirror/chebi.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/%.owl
 
 
@@ -287,7 +293,6 @@ mirror/hsapdv.trigger: $(SRC)
 
 mirror/hsapdv.owl: mirror/hsapdv.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/hsapdv.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -297,7 +302,6 @@ mirror/pato.trigger: $(SRC)
 
 mirror/pato.owl: mirror/pato.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -307,7 +311,6 @@ mirror/cl.trigger: $(SRC)
 
 mirror/cl.owl: mirror/cl.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/cl/cl-basic.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -317,7 +320,6 @@ mirror/mpath.trigger: $(SRC)
 
 mirror/mpath.owl: mirror/mpath.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/mpath.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
@@ -327,7 +329,6 @@ mirror/ncit.trigger: $(SRC)
 
 mirror/ncit.owl: mirror/ncit.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ncit.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 .PRECIOUS: mirror/%.owl
 
 
