@@ -1,0 +1,21 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?term ?term_label ?layperson
+WHERE 
+{ 
+  { 
+    ?term oboInOwl:hasExactSynonym ?layperson ;
+      rdfs:label ?term_label ;
+      a owl:Class .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?layperson ;
+           <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/hp#layperson>
+      ] .
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/HP_"))
+  }
+}

@@ -276,10 +276,15 @@ imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: imports/ncit_import.owl
-	
-	
+
 reports/calcified-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/calcified-phenotypes.sparql $@
+	
+reports/layperson-synonyms.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/layperson-synonyms.sparql $@
 
 qc: test
 	sh ../scripts/hp-qc-pipeline.sh ../ontology
+
+iconv:
+	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
