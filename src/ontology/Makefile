@@ -131,6 +131,9 @@ $(REPORTDIR)/validate_profile_owl2dl_%.txt: % | $(REPORTDIR)
 	$(ROBOT) validate-profile --profile DL -i $< -o $@
 .PRECIOUS: $(REPORTDIR)/validate_profile_owl2dl_%.txt
 
+.PHONY: validate_profile_%
+validate_profile_%: $(REPORTDIR)/validate_profile_owl2dl_%.txt
+
 ## -- all files/assets --
 
 ASSETS = \

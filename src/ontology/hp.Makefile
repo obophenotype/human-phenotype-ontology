@@ -285,3 +285,6 @@ reports/layperson-synonyms.tsv: $(SRC)
 
 qc: test
 	sh ../scripts/hp-qc-pipeline.sh ../ontology
+
+iconv:
+	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
