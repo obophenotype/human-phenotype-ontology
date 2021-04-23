@@ -50,14 +50,12 @@ df_synonyms[['term','be','synonym_type']].dropna(inplace=True)
 
 df_be_syns = df_labels[['term','be']].dropna()
 df_be_syns['synonym_type'] = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
-print(len(df_be_syns))
 df_be_syns = pd.concat([df_be_syns[['term','be','synonym_type']].copy(),df_synonyms])
 print(len(df_be_syns))
 
 for syn_type in df_synonyms['synonym_type'].unique():
 	print(syn_type)
 	print(df_be_syns.head())
-	print("A")
 
 	df_syns = df_synonyms[df_synonyms['synonym_type']==syn_type]
 	allowed_syns = df_syns['annotation'].tolist()
@@ -71,8 +69,6 @@ for syn_type in df_synonyms['synonym_type'].unique():
 		df_be_syns.append(df_rem,ignore_index = True)
 	
 	df_be_syns.drop_duplicates(inplace=True)
-	
-	
 	
 	df_be_syns=df_be_syns[~df_be_syns['be'].isin(allowed_syns)]
 	df_be_syns['Type']="http://purl.obolibrary.org/obo/hp#uk_spelling"
