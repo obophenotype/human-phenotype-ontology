@@ -73,11 +73,14 @@ test_obo: test.owl
 consistency:
 	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success"
 
+fastobo: hp.obo
+	fastobo-validator $<
+
 # Tests that the EDIT file does not have any non-asserted equivalent classes
 noequivalents:
 	$(ROBOT) reason --input $(SRC) remove --select imports reason --reasoner ELK --equivalent-classes-allowed asserted-only --output test.owl && rm test.owl && echo "Success"
 
-test: sparql_test all_reports test_obo hp_error consistency noequivalents
+test: sparql_test all_reports test_obo hp_error consistency noequivalents fastobo
 
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
@@ -201,11 +204,14 @@ tmp/synonyms.csv: $(SRC)
 tmp/labels.csv: $(SRC)
 	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/hp_labels.sparql $@
 
-tmp/be_synonyms.csv: tmp/labels.csv tmp/synonyms.csv
-	python3 ../scripts/compute_british_synonyms.py tmp/labels.csv tmp/synonyms.csv hpo_british_english_dictionary.csv $@
+SYN_TYPES=hasBroadSynonym hasRelatedSynonym hasExactSynonym hasNarrowSynonym
+SYN_TYPE_TEMPLATES=$(patsubst %, tmp/be_syns_%.csv, $(SYN_TYPES))
 
-tmp/british_synonyms.owl: tmp/be_synonyms.csv $(SRC)
-	$(ROBOT) merge -i $(SRC) template --template $< --output $@ && \
+$(SYN_TYPE_TEMPLATES): tmp/labels.csv tmp/synonyms.csv
+	python3 ../scripts/compute_british_synonyms.py tmp/labels.csv tmp/synonyms.csv hpo_british_english_dictionary.csv tmp/
+
+tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
+	$(ROBOT) merge -i $(SRC) template $(patsubst %, --template %, $(SYN_TYPE_TEMPLATES)) --output $@ && \
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
@@ -283,8 +289,9 @@ reports/calcified-phenotypes.tsv: $(SRC)
 reports/layperson-synonyms.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/layperson-synonyms.sparql $@
 
-qc: test
+qc: test hp.owl hp.obo
 	sh ../scripts/hp-qc-pipeline.sh ../ontology
 
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
+

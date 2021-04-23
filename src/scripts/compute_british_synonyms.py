@@ -1,10 +1,10 @@
-import sys
+import sys, os
 import pandas as pd
 
 labels = sys.argv[1]
 synonyms = sys.argv[2]
 dictionary = sys.argv[3]
-template = sys.argv[4]
+template_dir = sys.argv[4]
 
 df_labels = pd.read_csv(labels)
 df_labels.columns = ['term','annotation']
@@ -12,7 +12,7 @@ df_labels = df_labels.astype(str)
 print("Labels: {}".format(len(df_labels)))
 
 df_synonyms = pd.read_csv(synonyms)
-df_synonyms.columns = ['term','annotation']
+df_synonyms.columns = ['term','annotation','synonym_type']
 df_synonyms=df_synonyms.dropna()
 df_synonyms = df_synonyms.astype(str)
 print("Synonyms: {}".format(len(df_synonyms)))
@@ -46,28 +46,41 @@ def translate_be(df, dict):
 
 df_labels['be']=translate_be(df_labels,df_dict)
 df_synonyms['be']=translate_be(df_synonyms,df_dict)
+df_synonyms[['term','be','synonym_type']].dropna(inplace=True)
 
 df_be_syns = df_labels[['term','be']].dropna()
-df_be_syns.append(df_synonyms[['term','be']].dropna(),ignore_index = True)
-
-print(df_be_syns.head())
-
-df_rem = df_labels[['term','be']]
-df_rem = df_rem.append(df_synonyms[['term','be']])
-df_rem.drop_duplicates(inplace=True)
-
-df_be_syns.drop_duplicates(inplace=True)
-
-df_be_syns=df_be_syns[~df_be_syns['be'].isin(df_synonyms['annotation'].tolist())]
-df_be_syns=df_be_syns[~df_be_syns['be'].isin(df_labels['annotation'].tolist())]
-df_be_syns['Type']="http://purl.obolibrary.org/obo/hp#uk_spelling"
-df_be_syns.loc[-1] = ['ID', 'A http://www.geneontology.org/formats/oboInOwl#hasExactSynonym','>AI http://www.geneontology.org/formats/oboInOwl#hasSynonymType']  # adding a row
-df_be_syns.index = df_be_syns.index + 1  # shifting index
-df_be_syns.sort_index(inplace=True) 
-
-print(df_be_syns.head())
+df_be_syns['synonym_type'] = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+df_be_syns = pd.concat([df_be_syns[['term','be','synonym_type']].copy(),df_synonyms])
 print(len(df_be_syns))
-df_be_syns.columns = ['ID','Synonym','Type']
+
+for syn_type in df_synonyms['synonym_type'].unique():
+	print(syn_type)
+	print(df_be_syns.head())
+
+	df_syns = df_synonyms[df_synonyms['synonym_type']==syn_type]
+	allowed_syns = df_syns['annotation'].tolist()
+	df_be_syns = df_syns[['term','be']].copy()
+	
+	if syn_type=="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym":	
+		df_rem = df_labels[['term','be']]
+		df_rem['synonym_type'] = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+		df_rem.drop_duplicates(inplace=True)
+		allowed_syns.extend(df_labels['be'].tolist())
+		df_be_syns.append(df_rem,ignore_index = True)
+	
+	df_be_syns.drop_duplicates(inplace=True)
+	
+	df_be_syns=df_be_syns[~df_be_syns['be'].isin(allowed_syns)]
+	df_be_syns['Type']="http://purl.obolibrary.org/obo/hp#uk_spelling"
+	print(df_be_syns.head())
+	df_be_syns.loc[-1] = ['ID', 'A '+syn_type,'>AI http://www.geneontology.org/formats/oboInOwl#hasSynonymType']  # adding a row
+	df_be_syns.index = df_be_syns.index + 1  # shifting index
+	df_be_syns.sort_index(inplace=True) 
+
+	print(df_be_syns.head())
+	print(len(df_be_syns))
+	df_be_syns.columns = ['ID','Synonym','Type']
+	df_be_syns.to_csv(os.path.join(template_dir,"be_syns_"+syn_type[syn_type.rindex('#')+1:]+".csv"), index=False)
 
 
-df_be_syns.to_csv(template, index=False)
+
