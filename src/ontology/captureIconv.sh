@@ -1,5 +1,8 @@
 #!/bin/sh
 COUNT=100 ## Number of characters to show near error.
+if [ "$@" ]; then
+    COUNT=$1
+fi
 X="$(./runIconv.sh 2>&1 > /dev/null)"
 if [ ! -n "$X"  ]; then
     echo "iconv was happy-no character encoding issues detected"
