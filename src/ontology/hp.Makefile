@@ -283,6 +283,14 @@ imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 
 .PRECIOUS: imports/ncit_import.owl
 
+imports/maxo_import.owl: mirror/maxo.owl imports/maxo_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/maxo_terms.txt --force true --method TOP \
+		query --update ../sparql/inject-subset-declaration.ru \
+		filter -T imports/maxo_terms.txt --select "annotations self descendants" --signature true \
+		remove --term rdfs:seeAlso --term rdfs:comment --select "annotation-properties" \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/maxo_import.owl
+
 reports/calcified-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/calcified-phenotypes.sparql $@
 	
