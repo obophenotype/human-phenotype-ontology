@@ -65,7 +65,7 @@ RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full 
 all: odkversion all_imports patterns all_main all_subsets sparql_test all_reports all_assets
 
 .PHONY: test
-test: odkversion sparql_test all_reports $(REPORTDIR)/validate_profile_owl2dl_%.txt
+test: odkversion sparql_test all_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
 	$(ROBOT) reason --input $(SRC) --reasoner ELK  --equivalent-classes-allowed asserted-only --exclude-tautologies structural --output test.owl && rm test.owl && echo "Success"
 
 .PHONY: odkversion
