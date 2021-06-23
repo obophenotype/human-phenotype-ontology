@@ -303,3 +303,13 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRp4lDDz_h4kZBDAFfV2f-clIPFA_ESLbglw6Du87Rc2ZyZVcwysaeuq82o21UlcyEr_yvWRy_cHIYq/pub?gid=0&single=true&output=tsv"
+tmp/merge.tsv:
+	wget $(MERGE_TEMPLATE_URL) -O $@
+
+merge_template: tmp/merge.tsv
+	$(ROBOT) template --merge-before --input $(SRC) \
+ --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+reset_edit:
+	git checkout master -- $(SRC)
