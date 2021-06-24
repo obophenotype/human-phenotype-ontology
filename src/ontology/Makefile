@@ -33,7 +33,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =   equivalent-classes owldef-self-reference synonym_ends_with_illegal_character
+SPARQL_VALIDATION_CHECKS =   equivalent-classes owldef-self-reference synonym_ends_with_illegal_character deprecated_class_reference
 SPARQL_EXPORTS =             basic-report xrefs synonyms layperson-synonyms
 ODK_VERSION_MAKEFILE =      v1.2.29
 
@@ -445,7 +445,7 @@ pattern_clean:
 
 .PHONY: pattern_schema_checks
 pattern_schema_checks: update_patterns
-	if [ $(PAT) = true ]; then $(PATTERN_TESTER) $(PATTERNDIR)/dosdp-patterns/; fi
+	$(PATTERN_TESTER) $(PATTERNDIR)/dosdp-patterns/
 
 #This command is a workaround for the absence of -N and -i in wget of alpine (the one ODK depend on now). It downloads all patterns specified in external.txt
 .PHONY: update_patterns
