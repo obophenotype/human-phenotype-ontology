@@ -1,0 +1,11 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (count(distinct ?term) as ?count)
+WHERE 
+{ 
+    ?term rdfs:label ?term_label ;
+    rdfs:subClassOf+ <http://purl.obolibrary.org/obo/HP_0000001> .
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/HP_"))
+}

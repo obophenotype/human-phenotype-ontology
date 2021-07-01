@@ -297,6 +297,18 @@ reports/calcified-phenotypes.tsv: $(SRC)
 reports/layperson-synonyms.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/layperson-synonyms.sparql $@
 
+reports/count-phenotypes.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/count-phenotypes.sparql $@
+
+reports/count-all.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/count-all.sparql $@
+
+reports/count-synonyms.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/count-synonyms.sparql $@
+
+
+counts: reports/count-all.tsv reports/count-phenotypes.tsv reports/count-synonyms.tsv
+
 qc: test hp.owl hp.obo
 	sh ../scripts/hp-qc-pipeline.sh ../ontology
 
