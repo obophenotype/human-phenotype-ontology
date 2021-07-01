@@ -179,7 +179,7 @@ tmp/eqs.ofn: #../patterns/definitions.owl
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
 	sed -i '/^Declaration/d' $@
 
-migrate_definitions_to_edit: #$(SRC) tmp/eqs.ofn
+migrate_definitions_to_edit: $(SRC) tmp/eqs.ofn
 	echo "Not regenerating definitions.owl.. Is it up to date?"
 	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 	#$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
@@ -313,3 +313,9 @@ merge_template: tmp/merge.tsv
 
 reset_edit:
 	git checkout master -- $(SRC)
+
+PATTERN_calcifiedAnatomicalEntity="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFB67ABDEUTWz-O2px0AdFFcNLEm5DlhKp5_haV3M1F2tgG-VcCHKe67qCOe1vKKa-NAWI9icJCQuO/pub?gid=1882633417&single=true&output=tsv"
+PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFB67ABDEUTWz-O2px0AdFFcNLEm5DlhKp5_haV3M1F2tgG-VcCHKe67qCOe1vKKa-NAWI9icJCQuO/pub?gid=1937862719&single=true&output=tsv"
+calcified:
+	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
+	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
