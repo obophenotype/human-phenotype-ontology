@@ -179,7 +179,7 @@ tmp/eqs.ofn: #../patterns/definitions.owl
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
 	sed -i '/^Declaration/d' $@
 
-migrate_definitions_to_edit: #$(SRC) tmp/eqs.ofn
+migrate_definitions_to_edit: $(SRC) tmp/eqs.ofn
 	echo "Not regenerating definitions.owl.. Is it up to date?"
 	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 	#$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
@@ -297,9 +297,37 @@ reports/calcified-phenotypes.tsv: $(SRC)
 reports/layperson-synonyms.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/layperson-synonyms.sparql $@
 
+reports/count-phenotypes.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/count-phenotypes.sparql $@
+
+reports/count-all.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/count-all.sparql $@
+
+reports/count-synonyms.tsv: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/count-synonyms.sparql $@
+
+
+counts: reports/count-all.tsv reports/count-phenotypes.tsv reports/count-synonyms.tsv
+
 qc: test hp.owl hp.obo
 	sh ../scripts/hp-qc-pipeline.sh ../ontology
 
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRp4lDDz_h4kZBDAFfV2f-clIPFA_ESLbglw6Du87Rc2ZyZVcwysaeuq82o21UlcyEr_yvWRy_cHIYq/pub?gid=0&single=true&output=tsv"
+tmp/merge.tsv:
+	wget $(MERGE_TEMPLATE_URL) -O $@
+
+merge_template: tmp/merge.tsv
+	$(ROBOT) template --merge-before --input $(SRC) \
+ --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+reset_edit:
+	git checkout master -- $(SRC)
+
+PATTERN_calcifiedAnatomicalEntity="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFB67ABDEUTWz-O2px0AdFFcNLEm5DlhKp5_haV3M1F2tgG-VcCHKe67qCOe1vKKa-NAWI9icJCQuO/pub?gid=1882633417&single=true&output=tsv"
+PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFB67ABDEUTWz-O2px0AdFFcNLEm5DlhKp5_haV3M1F2tgG-VcCHKe67qCOe1vKKa-NAWI9icJCQuO/pub?gid=1937862719&single=true&output=tsv"
+calcified:
+	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
+	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
