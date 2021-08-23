@@ -1,8 +1,10 @@
 ---
 name: New Annotation
 about: Report missing or wrong links between HPO terms and diseases
-assignees: drseb
+title: ''
 labels: HPOA
+assignees: drseb
+
 ---
 
 **Disease ID and Name**
@@ -10,4 +12,3 @@ labels: HPOA
 **HPO ID and Name**
 
 **Further information (Frequency, Onset, Pubmed-references, Comments)**
-

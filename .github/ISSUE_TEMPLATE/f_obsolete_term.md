@@ -1,8 +1,10 @@
 ---
 name: Obsolete a term
 about: Obsolete or deprecate an existing HPO term
-assignees: pnrobinson, drseb
+title: ''
 labels: obsoletion
+assignees: drseb, pnrobinson
+
 ---
 
 **HPO term**
@@ -12,4 +14,3 @@ labels: obsoletion
 
 
 **Suggested replacement or term to consider**
-

@@ -1,15 +1,13 @@
 ---
 name: Revise textual definition
 about: Change the textual definition of an HPO term
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
-labels: 'textual definition'
+title: ''
+labels: textual definition
+assignees: drseb, nicolevasilevsky, pnrobinson
+
 ---
 
 **HPO term**
 
 
 **Suggested revision of textual definition**
-
-
-
-
