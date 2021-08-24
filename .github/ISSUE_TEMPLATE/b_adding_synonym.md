@@ -1,8 +1,10 @@
 ---
 name: Add synonym
 about: New synonym suggestion for an existing HPO term
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+title: ''
 labels: synonyms
+assignees: drseb, nicolevasilevsky, pnrobinson
+
 ---
 
 **HPO term**
@@ -12,5 +14,3 @@ labels: synonyms
 
 
 **broad/exact/narrow/plural/abbreviation ?**
-
-
