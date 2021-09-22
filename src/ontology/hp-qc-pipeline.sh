@@ -19,10 +19,10 @@ mkdir -p $TMP_DIR
 rm -rf $TMP_DIR/hpo-owl-qc
 
 cd $TMP_DIR
-echo "Downloading dependencies.."
-git clone https://github.com/Phenomics/hpo-owl-qc.git --quiet
+echo "Downloading dependencies owl-qc"
+git clone https://github.com/Phenomics/hpo-owl-qc.git
 cd hpo-owl-qc
-mvn clean install --quiet
+mvn clean install
 cd $HOME_DIR
 cd $TMP_DIR
 wget https://github.com/Phenomics/hpo-build-jars/raw/master/performHpoOboQc.jar
