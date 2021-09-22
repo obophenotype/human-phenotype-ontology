@@ -5,7 +5,7 @@ set -e
 TMP_DIR=tmp
 HP_EDIT=hp-edit.owl
 HP_OBO=hp.obo
-OBO_CHECK_JAR=$TMP_DIR/hpo-obo-qc/target/hpo-obo-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+OBO_CHECK_JAR=$TMP_DIR/performHpoOboQc.jar
 OWL_CHECK_JAR=$TMP_DIR/hpo-owl-qc/target/hpo-owl-qc-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 JAVA_OPTS=-Xmx4g
 
@@ -24,11 +24,8 @@ git clone https://github.com/Phenomics/hpo-owl-qc.git --quiet
 cd hpo-owl-qc
 mvn clean install --quiet
 cd $HOME_DIR
-rm -rf $TMP_DIR/hpo-obo-qc
 cd $TMP_DIR
-git clone https://github.com/Phenomics/hpo-obo-qc.git --quiet
-cd hpo-obo-qc
-mvn clean install --quiet
+wget https://github.com/Phenomics/hpo-build-jars/raw/master/performHpoOboQc.jar
 
 cd $HOME_DIR
 
