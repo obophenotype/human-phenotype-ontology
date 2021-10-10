@@ -11,9 +11,9 @@
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2021-08-02/imports/cl_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/cl/2021-06-29/cl-simple.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-08-02</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2021-10-10/imports/cl_import.owl"/>
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/cl/2021-09-09/cl-simple.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-10-10</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -76,6 +76,12 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ubprop#_upper_level">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
     
 
 
@@ -276,7 +282,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:mah</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>CARO:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -298,7 +304,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell that is found in a natural setting, which includes multicellular organism cells &apos;in vivo&apos; (i.e. part of an organism), and unicellular organisms &apos;in environment&apos; (i.e. part of a natural environment).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:mah</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>CARO:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -432,6 +438,7 @@
         <oboInOwl:hasDbXref>EMAPA:31482</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FBbt:00004935</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:72291</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>spermatogonial cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id>CL:0000020</oboInOwl:id>
         <rdfs:label>spermatogonium</rdfs:label>
@@ -455,9 +462,10 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0002676"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>neuron neural crest derived</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id>CL:0000029</oboInOwl:id>
-        <rdfs:label>neuron neural crest derived</rdfs:label>
+        <rdfs:label>neural crest derived neuron</rdfs:label>
     </owl:Class>
     
 
@@ -777,7 +785,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D055015</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:16647566</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16647566</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Megakaryocyte-erythroid_progenitor_cell</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -1145,7 +1153,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000107">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
-        <obo:IAO_0000115>A neruon whose cell body is within an autonomic ganglion.</obo:IAO_0000115>
+        <obo:IAO_0000115>A neuron whose cell body is within an autonomic ganglion.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:80121</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id>CL:0000107</oboInOwl:id>
@@ -1154,7 +1162,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000107"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A neruon whose cell body is within an autonomic ganglion.</owl:annotatedTarget>
+        <owl:annotatedTarget>A neuron whose cell body is within an autonomic ganglion.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -1373,7 +1381,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000128"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>OLs</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:8734446</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:8734446</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1504,19 +1512,19 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000134"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>marrow stromal cells</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11378515</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:11378515</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000134"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>MSC</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11378515</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:11378515</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000134"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mesenchymal progenitor cells</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D044982</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:D044982</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/cl#PLURAL"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -1529,7 +1537,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000134"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>stem cells, mesenchymal</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D044982</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:D044982</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/cl#PLURAL"/>
     </owl:Axiom>
     
@@ -1722,7 +1730,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000169"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>beta cell</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0009102</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ZFA:0009102</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000169"/>
@@ -1807,7 +1815,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Leydig cell is a testosterone-secreting cell in the interstitial area, between the seminiferous tubules, in the testis.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:12050120</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12050120</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1894,7 +1902,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000187"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.620</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A11.620</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1972,7 +1980,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000221"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell of the outer of the three germ layers of the embryo.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A16.254.425.273</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:A16.254.425.273</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2219,7 +2227,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000236">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000945"/>
-        <obo:IAO_0000115>A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</obo:IAO_0000115>
+        <obo:IAO_0000115>A lymphocyte of B lineage that is capable of B cell mediated immunity.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BTO:0000776</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-0068</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:62869</oboInOwl:hasDbXref>
@@ -2234,7 +2242,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lymphocyte of B lineage that is capable of B cell mediated immunity.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
@@ -2931,7 +2939,7 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CFU-Meg</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:11722431</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:12482498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12482498</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000553"/>
@@ -2949,7 +2957,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000553"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>megakaryocytic progenitor cell</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:12482498</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12482498</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2983,7 +2991,7 @@
         <owl:annotatedTarget>A giant cell 50 to 100 micron in diameter, with a greatly lobulated nucleus, found in the bone marrow; mature blood platelets are released from its cytoplasm.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721601464</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D008533</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Megakaryocyte</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Megakaryocyte</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3021,7 +3029,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC2213186</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC548021</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16551251</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:16647566</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:16647566</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/CFU-GM</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.copewithcytokines.de</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -3149,7 +3157,7 @@
         <owl:annotatedTarget>A mesenchymal stem cell capable of developing into blood vessel endothelium.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:12768659</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12768659</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3435,7 +3443,7 @@
         <owl:annotatedTarget>An achromatic cell of the myeloid or lymphoid lineages capable of ameboid movement, found in blood or other tissue.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:978-0-323-05290-0</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:978-0-323-05290-0</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3517,7 +3525,7 @@
         <owl:annotatedTarget>A nucleated precursor of an erythrocyte that lacks hematopoietic lineage markers.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721601464</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18174176</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:18174176</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -3567,11 +3575,11 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721601464</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:D001491</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MESH:D001491</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMCID:PMC2626675</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11927641</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:19741522</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:21236338</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:21236338</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:9933081</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -4345,7 +4353,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11532393</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12457618</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15032583</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15032583</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:15766674</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -4353,7 +4361,7 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>NKP</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12457618</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15032583</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15032583</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:15766674</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -4631,17 +4639,20 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000785"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000074"/>
         <obo:IAO_0000115>A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD35-high.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>MZ B cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>MZ B lymphocyte</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>MZ B-cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>MZ B-lymphocyte</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>marginal zone B lymphocyte</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>marginal zone B-cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>marginal zone B-lymphocyte</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasBroadSynonym>MZ B cell</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>MZ B lymphocyte</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>MZ B-cell</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>MZ B-lymphocyte</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>marginal zone B cell</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>marginal zone B lymphocyte</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>marginal zone B-cell</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>marginal zone B-lymphocyte</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>B cell of marginal zone of spleen</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>marginal zone of spleen B cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id>CL:0000845</oboInOwl:id>
         <rdfs:comment>MZ B cells are reportedly CD1-positive (mice), CD20-positive, CD48-positive, CD84-positive, CD150-positive, CD229-positive, and CD352-positive.</rdfs:comment>
-        <rdfs:label>marginal zone B cell</rdfs:label>
+        <rdfs:label>marginal zone B cell of spleen</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000845"/>
@@ -4815,7 +4826,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19100699</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19100699</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:22343568</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.immgen.org/index_content.html</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -4909,7 +4920,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:pam</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:19100699</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19100699</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -5104,7 +5115,7 @@
         <oboInOwl:hasDbXref>GOC:PAM-ADD</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0877799148</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18395547</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:18395547</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -5131,7 +5142,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:pam</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO_REF:0000031</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18395547</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:18395547</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -5560,7 +5571,7 @@
         <owl:annotatedTarget>A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dos</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15032595</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15032595</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16237082</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26883338</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -5568,19 +5579,19 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001062"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>TEMRA</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15032595</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15032595</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001062"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD8+ TEMRA</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15032595</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15032595</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001062"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD8-positive TEMRA</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15032595</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15032595</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6783,7 +6794,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0007011"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Neuron that is part of the enteric nervous system.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>CL:MAH</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:MAH</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
