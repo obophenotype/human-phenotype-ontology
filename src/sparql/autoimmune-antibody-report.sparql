@@ -1,0 +1,19 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+
+# see https://github.com/obophenotype/human-phenotype-ontology/issues/7198
+
+SELECT ?term ?label ?definition WHERE {
+  ?term rdfs:subClassOf+ <http://purl.obolibrary.org/obo/HP_0030057>.
+  OPTIONAL {
+    ?term rdfs:label ?label .
+  }
+  OPTIONAL {
+    ?term definition: ?definition .
+  }
+  FILTER(strstarts(str(?term), "http://purl.obolibrary.org/obo/HP_"))
+  BIND(STR(?obsolete_value) as ?obsolete)
+} 

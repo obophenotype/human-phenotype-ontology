@@ -223,9 +223,12 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 
 INPUT=../../scratch/HPOSeizures_OWL_v11_20191205.owl
 
+reports/%.tsv: $(INPUT)
+	$(ROBOT) query -i $< --use-graphs true -f tsv --query ../sparql/$*.sparql $@
+
 tmp/%.csv: $(INPUT)
 	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/$*.sparql $@
-	
+
 tmp/ntr_tsv.tsv: tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_siblings.csv tmp/terms_parents.csv
 	python3 ../scripts/ntr_tsv.py tmp/terms_annotations.csv tmp/terms_children.csv tmp/terms_parents.csv tmp/terms_siblings.csv ../scripts/hpo_field_mappings.yaml $@
 
