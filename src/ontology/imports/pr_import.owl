@@ -9,8 +9,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/pr_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2021-10-10/imports/pr_import.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-10-10</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2021-12-19/imports/pr_import.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-12-19</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -864,11 +864,38 @@
     <!-- http://purl.obolibrary.org/obo/PR_000000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000000001">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000018263"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0006412"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0006412"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof.</obo:IAO_0000115>
@@ -907,7 +934,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
         <obo:IAO_0000115>A protein that is a translation product of the human ADIPOQ gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>30 kDa adipocyte complement-related protein</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>ACRP30</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>ADIPOQ</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>adipocyte complement-related 30 kDa protein</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>adipocyte, C1q and collagen domain-containing protein</oboInOwl:hasExactSynonym>
@@ -917,6 +943,7 @@
         <oboInOwl:hasExactSynonym>gelatin-binding protein</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>ACDC</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>ACRP30</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>APM1</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>GBP28</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>PR:000003777</oboInOwl:id>
@@ -940,6 +967,12 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000003777"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ACDC</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000003777"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>ACRP30</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -1129,6 +1162,8 @@
         <oboInOwl:hasExactSynonym>TNSALP</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alkaline phosphatase 2</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alkaline phosphatase liver/bone/kidney isozyme</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>phosphoamidase</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>phosphocreatine phosphatase</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>Akp-2</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Akp2</oboInOwl:hasRelatedSynonym>
@@ -1659,6 +1694,12 @@
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000008730"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human HPD gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000008730"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>HPD</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
@@ -1669,12 +1710,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>PPD</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000008730"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein that is a translation product of the human HPD gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -4061,9 +4096,12 @@
         <obo:IAO_0000115>An alkaline phosphatase, tissue-nonspecific isozyme that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P05186</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>AP-TNAP (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>TNS-ALP (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TNSALP (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alkaline phosphatase liver/bone/kidney isozyme (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>hALPL</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>phosphoamidase (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>phosphocreatine phosphatase (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>ALPL</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>PR:P05186</oboInOwl:id>
@@ -4086,6 +4124,12 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P05186"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>TNS-ALP (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P05186</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P05186"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>TNSALP (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P05186</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -4101,6 +4145,18 @@
         <owl:annotatedTarget>hALPL</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P05186"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>phosphoamidase (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P05186</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P05186"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>phosphocreatine phosphatase (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P05186</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P05186"/>
