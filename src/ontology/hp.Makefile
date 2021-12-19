@@ -158,6 +158,7 @@ imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru \
 		query --query ../sparql/classes-without-labels.sparql tmp/classes-without-labels.txt \
 		remove -T tmp/classes-without-labels.txt \
+		remove --term NBO:0000012 --select "self descendants" \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/nbo_import.owl
 
