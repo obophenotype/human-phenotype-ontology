@@ -6,7 +6,7 @@ PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
 
 # see https://github.com/obophenotype/human-phenotype-ontology/issues/7198
 
-SELECT ?term ?label ?definition WHERE {
+SELECT ?term ?label ?definition (GROUP_CONCAT(DISTINCT ?synonym;SEPARATOR="|") AS ?synonyms) WHERE {
   ?term rdfs:subClassOf+ <http://purl.obolibrary.org/obo/HP_0030057>.
   OPTIONAL {
     ?term rdfs:label ?label .
@@ -14,6 +14,9 @@ SELECT ?term ?label ?definition WHERE {
   OPTIONAL {
     ?term definition: ?definition .
   }
+  OPTIONAL {
+    ?term oboInOwl:hasExactSynonym ?synonym .
+  }
   FILTER(strstarts(str(?term), "http://purl.obolibrary.org/obo/HP_"))
   BIND(STR(?obsolete_value) as ?obsolete)
-} 
+} GROUP BY ?term ?label ?definition
