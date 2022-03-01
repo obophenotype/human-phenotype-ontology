@@ -4,9 +4,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
 
-# see https://github.com/obophenotype/human-phenotype-ontology/issues/7198
-
-SELECT ?term ?label ?definition (GROUP_CONCAT(DISTINCT ?synonym;SEPARATOR="|") AS ?synonyms) WHERE {
+SELECT ?term ?label ?definition (GROUP_CONCAT(DISTINCT ?xref;SEPARATOR="|") AS ?xrefs) (GROUP_CONCAT(DISTINCT ?syns;SEPARATOR="|") AS ?synonyms) WHERE {
   ?term rdfs:subClassOf+ <http://purl.obolibrary.org/obo/HP_0030057>.
   OPTIONAL {
     ?term rdfs:label ?label .
@@ -15,8 +13,16 @@ SELECT ?term ?label ?definition (GROUP_CONCAT(DISTINCT ?synonym;SEPARATOR="|") A
     ?term definition: ?definition .
   }
   OPTIONAL {
-    ?term oboInOwl:hasExactSynonym ?synonym .
+    ?term oboInOwl:hasExactSynonym ?syns .
+  }
+  OPTIONAL {
+    ?relax a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty definition: ;
+           owl:annotatedTarget ?definition ;
+           oboInOwl:hasDbXref ?xref .
+   	FILTER(strstarts(str(?xref), "PMID:"))
   }
   FILTER(strstarts(str(?term), "http://purl.obolibrary.org/obo/HP_"))
-  BIND(STR(?obsolete_value) as ?obsolete)
+
 } GROUP BY ?term ?label ?definition
