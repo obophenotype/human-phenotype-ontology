@@ -1,15 +1,15 @@
-prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?x ?xl ?y ?yl ?z ?zl WHERE 
-{
-  ?x rdfs:subClassOf ?y ;
+SELECT ?term ?xl ?y ?yl ?z ?zl WHERE {
+  ?term rdfs:subClassOf ?y ;
      rdfs:label ?xl .
   ?y rdfs:subClassOf+ ?z ;
      rdfs:label ?yl .
-  ?x rdfs:subClassOf ?z .
+  ?term rdfs:subClassOf ?z .
   ?z rdfs:label ?zl .
-
-
+  
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/hp")))
 }
+

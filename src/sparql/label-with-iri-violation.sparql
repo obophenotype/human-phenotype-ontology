@@ -1,7 +1,9 @@
-SELECT DISTINCT ?term
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?term ?value
 WHERE {
-  { ?s1 ?p1 ?term . }
-  UNION
-  { ?term ?p2 ?o2 . }
+  ?term rdfs:label ?value .
+  FILTER (REGEX(?value, "http[s]?[:]"))
   FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/hp")))
 }
+
