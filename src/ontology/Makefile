@@ -38,7 +38,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference synonym_ends_with_illegal_character deprecated_class_reference iri-range label-with-iri taxon-range-violation 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference synonym_ends_with_illegal_character deprecated_class_reference iri-range label-with-iri taxon-range 
 SPARQL_EXPORTS =            basic-report xrefs synonyms layperson-synonyms 
 ODK_VERSION_MAKEFILE =      v1.3.0
 
