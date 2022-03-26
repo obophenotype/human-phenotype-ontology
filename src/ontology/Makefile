@@ -39,7 +39,7 @@ REPORT_LABEL =
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference synonym_ends_with_illegal_character deprecated_class_reference iri-range label-with-iri taxon-range 
-SPARQL_EXPORTS =            basic-report xrefs synonyms layperson-synonyms 
+SPARQL_EXPORTS =            basic-report xrefs synonyms layperson-synonyms autoimmune-antibody-report 
 ODK_VERSION_MAKEFILE =      v1.3.0
 
 TODAY ?=                    $(shell date +%Y-%m-%d)
