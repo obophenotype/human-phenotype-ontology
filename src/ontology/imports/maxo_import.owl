@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/maxo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-02-14/imports/maxo_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-04-11/imports/maxo_import.owl"/>
     </owl:Ontology>
     
 
@@ -518,6 +518,8 @@
         <oboInOwl:hasExactSynonym>external fetal heart rate monitoring</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>fetal Doppler ultrasound monitoring</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">fetal Doppler monitoring</rdfs:label>
+        <rdfs:label>obsolete fetal Doppler monitoring</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000797"/>
@@ -544,6 +546,8 @@
         <oboInOwl:hasDbXref>NCIT:C114080</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>Doppler velocimetry</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">fetal Doppler velocimetry</rdfs:label>
+        <rdfs:label>obsolete fetal Doppler velocimetry</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000862"/>
@@ -648,6 +652,51 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MAXO_0009007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0009007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000520"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MAXO_0010203"/>
+        <obo:IAO_0000115>Fetal echocardiography is a test that uses sound waves (ultrasound) to evaluate the structure and function of the fetus&apos;s heart.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-22T18:19:25Z</dc:date>
+        <oboInOwl:created_by rdf:resource="http://orcid.org/0000-0001-7941-2961"/>
+        <oboInOwl:hasExactSynonym>fetal echo procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fetal echocardiogram procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>prenatal echo procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>prenatal echocardiagraphy</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">fetal echocardiography</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MAXO_0009008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0009008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MAXO_0000072"/>
+        <obo:IAO_0000115>An application of diagnostic ultrasound used to detect moving blood cells or other moving structures and measure their direction and speed of movement. The Doppler effect is used to evaluate movement by measuring changes in frequency of the echoes reflected from moving structures.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-23T15:43:36Z</dc:date>
+        <oboInOwl:created_by rdf:resource="http://orcid.org/0000-0001-7941-2961"/>
+        <rdfs:label xml:lang="en">Doppler ultrasonography</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MAXO_0009009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0009009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MAXO_0010217"/>
+        <obo:IAO_0000115>The use of ultrasound on a pregnant person to produce images of structures in the kidney of the fetus.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-23T16:10:42Z</dc:date>
+        <oboInOwl:created_by rdf:resource="http://orcid.org/0000-0001-7941-2961"/>
+        <oboInOwl:hasExactSynonym>fetal kidney ultrsonography</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fetal renal ultrasonography</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>prenatal kidney ultrasonography</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>prenatal renal sonography</oboInOwl:hasExactSynonym>
+        <rdfs:label xml:lang="en">prenatal renal ultrasonography</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/MAXO_0010200 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MAXO_0010200">
@@ -721,6 +770,9 @@
         <obo:IAO_0000115>The use of ultrasound to produce images of structures in the heart.</obo:IAO_0000115>
         <dc:date>2020-01-24T20:39:14Z</dc:date>
         <oboInOwl:created_by>http://orcid.org/0000-0001-7941-2961</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>cardiac echo procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>echo procedure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>echocardiogram procedure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>heart diagnostic sonography</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>heart medical ultrasound</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>heart sonography</oboInOwl:hasExactSynonym>
