@@ -1,0 +1,25 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT distinct ?term ?property ?syn ?syn_type 
+
+WHERE 
+{
+VALUES ?property { oboInOwl:hasExactSynonym  oboInOwl:hasRelatedSynonym oboInOwl:hasBroadSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasCloseSynonym } 
+?term a owl:Class ;
+  		rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0000001> ;
+    	rdfs:label ?termlabel ;
+  		?property ?syn .
+     
+     ?axiom owl:annotatedSource ?term ;
+           owl:annotatedProperty ?property ;
+           owl:annotatedTarget ?syn ;
+           oboInOwl:hasSynonymType ?syn_type .
+  
+  FILTER (?syn_type != <http://purl.obolibrary.org/obo/hp#abbreviation> && ?syn_type != <http://purl.obolibrary.org/obo/hp#layperson> && ?syn_type != <http://purl.obolibrary.org/obo/hp#plural_form> && ?syn_type != <http://purl.obolibrary.org/obo/hp#obsolete_synonym> && ?syn_type != <http://purl.obolibrary.org/obo/hp#uk_spelling> )
+  FILTER( !isBlank(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/HP_"))
+}
