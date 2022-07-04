@@ -57,7 +57,7 @@ PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
-RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full $(ONT)-base $(ONT)-full)
+RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full hp-international $(ONT)-base $(ONT)-full)
 
 # ----------------------------------------
 # Top-level targets
@@ -602,6 +602,12 @@ $(ONT)-full.json: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
+hp-international.obo: hp-international.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+hp-international.json: hp-international.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
@@ -652,6 +658,9 @@ $(ONT)-simple-non-classified.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED) $(IMPORT_FIL
 		reduce -r ELK \
 		filter --select ontology --term-file $(SIMPLESEED) --trim false \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+hp-international.owl:
+	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in hp.Makefile!" && false
 # ----------------------------------------
 # Debugging Tools
 # ----------------------------------------

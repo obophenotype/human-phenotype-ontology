@@ -335,3 +335,49 @@ PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadshee
 calcified:
 	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
 	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
+
+#### Translations #####
+LANGUAGES=nl
+TRANSLATIONDIR=translations
+HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
+
+BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
+BABELON_NL=https://raw.githubusercontent.com/monarch-initiative/babelon/main/tests/data/output_data.tsv
+
+translations/:
+	mkdir -p $@
+
+translations/babelon.yaml: | translations/
+	wget $(BABELON_SCHEMA) -O $@
+
+translations/hp-nl.babelon.tsv: | translations/
+	wget $(BABELON_NL) -O $@
+	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
+	mv $@.tmp $@
+
+$(TMPDIR)/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
+	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
+	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
+	robot merge -i $@.tmp query --update ../sparql/rm-rdf.ru -o $@	
+
+translations/hp-%.owl: $(TMPDIR)/hp-profile-%.owl hp.owl
+	robot merge -i hp.owl -i $< \
+	query --update ../sparql/create_profile.ru \
+	query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv \
+	query --update ../sparql/rm_translated.ru \
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
+.PRECIOUS: translations/hp-%.owl
+
+.PHONY: prepare_translations
+prepare_translations:
+	$(MAKE) IMP=false COMP=false PAT=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+
+$(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
+	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
