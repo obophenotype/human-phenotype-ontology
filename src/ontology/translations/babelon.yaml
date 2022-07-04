@@ -1,0 +1,171 @@
+id: https://w3id.org/babelon
+name: babelon
+description: >-
+  A schema for describing translations and language profiles for ontologies
+imports:
+ - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  babelon: https://w3id.org/babelon/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  HP: http://purl.obolibrary.org/obo/HP_
+  owl: http://www.w3.org/2002/07/owl#
+  IAO: http://purl.obolibrary.org/obo/IAO_
+default_prefix: babelon
+
+enums:
+  translator_expertise_enum:
+    permissible_values:
+      DOMAIN_EXPERT: "The translator is an expert of the domain of the ontology, for example an expert in anatomy when translating terms from an anatomy ontology such as Uberon."
+      LAYPERSON: "The translator is an interested lay person with no specific knowledge of the domain."
+      DOMAIN_STUDENT: "The translator is a student of the domain of the ontology, for example a student of anatomy, when translating terms from an anatomy ontology such as Uberon."
+      PROFESSIONAL_TRANSLATOR: "The translator is a professional translator by trade."
+      ALGORITHM: "The translator is a machine, not a person."
+  translation_status_enum:
+    permissible_values:
+      CANDIDATE: "The translation has been suggested from an entity (algorithm, person) outside the core team managing the translation."
+      UNDER_REVIEW: "The translation has been suggested from an entity (algorithm, person) inside the core team managing the translation, but not yet officially ratified."
+      OFFICIAL: "The translation has been accepted by the core team managing the language profile."
+  translation_type_enum:
+    permissible_values:
+      TRANSLATION: "The record corresponds to an actual translation of a source value into a translation value."
+      AUGMENTATION: "The record corresponds to an additional language specific terminological element without a corresponding element in the source language."
+      CORRECTION: "The record corresponds to a translation of a source value into a translation value, but rather than being an exact translation, it suggests a change to the original source value."
+  translation_precision_enum:
+    permissible_values:
+      EXACT: "The translation is exact."
+      BROADER: "The translation value has a somewhat broader meaning than the source value."
+      NARROWER: "The translation value has a somewhat narrower meaning than the source value."
+      CLOSE: "The translation value is close in meaning to the source value, but not exact."
+
+types:
+ EntityReference:
+    typeof: uriorcurie
+    description: A reference to a mapped entity. This is represented internally as a string, and as a resource in RDF
+    base: str
+    uri: rdfs:Resource
+
+slots:
+  predicate_id:
+    description: >-
+      The predicate / annotation property used to relate the translated value at the source ontolgy.
+      For example: rdfs:label, oio:exactSynonym, dc:description
+    range: EntityReference
+    mappings:
+      - owl:annotatedProperty
+    slot_uri: owl:annotatedProperty
+  translation_value:
+    description: The translation of the source value int the translation language. For example the french name of a disease.
+    range: string
+    slot_uri: owl:annotatedTarget
+  profile_id:
+    description: The persistent identifier of the profile, for example http://w3id.org/hpo-international/french.
+    range: string
+  profile_version:
+    description: The version of the profile (e.g. 2.1, v2021-01-01).
+    range: string
+  source_value:
+    description: The value that is being translated, for example the definition of a disease or the name of a cell type.
+    range: string
+  subject_id:
+    description: The id of the entity to which the source value belongs, i.e. the subject of the annotation, for example HP:0000001.
+    range: EntityReference
+    mappings:
+      - owl:annotatedSource
+    slot_uri: owl:annotatedSource
+  source_language:
+    description: The language code of the source value, for example en-GB (see http://www.lingoes.net/en/translator/langcode.htm).
+    range: string
+  translation_type:
+    description: By default, a record in a translation table is a direct translation, but there are situations where a translation may add additional values, like synonyms, without having a directly corresponding translated value.
+    range: translation_type_enum
+  translation_language:
+    description: The language code of the translated value, for example fr (see http://www.lingoes.net/en/translator/langcode.htm).
+    range: string
+  source:
+    description: The persistent identifier of the source, for example http://purl.obolibrary.org/obo/hp.owl.
+    range: string
+  source_version:
+    description: The version of the source used for the translation, for example http://purl.obolibrary.org/obo/hp/releases/2021-04-13/hp.owl.
+    range: string
+  translator:
+    description: The entity that performed the translation, for example https://orcid.org/0000-0002-1373-XXXX or https://translate.google.com/
+    range: string
+  translator_expertise:
+    description: The expertise level of the translator, e.g. domain expert or student.
+    range: translator_expertise_enum
+  translation_date:
+    description: The date the translation was performed.
+    range: string
+  translation_confidence:
+    description: A score between 0 and 1 to denote the degree of certainty the translator has with regards to the translation of the source value into the translation value, given a particular level of precision. For example, the translation may have precision "narrow" or "broad" rather than "exact", but the confidence that this is right may still be 100% (1.0).
+    range: double
+  translation_precision:
+    description: While by default, all translations are assumed to be exact, this is not possible in all cases. Where the translations cant be exact, they can be close, narrow or broad.
+    range: translation_precision_enum
+  translation_provider:
+    description: The entity, i.e. person or group, that provides and maintains the translation profile.
+    range: string
+  translation_status:
+    description: The status of the translation indicates how "official" the translation is.
+    range: translation_status_enum
+  translations:
+    multivalued: true
+    inlined_as_list: true
+    range: translation
+
+classes:
+  translation:
+    description: Represents and individual translation
+    slots:
+      - subject_id
+      - predicate_id
+      - translation_value
+      - source_value
+      - source_language
+      - translation_language
+      - source_version
+      - translation_type
+      - translator
+      - translator_expertise
+      - translation_date
+      - translation_confidence
+      - translation_precision
+      - translation_status
+      - source
+    class_uri: owl:Axiom
+    slot_usage:
+      subject_id:
+        required: true
+      predicate_id :
+        required: true
+      source_language :
+        required: true
+      translation_language :
+        required: true
+      translation_value :
+        required: true
+#      translator:
+#        required: true
+#      translator_expertise :
+#        required: true
+      #translation_type:
+      #  ifabsent: TRANSLATION
+      #translation_precision:
+      #  ifabsent: EXACT
+      #translation_status:
+      #  ifabsent: CANDIDATE
+
+
+      
+  profile:
+    description: Represents a set of translation that together compose a language profile.
+    slots:
+      - translations
+      - translation_provider
+      - profile_id
+      - profile_version
+
+
