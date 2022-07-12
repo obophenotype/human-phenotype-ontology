@@ -24,5 +24,7 @@ mkdir -p $ROOTDIR/.github/workflows
 cp -n target/$OID/.github/workflows/qc.yml $ROOTDIR/.github/workflows/qc.yml
 
 
+
 echo "WARNING: These files should be manually migrated: mkdocs.yaml, .gitignore, src/ontology/catalog.xml (if you added a new import or component)"
-echo "Update successfully completed."
+echo "WARNING: Your QC workflows have not been updated automatically. Please update the ODK version number(s) in .github/workflows/qc.yml."
+echo "Ontology repository update successfully completed."

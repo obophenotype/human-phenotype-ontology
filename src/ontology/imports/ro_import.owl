@@ -16,9 +16,9 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/ro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-04-14/imports/ro_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2022-02-07/ro.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-04-14</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-06-11/imports/ro_import.owl"/>
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2022-05-23/ro.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-11</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1052,6 +1052,7 @@ range: spatial region or site (immaterial continuant)
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -2527,13 +2528,14 @@ For example, A and B may be gene products and binding of B by A positively regul
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002233"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000112>A diagnostic testing device utilizes a specimen.</obo:IAO_0000112>
-        <obo:IAO_0000115>X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y.</obo:IAO_0000115>
-        <obo:IAO_0000117>Asiyah Lin</obo:IAO_0000117>
-        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899 Bill Duncan</obo:IAO_0000117>
+        <obo:IAO_0000115>X device utilizes material Y means X and Y are material entities, and X is capable of some process P that has input Y.</obo:IAO_0000115>
+        <obo:IAO_0000117>https://orcid.org/0000-0001-9625-1899</obo:IAO_0000117>
+        <obo:IAO_0000117>https://orcid.org/0000-0003-2620-0345</obo:IAO_0000117>
         <obo:IAO_0000232>A diagnostic testing device utilizes a specimen means that the diagnostic testing device is capable of an assay, and this assay a specimen as its input.</obo:IAO_0000232>
         <obo:IAO_0000232>See github ticket https://github.com/oborel/obo-relations/issues/497</obo:IAO_0000232>
-        <oboInOwl:creation_date>2021-11-08</oboInOwl:creation_date>
-        <rdfs:label xml:lang="en">utilizes</rdfs:label>
+        <oboInOwl:creation_date>2021-11-08T12:00:00Z</oboInOwl:creation_date>
+        <oboInOwl:hasBroadSynonym>utilizes</oboInOwl:hasBroadSynonym>
+        <rdfs:label xml:lang="en">device utilizes material</rdfs:label>
     </owl:ObjectProperty>
     
 
