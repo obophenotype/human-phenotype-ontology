@@ -3,15 +3,18 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 
-SELECT ?sub ?iri ?obj WHERE {
-  ?iri owl:deprecated true .
+# description: This checks looks for consider or replaced
+
+SELECT ?entity ?replacement_id ?error WHERE {
+  ?consider_iri owl:deprecated true .
   {
-  SELECT ?sub ?iri ?obj WHERE {
-    #  VALUES ?sub { <http://purl.obolibrary.org/obo/HP_0045013> }
-    ?sub owl:deprecated true .
-    ?sub oio:consider ?obj .
-    FILTER(STRSTARTS(STR(?obj), "HP:"))
-    BIND(IRI(REPLACE(STR(?obj), "HP:", "http://purl.obolibrary.org/obo/HP_")) as ?iri)
+  SELECT ?entity ?consider_iri ?replacement_id WHERE {
+    VALUES ?property {oio:consider <http://purl.obolibrary.org/obo/IAO_0100001> }
+    ?entity owl:deprecated true .
+    ?entity ?property ?replacement_id .
+    FILTER(STRSTARTS(STR(?replacement_id), "HP:"))
+    BIND(IRI(REPLACE(STR(?replacement_id), "HP:", "http://purl.obolibrary.org/obo/HP_")) as ?consider_iri)
   }
   }
+  BIND("The entity recommends to consider an id (replacement_id) as a candidate for replacement, which itself is obsolete." as ?error)
 }
