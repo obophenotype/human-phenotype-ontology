@@ -1,0 +1,17 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT ?sub ?iri ?obj WHERE {
+  ?iri owl:deprecated true .
+  {
+  SELECT ?sub ?iri ?obj WHERE {
+    #  VALUES ?sub { <http://purl.obolibrary.org/obo/HP_0045013> }
+    ?sub owl:deprecated true .
+    ?sub oio:consider ?obj .
+    FILTER(STRSTARTS(STR(?obj), "HP:"))
+    BIND(IRI(REPLACE(STR(?obj), "HP:", "http://purl.obolibrary.org/obo/HP_")) as ?iri)
+  }
+  }
+}
