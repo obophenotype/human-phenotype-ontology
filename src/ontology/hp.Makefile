@@ -335,3 +335,18 @@ PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadshee
 calcified:
 	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
 	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
+	
+
+HPOA_DIR=hpoa
+
+hpoa:
+	#rm -rf $(TMPDIR)/hpo-annotation-data
+	#rm -rf $(HPOA_DIR) && mkdir $(HPOA_DIR)
+	#cd $(TMPDIR) && git clone https://github.com/monarch-initiative/hpo-annotation-data.git
+	cd $(TMPDIR)/hpo-annotation-data/rare-diseases/ && $(MAKE) -C misc && $(MAKE) -C current
+	sed -i '/HP:0032468/d' ./tmp/hpo-annotation-data/rare-diseases/misc/phenotype_annotation.tab
+	cd $(TMPDIR)/hpo-annotation-data/rare-diseases/util/ && $(MAKE) -C annotation
+	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/util/annotation/genes_to_phenotype.txt $(HPOA_DIR)
+	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
+	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/misc/*.tab $(HPOA_DIR)
+	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/current/*.hpoa $(HPOA_DIR)
