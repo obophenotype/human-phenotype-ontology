@@ -338,15 +338,30 @@ calcified:
 	
 
 HPOA_DIR=hpoa
+RARE_DISEASE_DIR=$(TMPDIR)/hpo-annotation-data/rare-diseases
+
+hpoa_pre:
+	rm -rf $(TMPDIR)/hpo-annotation-data
+	rm -rf $(HPOA_DIR) && mkdir $(HPOA_DIR)
+	cd $(TMPDIR) && git clone https://github.com/monarch-initiative/hpo-annotation-data.git
+
+odk_dependencies:
+	apt install -y aria2
+
+update_makefiles:
+	cp ~/ws/hpo-annotation-data/rare-diseases/current/makefile tmp/hpo-annotation-data/rare-diseases/current/makefile
+	cp ~/ws/hpo-annotation-data/rare-diseases/misc/makefile tmp/hpo-annotation-data/rare-diseases/misc/makefile
+	cp ~/ws/hpo-annotation-data/rare-diseases/util/annotation/makefile tmp/hpo-annotation-data/rare-diseases/util/annotation/makefile
 
 hpoa:
-	#rm -rf $(TMPDIR)/hpo-annotation-data
-	#rm -rf $(HPOA_DIR) && mkdir $(HPOA_DIR)
-	#cd $(TMPDIR) && git clone https://github.com/monarch-initiative/hpo-annotation-data.git
-	cd $(TMPDIR)/hpo-annotation-data/rare-diseases/ && $(MAKE) -C misc && $(MAKE) -C current
-	sed -i '/HP:0032468/d' ./tmp/hpo-annotation-data/rare-diseases/misc/phenotype_annotation.tab
-	cd $(TMPDIR)/hpo-annotation-data/rare-diseases/util/ && $(MAKE) -C annotation
-	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/util/annotation/genes_to_phenotype.txt $(HPOA_DIR)
-	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
-	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/misc/*.tab $(HPOA_DIR)
-	cp $(TMPDIR)/hpo-annotation-data/rare-diseases/current/*.hpoa $(HPOA_DIR)
+	$(MAKE) odk_dependencies
+	mkdir -p $(RARE_DISEASE_DIR)/misc/hpo/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/hpo/hp.obo
+	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.obo $(RARE_DISEASE_DIR)/current/data/hp.obo
+	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data
+	cd $(RARE_DISEASE_DIR)/ && $(MAKE) -C misc && $(MAKE) -C current
+	#sed -i '/HP:0032468/d' ./tmp/hpo-annotation-data/rare-diseases/misc/phenotype_annotation.tab
+	cd $(RARE_DISEASE_DIR)/util/ && $(MAKE) -C annotation
+	cp $(RARE_DISEASE_DIR)/util/annotation/genes_to_phenotype.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
