@@ -1,0 +1,44 @@
+pattern_name: abnormallyPrematureBiologicalProcessInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyPrematureBiologicalProcessInLocation.yaml
+description: "A biological process in a location that starts earlier than the natural start time or the reference process."
+
+contributors:
+- https://orcid.org/0000-0002-4532-2703
+- https://orcid.org/0000-0002-7356-1779
+
+classes:
+  premature: PATO:0000694
+  abnormal: PATO:0000460
+  biological process: GO:0008150
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  occurs_in: BFO:0000066
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  biological_process: "'biological process'"
+  location: "'independent continuant'"
+
+name:
+  text: "premature %s in %s"
+  vars:
+  - biological_process
+  - location
+
+def:
+  text: "An abnormally early start time of %s in %s."
+  vars:
+  - biological_process
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('premature' and ('inheres_in' some (%s and ('occurs_in' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - biological_process
+  - location

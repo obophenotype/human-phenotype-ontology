@@ -479,7 +479,7 @@ ALL_PATTERN_NAMES=$(strip $(patsubst %.yaml,%, $(notdir $(wildcard $(PATTERNDIR)
 
 PATTERN_CLEAN_FILES=../patterns/all_pattern_terms.txt \
 	$(DOSDP_OWL_FILES_DEFAULT) $(DOSDP_TERM_FILES_DEFAULT) \
-	$(DOSDP_OWL_FILES_FULL) $(DOSDP_TERM_FILES_FULL) 
+	$(DOSDP_OWL_FILES_FULL) $(DOSDP_TERM_FILES_FULL) $(DOSDP_OWL_FILES_MATCHES) $(DOSDP_TERM_FILES_MATCHES) 
 
 # Note to future generations: prepending ./ is a safety measure to ensure that 
 # the environment does not malicously set `PATTERN_CLEAN_FILES` to `\`.
@@ -547,6 +547,18 @@ $(DOSDP_OWL_FILES_FULL): $(SRC) $(DOSDP_TSV_FILES_FULL) $(ALL_PATTERN_FILES)
 	if [ $(PAT) = true ] && [ "${DOSDP_PATTERN_NAMES_FULL}" ]; then $(DOSDPT) generate --catalog=catalog-v001.xml \
     --infile=$(PATTERNDIR)/data/full --template=$(PATTERNDIR)/dosdp-patterns/ --batch-patterns="$(DOSDP_PATTERN_NAMES_FULL)" \
     --ontology=$< --obo-prefixes=true --outfile=$(PATTERNDIR)/data/full; fi
+
+# DOSDP matches pipeline
+
+DOSDP_OWL_FILES_MATCHES = $(patsubst %.tsv, $(PATTERNDIR)/data/matches/%.ofn, $(notdir $(wildcard $(PATTERNDIR)/data/matches/*.tsv)))
+DOSDP_TERM_FILES_MATCHES = $(patsubst %.tsv, $(PATTERNDIR)/data/matches/%.txt, $(notdir $(wildcard $(PATTERNDIR)/data/matches/*.tsv)))
+DOSDP_TSV_FILES_MATCHES = $(wildcard $(PATTERNDIR)/data/matches/*.tsv)
+DOSDP_PATTERN_NAMES_MATCHES = $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/matches/*.tsv))))
+
+$(DOSDP_OWL_FILES_MATCHES): $(SRC) $(DOSDP_TSV_FILES_MATCHES) $(ALL_PATTERN_FILES)
+	if [ $(PAT) = true ] && [ "${DOSDP_PATTERN_NAMES_MATCHES}" ]; then $(DOSDPT) generate --catalog=catalog-v001.xml \
+    --infile=$(PATTERNDIR)/data/matches --template=$(PATTERNDIR)/dosdp-patterns/ --batch-patterns="$(DOSDP_PATTERN_NAMES_MATCHES)" \
+    --ontology=$< --obo-prefixes=true --outfile=$(PATTERNDIR)/data/matches; fi
 # Generate template file seeds
 
 ## Generate template file seeds
@@ -557,8 +569,15 @@ $(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERND
 $(PATTERNDIR)/data/full/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/full/%.tsv
 	if [ $(PAT) = true ]; then $(DOSDPT) terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@; fi
 
+$(PATTERNDIR)/data/matches/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/matches/%.tsv
+	if [ $(PAT) = true ]; then $(DOSDPT) terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@; fi
+
+
+dosdp-matches-matches: $(SRC) $(ALL_PATTERN_FILES)
+	if [ $(PAT) = true ]; then $(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --restrict-axioms-to=logical \
+    --batch-patterns="$(ALL_PATTERN_NAMES)" --template="$(PATTERNDIR)/dosdp-patterns" --outfile="$(PATTERNDIR)/data/matches/"; fi
 # Generating the seed file from all the TSVs. If Pattern generation is deactivated, we still extract a seed from definitions.owl
-$(TMPDIR)/all_pattern_terms.txt: $(DOSDP_TERM_FILES_DEFAULT)   $(DOSDP_TERM_FILES_FULL) $(TMPDIR)/pattern_owl_seed.txt
+$(TMPDIR)/all_pattern_terms.txt: $(DOSDP_TERM_FILES_DEFAULT)   $(DOSDP_TERM_FILES_FULL) $(DOSDP_TERM_FILES_MATCHES) $(TMPDIR)/pattern_owl_seed.txt
 	if [ $(PAT) = true ]; then cat $^ | sort | uniq > $@; else $(ROBOT) query --use-graphs true -f csv -i $(PATTERNDIR)/definitions.owl \
     --query ../sparql/terms.sparql $@; fi
 
@@ -572,8 +591,8 @@ $(PATTERNDIR)/pattern.owl: $(ALL_PATTERN_FILES)
 	if [ $(PAT) = true ]; then $(DOSDPT) prototype --obo-prefixes true --template=$(PATTERNDIR)/dosdp-patterns --outfile=$@; fi
 
 # Generating the individual pattern modules and merging them into definitions.owl
-$(PATTERNDIR)/definitions.owl: $(DOSDP_OWL_FILES_DEFAULT)   $(DOSDP_OWL_FILES_FULL)
-	if [ $(PAT) = true ] && [ "${DOSDP_PATTERN_NAMES_DEFAULT}" ]   || [ "${DOSDP_PATTERN_NAMES_FULL}" ] && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $^) \
+$(PATTERNDIR)/definitions.owl: $(DOSDP_OWL_FILES_DEFAULT)   $(DOSDP_OWL_FILES_FULL) $(DOSDP_OWL_FILES_MATCHES)
+	if [ $(PAT) = true ] && [ "${DOSDP_PATTERN_NAMES_DEFAULT}" ]   || [ "${DOSDP_PATTERN_NAMES_FULL}" ] || [ "${DOSDP_PATTERN_NAMES_MATCHES}" ] && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $^) \
 		annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl \
       --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
 
@@ -665,7 +684,7 @@ explain_unsat: $(SRC)
 # General Validation
 # ----------------------------------------
 TSV=
-ALL_TSV_FILES=$(DOSDP_TSV_FILES_FULL) $(DOSDP_TSV_FILES_DEFAULT)
+ALL_TSV_FILES=$(DOSDP_TSV_FILES_FULL) $(DOSDP_TSV_FILES_MATCHES) $(DOSDP_TSV_FILES_DEFAULT)
 
 validate-tsv: $(TSV) | $(TMPDIR)
 	for FILE in $< ; do \

@@ -1,0 +1,43 @@
+pattern_name: aplasticHypoplasticAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/aplasticHypoplasticAnatomicalEntity.yaml
+description: "An underdeveloped or absent anatomical entity. This pattern should be used in cases where the anatomical entity is small or missing, but the clinician or researcher is unable to definitively say if it is a case of aplasia or hypoplasia. Using the moree specific term is preferred.For example, HP_0006265 'Aplasia/Hypoplasia of fingers'"
+
+contributors:
+- https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0002-3528-5267
+classes:
+  aplastic or hypoplastic: PATO:0002290
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "aplasia or hypoplasia of %s"
+  vars:
+  - anatomical_entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "aplasia or hypoplasia affecting the %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "Absence or underdevelopment of the %s."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('aplastic or hypoplastic' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

@@ -1,0 +1,77 @@
+---
+pattern_name: obstructedAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/obstructedAnatomicalEntity.yaml
+
+description: 'Use this phenotype pattern when an anatomical space of an
+  anatomical entity is blocked or filled with filled with one or more
+  obstacles. Typically, this results in some impediment, blockage, or reversal
+  of the normal flow of the contents of the entity or space. The use of an
+  anatomical space class would be preferred to material anatomical entities for
+  this phenotype pattern, but the logical pattern definition is kept permissive
+  for now.'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0005214  # Intestinal obstruction
+#    - http://purl.obolibrary.org/obo/MP_0003270  # intestinal obstruction
+#    - http://purl.obolibrary.org/obo/MP_0006134  # artery occlusion
+#    - http://purl.obolibrary.org/obo/HP_0006000  # Ureteral obstruction
+#    - http://purl.obolibrary.org/obo/MP_0031101  # nasal obstruction
+#    - http://purl.obolibrary.org/obo/ZP_0021087  # bile canaliculus obstructed, abnormal
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-7356-1779  # Nicolas Matentzoglu
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  obstructed: PATO:0000648
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062  # anatomical_space: UBERON:0000464
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+  xref: oio:hasDbXref
+
+vars:
+  anatomical_space: "'anatomical_entity'"
+
+name:
+  text: "%s obstruction"
+  vars:
+    - anatomical_space
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "obstruction of %s"
+    vars:
+      - anatomical_space
+
+  - annotationProperty: exact_synonym
+    text: "obstructed %s"
+    vars:
+      - anatomical_space
+
+def:
+  text: "Obstructed %s due to it being blocked or filled with one or more
+    obstacles."
+  vars:
+    - anatomical_space
+
+equivalentTo:
+  text: "'has_part' some (
+    'obstructed'
+    and ('characteristic_of' some %s)
+    and ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_space
+...

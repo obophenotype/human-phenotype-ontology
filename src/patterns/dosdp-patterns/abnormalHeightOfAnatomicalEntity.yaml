@@ -1,0 +1,43 @@
+pattern_name: abnormalHeightOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalHeightOfAnatomicalEntity.yaml
+description: "An abnormally tall or short anatomical structure, such as HP:0000002 Abnormality of body height.'"
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  height: PATO:0000119
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormality of %s height"
+  vars:
+   - anatomical_entity
+     
+annotations:
+  - annotationProperty: exact_synonym
+    text: "Abnormal %s height"
+    vars:
+     - anatomical_entity     
+
+def:
+  text: "Deviation from the norm of %s height with respect to that which is expected according to age and gender norms."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('height' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

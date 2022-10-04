@@ -1,0 +1,44 @@
+pattern_name: abnormalConcentrationOfChemicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalConcentrationOfChemicalEntityInLocation.yaml
+description: "An abnormal concentration of a chemical, like sodium, in a location, like the blood."
+
+classes:
+  concentration of: PATO:0000033
+  abnormal: PATO:0000460
+  chemical: CHEBI:24431
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  chemical: "chemical"
+  location: "'independent continuant'"
+
+name:
+  text: "abnormal %s concentration in %s"
+  vars:
+  - chemical
+  - location
+
+
+def:
+  text: "An abnormal concentration of %s in %s."
+  vars:
+  - chemical
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('concentration of' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - chemical
+  - location
+
+contributors:
+- https://orcid.org/0000-0002-3528-5267

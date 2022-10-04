@@ -1,0 +1,43 @@
+pattern_name: abnormallyIncreasedFunctionalityOfAnatomicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedFunctionalityOfAnatomicalEntityInLocation.yaml
+description: "Overactivity or hyperfunctionality of an organ or anatomical entity in a specific location."
+
+contributors: 
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  increased functionality: PATO:0001625
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  independent continuant: BFO:0000004
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  location: "'independent continuant'"
+
+name:
+  text: "%s hyperactivity in %s"
+  vars:
+   - anatomical_entity
+   - location
+
+def:
+  text: "A hyperactivity of the %s in the %s."
+  vars:
+   - anatomical_entity
+   - location
+
+equivalentTo:
+  text: "'has_part' some ('increased functionality' and ('inheres_in' some (%s and ('part_of' some %s))) and  ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity
+  - location
+
+ 

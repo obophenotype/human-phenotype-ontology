@@ -1,0 +1,44 @@
+pattern_name: abnormalDegenerationOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalDegenerationOfAnatomicalEntity.yaml
+description: "deterioration or loss of function of a tissue that was once present, such as HP_0000546 retinal degeneration."
+
+contributors:
+- https://orcid.org/0000-0002-3528-5267
+- https://orcid.org/0000-0001-5208-3432
+- https://orcid.org/0000-0001-9076-6015
+classes:
+  degenerate: PATO:0000639
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "%s degeneration"
+  vars:
+  - anatomical_entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "degeneration of the %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "Partial or complete degeneration of %s tissue that was once present."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('degenerate' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

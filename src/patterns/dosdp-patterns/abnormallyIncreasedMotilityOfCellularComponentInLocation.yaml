@@ -1,0 +1,43 @@
+pattern_name: abnormallyIncreasedMotilityOfCellularComponentInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedMotilityOfCellularComponentInLocation.yaml
+description: "Increased ability to move a cellular component in an anatomical entity/location."
+
+contributors:
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0002-9611-1279
+
+classes:
+  increased rate: PATO:0000912
+  abnormal: PATO:0000460
+  cellular component: GO:0005575
+  independent continuant: BFO:0000004
+  movement of cell or subcellular component: GO:0006928
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  occurs_in: BFO:0000066
+  results_in_movement_of: RO:0002565
+
+vars:
+  cellular_component: "'cellular component'"
+  location: "'independent continuant'"
+
+name:
+  text: "increased %s motility in %s"
+  vars:
+   - cellular_component
+   - location
+
+def:
+  text: "Increased ability to move %s in %s."
+  vars:
+    - cellular_component
+    - location
+
+equivalentTo:
+  text: "'has_part' some ('increased rate' and ('inheres_in' some ('movement of cell or subcellular component' and ('results_in_movement_of' some %s and ('occurs_in' some %s)))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - cellular_component
+    - location

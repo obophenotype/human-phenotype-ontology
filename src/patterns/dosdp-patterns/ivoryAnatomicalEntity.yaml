@@ -1,0 +1,59 @@
+---
+pattern_name: ivoryAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/ivoryAnatomicalEntity.yaml
+
+description: 'The term "ivory" in the context of this phenotype pattern refers to the increased density of an anatomical entity (e.g. epiphysis) observable by radiography (X-rays).'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0010583  # Ivory epiphyses
+#    - http://purl.obolibrary.org/obo/HP_0009191  # Ivory epiphyses of the metacarpals
+#    - http://purl.obolibrary.org/obo/HP_0010234  # Ivory epiphyses of the phalanges of the hand
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0002-7356-1779  # Nicolas Matentzoglu
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+  - https://orcid.org/0000-0001-7941-2961  # Leigh Carmody
+
+classes:
+  ivory: PATO:0002149
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "ivory %s"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormal radiographic density of %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "An abnormal increase in the density of %s resulting in increased degree of radiopacity (in X-rays)."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+            'ivory' and
+            ('characteristic_of' some %s) and
+            ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

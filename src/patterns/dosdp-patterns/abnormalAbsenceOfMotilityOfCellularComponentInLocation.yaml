@@ -1,0 +1,53 @@
+pattern_name: abnormalAbsenceOfMotilityOfCellularComponentInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalAbsenceOfMotilityOfCellularComponentInLocation.yaml
+description: "Absence of the ability to move (immotility) a cellular component in an anatomical entity/location."
+
+contributors:
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0002-9611-1279
+
+classes:
+  absent: PATO:0000462
+  abnormal: PATO:0000460
+  cellular component: GO:0005575
+  independent continuant: BFO:0000004
+  movement of cell or subcellular component: GO:0006928
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  occurs_in: BFO:0000066
+  results_in_movement_of: RO:0002565
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  cellular_component: "'cellular component'"
+  location: "'independent continuant'"
+
+name:
+  text: "absent %s motility in %s"
+  vars:
+   - cellular_component
+   - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "immotile %s in %s"
+  vars:
+  - cellular_component
+  - location
+
+def:
+  text: "Inability to move %s in %s."
+  vars:
+    - cellular_component
+    - location
+
+equivalentTo:
+  text: "'has_part' some ('absent' and ('inheres_in' some ('movement of cell or subcellular component' and ('results_in_movement_of' some %s and ('occurs_in' some %s)))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - cellular_component
+    - location

@@ -1,0 +1,61 @@
+---
+pattern_name: deviationTowardsLateralSideOfAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/deviationTowardsLateralSideOfAnatomicalEntity.yaml
+
+description: 'Use this pattern for phenotypes involving changed
+  direction of position towards the side of an anatomical entity that is
+  abnormal in space or time (e.g. permanent).'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0001822  # Hallux valgus
+#    - http://purl.obolibrary.org/obo/HP_0003049  # Ulnar deviation of the wrist
+#    - http://purl.obolibrary.org/obo/HP_0100500  # Fibular deviation of toes
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  deviation_towards_the_lateral_side: PATO:0002176
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "lateral deviation of %s"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s lateral deviation"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "A changed direction of position or shift towards the side of %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'deviation_towards_the_lateral_side' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...

@@ -43,6 +43,11 @@ pattern_pipelines_group:
   products:
     - id: full
       dosdp_tools_options: "--obo-prefixes=true"
+    - id: matches
+      dosdp_tools_options: "--obo-prefixes=true"
+  matches:
+    - id: matches
+      dosdp_tools_options: "--obo-prefixes=true --restrict-axioms-to=logical"
 robot_report:
   release_reports: True
   fail_on : ERROR

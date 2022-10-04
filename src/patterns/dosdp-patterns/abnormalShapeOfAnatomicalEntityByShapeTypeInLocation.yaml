@@ -1,0 +1,55 @@
+pattern_name: abnormalShapeOfAnatomicalEntityByShapeTypeInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalShapeOfAnatomicalEntityByShapeTypeInLocation.yaml
+description: "Anatomical entity with an abnormal shape of a specified shape in a particular location, e.g. Y-shaped bone in the leg."
+
+contributors:
+  - https://orcid.org/0000-0002-9611-1279
+
+classes:
+  shape: PATO:0000052
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  shape: "'shape'"
+  location: "'independent continuant'"
+
+name:
+  text: "%s %s in %s"
+  vars:
+  - shape
+  - anatomical_entity
+  - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "abnormal %s shape of %s in %s"
+  vars:
+  - shape
+  - anatomical_entity
+  - location
+
+def:
+  text: "Any structural anomaly that causes %s in the %s to be %s shaped."
+  vars:
+  - anatomical_entity
+  - location
+  - shape
+
+equivalentTo:
+  text: "'has_part' some (%s and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - shape
+  - anatomical_entity
+  - location

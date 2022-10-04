@@ -1,0 +1,49 @@
+pattern_name: abnormalArrestedDevelopmentDuringStage
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalArrestedDevelopmentDuringStage.yaml
+description: "Arrest or prematurely terminated development at a specific development stage in an organism."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0002-4532-2703
+  - https://orcid.org/0000-0002-7073-9172
+
+classes:
+  arrested: PATO:0000297
+  abnormal: PATO:0000460
+  developmental_process: GO:0032502
+  life_cycle_stage: UBERON:0000105
+  
+relations: 
+  happens_during: RO:0002092
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  development: "'developmental_process'"
+  stage: "'life_cycle_stage'"
+
+name:
+  text: "arrested %s during %s"
+  vars:
+   - development
+   - stage
+
+def:
+  text: "Abnormal(ly) arrested (of) %s in the %s."
+  vars:
+   - development
+   - stage
+
+
+equivalentTo:
+  text: "'has_part' some ('arrested' and ('inheres_in' some (%s and ('happens_during' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+   - development
+   - stage
+    
+ 

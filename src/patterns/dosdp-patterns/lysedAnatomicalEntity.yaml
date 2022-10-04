@@ -1,0 +1,34 @@
+pattern_name: lysedAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/lysedAnatomicalEntity.yaml
+description: "expansive cellular membrane destruction in anatomical entity."
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  lysed: PATO:0065001
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormally lysed %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "%s with extensive cellular membrane destruction."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('lysed' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

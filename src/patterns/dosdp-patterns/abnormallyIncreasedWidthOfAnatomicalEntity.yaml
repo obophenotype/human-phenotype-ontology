@@ -1,0 +1,46 @@
+pattern_name: abnormallyIncreasedWidthOfAnatomicalEntity 
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedWidthOfAnatomicalEntity.yaml
+description: "Increased width of an antomical entity. i.e., wider tail."
+
+contributors: 
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0003-4148-4606
+  
+classes:
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  increased width: PATO:0000600
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "increased width of %s"
+  vars:
+   - anatomical_entity
+
+annotations:
+  - 
+    annotationProperty: exact_synonym
+    text: "wider %s"
+    vars:
+     - anatomical_entity     
+
+def:
+  text: "Increased width of %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('increased width' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

@@ -1,0 +1,40 @@
+pattern_name: abnormalLevelOfChemicalEntityWithRole
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalLevelOfChemicalEntityWithRole.yaml
+description: "An abnormal level of a chemical with a specific role, such as a metabolite or hormone like androgen, for example, 'abnormal androgen level'."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-3528-5267
+  
+classes:
+  amount: PATO:0000070
+  abnormal: PATO:0000460
+  chemical entity: CHEBI:24431
+  role: CHEBI:50906
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  has_role: RO:0000087
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  role: "role"
+
+name:
+  text: "abnormal %s level"
+  vars:
+  - role
+
+def:
+  text: "An abnormal amount of %s."
+  vars:
+  - role
+
+equivalentTo:
+  text: "'has_part' some ('amount' and ('inheres_in' some ('chemical entity' and ('has_role' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - role
