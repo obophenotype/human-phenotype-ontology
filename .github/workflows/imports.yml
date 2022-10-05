@@ -1,0 +1,38 @@
+name: Refresh imports
+on:
+  workflow_dispatch:
+  #schedule:
+  #  - cron: "0 0 1 * *"
+jobs:
+  imports:
+    runs-on: macos-latest
+    steps:
+      - uses: docker-practice/actions-setup-docker@master
+      - run: |
+          set -x
+          docker version
+
+      - name: Install ODK
+        run: docker pull obolibrary/odklite
+      # Checks-out current branch
+
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+
+      - name: work around permission issue
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      
+      - name: Refreshing imports
+        run: cd src/ontology/ && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make GITHUB_ACTION=true refresh-imports
+      
+      - name: Refreshing components
+        run: cd src/ontology/ && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make IMP=false IMP_LARGE=false GITHUB_ACTION=true ../patterns/definitions.owl
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update imports and components
+          title: 'Update all imports and components'
+          body: |
+            Updates all imports and components.
+          assignees: matentzn

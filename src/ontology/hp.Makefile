@@ -335,3 +335,42 @@ PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadshee
 calcified:
 	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
 	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
+	
+
+#######################
+### HPOA Pipeline #####
+#######################
+
+HPOA_DIR=$(TMPDIR)/hpoa
+RARE_DISEASE_DIR=$(TMPDIR)/hpo-annotation-data/rare-diseases
+
+.PHONY: hpoa_clean
+hpoa_clean:
+	rm -rf $(TMPDIR)/hpo-annotation-data
+	rm -rf $(HPOA_DIR) && mkdir $(HPOA_DIR)
+	cd $(TMPDIR) && git clone https://github.com/monarch-initiative/hpo-annotation-data.git
+
+.PHONY: hpoa
+hpoa:
+	test -f hp.obo
+	echo "##### HPOA: COPYING hp.obo into HPOA pipeline"
+	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
+	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.obo $(RARE_DISEASE_DIR)/current/data/hp.obo
+	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
+	
+	echo "##### HPOA: Running Make pipeline"
+	cd $(RARE_DISEASE_DIR)/ \
+		&& echo "##### HPOA: Running MISC Makefile" \
+		&& $(MAKE) -C misc \
+		&& echo "##### HPOA: Running CURRENT Makefile" \
+		&& $(MAKE) -C current
+	cd $(RARE_DISEASE_DIR)/util/ \
+		&& echo "##### HPOA: Running ANNOTATION Makefile (UTIL)" \
+		&& $(MAKE) -C annotation
+	
+	echo "##### HPOA: COPYING all result files into HPOA results directory"
+	mkdir -p $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/util/annotation/genes_to_phenotype.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
