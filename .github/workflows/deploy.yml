@@ -1,0 +1,58 @@
+name: Run and deploy release
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: "0 0 1 * *"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.3.1
+    strategy:
+      max-parallel: 1
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+
+      - name: work around permission issue
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+        
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Update release files
+        run: cd src/ontology/ && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GITHUB_ACTION=true prepare_release_fast -B
+      - name: Update HPOA
+        run: cd src/ontology/ && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GITHUB_ACTION=true hpoa -B
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update release files
+          title: 'Update all release files'
+          body: |
+            Updates all HPO release files.
+          assignees: matentzn
+      - name: Run release
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+          draft: true
+          tag_name: v${{ steps.date.outputs.date }}
+          files: |
+            hp.owl
+            hp.obo
+            hp.json
+            hp-base.owl
+            hp-base.obo
+            hp-base.json
+            hp-full.owl
+            hp-full.obo
+            hp-full.json
+            hp-simple-non-classified.owl
+            hp-simple-non-classified.obo
+            hp-simple-non-classified.json
+            tmp/phenotype.hpoa
+            tmp/genes_to_phenotype.txt
+            tmp/phenotype_annotation_negated.tab
+            tmp/phenotype_annotation.tab
+            tmp/phenotype_to_genes.txt
