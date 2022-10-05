@@ -2,10 +2,12 @@
 
 There are two ways to run an HPO release:
 
-1. Run an HPO release using GitHub actions (preferred)
-2. Run an HPO release manually
+1. Run an HPO release using GitHub actions
+2. Run an HPO release manually (preferred)
 
-## Run an HPO release using GitHub actions (preferred)
+## Run an HPO release using GitHub actions
+
+EDIT: As of today (Wed 5 Oct), this does not work without passing a GitHub token into https://github.com/obophenotype/human-phenotype-ontology/blob/master/.github/workflows/deploy.yml, which permits access to the HPOA repo which is currently private.
 
 1. Go to the [Deploy HPO Action](https://github.com/obophenotype/human-phenotype-ontology/actions/workflows/deploy.yml)
 2. Click on `Dispatch workflow` on the right to trigger the workflow. It will build HPO, HPOA and everything else related to the release
@@ -20,8 +22,7 @@ There are two ways to run an HPO release:
 3. Switch to `src/ontology` in terminal
 4. Run `sh build-without-imports.sh`. This will first build all HPO related files, then all HPOA related files
 5. Make a pull request with the newly generated files, merge when QC passes
-6. On GitHub, create a new release manually (remember to set the correct tag, i.e. `v2022-10-30`)
-7. Attach all release files:
+6. ALT1: On GitHub, create a new release manually (remember to set the correct tag, i.e. `v2022-10-30`, the rest is up to you). Attach all release files:
     - hp.owl
     - hp.obo
     - hp.json
@@ -39,4 +40,5 @@ There are two ways to run an HPO release:
     - tmp/phenotype_annotation_negated.tab
     - tmp/phenotype_annotation.tab
     - tmp/phenotype_to_genes.txt
-8. Publish the release
+7. ALT2: If you have `gh` installed, you can use the following pipeline: `make deploy_release GHVERSION=v2022-10-05` (no `sh run.sh`!). This will automate the above step (6). When the draft release is successfully created, you should see a link in your console, like `https://github.com/obophenotype/human-phenotype-ontology/releases/tag/untagged-a230b72fb7457a460e79` (final line of output).  Go to this link with your browser. Edit the draft release in whatever way you wish. 
+8. Click on `Publish release`. 
