@@ -343,6 +343,7 @@ calcified:
 
 HPOA_DIR=$(TMPDIR)/hpoa
 RARE_DISEASE_DIR=$(TMPDIR)/hpo-annotation-data/rare-diseases
+HPO_OBO_RELEASED=../../hp.obo
 
 .PHONY: hpoa_clean
 hpoa_clean:
@@ -352,6 +353,7 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
+	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.obo
 	test -f hp.obo
 	echo "##### HPOA: COPYING hp.obo into HPOA pipeline"
 	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
