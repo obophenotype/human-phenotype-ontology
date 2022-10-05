@@ -22,6 +22,8 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Update release files
         run: cd src/ontology/ && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GITHUB_ACTION=true prepare_release_fast -B
+      - name: Check out HPOA
+        run: cd src/ontology/ && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GITHUB_ACTION=true hpoa_clean -B
       - name: Update HPOA
         run: cd src/ontology/ && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GITHUB_ACTION=true hpoa -B
       - name: Create Pull Request

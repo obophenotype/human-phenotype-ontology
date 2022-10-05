@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+####### WARNING: DO NOT USE ######
+# This script only has historical value and should not be used.
+# All its contents have been superseded in `src/ontology/hp.Makefile`,
+# in the `hpoa` goal.
+###################################
+
 set -e
 
 WORKING_DIRECTORY=$PWD
