@@ -376,3 +376,34 @@ hpoa:
 	cp $(RARE_DISEASE_DIR)/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
+#############################
+#### Adopt MP EQs ###########
+#############################
+MP_URL=http://purl.obolibrary.org/obo/mp.owl
+
+tmp/mp.owl:
+	wget $(MP_URL) -O $@
+
+tmp/mp-eqs.owl: tmp/mp.owl
+	$(ROBOT) \
+		remove --input $< \
+			--base-iri http://purl.obolibrary.org/obo/MP_ \
+			--axioms external \
+			--preserve-structure false --trim false \
+		filter --axioms equivalent --preserve-structure false --output $@
+
+ADOPT_EQS_MAPPING_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNkB47Uo12pyBuhr-26ZaPUdPzerwI_ZXAqvqTfHkOXQXFfoL0krA3qXF4sM0Z6cLXwHnPAoKcEWkp/pub?gid=0&single=true&output=tsv"
+
+tmp/rename.tsv:
+	wget $(ADOPT_EQS_MAPPING_URL) -O $@
+
+tmp/mp-eqs-hp.owl: tmp/mp-eqs.owl tmp/rename.tsv
+	$(ROBOT) rename -i $< --mappings tmp/rename.tsv \
+	remove \
+		--base-iri http://purl.obolibrary.org/obo/HP_ \
+		--axioms external \
+		--preserve-structure false --trim false --output $@
+
+migrate_eqs_to_edit: $(SRC) tmp/mp-eqs-hp.owl
+	$(ROBOT) merge -i $(SRC) -i tmp/mp-eqs-hp.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
