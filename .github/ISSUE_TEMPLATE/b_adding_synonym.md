@@ -3,7 +3,7 @@ name: Add synonym
 about: New synonym suggestion for an existing HPO term
 title: ''
 labels: synonyms
-assignees: drseb, pnrobinson
+assignees: pnrobinson
 
 ---
 
