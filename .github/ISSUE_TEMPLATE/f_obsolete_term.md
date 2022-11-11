@@ -3,7 +3,7 @@ name: Obsolete a term
 about: Obsolete or deprecate an existing HPO term
 title: ''
 labels: obsoletion
-assignees: drseb, pnrobinson
+assignees: pnrobinson
 
 ---
 
