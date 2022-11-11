@@ -3,7 +3,7 @@ name: New Annotation
 about: Report missing or wrong links between HPO terms and diseases
 title: ''
 labels: HPOA
-assignees: drseb
+assignees: pnrobinson
 
 ---
 
