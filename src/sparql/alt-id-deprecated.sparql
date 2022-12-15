@@ -1,0 +1,28 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX OBA: <http://purl.obolibrary.org/obo/OBA_>
+PREFIX HP: <http://purl.obolibrary.org/obo/HP_>
+
+SELECT DISTINCT ?alt_iri ?deprecated ?label WHERE {
+    
+    {
+      SELECT ?alt_iri {
+          ?entity rdfs:subClassOf* HP:0000001 .
+          ?entity oboInOwl:hasAlternativeId ?alt_id .
+          FILTER(STRSTARTS(?alt_id,"HP")) 
+          BIND(IRI(REPLACE(STR(?alt_id),"HP:","http://purl.obolibrary.org/obo/HP_")) as ?alt_iri)
+    }
+  }
+  
+  OPTIONAL {
+  	?alt_iri owl:deprecated ?deprecated .
+  }
+  
+  OPTIONAL {
+  	?alt_iri rdfs:label ?label .
+  }
+  
+}
