@@ -407,3 +407,9 @@ tmp/mp-eqs-hp.owl: tmp/mp-eqs.owl tmp/rename.tsv
 migrate_eqs_to_edit: $(SRC) tmp/mp-eqs-hp.owl
 	$(ROBOT) merge -i $(SRC) -i tmp/mp-eqs-hp.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
+
+.PHONY: help
+help:
+	@echo "$$data"
+	echo "Migrating EQs from MP to HP:"
+	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
