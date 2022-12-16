@@ -35,11 +35,11 @@ EDIT: As of today (Wed 5 Oct, 2022), this does not work without passing a GitHub
     - hp-simple-non-classified.owl
     - hp-simple-non-classified.obo
     - hp-simple-non-classified.json
-    - tmp/phenotype.hpoa
-    - tmp/genes_to_phenotype.txt
-    - tmp/phenotype_annotation_negated.tab
-    - tmp/phenotype_annotation.tab
-    - tmp/phenotype_to_genes.txt
+    - tmp/hpoa/phenotype.hpoa
+    - tmp/hpoa/genes_to_phenotype.txt
+    - tmp/hpoa/phenotype_annotation_negated.tab
+    - tmp/hpoa/phenotype_annotation.tab
+    - tmp/hpoa/phenotype_to_genes.txt
 7. ALT2: If you have `gh` installed, you can use the following pipeline: `make deploy_release GHVERSION=v2022-10-05` (no `sh run.sh`!). This will automate the above step (6). When the draft release is successfully created, you should see a link in your console, like `https://github.com/obophenotype/human-phenotype-ontology/releases/tag/untagged-a230b72fb7457a460e79` (final line of output).  Go to this link with your browser. Edit the draft release in whatever way you wish. 
 8. Click on `Publish release`. 
 9. Add to the release notes in github
