@@ -378,7 +378,8 @@ hpoa:
 	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
 
-RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), ../../$(n))
+RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), ../../$(n)) $(wildcard $(HPOA_DIR)/*)
+
 GHVERSION=v$(VERSION)
 
 .PHONY: public_release
