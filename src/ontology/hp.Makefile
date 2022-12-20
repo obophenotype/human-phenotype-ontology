@@ -353,11 +353,12 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.obo
+	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json hp.obo
+	test -f hp.json
 	test -f hp.obo
-	echo "##### HPOA: COPYING hp.obo into HPOA pipeline"
+	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
 	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
-	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.obo $(RARE_DISEASE_DIR)/current/data/hp.obo
+	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
 	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
 	
 	echo "##### HPOA: Running Make pipeline"
@@ -376,6 +377,18 @@ hpoa:
 	cp $(RARE_DISEASE_DIR)/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
+
+RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), ../../$(n)) $(wildcard $(HPOA_DIR)/*)
+
+GHVERSION=v$(VERSION)
+
+.PHONY: public_release
+public_release:
+	@test $(GHVERSION)
+	ls -alt $(RELEASE_ASSETS_AFTER_RELEASE)
+	gh release create $(GHVERSION) --title "$(VERSION) Release" --draft $(RELEASE_ASSETS_AFTER_RELEASE) --generate-notes
+
+
 #############################
 #### Adopt MP EQs ###########
 #############################
