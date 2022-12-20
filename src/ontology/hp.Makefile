@@ -356,7 +356,7 @@ hpoa:
 	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json hp.obo
 	test -f hp.json
 	test -f hp.obo
-	echo "##### HPOA: COPYING hp.json into HPOA pipeline"
+	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
 	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
 	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
 	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
