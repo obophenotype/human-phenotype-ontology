@@ -426,3 +426,20 @@ help:
 	@echo "$$data"
 	echo "Migrating EQs from MP to HP:"
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
+
+.PHONY: diff
+diff: diff-table diff-kgcl diff-yaml
+
+tmp/hp-released.obo:
+	wget http://purl.obolibrary.org/obo/hp.obo -O $@ && cp ../../hp-full.obo tmp/hp-full.obo
+
+diff-table: tmp/hp-released.obo tmp/hp-full.obo
+	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo \
+	-o difference_table.tsv --output-type csv --statistics --group-by-property oio:hasOBONamespace
+
+diff-kgcl: tmp/hp-released.obo tmp/hp-full.obo
+	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo \
+	-o difference_kgcl.txt --output-type kgcl
+
+diff-yaml: tmp/hp-released.obo tmp/hp-full.obo
+	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo -o difference_yaml.yaml
