@@ -247,12 +247,19 @@ hpo_jar: .FORCE
 	wget https://github.com/Phenomics/ontodiff/releases/download/$(HPODIFFVERSION)/hpodiff.jar -O $(HPODIFFJAR)
 
 # The new version is the version that was just created by the release
+
+#HPO_NEW_DIFF=http://purl.obolibrary.org/obo/hp/releases/2022-12-15/hp.obo
+HPO_OLD_DIFF=http://purl.obolibrary.org/obo/hp.obo
+
 tmp/$(ONT).obo.new:
 	cp ../../$(ONT).obo $@
 
+#tmp/$(ONT).obo.new:
+#	wget "$(HPO_NEW_DIFF)" -O $@
+
 # The old version is the version that is currently published
 tmp/$(ONT).obo.old: .FORCE
-	wget http://purl.obolibrary.org/obo/hp.obo -O $@
+	wget "$(HPO_OLD_DIFF)" -O $@
 
 # As said before, we create this dummy file (reports/hpo_nice_diff.md) that will
 # simply list all previously created reports that are copied into the reports folder
@@ -261,9 +268,8 @@ hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	cp tmp/hpodiff*.xlsx reports
 
-
-tmp/hp-build.owl:
-	wget https://ci.monarchinitiative.org/view/pipelines/job/hpo-pipeline-dev2/lastSuccessfulBuild/artifact/hp-full.owl -O $@
+#tmp/hp-build.owl:
+#	wget https://ci.monarchinitiative.org/view/pipelines/job/hpo-pipeline-dev2/lastSuccessfulBuild/artifact/hp-full.owl -O $@
 
 tmp/patternised_classes.txt: patternised_classes.txt
 	cp $< $@
