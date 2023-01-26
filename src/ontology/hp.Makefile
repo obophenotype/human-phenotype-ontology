@@ -428,18 +428,19 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 .PHONY: diff
-diff: diff-table diff-kgcl diff-yaml
+diff: $(REPORTDIR)/difference_table.tsv $(REPORTDIR)/difference_kgcl.txt $(REPORTDIR)/difference_yaml.yaml
 
 tmp/hp-released.obo:
-	wget http://purl.obolibrary.org/obo/hp.obo -O $@ && cp ../../hp-full.obo tmp/hp-full.obo
+	wget http://purl.obolibrary.org/obo/hp.obo -O $@
+	
+tmp/hp-base.obo:
+	cp ../../hp-base.obo tmp/hp-base.obo
 
-diff-table: tmp/hp-released.obo tmp/hp-full.obo
-	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo \
-	-o difference_table.tsv --output-type csv --statistics --group-by-property oio:hasOBONamespace
+$(REPORTDIR)/difference_table.tsv: tmp/hp-released.obo | tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo --output-type csv --statistics --group-by-property oio:hasOBONamespace -o $@
 
-diff-kgcl: tmp/hp-released.obo tmp/hp-full.obo
-	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo \
-	-o difference_kgcl.txt --output-type kgcl
+$(REPORTDIR)/difference_kgcl.txt: tmp/hp-released.obo | tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo --output-type kgcl -o $@ 
 
-diff-yaml: tmp/hp-released.obo tmp/hp-full.obo
-	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo -o difference_yaml.yaml
+$(REPORTDIR)/difference_yaml.yaml: tmp/hp-released.obo | tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo -o $@
