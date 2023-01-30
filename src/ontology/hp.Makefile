@@ -247,12 +247,19 @@ hpo_jar: .FORCE
 	wget https://github.com/Phenomics/ontodiff/releases/download/$(HPODIFFVERSION)/hpodiff.jar -O $(HPODIFFJAR)
 
 # The new version is the version that was just created by the release
+
+#HPO_NEW_DIFF=http://purl.obolibrary.org/obo/hp/releases/2022-12-15/hp.obo
+HPO_OLD_DIFF=http://purl.obolibrary.org/obo/hp.obo
+
 tmp/$(ONT).obo.new:
 	cp ../../$(ONT).obo $@
 
+#tmp/$(ONT).obo.new:
+#	wget "$(HPO_NEW_DIFF)" -O $@
+
 # The old version is the version that is currently published
 tmp/$(ONT).obo.old: .FORCE
-	wget http://purl.obolibrary.org/obo/hp.obo -O $@
+	wget "$(HPO_OLD_DIFF)" -O $@
 
 # As said before, we create this dummy file (reports/hpo_nice_diff.md) that will
 # simply list all previously created reports that are copied into the reports folder
@@ -261,9 +268,8 @@ hpo_diff: hpo_jar tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	java -jar $(HPODIFFJAR) tmp/$(ONT).obo.new tmp/$(ONT).obo.old
 	cp tmp/hpodiff*.xlsx reports
 
-
-tmp/hp-build.owl:
-	wget https://ci.monarchinitiative.org/view/pipelines/job/hpo-pipeline-dev2/lastSuccessfulBuild/artifact/hp-full.owl -O $@
+#tmp/hp-build.owl:
+#	wget https://ci.monarchinitiative.org/view/pipelines/job/hpo-pipeline-dev2/lastSuccessfulBuild/artifact/hp-full.owl -O $@
 
 tmp/patternised_classes.txt: patternised_classes.txt
 	cp $< $@
@@ -336,6 +342,96 @@ calcified:
 	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
 	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
 
+#######################
+### HPOA Pipeline #####
+#######################
+
+HPOA_DIR=$(TMPDIR)/hpoa
+RARE_DISEASE_DIR=$(TMPDIR)/hpo-annotation-data/rare-diseases
+HPO_OBO_RELEASED=../../hp.obo
+
+.PHONY: hpoa_clean
+hpoa_clean:
+	rm -rf $(TMPDIR)/hpo-annotation-data
+	rm -rf $(HPOA_DIR) && mkdir $(HPOA_DIR)
+	cd $(TMPDIR) && git clone https://github.com/monarch-initiative/hpo-annotation-data.git
+
+.PHONY: hpoa
+hpoa:
+	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json hp.obo
+	test -f hp.json
+	test -f hp.obo
+	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
+	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
+	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
+	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
+	
+	echo "##### HPOA: Running Make pipeline"
+	cd $(RARE_DISEASE_DIR)/ \
+		&& echo "##### HPOA: Running MISC Makefile" \
+		&& $(MAKE) -C misc \
+		&& echo "##### HPOA: Running CURRENT Makefile" \
+		&& $(MAKE) -C current
+	cd $(RARE_DISEASE_DIR)/util/ \
+		&& echo "##### HPOA: Running ANNOTATION Makefile (UTIL)" \
+		&& $(MAKE) -C annotation
+	
+	echo "##### HPOA: COPYING all result files into HPOA results directory"
+	mkdir -p $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/util/annotation/genes_to_phenotype.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
+
+RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), ../../$(n)) $(wildcard $(HPOA_DIR)/*)
+
+GHVERSION=v$(VERSION)
+
+.PHONY: public_release
+public_release:
+	@test $(GHVERSION)
+	ls -alt $(RELEASE_ASSETS_AFTER_RELEASE)
+	gh release create $(GHVERSION) --title "$(VERSION) Release" --draft $(RELEASE_ASSETS_AFTER_RELEASE) --generate-notes
+
+
+#############################
+#### Adopt MP EQs ###########
+#############################
+MP_URL=http://purl.obolibrary.org/obo/mp.owl
+
+tmp/mp.owl:
+	wget $(MP_URL) -O $@
+
+tmp/mp-eqs.owl: tmp/mp.owl
+	$(ROBOT) \
+		remove --input $< \
+			--base-iri http://purl.obolibrary.org/obo/MP_ \
+			--axioms external \
+			--preserve-structure false --trim false \
+		filter --axioms equivalent --preserve-structure false --output $@
+
+ADOPT_EQS_MAPPING_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNkB47Uo12pyBuhr-26ZaPUdPzerwI_ZXAqvqTfHkOXQXFfoL0krA3qXF4sM0Z6cLXwHnPAoKcEWkp/pub?gid=0&single=true&output=tsv"
+
+tmp/rename.tsv:
+	wget $(ADOPT_EQS_MAPPING_URL) -O $@
+
+tmp/mp-eqs-hp.owl: tmp/mp-eqs.owl tmp/rename.tsv
+	$(ROBOT) rename -i $< --mappings tmp/rename.tsv \
+	remove \
+		--base-iri http://purl.obolibrary.org/obo/HP_ \
+		--axioms external \
+		--preserve-structure false --trim false --output $@
+
+migrate_eqs_to_edit: $(SRC) tmp/mp-eqs-hp.owl
+	$(ROBOT) merge -i $(SRC) -i tmp/mp-eqs-hp.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
+
+.PHONY: help
+help:
+	@echo "$$data"
+	echo "Migrating EQs from MP to HP:"
+	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
+
 #### Translations #####
 LANGUAGES=nl
 TRANSLATIONDIR=translations
@@ -343,12 +439,18 @@ HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
 BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
 BABELON_NL=https://raw.githubusercontent.com/monarch-initiative/babelon/main/tests/data/output_data.tsv
+BABELON_FR=https://raw.githubusercontent.com/monarch-initiative/babelon/main/tests/data/output_data.tsv
 
 translations/:
 	mkdir -p $@
 
 translations/babelon.yaml: | translations/
 	wget $(BABELON_SCHEMA) -O $@
+
+translations/hp-fr.babelon.tsv: | translations/
+	wget $(BABELON_NL) -O $@
+	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
+	mv $@.tmp $@
 
 translations/hp-nl.babelon.tsv: | translations/
 	wget $(BABELON_NL) -O $@
@@ -381,3 +483,4 @@ $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
 
 $(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
 	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
+
