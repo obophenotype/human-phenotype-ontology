@@ -446,7 +446,7 @@ translations/:
 	mkdir -p $@
 
 translations/babelon.yaml: | translations/
-	wget $(BABELON_SCHEMA) -O $@
+	wget "$(BABELON_SCHEMA)" -O $@
 
 tmp/hp-fr.babelon.tsv: | translations/
 	wget "$(BABELON_FR)" -O $@
@@ -456,9 +456,19 @@ translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
 
 
 translations/hp-nl.babelon.tsv: | translations/
-	wget $(BABELON_NL) -O $@
+	wget "$(BABELON_NL)" -O $@
 	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
 	mv $@.tmp $@
+
+translations/hp-nl.synonyms.tsv: | translations/
+	echo "ID" > $@
+	echo "ID" >> $@
+
+translations/hp-fr.synonyms.tsv: | translations/
+	wget "$(SYNONYMS_FR)" -O $@
+
+translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
+	$(ROBOT) template --template $< --output $@
 
 $(TMPDIR)/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
 	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
@@ -469,11 +479,12 @@ $(TMPDIR)/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.y
 	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
 	robot merge -i $@.tmp query --update ../sparql/rm-rdf.ru -o $@	
 
-translations/hp-%.owl: $(TMPDIR)/hp-profile-%.owl hp.owl
-	robot merge -i hp.owl -i $< \
+translations/hp-%.owl: $(TMPDIR)/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
+	robot merge $(patsubst %, -i %, $^) \
 	query --update ../sparql/create_profile.ru \
 	query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv \
 	query --update ../sparql/rm_translated.ru \
+	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
 .PRECIOUS: translations/hp-%.owl
 
