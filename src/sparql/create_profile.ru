@@ -10,7 +10,6 @@ DELETE {
 }
 
 INSERT {
-  ?ax rdfs:comment "Some values of this term have been translated." .
   ?ax owl:annotatedTarget ?translation_lang .
 }
 

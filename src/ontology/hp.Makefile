@@ -433,13 +433,14 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl
+LANGUAGES=nl fr
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
 BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
 BABELON_NL=https://raw.githubusercontent.com/monarch-initiative/babelon/main/tests/data/output_data.tsv
-BABELON_FR=https://raw.githubusercontent.com/monarch-initiative/babelon/main/tests/data/output_data.tsv
+BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
+SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 
 translations/:
 	mkdir -p $@
@@ -447,10 +448,12 @@ translations/:
 translations/babelon.yaml: | translations/
 	wget $(BABELON_SCHEMA) -O $@
 
-translations/hp-fr.babelon.tsv: | translations/
-	wget $(BABELON_NL) -O $@
-	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
-	mv $@.tmp $@
+tmp/hp-fr.babelon.tsv: | translations/
+	wget "$(BABELON_FR)" -O $@
+
+translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
+	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
+
 
 translations/hp-nl.babelon.tsv: | translations/
 	wget $(BABELON_NL) -O $@
@@ -462,6 +465,7 @@ $(TMPDIR)/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.y
 	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_status a owl:AnnotationProperty ." >> $@.tmp
 	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
 	robot merge -i $@.tmp query --update ../sparql/rm-rdf.ru -o $@	
 
@@ -475,7 +479,7 @@ translations/hp-%.owl: $(TMPDIR)/hp-profile-%.owl hp.owl
 
 .PHONY: prepare_translations
 prepare_translations:
-	$(MAKE) IMP=false COMP=false PAT=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
 
 $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
