@@ -469,21 +469,28 @@ translations/hp-fr.synonyms.tsv: | translations/
 
 translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
 	$(ROBOT) template --template $< --output $@
+.PRECIOUS: translations/hp-%.synonyms.owl
 
-$(TMPDIR)/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
+translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
 	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
 	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:translation_status a owl:AnnotationProperty ." >> $@.tmp
+	echo "<http://purl.obolibrary.org/obo/IAO_0000115> a owl:AnnotationProperty ." >> $@.tmp
 	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
-	robot merge -i $@.tmp query --update ../sparql/rm-rdf.ru -o $@	
+	$(ROBOT) merge -i $@.tmp query --update ../sparql/tag-source-language.ru --update ../sparql/rm-rdf.ru -o $@	
+.PRECIOUS: translations/hp-profile-%.owl
 
-translations/hp-%.owl: $(TMPDIR)/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
-	robot merge $(patsubst %, -i %, $^) \
-	query --update ../sparql/create_profile.ru \
-	query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv \
-	query --update ../sparql/rm_translated.ru \
+#$(patsubst %, -i %, $^)
+#query --update ../sparql/rm_translated.ru \ <- remove the babelon metadata from the profile?
+#query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv | Not needed anymore.
+
+translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
+	robot merge -i translations/hp-profile-$*.owl -i translations/hp-$*.synonyms.owl -i hp.owl \
+	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
+	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
+	query --update ../sparql/rm-original-translation.ru \
 	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
 .PRECIOUS: translations/hp-%.owl
