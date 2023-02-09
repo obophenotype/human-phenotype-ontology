@@ -49,14 +49,14 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-ANNOTATE_CONVERT_FILE =		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
+ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
 OTHER_SRC =                 $(PATTERNDIR)/definitions.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
-EDIT_PREPROCESSED = 		$(TMPDIR)/$(ONT)-preprocess.owl
+EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 PATTERNDIR=                 ../patterns
-PATTERN_TESTER=              dosdp validate -i
-DOSDPT=                      dosdp-tools
-PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
+PATTERN_TESTER=             dosdp validate -i
+DOSDPT=                     dosdp-tools
+PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
 
 
 FORMATS = $(sort  owl obo json owl)
@@ -137,6 +137,19 @@ SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n
 all_subsets: $(SUBSET_FILES)
 
 # ----------------------------------------
+# Mapping assets
+# ----------------------------------------
+
+
+MAPPINGS = 
+
+MAPPING_FILES = $(patsubst %, $(MAPPINGDIR)/%.sssom.tsv, $(MAPPINGS))
+
+.PHONY: all_mappings
+all_mappings: $(MAPPING_FILES)
+
+
+# ----------------------------------------
 # QC Reports & Utilities
 # ----------------------------------------
 
@@ -172,9 +185,10 @@ validate_profile_%: $(REPORTDIR)/validate_profile_owl2dl_%.txt
 
 SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$(V)-violation.sparql)
 
-sparql_test: $(EDIT_PREPROCESSED) catalog-v001.xml | $(REPORTDIR)
+sparql_test:  $(EDIT_PREPROCESSED) catalog-v001.xml | $(REPORTDIR)
 ifneq ($(SPARQL_VALIDATION_QUERIES),)
-	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O $(REPORTDIR)
+  
+	$(ROBOT) verify  --catalog catalog-v001.xml -i $(EDIT_PREPROCESSED) --queries $(SPARQL_VALIDATION_QUERIES) -O $(REPORTDIR)
 endif
 
 # ----------------------------------------
@@ -196,7 +210,8 @@ ASSETS = \
   $(MAIN_FILES) \
   $(PATTERN_RELEASE_FILES) \
   $(REPORT_FILES) \
-  $(SUBSET_FILES)
+  $(SUBSET_FILES) \
+  $(MAPPING_FILES)
 
 RELEASE_ASSETS = \
   $(MAIN_FILES) \
@@ -639,7 +654,7 @@ $(ONT).owl: $(ONT)-simple-non-classified.owl
 
 $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-$(ONT).json: $(ONT)-simple-non-classified.owl
+$(ONT).json: $(ONT).owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
@@ -798,6 +813,7 @@ Additional build commands (advanced users)
 * custom_reports:	Generate all custom sparql reports you have configured in your hp-odk.yaml file.
 * all_assets:		Build all assets
 * show_assets:		Print a list of all assets that would be build by the release pipeline
+* all_mappings:		Update all SSSOM mapping sets
 
 Additional QC commands (advanced users)
 * robot_reports:	Run all configured ROBOT reports
