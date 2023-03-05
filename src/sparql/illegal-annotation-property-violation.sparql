@@ -1,0 +1,37 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?annotation WHERE {
+  ?annotation a owl:AnnotationProperty .
+  ?subj ?annotation ?o .
+  FILTER (?annotation NOT IN (
+    <http://purl.obolibrary.org/obo/IAO_0000115>,
+    <http://purl.obolibrary.org/obo/IAO_0000116>,
+    <http://purl.obolibrary.org/obo/IAO_0000231>,
+    <http://purl.obolibrary.org/obo/IAO_0000232>,
+    <http://purl.obolibrary.org/obo/IAO_0000412>,
+    <http://purl.obolibrary.org/obo/IAO_0000589>,
+    <http://purl.obolibrary.org/obo/IAO_0100001>,
+    <http://purl.org/dc/terms/contributor>,
+    <http://purl.org/dc/terms/source>,
+    <http://purl.org/spar/cito/citesAsAuthority>,
+    <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#hasDbXref>,
+    <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>,
+    <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#id>,
+    <http://www.geneontology.org/formats/oboInOwl#inSubset>,
+    <http://www.w3.org/2000/01/rdf-schema#comment>,
+    <http://www.w3.org/2000/01/rdf-schema#label>,
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso>,
+    <http://www.w3.org/2002/07/owl#deprecated>,
+    <http://xmlns.com/foaf/0.1/depicted_by>,
+    <http://www.geneontology.org/formats/oboInOwl#consider>,
+    <http://purl.obolibrary.org/obo/hp#is_observable_through>,
+    <http://www.geneontology.org/formats/oboInOwl#created_by>,
+    <http://www.geneontology.org/formats/oboInOwl#creation_date>,
+    <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>,
+    <http://purl.org/dc/elements/1.1/date>
+  ))
+  FILTER (isIRI(?subj) && STRSTARTS(str(?subj), "http://purl.obolibrary.org/obo/HP_"))
+} 
