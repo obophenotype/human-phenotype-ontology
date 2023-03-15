@@ -375,7 +375,7 @@ hpoa:
 	echo "##### HPOA: COPYING all result files into HPOA results directory"
 	mkdir -p $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/genes_to_phenotype.txt $(HPOA_DIR)
-	cp $(RARE_DISEASE_DIR)/current/annotation/phenotype_to_genes.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/current/phenotype_to_genes.txt $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
 
 RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), ../../$(n)) $(wildcard $(HPOA_DIR)/*)
