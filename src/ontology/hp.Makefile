@@ -194,7 +194,6 @@ migrate_subsumptions_to_edit: #$(SRC) tmp/hp_pattern_subclasses.owl
 diff_migration:
 	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
 
-
 #######################################################
 ##### British synonyms pipeline #######################
 #######################################################
@@ -217,6 +216,30 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
+delete_behaviours:
+	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
+	grep -f behaviour_seed.txt hp-edit.owl > tmp/behaviour
+	grep "AnnotationAssertion(rdfs:label" tmp/behaviour > tmp/behaviour_labels
+	grep "AnnotationAssertion(rdfs:comment" tmp/behaviour > tmp/behaviour_comment
+	grep "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym" tmp/behaviour > tmp/behaviour_exact
+	grep "IAO_0000115" tmp/behaviour > tmp/behaviour_definitions
+
+	cat tmp/behaviour_definitions tmp/behaviour_exact tmp/behaviour_comment tmp/behaviour_labels > tmp/remove_behaviours.ofn
+
+tmp/merge.ofn: tmp/merge.tsv
+	$(ROBOT) template -i hp-edit.owl --template tmp/merge.tsv -o $@
+
+db: tmp/merge.ofn
+	$(ROBOT) merge -i hp-edit.owl --collapse-import-closure false \
+		unmerge -i tmp/remove_behaviours.ofn \
+		merge -i tmp/merge.ofn --collapse-import-closure false \
+		query --update ../sparql/remove-subclass-links.ru \
+		-o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
+replacerecipe:
+	#^(AnnotationAssertion[(]<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> .*")[)]$
+	#$1^^xsd:string)
 
 #######################################################
 ##### Convert input ontology HPO NTR TSV format #######
@@ -325,7 +348,7 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
-MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRp4lDDz_h4kZBDAFfV2f-clIPFA_ESLbglw6Du87Rc2ZyZVcwysaeuq82o21UlcyEr_yvWRy_cHIYq/pub?gid=0&single=true&output=tsv"
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5nHq0sE25CyEPydBjmRedfwn5EaQPrZ03h8BjPlSW1JRcokq3cySGVUF7lgWTUH2GK7LnFfgeooAT/pub?gid=1418446212&single=true&output=tsv"
 tmp/merge.tsv:
 	wget $(MERGE_TEMPLATE_URL) -O $@
 
@@ -359,13 +382,13 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json hp.obo
+	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
 	test -f hp.json
-	test -f hp.obo
+	#test -f hp.obo
 	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
-	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
+	#mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
 	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
-	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
+	#mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
 	
 	echo "##### HPOA: Running Make pipeline"
 	cd $(RARE_DISEASE_DIR)/ \
