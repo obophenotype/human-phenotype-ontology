@@ -217,6 +217,16 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
+#########################################################################################################
+### Process for merging a large template and remove existing content: ###################################
+#########################################################################################################
+
+# 0. Add terms you want to remove stuff from to behaviour_seed.txt (_, not :)
+# 1. Run `make rm_defs` to get rid of the definition import which does not process correctly
+# 2. Run `make db` to get rid of the definition import which does not process correctly
+# 3. Run `make re-assemble` to fix the prefixes which were scrambled by the process
+# 4. Open hp-edit.owl on protege and safe
+
 tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
 	grep -f behaviour_seed.txt hp-edit.owl > tmp/behaviour
@@ -233,13 +243,6 @@ tmp/remove_behaviours.ofn:
 	echo "Ontology(<http://purl.obolibrary.org/obo/hp/remove_behaviours.owl>" >> $@
 	cat tmp/behaviour_definitions tmp/behaviour_exact tmp/behaviour_comment tmp/behaviour_labels >> $@
 	echo ")" >> $@
-
-### Process for merging a large template and remove existing content:
-# 1. Run `make rm_defs` to get rid of the definition import which does not process correctly
-# 2. Run `make db` to get rid of the definition import which does not process correctly
-# 3. Run `make re-assemble` to fix the prefixes which were scrambled by the process
-# 4. Open hp-edit.owl on protege and safe
-
 
 tmp/merge.ofn: tmp/merge.tsv
 	$(ROBOT) template -i hp-edit.owl --template tmp/merge.tsv -o $@
