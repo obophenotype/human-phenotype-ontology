@@ -217,29 +217,61 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
-delete_behaviours:
+tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
 	grep -f behaviour_seed.txt hp-edit.owl > tmp/behaviour
 	grep "AnnotationAssertion(rdfs:label" tmp/behaviour > tmp/behaviour_labels
 	grep "AnnotationAssertion(rdfs:comment" tmp/behaviour > tmp/behaviour_comment
-	grep "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym" tmp/behaviour > tmp/behaviour_exact
 	grep "IAO_0000115" tmp/behaviour > tmp/behaviour_definitions
+	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl#>)" > $@
+	echo "Prefix(owl:=<http://www.w3.org/2002/07/owl#>)" >> $@
+	echo "Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)" >> $@
+	echo "Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)" >> $@
+	echo "Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)" >> $@
+	echo "Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)" >> $@
+	echo "" >> $@
+	echo "Ontology(<http://purl.obolibrary.org/obo/hp/remove_behaviours.owl>" >> $@
+	cat tmp/behaviour_definitions tmp/behaviour_exact tmp/behaviour_comment tmp/behaviour_labels >> $@
+	echo ")" >> $@
 
-	cat tmp/behaviour_definitions tmp/behaviour_exact tmp/behaviour_comment tmp/behaviour_labels > tmp/remove_behaviours.ofn
+### Process for merging a large template and remove existing content:
+# 1. Run `make rm_defs` to get rid of the definition import which does not process correctly
+# 2. Run `make db` to get rid of the definition import which does not process correctly
+# 3. Run `make re-assemble` to fix the prefixes which were scrambled by the process
+# 4. Open hp-edit.owl on protege and safe
+
 
 tmp/merge.ofn: tmp/merge.tsv
 	$(ROBOT) template -i hp-edit.owl --template tmp/merge.tsv -o $@
 
-db: tmp/merge.ofn
+rm_defs:
+	grep -v "http://purl.obolibrary.org/obo/hp/patterns/definitions.owl" hp-edit.owl > tmp/rm && mv tmp/rm hp-edit.owl
+
+db: tmp/merge.ofn tmp/remove_behaviours.ofn
 	$(ROBOT) merge -i hp-edit.owl --collapse-import-closure false \
 		unmerge -i tmp/remove_behaviours.ofn \
-		merge -i tmp/merge.ofn --collapse-import-closure false \
 		query --update ../sparql/remove-subclass-links.ru \
+		merge -i tmp/merge.ofn --collapse-import-closure false \
 		-o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
-replacerecipe:
-	#^(AnnotationAssertion[(]<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> .*")[)]$
-	#$1^^xsd:string)
+re-assemble:
+	#grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour2
+	grep -v "^Prefix[(]" hp-edit.owl | grep -v "^Ontology[(]" > tmp/hp
+	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl/>)" > hp-edit.owl 
+	echo "Prefix(dc:=<http://purl.org/dc/elements/1.1/>)" >> hp-edit.owl
+	echo "Prefix(owl:=<http://www.w3.org/2002/07/owl#>)" >> hp-edit.owl
+	echo "Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)" >> hp-edit.owl
+	echo "Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)" >> hp-edit.owl
+	echo "Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)" >> hp-edit.owl
+	echo "Prefix(obda:=<https://w3id.org/obda/vocabulary#>)" >> hp-edit.owl
+	echo "Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)" >> hp-edit.owl
+	echo "Prefix(dcterms:=<http://purl.org/dc/terms/>)" >> hp-edit.owl
+	echo "" >> hp-edit.owl
+
+	echo "Ontology(<http://purl.obolibrary.org/obo/hp.owl>" >> hp-edit.owl
+	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
+	cat tmp/hp >> hp-edit.owl
+
 
 #######################################################
 ##### Convert input ontology HPO NTR TSV format #######
