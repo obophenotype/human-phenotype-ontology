@@ -227,11 +227,21 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 # 3. Run `make re-assemble` to fix the prefixes which were scrambled by the process
 # 4. Open hp-edit.owl on protege and safe
 
+template_behaviour_pipeline:
+	git checkout master -- hp-edit.owl
+	make rm_defs
+	make db
+	make re-assemble
+	make merge_annotation_assertions
+	make drop_synonyms_wo_support
+
 tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
 	grep -f behaviour_seed.txt hp-edit.owl > tmp/behaviour
 	grep "AnnotationAssertion(rdfs:label" tmp/behaviour > tmp/behaviour_labels
 	grep "AnnotationAssertion(rdfs:comment" tmp/behaviour > tmp/behaviour_comment
+	grep "hasRelatedSynonym" tmp/behaviour > tmp/behaviour_synonyms_related
+	grep "hasBroadSynonym" tmp/behaviour > tmp/behaviour_synonyms_broad
 	grep "IAO_0000115" tmp/behaviour > tmp/behaviour_definitions
 	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl#>)" > $@
 	echo "Prefix(owl:=<http://www.w3.org/2002/07/owl#>)" >> $@
@@ -241,7 +251,7 @@ tmp/remove_behaviours.ofn:
 	echo "Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)" >> $@
 	echo "" >> $@
 	echo "Ontology(<http://purl.obolibrary.org/obo/hp/remove_behaviours.owl>" >> $@
-	cat tmp/behaviour_definitions tmp/behaviour_exact tmp/behaviour_comment tmp/behaviour_labels >> $@
+	cat tmp/behaviour_synonyms_broad tmp/behaviour_synonyms_related tmp/behaviour_definitions tmp/behaviour_comment tmp/behaviour_labels >> $@
 	echo ")" >> $@
 
 tmp/merge.ofn: tmp/merge.tsv
@@ -250,7 +260,7 @@ tmp/merge.ofn: tmp/merge.tsv
 rm_defs:
 	grep -v "http://purl.obolibrary.org/obo/hp/patterns/definitions.owl" hp-edit.owl > tmp/rm && mv tmp/rm hp-edit.owl
 
-db: tmp/merge.ofn tmp/remove_behaviours.ofn
+db: hp-edit.owl tmp/merge.ofn tmp/remove_behaviours.ofn
 	$(ROBOT) merge -i hp-edit.owl --collapse-import-closure false \
 		unmerge -i tmp/remove_behaviours.ofn \
 		query --update ../sparql/remove-subclass-links.ru \
@@ -258,7 +268,6 @@ db: tmp/merge.ofn tmp/remove_behaviours.ofn
 		-o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
 re-assemble:
-	#grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour2
 	grep -v "^Prefix[(]" hp-edit.owl | grep -v "^Ontology[(]" > tmp/hp
 	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl/>)" > hp-edit.owl 
 	echo "Prefix(dc:=<http://purl.org/dc/elements/1.1/>)" >> hp-edit.owl
@@ -275,6 +284,11 @@ re-assemble:
 	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
 	cat tmp/hp >> hp-edit.owl
 
+drop_synonyms_wo_support:
+	# Remove the remaining exactMatches
+	grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour_exact2
+	grep -v -x -f tmp/behaviour_exact2 hp-edit.owl > tmp/RMEXACT
+	mv tmp/RMEXACT hp-edit.owl
 
 #######################################################
 ##### Convert input ontology HPO NTR TSV format #######
@@ -478,6 +492,11 @@ tmp/mp-eqs-hp.owl: tmp/mp-eqs.owl tmp/rename.tsv
 migrate_eqs_to_edit: $(SRC) tmp/mp-eqs-hp.owl
 	$(ROBOT) merge -i $(SRC) -i tmp/mp-eqs-hp.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
+
+# This method can be used to merge annotation assertions
+merge_annotation_assertions: hp-edit.owl
+	owltools --use-catalog  hp-edit.owl --merge-axiom-annotations -o -f ofn tmp/NORM && $(ROBOT) convert -i tmp/NORM -o tmp/NORM.ofn && mv tmp/NORM.ofn tmp/NORM
+	mv tmp/NORM hp-edit.owl
 
 .PHONY: help
 help:
