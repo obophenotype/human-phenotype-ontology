@@ -504,7 +504,7 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl fr cs
+LANGUAGES=nl fr cs tr
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
@@ -516,8 +516,14 @@ SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4w
 translations/:
 	mkdir -p $@
 
+# Note to matentzn, this should all happen here using the babelon CLI
+sync_translations_from_babelon:
+	cp -r /Users/matentzn/ws/obable/tests/data/translations/*.tsv tmp/
+
 translations/babelon.yaml: | translations/
 	wget "$(BABELON_SCHEMA)" -O $@
+
+#### French translation
 
 tmp/hp-fr.babelon.tsv: | translations/
 	wget "$(BABELON_FR)" -O $@
@@ -525,18 +531,27 @@ tmp/hp-fr.babelon.tsv: | translations/
 translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
 	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
 
-
-translations/hp-nl.babelon.tsv: | translations/
-	wget "$(BABELON_NL)" -O $@
-	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
-	mv $@.tmp $@
-
-translations/hp-nl.synonyms.tsv: | translations/
-	echo "ID" > $@
-	echo "ID" >> $@
-
 translations/hp-fr.synonyms.tsv: | translations/
 	wget "$(SYNONYMS_FR)" -O $@
+
+#### Translations managed on platform
+
+#translations/hp-nl.babelon.tsv: | translations/
+#	wget "$(BABELON_NL)" -O $@
+#	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
+#	mv $@.tmp $@
+
+#translations/hp-nl.synonyms.tsv: | translations/
+#	echo "ID" > $@
+#	echo "ID" >> $@
+
+translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
+	grep -v NOT_TRANSLATED $< > $@
+.PRECIOUS: translations/hp-%.babelon.owl
+
+translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
+	cp $< $@
+.PRECIOUS: translations/hp-%.synonyms.owl
 
 translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
 	$(ROBOT) template --template $< --output $@
