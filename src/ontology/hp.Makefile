@@ -509,7 +509,6 @@ TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
 BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
-BABELON_NL=https://raw.githubusercontent.com/monarch-initiative/babelon/main/tests/data/output.tsv
 BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
 SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 
@@ -536,18 +535,9 @@ translations/hp-fr.synonyms.tsv: | translations/
 
 #### Translations managed on platform
 
-#translations/hp-nl.babelon.tsv: | translations/
-#	wget "$(BABELON_NL)" -O $@
-#	cat $@ | sed "s/^[ ]*//" | sed "s/[ ]*$$//" | sed -E "s/\t[ ]/\t/" | sed -E "s/[ ]\t/\t/" > $@.tmp
-#	mv $@.tmp $@
-
-#translations/hp-nl.synonyms.tsv: | translations/
-#	echo "ID" > $@
-#	echo "ID" >> $@
-
 translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
 	grep -v NOT_TRANSLATED $< > $@
-.PRECIOUS: translations/hp-%.babelon.owl
+.PRECIOUS: translations/hp-%.babelon.tsv
 
 translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
 	cp $< $@
