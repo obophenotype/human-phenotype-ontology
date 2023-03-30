@@ -1,0 +1,8 @@
+PREFIX dc_terms: <http://purl.org/dc/terms/>
+
+SELECT ?subject ?orcid
+WHERE {
+  VALUES ?property { dc_terms:contributor dc_terms:creator }
+  ?subject ?property ?orcid .
+  FILTER(!regex(str(?orcid), "^(https://orcid.org/)[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)"))
+}

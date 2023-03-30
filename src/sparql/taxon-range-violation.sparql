@@ -6,6 +6,6 @@ WHERE {
   VALUES ?property { never_in_taxon: present_in_taxon: }
   ?term ?property ?taxon .
   FILTER (!isIRI(?taxon) || !STRSTARTS(STR(?taxon), "http://purl.obolibrary.org/obo/NCBITaxon_"))
-  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/hp")))
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/hp")))
 }
 
