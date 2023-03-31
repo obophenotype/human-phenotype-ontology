@@ -1,0 +1,19 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX babelon: <https://w3id.org/babelon/>
+
+SELECT ?term ?property ?translation_lang ?original_value ?translation
+WHERE {
+  ?ax a owl:Axiom ;
+    owl:annotatedProperty ?property ;
+    owl:annotatedSource ?term ;
+    owl:annotatedTarget ?translation ;
+    babelon:source_value ?original_value ;
+    babelon:translation_language ?language_tag .
+    
+    FILTER NOT EXISTS {
+      ?ax rdfs:comment "Some values of this term have been translated." .
+    }
+}
+

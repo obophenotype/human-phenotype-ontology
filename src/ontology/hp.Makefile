@@ -413,7 +413,6 @@ PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadshee
 calcified:
 	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
 	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
-	
 
 #######################
 ### HPOA Pipeline #####
@@ -503,3 +502,83 @@ help:
 	@echo "$$data"
 	echo "Migrating EQs from MP to HP:"
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
+
+#### Translations #####
+LANGUAGES=nl fr cs tr
+TRANSLATIONDIR=translations
+HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
+
+BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
+BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
+SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
+
+translations/:
+	mkdir -p $@
+
+# Note to matentzn, this should all happen here using the babelon CLI
+sync_translations_from_babelon:
+	cp -r /Users/matentzn/ws/obable/tests/data/translations/*.tsv tmp/
+
+translations/babelon.yaml: | translations/
+	wget "$(BABELON_SCHEMA)" -O $@
+
+#### French translation
+
+tmp/hp-fr.babelon.tsv: | translations/
+	wget "$(BABELON_FR)" -O $@
+
+translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
+	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
+
+translations/hp-fr.synonyms.tsv: | translations/
+	wget "$(SYNONYMS_FR)" -O $@
+
+#### Translations managed on platform
+
+translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
+	grep -v NOT_TRANSLATED $< > $@
+.PRECIOUS: translations/hp-%.babelon.tsv
+
+translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
+	cp $< $@
+.PRECIOUS: translations/hp-%.synonyms.owl
+
+translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
+	$(ROBOT) template --template $< --output $@
+.PRECIOUS: translations/hp-%.synonyms.owl
+
+translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
+	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_status a owl:AnnotationProperty ." >> $@.tmp
+	echo "<http://purl.obolibrary.org/obo/IAO_0000115> a owl:AnnotationProperty ." >> $@.tmp
+	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
+	$(ROBOT) merge -i $@.tmp query --update ../sparql/tag-source-language.ru --update ../sparql/rm-rdf.ru -o $@	
+.PRECIOUS: translations/hp-profile-%.owl
+
+#$(patsubst %, -i %, $^)
+#query --update ../sparql/rm_translated.ru \ <- remove the babelon metadata from the profile?
+#query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv | Not needed anymore.
+
+translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
+	robot merge -i translations/hp-profile-$*.owl -i translations/hp-$*.synonyms.owl -i hp.owl \
+	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
+	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
+	query --update ../sparql/rm-original-translation.ru \
+	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
+.PRECIOUS: translations/hp-%.owl
+
+.PHONY: prepare_translations
+prepare_translations:
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+
+$(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
+	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
+
