@@ -1,722 +1,351 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/hp/imports/hsapdv_import.owl#"
-     xml:base="http://purl.obolibrary.org/obo/hp/imports/hsapdv_import.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:hsapdv="http://purl.obolibrary.org/obo/hsapdv#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/hsapdv_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-06-11/imports/hsapdv_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/hsapdv/releases/2020-03-10/hsapdv.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-11</owl:versionInfo>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
-        <rdfs:label>definition</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#end_dpf -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_dpf"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#end_mpb -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_mpb"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#end_ypb -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#end_ypb"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#start_dpf -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_dpf"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#start_mpb -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_mpb"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/hsapdv#start_ypb -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/hsapdv#start_ypb"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#SubsetProperty -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty">
-        <rdfs:label>subset_property</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#default-namespace -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#default-namespace"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
-        <rdfs:label>database_cross_reference</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
-        <rdfs:label>has_exact_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym">
-        <rdfs:label>has_narrow_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion">
-        <rdfs:label>has_obo_format_version</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace">
-        <rdfs:label>has_obo_namespace</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym">
-        <rdfs:label>has_related_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#inSubset -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset">
-        <rdfs:label>in_subset</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#saved-by -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#saved-by"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand">
-        <rdfs:label>shorthand</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <oboInOwl:hasDbXref>BFO:0000050</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>part_of</oboInOwl:id>
-        <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
-        <rdfs:label>part of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000062 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000062">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115>X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BFO:0000062</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>preceded_by</oboInOwl:id>
-        <oboInOwl:shorthand>preceded_by</oboInOwl:shorthand>
-        <rdfs:label>preceded_by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002087 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-        <obo:IAO_0000115>X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>RO:0002087</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>immediately_preceded_by</oboInOwl:id>
-        <oboInOwl:shorthand>immediately_preceded_by</oboInOwl:shorthand>
-        <rdfs:label>immediately_preceded_by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000000">
-        <obo:IAO_0000115>A spatiotemporal region encompassing some part of the life cycle of an organism.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000105</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>developmental stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym>stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasOBONamespace>human_stages_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000000</oboInOwl:id>
-        <rdfs:label>human life cycle stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A spatiotemporal region encompassing some part of the life cycle of an organism.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000105</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000001">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <obo:IAO_0000115>Temporal interval that defines human life from the prenatal stage until late adulthood.</obo:IAO_0000115>
-        <hsapdv:start_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:start_dpf>
-        <oboInOwl:hasDbXref>UBERON:0000104</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000001</oboInOwl:id>
-        <rdfs:label>human life cycle</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000001"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Temporal interval that defines human life from the prenatal stage until late adulthood.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000002 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000002">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000045"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage.</obo:IAO_0000115>
-        <hsapdv:end_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">56.0</hsapdv:end_dpf>
-        <hsapdv:start_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:start_dpf>
-        <oboInOwl:hasDbXref>EV:0300001</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FMA:72652</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>embryo stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>first trimester</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>HsapDv:0000002</oboInOwl:id>
-        <rdfs:comment>By embryo we mean in the sense of up to the 8th week postfertilization (over 7 and under 8 weeks), we treat fetus as a separate stage.</rdfs:comment>
-        <rdfs:label>embryonic human stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000002"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000002"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>first trimester</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Gestational_age</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000037 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000037">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000045"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000002"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Prenatal stage that starts with the fully formed embryo and ends at birth.</obo:IAO_0000115>
-        <hsapdv:end_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">266.0</hsapdv:end_dpf>
-        <hsapdv:start_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">56.0</hsapdv:start_dpf>
-        <oboInOwl:hasDbXref>EV:0300011</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UBERON:0007220</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>fetus stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>foetus stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>second and third trimester</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>HsapDv:0000037</oboInOwl:id>
-        <rdfs:comment>Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term &quot;fetus&quot; generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective. [Wikipedia:Fetus]</rdfs:comment>
-        <rdfs:label>fetal stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000037"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Prenatal stage that starts with the fully formed embryo and ends at birth.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000037"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>second and third trimester</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Gestational_age</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000045 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000045">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Prenatal stage that starts with fertilization and ends at birth.</obo:IAO_0000115>
-        <hsapdv:end_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">266.0</hsapdv:end_dpf>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:end_ypb>
-        <hsapdv:start_dpf rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:start_dpf>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000068</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000045</oboInOwl:id>
-        <rdfs:label>prenatal stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000045"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Prenatal stage that starts with fertilization and ends at birth.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000068</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000080 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000080">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Human developmental stage that covers the period from birth until 12 years old.</obo:IAO_0000115>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">13.0</hsapdv:end_ypb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:start_ypb>
-        <oboInOwl:hasDbXref>UBERON:0000112</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>0-12 years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>child</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>HsapDv:0000080</oboInOwl:id>
-        <rdfs:label>immature stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Human developmental stage that covers the period from birth until 12 years old.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000081 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000081">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000083"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Immature stage that refers to child who is over 2 and under 13 years old.</obo:IAO_0000115>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">13.0</hsapdv:end_ypb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>2-12 years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000081</oboInOwl:id>
-        <rdfs:label>child stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000081"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Immature stage that refers to child who is over 2 and under 13 years old.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000082 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000082">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Immature stage that refers to a newborn who is under 32 days old.</obo:IAO_0000115>
-        <hsapdv:end_mpb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hsapdv:end_mpb>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.083</hsapdv:end_ypb>
-        <hsapdv:start_mpb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:start_mpb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>0-1 month</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>neonatal stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>neonate</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>HsapDv:0000082</oboInOwl:id>
-        <rdfs:label>newborn human stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000082"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Immature stage that refers to a newborn who is under 32 days old.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000083 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000083">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000080"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000082"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Immature stage that refers to an infant who is over 31 days and is under 24 months old.</obo:IAO_0000115>
-        <hsapdv:end_mpb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</hsapdv:end_mpb>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hsapdv:end_ypb>
-        <hsapdv:start_mpb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hsapdv:start_mpb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.083</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>1-23 months</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>infantile stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000083</oboInOwl:id>
-        <rdfs:label>infant stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000083"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Immature stage that refers to an infant who is over 31 days and is under 24 months old.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000086 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000086">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000204"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Mature stage that refers to an adolescent who is over 13 and under 19 years old.</obo:IAO_0000115>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.0</hsapdv:end_ypb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">13.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>13-18 years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>teen</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>teenager</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>HsapDv:0000086</oboInOwl:id>
-        <rdfs:label>adolescent stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Mature stage that refers to an adolescent who is over 13 and under 19 years old.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000087 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000087">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000204"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000086"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Human developmental stage that refers to an adult who is over 19.</obo:IAO_0000115>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>19+ years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000087</oboInOwl:id>
-        <rdfs:label>human adult stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000087"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Human developmental stage that refers to an adult who is over 19.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000088 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000088">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000087"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is under 45.</obo:IAO_0000115>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</hsapdv:end_ypb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>19-44 years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000088</oboInOwl:id>
-        <rdfs:label>human early adulthood stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000088"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Adult stage that refers to an adult who is under 45.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000089 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000089">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000088"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Early adulthood that refers to an adult who is under 25.</obo:IAO_0000115>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</hsapdv:end_ypb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>19-24 years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000089</oboInOwl:id>
-        <rdfs:label>young adult stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000089"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Early adulthood that refers to an adult who is under 25.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000091 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000091">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000087"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000088"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Adult stage that refers to an adult who is over 45.</obo:IAO_0000115>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>45+ years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Middle Aged + Aged</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>HsapDv:0000091</oboInOwl:id>
-        <rdfs:label>human late adulthood stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000091"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Adult stage that refers to an adult who is over 45.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000092 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000092">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000091"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Late adulthood that refers to an adult who is over 45 and under 65.</obo:IAO_0000115>
-        <hsapdv:end_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">65.0</hsapdv:end_ypb>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</hsapdv:start_ypb>
-        <oboInOwl:hasExactSynonym>45-64 years</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000092</oboInOwl:id>
-        <rdfs:label>human middle aged stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000092"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Late adulthood that refers to an adult who is over 45 and under 65.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HsapDv_0000204 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000204">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000001"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Human developmental stage that refers to a sexually mature human.</obo:IAO_0000115>
-        <hsapdv:start_ypb rdf:datatype="http://www.w3.org/2001/XMLSchema#float">13.0</hsapdv:start_ypb>
-        <oboInOwl:hasDbXref>UBERON:0000113</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>human_developmental_stage</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>HsapDv:0000204</oboInOwl:id>
-        <rdfs:label>mature stage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/HsapDv_0000204"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Human developmental stage that refers to a sexually mature human.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee:curator</oboInOwl:hasDbXref>
-    </owl:Axiom>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
-
+Prefix(:=<http://purl.obolibrary.org/obo/hp/imports/hsapdv_import.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://purl.obolibrary.org/obo/hp/imports/hsapdv_import.owl>
+<http://purl.obolibrary.org/obo/hp/releases/2023-03-31/imports/hsapdv_import.owl>
+Annotation(<http://purl.org/dc/elements/1.1/source> <http://purl.obolibrary.org/obo/hsapdv/releases/2020-03-10/hsapdv.owl>)
+Annotation(owl:versionInfo "2023-03-31")
+
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000000>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000001>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000002>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000037>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000045>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000080>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000081>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000082>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000083>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000086>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000087>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000088>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000089>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000091>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000092>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000204>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000062>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002087>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hsapdv#end_dpf>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hsapdv#end_mpb>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hsapdv#end_ypb>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hsapdv#start_dpf>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hsapdv#start_mpb>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hsapdv#start_ypb>))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/source>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#SubsetProperty>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#auto-generated-by>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#date>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#default-namespace>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#inSubset>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#saved-by>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#shorthand>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-equivalent>))
+Declaration(AnnotationProperty(rdfs:comment))
+Declaration(AnnotationProperty(rdfs:label))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (definition)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000115> "definition")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#SubsetProperty> (subset_property)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#SubsetProperty> "subset_property")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> (database_cross_reference)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "database_cross_reference")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> (has_exact_synonym)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "has_exact_synonym")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> (has_narrow_synonym)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> "has_narrow_synonym")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> (has_obo_format_version)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> "has_obo_format_version")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> (has_related_synonym)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "has_related_synonym")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#inSubset> (in_subset)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#inSubset> "in_subset")
+
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#shorthand> (shorthand)
+
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#shorthand> "shorthand")
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://purl.obolibrary.org/obo/BFO_0000050> (part of)
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/BFO_0000050> "BFO:0000050")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/BFO_0000050> "human_stages_ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000050> "part_of")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#shorthand> <http://purl.obolibrary.org/obo/BFO_0000050> "part_of")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000050> "part of")
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>)
+
+# Object Property: <http://purl.obolibrary.org/obo/BFO_0000062> (preceded_by)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/BFO_0000062> "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/BFO_0000062> "BFO:0000062")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/BFO_0000062> "human_stages_ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000062> "preceded_by")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#shorthand> <http://purl.obolibrary.org/obo/BFO_0000062> "preceded_by")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000062> "preceded_by")
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000062>)
+
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002087> (immediately_preceded_by)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/RO_0002087> "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/RO_0002087> "RO:0002087")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/RO_0002087> "human_stages_ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/RO_0002087> "immediately_preceded_by")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#shorthand> <http://purl.obolibrary.org/obo/RO_0002087> "immediately_preceded_by")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0002087> "immediately_preceded_by")
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002087> <http://purl.obolibrary.org/obo/BFO_0000062>)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000000> (human life cycle stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UBERON:0000105") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000000> "A spatiotemporal region encompassing some part of the life cycle of an organism.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000000> "UBERON:0000105")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000000> "developmental stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000000> "stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000000> "human_stages_ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000000> "HsapDv:0000000")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000000> "human life cycle stage")
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000001> (human life cycle)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000001> "Temporal interval that defines human life from the prenatal stage until late adulthood.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000001> "0.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000001> "UBERON:0000104")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000001> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000001> "HsapDv:0000001")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000001> "human life cycle")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000001> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000002> (embryonic human stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000002> "Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000002> "56.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000002> "0.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000002> "EV:0300001")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000002> "FMA:72652")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000002> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000002> "embryo stage")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "http://en.wikipedia.org/wiki/Gestational_age") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000002> "first trimester")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000002> "HsapDv:0000002")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/HsapDv_0000002> "By embryo we mean in the sense of up to the 8th week postfertilization (over 7 and under 8 weeks), we treat fetus as a separate stage.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000002> "embryonic human stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000002> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000002> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000045>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000037> (fetal stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000037> "Prenatal stage that starts with the fully formed embryo and ends at birth.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000037> "266.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000037> "56.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000037> "EV:0300011")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000037> "UBERON:0007220")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000037> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000037> "fetus stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000037> "foetus stage")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "http://en.wikipedia.org/wiki/Gestational_age") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000037> "second and third trimester")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000037> "HsapDv:0000037")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/HsapDv_0000037> "Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term \"fetus\" generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective. [Wikipedia:Fetus]")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000037> "fetal stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000037> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000037> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000045>))
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000037> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002087> <http://purl.obolibrary.org/obo/HsapDv_0000002>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000045> (prenatal stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UBERON:0000068") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000045> "Prenatal stage that starts with fertilization and ends at birth.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000045> "266.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000045> "0.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_dpf> <http://purl.obolibrary.org/obo/HsapDv_0000045> "0.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000045> "UBERON:0000068")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000045> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000045> "HsapDv:0000045")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000045> "prenatal stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000045> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000045> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000001>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000080> (immature stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000080> "Human developmental stage that covers the period from birth until 12 years old.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000080> "13.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000080> "0.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000080> "UBERON:0000112")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000080> "0-12 years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000080> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000080> "child")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000080> "HsapDv:0000080")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000080> "immature stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000080> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000080> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000001>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000081> (child stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000081> "Immature stage that refers to child who is over 2 and under 13 years old.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000081> "13.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000081> "2.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000081> "2-12 years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000081> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000081> "HsapDv:0000081")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000081> "child stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000081> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000081> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000080>))
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000081> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002087> <http://purl.obolibrary.org/obo/HsapDv_0000083>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000082> (newborn human stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000082> "Immature stage that refers to a newborn who is under 32 days old.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_mpb> <http://purl.obolibrary.org/obo/HsapDv_0000082> "1.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000082> "0.083"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_mpb> <http://purl.obolibrary.org/obo/HsapDv_0000082> "0.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000082> "0.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000082> "0-1 month")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000082> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000082> "neonatal stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000082> "neonate")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000082> "HsapDv:0000082")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000082> "newborn human stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000082> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000082> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000080>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000083> (infant stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000083> "Immature stage that refers to an infant who is over 31 days and is under 24 months old.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_mpb> <http://purl.obolibrary.org/obo/HsapDv_0000083> "24.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000083> "2.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_mpb> <http://purl.obolibrary.org/obo/HsapDv_0000083> "1.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000083> "0.083"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000083> "1-23 months")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000083> "infantile stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000083> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000083> "HsapDv:0000083")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000083> "infant stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000083> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000083> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000080>))
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000083> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002087> <http://purl.obolibrary.org/obo/HsapDv_0000082>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000086> (adolescent stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000086> "Mature stage that refers to an adolescent who is over 13 and under 19 years old.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000086> "19.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000086> "13.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000086> "13-18 years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000086> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000086> "teen")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000086> "teenager")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000086> "HsapDv:0000086")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000086> "adolescent stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000086> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000086> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000204>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000087> (human adult stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000087> "Human developmental stage that refers to an adult who is over 19.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000087> "19.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000087> "19+ years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000087> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000087> "HsapDv:0000087")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000087> "human adult stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000087> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000087> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000204>))
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000087> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002087> <http://purl.obolibrary.org/obo/HsapDv_0000086>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000088> (human early adulthood stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000088> "Adult stage that refers to an adult who is under 45.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000088> "45.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000088> "19.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000088> "19-44 years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000088> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000088> "HsapDv:0000088")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000088> "human early adulthood stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000088> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000088> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000087>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000089> (young adult stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000089> "Early adulthood that refers to an adult who is under 25.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000089> "25.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000089> "19.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000089> "19-24 years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000089> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000089> "HsapDv:0000089")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000089> "young adult stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000089> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000089> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000088>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000091> (human late adulthood stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000091> "Adult stage that refers to an adult who is over 45.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000091> "45.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000091> "45+ years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000091> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000091> "Middle Aged + Aged")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000091> "HsapDv:0000091")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000091> "human late adulthood stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000091> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000091> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000087>))
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000091> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002087> <http://purl.obolibrary.org/obo/HsapDv_0000088>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000092> (human middle aged stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000092> "Late adulthood that refers to an adult who is over 45 and under 65.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#end_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000092> "65.0"^^xsd:float)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000092> "45.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HsapDv_0000092> "45-64 years")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000092> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000092> "HsapDv:0000092")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000092> "human middle aged stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000092> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000092> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000091>))
+
+# Class: <http://purl.obolibrary.org/obo/HsapDv_0000204> (mature stage)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Bgee:curator") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HsapDv_0000204> "Human developmental stage that refers to a sexually mature human.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/hsapdv#start_ypb> <http://purl.obolibrary.org/obo/HsapDv_0000204> "13.0"^^xsd:float)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HsapDv_0000204> "UBERON:0000113")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/HsapDv_0000204> "human_developmental_stage")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HsapDv_0000204> "HsapDv:0000204")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HsapDv_0000204> "mature stage")
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000204> <http://purl.obolibrary.org/obo/HsapDv_0000000>)
+SubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000204> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/HsapDv_0000001>))
+
+
+)
