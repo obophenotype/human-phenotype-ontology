@@ -19,25 +19,45 @@ export_formats:
   - obo
   - json
 import_group:
+  use_base_merging: TRUE
+  exclude_iri_patterns:
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_*>
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/CARO_*>
+    - <http://purl.obolibrary.org/obo/ENVO_*>
+    - <http://purl.obolibrary.org/obo/SO_*>
+  slme_individuals: exclude
+  mirror_max_time_download: 400
   products:
     - id: nbo
-      mirror_from: http://purl.obolibrary.org/obo/nbo/nbo-base.owl
+      use_base: TRUE
     - id: pr
-      use_gzipped: TRUE
-      is_large: TRUE
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
     - id: go
+      make_base: TRUE
     - id: uberon 
+      use_base: TRUE
     - id: ro
+      use_base: TRUE
     - id: chebi
-      use_gzipped: TRUE
-      is_large: TRUE
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
     - id: hsapdv
+      make_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/HsapDv_
     - id: pato
+      use_base: TRUE
     - id: cl
-      mirror_from: http://purl.obolibrary.org/obo/cl/cl-basic.owl
+      use_base: TRUE
     - id: mpath
+      make_base: TRUE
     - id: maxo
-      module_type: custom
+      mirror_type: custom
 robot_java_args: '-Xmx8G'
 allow_equivalents: asserted-only
 pattern_pipelines_group:
