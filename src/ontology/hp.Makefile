@@ -194,7 +194,6 @@ migrate_subsumptions_to_edit: #$(SRC) tmp/hp_pattern_subclasses.owl
 diff_migration:
 	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
 
-
 #######################################################
 ##### British synonyms pipeline #######################
 #######################################################
@@ -217,6 +216,79 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
+#########################################################################################################
+### Process for merging a large template and remove existing content: ###################################
+#########################################################################################################
+
+# 0. Add terms you want to remove stuff from to behaviour_seed.txt (_, not :)
+# 1. Run `make rm_defs` to get rid of the definition import which does not process correctly
+# 2. Run `make db` to get rid of the definition import which does not process correctly
+# 3. Run `make re-assemble` to fix the prefixes which were scrambled by the process
+# 4. Open hp-edit.owl on protege and safe
+
+template_behaviour_pipeline:
+	git checkout master -- hp-edit.owl
+	make rm_defs
+	make db
+	make re-assemble
+	make merge_annotation_assertions
+	make drop_synonyms_wo_support
+
+tmp/remove_behaviours.ofn:
+	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
+	grep -f behaviour_seed.txt hp-edit.owl > tmp/behaviour
+	grep "AnnotationAssertion(rdfs:label" tmp/behaviour > tmp/behaviour_labels
+	grep "AnnotationAssertion(rdfs:comment" tmp/behaviour > tmp/behaviour_comment
+	grep "hasRelatedSynonym" tmp/behaviour > tmp/behaviour_synonyms_related
+	grep "hasBroadSynonym" tmp/behaviour > tmp/behaviour_synonyms_broad
+	grep "IAO_0000115" tmp/behaviour > tmp/behaviour_definitions
+	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl#>)" > $@
+	echo "Prefix(owl:=<http://www.w3.org/2002/07/owl#>)" >> $@
+	echo "Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)" >> $@
+	echo "Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)" >> $@
+	echo "Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)" >> $@
+	echo "Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)" >> $@
+	echo "" >> $@
+	echo "Ontology(<http://purl.obolibrary.org/obo/hp/remove_behaviours.owl>" >> $@
+	cat tmp/behaviour_synonyms_broad tmp/behaviour_synonyms_related tmp/behaviour_definitions tmp/behaviour_comment tmp/behaviour_labels >> $@
+	echo ")" >> $@
+
+tmp/merge.ofn: tmp/merge.tsv
+	$(ROBOT) template -i hp-edit.owl --template tmp/merge.tsv -o $@
+
+rm_defs:
+	grep -v "http://purl.obolibrary.org/obo/hp/patterns/definitions.owl" hp-edit.owl > tmp/rm && mv tmp/rm hp-edit.owl
+
+db: hp-edit.owl tmp/merge.ofn tmp/remove_behaviours.ofn
+	$(ROBOT) merge -i hp-edit.owl --collapse-import-closure false \
+		unmerge -i tmp/remove_behaviours.ofn \
+		query --update ../sparql/remove-subclass-links.ru \
+		merge -i tmp/merge.ofn --collapse-import-closure false \
+		-o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+
+re-assemble:
+	grep -v "^Prefix[(]" hp-edit.owl | grep -v "^Ontology[(]" > tmp/hp
+	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl/>)" > hp-edit.owl 
+	echo "Prefix(dc:=<http://purl.org/dc/elements/1.1/>)" >> hp-edit.owl
+	echo "Prefix(owl:=<http://www.w3.org/2002/07/owl#>)" >> hp-edit.owl
+	echo "Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)" >> hp-edit.owl
+	echo "Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)" >> hp-edit.owl
+	echo "Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)" >> hp-edit.owl
+	echo "Prefix(obda:=<https://w3id.org/obda/vocabulary#>)" >> hp-edit.owl
+	echo "Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)" >> hp-edit.owl
+	echo "Prefix(dcterms:=<http://purl.org/dc/terms/>)" >> hp-edit.owl
+	echo "" >> hp-edit.owl
+
+	echo "Ontology(<http://purl.obolibrary.org/obo/hp.owl>" >> hp-edit.owl
+	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
+	cat tmp/hp >> hp-edit.owl
+
+drop_synonyms_wo_support:
+	# Remove the remaining exactMatches
+	grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour_exact2
+	grep -v -x -f tmp/behaviour_exact2 hp-edit.owl > tmp/RMEXACT
+	mv tmp/RMEXACT hp-edit.owl
 
 #######################################################
 ##### Convert input ontology HPO NTR TSV format #######
@@ -293,13 +365,19 @@ imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 
 .PRECIOUS: imports/ncit_import.owl
 
-imports/maxo_import.owl: mirror/maxo.owl imports/maxo_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/maxo_terms.txt --force true --method TOP \
+$(TMPDIR)/maxo.owl: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/maxo.owl --create-dirs -o $(MIRRORDIR)/maxo.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/maxo.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $@; fi
+
+
+$(MIRRORDIR)/maxo.owl: $(TMPDIR)/maxo.owl imports/maxo_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/maxo_terms_combined.txt --force true --method TOP \
 		query --update ../sparql/inject-subset-declaration.ru \
 		filter -T imports/maxo_terms.txt --select "annotations self descendants" --signature true \
 		remove --term rdfs:seeAlso --term rdfs:comment --select "annotation-properties" \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/maxo_import.owl
+.PRECIOUS: $(MIRRORDIR)/maxo.owl
 
 reports/calcified-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/calcified-phenotypes.sparql $@
@@ -325,7 +403,7 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
-MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vRp4lDDz_h4kZBDAFfV2f-clIPFA_ESLbglw6Du87Rc2ZyZVcwysaeuq82o21UlcyEr_yvWRy_cHIYq/pub?gid=0&single=true&output=tsv"
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5nHq0sE25CyEPydBjmRedfwn5EaQPrZ03h8BjPlSW1JRcokq3cySGVUF7lgWTUH2GK7LnFfgeooAT/pub?gid=1418446212&single=true&output=tsv"
 tmp/merge.tsv:
 	wget $(MERGE_TEMPLATE_URL) -O $@
 
@@ -341,7 +419,6 @@ PATTERN_calcifiedAnatomicalEntityWithPattern="https://docs.google.com/spreadshee
 calcified:
 	wget $(PATTERN_calcifiedAnatomicalEntity) -O ../patterns/data/default/calcifiedAnatomicalEntity.tsv
 	wget $(PATTERN_calcifiedAnatomicalEntityWithPattern) -O ../patterns/data/default/calcifiedAnatomicalEntityWithCalcificationPattern.tsv
-	
 
 #######################
 ### HPOA Pipeline #####
@@ -359,29 +436,23 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json hp.obo
+	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
 	test -f hp.json
-	test -f hp.obo
+	#test -f hp.obo
 	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
-	mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
+	#mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
 	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
-	mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
+	#mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
 	
 	echo "##### HPOA: Running Make pipeline"
 	cd $(RARE_DISEASE_DIR)/ \
-		&& echo "##### HPOA: Running MISC Makefile" \
-		&& $(MAKE) -C misc \
 		&& echo "##### HPOA: Running CURRENT Makefile" \
 		&& $(MAKE) -C current
-	cd $(RARE_DISEASE_DIR)/util/ \
-		&& echo "##### HPOA: Running ANNOTATION Makefile (UTIL)" \
-		&& $(MAKE) -C annotation
 	
 	echo "##### HPOA: COPYING all result files into HPOA results directory"
 	mkdir -p $(HPOA_DIR)
-	cp $(RARE_DISEASE_DIR)/util/annotation/genes_to_phenotype.txt $(HPOA_DIR)
-	cp $(RARE_DISEASE_DIR)/util/annotation/phenotype_to_genes.txt $(HPOA_DIR)
-	cp $(RARE_DISEASE_DIR)/misc/*.tab $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/current/genes_to_phenotype.txt $(HPOA_DIR)
+	cp $(RARE_DISEASE_DIR)/current/phenotype_to_genes.txt $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/*.hpoa $(HPOA_DIR)
 
 RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), ../../$(n)) $(wildcard $(HPOA_DIR)/*)
@@ -427,8 +498,93 @@ migrate_eqs_to_edit: $(SRC) tmp/mp-eqs-hp.owl
 	$(ROBOT) merge -i $(SRC) -i tmp/mp-eqs-hp.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
 
+# This method can be used to merge annotation assertions
+merge_annotation_assertions: hp-edit.owl
+	owltools --use-catalog  hp-edit.owl --merge-axiom-annotations -o -f ofn tmp/NORM && $(ROBOT) convert -i tmp/NORM -o tmp/NORM.ofn && mv tmp/NORM.ofn tmp/NORM
+	mv tmp/NORM hp-edit.owl
+
 .PHONY: help
 help:
 	@echo "$$data"
 	echo "Migrating EQs from MP to HP:"
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
+
+#### Translations #####
+LANGUAGES=nl fr cs tr
+TRANSLATIONDIR=translations
+HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
+
+BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
+BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
+SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
+
+translations/:
+	mkdir -p $@
+
+# Note to matentzn, this should all happen here using the babelon CLI
+sync_translations_from_babelon:
+	cp -r /Users/matentzn/ws/obable/tests/data/translations/*.tsv tmp/
+
+translations/babelon.yaml: | translations/
+	wget "$(BABELON_SCHEMA)" -O $@
+
+#### French translation
+
+tmp/hp-fr.babelon.tsv: | translations/
+	wget "$(BABELON_FR)" -O $@
+
+translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
+	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
+
+translations/hp-fr.synonyms.tsv: | translations/
+	wget "$(SYNONYMS_FR)" -O $@
+
+#### Translations managed on platform
+
+translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
+	grep -v NOT_TRANSLATED $< > $@
+.PRECIOUS: translations/hp-%.babelon.tsv
+
+translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
+	cp $< $@
+.PRECIOUS: translations/hp-%.synonyms.owl
+
+translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
+	$(ROBOT) template --template $< --output $@
+.PRECIOUS: translations/hp-%.synonyms.owl
+
+translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
+	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_status a owl:AnnotationProperty ." >> $@.tmp
+	echo "<http://purl.obolibrary.org/obo/IAO_0000115> a owl:AnnotationProperty ." >> $@.tmp
+	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
+	$(ROBOT) merge -i $@.tmp query --update ../sparql/tag-source-language.ru --update ../sparql/rm-rdf.ru -o $@	
+.PRECIOUS: translations/hp-profile-%.owl
+
+#$(patsubst %, -i %, $^)
+#query --update ../sparql/rm_translated.ru \ <- remove the babelon metadata from the profile?
+#query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv | Not needed anymore.
+
+translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
+	robot merge -i translations/hp-profile-$*.owl -i translations/hp-$*.synonyms.owl -i hp.owl \
+	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
+	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
+	query --update ../sparql/rm-original-translation.ru \
+	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
+.PRECIOUS: translations/hp-%.owl
+
+.PHONY: prepare_translations
+prepare_translations:
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+
+$(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
+	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
+

@@ -1,1690 +1,806 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/hp/imports/mpath_import.owl#"
-     xml:base="http://purl.obolibrary.org/obo/hp/imports/mpath_import.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/mpath_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-06-11/imports/mpath_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/mpath/2020-05-19/mpath.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-11</owl:versionInfo>
-    </owl:Ontology>
-    
+Prefix(:=<http://purl.obolibrary.org/obo/hp/imports/mpath_import.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://purl.obolibrary.org/obo/hp/imports/mpath_import.owl>
+<http://purl.obolibrary.org/obo/hp/releases/2023-03-31/imports/mpath_import.owl>
+Annotation(<http://purl.org/dc/elements/1.1/source> <http://purl.obolibrary.org/obo/mpath/2020-05-19/mpath.owl>)
+Annotation(owl:versionInfo "2023-03-31")
+
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_0>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_1>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_1000>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_105>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_119>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_120>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_124>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_126>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_14>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_149>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_154>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_156>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_175>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_176>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_184>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_188>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_194>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_196>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_197>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_198>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_201>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_212>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_218>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_25>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_254>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_267>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_27>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_270>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_28>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_287>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_309>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_31>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_310>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_322>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_33>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_335>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_34>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_342>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_346>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_36>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_379>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_387>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_404>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_429>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_474>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_476>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_496>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_502>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_515>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_55>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_555>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_556>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_56>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_574>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_579>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_596>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_597>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_599>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_602>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_603>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_607>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_608>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_62>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_622>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_64>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_66>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_675>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_68>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_70>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_718>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_74>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_86>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_89>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_90>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MPATH_98>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0100001>))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/source>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#NamespaceIdRule>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#auto-generated-by>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#created_by>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#creation_date>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#default-namespace>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#saved-by>))
+Declaration(AnnotationProperty(rdfs:comment))
+Declaration(AnnotationProperty(rdfs:label))
+Declaration(AnnotationProperty(owl:deprecated))
+############################
+#   Annotation Properties
+############################
 
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (definition)
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000115> "definition")
 
-    
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> (has_alternative_id)
 
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "has_alternative_id")
 
-    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> (has_broad_synonym)
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
-        <rdfs:label>definition</rdfs:label>
-    </owl:AnnotationProperty>
-    
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> "has_broad_synonym")
 
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasDbXref> (database_cross_reference)
 
-    <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "database_cross_reference")
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001"/>
-    
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> (has_exact_synonym)
 
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "has_exact_synonym")
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#created_by -->
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> (has_obo_format_version)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by"/>
-    
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> "has_obo_format_version")
 
+# Annotation Property: <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> (has_related_synonym)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#creation_date -->
+AnnotationAssertion(rdfs:label <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "has_related_synonym")
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
-    
 
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#default-namespace -->
+############################
+#   Classes
+############################
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#default-namespace"/>
-    
+# Class: <http://purl.obolibrary.org/obo/MPATH_0> (pathological entity)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_0> "Pathological structure or process")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_0> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_0> "MPATH:0")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_0> "pathological entity")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_0> <http://purl.obolibrary.org/obo/MPATH_1000>)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasAlternativeId -->
+# Class: <http://purl.obolibrary.org/obo/MPATH_1> (cell and tissue damage)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasAlternativeId">
-        <rdfs:label>has_alternative_id</rdfs:label>
-    </owl:AnnotationProperty>
-    
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_1> "The sum of morphological and functional disturbances induced by cell and tissue damage, either from intrinsic gene dysfunction or as a result of external factors.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_1> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_1> "MPATH:1")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_1> "cell and tissue damage")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_1> <http://purl.obolibrary.org/obo/MPATH_603>)
 
+# Class: <http://purl.obolibrary.org/obo/MPATH_1000> (pathological phenotype observation)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UOB:LTS") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_1000> "Phenotypic observation of the presence or absence of a pathological entity.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_1000> "Luke Slater")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_1000> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_1000> "MPATH:1000")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_1000> "pathological phenotype observation")
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym">
-        <rdfs:label>has_broad_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    
+# Class: <http://purl.obolibrary.org/obo/MPATH_105> (circulatory disorder)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_105> "Lesions leading to or consequent on failure of, or atypical movement of, blood throughout the body.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_105> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_105> "MPATH:105")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_105> "circulatory disorder")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_105> <http://purl.obolibrary.org/obo/MPATH_603>)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+# Class: <http://purl.obolibrary.org/obo/MPATH_119> (hemorrhage and non-specified extravasation)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
-        <rdfs:label>database_cross_reference</rdfs:label>
-    </owl:AnnotationProperty>
-    
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_119> "Abnormal release of whole blood or the cellular component from the circulation.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_119> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_119> "MPATH:119")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_119> "hemorrhage and non-specified extravasation")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_119> <http://purl.obolibrary.org/obo/MPATH_105>)
 
+# Class: <http://purl.obolibrary.org/obo/MPATH_120> (ecchymosis)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_120> "A red/purple patch caused by extravasation of blood into the skin. Larger than petechiae.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_120> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_120> "MPATH:120")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_120> "May also be used for any organ, although more generally used with respect to the skin.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_120> "ecchymosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_120> <http://purl.obolibrary.org/obo/MPATH_119>)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym">
-        <rdfs:label>has_exact_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    
+# Class: <http://purl.obolibrary.org/obo/MPATH_124> (infarct)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_124> "An area of necrosis resulting from a sudden cessation of arterial or venous blood supply.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_124> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_124> "MPATH:124")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_124> "infarct")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_124> <http://purl.obolibrary.org/obo/MPATH_105>)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion -->
+# Class: <http://purl.obolibrary.org/obo/MPATH_126> (growth and differentiation defect)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion">
-        <rdfs:label>has_obo_format_version</rdfs:label>
-    </owl:AnnotationProperty>
-    
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_126> "Defects in growth (changes in proliferation or mass) and differentiation of cells tissues or organs.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_126> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_126> "MPATH:126")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_126> "growth and differentiation defect")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_126> <http://purl.obolibrary.org/obo/MPATH_603>)
 
+# Class: <http://purl.obolibrary.org/obo/MPATH_14> (process of degenerative change)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_14> "A pathological process of loss or degradation of function, or structural integrity, of a tissue, organ or cell.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_14> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_14> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_14> "MPATH:14")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_14> "process of degenerative change")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_14> <http://purl.obolibrary.org/obo/MPATH_597>)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace">
-        <rdfs:label>has_obo_namespace</rdfs:label>
-    </owl:AnnotationProperty>
-    
+# Class: <http://purl.obolibrary.org/obo/MPATH_149> (squamous hyperplasia)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_149> "Benign proliferation of epidermal cells with hyperkeratosis. Variable growth pattern, regular to papillary (exophytic squamous cell hyperplasia).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_149> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_149> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_149> "epidermal hyperplasia.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_149> "squamous cell hyperplasia")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_149> "MPATH:149")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_149> "squamous hyperplasia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_149> <http://purl.obolibrary.org/obo/MPATH_602>)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+# Class: <http://purl.obolibrary.org/obo/MPATH_154> (hyperkeratosis)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym">
-        <rdfs:label>has_related_synonym</rdfs:label>
-    </owl:AnnotationProperty>
-    
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_154> "Thickening of the surface layers (stratum corneum) in the skin or other stratified squamous epithelium. Cf. ortho- and para-keratosis.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_154> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_154> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_154> "cornification")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_154> "hyperorthokeratosis")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_154> "hyperparakeratosis")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_154> "MPATH:154")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_154> "hyperkeratosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_154> <http://purl.obolibrary.org/obo/MPATH_149>)
 
+# Class: <http://purl.obolibrary.org/obo/MPATH_156> (parakeratosis)
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_156> "Thickening of the surface cell layer of a stratified squamous epithelium with retention of nuclei in the cells of the stratum corneum.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_156> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_156> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_156> "MPATH:156")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_156> "parakeratosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_156> <http://purl.obolibrary.org/obo/MPATH_154>)
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
-    
+# Class: <http://purl.obolibrary.org/obo/MPATH_175> (healing and repair process)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_175> "The process, normal or abnormal, of damage repair or wound closure.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_175> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_175> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_175> "MPATH:175")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_175> "healing and repair process")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_175> <http://purl.obolibrary.org/obo/MPATH_596>)
 
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#saved-by -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#saved-by"/>
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#deprecated -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#deprecated"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_0 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_0">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_1000"/>
-        <obo:IAO_0000115>Pathological structure or process</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:0</oboInOwl:id>
-        <rdfs:label>pathological entity</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_0"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Pathological structure or process</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_1 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_1">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <obo:IAO_0000115>The sum of morphological and functional disturbances induced by cell and tissue damage, either from intrinsic gene dysfunction or as a result of external factors.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:1</oboInOwl:id>
-        <rdfs:label>cell and tissue damage</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_1"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The sum of morphological and functional disturbances induced by cell and tissue damage, either from intrinsic gene dysfunction or as a result of external factors.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_1000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_1000">
-        <obo:IAO_0000115>Phenotypic observation of the presence or absence of a pathological entity.</obo:IAO_0000115>
-        <oboInOwl:created_by>Luke Slater</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:1000</oboInOwl:id>
-        <rdfs:label>pathological phenotype observation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_1000"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Phenotypic observation of the presence or absence of a pathological entity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UOB:LTS</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_105 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_105">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <obo:IAO_0000115>Lesions leading to or consequent on failure of, or atypical movement of, blood throughout the body.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:105</oboInOwl:id>
-        <rdfs:label>circulatory disorder</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_105"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Lesions leading to or consequent on failure of, or atypical movement of, blood throughout the body.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_119 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_119">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_105"/>
-        <obo:IAO_0000115>Abnormal release of whole blood or the cellular component from the circulation.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:119</oboInOwl:id>
-        <rdfs:label>hemorrhage and non-specified extravasation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_119"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Abnormal release of whole blood or the cellular component from the circulation.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_120 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_120">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_119"/>
-        <obo:IAO_0000115>A red/purple patch caused by extravasation of blood into the skin. Larger than petechiae.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:120</oboInOwl:id>
-        <rdfs:comment>May also be used for any organ, although more generally used with respect to the skin.</rdfs:comment>
-        <rdfs:label>ecchymosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_120"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A red/purple patch caused by extravasation of blood into the skin. Larger than petechiae.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_124 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_124">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_105"/>
-        <obo:IAO_0000115>An area of necrosis resulting from a sudden cessation of arterial or venous blood supply.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:124</oboInOwl:id>
-        <rdfs:label>infarct</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_124"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An area of necrosis resulting from a sudden cessation of arterial or venous blood supply.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_126 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_126">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <obo:IAO_0000115>Defects in growth (changes in proliferation or mass) and differentiation of cells tissues or organs.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:126</oboInOwl:id>
-        <rdfs:label>growth and differentiation defect</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_126"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Defects in growth (changes in proliferation or mass) and differentiation of cells tissues or organs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_14 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_14">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_597"/>
-        <obo:IAO_0000115>A pathological process of loss or degradation of function, or structural integrity, of a tissue, organ or cell.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:14</oboInOwl:id>
-        <rdfs:label>process of degenerative change</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_14"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A pathological process of loss or degradation of function, or structural integrity, of a tissue, organ or cell.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_149 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_149">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_602"/>
-        <obo:IAO_0000115>Benign proliferation of epidermal cells with hyperkeratosis. Variable growth pattern, regular to papillary (exophytic squamous cell hyperplasia).</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>epidermal hyperplasia.</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>squamous cell hyperplasia</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:149</oboInOwl:id>
-        <rdfs:label>squamous hyperplasia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_149"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Benign proliferation of epidermal cells with hyperkeratosis. Variable growth pattern, regular to papillary (exophytic squamous cell hyperplasia).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_149"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>epidermal hyperplasia.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_149"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>squamous cell hyperplasia</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_154 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_154">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_149"/>
-        <obo:IAO_0000115>Thickening of the surface layers (stratum corneum) in the skin or other stratified squamous epithelium. Cf. ortho- and para-keratosis.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>cornification</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>hyperorthokeratosis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>hyperparakeratosis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:154</oboInOwl:id>
-        <rdfs:label>hyperkeratosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_154"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Thickening of the surface layers (stratum corneum) in the skin or other stratified squamous epithelium. Cf. ortho- and para-keratosis.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_154"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>cornification</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_154"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>hyperorthokeratosis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_154"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>hyperparakeratosis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_156 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_156">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_154"/>
-        <obo:IAO_0000115>Thickening of the surface cell layer of a stratified squamous epithelium with retention of nuclei in the cells of the stratum corneum.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:156</oboInOwl:id>
-        <rdfs:label>parakeratosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_156"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Thickening of the surface cell layer of a stratified squamous epithelium with retention of nuclei in the cells of the stratum corneum.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_175 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_175">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_596"/>
-        <obo:IAO_0000115>The process, normal or abnormal, of damage repair or wound closure.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:175</oboInOwl:id>
-        <rdfs:label>healing and repair process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_175"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The process, normal or abnormal, of damage repair or wound closure.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_176 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_176">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_175"/>
-        <obo:IAO_0000115>Replacement of connective tissue by fibro-fatty deposits and scar tissue.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:176</oboInOwl:id>
-        <rdfs:label>connective tissue replacement</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_176"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Replacement of connective tissue by fibro-fatty deposits and scar tissue.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_184 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_184">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_176"/>
-        <obo:IAO_0000115>Any pathological thickening or hardening of a tissue.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Induration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:184</oboInOwl:id>
-        <rdfs:label>sclerosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_184"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Any pathological thickening or hardening of a tissue.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_184"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Induration</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_188 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_188">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_596"/>
-        <obo:IAO_0000115>Inappropriate or aberrant activation or suppression of the immune or inflammatory response.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:188</oboInOwl:id>
-        <rdfs:label>immunopathological process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_188"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Inappropriate or aberrant activation or suppression of the immune or inflammatory response.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_194 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_194">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_188"/>
-        <obo:IAO_0000115>Tissue response to inappropriate immune/inflammatory process.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:194</oboInOwl:id>
-        <rdfs:label>immune mediated disease</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_194"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Tissue response to inappropriate immune/inflammatory process.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_196 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_196">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_212"/>
-        <obo:IAO_0000115>Inflammation of the skin.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:196</oboInOwl:id>
-        <rdfs:label>dermatitis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_196"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Inflammation of the skin.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_197 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_197">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_212"/>
-        <obo:IAO_0000115>Renal disease characterised by diffuse inflammatory changes in glomeruli not in response to an infectious agent or treatment.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:197</oboInOwl:id>
-        <rdfs:label>glomerulonephritis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_197"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Renal disease characterised by diffuse inflammatory changes in glomeruli not in response to an infectious agent or treatment.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_198 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_198">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_212"/>
-        <obo:IAO_0000115>An anemic/erythrocytopenic condition resulting from an increased rate of immune mediated erythrocyte destruction.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:198</oboInOwl:id>
-        <rdfs:label>immune mediated hemolytic anaemia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_198"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An anemic/erythrocytopenic condition resulting from an increased rate of immune mediated erythrocyte destruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_201 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_201">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_212"/>
-        <obo:IAO_0000115>Inflammation of a blood vessel.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>angiitis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>arteritis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>lymphangiitis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>phlebitis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:201</oboInOwl:id>
-        <rdfs:label>vasculitis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_201"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Inflammation of a blood vessel.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_201"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>angiitis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_201"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>arteritis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_201"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>lymphangiitis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_201"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>phlebitis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_212 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_212">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_194"/>
-        <obo:IAO_0000115>A tissue reaction to an internal or external injury.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:212</oboInOwl:id>
-        <rdfs:label>inflammation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_212"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A tissue reaction to an internal or external injury.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_218 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_218">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <obo:IAO_0000115>A tumor resulting from abnormal and uncontrolled autonomous new cell growth (proliferation)that may be benign or malignant.</obo:IAO_0000115>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:218</oboInOwl:id>
-        <rdfs:label>neoplasm</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A tumor resulting from abnormal and uncontrolled autonomous new cell growth (proliferation)that may be benign or malignant.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_25 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_25">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_14"/>
-        <obo:IAO_0000115>Degenerative process characteristic of a particular tissue.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:25</oboInOwl:id>
-        <rdfs:label>tissue specific degenerative process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_25"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Degenerative process characteristic of a particular tissue.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_254 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_254">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Tumors showing multiple histological componants/differentiation.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:254</oboInOwl:id>
-        <rdfs:label>complex tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_254"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Tumors showing multiple histological componants/differentiation.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_267 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_267">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Neoplasms derived from glandular epithelial cells.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:267</oboInOwl:id>
-        <rdfs:label>glandular tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_267"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Neoplasms derived from glandular epithelial cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_27 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_27">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_25"/>
-        <obo:IAO_0000115>Changes characterized by erosion of articular cartilage, either primary or secondary to trauma or other conditions. Not primarily an inflammatory process.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Degenerative joint disease</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>osteoarthrosis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:27</oboInOwl:id>
-        <rdfs:label>arthrosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_27"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Changes characterized by erosion of articular cartilage, either primary or secondary to trauma or other conditions. Not primarily an inflammatory process.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_27"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Degenerative joint disease</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_27"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>osteoarthrosis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_270 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_270">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_267"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_556"/>
-        <obo:IAO_0000115>A benign epithelial neoplasm in which the tumor cells may form glands or glandlike structures. In different instances this may remain a benign tumor or progress to malignancy.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:270</oboInOwl:id>
-        <rdfs:label>adenoma</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_270"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A benign epithelial neoplasm in which the tumor cells may form glands or glandlike structures. In different instances this may remain a benign tumor or progress to malignancy.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_28 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_28">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_25"/>
-        <obo:IAO_0000115>Characterised by irregular lipid deposits in the wall of arteries, causing narrowing of their lumens and proceeding eventually to fibrosis and calcification.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:28</oboInOwl:id>
-        <rdfs:comment>Note that in mouse and rats the initial lesions are mostly in the medial layer while in human they occur in the intima.</rdfs:comment>
-        <rdfs:label>atherosclerosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_28"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Characterised by irregular lipid deposits in the wall of arteries, causing narrowing of their lumens and proceeding eventually to fibrosis and calcification.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_287 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_287">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_270"/>
-        <obo:IAO_0000115>Usually pancreatic B cell derived tumors mostly producing insulin. (M- 8150/0).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Adenoma, endocrine pancreas</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>adenomatosis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>islet (pancreatic) cell tumor benign</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:287</oboInOwl:id>
-        <rdfs:label>islet cell adenoma</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_287"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Usually pancreatic B cell derived tumors mostly producing insulin. (M- 8150/0).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_287"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Adenoma, endocrine pancreas</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_287"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>adenomatosis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_287"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>islet (pancreatic) cell tumor benign</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_309 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_309">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Germ cell and non-germ cell tumors of the testis and ovary.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:309</oboInOwl:id>
-        <rdfs:label>gonadal tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_309"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Germ cell and non-germ cell tumors of the testis and ovary.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_31 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_31">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_25"/>
-        <obo:IAO_0000115>Abnormal accumulation of air in the interstitial connective tissue of a structure. Sensu Lung: Pulmonary emphysema; characterised by abnormal increase in the size of air (alveolar) spaces distal to the terminal bronchiole with degenerative changes in their walls and reduction in their number.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:31</oboInOwl:id>
-        <rdfs:label>emphysema</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_31"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Abnormal accumulation of air in the interstitial connective tissue of a structure. Sensu Lung: Pulmonary emphysema; characterised by abnormal increase in the size of air (alveolar) spaces distal to the terminal bronchiole with degenerative changes in their walls and reduction in their number.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_310 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_310">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_309"/>
-        <obo:IAO_0000115>Neoplasms derived from germ cells. May be gonadal or extragonadal and are derived from primordial germ cells.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:310</oboInOwl:id>
-        <rdfs:label>germ cell tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_310"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Neoplasms derived from germ cells. May be gonadal or extragonadal and are derived from primordial germ cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_322 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_322">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_254"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_310"/>
-        <obo:IAO_0000115>Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Malignant tumors are highly metatstatic. (M-9080/1).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:322</oboInOwl:id>
-        <rdfs:label>teratoma</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_322"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Malignant tumors are highly metatstatic. (M-9080/1).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_33 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_33">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_1"/>
-        <obo:IAO_0000115>Accumulation of substances within, on the surface of or between cells.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:33</oboInOwl:id>
-        <rdfs:label>intracellular and extracellular accumulation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_33"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Accumulation of substances within, on the surface of or between cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_335 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_335">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Proliferative disorders and malignancies of the lymphoid and non lymphoid haematopoietic lineages.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:335</oboInOwl:id>
-        <rdfs:label>hematopoietic/lymphoid malignancies/disorder</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_335"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Proliferative disorders and malignancies of the lymphoid and non lymphoid haematopoietic lineages.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_34 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_34">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_33"/>
-        <obo:IAO_0000115>Extracellular deposition of amyloid protein.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Amyloidosis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:34</oboInOwl:id>
-        <rdfs:comment>Any group of chemically diverse proteins that appears microscopically homogeneous, but is composed of linear non-branching aggregated fibrils aranged in sheets when see under the electron microscope.</rdfs:comment>
-        <rdfs:label>amyloid deposition</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_34"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Extracellular deposition of amyloid protein.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_34"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Amyloidosis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_342 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_342">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_496"/>
-        <obo:IAO_0000115>Leukaemias of the myeloid lineage.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>granulocytic leukaemia</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:342</oboInOwl:id>
-        <rdfs:label>myeloid leukaemia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_342"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Leukaemias of the myeloid lineage.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12070033</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_342"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>granulocytic leukaemia</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_346 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_346">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_194"/>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:creation_date>2011-03-22T01:12:01Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:346</oboInOwl:id>
-        <rdfs:label>autoimmune mediated disease</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_36 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_36">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_555"/>
-        <obo:IAO_0000115>Intra or extracellular deposition of calcium usually as calcium phosphate.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:36</oboInOwl:id>
-        <rdfs:label>calcium deposition</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_36"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Intra or extracellular deposition of calcium usually as calcium phosphate.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_379 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_379">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Neoplasm arising from the tissues of the odontogenic apparatus. These tumors are derived from ectodermal tissue (epithelial tumors) or from mesodermal tissue (connective tissue tumors) or are composed of both components (mixed or composite odontogenic tumors) .</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:379</oboInOwl:id>
-        <rdfs:label>odontogenic tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_379"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Neoplasm arising from the tissues of the odontogenic apparatus. These tumors are derived from ectodermal tissue (epithelial tumors) or from mesodermal tissue (connective tissue tumors) or are composed of both components (mixed or composite odontogenic tumors) .</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_387 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_387">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_254"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_379"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_74"/>
-        <obo:IAO_0000115>Hamartomatous malformation of odontogenic tissue. It may vary from nondescript masses of dental tissue (complex odontoma) to multiple well-formed teeth (compound odontoma). Cf ameloblastic fibro-odontoma. (M-9280/0).</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:387</oboInOwl:id>
-        <rdfs:label>odontoma</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_387"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Hamartomatous malformation of odontogenic tissue. It may vary from nondescript masses of dental tissue (complex odontoma) to multiple well-formed teeth (compound odontoma). Cf ameloblastic fibro-odontoma. (M-9280/0).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_404 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_404">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Neoplasms of the soft and connective tissues.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:404</oboInOwl:id>
-        <rdfs:label>soft tissue tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_404"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Neoplasms of the soft and connective tissues.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_429 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_429">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_404"/>
-        <obo:IAO_0000115>Neoplasms resembling primitive mesenchymal tissue with a soft mucous matrix.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:429</oboInOwl:id>
-        <rdfs:label>myxomatous tumor</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_429"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Neoplasms resembling primitive mesenchymal tissue with a soft mucous matrix.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_474 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_474">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_66"/>
-        <obo:IAO_0000115>Dilation of a tubular structure.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:474</oboInOwl:id>
-        <rdfs:comment>Often associated with an obstruction.</rdfs:comment>
-        <rdfs:label>ectasia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_474"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Dilation of a tubular structure.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_476 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_476">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_474"/>
-        <obo:IAO_0000115>A lesion formed by a dilated capillary or terminal artery.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:476</oboInOwl:id>
-        <rdfs:label>telangiectasia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_476"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A lesion formed by a dilated capillary or terminal artery.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_496 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_496">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_515"/>
-        <obo:IAO_0000115>Neoplasms of non-lymphoid haematopoietic lineage. Must have at least 20% blast cells to meet this definition.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:496</oboInOwl:id>
-        <rdfs:label>Non-Lymphoid leukaemias</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_496"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Neoplasms of non-lymphoid haematopoietic lineage. Must have at least 20% blast cells to meet this definition.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12070033</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_502 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_502">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_342"/>
-        <obo:IAO_0000115>Leukaemia in which neoplastic cells are poorly or moderately differentiated with a monocytic but no neutrophilic component. At least 20% of the cells must be blasts.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:502</oboInOwl:id>
-        <rdfs:label>monocytic leukaemia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_502"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Leukaemia in which neoplastic cells are poorly or moderately differentiated with a monocytic but no neutrophilic component. At least 20% of the cells must be blasts.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12070033</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_515 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_515">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_335"/>
-        <obo:IAO_0000115>Hematological neoplasias of non-lymphoid origin.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:515</oboInOwl:id>
-        <rdfs:label>non-Lymphoid neoplasias</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_515"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Hematological neoplasias of non-lymphoid origin.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12070033</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_55 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_55">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <obo:IAO_0000115>Developmental and structural abnormalities occurring during embryonic development or during adult life.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:55</oboInOwl:id>
-        <rdfs:label>developmental and structural abnormality</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_55"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Developmental and structural abnormalities occurring during embryonic development or during adult life.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_555 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_555">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_33"/>
-        <obo:IAO_0000115>Deposition of any homogeneous inorganic material.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:555</oboInOwl:id>
-        <rdfs:label>mineralisation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_555"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Deposition of any homogeneous inorganic material.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_556 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_556">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_218"/>
-        <obo:IAO_0000115>Lesions which in some cases have the potential to become progressively growing malignant tumors.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:556</oboInOwl:id>
-        <rdfs:label>potentially cancerous lesions</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_556"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Lesions which in some cases have the potential to become progressively growing malignant tumors.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_56 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_56">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_55"/>
-        <obo:IAO_0000115>Structural, physical or other general defect of prenatal development of the embryo and the placenta, or such as are acquired in the adult.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:56</oboInOwl:id>
-        <rdfs:label>developmental or adult structural  defect</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Structural, physical or other general defect of prenatal development of the embryo and the placenta, or such as are acquired in the adult.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_574 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_574">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_64"/>
-        <obo:IAO_0000115>Persistence of metanephrogenic blastema or its presence in the wrong place or at the wrong time. Associated with hyperplastic nephrogenic rests.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:574</oboInOwl:id>
-        <rdfs:label>nephroblastomatosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_574"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Persistence of metanephrogenic blastema or its presence in the wrong place or at the wrong time. Associated with hyperplastic nephrogenic rests.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:8383276</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_579 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_579">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_1"/>
-        <obo:IAO_0000115>Loss of epithelium and the basement membrane (full thickness). Cf Erosion.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:579</oboInOwl:id>
-        <rdfs:label>ulcer</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_579"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Loss of epithelium and the basement membrane (full thickness). Cf Erosion.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_596 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_596">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_0"/>
-        <obo:IAO_0000115>The organic response of tissues to external insult, injury or underlying genetic or epigenetic lesion.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:596</oboInOwl:id>
-        <rdfs:label>pathological process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_596"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The organic response of tissues to external insult, injury or underlying genetic or epigenetic lesion.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_597 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_597">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_596"/>
-        <obo:IAO_0000115>Processes occurring during cell and tissue damage of either intrinsic or extrinsic etiology.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:597</oboInOwl:id>
-        <rdfs:label>cell and tissue damage process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_597"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Processes occurring during cell and tissue damage of either intrinsic or extrinsic etiology.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_599 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_599">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_596"/>
-        <obo:IAO_0000115>developmental process abnormalities</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:599</oboInOwl:id>
-        <rdfs:label>developmental process abnormalities</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_599"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>developmental process abnormalities</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_602 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_602">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_126"/>
-        <obo:IAO_0000115>An organ or a tissue with an abnormal increase in the number of cells as a consequence of cell proliferation.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:602</oboInOwl:id>
-        <rdfs:label>hyperplastic tissue</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_602"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An organ or a tissue with an abnormal increase in the number of cells as a consequence of cell proliferation.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_603 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_603">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_0"/>
-        <obo:IAO_0000115>Anatomically located instance of pathological response or entity.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:603</oboInOwl:id>
-        <rdfs:label>pathological anatomical entity</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Anatomically located instance of pathological response or entity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_607 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_607">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_603"/>
-        <obo:IAO_0000115>Physical entity or structure associated with normal or abnormal tissue healing or repair following extrinsic or intrinsic damage.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:607</oboInOwl:id>
-        <rdfs:label>healing and repair structure</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_607"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Physical entity or structure associated with normal or abnormal tissue healing or repair following extrinsic or intrinsic damage.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_608 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_608">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_607"/>
-        <obo:IAO_0000115>A circumscribed collection of purulent exudate frequently associated with swelling and other signs of inflammation.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:608</oboInOwl:id>
-        <rdfs:comment>Generally occur following damage or infection with subsequent inflammatory response. Result of the body`s defensive reaction to foreign material.</rdfs:comment>
-        <rdfs:label>abscess</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_608"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A circumscribed collection of purulent exudate frequently associated with swelling and other signs of inflammation.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_62 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_62">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <obo:IAO_0000115>Formation of an epithelium bounded cavity not associated with neoplasia.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:62</oboInOwl:id>
-        <rdfs:label>cyst</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_62"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Formation of an epithelium bounded cavity not associated with neoplasia.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_622 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_622">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_33"/>
-        <obo:IAO_0000115>Abnormal retention of lipids within a cell. Physically apparent as lipid within liposomes of parenchymal cells.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>lipidosis</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>adipose degeneration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>fatty change</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>fatty degeneration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:622</oboInOwl:id>
-        <rdfs:comment>Most commonly associated with degenerative change in the liver.</rdfs:comment>
-        <rdfs:label>steatosis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_622"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Abnormal retention of lipids within a cell. Physically apparent as lipid within liposomes of parenchymal cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_622"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>adipose degeneration</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_622"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>fatty change</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_622"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>fatty degeneration</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_64 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_64">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_599"/>
-        <obo:IAO_0000115>Abnormal development (of organs or tissues) or an abnormal structure resulting from such growth.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:64</oboInOwl:id>
-        <rdfs:comment>The word dysplasia as commonly used refers to a precursor state to neoplasia. This is not the context used for this MPATH term.</rdfs:comment>
-        <rdfs:label>developmental dysplasia</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_64"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Abnormal development (of organs or tissues) or an abnormal structure resulting from such growth.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_66 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_66">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <obo:IAO_0000115>Increase in the diameter of an orifice or tubular structure beyond its normal dimensions.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:66</oboInOwl:id>
-        <rdfs:label>dilatation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_66"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Increase in the diameter of an orifice or tubular structure beyond its normal dimensions.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_675 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_675">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_196"/>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:creation_date>2011-02-19T04:09:12Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:675</oboInOwl:id>
-        <rdfs:label>psoriasiform dermatitis</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_68 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_68">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <obo:IAO_0000115>A blind ended outpouching through the wall of a tubular organ or bounded cavity.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:68</oboInOwl:id>
-        <rdfs:label>diverticulum</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_68"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A blind ended outpouching through the wall of a tubular organ or bounded cavity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_70 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_70">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <obo:IAO_0000115>An abnormal passage between two internal organs or leading from a cavity to the body surface.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:70</oboInOwl:id>
-        <rdfs:label>fistula</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_70"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An abnormal passage between two internal organs or leading from a cavity to the body surface.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_718 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_718">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_322"/>
-        <obo:IAO_0000115>Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Pre-sacral tumors located in the retrorectal space between the rectum and the sacrococcygeal part of the spine.</obo:IAO_0000115>
-        <oboInOwl:created_by>Paul</oboInOwl:created_by>
-        <oboInOwl:creation_date>2011-06-06T03:39:01Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:718</oboInOwl:id>
-        <rdfs:label>pre-sacral teratoma</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_718"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Pre-sacral tumors located in the retrorectal space between the rectum and the sacrococcygeal part of the spine.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_74 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_74">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <obo:IAO_0000115>A focal malformation resembling a neoplasm which results from faulty development of an organ; composed of an abnormal mixture of tissue elements, or an abnormal proportion of a single element. Growth and location are usually normal for that tissue cf. Heterotopia/Choristoma MPATH:76/MPATH:477.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:74</oboInOwl:id>
-        <rdfs:label>hamartoma</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_74"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A focal malformation resembling a neoplasm which results from faulty development of an organ; composed of an abnormal mixture of tissue elements, or an abnormal proportion of a single element. Growth and location are usually normal for that tissue cf. Heterotopia/Choristoma MPATH:76/MPATH:477.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0781727286</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_86 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_86">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_55"/>
-        <obo:IAO_0000115>Developmental defect characteristic of a particular organ or organ system which may be a recognised syndrome or a complex defect showing multiple manifestations.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:86</oboInOwl:id>
-        <rdfs:label>organ specific developmental defect</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_86"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Developmental defect characteristic of a particular organ or organ system which may be a recognised syndrome or a complex defect showing multiple manifestations.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_89 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_89">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_86"/>
-        <obo:IAO_0000115>Abnormal development of the heart or vascular tissue resulting in morphological abnormality.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:89</oboInOwl:id>
-        <rdfs:label>cardiovascular developmental defect</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_89"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Abnormal development of the heart or vascular tissue resulting in morphological abnormality.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_90 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_90">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_56"/>
-        <obo:IAO_0000115>Localised dilation of an artery or heart chamber usually due to an acquired or congenital weakness of the wall of the artery or chamber.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MPATH:90</oboInOwl:id>
-        <rdfs:label>aneurysm</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_90"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Localised dilation of an artery or heart chamber usually due to an acquired or congenital weakness of the wall of the artery or chamber.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MPATH_98 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MPATH_98">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_474"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MPATH_89"/>
-        <obo:IAO_0000115>A stretching and widening of the lymphatic vessels.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>mouse_pathology.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Lymphectasia</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>telangiectasia lymphatica</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>MPATH:98</oboInOwl:id>
-        <rdfs:label>lymphangiectasis</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_98"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A stretching and widening of the lymphatic vessels.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Pathology Committee</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_98"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Lymphectasia</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MPATH_98"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>telangiectasia lymphatica</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathbase: Curation</oboInOwl:hasDbXref>
-    </owl:Axiom>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
-
+# Class: <http://purl.obolibrary.org/obo/MPATH_176> (connective tissue replacement)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_176> "Replacement of connective tissue by fibro-fatty deposits and scar tissue.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_176> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_176> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_176> "MPATH:176")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_176> "connective tissue replacement")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_176> <http://purl.obolibrary.org/obo/MPATH_175>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_184> (sclerosis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_184> "Any pathological thickening or hardening of a tissue.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_184> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_184> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_184> "Induration")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_184> "MPATH:184")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_184> "sclerosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_184> <http://purl.obolibrary.org/obo/MPATH_176>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_188> (immunopathological process)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_188> "Inappropriate or aberrant activation or suppression of the immune or inflammatory response.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_188> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_188> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_188> "MPATH:188")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_188> "immunopathological process")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_188> <http://purl.obolibrary.org/obo/MPATH_596>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_194> (immune mediated disease)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_194> "Tissue response to inappropriate immune/inflammatory process.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_194> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_194> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_194> "MPATH:194")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_194> "immune mediated disease")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_194> <http://purl.obolibrary.org/obo/MPATH_188>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_196> (dermatitis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_196> "Inflammation of the skin.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_196> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_196> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_196> "MPATH:196")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_196> "dermatitis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_196> <http://purl.obolibrary.org/obo/MPATH_212>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_197> (glomerulonephritis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_197> "Renal disease characterised by diffuse inflammatory changes in glomeruli not in response to an infectious agent or treatment.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_197> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_197> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_197> "MPATH:197")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_197> "glomerulonephritis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_197> <http://purl.obolibrary.org/obo/MPATH_212>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_198> (immune mediated hemolytic anaemia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_198> "An anemic/erythrocytopenic condition resulting from an increased rate of immune mediated erythrocyte destruction.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_198> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_198> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_198> "MPATH:198")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_198> "immune mediated hemolytic anaemia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_198> <http://purl.obolibrary.org/obo/MPATH_212>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_201> (vasculitis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_201> "Inflammation of a blood vessel.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_201> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_201> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_201> "angiitis")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_201> "arteritis")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_201> "lymphangiitis")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_201> "phlebitis")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_201> "MPATH:201")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_201> "vasculitis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_201> <http://purl.obolibrary.org/obo/MPATH_212>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_212> (inflammation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_212> "A tissue reaction to an internal or external injury.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_212> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_212> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_212> "MPATH:212")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_212> "inflammation")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_212> <http://purl.obolibrary.org/obo/MPATH_194>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_218> (neoplasm)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_218> "A tumor resulting from abnormal and uncontrolled autonomous new cell growth (proliferation)that may be benign or malignant.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_218> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_218> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_218> "MPATH:218")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_218> "neoplasm")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_218> <http://purl.obolibrary.org/obo/MPATH_603>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_25> (tissue specific degenerative process)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_25> "Degenerative process characteristic of a particular tissue.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_25> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_25> "MPATH:25")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_25> "tissue specific degenerative process")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_25> <http://purl.obolibrary.org/obo/MPATH_14>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_254> (complex tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_254> "Tumors showing multiple histological componants/differentiation.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_254> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_254> "MPATH:254")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_254> "complex tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_254> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_267> (glandular tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_267> "Neoplasms derived from glandular epithelial cells.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_267> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_267> "MPATH:267")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_267> "glandular tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_267> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_27> (arthrosis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_27> "Changes characterized by erosion of articular cartilage, either primary or secondary to trauma or other conditions. Not primarily an inflammatory process.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_27> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_27> "Degenerative joint disease")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_27> "osteoarthrosis")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_27> "MPATH:27")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_27> "arthrosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_27> <http://purl.obolibrary.org/obo/MPATH_25>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_270> (adenoma)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_270> "A benign epithelial neoplasm in which the tumor cells may form glands or glandlike structures. In different instances this may remain a benign tumor or progress to malignancy.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_270> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_270> "MPATH:270")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_270> "adenoma")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_270> <http://purl.obolibrary.org/obo/MPATH_267>)
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_270> <http://purl.obolibrary.org/obo/MPATH_556>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_28> (atherosclerosis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_28> "Characterised by irregular lipid deposits in the wall of arteries, causing narrowing of their lumens and proceeding eventually to fibrosis and calcification.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_28> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_28> "MPATH:28")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_28> "Note that in mouse and rats the initial lesions are mostly in the medial layer while in human they occur in the intima.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_28> "atherosclerosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_28> <http://purl.obolibrary.org/obo/MPATH_25>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_287> (islet cell adenoma)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_287> "Usually pancreatic B cell derived tumors mostly producing insulin. (M- 8150/0).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_287> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_287> "Adenoma, endocrine pancreas")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_287> "adenomatosis")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_287> "islet (pancreatic) cell tumor benign")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_287> "MPATH:287")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_287> "islet cell adenoma")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_287> <http://purl.obolibrary.org/obo/MPATH_270>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_309> (gonadal tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_309> "Germ cell and non-germ cell tumors of the testis and ovary.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_309> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_309> "MPATH:309")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_309> "gonadal tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_309> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_31> (emphysema)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_31> "Abnormal accumulation of air in the interstitial connective tissue of a structure. Sensu Lung: Pulmonary emphysema; characterised by abnormal increase in the size of air (alveolar) spaces distal to the terminal bronchiole with degenerative changes in their walls and reduction in their number.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_31> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_31> "MPATH:31")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_31> "emphysema")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_31> <http://purl.obolibrary.org/obo/MPATH_25>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_310> (germ cell tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_310> "Neoplasms derived from germ cells. May be gonadal or extragonadal and are derived from primordial germ cells.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_310> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_310> "MPATH:310")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_310> "germ cell tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_310> <http://purl.obolibrary.org/obo/MPATH_309>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_322> (teratoma)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_322> "Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Malignant tumors are highly metatstatic. (M-9080/1).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_322> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_322> "MPATH:322")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_322> "teratoma")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_322> <http://purl.obolibrary.org/obo/MPATH_254>)
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_322> <http://purl.obolibrary.org/obo/MPATH_310>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_33> (intracellular and extracellular accumulation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_33> "Accumulation of substances within, on the surface of or between cells.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_33> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_33> "MPATH:33")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_33> "intracellular and extracellular accumulation")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_33> <http://purl.obolibrary.org/obo/MPATH_1>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_335> (hematopoietic/lymphoid malignancies/disorder)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_335> "Proliferative disorders and malignancies of the lymphoid and non lymphoid haematopoietic lineages.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_335> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_335> "MPATH:335")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_335> "hematopoietic/lymphoid malignancies/disorder")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_335> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_34> (amyloid deposition)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_34> "Extracellular deposition of amyloid protein.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_34> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_34> "Amyloidosis")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_34> "MPATH:34")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_34> "Any group of chemically diverse proteins that appears microscopically homogeneous, but is composed of linear non-branching aggregated fibrils aranged in sheets when see under the electron microscope.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_34> "amyloid deposition")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_34> <http://purl.obolibrary.org/obo/MPATH_33>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_342> (myeloid leukaemia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:12070033") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_342> "Leukaemias of the myeloid lineage.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MPATH_342> "URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_342> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_342> "granulocytic leukaemia")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_342> "MPATH:342")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_342> "myeloid leukaemia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_342> <http://purl.obolibrary.org/obo/MPATH_496>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_346> (autoimmune mediated disease)
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_346> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MPATH_346> "2011-03-22T01:12:01Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_346> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_346> "MPATH:346")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_346> "autoimmune mediated disease")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_346> <http://purl.obolibrary.org/obo/MPATH_194>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_36> (calcium deposition)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_36> "Intra or extracellular deposition of calcium usually as calcium phosphate.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_36> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_36> "MPATH:36")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_36> "calcium deposition")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_36> <http://purl.obolibrary.org/obo/MPATH_555>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_379> (odontogenic tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_379> "Neoplasm arising from the tissues of the odontogenic apparatus. These tumors are derived from ectodermal tissue (epithelial tumors) or from mesodermal tissue (connective tissue tumors) or are composed of both components (mixed or composite odontogenic tumors) .")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_379> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_379> "MPATH:379")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_379> "odontogenic tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_379> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_387> (odontoma)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_387> "Hamartomatous malformation of odontogenic tissue. It may vary from nondescript masses of dental tissue (complex odontoma) to multiple well-formed teeth (compound odontoma). Cf ameloblastic fibro-odontoma. (M-9280/0).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_387> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_387> "MPATH:387")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_387> "odontoma")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_387> <http://purl.obolibrary.org/obo/MPATH_254>)
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_387> <http://purl.obolibrary.org/obo/MPATH_379>)
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_387> <http://purl.obolibrary.org/obo/MPATH_74>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_404> (soft tissue tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_404> "Neoplasms of the soft and connective tissues.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_404> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_404> "MPATH:404")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_404> "soft tissue tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_404> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_429> (myxomatous tumor)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_429> "Neoplasms resembling primitive mesenchymal tissue with a soft mucous matrix.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_429> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_429> "MPATH:429")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_429> "myxomatous tumor")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_429> <http://purl.obolibrary.org/obo/MPATH_404>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_474> (ectasia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_474> "Dilation of a tubular structure.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_474> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_474> "MPATH:474")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_474> "Often associated with an obstruction.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_474> "ectasia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_474> <http://purl.obolibrary.org/obo/MPATH_66>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_476> (telangiectasia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_476> "A lesion formed by a dilated capillary or terminal artery.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_476> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_476> "MPATH:476")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_476> "telangiectasia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_476> <http://purl.obolibrary.org/obo/MPATH_474>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_496> (Non-Lymphoid leukaemias)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:12070033") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_496> "Neoplasms of non-lymphoid haematopoietic lineage. Must have at least 20% blast cells to meet this definition.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MPATH_496> "URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_496> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_496> "MPATH:496")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_496> "Non-Lymphoid leukaemias")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_496> <http://purl.obolibrary.org/obo/MPATH_515>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_502> (monocytic leukaemia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:12070033") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_502> "Leukaemia in which neoplastic cells are poorly or moderately differentiated with a monocytic but no neutrophilic component. At least 20% of the cells must be blasts.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MPATH_502> "URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_502> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_502> "MPATH:502")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_502> "monocytic leukaemia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_502> <http://purl.obolibrary.org/obo/MPATH_342>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_515> (non-Lymphoid neoplasias)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:12070033") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_515> "Hematological neoplasias of non-lymphoid origin.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MPATH_515> "URL:http://www.bloodjournal.org/cgi/content/full/100/1/238/DC1/2")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_515> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_515> "MPATH:515")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_515> "non-Lymphoid neoplasias")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_515> <http://purl.obolibrary.org/obo/MPATH_335>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_55> (developmental and structural abnormality)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_55> "Developmental and structural abnormalities occurring during embryonic development or during adult life.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_55> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_55> "MPATH:55")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_55> "developmental and structural abnormality")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_55> <http://purl.obolibrary.org/obo/MPATH_603>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_555> (mineralisation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_555> "Deposition of any homogeneous inorganic material.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_555> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_555> "MPATH:555")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_555> "mineralisation")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_555> <http://purl.obolibrary.org/obo/MPATH_33>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_556> (potentially cancerous lesions)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_556> "Lesions which in some cases have the potential to become progressively growing malignant tumors.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_556> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_556> "MPATH:556")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_556> "potentially cancerous lesions")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_556> <http://purl.obolibrary.org/obo/MPATH_218>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_56> (developmental or adult structural  defect)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_56> "Structural, physical or other general defect of prenatal development of the embryo and the placenta, or such as are acquired in the adult.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_56> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_56> "MPATH:56")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_56> "developmental or adult structural  defect")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_56> <http://purl.obolibrary.org/obo/MPATH_55>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_574> (nephroblastomatosis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:8383276") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_574> "Persistence of metanephrogenic blastema or its presence in the wrong place or at the wrong time. Associated with hyperplastic nephrogenic rests.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_574> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_574> "MPATH:574")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_574> "nephroblastomatosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_574> <http://purl.obolibrary.org/obo/MPATH_64>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_579> (ulcer)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_579> "Loss of epithelium and the basement membrane (full thickness). Cf Erosion.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_579> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_579> "MPATH:579")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_579> "ulcer")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_579> <http://purl.obolibrary.org/obo/MPATH_1>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_596> (pathological process)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_596> "The organic response of tissues to external insult, injury or underlying genetic or epigenetic lesion.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_596> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_596> "MPATH:596")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_596> "pathological process")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_596> <http://purl.obolibrary.org/obo/MPATH_0>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_597> (cell and tissue damage process)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_597> "Processes occurring during cell and tissue damage of either intrinsic or extrinsic etiology.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_597> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_597> "MPATH:597")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_597> "cell and tissue damage process")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_597> <http://purl.obolibrary.org/obo/MPATH_596>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_599> (developmental process abnormalities)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_599> "developmental process abnormalities")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_599> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_599> "MPATH:599")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_599> "developmental process abnormalities")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_599> <http://purl.obolibrary.org/obo/MPATH_596>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_602> (hyperplastic tissue)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_602> "An organ or a tissue with an abnormal increase in the number of cells as a consequence of cell proliferation.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_602> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_602> "MPATH:602")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_602> "hyperplastic tissue")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_602> <http://purl.obolibrary.org/obo/MPATH_126>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_603> (pathological anatomical entity)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_603> "Anatomically located instance of pathological response or entity.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_603> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_603> "MPATH:603")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_603> "pathological anatomical entity")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_603> <http://purl.obolibrary.org/obo/MPATH_0>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_607> (healing and repair structure)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_607> "Physical entity or structure associated with normal or abnormal tissue healing or repair following extrinsic or intrinsic damage.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_607> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_607> "MPATH:607")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_607> "healing and repair structure")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_607> <http://purl.obolibrary.org/obo/MPATH_603>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_608> (abscess)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_608> "A circumscribed collection of purulent exudate frequently associated with swelling and other signs of inflammation.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_608> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_608> "MPATH:608")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_608> "Generally occur following damage or infection with subsequent inflammatory response. Result of the body`s defensive reaction to foreign material.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_608> "abscess")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_608> <http://purl.obolibrary.org/obo/MPATH_607>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_62> (cyst)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_62> "Formation of an epithelium bounded cavity not associated with neoplasia.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_62> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_62> "MPATH:62")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_62> "cyst")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_62> <http://purl.obolibrary.org/obo/MPATH_56>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_622> (steatosis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_622> "Abnormal retention of lipids within a cell. Physically apparent as lipid within liposomes of parenchymal cells.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MPATH_622> "lipidosis")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_622> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_622> "adipose degeneration")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_622> "fatty change")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_622> "fatty degeneration")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_622> "MPATH:622")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_622> "Most commonly associated with degenerative change in the liver.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_622> "steatosis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_622> <http://purl.obolibrary.org/obo/MPATH_33>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_64> (developmental dysplasia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_64> "Abnormal development (of organs or tissues) or an abnormal structure resulting from such growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_64> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_64> "MPATH:64")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MPATH_64> "The word dysplasia as commonly used refers to a precursor state to neoplasia. This is not the context used for this MPATH term.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_64> "developmental dysplasia")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_64> <http://purl.obolibrary.org/obo/MPATH_599>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_66> (dilatation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_66> "Increase in the diameter of an orifice or tubular structure beyond its normal dimensions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_66> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_66> "MPATH:66")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_66> "dilatation")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_66> <http://purl.obolibrary.org/obo/MPATH_56>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_675> (psoriasiform dermatitis)
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_675> "George Gkoutos")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MPATH_675> "2011-02-19T04:09:12Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_675> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_675> "MPATH:675")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_675> "psoriasiform dermatitis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_675> <http://purl.obolibrary.org/obo/MPATH_196>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_68> (diverticulum)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_68> "A blind ended outpouching through the wall of a tubular organ or bounded cavity.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_68> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_68> "MPATH:68")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_68> "diverticulum")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_68> <http://purl.obolibrary.org/obo/MPATH_56>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_70> (fistula)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_70> "An abnormal passage between two internal organs or leading from a cavity to the body surface.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_70> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_70> "MPATH:70")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_70> "fistula")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_70> <http://purl.obolibrary.org/obo/MPATH_56>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_718> (pre-sacral teratoma)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> ":") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_718> "Generally benign germ cell derived tumors of male or female containing derivatives from all three germ layers with differentiation in the malignant form being poor. Pre-sacral tumors located in the retrorectal space between the rectum and the sacrococcygeal part of the spine.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MPATH_718> "Paul")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MPATH_718> "2011-06-06T03:39:01Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_718> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_718> "MPATH:718")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_718> "pre-sacral teratoma")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_718> <http://purl.obolibrary.org/obo/MPATH_322>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_74> (hamartoma)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ISBN:0781727286") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_74> "A focal malformation resembling a neoplasm which results from faulty development of an organ; composed of an abnormal mixture of tissue elements, or an abnormal proportion of a single element. Growth and location are usually normal for that tissue cf. Heterotopia/Choristoma MPATH:76/MPATH:477.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_74> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_74> "MPATH:74")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_74> "hamartoma")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_74> <http://purl.obolibrary.org/obo/MPATH_56>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_86> (organ specific developmental defect)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_86> "Developmental defect characteristic of a particular organ or organ system which may be a recognised syndrome or a complex defect showing multiple manifestations.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_86> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_86> "MPATH:86")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_86> "organ specific developmental defect")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_86> <http://purl.obolibrary.org/obo/MPATH_55>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_89> (cardiovascular developmental defect)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_89> "Abnormal development of the heart or vascular tissue resulting in morphological abnormality.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_89> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_89> "MPATH:89")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_89> "cardiovascular developmental defect")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_89> <http://purl.obolibrary.org/obo/MPATH_86>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_90> (aneurysm)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_90> "Localised dilation of an artery or heart chamber usually due to an acquired or congenital weakness of the wall of the artery or chamber.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_90> "mouse_pathology.ontology")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_90> "MPATH:90")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_90> "aneurysm")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_90> <http://purl.obolibrary.org/obo/MPATH_56>)
+
+# Class: <http://purl.obolibrary.org/obo/MPATH_98> (lymphangiectasis)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Pathology Committee") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MPATH_98> "A stretching and widening of the lymphatic vessels.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MPATH_98> "mouse_pathology.ontology")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_98> "Lymphectasia")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Pathbase: Curation") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/MPATH_98> "telangiectasia lymphatica")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MPATH_98> "MPATH:98")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MPATH_98> "lymphangiectasis")
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_98> <http://purl.obolibrary.org/obo/MPATH_474>)
+SubClassOf(<http://purl.obolibrary.org/obo/MPATH_98> <http://purl.obolibrary.org/obo/MPATH_89>)
+
+
+)
