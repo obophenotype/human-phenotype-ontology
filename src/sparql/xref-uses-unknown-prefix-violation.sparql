@@ -1,0 +1,52 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT ?term ?property ?value ?xref ?comment
+
+WHERE 
+{
+  
+VALUES ?property { oboInOwl:hasExactSynonym  oboInOwl:hasRelatedSynonym oboInOwl:hasBroadSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasCloseSynonym IAO:0000115 } 
+?term a owl:Class ;
+   rdfs:subClassOf* obo:HP_0000001 ;
+  		?property ?value .
+     
+     ?axiom owl:annotatedSource ?term ;
+           owl:annotatedProperty ?property ;
+           owl:annotatedTarget ?value ;
+           oboInOwl:hasDbXref ?xref .
+
+  FILTER( !isBlank(?xref) && 
+    !STRSTARTS(str(?xref), "PMID:") && 
+    !STRSTARTS(str(?xref), "http:") && 
+    !STRSTARTS(str(?xref), "https:") && 
+    !STRSTARTS(str(?xref), "ISBN:") && 
+    !STRSTARTS(str(?xref), "MP:") && 
+    !STRSTARTS(str(?xref), "eMedicine:") && 
+    !STRSTARTS(str(?xref), "eom:") && 
+    !STRSTARTS(str(?xref), "Fyler:") &&
+    !STRSTARTS(str(?xref), "MPATH:") &&
+    !STRSTARTS(str(?xref), "OMIM:") &&
+    !STRSTARTS(str(?xref), "ICD-10:") &&
+    !STRSTARTS(str(?xref), "ISBN-13:") &&
+    !STRSTARTS(str(?xref), "GARD:") &&
+    !STRSTARTS(str(?xref), "ORPHA:") &&
+    !STRSTARTS(str(?xref), "UBERON:") &&
+    !STRSTARTS(str(?xref), "GO:") &&
+    !STRSTARTS(str(?xref), "DOI:") &&
+    !STRSTARTS(str(?xref), "HPO_CONTRIBUTOR:") &&
+    !STRSTARTS(str(?xref), "CHEBI:") && 
+    !STRSTARTS(str(?xref), "DSM:") && 
+    !STRSTARTS(str(?xref), "PubChem:") && 
+    !STRSTARTS(str(?xref), "CL:") && 
+    !STRSTARTS(str(?xref), "NCIT:C"))
+  
+  BIND("Your ORCID is using a prefix that has not be sanctioned by the HPO Editors Team." as ?comment)
+
+}
