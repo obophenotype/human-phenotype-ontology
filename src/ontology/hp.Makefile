@@ -365,19 +365,19 @@ imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 
 .PRECIOUS: imports/ncit_import.owl
 
-$(TMPDIR)/maxo.owl: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/maxo.owl --create-dirs -o $(MIRRORDIR)/maxo.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/maxo.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $@; fi
+#$(TMPDIR)/maxo.owl: | $(TMPDIR)
+#	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/maxo.owl --create-dirs -o $(MIRRORDIR)/maxo.owl --retry 4 --max-time 200 &&\
+#		$(ROBOT) convert -i $(MIRRORDIR)/maxo.owl -o $@.tmp.owl &&\
+#		mv $@.tmp.owl $@; fi
 
 
-$(MIRRORDIR)/maxo.owl: $(TMPDIR)/maxo.owl imports/maxo_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/maxo_terms_combined.txt --force true --method TOP \
-		query --update ../sparql/inject-subset-declaration.ru \
-		filter -T imports/maxo_terms.txt --select "annotations self descendants" --signature true \
-		remove --term rdfs:seeAlso --term rdfs:comment --select "annotation-properties" \
-		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: $(MIRRORDIR)/maxo.owl
+#$(MIRRORDIR)/maxo.owl: $(TMPDIR)/maxo.owl imports/maxo_terms_combined.txt
+#	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/maxo_terms_combined.txt --force true --method TOP \
+#		query --update ../sparql/inject-subset-declaration.ru \
+#		filter -T imports/maxo_terms.txt --select "annotations self descendants" --signature true \
+#		remove --term rdfs:seeAlso --term rdfs:comment --select "annotation-properties" \
+#		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+#.PRECIOUS: $(MIRRORDIR)/maxo.owl
 
 reports/calcified-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/calcified-phenotypes.sparql $@

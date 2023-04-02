@@ -113,7 +113,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  nbo pr go uberon ro chebi hsapdv pato cl mpath maxo
+IMPORTS =  nbo pr go uberon ro chebi hsapdv pato cl mpath
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -455,13 +455,6 @@ mirror-mpath: | $(TMPDIR)
 		$(ROBOT) convert -i $(MIRRORDIR)/mpath.owl -o $@.tmp.owl && \
 		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/MPATH --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: maxo
-.PHONY: mirror-maxo
-.PRECIOUS: $(MIRRORDIR)/maxo.owl
-$(MIRRORDIR)/maxo.owl: 
-	echo "ERROR: You have configured your default mirror type to be custom; this behavior needs to be overwritten in hp.Makefile!" && false
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
