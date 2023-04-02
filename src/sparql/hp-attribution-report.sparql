@@ -33,7 +33,7 @@ WHERE
                         STRSTARTS(str(?contributor), "https://ror.org/021sy4w91")
                     ) 
             ) || (
-                !isLiteral(?contributor) &&  STRSTARTS(str(?contributor), "HPO_CONTRIBUTOR:")
+                isLiteral(?contributor) &&  STRSTARTS(str(?contributor), "HPO_CONTRIBUTOR:")
             )
         )
         BIND("XREF" as ?type)
@@ -51,7 +51,7 @@ WHERE
                             STRSTARTS(str(?contributor), "https://ror.org/021sy4w91")
                         ) 
                 ) || (
-                    !isLiteral(?contributor) &&  STRSTARTS(str(?contributor), "HPO_CONTRIBUTOR:")
+                    isLiteral(?contributor) &&  STRSTARTS(str(?contributor), "HPO_CONTRIBUTOR:")
                 )
             )
             BIND("CREATOR" as ?type)
