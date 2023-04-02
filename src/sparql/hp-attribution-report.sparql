@@ -24,15 +24,36 @@ WHERE
                  owl:annotatedTarget ?value ;
                  oboInOwl:hasDbXref ?contributor .
 
-        FILTER  ( isIRI(?contributor) && STRSTARTS(str(?contributor), "https://orcid.org/") )
-
+        FILTER  (
+            (
+                isIRI(?contributor) && 
+                    (
+                        STRSTARTS(str(?contributor), "https://orcid.org/") || 
+                        STRSTARTS(str(?contributor), "http://www.wikidata.org/entity/") ||
+                        STRSTARTS(str(?contributor), "https://ror.org/021sy4w91")
+                    ) 
+            ) || (
+                !isLiteral(?contributor) &&  STRSTARTS(str(?contributor), "HPO_CONTRIBUTOR:")
+            )
+        )
         BIND("XREF" as ?type)
   } UNION {
             VALUES ?property { dcterms:contributor dc:contributor IAO:0000117 oboInOwl:created_by oboInOwl:editor  dcterms:creator dc:creator }
             ?term a owl:Class ;
          		rdfs:subClassOf* obo:HP_0000001 ;
                 ?property ?contributor.
-    		FILTER  ( isIRI(?contributor) && STRSTARTS(str(?contributor), "https://orcid.org/") )
-    		BIND("CREATOR" as ?type)
+    		FILTER  (
+                (
+                    isIRI(?contributor) && 
+                        (
+                            STRSTARTS(str(?contributor), "https://orcid.org/") || 
+                            STRSTARTS(str(?contributor), "http://www.wikidata.org/entity/") ||
+                            STRSTARTS(str(?contributor), "https://ror.org/021sy4w91")
+                        ) 
+                ) || (
+                    !isLiteral(?contributor) &&  STRSTARTS(str(?contributor), "HPO_CONTRIBUTOR:")
+                )
+            )
+            BIND("CREATOR" as ?type)
 	}
 } GROUP BY ?property ?contributor ?type
