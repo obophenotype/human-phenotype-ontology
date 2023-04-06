@@ -142,6 +142,11 @@ $(ONT).obo: $(ONT)-simple-non-classified.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY) \
 	convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
+$(ONT).json: $(ONT)-simple-non-classified.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
+
 #mirror/pr.owl: mirror/pr.trigger
 #	echo "PRO MIRROR currently skipped!"
 #.PRECIOUS: mirror/pr.owl
