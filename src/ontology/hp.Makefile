@@ -593,3 +593,25 @@ $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
 $(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
 	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
 
+
+#################
+### Mappings ####
+#################
+
+$(TMPDIR)/%.db: $(TMPDIR)/%.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+.PRECIOUS: $(TMPDIR)/%.db
+
+$(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
+	$(ROBOT) merge -i hp-base.owl -i tmp/$*.owl -o $@
+.PRECIOUS: $(TMPDIR)/hp-%-merged.owl
+
+../mappings/hp-%.lexmatch.sssom.tsv: $(TMPDIR)/hp-%-merged.db
+	runoak -i $< lexmatch -o $@
+
+mappings: 
+	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
