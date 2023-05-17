@@ -594,6 +594,11 @@ $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
 $(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
 	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
 
+HP_TRANSLATIONS_TSVS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.babelon.tsv, $(LANGUAGES))
+
+
+$(TRANSLATIONDIR)/hp-all.babelon.tsv:
+	python ../scripts/merge_tables.py $(HP_TRANSLATIONS_TSVS) -o $@
 
 #################
 ### Mappings ####
