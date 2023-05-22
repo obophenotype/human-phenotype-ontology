@@ -427,6 +427,10 @@ help:
 	echo "Migrating EQs from MP to HP:"
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
+#### Translations #####
+LANGUAGES=nl fr cs tr zh
+TRANSLATIONDIR=translations
+HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 .PHONY: diff
 diff: $(REPORTDIR)/difference_table.tsv $(REPORTDIR)/difference_kgcl.txt $(REPORTDIR)/difference_yaml.yaml
 
@@ -442,5 +446,85 @@ $(REPORTDIR)/difference_table.tsv: tmp/hp-released.obo | tmp/hp-base.obo
 $(REPORTDIR)/difference_kgcl.txt: tmp/hp-released.obo | tmp/hp-base.obo
 	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo --output-type kgcl -o $@ 
 
-$(REPORTDIR)/difference_yaml.yaml: tmp/hp-released.obo | tmp/hp-base.obo
-	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo -o $@
+#### French translation
+
+tmp/hp-fr.babelon.tsv: | translations/
+	wget "$(BABELON_FR)" -O $@
+
+translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
+	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
+
+translations/hp-fr.synonyms.tsv: | translations/
+	wget "$(SYNONYMS_FR)" -O $@
+
+#### Translations managed on platform
+
+translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
+	grep -v NOT_TRANSLATED $< > $@
+.PRECIOUS: translations/hp-%.babelon.tsv
+
+translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
+	cp $< $@
+.PRECIOUS: translations/hp-%.synonyms.owl
+
+translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
+	$(ROBOT) template --template $< --output $@
+.PRECIOUS: translations/hp-%.synonyms.owl
+
+translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
+	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
+	echo "babelon:translation_status a owl:AnnotationProperty ." >> $@.tmp
+	echo "<http://purl.obolibrary.org/obo/IAO_0000115> a owl:AnnotationProperty ." >> $@.tmp
+	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
+	$(ROBOT) merge -i $@.tmp query --update ../sparql/tag-source-language.ru --update ../sparql/rm-rdf.ru -o $@	
+.PRECIOUS: translations/hp-profile-%.owl
+
+#$(patsubst %, -i %, $^)
+#query --update ../sparql/rm_translated.ru \ <- remove the babelon metadata from the profile?
+#query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv | Not needed anymore.
+
+translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
+	robot merge -i translations/hp-profile-$*.owl -i translations/hp-$*.synonyms.owl -i hp.owl \
+	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
+	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
+	query --update ../sparql/rm-original-translation.ru \
+	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
+.PRECIOUS: translations/hp-%.owl
+
+.PHONY: prepare_translations
+prepare_translations:
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+
+$(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
+	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
+
+
+#################
+### Mappings ####
+#################
+
+$(TMPDIR)/%.db: $(TMPDIR)/%.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+.PRECIOUS: $(TMPDIR)/%.db
+
+$(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
+	$(ROBOT) merge -i hp-base.owl -i tmp/$*.owl -o $@
+.PRECIOUS: $(TMPDIR)/hp-%-merged.owl
+
+../mappings/hp-%.lexmatch.sssom.tsv: $(TMPDIR)/hp-%-merged.db
+	runoak -i $< lexmatch -o $@
+
+mappings: 
+	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
