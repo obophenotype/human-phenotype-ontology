@@ -516,12 +516,13 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl fr cs tr zh
+LANGUAGES=nl fr cs tr zh nna
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
 BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
 BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
+BABELON_NNA=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv
 SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 
 translations/:
@@ -547,8 +548,11 @@ translations/hp-fr.synonyms.tsv: | translations/
 
 #### Translations managed on platform
 
+tmp/hp-nna.babelon.tsv: | translations/
+	wget "$(BABELON_NNA)" -O $@
+
 translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
-	grep -v NOT_TRANSLATED $< > $@
+	grep -v NOT_TRANSLATED $< > $@ || cp $< $@
 .PRECIOUS: translations/hp-%.babelon.tsv
 
 translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
