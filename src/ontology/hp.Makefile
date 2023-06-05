@@ -516,13 +516,15 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl fr cs tr zh nna
+LANGUAGES=nl fr cs tr zh nna tw dtp
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
 BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
 BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
 BABELON_NNA=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv
+BABELON_DTP=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-dtp.babelon.tsv
+BABELON_TW=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tw.babelon.tsv
 SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 
 translations/:
@@ -548,14 +550,21 @@ translations/hp-fr.synonyms.tsv: | translations/
 
 #### Translations managed on platform
 
-tmp/hp-nna.babelon.tsv: | translations/
-	wget "$(BABELON_NNA)" -O $@
+# This is the default goal for the raw, untranslated HPO translation files
+# We simply download the file from the HPO-translations repo
+$(TMPDIR)/hp-%.babelon.tsv: | translations/
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-$*.babelon.tsv" -O $@
+.PRECIOUS: $(TMPDIR)/hp-%.babelon.tsv
 
 translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
 	grep -v NOT_TRANSLATED $< > $@ || cp $< $@
 .PRECIOUS: translations/hp-%.babelon.tsv
 
-translations/hp-%.synonyms.tsv: tmp/hp-%.synonyms.tsv | translations/
+$(TMPDIR)/hp-%.synonyms.tsv: | translations/
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-$*.synonyms.tsv" -O $@
+.PRECIOUS: $(TMPDIR)/hp-%.synonyms.tsv
+
+translations/hp-%.synonyms.tsv: $(TMPDIR)/hp-%.synonyms.tsv | translations/
 	cp $< $@
 .PRECIOUS: translations/hp-%.synonyms.owl
 
