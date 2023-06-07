@@ -438,6 +438,7 @@ hpoa_clean:
 	rm -rf $(TMPDIR)/hpo-annotation-data
 	rm -rf $(HPOA_DIR) && mkdir $(HPOA_DIR)
 	cd $(TMPDIR) && git clone https://github.com/monarch-initiative/hpo-annotation-data.git
+	test -f $(TMPDIR)/hpo-annotation-data/README.md
 
 .PHONY: hpoa
 hpoa:
