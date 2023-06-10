@@ -227,6 +227,8 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 #########################################################################################################
 
 # 0. Add terms you want to remove stuff from to behaviour_seed.txt (_, not :)
+# 0.1. Update remove-subclass-links.ru
+# 0.2 Make sure that the tmp/remove_behaviours.ofn: goal removes the right things
 # 1. Run `make rm_defs` to get rid of the definition import which does not process correctly
 # 2. Run `make db` to get rid of the definition import which does not process correctly
 # 3. Run `make re-assemble` to fix the prefixes which were scrambled by the process
@@ -234,20 +236,19 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 
 template_behaviour_pipeline:
 	git checkout master -- hp-edit.owl
-	make rm_defs
-	make db
-	make re-assemble
-	make merge_annotation_assertions
-	make drop_synonyms_wo_support
+	make rm_defs -B
+	make db -B
+	make re-assemble -B
+	make merge_annotation_assertions -B
+	make reports/hp-edit.owl-obo-report.tsv -B
+	# make drop_synonyms_wo_support -B
 
 tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
 	grep -f behaviour_seed.txt hp-edit.owl > tmp/behaviour
-	grep "AnnotationAssertion(rdfs:label" tmp/behaviour > tmp/behaviour_labels
-	grep "AnnotationAssertion(rdfs:comment" tmp/behaviour > tmp/behaviour_comment
-	grep "hasRelatedSynonym" tmp/behaviour > tmp/behaviour_synonyms_related
-	grep "hasBroadSynonym" tmp/behaviour > tmp/behaviour_synonyms_broad
-	grep "IAO_0000115" tmp/behaviour > tmp/behaviour_definitions
+	grep "AnnotationAssertion(rdfs:label" tmp/behaviour > tmp/behaviour_labels || rm -f tmp/behaviour_labels && touch tmp/behaviour_labels
+	grep "AnnotationAssertion(rdfs:comment" tmp/behaviour > tmp/behaviour_comment || rm -f tmp/behaviour_comment && touch tmp/behaviour_comment
+	grep "IAO_0000115" tmp/behaviour > tmp/behaviour_definitions || rm -f tmp/behaviour_definitions && touch tmp/behaviour_definitions
 	echo "Prefix(:=<http://purl.obolibrary.org/obo/hp.owl#>)" > $@
 	echo "Prefix(owl:=<http://www.w3.org/2002/07/owl#>)" >> $@
 	echo "Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)" >> $@
@@ -256,7 +257,7 @@ tmp/remove_behaviours.ofn:
 	echo "Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)" >> $@
 	echo "" >> $@
 	echo "Ontology(<http://purl.obolibrary.org/obo/hp/remove_behaviours.owl>" >> $@
-	cat tmp/behaviour_synonyms_broad tmp/behaviour_synonyms_related tmp/behaviour_definitions tmp/behaviour_comment tmp/behaviour_labels >> $@
+	cat tmp/behaviour_definitions tmp/behaviour_comment tmp/behaviour_labels >> $@
 	echo ")" >> $@
 
 tmp/merge.ofn: tmp/merge.tsv
@@ -289,11 +290,11 @@ re-assemble:
 	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
 	cat tmp/hp >> hp-edit.owl
 
-drop_synonyms_wo_support:
-	# Remove the remaining exactMatches
-	grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour_exact2
-	grep -v -x -f tmp/behaviour_exact2 hp-edit.owl > tmp/RMEXACT
-	mv tmp/RMEXACT hp-edit.owl
+#drop_synonyms_wo_support:
+#	# Remove the remaining exactMatches
+#	grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour_exact2
+#	grep -v -x -f tmp/behaviour_exact2 hp-edit.owl > tmp/RMEXACT
+#	mv tmp/RMEXACT hp-edit.owl
 
 #######################################################
 ##### Convert input ontology HPO NTR TSV format #######
@@ -408,7 +409,7 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
-MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5nHq0sE25CyEPydBjmRedfwn5EaQPrZ03h8BjPlSW1JRcokq3cySGVUF7lgWTUH2GK7LnFfgeooAT/pub?gid=1418446212&single=true&output=tsv"
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vT82SayHeKRYE3UcMpdwJhxa8UnKMY_u4GUTFO7B4-QKWEam8lH5Qtxujt5KMFzqqWQ3iZa9HOSFKoT/pub?gid=1418446212&single=true&output=tsv"
 tmp/merge.tsv:
 	wget $(MERGE_TEMPLATE_URL) -O $@
 
