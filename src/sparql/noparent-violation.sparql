@@ -5,7 +5,7 @@ PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
 
 SELECT ?cls WHERE {
 	?cls a owl:Class
-	FILTER NOT EXISTS { owl:deprecated true . }
+	FILTER NOT EXISTS { ?cls owl:deprecated true . }
 	FILTER NOT EXISTS {?cls rdfs:subClassOf* <http://purl.obolibrary.org/obo/HP_0000001>}
         FILTER (!isBlank(?cls))
         FILTER ( STRSTARTS(str(?cls), "^http://purl.obolibrary.org/obo/HP_"))
