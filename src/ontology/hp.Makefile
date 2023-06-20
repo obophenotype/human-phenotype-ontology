@@ -640,16 +640,19 @@ mappings:
 .PHONY: diff
 diff: diff-table diff-kgcl diff-yaml
 
-tmp/hp-released.obo:
-	wget http://purl.obolibrary.org/obo/hp.obo -O $@ && cp ../../hp-full.obo tmp/hp-full.obo
+tmp/hp-released.db:
+	wget http://purl.obolibrary.org/obo/hp.owl -O tmp/hp-released.owl && cp ../../hp-base.owl tmp/hp-base.owl
+	semsql make tmp/hp-base.db
+	semsql make $@
+	
 
-diff-table: tmp/hp-released.obo tmp/hp-full.obo
-	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo \
-	-o difference_table.tsv --output-type csv --statistics --group-by-property oio:hasOBONamespace
+diff-table: tmp/hp-released.db
+	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
+	-o reports/difference_table.tsv --output-type csv --statistics --group-by-property oio:hasOBONamespace
 
-diff-kgcl: tmp/hp-released.obo tmp/hp-full.obo
-	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo \
-	-o difference_kgcl.txt --output-type kgcl
+diff-kgcl: tmp/hp-released.db
+	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
+	-o reports/difference_kgcl.txt --output-type kgcl
 
-diff-yaml: tmp/hp-released.obo tmp/hp-full.obo
-	runoak -i simpleobo:tmp/hp-full.obo diff -X simpleobo:tmp/hp-released.obo -o difference_yaml.yaml
+diff-yaml: tmp/hp-released.db
+	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db -o reports/difference_yaml.yaml
