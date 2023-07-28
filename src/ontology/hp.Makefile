@@ -235,7 +235,7 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 # 4. Open hp-edit.owl on protege and safe
 
 template_behaviour_pipeline:
-	git checkout master -- hp-edit.owl
+	git checkout remove-new-lines-from-hpo -- hp-edit.owl
 	make rm_defs PAT=false -B
 	make db PAT=false -B
 	make re-assemble PAT=false -B
