@@ -236,12 +236,12 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 
 template_behaviour_pipeline:
 	git checkout master -- hp-edit.owl
-	make rm_defs -B
-	make db -B
-	make re-assemble -B
-	make merge_annotation_assertions -B
-	make reports/hp-edit.owl-obo-report.tsv -B
-	# make drop_synonyms_wo_support -B
+	make rm_defs PAT=false -B
+	make db PAT=false -B
+	make re-assemble PAT=false -B
+	make merge_annotation_assertions PAT=false -B
+	make reports/hp-edit.owl-obo-report.tsv PAT=false -B
+	# make drop_synonyms_wo_support PAT=false -B
 
 tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
