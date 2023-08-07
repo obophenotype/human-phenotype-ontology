@@ -636,3 +636,18 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
+
+export ROBOT_PLUGINS_DIRECTORY := $(PWD)/tmp/pluginsTest
+
+
+
+update-plugins: $(ROBOT_PLUGINS_DIRECTORY)/monarch.jar
+
+$(ROBOT_PLUGINS_DIRECTORY)/monarch.jar:
+	mkdir -p $(ROBOT_PLUGINS_DIRECTORY)
+	cp ~/ws/robot-phenotype-toolkit/target/robot-plugins-0.0.1-SNAPSHOT.jar $(ROBOT_PLUGINS_DIRECTORY)/monarch.jar
+
+export ROBOT_PLUGINS_DIRECTORY=$(PWD)/tmp/plugins
+
+hp-eq.owl: | tmp/plugins/monarch.jar
+	$(ROBOT) monarch:upheno-augment -i hp-edit.owl --relation has_phenotype_affecting  -o $@
