@@ -553,7 +553,7 @@ tmp/hp-ja.babelon.tsv: | translations/
 	#cp /Users/matentzn/ws/hpo-translations/babelon/hp-ja.babelon.tsv $@
 
 translations/hp-ja.babelon.tsv: tmp/hp-ja.babelon.tsv | translations/
-	cat $< | grep -v NOT_TRANSLATED > $@
+	cat $< | grep -v NOT_TRANSLATED | grep -v -E "HP:.*HP:" > $@
 
 translations/hp-fr.synonyms.tsv: | translations/
 	#wget "$(SYNONYMS_JA)" -O $@
