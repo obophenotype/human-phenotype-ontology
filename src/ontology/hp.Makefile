@@ -518,7 +518,7 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl fr cs tr zh nna tw dtp
+LANGUAGES=nl fr cs tr zh nna tw dtp ja
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
@@ -531,10 +531,6 @@ SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4w
 
 translations/:
 	mkdir -p $@
-
-# Note to matentzn, this should all happen here using the babelon CLI
-sync_translations_from_babelon:
-	cp -r /Users/matentzn/ws/obable/tests/data/translations/*.tsv tmp/
 
 translations/babelon.yaml: | translations/
 	wget "$(BABELON_SCHEMA)" -O $@
@@ -549,6 +545,20 @@ translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
 
 translations/hp-fr.synonyms.tsv: | translations/
 	wget "$(SYNONYMS_FR)" -O $@
+
+#### Japanese translation
+
+tmp/hp-ja.babelon.tsv: | translations/
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQp-OFO8CKjiOn1Hz47iE-WlXYZAFLzmkrNN_syM82C_JoLrTPgrIp46OCl9HRn6U6zFFijqc8l5SmW/pub?gid=0&single=true&output=tsv" -O $@
+	#cp /Users/matentzn/ws/hpo-translations/babelon/hp-ja.babelon.tsv $@
+
+translations/hp-ja.babelon.tsv: tmp/hp-ja.babelon.tsv | translations/
+	cat $< | grep -v NOT_TRANSLATED > $@
+
+translations/hp-fr.synonyms.tsv: | translations/
+	#wget "$(SYNONYMS_JA)" -O $@
+	cp /Users/matentzn/ws/hpo-translations/babelon/hp-ja.synonyms.tsv $@
+
 
 #### Translations managed on platform
 
