@@ -550,10 +550,10 @@ translations/hp-fr.synonyms.tsv: | translations/
 
 tmp/hp-ja.babelon.tsv: | translations/
 	echo "WARNING: Japanese still managed on Google SHEETS"
-	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQp-OFO8CKjiOn1Hz47iE-WlXYZAFLzmkrNN_syM82C_JoLrTPgrIp46OCl9HRn6U6zFFijqc8l5SmW/pub?gid=0&single=true&output=tsv" -O $@
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTxR5CzxlVa_Z_akI5-YYoG-sdJHZ9zT4s1SoRlzbN-CAmEpltpyaC9JVb9NZOcHgVM85zGhhlQDZwQ/pub?gid=223499412&single=true&output=tsv" -O $@
 
 translations/hp-ja.babelon.tsv: tmp/hp-ja.babelon.tsv | translations/
-	cat $< | grep -v NOT_TRANSLATED | grep -v -E "HP:.*HP:" > $@
+	cat $< | grep -v NOT_TRANSLATED > $@
 
 #### Translations managed on platform
 
