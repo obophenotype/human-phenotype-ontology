@@ -602,6 +602,12 @@ translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.
 prepare_translations:
 	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
 
+translations/translation-provenance.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHua1GDmHSueowg0lVuMH2SI7ulJHjI7PLayvcqXT1yuzlkZMGZbnDD_tJHWpGgVwZ_spJynPH1DGS/pub?gid=238291492&single=true&output=tsv" -O $@
+
+translations/translation-provenance.owl: translations/translation-provenance.tsv
+	$(ROBOT) template --template $< --output $@
+
 $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
