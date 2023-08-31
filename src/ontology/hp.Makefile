@@ -518,39 +518,47 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl fr cs tr zh nna tw dtp
+LANGUAGES=nl fr cs tr zh nna tw dtp ja es
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
-BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
-BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
-BABELON_NNA=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv
-BABELON_DTP=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-dtp.babelon.tsv
-BABELON_TW=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tw.babelon.tsv
-SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 
 translations/:
 	mkdir -p $@
 
-# Note to matentzn, this should all happen here using the babelon CLI
-sync_translations_from_babelon:
-	cp -r /Users/matentzn/ws/obable/tests/data/translations/*.tsv tmp/
-
+BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
 translations/babelon.yaml: | translations/
 	wget "$(BABELON_SCHEMA)" -O $@
 
 #### French translation
-
+# The French translation is managed by 
+BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
 tmp/hp-fr.babelon.tsv: | translations/
 	wget "$(BABELON_FR)" -O $@
 
 translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
 	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
 
+SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 translations/hp-fr.synonyms.tsv: | translations/
 	wget "$(SYNONYMS_FR)" -O $@
 
-#### Translations managed on platform
+#### Japanese translation
+
+BABELON_JA=https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv
+tmp/hp-ja.babelon.tsv:
+	wget "$(BABELON_JA)" -O $@
+
+#### Spanish translation
+# Now managed in hpo-translations repo (Pablo emails)
+#BABELON_ES=https://docs.google.com/spreadsheets/d/e/2PACX-1vSdjUe_sx_FLo8vkJkpUpmyZtKgjkjDrIg6_qrvXRTx0L8MTpIlamRyelST3wx9uw/pub?gid=1093256667&single=true&output=tsv
+#tmp/hp-es.babelon.tsv:
+#	wget "$(BABELON_ES)" -O $@
+
+translations/hp-es.babelon.tsv: tmp/hp-es.babelon.tsv | translations/
+	cut -f1-6 $< | grep -v NOT_TRANSLATED > $@
+
+#### Translations managed on by the HPO Internationalization Effort
 
 # This is the default goal for the raw, untranslated HPO translation files
 # We simply download the file from the HPO-translations repo
