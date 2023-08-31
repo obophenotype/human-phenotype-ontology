@@ -549,6 +549,15 @@ BABELON_JA=https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-ja
 tmp/hp-ja.babelon.tsv:
 	wget "$(BABELON_JA)" -O $@
 
+#### Spanish translation
+# Now managed in hpo-translations repo (Pablo emails)
+#BABELON_ES=https://docs.google.com/spreadsheets/d/e/2PACX-1vSdjUe_sx_FLo8vkJkpUpmyZtKgjkjDrIg6_qrvXRTx0L8MTpIlamRyelST3wx9uw/pub?gid=1093256667&single=true&output=tsv
+#tmp/hp-es.babelon.tsv:
+#	wget "$(BABELON_ES)" -O $@
+
+translations/hp-es.babelon.tsv: tmp/hp-es.babelon.tsv | translations/
+	cut -f1-6 $< | grep -v NOT_TRANSLATED > $@
+
 #### Translations managed on by the HPO Internationalization Effort
 
 # This is the default goal for the raw, untranslated HPO translation files
