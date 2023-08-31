@@ -518,44 +518,38 @@ help:
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 #### Translations #####
-LANGUAGES=nl fr cs tr zh nna tw dtp ja
+LANGUAGES=nl fr cs tr zh nna tw dtp ja es
 TRANSLATIONDIR=translations
 HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
 
-BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
-BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
-BABELON_NNA=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv
-BABELON_DTP=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-dtp.babelon.tsv
-BABELON_TW=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tw.babelon.tsv
-SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 
 translations/:
 	mkdir -p $@
 
+BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
 translations/babelon.yaml: | translations/
 	wget "$(BABELON_SCHEMA)" -O $@
 
 #### French translation
-
+# The French translation is managed by 
+BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
 tmp/hp-fr.babelon.tsv: | translations/
 	wget "$(BABELON_FR)" -O $@
 
 translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
 	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
 
+SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
 translations/hp-fr.synonyms.tsv: | translations/
 	wget "$(SYNONYMS_FR)" -O $@
 
 #### Japanese translation
 
-tmp/hp-ja.babelon.tsv: | translations/
-	echo "WARNING: Japanese still managed on Google SHEETS"
-	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTxR5CzxlVa_Z_akI5-YYoG-sdJHZ9zT4s1SoRlzbN-CAmEpltpyaC9JVb9NZOcHgVM85zGhhlQDZwQ/pub?gid=223499412&single=true&output=tsv" -O $@
+BABELON_JA=https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv
+tmp/hp-ja.babelon.tsv:
+	wget "$(BABELON_JA)" -O $@
 
-translations/hp-ja.babelon.tsv: tmp/hp-ja.babelon.tsv | translations/
-	cat $< | grep -v NOT_TRANSLATED > $@
-
-#### Translations managed on platform
+#### Translations managed on by the HPO Internationalization Effort
 
 # This is the default goal for the raw, untranslated HPO translation files
 # We simply download the file from the HPO-translations repo
