@@ -556,7 +556,7 @@ tmp/hp-ja.babelon.tsv:
 #	wget "$(BABELON_ES)" -O $@
 
 translations/hp-es.babelon.tsv: tmp/hp-es.babelon.tsv | translations/
-	cut -f1-6 $< | grep -v NOT_TRANSLATED > $@
+	cut -f1-7 $< | grep -v NOT_TRANSLATED > $@
 
 #### Translations managed on by the HPO Internationalization Effort
 
