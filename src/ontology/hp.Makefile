@@ -236,12 +236,12 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 
 template_behaviour_pipeline:
 	git checkout master -- hp-edit.owl
-	make rm_defs -B
-	make db -B
-	make re-assemble -B
-	make merge_annotation_assertions -B
-	make reports/hp-edit.owl-obo-report.tsv -B
-	# make drop_synonyms_wo_support -B
+	make rm_defs PAT=false -B
+	make db PAT=false -B
+	make re-assemble PAT=false -B
+	make merge_annotation_assertions PAT=false -B
+	make reports/hp-edit.owl-obo-report.tsv PAT=false -B
+	# make drop_synonyms_wo_support PAT=false -B
 
 tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
@@ -409,7 +409,7 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
-MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vT82SayHeKRYE3UcMpdwJhxa8UnKMY_u4GUTFO7B4-QKWEam8lH5Qtxujt5KMFzqqWQ3iZa9HOSFKoT/pub?gid=1687083078&single=true&output=tsv"
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tpRf55z_UKliR6hnagCG5Bs3shuPyC6-3PKv0UXrMyLq6zUFeRNfJ76BcIgR2pokVrobjxRDYQ2t/pub?gid=2067169879&single=true&output=tsv"
 tmp/merge.tsv:
 	wget $(MERGE_TEMPLATE_URL) -O $@
 
