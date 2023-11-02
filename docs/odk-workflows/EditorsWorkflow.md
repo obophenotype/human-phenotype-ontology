@@ -24,7 +24,7 @@ Ensure that there is a ticket on your issue tracker that describes the change yo
 In your local environment (e.g. your laptop), make sure you are on the `main` (prev. `master`) branch and ensure that you have all the upstream changes, for example:
 
 ```
-git checkout main
+git checkout master
 git pull
 ```
 

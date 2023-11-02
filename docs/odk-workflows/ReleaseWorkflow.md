@@ -13,8 +13,8 @@ These steps are outlined in detail in the following.
 Preparation:
 
 1. Ensure that all your pull requests are merged into your main (master) branch
-2. Make sure that all changes to main are committed to GitHub (`git status` should say that there are no modified files)
-3. Locally make sure you have the latest changes from main (`git pull`)
+2. Make sure that all changes to master are committed to GitHub (`git status` should say that there are no modified files)
+3. Locally make sure you have the latest changes from master (`git pull`)
 4. Checkout a new branch (e.g. `git checkout -b release-2021-01-01`)
 5. You may or may not want to refresh your imports as part of your release strategy (see [here](UpdateImports.md))
 6. Make sure you have the latest ODK installed by running `docker pull obolibrary/odkfull`
