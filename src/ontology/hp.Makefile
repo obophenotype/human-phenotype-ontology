@@ -409,11 +409,16 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
+# Merge template workflow
+# The template to be merged is expected to be located at 
+# the location indicated by the MERGE_TEMPLATE_FILE variable
+
+MERGE_TEMPLATE_FILE=tmp/merge.tsv
 MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR99Cz13ykiPwq-WdLjAGsPod6n7daSjyhpJa2FJS5bjEDDBlkjJYGrS2hYckvtGAIO2JzpCYMueuUM/pub?gid=1430967911&single=true&output=tsv"
 sync_google_template:
-	wget $(MERGE_TEMPLATE_URL) -O $@
+	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
-merge_template: tmp/merge.tsv
+merge_template: $(MERGE_TEMPLATE_FILE)
 	$(ROBOT) template --prefix "orcid: https://orcid.org/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
