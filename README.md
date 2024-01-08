@@ -1,4 +1,4 @@
-![Build Status](https://github.com/obophenotype/human-phenotype-ontology/workflows/CI/badge.svg)
+![Build Status](https://github.com/obophenotype/human-phenotype-ontology/actions/workflows/qc.yml/badge.svg)
 
 ![image](https://user-images.githubusercontent.com/7070631/121471623-ed28bc00-c9b7-11eb-9e9c-c6d5222688e3.png)
 
