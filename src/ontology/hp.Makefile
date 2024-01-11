@@ -588,7 +588,7 @@ translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
 .PRECIOUS: translations/hp-%.synonyms.owl
 
 translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
-	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	linkml-convert -t rdf -f tsv -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
 	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
