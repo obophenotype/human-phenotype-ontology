@@ -588,7 +588,7 @@ translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
 .PRECIOUS: translations/hp-%.synonyms.owl
 
 translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
-	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	linkml-convert -t rdf -f tsv -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
 	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
@@ -613,9 +613,11 @@ translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.
 
 .PHONY: prepare_translations
 prepare_translations:
-	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt \
+		$(TRANSLATIONDIR)/hp-all.babelon.tsv $(TRANSLATIONDIR)/hp-all.babelon.json
 
 $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
+	$(MAKE) $(TRANSLATIONDIR)/hp-all.babelon.tsv $(TRANSLATIONDIR)/hp-all.babelon.json
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -624,9 +626,11 @@ $(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
 
 HP_TRANSLATIONS_TSVS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.babelon.tsv, $(LANGUAGES))
 
-
-$(TRANSLATIONDIR)/hp-all.babelon.tsv:
+$(TRANSLATIONDIR)/hp-all.babelon.tsv: $(HP_TRANSLATIONS_TSVS)
 	python ../scripts/merge_tables.py $(HP_TRANSLATIONS_TSVS) -o $@
+
+$(TRANSLATIONDIR)/hp-all.babelon.json: $(TRANSLATIONDIR)/hp-all.babelon.tsv
+	linkml-convert -t json -s translations/babelon.yaml -C Profile -S translations $(TRANSLATIONDIR)/hp-fr.babelon.tsv -o $@
 
 #################
 ### Mappings ####
