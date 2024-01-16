@@ -10,6 +10,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     ?entity a owl:Class .
     FILTER NOT EXISTS { ?entity owl:deprecated true . }
     FILTER ( STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/HP_"))
+    FILTER (?entity != HP:0000001)
   }
   MINUS
   { 
