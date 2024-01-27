@@ -409,12 +409,17 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
-MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6tpRf55z_UKliR6hnagCG5Bs3shuPyC6-3PKv0UXrMyLq6zUFeRNfJ76BcIgR2pokVrobjxRDYQ2t/pub?gid=2067169879&single=true&output=tsv"
-tmp/merge.tsv:
-	wget $(MERGE_TEMPLATE_URL) -O $@
+# Merge template workflow
+# The template to be merged is expected to be located at 
+# the location indicated by the MERGE_TEMPLATE_FILE variable
 
-merge_template: tmp/merge.tsv
-	$(ROBOT) template --merge-before --input $(SRC) \
+MERGE_TEMPLATE_FILE=NOFILE
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR99Cz13ykiPwq-WdLjAGsPod6n7daSjyhpJa2FJS5bjEDDBlkjJYGrS2hYckvtGAIO2JzpCYMueuUM/pub?gid=1430967911&single=true&output=tsv"
+sync_google_template:
+	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
+
+merge_template: $(MERGE_TEMPLATE_FILE)
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 reset_edit:
@@ -583,7 +588,7 @@ translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
 .PRECIOUS: translations/hp-%.synonyms.owl
 
 translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
-	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
+	linkml-convert -t rdf -f tsv -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
 	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
 	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
@@ -608,9 +613,11 @@ translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.
 
 .PHONY: prepare_translations
 prepare_translations:
-	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt \
+		$(TRANSLATIONDIR)/hp-all.babelon.tsv $(TRANSLATIONDIR)/hp-all.babelon.json
 
 $(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
+	$(MAKE) $(TRANSLATIONDIR)/hp-all.babelon.tsv $(TRANSLATIONDIR)/hp-all.babelon.json
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -619,9 +626,11 @@ $(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
 
 HP_TRANSLATIONS_TSVS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.babelon.tsv, $(LANGUAGES))
 
-
-$(TRANSLATIONDIR)/hp-all.babelon.tsv:
+$(TRANSLATIONDIR)/hp-all.babelon.tsv: $(HP_TRANSLATIONS_TSVS)
 	python ../scripts/merge_tables.py $(HP_TRANSLATIONS_TSVS) -o $@
+
+$(TRANSLATIONDIR)/hp-all.babelon.json: $(TRANSLATIONDIR)/hp-all.babelon.tsv
+	linkml-convert -t json -s translations/babelon.yaml -C Profile -S translations $(TRANSLATIONDIR)/hp-fr.babelon.tsv -o $@
 
 #################
 ### Mappings ####
