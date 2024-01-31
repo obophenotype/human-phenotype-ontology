@@ -590,7 +590,7 @@ DOSDP_TERM_FILES_MATCHES = $(patsubst %.tsv, $(PATTERNDIR)/data/matches/%.txt, $
 DOSDP_TSV_FILES_MATCHES = $(wildcard $(PATTERNDIR)/data/matches/*.tsv)
 DOSDP_PATTERN_NAMES_MATCHES = $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/matches/*.tsv))))
 
-$(DOSDP_OWL_FILES_MATCHES): $(SRC) $(DOSDP_TSV_FILES_MATCHES) $(ALL_PATTERN_FILES)
+$(DOSDP_OWL_FILES_MATCHES): $(EDIT_PREPROCESSED) $(DOSDP_TSV_FILES_MATCHES) $(ALL_PATTERN_FILES)
 	if [ $(PAT) = true ] && [ "${DOSDP_PATTERN_NAMES_MATCHES}" ]; then $(DOSDPT) generate --catalog=catalog-v001.xml \
     --infile=$(PATTERNDIR)/data/matches --template=$(PATTERNDIR)/dosdp-patterns/ --batch-patterns="$(DOSDP_PATTERN_NAMES_MATCHES)" \
     --ontology=$< --obo-prefixes=true --outfile=$(PATTERNDIR)/data/matches; fi
