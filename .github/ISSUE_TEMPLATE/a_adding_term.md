@@ -3,7 +3,7 @@ name: Add term
 about: New term suggestion for HPO
 title: ''
 labels: new term request
-assignees: drseb, nicolevasilevsky, pnrobinson
+assignees: pnrobinson
 
 ---
 

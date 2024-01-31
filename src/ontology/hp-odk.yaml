@@ -5,6 +5,7 @@ repo: human-phenotype-ontology
 report_fail_on: none
 use_dosdps: TRUE
 dosdp_tools_options: "--obo-prefixes=true --restrict-axioms-to=logical"
+git_main_branch: master
 namespaces: 
   - http://purl.obolibrary.org/obo/HP_
   - http://purl.obolibrary.org/obo/hp
@@ -12,31 +13,67 @@ release_artefacts:
   - base
   - simple-non-classified
   - full
+  - custom-hp-international
 primary_release: simple-non-classified
 export_formats:
   - owl
   - obo
   - json
 import_group:
+  use_base_merging: TRUE
+  exclude_iri_patterns:
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_*>
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/CARO_*>
+    - <http://purl.obolibrary.org/obo/ENVO_*>
+    - <http://purl.obolibrary.org/obo/SO_*>
+    - <http://purl.obolibrary.org/obo/cl#abbreviation*>
+    - <http://purl.obolibrary.org/obo/cl#added_for_HCA*>
+    - <http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION*>
+    - <http://purl.obolibrary.org/obo/uberon/core#COMPARATIVE_PREFERRED*>
+    - <http://purl.obolibrary.org/obo/uberon/core#DEPRECATED*>
+    - <http://purl.obolibrary.org/obo/uberon/core#DUBIOUS*>
+    - <http://purl.obolibrary.org/obo/uberon/core#HOMOLOGY*>
+    - <http://purl.obolibrary.org/obo/uberon/core#HUMAN_PREFERRED*>
+    - <http://purl.obolibrary.org/obo/uberon/core#INCONSISTENT*>
+    - <http://purl.obolibrary.org/obo/uberon/core#LATIN*>
+    - <http://purl.obolibrary.org/obo/uberon/core#MISSPELLING*>
+    - <http://purl.obolibrary.org/obo/uberon/core#NON_AMNIOTE*>
+    - <http://purl.obolibrary.org/obo/uberon/core#NON_MAMMAL*>
+    - <http://purl.obolibrary.org/obo/uberon/core#PENDING_REVIEW*>
+    - <http://purl.obolibrary.org/obo/uberon/core#PLURAL*>
+    - <http://purl.obolibrary.org/obo/uberon/core#SENSU*>
+    - <http://purl.obolibrary.org/obo/uberon/core#SYSTEMATIC*>
+  slme_individuals: exclude
+  mirror_max_time_download: 400
   products:
     - id: nbo
-      mirror_from: http://purl.obolibrary.org/obo/nbo/nbo-base.owl
+      use_base: TRUE
     - id: pr
-      use_gzipped: TRUE
-      is_large: TRUE
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
     - id: go
+      make_base: TRUE
     - id: uberon 
+      use_base: TRUE
     - id: ro
+      use_base: TRUE
     - id: chebi
-      use_gzipped: TRUE
-      is_large: TRUE
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
     - id: hsapdv
+      make_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/HsapDv_
     - id: pato
+      use_base: TRUE
     - id: cl
-      mirror_from: http://purl.obolibrary.org/obo/cl/cl-basic.owl
+      use_base: TRUE
     - id: mpath
-    - id: maxo
-      module_type: custom
+      make_base: TRUE
 robot_java_args: '-Xmx8G'
 allow_equivalents: asserted-only
 pattern_pipelines_group:
@@ -67,9 +104,19 @@ robot_report:
     - double-space
     - illegal-synonym-type
     - deprecated-consider
+    - illegal-annotation-property
+    - orcid-contributor
+    - orcid-xref-is-not-formatted-correctly
+    - xref-uses-unknown-prefix
+    - noparent
+    - nolabels
+    - missing-parent-hpo
   custom_sparql_exports :
     - basic-report
     - xrefs
     - synonyms
     - layperson-synonyms
     - autoimmune-antibody-report
+    - hp-attribution-report
+documentation:
+  documentation_system: mkdocs

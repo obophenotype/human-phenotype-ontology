@@ -8,10 +8,11 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/hp/imports/nbo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2022-06-11/imports/nbo_import.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-11</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/hp/releases/2023-03-31/imports/nbo_import.owl"/>
+        <owl:versionInfo>2023-03-31</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -33,15 +34,21 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
+    <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001"/>
     
 
 
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
@@ -102,6 +109,12 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#note -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#note"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#source -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#source"/>
     
 
 
@@ -231,7 +244,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000003">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
-        <obo:IAO_0000115>&quot;Behavior related to the complex psychophysiological experience of an individual&apos;s state of mind as interacting with biochemical (internal) and environmental (external) influences.&quot; [wikipedia:Emotions]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the complex psychophysiological experience of an individual&apos;s state of mind as interacting with biochemical (internal) and environmental (external) influences.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:03:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>affective behaviour</oboInOwl:hasExactSynonym>
@@ -239,6 +252,12 @@
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>emotional behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the complex psychophysiological experience of an individual&apos;s state of mind as interacting with biochemical (internal) and environmental (external) influences.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Emotions</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -246,7 +265,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000006">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000607"/>
-        <obo:IAO_0000115>&quot;Behavior related to the acquisition and processing of information and/or the storage and retrieval of this information over time.&quot; [GO:jic]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the acquisition and processing of information and/or the storage and retrieval of this information over time.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:03:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>learning and/or memory behaviour</oboInOwl:hasExactSynonym>
@@ -254,6 +273,12 @@
         <oboInOwl:xref>GO:0007611</oboInOwl:xref>
         <rdfs:label>learning and/or memory behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000006"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the acquisition and processing of information and/or the storage and retrieval of this information over time.</owl:annotatedTarget>
+        <oboInOwl:source>GO:jic</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -274,13 +299,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000009">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000644"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior associated with the specific movement from place to place of an organism.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior associated with the specific movement from place to place of an organism.</obo:IAO_0000115>
         <dc:date>2011-04-14T12:58:40Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>pathological locomotory behaviour</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>locomotory behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000009"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior associated with the specific movement from place to place of an organism.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -303,7 +334,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
-        <obo:IAO_0000115>&quot;A behavioral interaction between organisms in which one organism has the intention of inflicting damage on another individual using physical or verbal means.&quot; [wikipedia:Aggression]</obo:IAO_0000115>
+        <obo:IAO_0000115>A behavioral interaction between organisms in which one organism has the intention of inflicting damage on another individual using physical or verbal means.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:03:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>aggression</oboInOwl:hasExactSynonym>
@@ -313,6 +344,12 @@
         <oboInOwl:xref>GO:0002118</oboInOwl:xref>
         <rdfs:label>aggressive behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000015"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A behavioral interaction between organisms in which one organism has the intention of inflicting damage on another individual using physical or verbal means.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Aggression</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -321,13 +358,19 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000018">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000469"/>
-        <obo:IAO_0000115>&quot;Emotional behavior related to fear or anxiety.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Emotional behavior related to fear or anxiety.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:03:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>fear/anxiety related behaviour</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>fear/anxiety related behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000018"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Emotional behavior related to fear or anxiety.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -335,13 +378,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000024">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000008"/>
-        <obo:IAO_0000115>&quot;Behavior related to the readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:03:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>GO:0030431</oboInOwl:xref>
         <rdfs:label>sleeping behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000024"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -349,7 +398,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000030">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000644"/>
-        <obo:IAO_0000115>&quot;A kinesthetic behavior which relatively increased.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A kinesthetic behavior which relatively increased.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:09:28Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
@@ -357,6 +406,12 @@
         <oboInOwl:xref>MP:0001399</oboInOwl:xref>
         <rdfs:label>hyperactivity</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000030"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A kinesthetic behavior which relatively increased.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -399,7 +454,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000054">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000079"/>
-        <obo:IAO_0000115>&quot;Specific actions of a newborn or infant mammal that result in the derivation of nourishment from the breast.&quot; [GOC:dph]</obo:IAO_0000115>
+        <obo:IAO_0000115>Specific actions of a newborn or infant mammal that result in the derivation of nourishment from the breast.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:03:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasAlternativeId>NBO:0000046</oboInOwl:hasAlternativeId>
@@ -409,6 +464,12 @@
         <oboInOwl:xref>GO:0001967</oboInOwl:xref>
         <rdfs:label>suckling behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000054"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Specific actions of a newborn or infant mammal that result in the derivation of nourishment from the breast.</owl:annotatedTarget>
+        <oboInOwl:source>GOC:dph</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -422,7 +483,7 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0002436"/>
-        <obo:IAO_0000115>&quot;A feeding behavior associated with the intake or the frequency of intake or preference or manner of intake of food.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A feeding behavior associated with the intake or the frequency of intake or preference or manner of intake of food.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:20:02Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>eating behaviour</oboInOwl:hasExactSynonym>
@@ -430,6 +491,12 @@
         <oboInOwl:xref>GO:0042755</oboInOwl:xref>
         <rdfs:label>regulation of eating behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000063"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A feeding behavior associated with the intake or the frequency of intake or preference or manner of intake of food.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -443,7 +510,7 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0002436"/>
-        <obo:IAO_0000115>&quot;A feeding behavior associated with the intake or the frequency of intake or preference or manner of intake of liquids.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A feeding behavior associated with the intake or the frequency of intake or preference or manner of intake of liquids.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:20:02Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>drinking behaviour</oboInOwl:hasExactSynonym>
@@ -451,6 +518,12 @@
         <oboInOwl:xref>GO:0042756</oboInOwl:xref>
         <rdfs:label>regulation of drinking behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000064"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A feeding behavior associated with the intake or the frequency of intake or preference or manner of intake of liquids.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -487,40 +560,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000085">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
-        <obo:IAO_0000115>&quot;Emotional behavior related to a state of low mood  and aversion to activity.&quot; [wikipedia:Depression]</obo:IAO_0000115>
+        <obo:IAO_0000115>Emotional behavior related to a state of low mood  and aversion to activity.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:20:02Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>depression related behaviour</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>depression behavior</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NBO_0000086 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000086">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
-        <obo:IAO_0000115>&quot;Behavior related to the exploration/investigation of a novel object, situation or environment.&quot; [NBO:GVG]</obo:IAO_0000115>
-        <dc:date>2011-04-14T01:20:02Z</dc:date>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
-        <rdfs:label>novelty response behavior</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NBO_0000091 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000091">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000018"/>
-        <obo:IAO_0000115>&quot;An emotional behavior related to a feeling of uneasiness or nervousness triggered by a specified triggering stimulus such as pain or the threat of danger.&quot; [NBO:GVG]</obo:IAO_0000115>
-        <dc:date>2011-03-31T10:00:42Z</dc:date>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym>fear-related behaviour</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
-        <rdfs:label>fear-related behavior</rdfs:label>
-    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000085"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Emotional behavior related to a state of low mood  and aversion to activity.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Depression</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -528,68 +580,39 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000092">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000018"/>
-        <obo:IAO_0000115>&quot;An emotional behavior related to a feeling of uneasiness or nervousness triggered by an identifiable triggering stimulus.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>An emotional behavior related to a feeling of uneasiness or nervousness triggered by an identifiable triggering stimulus.</obo:IAO_0000115>
         <dc:date>2011-03-31T10:01:25Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>anxiety-related behaviour</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>anxiety-related behavior</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NBO_0000094 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000094">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000091"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000100"/>
-        <obo:IAO_0000115>&quot;An emotional behavior related to a feeling of uneasiness or nervousness in respect to a particular situation or environment.&quot; [NBO:GVG]</obo:IAO_0000115>
-        <dc:date>2011-03-31T10:18:11Z</dc:date>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
-        <rdfs:label>fear behavior towards situation/environment</rdfs:label>
-    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000092"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An emotional behavior related to a feeling of uneasiness or nervousness triggered by an identifiable triggering stimulus.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/NBO_0000096 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000096">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000094"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000246"/>
-        <obo:IAO_0000115>&quot;A phobia characterised by fear of open spaces.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A phobia characterised by fear of open spaces.</obo:IAO_0000115>
         <dc:date>2011-03-31T10:18:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>HP:0000756</oboInOwl:xref>
         <rdfs:label>agoraphobia behavior</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NBO_0000097 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000097">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000086"/>
-        <obo:IAO_0000115>&quot;Behavior related to the exploration/investigation of a novel environment.&quot; [NBO:GVG]</obo:IAO_0000115>
-        <dc:date>2011-03-31T10:22:03Z</dc:date>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
-        <rdfs:label>response to novel environment</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NBO_0000100 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000100">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000097"/>
-        <dc:date>2011-03-31T10:28:39Z</dc:date>
-        <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:xref>GO:0035640</oboInOwl:xref>
-        <rdfs:label>exploration behavior</rdfs:label>
-    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000096"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phobia characterised by fear of open spaces.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -597,12 +620,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000119">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
-        <obo:IAO_0000115>&quot;A behavior that occur quickly without control, planning, or consideration of the consequences of that behavior.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A behavior that occur quickly without control, planning, or consideration of the consequences of that behavior.</obo:IAO_0000115>
         <dc:date>2011-03-31T11:08:55Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>impulsive behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000119"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A behavior that occur quickly without control, planning, or consideration of the consequences of that behavior.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -610,7 +639,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000120">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000741"/>
-        <obo:IAO_0000115>&quot;An aggressive behavior that aims to inflicting damage on another entity using physical means.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>An aggressive behavior that aims to inflicting damage on another entity using physical means.</obo:IAO_0000115>
         <dc:date>2011-03-31T11:14:04Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>physical aggression behaviour</oboInOwl:hasExactSynonym>
@@ -618,6 +647,12 @@
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>physical aggression behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000120"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An aggressive behavior that aims to inflicting damage on another entity using physical means.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -639,12 +674,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000128">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000121"/>
-        <obo:IAO_0000115>&quot;Behavior characterized by a quick excitability to annoyance, impatience, or anger.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior characterized by a quick excitability to annoyance, impatience, or anger.</obo:IAO_0000115>
         <dc:date>2011-03-31T12:16:00Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>irritability behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000128"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior characterized by a quick excitability to annoyance, impatience, or anger.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -652,12 +693,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000129">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
-        <obo:IAO_0000115>&quot;Emotional behavior related to excitement or restlessness.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Emotional behavior related to excitement or restlessness.</obo:IAO_0000115>
         <dc:date>2011-03-31T12:22:11Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>agitation behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000129"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Emotional behavior related to excitement or restlessness.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -665,12 +712,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000130">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000079"/>
-        <obo:IAO_0000115>&quot;A behavior associated with the intake of liquid.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A behavior associated with the intake of liquid.</obo:IAO_0000115>
         <dc:date>2011-03-31T12:40:37Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>liquid consumption</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000130"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A behavior associated with the intake of liquid.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -690,12 +743,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000134">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000079"/>
-        <obo:IAO_0000115>&quot;A feeding behavior associated with the intake of food.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A feeding behavior associated with the intake of food.</obo:IAO_0000115>
         <dc:date>2011-03-31T12:42:46Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>food consumption</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000134"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A feeding behavior associated with the intake of food.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -715,12 +774,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000162">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000754"/>
-        <obo:IAO_0000115>&quot;Duration of REM sleep.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Duration of REM sleep.</obo:IAO_0000115>
         <dc:date>2011-03-31T03:15:38Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>REM duration</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000162"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Duration of REM sleep.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -740,7 +805,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000170">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000006"/>
-        <obo:IAO_0000115>&quot;Behavior related with the ability of an organism&apos;s ability to store, retain, and recall information and experiences.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related with the ability of an organism&apos;s ability to store, retain, and recall information and experiences.</obo:IAO_0000115>
         <dc:date>2011-04-01T01:49:03Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>memory behaviour</oboInOwl:hasExactSynonym>
@@ -748,6 +813,12 @@
         <oboInOwl:xref>GO:0007613</oboInOwl:xref>
         <rdfs:label>memory behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000170"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related with the ability of an organism&apos;s ability to store, retain, and recall information and experiences.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -755,13 +826,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000229">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000656"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to the awareness of body balance and movement.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to the awareness of body balance and movement.</obo:IAO_0000115>
         <dc:date>2011-04-04T06:34:21Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>pathological vestibular behaviour</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>vestibular behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000229"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to the awareness of body balance and movement.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -769,7 +846,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000233">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
-        <obo:IAO_0000115>&quot;Behavior related to the tendency of an organism to maintain internal equilibrium.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the tendency of an organism to maintain internal equilibrium.</obo:IAO_0000115>
         <dc:date>2011-04-04T08:29:40Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasAlternativeId>NBO:0000050</oboInOwl:hasAlternativeId>
@@ -779,19 +856,31 @@
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>motivation behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000233"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the tendency of an organism to maintain internal equilibrium.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/NBO_0000243 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000243">
-        <obo:IAO_0000115>&quot;An observable characteristic of the behavior of an organism.&quot; [NBO:RH]</obo:IAO_0000115>
+        <obo:IAO_0000115>An observable characteristic of the behavior of an organism.</obo:IAO_0000115>
         <dc:date>2011-04-04T08:51:24Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>HP:0000708</oboInOwl:xref>
         <rdfs:label>behavioral phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000243"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An observable characteristic of the behavior of an organism.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:RH</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -813,13 +902,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000246">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000244"/>
-        <obo:IAO_0000115>&quot;A pathological anxiety characterized by fear or anxiety triggered by a specific stimulus or situation.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological anxiety characterized by fear or anxiety triggered by a specific stimulus or situation.</obo:IAO_0000115>
         <dc:date>2011-04-04T08:52:18Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>phobic disorder</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>phobia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000246"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological anxiety characterized by fear or anxiety triggered by a specific stimulus or situation.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -898,12 +993,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000266">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000243"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behaviour related to cognitive processes.&quot; [NBO:RH]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behaviour related to cognitive processes.</obo:IAO_0000115>
         <dc:date>2011-04-04T09:01:18Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>cognitive behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000266"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behaviour related to cognitive processes.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:RH</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -924,12 +1025,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000270">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000243"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior associated with the intake of food or liquids.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior associated with the intake of food or liquids.</obo:IAO_0000115>
         <dc:date>2011-04-04T09:02:16Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>feeding behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000270"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior associated with the intake of food or liquids.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -949,13 +1056,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000304">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000170"/>
-        <obo:IAO_0000115>&quot;Behavior related with the gradual loss of information and experiences stored in the memory of an organism.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related with the gradual loss of information and experiences stored in the memory of an organism.</obo:IAO_0000115>
         <dc:date>2011-04-04T09:49:14Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>forgetting</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>memory loss behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000304"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related with the gradual loss of information and experiences stored in the memory of an organism.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -963,7 +1076,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000308">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000607"/>
-        <obo:IAO_0000115>&quot;Cognitive perception of a sensation by any of the five senses -- vision, touch, smell, taste, and hearing.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Cognitive perception of a sensation by any of the five senses -- vision, touch, smell, taste, and hearing.</obo:IAO_0000115>
         <dc:date>2011-04-04T10:00:45Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasAlternativeId>NBO:0000454</oboInOwl:hasAlternativeId>
@@ -973,6 +1086,12 @@
         <rdfs:comment>Example: moving head to watch passing object.</rdfs:comment>
         <rdfs:label>sensation behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000308"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Cognitive perception of a sensation by any of the five senses -- vision, touch, smell, taste, and hearing.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -996,13 +1115,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000317">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000327"/>
-        <obo:IAO_0000115>&quot;Behavior related to the awareness of body balance and movement.&quot; [MBP:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the awareness of body balance and movement.</obo:IAO_0000115>
         <dc:date>2011-04-05T10:40:36Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>proprioception</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>vestibular behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000317"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the awareness of body balance and movement.</owl:annotatedTarget>
+        <oboInOwl:source>MBP:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1010,13 +1135,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000327">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000751"/>
-        <obo:IAO_0000115>&quot;Behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.&quot; [OBP:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.</obo:IAO_0000115>
         <dc:date>2011-04-05T11:01:08Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:comment>Sensations arising from the internal organs (the viscera), such as pain or the sense of fullness of the stomach or bladder, may therefore be included, although they are usually considered separately as visceral sensations. Pain arising from the viscera is often felt as though it comes from some part of the body surface or underlying tissue.</rdfs:comment>
         <rdfs:label>somatic sensation related behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000327"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.</owl:annotatedTarget>
+        <oboInOwl:source>OBP:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1052,13 +1183,19 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000388">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000001"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NBO_0000403"/>
-        <obo:IAO_0000115>&quot;Behavior related to movements that occur independent of planning.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to movements that occur independent of planning.</obo:IAO_0000115>
         <dc:date>2011-04-06T02:35:38Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:comment>Movevents listed here are involuntary, but may be also generated by free will, like blinking of the eyelids and respiratory movements.</rdfs:comment>
         <rdfs:label>involuntary movement behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000388"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to movements that occur independent of planning.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1066,7 +1203,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000389">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000388"/>
-        <obo:IAO_0000115>&quot;Behavior related to involuntary movement in response to a stimulus.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to involuntary movement in response to a stimulus.</obo:IAO_0000115>
         <dc:date>2011-04-06T02:36:55Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasAlternativeId>NBO:0000004</oboInOwl:hasAlternativeId>
@@ -1074,6 +1211,12 @@
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>reflexive behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000389"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to involuntary movement in response to a stimulus.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1081,12 +1224,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000403">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000001"/>
-        <obo:IAO_0000115>&quot;Behavior related to movements executed with intent.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to movements executed with intent.</obo:IAO_0000115>
         <dc:date>2011-04-06T03:32:28Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>voluntary movement behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000403"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to movements executed with intent.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1094,12 +1243,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000411">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000389"/>
-        <obo:IAO_0000115>&quot;A reflex that involves cranial nerves.&quot; [wikipedia:Reflex]</obo:IAO_0000115>
+        <obo:IAO_0000115>A reflex that involves cranial nerves.</obo:IAO_0000115>
         <dc:date>2011-04-06T04:28:27Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>cranial nerve related reflex</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000411"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A reflex that involves cranial nerves.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Reflex</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1136,12 +1291,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000419">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000473"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to the readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to the readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals.</obo:IAO_0000115>
         <dc:date>2011-04-07T01:19:38Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>sleeping behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000419"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to the readily reversible state of reduced awareness and metabolic activity that occurs periodically in many animals.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1149,7 +1310,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000420">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000499"/>
-        <obo:IAO_0000115>&quot;A NREM parasomnia characterised by Involuntarily grinding of teeth while sleeping.&quot; [MBP:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A NREM parasomnia characterised by Involuntarily grinding of teeth while sleeping.</obo:IAO_0000115>
         <dc:date>2011-04-07T01:20:00Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>&lt;new synonym&gt;</oboInOwl:hasExactSynonym>
@@ -1158,6 +1319,12 @@
         <oboInOwl:xref>HP:0003763</oboInOwl:xref>
         <rdfs:label>bruxism</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000420"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A NREM parasomnia characterised by Involuntarily grinding of teeth while sleeping.</owl:annotatedTarget>
+        <oboInOwl:source>MBP:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1177,12 +1344,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000446">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000001"/>
-        <obo:IAO_0000115>&quot;Selectively track a moving object.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Selectively track a moving object.</obo:IAO_0000115>
         <dc:date>2011-04-08T12:25:53Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>visual pursuit</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000446"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Selectively track a moving object.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1190,12 +1363,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000455">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000308"/>
-        <obo:IAO_0000115>&quot;The sustained focus of cognitive resources on information while filtering or ignoring extraneous information.  Intended to encompass only attention to perceptual stimuli. &quot; [wikipedia:Attention]</obo:IAO_0000115>
+        <obo:IAO_0000115>The sustained focus of cognitive resources on information while filtering or ignoring extraneous information.  Intended to encompass only attention to perceptual stimuli. </obo:IAO_0000115>
         <dc:date>2011-04-08T01:02:16Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>attention behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000455"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The sustained focus of cognitive resources on information while filtering or ignoring extraneous information.  Intended to encompass only attention to perceptual stimuli. </owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Attention</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1242,12 +1421,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000493">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000419"/>
-        <obo:IAO_0000115>&quot;A sleeping behavior phenotype that involve abnormal and unnatural movements, emotions, perceptions, and dreams that occur while falling asleep, sleeping, between sleep stages, or during arousal from sleep.&quot; [wikipedia:Parasomnia]</obo:IAO_0000115>
+        <obo:IAO_0000115>A sleeping behavior phenotype that involve abnormal and unnatural movements, emotions, perceptions, and dreams that occur while falling asleep, sleeping, between sleep stages, or during arousal from sleep.</obo:IAO_0000115>
         <dc:date>2011-04-08T03:20:06Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>parasomnia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000493"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sleeping behavior phenotype that involve abnormal and unnatural movements, emotions, perceptions, and dreams that occur while falling asleep, sleeping, between sleep stages, or during arousal from sleep.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Parasomnia</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1255,12 +1440,18 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000499">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000493"/>
-        <obo:IAO_0000115>&quot;A type of parasomnia that occurs during NREM sleep.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A type of parasomnia that occurs during NREM sleep.</obo:IAO_0000115>
         <dc:date>2011-04-08T03:37:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>NREM parasomnia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000499"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A type of parasomnia that occurs during NREM sleep.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1284,13 +1475,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000539">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000270"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of feeding behavior that relates to eating.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of feeding behavior that relates to eating.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:39:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>eating disorder</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>eating behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000539"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of feeding behavior that relates to eating.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1298,7 +1495,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000540">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000270"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of feeding behavior that relates to drinking.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of feeding behavior that relates to drinking.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:40:49Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>drinking disorder</oboInOwl:hasExactSynonym>
@@ -1306,6 +1503,12 @@
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>drinking behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000540"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of feeding behavior that relates to drinking.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1313,7 +1516,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000541">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000961"/>
-        <obo:IAO_0000115>&quot;A pathological drinking behavior characterised by an excessive desire to drink.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological drinking behavior characterised by an excessive desire to drink.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:41:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
@@ -1323,6 +1526,12 @@
         <oboInOwl:xref>MP:0002119</oboInOwl:xref>
         <rdfs:label>dipsosis</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000541"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological drinking behavior characterised by an excessive desire to drink.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1330,7 +1539,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000542">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000540"/>
-        <obo:IAO_0000115>&quot;A pathological drinking behavior characterised by large intake of fluids by mouth, usually due to excessive thirst that is relatively prolonged.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological drinking behavior characterised by large intake of fluids by mouth, usually due to excessive thirst that is relatively prolonged.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:41:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
@@ -1343,6 +1552,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0001426</oboInOwl:xref>
         <rdfs:label>polydipsia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000542"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological drinking behavior characterised by large intake of fluids by mouth, usually due to excessive thirst that is relatively prolonged.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1350,7 +1565,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000543">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000961"/>
-        <obo:IAO_0000115>&quot;A pathological drinking behavior characterised by an excessive relative temporal desire to drink.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological drinking behavior characterised by an excessive relative temporal desire to drink.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:41:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
@@ -1360,6 +1575,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0005111</oboInOwl:xref>
         <rdfs:label>hyperdipsia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000543"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological drinking behavior characterised by an excessive relative temporal desire to drink.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1367,13 +1588,19 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000544">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000539"/>
-        <obo:IAO_0000115>&quot;A pathological feeding behavior characterised by failure to eat.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological feeding behavior characterised by failure to eat.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:41:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>MP:0001438</oboInOwl:xref>
         <rdfs:label>aphagia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000544"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological feeding behavior characterised by failure to eat.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1381,7 +1608,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000546">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000539"/>
-        <obo:IAO_0000115>&quot;A pathological eating behavior characterised by an abnormally large intake of food by mouth, usually due to excessive hunger that is relatively prolonged.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological eating behavior characterised by an abnormally large intake of food by mouth, usually due to excessive hunger that is relatively prolonged.</obo:IAO_0000115>
         <dc:date>2011-04-10T10:41:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>hyperphagia</oboInOwl:hasExactSynonym>
@@ -1390,6 +1617,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0001433</oboInOwl:xref>
         <rdfs:label>polyphagia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000546"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological eating behavior characterised by an abnormally large intake of food by mouth, usually due to excessive hunger that is relatively prolonged.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1397,13 +1630,19 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000564">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000243"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior that occurs predominantly or only, in individuals that are part of a group.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior that occurs predominantly or only, in individuals that are part of a group.</obo:IAO_0000115>
         <dc:date>2011-04-14T08:24:37Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>pathological social behaviour</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>social behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000564"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior that occurs predominantly or only, in individuals that are part of a group.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1411,7 +1650,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000567">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000644"/>
-        <obo:IAO_0000115>&quot;A pathological behavior associated with repetitive or ritualistic movement, posture, or utterance.&quot; [wikipedia:Stereotypy]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological behavior associated with repetitive or ritualistic movement, posture, or utterance.</obo:IAO_0000115>
         <dc:date>2011-04-14T08:28:29Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>stereotypic behaviour</oboInOwl:hasExactSynonym>
@@ -1421,6 +1660,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0001408</oboInOwl:xref>
         <rdfs:label>stereotypic behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000567"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological behavior associated with repetitive or ritualistic movement, posture, or utterance.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Stereotypy</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1428,12 +1673,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000568">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000243"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to the movement of the body&apos;s muscles, tendons, and joints.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to the movement of the body&apos;s muscles, tendons, and joints.</obo:IAO_0000115>
         <dc:date>2011-04-14T08:31:34Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>kinesthetic behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000568"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to the movement of the body&apos;s muscles, tendons, and joints.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1441,7 +1692,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000586">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000587"/>
-        <obo:IAO_0000115>&quot;A form of tetanic spasm in which the head, neck and spine are bent backward and the body is bowed forward.&quot; [JAX:]</obo:IAO_0000115>
+        <obo:IAO_0000115>A form of tetanic spasm in which the head, neck and spine are bent backward and the body is bowed forward.</obo:IAO_0000115>
         <dc:date>2011-04-14T11:08:01Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
@@ -1449,6 +1700,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0002880</oboInOwl:xref>
         <rdfs:label>opisthotonus</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000586"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A form of tetanic spasm in which the head, neck and spine are bent backward and the body is bowed forward.</owl:annotatedTarget>
+        <oboInOwl:source>JAX:</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1456,12 +1713,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000587">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000588"/>
-        <obo:IAO_0000115>&quot;A sudden, involuntary contraction of a muscle or group of muscles associated with strychnine poisoning and tetanus.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A sudden, involuntary contraction of a muscle or group of muscles associated with strychnine poisoning and tetanus.</obo:IAO_0000115>
         <dc:date>2011-04-14T11:09:10Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>tetanic spasm</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000587"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sudden, involuntary contraction of a muscle or group of muscles associated with strychnine poisoning and tetanus.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1469,12 +1732,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000588">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000643"/>
-        <obo:IAO_0000115>&quot;A sudden, involuntary contraction of a muscle or group of muscles.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A sudden, involuntary contraction of a muscle or group of muscles.</obo:IAO_0000115>
         <dc:date>2011-04-14T11:10:55Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>spasm</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000588"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sudden, involuntary contraction of a muscle or group of muscles.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1482,7 +1751,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000589">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000643"/>
-        <obo:IAO_0000115>&quot;An involuntary rhythmical, oscillatory movement of a body part.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>An involuntary rhythmical, oscillatory movement of a body part.</obo:IAO_0000115>
         <dc:date>2011-04-14T11:13:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>quivering</oboInOwl:hasExactSynonym>
@@ -1493,6 +1762,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0000745</oboInOwl:xref>
         <rdfs:label>tremor</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000589"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An involuntary rhythmical, oscillatory movement of a body part.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1500,12 +1775,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000591">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000229"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to the coordination of combinations of body movements created with the kinematic (such as spatial direction) and kinetic (force) parameters that result in intended actions.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to the coordination of combinations of body movements created with the kinematic (such as spatial direction) and kinetic (force) parameters that result in intended actions.</obo:IAO_0000115>
         <dc:date>2011-04-14T11:32:30Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>motor coordination phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000591"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to the coordination of combinations of body movements created with the kinematic (such as spatial direction) and kinetic (force) parameters that result in intended actions.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1513,7 +1794,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000598">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000009"/>
-        <obo:IAO_0000115>&quot;A locomotory disorder in which sustained muscle contractions cause twisting and repetitive movements or abnormal postures.&quot; [wikipedia:Dystonia]</obo:IAO_0000115>
+        <obo:IAO_0000115>A locomotory disorder in which sustained muscle contractions cause twisting and repetitive movements or abnormal postures.</obo:IAO_0000115>
         <dc:date>2011-04-14T01:24:20Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
@@ -1521,6 +1802,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>MP:0005323</oboInOwl:xref>
         <rdfs:label>dystonia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000598"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A locomotory disorder in which sustained muscle contractions cause twisting and repetitive movements or abnormal postures.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Dystonia</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1528,12 +1815,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000601">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000243"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to the complex psychophysiological experience of an individual&apos;s state of mind as interacting with biochemical (internal) and environmental (external) influences.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to the complex psychophysiological experience of an individual&apos;s state of mind as interacting with biochemical (internal) and environmental (external) influences.</obo:IAO_0000115>
         <dc:date>2011-04-14T03:07:16Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>emotional behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000601"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to the complex psychophysiological experience of an individual&apos;s state of mind as interacting with biochemical (internal) and environmental (external) influences.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1557,13 +1850,19 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000603">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000266"/>
-        <obo:IAO_0000115>&quot;A belief that is either mistaken or not substantiated that is held with vehemence.&quot; [wikipedia:Delusion]</obo:IAO_0000115>
+        <obo:IAO_0000115>A belief that is either mistaken or not substantiated that is held with vehemence.</obo:IAO_0000115>
         <dc:date>2011-04-14T03:20:48Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>HP:0000746</oboInOwl:xref>
         <rdfs:label>delusion</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000603"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A belief that is either mistaken or not substantiated that is held with vehemence.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Delusion</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1597,7 +1896,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000606">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000266"/>
-        <obo:IAO_0000115>&quot;Loss of information already encoded and stored in an individual&apos;s long term memory.&quot; [wikipedia:Forgetting]</obo:IAO_0000115>
+        <obo:IAO_0000115>Loss of information already encoded and stored in an individual&apos;s long term memory.</obo:IAO_0000115>
         <dc:date>2011-04-14T03:42:46Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>pathological forgetting</oboInOwl:hasExactSynonym>
@@ -1606,6 +1905,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:xref>HP:0000747</oboInOwl:xref>
         <rdfs:label>forgetfulness</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000606"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Loss of information already encoded and stored in an individual&apos;s long term memory.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Forgetting</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1613,12 +1918,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000607">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
-        <obo:IAO_0000115>&quot;Behaviour related to cognitive processes.&quot; [NBO:JH]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behaviour related to cognitive processes.</obo:IAO_0000115>
         <dc:date>2011-04-14T03:51:13Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>cognitive behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000607"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behaviour related to cognitive processes.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:JH</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1626,13 +1937,19 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000608">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000308"/>
-        <obo:IAO_0000115>&quot;Perception in the absence of a stimulus.&quot; [wikipedia:Hallucination]</obo:IAO_0000115>
+        <obo:IAO_0000115>Perception in the absence of a stimulus.</obo:IAO_0000115>
         <dc:date>2011-04-14T03:52:31Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>HP:0000738</oboInOwl:xref>
         <rdfs:label>hallucination</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000608"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Perception in the absence of a stimulus.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Hallucination</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1640,7 +1957,7 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000612">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000011"/>
-        <obo:IAO_0000115>&quot;A social behavior related to the activity of conveying information.&quot; [wikipedia:Communication]</obo:IAO_0000115>
+        <obo:IAO_0000115>A social behavior related to the activity of conveying information.</obo:IAO_0000115>
         <dc:date>2011-04-14T04:39:42Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym>communicating</oboInOwl:hasExactSynonym>
@@ -1648,6 +1965,12 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>communication behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000612"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A social behavior related to the activity of conveying information.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Communication</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1695,12 +2018,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000620">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000003"/>
-        <obo:IAO_0000115>&quot;An emotional behavior that arises from the perceived resistance to the fulfillment of individual will.&quot; [wikipedia:Frustration]</obo:IAO_0000115>
+        <obo:IAO_0000115>An emotional behavior that arises from the perceived resistance to the fulfillment of individual will.</obo:IAO_0000115>
         <dc:date>2011-04-14T05:00:59Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>frustration behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000620"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An emotional behavior that arises from the perceived resistance to the fulfillment of individual will.</owl:annotatedTarget>
+        <oboInOwl:source>wikipedia:Frustration</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1722,13 +2051,19 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000623">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000567"/>
-        <obo:IAO_0000115>&quot;Stereotypic behavior characterised by a tendency to repeat vocalizations.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Stereotypic behavior characterised by a tendency to repeat vocalizations.</obo:IAO_0000115>
         <dc:date>2011-04-14T05:20:29Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:xref>HP:0010529</oboInOwl:xref>
         <rdfs:label>echolalia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000623"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Stereotypic behavior characterised by a tendency to repeat vocalizations.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1736,12 +2071,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000643">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000568"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to movements that occur independent of planning.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to movements that occur independent of planning.</obo:IAO_0000115>
         <dc:date>2011-05-27T11:56:52Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>involuntary movement behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000643"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to movements that occur independent of planning.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1749,12 +2090,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000644">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000568"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to movements executed with intent.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to movements executed with intent.</obo:IAO_0000115>
         <dc:date>2011-05-27T11:57:12Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>voluntary movement behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000644"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to movements executed with intent.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1762,12 +2109,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000655">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000266"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related any of the five senses -- vision, touch, smell, taste, and hearing.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related any of the five senses -- vision, touch, smell, taste, and hearing.</obo:IAO_0000115>
         <dc:date>2011-05-27T03:06:17Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>sensation behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000655"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related any of the five senses -- vision, touch, smell, taste, and hearing.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1775,12 +2128,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000656">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000655"/>
-        <obo:IAO_0000115>&quot;A phenotype manifested by a behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype manifested by a behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.</obo:IAO_0000115>
         <dc:date>2011-05-27T03:20:39Z</dc:date>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>somatic sensation related behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000656"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotype manifested by a behavior related to the sensations arising from the skin and from the muscles, tendons, and joints.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1813,12 +2172,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000754">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000419"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000474"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behavior related to the stage in the circadian sleep cycle during which dreams occur and the body undergoes marked changes including rapid eye movement, loss of reflexes, and increased pulse rate and brain activity.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behavior related to the stage in the circadian sleep cycle during which dreams occur and the body undergoes marked changes including rapid eye movement, loss of reflexes, and increased pulse rate and brain activity.</obo:IAO_0000115>
         <dc:date>2012-03-19T11:08:01Z</dc:date>
         <oboInOwl:created_by>gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>rapid eye movement sleep phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000754"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behavior related to the stage in the circadian sleep cycle during which dreams occur and the body undergoes marked changes including rapid eye movement, loss of reflexes, and increased pulse rate and brain activity.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1826,12 +2191,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000765">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000266"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behaviour related to the acquisition and processing of information and/or the storage and retrieval of this information over time.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behaviour related to the acquisition and processing of information and/or the storage and retrieval of this information over time.</obo:IAO_0000115>
         <dc:date>2012-03-19T02:33:56Z</dc:date>
         <oboInOwl:created_by>gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>learning and/or memory behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000765"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behaviour related to the acquisition and processing of information and/or the storage and retrieval of this information over time.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1839,12 +2210,18 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0000767">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000765"/>
-        <obo:IAO_0000115>&quot;Observable characteristic of behaviour related to the ability of an organism&apos;s ability to store, retain, and recall information and experiences.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Observable characteristic of behaviour related to the ability of an organism&apos;s ability to store, retain, and recall information and experiences.</obo:IAO_0000115>
         <dc:date>2012-03-19T02:34:26Z</dc:date>
         <oboInOwl:created_by>gkoutos</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>behavior_ontology</oboInOwl:hasOBONamespace>
         <rdfs:label>memory behavior phenotype</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0000767"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Observable characteristic of behaviour related to the ability of an organism&apos;s ability to store, retain, and recall information and experiences.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1918,11 +2295,17 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0001845">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000313"/>
-        <obo:IAO_0000115>&quot;Behavior related to the intake of substances.&quot; [NBOC:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Behavior related to the intake of substances.</obo:IAO_0000115>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:hasBroadSynonym>ingest</oboInOwl:hasBroadSynonym>
         <rdfs:label xml:lang="en">consumption behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0001845"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Behavior related to the intake of substances.</owl:annotatedTarget>
+        <oboInOwl:source>NBOC:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1936,10 +2319,16 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0001786"/>
-        <obo:IAO_0000115>&quot;Any process that modulates the frequency, rate or extent of consumption behavior, the specific actions or reactions of an organism in response to external or internal stimuli.&quot; [NBOC:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Any process that modulates the frequency, rate or extent of consumption behavior, the specific actions or reactions of an organism in response to external or internal stimuli.</obo:IAO_0000115>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <rdfs:label xml:lang="en">regulation of consumption behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0002169"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Any process that modulates the frequency, rate or extent of consumption behavior, the specific actions or reactions of an organism in response to external or internal stimuli.</owl:annotatedTarget>
+        <oboInOwl:source>NBOC:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1960,10 +2349,16 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0002169"/>
-        <obo:IAO_0000115>&quot;Any process that modulates the frequency, rate or extent of consumption of food or liquid&quot; [NBOC:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>Any process that modulates the frequency, rate or extent of consumption of food or liquid</obo:IAO_0000115>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <rdfs:label xml:lang="en">regulation of feeding behavior</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0002436"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Any process that modulates the frequency, rate or extent of consumption of food or liquid</owl:annotatedTarget>
+        <oboInOwl:source>NBOC:GVG</oboInOwl:source>
+    </owl:Axiom>
     
 
 
@@ -1971,14 +2366,20 @@ owl:qualifier some &apos;temporally extended&apos;)</oboInOwl:note>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NBO_0002519">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NBO_0000993"/>
-        <obo:IAO_0000115>&quot;A pathological drinking behavior characterised by a lack of desire to drink.&quot; [NBO:GVG]</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathological drinking behavior characterised by a lack of desire to drink.</obo:IAO_0000115>
         <oboInOwl:created_by>George Gkoutos</oboInOwl:created_by>
         <oboInOwl:xref>MP:0001428</oboInOwl:xref>
         <rdfs:label xml:lang="en">adipsia</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NBO_0002519"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathological drinking behavior characterised by a lack of desire to drink.</owl:annotatedTarget>
+        <oboInOwl:source>NBO:GVG</oboInOwl:source>
+    </owl:Axiom>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
 
