@@ -1,9 +1,11 @@
 pattern_name: abnormallyDecreasedRateOfBehavior
 pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedRateOfBehavior.yaml
-description: "Behavior occurs with a lower frequency (less often) than usual (per unit of time)."
+description: "Behavior occurs with a lower frequency (less often) or more slowly than usual (less behavior per unit of time)."
 
 contributors: 
   - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-1373-1705
   - https://orcid.org/0000-0001-5208-3432
   
 classes:
@@ -23,12 +25,12 @@ vars:
   behavior_process: "'behavior process'"
  
 name:
-  text: "abnormally impaired %s"
+  text: "abnormally decreased rate of %s"
   vars:
    - behavior_process
 
 def:
-  text: "Impaired or decreased %s."
+  text: "Decrease in rate (amount or occurrence per unit of time) of %s."
   vars:
     - behavior_process
 

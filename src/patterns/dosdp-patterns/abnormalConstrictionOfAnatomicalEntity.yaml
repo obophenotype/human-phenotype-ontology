@@ -1,17 +1,32 @@
+---
 pattern_name: abnormalConstrictionOfAnatomicalEntity
+
 pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalConstrictionOfAnatomicalEntity.yaml
-description: "An anatomical entity that is being drawn together, compressed or squeezed physically, such as HP_0001650	Aortic valve stenosis."
+
+description: "An anatomical entity that is being drawn together, compressed or squeezed physically."
+
+# examples
+# http://purl.obolibrary.org/obo/HP_0001650      # Aortic valve stenosis
+# http://purl.obolibrary.org/obo/HP_0002043      # Esophageal stricture
+# http://purl.obolibrary.org/obo/MP_0003389      # constriction of pericardium
 
 contributors:
-- https://orcid.org/0000-0001-5208-3432
-
+  - https://orcid.org/0000-0001-5208-3432  # Nicole Vasilevsky
+  - https://orcid.org/0000-0001-6757-4744  # Arwa Ibrahim
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+  - https://orcid.org/0000-0002-4142-7153  # Sabrina Toro
+  - https://orcid.org/0000-0002-8361-2795  # James McLaughlin
+  
 classes:
   constricted: PATO:0001847
   abnormal: PATO:0000460
   anatomical entity: UBERON:0001062
 
 relations:
-  inheres_in: RO:0000052
+  characteristic_of_part_of: RO:0002314
   has_modifier: RO:0002573
   has_part: BFO:0000051
 
@@ -24,20 +39,25 @@ vars:
 name:
   text: "constricted %s"
   vars:
-  - anatomical_entity
+    - anatomical_entity
 
 annotations:
-- annotationProperty: exact_synonym
-  text: "Constriction of the %s"
-  vars:
-  - anatomical_entity
+  - annotationProperty: exact_synonym
+    text: "Constriction of the %s"
+    vars:
+      - anatomical_entity
 
 def:
   text: "An %s that is being drawn together, compressed or squeezed physically."
   vars:
-  - anatomical_entity
+    - anatomical_entity
 
 equivalentTo:
-  text: "'has_part' some ('constricted' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  text: "'has_part' some (
+    'constricted' and
+    ('characteristic_of_part_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
   vars:
-  - anatomical_entity
+    - anatomical_entity
+...

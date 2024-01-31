@@ -1,11 +1,12 @@
 pattern_name: abnormallyIncreasedRateOfBehavior
 pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedRateOfBehavior.yaml
-description: "Behavior occurs with a higher frequency (more often) than usual (per unit of time)"
+description: "Behavior occurs with a higher frequency (more often) or more quickly than usual (more behavior per unit of time)."
 
 contributors: 
   - https://orcid.org/0000-0001-9076-6015
   - https://orcid.org/0000-0002-3528-5267
   - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-1373-1705
 
 classes:
   increased rate: PATO:0000912
@@ -24,12 +25,12 @@ vars:
   behavior_process: "'behavior process'"
  
 name:
-  text: "abnormally enhanced %s"
+  text: "abnormally increased rate of %s"
   vars:
    - behavior_process
 
 def:
-  text: "Enhanced or improved %s."
+  text: "Increase in rate (amount or occurrence per unit of time) of %s."
   vars:
     - behavior_process
 

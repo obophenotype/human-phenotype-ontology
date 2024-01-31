@@ -1,17 +1,25 @@
 pattern_name: cystInLocation
 pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/cystInLocation.yaml
-description: "The presence of a cyst in an anatomical entity. For example, HP_0010604 'Cyst of the eyelid'."
+description: "The presence of a cyst in an anatomical entity. For example,
+  HP_0010604 'Cyst of the eyelid'."
 
 contributors:
-- https://orcid.org/0000-0001-5208-3432
-- https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432  # Nicole Vasilevsky
+  - https://orcid.org/0000-0002-3528-5267  # Sofia Robb
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+  - https://orcid.org/0000-0002-4142-7153  # Sabrina Toro
+  - https://orcid.org/0000-0001-7941-2961  # Leigh Carmody
+  - https://orcid.org/0000-0002-0736-9199  # Peter N Robinson
+
 classes:
   cystic: PATO:0001673
   abnormal: PATO:0000460
   anatomical entity: UBERON:0001062
 
 relations:
-  inheres_in: RO:0000052
+  characteristic_of_part_of: RO:0002314
   has_modifier: RO:0002573
   has_part: BFO:0000051
 
@@ -21,14 +29,18 @@ vars:
 name:
   text: "%s cyst"
   vars:
-  - anatomical_entity
+    - anatomical_entity
 
 def:
   text: "The presence of a cyst in the %s."
   vars:
-  - anatomical_entity
+    - anatomical_entity
 
 equivalentTo:
-  text: "'has_part' some ('cystic' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  text: "'has_part' some (
+    'cystic' and
+    ('characteristic_of_part_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
   vars:
-  - anatomical_entity
+    - anatomical_entity
