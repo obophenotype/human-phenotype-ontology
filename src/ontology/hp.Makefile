@@ -655,7 +655,9 @@ diff-kgcl: tmp/hp-released.db
 	-o reports/difference_kgcl.txt --output-type kgcl
 
 diff-yaml: tmp/hp-released.db
-	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db -o reports/difference_yaml.yaml
+	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
+	-o reports/difference_yaml.yaml --output-type yaml
 
 diff-md: tmp/hp-released.db
-	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db -o reports/difference_md.md
+	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
+	-o reports/difference_md.md --output-type md
