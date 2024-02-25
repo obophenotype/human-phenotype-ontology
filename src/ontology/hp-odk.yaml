@@ -4,6 +4,7 @@ github_org: obophenotype
 repo: human-phenotype-ontology
 report_fail_on: none
 use_dosdps: TRUE
+use_translations: TRUE
 dosdp_tools_options: "--obo-prefixes=true --restrict-axioms-to=logical"
 git_main_branch: master
 namespaces: 
@@ -13,7 +14,7 @@ release_artefacts:
   - base
   - simple-non-classified
   - full
-  - custom-hp-international
+  - international
 primary_release: simple-non-classified
 export_formats:
   - owl
@@ -82,6 +83,47 @@ pattern_pipelines_group:
   products:
     - id: full
       dosdp_tools_options: "--obo-prefixes=true"
+babelon_translation_group:
+  release_merged_translations: TRUE
+  products:
+    - id: hp-de
+      include_robot_template_synonyms: TRUE
+    - id: hp-nl
+      include_robot_template_synonyms: TRUE
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
+      mirror_synonyms_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv
+    - id: hp-fr
+      include_robot_template_synonyms: TRUE
+      maintenance: mirror
+      mirror_babelon_from: https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
+      mirror_synonyms_from: https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
+    - id: hp-cs
+      include_robot_template_synonyms: TRUE
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
+      mirror_synonyms_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv
+    - id: hp-tr
+      maintenance: mirror
+      mirror_synonyms_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv
+    - id: hp-zh
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
+    - id: hp-nna
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
+    - id: hp-tw
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
+    - id: hp-dtp
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
+    - id: hp-ja
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv
+    - id: hp-es
+      maintenance: mirror
+      mirror_babelon_from: https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv
 robot_report:
   release_reports: True
   fail_on : ERROR
