@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                0e9280810100d48211566feb14cbaef9dd2b6a6bbfcdc1b42d0a3a3dbd5ecfd5
+CONFIG_HASH=                1ed0efc634c5bb225b9201fb2ab9fa959cbbeb26ecc30ec87409a9caa5a57827
 
 
 # ----------------------------------------
@@ -61,10 +61,16 @@ PATTERN_TESTER=             dosdp validate -i
 DOSDPT=                     dosdp-tools
 PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
 
+TRANSLATIONSDIR=            ../translations
+BABELONPY=                  babelon
+TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/hp-de.babelon.owl  $(TRANSLATIONSDIR)/hp-de.synonyms.owl $(TRANSLATIONSDIR)/hp-nl.babelon.owl  $(TRANSLATIONSDIR)/hp-nl.synonyms.owl $(TRANSLATIONSDIR)/hp-fr.babelon.owl  $(TRANSLATIONSDIR)/hp-fr.synonyms.owl $(TRANSLATIONSDIR)/hp-cs.babelon.owl  $(TRANSLATIONSDIR)/hp-cs.synonyms.owl $(TRANSLATIONSDIR)/hp-tr.babelon.owl $(TRANSLATIONSDIR)/hp-zh.babelon.owl $(TRANSLATIONSDIR)/hp-nna.babelon.owl $(TRANSLATIONSDIR)/hp-tw.babelon.owl $(TRANSLATIONSDIR)/hp-dtp.babelon.owl $(TRANSLATIONSDIR)/hp-ja.babelon.owl $(TRANSLATIONSDIR)/hp-es.babelon.owl 
+TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/hp-de.babelon.tsv $(TRANSLATIONSDIR)/hp-nl.babelon.tsv $(TRANSLATIONSDIR)/hp-fr.babelon.tsv $(TRANSLATIONSDIR)/hp-cs.babelon.tsv $(TRANSLATIONSDIR)/hp-tr.babelon.tsv $(TRANSLATIONSDIR)/hp-zh.babelon.tsv $(TRANSLATIONSDIR)/hp-nna.babelon.tsv $(TRANSLATIONSDIR)/hp-tw.babelon.tsv $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv $(TRANSLATIONSDIR)/hp-ja.babelon.tsv $(TRANSLATIONSDIR)/hp-es.babelon.tsv 
+TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
+
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
-RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full hp-international )
+RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full $(ONT)-international )
 
 ifeq ($(ODK_DEBUG),yes)
 ODK_DEBUG_FILE = $(TMPDIR)/debug.log
@@ -265,6 +271,7 @@ ASSETS = \
   $(IMPORT_FILES) \
   $(MAIN_FILES) \
   $(PATTERN_RELEASE_FILES) \
+  $(TRANSLATION_FILES) \
   $(REPORT_FILES) \
   $(SUBSET_FILES) \
   $(MAPPING_FILES)
@@ -667,6 +674,96 @@ $(PATTERNDIR)/definitions.owl: $(DOSDP_OWL_FILES_DEFAULT)   $(DOSDP_OWL_FILES_FU
       --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
 
 
+# ----------------------------------------
+# Babelon Translation Files
+# ----------------------------------------
+
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-de.babelon.tsv:
+	test -f $@
+
+$(TRANSLATIONSDIR)/hp-nl.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+
+
+$(TRANSLATIONSDIR)/hp-fr.babelon.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv" -O $@
+
+
+$(TRANSLATIONSDIR)/hp-cs.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+
+
+$(TRANSLATIONSDIR)/hp-tr.babelon.tsv:
+	wget "None" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-tr.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-zh.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-zh.synonyms.tsv:
+	wget "None" -O $@
+
+$(TRANSLATIONSDIR)/hp-nna.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-nna.synonyms.tsv:
+	wget "None" -O $@
+
+$(TRANSLATIONSDIR)/hp-tw.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-tw.synonyms.tsv:
+	wget "None" -O $@
+
+$(TRANSLATIONSDIR)/hp-dtp.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-dtp.synonyms.tsv:
+	wget "None" -O $@
+
+$(TRANSLATIONSDIR)/hp-ja.babelon.tsv:
+	wget "https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-ja.synonyms.tsv:
+	wget "None" -O $@
+
+$(TRANSLATIONSDIR)/hp-es.babelon.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-es.synonyms.tsv:
+	wget "None" -O $@
+
+
+$(TRANSLATIONSDIR)/%.synonyms.owl: $(TRANSLATIONSDIR)/%.synonyms.tsv
+	$(ROBOT) template --template $< \
+		annotate \
+			--ontology-iri $(ONTBASE)/translations/$*.synonyms.owl \
+			-V $(ONTBASE)/releases/$(VERSION)/translations/$*.synonyms.owl \
+			--annotation owl:versionInfo $(VERSION) \
+		convert -f owl --output $@
+.PRECIOUS: $(TRANSLATIONSDIR)/%.synonyms.owl
+
+$(TRANSLATIONSDIR)/%.babelon.owl: $(TRANSLATIONSDIR)/%.babelon.tsv
+	grep -v NOT_TRANSLATED $< > $(TMPDIR)/$*.babelon.tsv || cp $< $(TMPDIR)/$*.babelon.tsv
+	$(BABELONPY) convert $(TMPDIR)/$*.babelon.tsv --output-format owl -o $@.tmp
+	$(ROBOT) merge -i $@.tmp \
+		annotate \
+			--ontology-iri $(ONTBASE)/translations/$*.babelon.owl \
+			-V $(ONTBASE)/releases/$(VERSION)/translations/$*.babelon.owl \
+			--annotation owl:versionInfo $(VERSION) \
+		convert -f owl --output $@
+	@rm $@.tmp
+.PRECIOUS: $(TRANSLATIONSDIR)/%.babelon.owl
+
+$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv: $(TRANSLATIONS_TSV)
+	$(BABELONPY) merge $^ -o $@
+
+$(TRANSLATIONSDIR)/%.babelon.json: $(TRANSLATIONSDIR)/%.babelon.tsv
+	babelon convert $< --output-format json -o $@
+
 
 # ----------------------------------------
 # Release artefacts: export formats
@@ -691,9 +788,9 @@ $(ONT)-full.json: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
-hp-international.obo: hp-international.owl
+$(ONT)-international.obo: $(ONT)-international.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-hp-international.json: hp-international.owl
+$(ONT)-international.json: $(ONT)-international.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
@@ -753,9 +850,11 @@ $(ONT)-simple-non-classified.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(SIMPLESEED
 		reduce -r ELK \
 		filter --select ontology --term-file $(SIMPLESEED) --trim false \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
-
-hp-international.owl:
-	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in hp.Makefile!" && false
+# international: A variant of the primary_release, but with multi-language support.
+$(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
 # ----------------------------------------
 # Debugging Tools
 # ----------------------------------------
