@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                1ed0efc634c5bb225b9201fb2ab9fa959cbbeb26ecc30ec87409a9caa5a57827
+CONFIG_HASH=                766a7268f76a956a4e67321133a9fa49dd2aca661dc6f119b1b2902718d2af06
 
 
 # ----------------------------------------
@@ -678,63 +678,77 @@ $(PATTERNDIR)/definitions.owl: $(DOSDP_OWL_FILES_DEFAULT)   $(DOSDP_OWL_FILES_FU
 # Babelon Translation Files
 # ----------------------------------------
 
+TRANSLATIONS_ADAPTER=pronto:$(ONT).obo
+TRANSLATIONS_ONTOLOGY=$(ONT).obo
+
+
 # This mappingset is manually curated, so we only check that the file actually exists.
 $(TRANSLATIONSDIR)/hp-de.babelon.tsv:
 	test -f $@
 
+$(TRANSLATIONSDIR)/hp-de.synonyms.tsv:
+	test -f $@
+TRANSLATE_PREDICATES=IAO:0000115 rdfs:label 
+
+.PHONY: translation-preprocess-hp-de
+translation-preprocess-hp-de: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
+	poetry run babelon -q prepare-translation $(TRANSLATIONSDIR)/hp-de.babelon.tsv \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code de \
+		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
+		--output-source-changed $(TRANSLATIONSDIR)/hp-de-changed.babelon.tsv  \
+		--output-not-translated $(TRANSLATIONSDIR)/hp-de-not-translated.babelon.tsv \
+		--include-not-translated false \
+		--update-translation-status false \
+		-o $(TRANSLATIONSDIR)/hp-de.babelon.tsv
 $(TRANSLATIONSDIR)/hp-nl.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-nl.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv" -O $@
 
 
 $(TRANSLATIONSDIR)/hp-fr.babelon.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv" -O $@
 
+$(TRANSLATIONSDIR)/hp-fr.synonyms.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-cs.babelon.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-cs.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-cs.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-cs.synonyms.tsv" -O $@
 
 
 $(TRANSLATIONSDIR)/hp-tr.babelon.tsv:
-	wget "None" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-tr.synonyms.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tr.babelon.tsv" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-zh.babelon.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-zh.synonyms.tsv:
-	wget "None" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-zh.babelon.tsv" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-nna.babelon.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-nna.synonyms.tsv:
-	wget "None" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-tw.babelon.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-tw.synonyms.tsv:
-	wget "None" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tw.babelon.tsv" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-dtp.synonyms.tsv:
-	wget "None" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-dtp.babelon.tsv" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-ja.babelon.tsv:
 	wget "https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-ja.synonyms.tsv:
-	wget "None" -O $@
+
 
 $(TRANSLATIONSDIR)/hp-es.babelon.tsv:
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.babelon.tsv" -O $@
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(TRANSLATIONSDIR)/hp-es.synonyms.tsv:
-	wget "None" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-es.babelon.tsv" -O $@
+
 
 
 $(TRANSLATIONSDIR)/%.synonyms.owl: $(TRANSLATIONSDIR)/%.synonyms.tsv
