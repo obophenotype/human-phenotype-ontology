@@ -62,9 +62,9 @@ DOSDPT=                     dosdp-tools
 PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
 
 TRANSLATIONSDIR=            ../translations
-BABELONPY=                  babelon
+BABELONPY=                  babelon -q
 TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/hp-de.babelon.owl  $(TRANSLATIONSDIR)/hp-de.synonyms.owl $(TRANSLATIONSDIR)/hp-nl.babelon.owl  $(TRANSLATIONSDIR)/hp-nl.synonyms.owl $(TRANSLATIONSDIR)/hp-fr.babelon.owl  $(TRANSLATIONSDIR)/hp-fr.synonyms.owl $(TRANSLATIONSDIR)/hp-cs.babelon.owl  $(TRANSLATIONSDIR)/hp-cs.synonyms.owl $(TRANSLATIONSDIR)/hp-tr.babelon.owl $(TRANSLATIONSDIR)/hp-zh.babelon.owl $(TRANSLATIONSDIR)/hp-nna.babelon.owl $(TRANSLATIONSDIR)/hp-tw.babelon.owl $(TRANSLATIONSDIR)/hp-dtp.babelon.owl $(TRANSLATIONSDIR)/hp-ja.babelon.owl $(TRANSLATIONSDIR)/hp-es.babelon.owl 
-TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/hp-de.babelon.tsv $(TRANSLATIONSDIR)/hp-nl.babelon.tsv $(TRANSLATIONSDIR)/hp-fr.babelon.tsv $(TRANSLATIONSDIR)/hp-cs.babelon.tsv $(TRANSLATIONSDIR)/hp-tr.babelon.tsv $(TRANSLATIONSDIR)/hp-zh.babelon.tsv $(TRANSLATIONSDIR)/hp-nna.babelon.tsv $(TRANSLATIONSDIR)/hp-tw.babelon.tsv $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv $(TRANSLATIONSDIR)/hp-ja.babelon.tsv $(TRANSLATIONSDIR)/hp-es.babelon.tsv 
+TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nl-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-fr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-zh-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nna-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tw-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-es-preprocessed.babelon.tsv 
 TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 
 
@@ -692,9 +692,9 @@ $(TRANSLATIONSDIR)/hp-de.synonyms.tsv:
 	test -f $@
 
 
-.PHONY: translation-preprocess-hp-de
-translation-preprocess-hp-de: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-de.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-de.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code de \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -702,7 +702,7 @@ translation-preprocess-hp-de: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-de-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-de.babelon.tsv
+		-o $@
 
 
 
@@ -713,9 +713,9 @@ $(TRANSLATIONSDIR)/hp-nl.synonyms.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nl.synonyms.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-nl
-translation-preprocess-hp-nl: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-nl.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-nl.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-nl-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-nl.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-nl.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code nl \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -723,7 +723,7 @@ translation-preprocess-hp-nl: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-nl.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-nl-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-nl.babelon.tsv
+		-o $@
 
 
 
@@ -734,9 +734,9 @@ $(TRANSLATIONSDIR)/hp-fr.synonyms.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-fr
-translation-preprocess-hp-fr: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-fr.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-fr.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-fr-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-fr.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-fr.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code fr \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -744,7 +744,7 @@ translation-preprocess-hp-fr: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-fr.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-fr-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-fr.babelon.tsv
+		-o $@
 
 
 
@@ -755,9 +755,9 @@ $(TRANSLATIONSDIR)/hp-cs.synonyms.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-cs.synonyms.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-cs
-translation-preprocess-hp-cs: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-cs.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-cs.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-cs.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-cs.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code cs \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -765,7 +765,7 @@ translation-preprocess-hp-cs: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-cs.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-cs-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-cs.babelon.tsv
+		-o $@
 
 
 
@@ -773,9 +773,9 @@ $(TRANSLATIONSDIR)/hp-tr.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tr.babelon.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-tr
-translation-preprocess-hp-tr: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tr.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-tr.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tr.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-tr.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code tr \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -783,7 +783,7 @@ translation-preprocess-hp-tr: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tr.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-tr-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-tr.babelon.tsv
+		-o $@
 
 
 
@@ -791,9 +791,9 @@ $(TRANSLATIONSDIR)/hp-zh.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-zh.babelon.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-zh
-translation-preprocess-hp-zh: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-zh.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-zh.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-zh-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-zh.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-zh.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code zh \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -801,7 +801,7 @@ translation-preprocess-hp-zh: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-zh.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-zh-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-zh.babelon.tsv
+		-o $@
 
 
 
@@ -809,9 +809,9 @@ $(TRANSLATIONSDIR)/hp-nna.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-nna
-translation-preprocess-hp-nna: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-nna.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-nna.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-nna-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-nna.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-nna.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code nna \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -819,7 +819,7 @@ translation-preprocess-hp-nna: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-nn
 		--output-not-translated $(TRANSLATIONSDIR)/hp-nna-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-nna.babelon.tsv
+		-o $@
 
 
 
@@ -827,9 +827,9 @@ $(TRANSLATIONSDIR)/hp-tw.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tw.babelon.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-tw
-translation-preprocess-hp-tw: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tw.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-tw.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-tw-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tw.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-tw.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code tw \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -837,7 +837,7 @@ translation-preprocess-hp-tw: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tw.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-tw-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-tw.babelon.tsv
+		-o $@
 
 
 
@@ -845,9 +845,9 @@ $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-dtp.babelon.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-dtp
-translation-preprocess-hp-dtp: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code dtp \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -855,7 +855,7 @@ translation-preprocess-hp-dtp: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-dt
 		--output-not-translated $(TRANSLATIONSDIR)/hp-dtp-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-dtp.babelon.tsv
+		-o $@
 
 
 
@@ -863,9 +863,9 @@ $(TRANSLATIONSDIR)/hp-ja.babelon.tsv:
 	wget "https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-ja
-translation-preprocess-hp-ja: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-ja.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-ja.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-ja.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-ja.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code ja \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -873,7 +873,7 @@ translation-preprocess-hp-ja: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-ja.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-ja-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-ja.babelon.tsv
+		-o $@
 
 
 
@@ -881,9 +881,9 @@ $(TRANSLATIONSDIR)/hp-es.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-es.babelon.tsv" -O $@
 
 
-.PHONY: translation-preprocess-hp-es
-translation-preprocess-hp-es: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-es.babelon.tsv
-	$(BABELONPY) -q prepare-translation $(TRANSLATIONSDIR)/hp-es.babelon.tsv \
+
+$(TRANSLATIONSDIR)/hp-es-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-es.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-es.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code es \
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
@@ -891,7 +891,7 @@ translation-preprocess-hp-es: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-es.
 		--output-not-translated $(TRANSLATIONSDIR)/hp-es-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status false \
-		-o $(TRANSLATIONSDIR)/hp-es.babelon.tsv
+		-o $@
 
 
 
@@ -904,8 +904,7 @@ $(TRANSLATIONSDIR)/%.synonyms.owl: $(TRANSLATIONSDIR)/%.synonyms.tsv
 		convert -f owl --output $@
 .PRECIOUS: $(TRANSLATIONSDIR)/%.synonyms.owl
 
-$(TRANSLATIONSDIR)/%.babelon.owl: $(TRANSLATIONSDIR)/%.babelon.tsv
-	grep -v NOT_TRANSLATED $< > $(TMPDIR)/$*.babelon.tsv || cp $< $(TMPDIR)/$*.babelon.tsv
+$(TRANSLATIONSDIR)/%.babelon.owl: $(TRANSLATIONSDIR)/%-preprocessed.babelon.tsv
 	$(BABELONPY) convert $(TMPDIR)/$*.babelon.tsv --output-format owl -o $@.tmp
 	$(ROBOT) merge -i $@.tmp \
 		annotate \
@@ -920,7 +919,7 @@ $(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv: $(TRANSLATIONS_TSV)
 	$(BABELONPY) merge $^ -o $@
 
 $(TRANSLATIONSDIR)/%.babelon.json: $(TRANSLATIONSDIR)/%.babelon.tsv
-	babelon convert $< --output-format json -o $@
+	$(BABELONPY) convert $< --output-format json -o $@
 
 
 # ----------------------------------------
