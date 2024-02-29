@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                8eeeca0cc015963d8de1ed36b757c8d1b8a3d53dc633d4a021c1a29fd7a49636
+CONFIG_HASH=                231b435ae1ae6747442e580d48665534e435a8a2c7420c311b70ab7291556e80
 
 
 # ----------------------------------------
@@ -693,7 +693,6 @@ $(TRANSLATIONSDIR)/hp-de.synonyms.tsv:
 
 
 $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
-	@if [ -z "$(OPENAI_API_KEY)" ]; then echo "OPENAI_API_KEY must be set as as part of the make command, e.g. sh run.sh make OPENAI_API_KEY=\"sk-123\" my_command" && exit 1; fi
 	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-de.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code de \
@@ -703,11 +702,6 @@ $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--include-not-translated false \
 		--update-translation-status false \
 		-o $@
-	echo "Warning: By default, the toolkit employs LLM-mediated translations using the OpenAI API. This default may change at any time"
-	echo "Warning: Never store API keys or other secrets in Makefiles or scripts you have in version control."
-	export OPENAI_API_KEY="$(OPENAI_API_KEY)" &&\
-	$(BABELONPY) translate $(TRANSLATIONSDIR)/hp-de-not-translated.babelon.tsv -o $(TRANSLATIONSDIR)/hp-de-translated.babelon.tsv
-	$(BABELONPY) merge $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-de-translated.babelon.tsv -o $@
 
 
 

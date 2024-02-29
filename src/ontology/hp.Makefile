@@ -526,8 +526,8 @@ help:
 ### Translations, Internationalisation ####
 ###########################################
 
-hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl $(TRANSLATIONSDIR)/hp-fr.synonyms.owl hp.owl
-	robot merge -i $(TRANSLATIONSDIR)/hp-fr.babelon.owl -i translations/hp-fr.synonyms.owl -i hp.owl \
+hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl hp.owl
+	robot merge -i $(TRANSLATIONSDIR)/hp-fr.babelon.owl -i hp.owl \
 	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
 	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
 	query --update ../sparql/rm-original-translation.ru \
