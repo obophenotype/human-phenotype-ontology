@@ -85,9 +85,14 @@ pattern_pipelines_group:
       dosdp_tools_options: "--obo-prefixes=true"
 babelon_translation_group:
   release_merged_translations: TRUE
+  translate_ontology: hp.obo
+  oak_adapter: pronto:hp.obo
+  predicates:
+    - rdfs:label
   products:
     - id: hp-de
       include_robot_template_synonyms: TRUE
+      auto_translate: TRUE
       language: de
     - id: hp-nl
       include_robot_template_synonyms: TRUE
