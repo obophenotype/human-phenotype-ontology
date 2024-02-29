@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                766a7268f76a956a4e67321133a9fa49dd2aca661dc6f119b1b2902718d2af06
+CONFIG_HASH=                23e5b58d1cefbd650fc57864182466a7c3bbdec0e45229687bec7f0bf438ec2c
 
 
 # ----------------------------------------
@@ -73,7 +73,7 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full $(ONT)-international )
 
 ifeq ($(ODK_DEBUG),yes)
-ODK_DEBUG_FILE = $(TMPDIR)/debug.log
+ODK_DEBUG_FILE = debug.log
 SHELL = $(SCRIPTSDIR)/run-command.sh
 endif
 
@@ -387,7 +387,6 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_term
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/SO_*>" remove  --select "<http://purl.obolibrary.org/obo/cl#abbreviation*>" remove  --select "<http://purl.obolibrary.org/obo/cl#added_for_HCA*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#COMPARATIVE_PREFERRED*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#DEPRECATED*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#DUBIOUS*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#HOMOLOGY*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#HUMAN_PREFERRED*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#INCONSISTENT*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#LATIN*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#MISSPELLING*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#NON_AMNIOTE*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#NON_MAMMAL*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#PENDING_REVIEW*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#PLURAL*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#SENSU*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#SYSTEMATIC*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
-		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		$(ANNOTATE_CONVERT_FILE); fi
 
@@ -678,9 +677,9 @@ $(PATTERNDIR)/definitions.owl: $(DOSDP_OWL_FILES_DEFAULT)   $(DOSDP_OWL_FILES_FU
 # Babelon Translation Files
 # ----------------------------------------
 
-TRANSLATIONS_ADAPTER=pronto:$(ONT).obo
-TRANSLATIONS_ONTOLOGY=$(ONT).obo
-TRANSLATE_PREDICATES=IAO:0000115 rdfs:label 
+TRANSLATIONS_ADAPTER=pronto:hp.obo
+TRANSLATIONS_ONTOLOGY=hp.obo
+TRANSLATE_PREDICATES=rdfs:label 
 
 
 
@@ -694,6 +693,7 @@ $(TRANSLATIONSDIR)/hp-de.synonyms.tsv:
 
 
 $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
+	@if [ -z "$(OPENAI_API_KEY)" ]; then echo "OPENAI_API_KEY must be set as as part of the make command, e.g. sh run.sh make OPENAI_API_KEY=\"sk-123\" my_command" && exit 1; fi
 	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-de.babelon.tsv \
 		--oak-adapter $(TRANSLATIONS_ADAPTER) \
 		--language-code de \
@@ -703,6 +703,11 @@ $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--include-not-translated false \
 		--update-translation-status false \
 		-o $@
+	echo "Warning: By default, the toolkit employs LLM-mediated translations using the OpenAI API. This default may change at any time"
+	echo "Warning: Never store API keys or other secrets in Makefiles or scripts you have in version control."
+	export OPENAI_API_KEY="$(OPENAI_API_KEY)" &&\
+	$(BABELONPY) translate $(TRANSLATIONSDIR)/hp-de-not-translated.babelon.tsv -o $(TRANSLATIONSDIR)/hp-de-translated.babelon.tsv
+	$(BABELONPY) merge $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-de-translated.babelon.tsv -o $@
 
 
 
@@ -1067,14 +1072,17 @@ update_repo:
 update_docs:
 	mkdocs gh-deploy --config-file ../../mkdocs.yaml
 
-# Note to future generations: prepending ./ is a safety measure to ensure that 
-# the environment does not malicously set `CLEANFILES` to `\`.
+# Note to future generations: computing the real path relative to the
+# current directory is a way to ensure we only clean up directories that
+# are located below the current directory, regardless of the contents of
+# the *DIR variables.
 .PHONY: clean
 clean:
 	$(MAKE) pattern_clean
-	[ -n "$(MIRRORDIR)" ] && [ $(MIRRORDIR) != "." ] && [ $(MIRRORDIR) != "/" ] && [ $(MIRRORDIR) != ".." ] && [ -d ./$(MIRRORDIR) ] && rm -rf ./$(MIRRORDIR)/*
-	[ -n "$(TMPDIR)" ] && [ $(TMPDIR) != "." ] && [ $(TMPDIR) != "/" ] && [ $(TMPDIR) != ".." ] && [ -d ./$(TMPDIR) ] && rm -rf ./$(TMPDIR)/*
-	[ -n "$(UPDATEREPODIR)" ] && [ $(UPDATEREPODIR) != "." ] && [ $(UPDATEREPODIR) != "/" ] && [ $(UPDATEREPODIR) != ".." ] && [ -d ./$(UPDATEREPODIR) ] && rm -rf ./$(UPDATEREPODIR)/*
+	for dir in $(MIRRORDIR) $(TMPDIR) $(UPDATEREPODIR) ; do      \
+		reldir=$$(realpath --relative-to=$$(pwd) $$dir) ;    \
+		case $$reldir in .*|"") ;; *) rm -rf $$reldir/* ;; esac \
+	done
 	rm -f $(CLEANFILES)
 
 .PHONY: help
