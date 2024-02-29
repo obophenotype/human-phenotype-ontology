@@ -522,19 +522,26 @@ help:
 	echo "Migrating EQs from MP to HP:"
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
-translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
-	robot merge -i translations/hp-profile-$*.owl -i translations/hp-$*.synonyms.owl -i hp.owl \
+hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl $(TRANSLATIONSDIR)/hp-fr.synonyms.owl hp.owl
+	robot merge -i $(TRANSLATIONSDIR)/hp-fr.babelon.owl -i translations/hp-fr.synonyms.owl -i hp.owl \
 	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
 	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
 	query --update ../sparql/rm-original-translation.ru \
 	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
-.PRECIOUS: translations/hp-%.owl
+.PRECIOUS: hp-fr.owl
+
+diff:
+	#wget "http://purl.obolibrary.org/obo/hp/hp-international.owl" -O tmp/int.owl
+	robot diff --left tmp/int.owl --right hp-international.owl -o intdiff.txt
 
 .PHONY: prepare_translations
 prepare_translations:
 	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(ONT)-international.owl \
-		$(TRANSLATIONDIR)/hp-all.babelon.tsv $(TRANSLATIONDIR)/hp-all.babelon.json
+		$(TRANSLATIONSDIR)/hp-all.babelon.tsv $(TRANSLATIONSDIR)/hp-all.babelon.json
+
+tmp/hp-voice.obo: #hp.obo
+	$(ROBOT) filter -i hp.obo --term HP:0001608 --select "self descendants annotations" -o $@
 
 
 #################
