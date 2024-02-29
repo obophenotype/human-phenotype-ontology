@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                23e5b58d1cefbd650fc57864182466a7c3bbdec0e45229687bec7f0bf438ec2c
+CONFIG_HASH=                8eeeca0cc015963d8de1ed36b757c8d1b8a3d53dc633d4a021c1a29fd7a49636
 
 
 # ----------------------------------------
@@ -70,7 +70,7 @@ TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
-RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full $(ONT)-international )
+RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-simple-non-classified $(ONT)-full $(ONT)-international hp-fr )
 
 ifeq ($(ODK_DEBUG),yes)
 ODK_DEBUG_FILE = debug.log
@@ -956,6 +956,12 @@ $(ONT)-international.json: $(ONT)-international.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
+hp-fr.obo: hp-fr.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+hp-fr.json: hp-fr.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
@@ -1017,6 +1023,9 @@ $(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
+
+hp-fr.owl:
+	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in hp.Makefile!" && false
 # ----------------------------------------
 # Debugging Tools
 # ----------------------------------------
