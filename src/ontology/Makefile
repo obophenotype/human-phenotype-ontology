@@ -107,9 +107,8 @@ reason_test: $(EDIT_PREPROCESSED)
 
 .PHONY: odkversion
 odkversion:
-	echo "ODK Makefile version: $(ODK_VERSION_MAKEFILE) (this is the version of the ODK with which this Makefile was generated, \
-        not the version of the ODK you are running)" &&\
-	echo "ROBOT version (ODK): " && $(ROBOT) --version
+	@echo "ODK Makefile $(ODK_VERSION_MAKEFILE)"
+	@odk-info --tools
 .PHONY: config_check
 config_check:
 	@if [ "$$(sha256sum $(ONT)-odk.yaml | cut -c1-64)" = "$(CONFIG_HASH)" ]; then \
@@ -387,6 +386,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_term
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/SO_*>" remove  --select "<http://purl.obolibrary.org/obo/cl#abbreviation*>" remove  --select "<http://purl.obolibrary.org/obo/cl#added_for_HCA*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#COMPARATIVE_PREFERRED*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#DEPRECATED*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#DUBIOUS*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#HOMOLOGY*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#HUMAN_PREFERRED*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#INCONSISTENT*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#LATIN*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#MISSPELLING*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#NON_AMNIOTE*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#NON_MAMMAL*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#PENDING_REVIEW*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#PLURAL*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#SENSU*>" remove  --select "<http://purl.obolibrary.org/obo/uberon/core#SYSTEMATIC*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select annotation-properties \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		$(ANNOTATE_CONVERT_FILE); fi
 
@@ -700,7 +700,8 @@ $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-de-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-de-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -721,7 +722,8 @@ $(TRANSLATIONSDIR)/hp-nl-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-nl-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-nl-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -742,7 +744,8 @@ $(TRANSLATIONSDIR)/hp-fr-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-fr-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-fr-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -763,7 +766,8 @@ $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-cs-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-cs-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -781,7 +785,8 @@ $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-tr-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-tr-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -799,7 +804,8 @@ $(TRANSLATIONSDIR)/hp-zh-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-zh-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-zh-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -817,7 +823,8 @@ $(TRANSLATIONSDIR)/hp-nna-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(T
 		--output-source-changed $(TRANSLATIONSDIR)/hp-nna-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-nna-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -835,7 +842,8 @@ $(TRANSLATIONSDIR)/hp-tw-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-tw-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-tw-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -853,7 +861,8 @@ $(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(T
 		--output-source-changed $(TRANSLATIONSDIR)/hp-dtp-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-dtp-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -871,7 +880,8 @@ $(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-ja-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-ja-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -889,7 +899,8 @@ $(TRANSLATIONSDIR)/hp-es-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--output-source-changed $(TRANSLATIONSDIR)/hp-es-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-es-not-translated.babelon.tsv \
 		--include-not-translated false \
-		--update-translation-status false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
 		-o $@
 
 
@@ -904,7 +915,7 @@ $(TRANSLATIONSDIR)/%.synonyms.owl: $(TRANSLATIONSDIR)/%.synonyms.tsv
 .PRECIOUS: $(TRANSLATIONSDIR)/%.synonyms.owl
 
 $(TRANSLATIONSDIR)/%.babelon.owl: $(TRANSLATIONSDIR)/%-preprocessed.babelon.tsv
-	$(BABELONPY) convert $(TMPDIR)/$*.babelon.tsv --output-format owl -o $@.tmp
+	$(BABELONPY) convert $< --output-format owl -o $@.tmp
 	$(ROBOT) merge -i $@.tmp \
 		annotate \
 			--ontology-iri $(ONTBASE)/translations/$*.babelon.owl \

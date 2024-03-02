@@ -528,8 +528,6 @@ help:
 
 hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl hp.owl
 	robot merge -i $(TRANSLATIONSDIR)/hp-fr.babelon.owl -i hp.owl \
-	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-fr.tsv \
-	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
 	query --update ../sparql/rm-original-translation.ru \
 	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
