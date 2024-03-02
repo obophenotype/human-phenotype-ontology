@@ -526,6 +526,7 @@ help:
 ### Translations, Internationalisation ####
 ###########################################
 
+# TODO: factor out into babelon toolkit
 hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl hp.owl
 	robot merge -i $(TRANSLATIONSDIR)/hp-fr.babelon.owl -i hp.owl \
 	query --update ../sparql/rm-original-translation.ru \
