@@ -515,7 +515,7 @@ MERGE_MIRRORS = true
 
 ifeq ($(strip $(MERGE_MIRRORS)),true)
 $(MIRRORDIR)/merged.owl: $(ALL_MIRRORS)
-	$(ROBOT) merge $(patsubst %, -i %, $^)  remove --axioms equivalent --preserve-structure false -o $@
+	$(ROBOT) merge $(patsubst %, -i %, $^)  -o $@
 .PRECIOUS: $(MIRRORDIR)/merged.owl
 endif
 
