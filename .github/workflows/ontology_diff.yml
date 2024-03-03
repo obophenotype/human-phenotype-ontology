@@ -55,7 +55,7 @@ jobs:
       with:
         result-encoding: string
         script: |
-          const content = process.env.CONTENT;
+          const content = Buffer.from(process.env.CONTENT, 'base64').toString('utf-8');
           const { owner, repo } = context.repo;
           const { number } = context.issue;
           const existingComments = await github.rest.issues.listComments({
