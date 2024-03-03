@@ -30,25 +30,27 @@ jobs:
       id: check-file
       run: |
         if [ -f reports/difference_md.md ]; then
-          echo "::set-output name=exists::true"
+          echo "DIFF_MD_EXISTS=true" >> $GITHUB_ENV
         else
-          echo "::set-output name=exists::false"
+          echo "DIFF_MD_EXISTS=false" >> $GITHUB_ENV
         fi
 
     # Read markdown file content only if it exists
     - name: Read markdown file content
-      if: steps.check-file.outputs.exists == 'true'
-      id: read-file
-      run: echo "::set-output name=content::$(cat reports/difference_md.md)"
+      if: env.DIFF_MD_EXISTS == 'true'
+      run: |
+        echo "CONTENT<<EOF" >> $GITHUB_ENV
+        cat reports/difference_md.md >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
 
     # Post or update comment on pull request only if markdown file exists
     - name: Post or update comment on pull request
-      if: steps.check-file.outputs.exists == 'true'
+      if: env.DIFF_MD_EXISTS == 'true'
       uses: actions/github-script@v4
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const content = `${process.env.INPUT_CONTENT}`;
+          const content = process.env.CONTENT;
           const { owner, repo } = context.repo;
           const { number } = context.issue;
           const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
