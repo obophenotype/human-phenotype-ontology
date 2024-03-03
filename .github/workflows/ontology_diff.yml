@@ -20,10 +20,10 @@ jobs:
     - name: Install oaklib
       run: pip install git+https://github.com/INCATools/ontology-access-kit.git@release-notes-emit
 
-    # - name: Run make diff-md
-    #   run: |
-    #     cd src/ontology
-    #     make diff-md
+    - name: Run make diff-md
+      run: |
+        cd src/ontology
+        make diff-md
 
     # Post or update comment on pull request if difference_md.md exists
     - name: Post or update comment on pull request
