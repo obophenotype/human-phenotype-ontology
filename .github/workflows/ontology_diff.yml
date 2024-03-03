@@ -6,14 +6,15 @@ on:
 
 jobs:
   post-comment:
+    # if: github.event.label.name == 'trigger-label'
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python 3.10
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -39,9 +40,16 @@ jobs:
     - name: Read markdown file content
       if: env.DIFF_MD_EXISTS == 'true'
       run: |
-        echo "CONTENT<<EOF" >> $GITHUB_ENV
-        cat src/ontology/reports/difference_md.md >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
+        CONTENT=$(cat src/ontology/reports/difference_md.md)
+        CONTENT="${CONTENT//'%'/'%25'}"
+        CONTENT="${CONTENT//$'\n'/'%0A'}"
+        CONTENT="${CONTENT//$'\r'/'%0D'}"
+        echo "CONTENT=${CONTENT}" >> $GITHUB_ENV
+    
+    - name: Debug content
+      if: env.DIFF_MD_EXISTS == 'true'
+      run: |
+        echo "$CONTENT"
 
     # Post or update comment on pull request only if markdown file exists
     - name: Post or update comment on pull request
