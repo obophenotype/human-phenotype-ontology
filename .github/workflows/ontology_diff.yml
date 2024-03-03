@@ -34,6 +34,8 @@ jobs:
           const path = 'src/ontology/reports/difference_md.md';
           if (fs.existsSync(path)) {
             const content = fs.readFileSync(path, 'utf8');
+            console.log("Content of the markdown file:");
+            console.log(content); // Debug print of the file content
             if (content) {
               const { owner, repo } = context.repo;
               const { number } = context.issue;
@@ -58,5 +60,9 @@ jobs:
                   body: content
                 });
               }
+            } else {
+              console.log("The markdown file is empty."); // Debug print if the file is empty
             }
+          } else {
+            console.log("The markdown file does not exist."); // Debug print if the file does not exist
           }
