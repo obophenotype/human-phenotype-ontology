@@ -644,7 +644,9 @@ tmp/hp-released.db:
 	wget http://purl.obolibrary.org/obo/hp.owl -O tmp/hp-released.owl && cp ../../hp-base.owl tmp/hp-base.owl
 	semsql make tmp/hp-base.db
 	semsql make $@
-	
+
+tmp/hp-released.obo:
+	wget http://purl.obolibrary.org/obo/hp.obo -O tmp/hp-released.obo && cp ../../hp.obo tmp/hp-base.obo
 
 diff-table: tmp/hp-released.db
 	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
@@ -658,6 +660,6 @@ diff-yaml: tmp/hp-released.db
 	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
 	-o reports/difference_yaml.yaml --output-type yaml
 
-diff-md: tmp/hp-released.db
-	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
+diff-md: tmp/hp-released.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo \
 	-o reports/difference_md.md --output-type md

@@ -1,0 +1,67 @@
+name: Post Markdown Comment on Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  post-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run make diff-md
+      run: |
+        cd src/ontology
+        make diff-md
+
+    # Check if reports/difference_md.md exists
+    - name: Check for difference_md.md
+      id: check-file
+      run: |
+        if [ -f reports/difference_md.md ]; then
+          echo "::set-output name=exists::true"
+        else
+          echo "::set-output name=exists::false"
+        fi
+
+    # Read markdown file content only if it exists
+    - name: Read markdown file content
+      if: steps.check-file.outputs.exists == 'true'
+      id: read-file
+      run: echo "::set-output name=content::$(cat reports/difference_md.md)"
+
+    # Post or update comment on pull request only if markdown file exists
+    - name: Post or update comment on pull request
+      if: steps.check-file.outputs.exists == 'true'
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const content = `${process.env.INPUT_CONTENT}`;
+          const { owner, repo } = context.repo;
+          const { number } = context.issue;
+          const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+          const existingComments = await octokit.issues.listComments({
+            owner,
+            repo,
+            issue_number: number
+          });
+          const existingComment = existingComments.data.find(comment => comment.user.login === 'github-actions[bot]');
+          if (existingComment) {
+            await octokit.issues.updateComment({
+              owner,
+              repo,
+              comment_id: existingComment.id,
+              body: content
+            });
+          } else {
+            await octokit.issues.createComment({
+              owner,
+              repo,
+              issue_number: number,
+              body: content
+            });
+          }
