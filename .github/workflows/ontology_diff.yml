@@ -38,7 +38,7 @@ jobs:
 
     # Read markdown file content only if it exists
     - name: Read markdown file content
-      if: env.DIFF_MD_EXISTS == 'true' && env.CONTENT != ''
+      if: env.DIFF_MD_EXISTS == 'true'
       run: |
         CONTENT=$(cat src/ontology/reports/difference_md.md)
         echo "CONTENT=${CONTENT}" >> $GITHUB_ENV
@@ -50,7 +50,7 @@ jobs:
 
     # Post or update comment on pull request only if markdown file exists
     - name: Post or update comment on pull request
-      if: env.DIFF_MD_EXISTS == 'true'
+      if: env.DIFF_MD_EXISTS == 'true' && env.CONTENT != ''
       uses: actions/github-script@v7
       with:
         result-encoding: string
