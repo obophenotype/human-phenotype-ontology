@@ -44,6 +44,7 @@ jobs:
         echo "CONTENT=${CONTENT}" >> $GITHUB_ENV
         echo "Content of the markdown file:"
         echo "$CONTENT"
+        echo $(cat src/ontology/reports/difference_md.md)
     
     - name: Debug content
       if: env.DIFF_MD_EXISTS == 'true'
