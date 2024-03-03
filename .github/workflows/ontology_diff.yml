@@ -38,7 +38,7 @@ jobs:
 
     # Read markdown file content only if it exists
     - name: Read markdown file content
-      if: env.DIFF_MD_EXISTS == 'true'
+      if: env.DIFF_MD_EXISTS == 'true' && env.CONTENT != ''
       run: |
         CONTENT=$(cat src/ontology/reports/difference_md.md)
         echo "CONTENT=${CONTENT}" >> $GITHUB_ENV
@@ -79,4 +79,3 @@ jobs:
               body: content
             });
           }
-
