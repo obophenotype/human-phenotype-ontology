@@ -40,7 +40,7 @@ jobs:
     - name: Read markdown file content
       if: env.DIFF_MD_EXISTS == 'true'
       run: |
-        CONTENT=$(printf '%s' "$(cat src/ontology/reports/difference_yaml.yaml)")
+        CONTENT=$(base64 -w 0 src/ontology/reports/difference_md.md)
         echo "CONTENT=${CONTENT}" >> $GITHUB_ENV
         echo "Content of the markdown file:"
         echo "$CONTENT"
