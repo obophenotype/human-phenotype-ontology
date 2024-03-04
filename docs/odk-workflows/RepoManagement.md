@@ -2,7 +2,7 @@
 
 ## Updating your ODK repository
 
-Your ODK repositories configuration is managed in `src/ontology/hp-odk.yaml`. Once you have made your changes, you can run the following to apply your changes to the repository:
+Your ODK repositories configuration is managed in `src/ontology/hp-odk.yaml`. The [ODK Project Configuration Schema](https://github.com/INCATools/ontology-development-kit/blob/master/docs/project-schema.md) defines all possible parameters that can be used in this config YAML. Once you have made your changes, you can run the following to apply your changes to the repository:
 
 
 ```
