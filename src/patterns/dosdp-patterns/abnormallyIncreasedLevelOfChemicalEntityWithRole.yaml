@@ -1,0 +1,39 @@
+pattern_name: abnormallyIncreasedLevelOfChemicalEntityWithRole
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedLevelOfChemicalEntityWithRole.yaml
+description: "An abnormally increased level of a chemical with a specific role, e.g. metabolite. For example, increased biopterin level"
+
+classes:
+  increased amount: PATO:0000470
+  abnormal: PATO:0000460
+  chemical entity: CHEBI:24431
+  role: CHEBI:50906
+
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  has_role: RO:0000087
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  role: "role"
+
+name:
+  text: "increased %s level"
+  vars:
+  - role
+
+def:
+  text: "An abnormally increased amount of %s."
+  vars:
+  - role
+
+equivalentTo:
+  text: "'has_part' some ('increased amount' and ('inheres_in' some ('chemical entity' and ('has_role' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - role
+contributors:
+- https://orcid.org/0000-0002-3528-5267

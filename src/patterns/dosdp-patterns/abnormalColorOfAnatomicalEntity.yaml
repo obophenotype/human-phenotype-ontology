@@ -1,0 +1,48 @@
+pattern_name: abnormalColorOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalColorOfAnatomicalEntity.yaml
+description: "Any unspecified abnormality of the color of an anatomical entity, such as HP_0012086 'Abnormal urinary color'. Abnormal pigmentation does not necessarily mean a change in color, nor does a change in color require that the root cause be due to a change in the pigment cells/granules. Pigment cells are specialized cell type and can contain different colored pigment granules. There are also differences in the process of pigmentation (such as pattern of cells or pattern of granules in those cells) as well as the dependent continuant that is the color."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  color: PATO:0000014
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormal %s color"
+  vars:
+   - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormality of %s color"
+    vars:
+     - anatomical_entity
+     
+  - annotationProperty: exact_synonym
+    text: "abnormal %s colour"
+    vars:
+     - anatomical_entity     
+
+def:
+  text: "Abnormal color of %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('color' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

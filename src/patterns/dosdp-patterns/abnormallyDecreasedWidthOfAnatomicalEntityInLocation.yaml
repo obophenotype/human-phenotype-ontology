@@ -1,0 +1,49 @@
+pattern_name: abnormallyDecreasedWidthOfAnatomicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedWidthOfAnatomicalEntityInLocation.yaml
+description: "Abnormal decrease in the width of an anatomical entity, e.g. decreased width of the tail"
+
+classes:
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  decreased width: PATO:0000599
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  location: "'independent continuant'"
+
+name:
+  text: "decreased width of the %s in %s"
+  vars:
+  - anatomical_entity
+  - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "skinny %s in %s"
+  vars:
+  - anatomical_entity
+  - location
+
+def:
+  text: "skinny or decreased width of the %s in %s."
+  vars:
+  - anatomical_entity
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('decreased width' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity
+  - location
+contributors:
+- https://orcid.org/0000-0002-3528-5267

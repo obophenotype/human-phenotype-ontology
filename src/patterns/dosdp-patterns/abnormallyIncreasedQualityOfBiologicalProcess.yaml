@@ -1,0 +1,37 @@
+pattern_name: abnormallyIncreasedQualityOfBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedQualityOfBiologicalProcess.yaml
+description: "Process that appears in some (unspecified) way strengthened or increased (more frequent, more strong)."
+
+contributors:
+  - https://orcid.org/0000-0001-7487-610X
+
+classes:
+  increased process quality: PATO:0002304
+  abnormal: PATO:0000460
+  biological process: GO:0008150
+
+relations: 
+  inheres_in: RO:0000052
+  qualifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  biological_process: "'biological process'"
+ 
+name:
+  text: "increased qualitatively %s"
+  vars:
+   - biological_process
+
+def:
+  text: "Increased qualitatively %s."
+  vars:
+    - biological_process
+
+equivalentTo:
+  text: "'has_part' some ('increased process quality' and ('inheres_in' some %s) and ('qualifier' some 'abnormal'))"
+  vars:
+    - biological_process

@@ -1,0 +1,36 @@
+pattern_name: abnormalDevelopmentOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalDevelopmentOfAnatomicalEntity.yaml
+description: "A phenotype in which an organism exhibits an abnormal development of some anatomical entity. For example, abnormal development of the heart."
+
+contributors:
+- https://orcid.org/0000-0001-9076-6015
+
+classes:
+  process quality: PATO:0001236
+  abnormal: PATO:0000460
+  developmental process: GO:0032502
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  results_in_developmental_progression_of: RO:0002295
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormal development of %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "An abnormal development of the %s."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('process quality' and ('inheres_in' some ('developmental process' and ('results_in_developmental_progression_of' some %s))) and  ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

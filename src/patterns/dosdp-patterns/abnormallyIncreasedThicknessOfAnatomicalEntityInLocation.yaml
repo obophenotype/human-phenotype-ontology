@@ -1,0 +1,51 @@
+pattern_name: abnormallyIncreasedThicknessOfAnatomicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedThicknessOfAnatomicalEntityInLocation.yaml
+description: "An abnormally thickened anatomical entity in a location, like an abnormally thick skin of the hand."
+
+contributors:
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  increased thickness: PATO:0000591
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  independent continuant: BFO:0000004
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  location: "'independent continuant'"
+
+name:
+  text: "increased thickness of the %s in %s"
+  vars:
+   - anatomical_entity
+   - location
+     
+annotations:
+  - annotationProperty: exact_synonym
+    text: "thickened %s in %s"
+    vars:
+     - anatomical_entity
+     - location
+
+def:
+  text: "An increase in the thickness of the %s in the %s."
+  vars:
+    - anatomical_entity
+    - location
+
+equivalentTo:
+  text: "'has_part' some ('increased thickness' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity
+    - location

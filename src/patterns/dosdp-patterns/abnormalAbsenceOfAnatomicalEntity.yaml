@@ -1,0 +1,47 @@
+pattern_name: abnormalAbsenceOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalAbsenceOfAnatomicalEntity.yaml
+description: ""
+
+contributors:
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0001-7941-2961
+  - https://orcid.org/0000-0003-4148-4606
+  
+classes:
+  absent: PATO:0000462
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "absent %s"
+  vars:
+   - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "missing %s"
+    vars:
+     - anatomical_entity
+
+def:
+  text: "Absence of %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('absent' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

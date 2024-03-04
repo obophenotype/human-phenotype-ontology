@@ -85,6 +85,10 @@ pattern_pipelines_group:
   products:
     - id: full
       dosdp_tools_options: "--obo-prefixes=true"
+  matches:
+    - id: matches
+      dosdp_tools_options: "--obo-prefixes=true --restrict-axioms-to=logical"
+      ontology: tmp/hp-edit-merged-reasoned.owl
 babelon_translation_group:
   release_merged_translations: TRUE
   translate_ontology: hp.obo

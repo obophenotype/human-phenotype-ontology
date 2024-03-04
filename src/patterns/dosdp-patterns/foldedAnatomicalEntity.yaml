@@ -1,0 +1,64 @@
+---
+pattern_name: foldedAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/foldedAnatomicalEntity.yaml
+
+description: "Use this phenotype pattern when an anatomical entity has
+  morphological abnormalities involving folding all or any part of it
+  over another connected part. Consider the related 'PATO:0001810
+  wrinkled' anatomical entity pattern where the abnormal anatomical
+  entity is marked by one or more creases in a normally smooth surface."
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/ZP_0011575  # caudal fin folded, abnormal
+#    - http://purl.obolibrary.org/obo/MP_0003736  # folded helix
+#    - http://purl.obolibrary.org/obo/HP_0008544  # Abnormally folded helix
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  folded: PATO:0001910
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "folded %s"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormally folded %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "A morphological anomaly that involves folding all or any part
+    of %s over another connected part."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'folded' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...
