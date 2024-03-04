@@ -1,68 +1,70 @@
 name: Post Markdown Comment on Pull Request
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+    workflow_dispatch:
+    pull_request:
+        types: [opened, synchronize]
 
 jobs:
-  post-comment:
-    runs-on: ubuntu-latest
+    post-comment:
+        runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
 
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+        - name: Set up Python 3.10
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.10'
 
-    - name: Install oaklib
-      run: pip install git+https://github.com/INCATools/ontology-access-kit.git@release-notes-emit
+        - name: Install oaklib
+          run: pip install git+https://github.com/INCATools/ontology-access-kit.git@release-notes-emit
 
-    - name: Run make diff-md
-      run: |
-        cd src/ontology
-        make diff-md
+        - name: Run make diff-md
+          run: |
+            cd src/ontology
+            make diff-md
 
-    # Post or update comment on pull request if difference_md.md exists
-    - name: Post or update comment on pull request
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const fs = require('fs');
-          const path = 'src/ontology/reports/difference_md.md';
-          if (fs.existsSync(path)) {
-            const content = fs.readFileSync(path, 'utf8');
-            console.log("Content of the markdown file:");
-            console.log(content); // Debug print of the file content
-            if (content) {
-              const { owner, repo } = context.repo;
-              const { number } = context.issue;
-              const existingComments = await github.rest.issues.listComments({
-                owner,
-                repo,
-                issue_number: number
-              });
-              const existingComment = existingComments.data.find(comment => comment.user.login === 'github-actions[bot]');
-              if (existingComment) {
-                await github.rest.issues.updateComment({
-                  owner,
-                  repo,
-                  comment_id: existingComment.id,
-                  body: content
-                });
-              } else {
-                await github.rest.issues.createComment({
-                  owner,
-                  repo,
-                  issue_number: number,
-                  body: content
-                });
-              }
-            } else {
-              console.log("The markdown file is empty."); // Debug print if the file is empty
-            }
-          } else {
-            console.log("The markdown file does not exist."); // Debug print if the file does not exist
-          }
+        # Post or update comment on pull request if difference_md.md exists
+        - name: Post or update comment on pull request
+          uses: actions/github-script@v7
+          with:
+            script: |
+                const fs = require('fs');
+                const path = 'src/ontology/reports/difference_md.md';
+                if (fs.existsSync(path)) {
+                    const content = fs.readFileSync(path, 'utf8');
+                    console.log("Content of the markdown file:");
+                    console.log(content); // Debug print of the file content
+                    if (content) {
+                    const { owner, repo } = context.repo;
+                    const { number } = context.issue;
+                    const existingComments = await github.rest.issues.listComments({
+                        owner,
+                        repo,
+                        issue_number: number
+                    });
+                    const existingComment = existingComments.data.find(comment => comment.user.login === 'github-actions[bot]');
+                    if (existingComment) {
+                        await github.rest.issues.updateComment({
+                        owner,
+                        repo,
+                        comment_id: existingComment.id,
+                        body: content
+                        });
+                    } else {
+                        await github.rest.issues.createComment({
+                        owner,
+                        repo,
+                        issue_number: number,
+                        body: content
+                        });
+                    }
+                    } else {
+                    console.log("The markdown file is empty."); // Debug print if the file is empty
+                    }
+                } else {
+                    console.log("The markdown file does not exist."); // Debug print if the file does not exist
+                }
+
