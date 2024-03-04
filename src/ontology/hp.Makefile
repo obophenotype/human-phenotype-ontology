@@ -638,28 +638,72 @@ mappings:
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
 
 .PHONY: diff
-diff: diff-table diff-kgcl diff-yaml
+diff: diff-release-base diff-main-branch-base
 
-tmp/hp-released.db:
-	wget http://purl.obolibrary.org/obo/hp.owl -O tmp/hp-released.owl && cp ../../hp-base.owl tmp/hp-base.owl
-	semsql make tmp/hp-base.db
+tmp/hp-base.obo:
+	cp ../../hp-base.obo $@
+
+tmp/hp-main-branch.owl:
+	wget https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/hp-base.owl -O $@
+
+tmp/hp-main-branch.obo:
+	wget https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/hp.obo -O $@
+
+
+tmp/%.db: tmp/%.owl
 	semsql make $@
 
-tmp/hp-released.obo:
-	wget http://purl.obolibrary.org/obo/hp.obo -O tmp/hp-released.obo && cp ../../hp.obo tmp/hp-base.obo
+tmp/hp-released.owl:
+	wget http://purl.obolibrary.org/obo/hp.owl -O $@
 
-diff-table: tmp/hp-released.db
-	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
-	-o reports/difference_table.tsv --output-type csv --statistics --group-by-property oio:hasOBONamespace
+tmp/hp-released.obo: tmp/hp-base.obo
+	wget http://purl.obolibrary.org/obo/hp.obo -O tmp/hp-released.obo
 
-diff-kgcl: tmp/hp-released.db
-	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
-	-o reports/difference_kgcl.txt --output-type kgcl
 
-diff-yaml: tmp/hp-released.db
-	runoak -i sqlite:tmp/hp-base.db diff -X sqlite:tmp/hp-released.db \
-	-o reports/difference_yaml.yaml --output-type yaml
 
-diff-md: tmp/hp-released.obo
+kgcl-diff-md-release-base: reports/difference_release_base.md
+kgcl-diff-table-release-base: reports/difference_release_base.tsv
+kgcl-diff-txt-release-base: reports/difference_release_base.txt
+kgcl-diff-yaml-release-base: reports/difference_release_base.yaml
+diff-release-base: kgcl-diff-md-release-base kgcl-diff-table-release-base kgcl-diff-txt-release-base kgcl-diff-yaml-release-base
+
+
+reports/difference_release_base.md: tmp/hp-released.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:tmp/hp-base.obo -o $@ --output-type md
+
+reports/difference_release_base.tsv: tmp/hp-released.obo tmp/hp-base.obo
 	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo \
-	-o reports/difference_md.md --output-type md
+	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
+
+reports/difference_release_base.txt: tmp/hp-released.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo \
+	-o $@ --output-type kgcl
+
+reports/difference_release_base.yaml: tmp/hp-released.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-released.obo \
+	-o $@ --output-type yaml
+
+#################################
+### Main branch comparisons #####
+#################################
+kgcl-diff-md-main-branch-base: reports/difference_main-branch_base.md
+kgcl-diff-table-main-branch-base: reports/difference_main-branch_base.tsv
+kgcl-diff-txt-main-branch-base: reports/difference_main-branch_base.txt
+kgcl-diff-yaml-main-branch-base: reports/difference_main-branch_base.yaml
+diff-main-branch-base: kgcl-diff-md-main-branch-base kgcl-diff-table-main-branch-base kgcl-diff-txt-main-branch-base kgcl-diff-yaml-main-branch-base
+
+
+reports/difference_main-branch_base.md: tmp/hp-main-branch.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-main-branch.obo diff -X simpleobo:tmp/hp-base.obo -o $@ --output-type md
+
+reports/difference_main-branch_base.tsv: tmp/hp-main-branch.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-main-branch.obo \
+	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
+
+reports/difference_main-branch_base.txt: tmp/hp-main-branch.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-main-branch.obo \
+	-o $@ --output-type kgcl
+
+reports/difference_main-branch_base.yaml: tmp/hp-main-branch.obo tmp/hp-base.obo
+	runoak -i simpleobo:tmp/hp-base.obo diff -X simpleobo:tmp/hp-main-branch.obo \
+	-o $@ --output-type yaml
