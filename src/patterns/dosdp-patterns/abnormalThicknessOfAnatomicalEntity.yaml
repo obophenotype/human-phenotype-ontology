@@ -1,0 +1,63 @@
+---
+pattern_name: abnormalThicknessOfAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalThicknessOfAnatomicalEntity.yaml
+
+description: 'Use this phenotype pattern when an anatomical entity displays
+  abnormal thickness.'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0011486  # Abnormality of corneal thickness
+#    - http://purl.obolibrary.org/obo/MP_0011961  # abnormal cornea thickness
+#    - http://purl.obolibrary.org/obo/MP_0020135  # abnormal heart ventricle wall thickness
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0001-5208-3432  # Nicole Vasilevsky
+  - https://orcid.org/0000-0002-3528-5267  # Sofia Robb
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+  - https://orcid.org/0000-0002-7356-1779  # Nicolas Matentzoglu
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+
+classes:
+  thickness: PATO:0000915
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "abnormal %s thickness"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s thickness abnormality"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "Abnormal thickness of %s in a dimension that is perpendicular to its
+    length or width."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'thickness' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...

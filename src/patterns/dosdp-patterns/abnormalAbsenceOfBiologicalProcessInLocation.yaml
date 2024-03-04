@@ -1,0 +1,46 @@
+pattern_name: abnormalAbsenceOfBiologicalProcessInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalAbsenceOfBiologicalProcessInLocation.yaml
+description: "A biological process that normally occurs does not occur in an anatomical entity/location."
+
+contributors:
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0003-4148-4606
+
+classes:
+  absent: PATO:0000462
+  abnormal: PATO:0000460
+  biological process: GO:0008150
+  independent continuant: BFO:0000004
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  occurs_in: BFO:0000066
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  biological_process: "'biological process'"
+  location: "'independent continuant'"
+
+name:
+  text: "absent %s in %s"
+  vars:
+   - biological_process
+   - location
+
+def:
+  text: "Absent or undetectable %s in %s."
+  vars:
+   - biological_process
+   - location
+
+
+equivalentTo:
+  text: "'has_part' some ('absent' and ('inheres_in' some (%s and ('occurs_in' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - biological_process
+    - location

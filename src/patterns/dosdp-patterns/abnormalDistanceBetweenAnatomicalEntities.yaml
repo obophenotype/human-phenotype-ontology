@@ -1,0 +1,59 @@
+pattern_name: abnormalDistanceBetweenAnatomicalEntities 
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalDistanceBetweenAnatomicalEntities.yaml
+description: "Distance between two anatomical entites has deviated from normal. For example, PLANP_0000512 'abnormal distance between eye and eye'"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0003-4148-4606
+  
+classes:
+  abnormal: PATO:0000460
+  anatomical_entity1: UBERON:0001062 
+  anatomical_entity2: UBERON:0001062
+  distance: PATO:0000040
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  towards: RO:0002503
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  anatomical_entity1: "'anatomical_entity1'"
+  anatomical_entity2: "'anatomical_entity2'"
+
+name:
+  text: "abnormal distance between %s and %s"
+  vars:
+   - anatomical_entity1
+   - anatomical_entity2
+
+annotations:
+  - 
+    annotationProperty: exact_synonym
+    text: "abnormal distance between %s and %s"
+    vars:
+     - anatomical_entity1
+     - anatomical_entity2
+  - 
+    annotationProperty: exact_synonym
+    text: "distance abnormal between %s and %s"
+    vars:
+     - anatomical_entity1
+     - anatomical_entity2
+
+def:
+  text: "abnormal distance between %s and %s."
+  vars:
+    - anatomical_entity1
+    - anatomical_entity2
+
+equivalentTo:
+  text: "'has_part' some ('distance' and ('inheres_in' some %s) and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity1
+    - anatomical_entity2

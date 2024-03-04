@@ -1,0 +1,50 @@
+pattern_name: bifurcatedAnatomicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns/bifurcatedAnatomicalEntityInLocation.yaml
+description: "Abnormal branching of an anatomical entity into two branches in a particular location, e.g. bifurcated blood vessel in a limb."
+
+contributors:
+  - https://orcid.org/0000-0002-9611-1279
+
+classes:
+  bifurcated: PATO:0001784
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  location: "'independent continuant'"
+
+name:
+  text: "bifurcated %s in %s"
+  vars:
+  - anatomical_entity
+  - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "bifurcation of %s in %s"
+  vars:
+  - anatomical_entity
+  - location
+
+def:
+  text: "Bifurcation of the %s in %s."
+  vars:
+  - anatomical_entity
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('bifurcated' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity
+  - location

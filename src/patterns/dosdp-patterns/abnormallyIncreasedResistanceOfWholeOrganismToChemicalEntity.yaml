@@ -1,0 +1,46 @@
+pattern_name: abnormallyIncreasedResistanceOfWholeOrganismToChemicalEntity.yaml
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedResistanceOfWholeOrganismToChemicalEntity.yaml
+description: "A phenotype in which an organism shows increased resistance to a chemical, for example 4-aminosalicylic acid. NOTE: There is a more general pattern (abnormallyIncreasedResistanceOfWholeOrganismToEntity), so this one should probably be obsoleted."
+
+contributors:
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0001-7487-610X
+
+classes:
+  increased resistance to: PATO:0001650
+  abnormal: PATO:0000460
+  cellular organism: CARO:0010004
+  chemical entity: CHEBI:24431
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  towards: RO:0002503
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  chemical_entity: "'chemical entity'"
+
+name:
+  text: "increased resistance of organism to %s"
+  vars:
+    - chemical_entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "decreased sensitivity of organism to %s"
+  vars:
+    - chemical_entity
+
+def:
+  text: "Increased resistance of organism to %s."
+  vars:
+    - chemical_entity
+
+equivalentTo:
+  text: "'has_part' some ('increased resistance to' and ('inheres_in' some 'cellular organism') and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - chemical_entity

@@ -1,0 +1,46 @@
+pattern_name: abnormalShapeOfPhysicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalShapeOfPhysicalEntity.yaml
+description: "abnormal shape of an anatomical entity or a measurement of a process, such as an ECG wave"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0003-4148-4606
+
+classes:
+  shape: PATO:0000052
+  abnormal: PATO:0000460
+  entity: BFO:0000002
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  entity: "'entity'"
+
+name:
+  text: "abnormal shape of %s"
+  vars:
+   - entity
+
+annotations:
+  - 
+    annotationProperty: exact_synonym
+    text: "abnormally shaped %s"
+    vars:
+     - entity     
+
+def:
+  text: "Any structural anomaly in the shape of the %s."
+  vars:
+    - entity
+
+equivalentTo:
+  text: "'has_part' some ('shape' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - entity

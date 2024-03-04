@@ -359,7 +359,13 @@ tmp/patternised_classes.txt: patternised_classes.txt
 
 reports/hpo_dosdp_table.csv: tmp/hp-build.owl tmp/patternised_classes.txt
 	$(ROBOT) merge -i $< filter -T tmp/patternised_classes.txt --signature true --preserve-structure false query --use-graphs true -f csv --query ../sparql/hp_term_table.sparql $@
-	
+
+# This goal is needed for the `dosdp-matches-matches` pipeline. 
+# The pipeline, right now, only creates a report if there are matches.
+# TODO: Make the pipeline create a report for classes where there are no matches.
+tmp/hp-edit-merged-reasoned.owl: $(SRC)
+	$(ROBOT) merge -i $< reason -o $@	
+
 
 imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/ncit_terms_combined.txt --force true --method BOT \

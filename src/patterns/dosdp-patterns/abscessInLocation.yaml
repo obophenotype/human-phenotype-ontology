@@ -1,0 +1,39 @@
+pattern_name: abscessInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abscessInLocation.yaml
+description: "The presence of an abscess in an anatomical entity. HP_0025044 'Lung abscess'."
+
+contributors: 
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  increased amount: PATO:0000470
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  abscess: MPATH:608
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  abscess: "'abscess'"
+
+name:
+  text: "%s abscess"
+  vars:
+   - anatomical_entity
+
+def:
+  text: "The presence of an abscess of the %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('increased amount' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - abscess
+    - anatomical_entity

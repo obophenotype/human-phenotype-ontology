@@ -1,0 +1,69 @@
+---
+pattern_name: abnormallyProtrudingAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyProtrudingAnatomicalEntity.yaml
+
+description: 'Use this phenotype pattern template, when an anatomical entity is
+  protruding or projecting out or beyond a surface or boundary. When an
+  anatomical entity is abnormally protruding or projecting from the body, use
+  the more specific pattern of "exsertedAnatomicalEntity" instead of the
+  pattern defined below.'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/ZP_0002287  # forebrain protruding, abnormal
+#    - http://purl.obolibrary.org/obo/HP_0010808  # Protruding tongue
+#    - http://purl.obolibrary.org/obo/MP_0009908  # protruding tongue
+#    - http://purl.obolibrary.org/obo/XPO_0115495  # abnormally protruding proctodeum
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0002-7356-1779  # Nicolas Matentzoglu
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  protruding: PATO:0001598
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "abnormally protruding %s"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormal %s protrusion"
+    vars:
+      - anatomical_entity
+  - annotationProperty: exact_synonym
+    text: "protruding %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "An abnormally protruding %s that extends out above or beyond an
+    anatomical surface or boundary."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'protruding' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...

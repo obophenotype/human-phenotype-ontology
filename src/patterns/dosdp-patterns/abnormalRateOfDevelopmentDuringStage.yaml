@@ -1,0 +1,50 @@
+pattern_name: abnormalRateOfDevelopmentDuringStage
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalRateOfDevelopmentDuringStage.yaml
+description: "An abnormally delayed or accelerated rate of a developmental process during a developmental stage in an organism."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0002-4532-2703
+  - https://orcid.org/0000-0002-7073-9172
+
+classes:
+  abnormal: PATO:0000460
+  rate: PATO:0000161
+  developmental_process: GO:0032502
+  life_cycle_stage: UBERON:0000105
+  
+relations: 
+  happens_during: RO:0002092
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  development: "'developmental_process'"
+  stage: "'life_cycle_stage'"
+
+name:
+  text: "abnormal %s rate during %s"
+  vars:
+   - development
+   - stage
+
+def:
+  text: "Abnormal rate of %s in the %s."
+  vars:
+   - development
+   - stage
+
+
+equivalentTo:
+  text: "'has_part' some ('rate' and ('inheres_in' some (%s and ('happens_during' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+   - development
+   - stage
+    
+
+

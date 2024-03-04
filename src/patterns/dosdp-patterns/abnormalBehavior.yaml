@@ -1,0 +1,41 @@
+pattern_name: abnormalBehavior
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalBehavior.yaml
+description: "Any unspecified abnormality of a behavior, such as HP_0012433 abnormal social behavior."
+
+contributors:
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-1373-1705
+  - https://orcid.org/0000-0001-7941-2961
+  
+classes:
+  process quality: PATO:0001236
+  abnormal: PATO:0000460
+  behavior process: NBO:0000313
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  behavior_process: "'behavior process'"
+ 
+name:
+  text: "abnormal %s"
+  vars:
+   - behavior_process
+
+def:
+  text: "An anomaly in %s."
+  vars:
+    - behavior_process
+
+equivalentTo:
+  text: "'has_part' some ('process quality' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - behavior_process
