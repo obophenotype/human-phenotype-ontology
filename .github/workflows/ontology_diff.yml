@@ -35,8 +35,6 @@ jobs:
                 const path = 'src/ontology/reports/difference_md.md';
                 if (fs.existsSync(path)) {
                     let content = fs.readFileSync(path, 'utf8');
-                    console.log("Content of the markdown file:");
-                    console.log(content); // Debug print of the file content
                     if (content) {
                     // GitHub's max issue body size is approximately 65536 characters
                     const maxBodySize = 65536;
