@@ -641,7 +641,7 @@ mappings:
 diff: diff-release-base diff-main-branch-base
 
 tmp/hp-base.obo:
-	cp ../../hp-base.obo $@
+	cp ../../hp.obo $@
 
 tmp/hp-main-branch.owl:
 	wget https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/hp-base.owl -O $@
