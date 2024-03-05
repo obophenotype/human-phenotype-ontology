@@ -1,0 +1,48 @@
+pattern_name: abnormalRateOfBiologicalProcessBeforeStage
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalRateOfBiologicalProcessBeforeStage.yaml
+description: "An abnormal rate of a biological process that must occur before progresssing to the next developmental stage in an organism. For example FBcv:0000450 'abnormal developmental rate', that must occur during development (before mature adult stage)."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-1373-1705
+
+classes:
+  abnormal: PATO:0000460
+  rate: PATO:0000161
+  biological_process: GO:0008150
+  life_cycle_stage: UBERON:0000105
+  
+relations: 
+  before: RO:0002083
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  biological_process: "'biological_process'"
+  stage: "'life_cycle_stage'"
+
+name:
+  text: "abnormal %s rate before %s"
+  vars:
+   - biological_process
+   - stage
+
+def:
+  text: "Abnormal rate of %s before the %s."
+  vars:
+   - biological_process
+   - stage
+
+
+equivalentTo:
+  text: "'has_part' some ('rate' and ('inheres_in' some (%s and ('before' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+   - biological_process
+   - stage
+    
+
+

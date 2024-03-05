@@ -1,0 +1,44 @@
+pattern_name: abnormallyIncompleteClosureOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns/abnormallyIncompleteClosureOfAnatomicalEntity.yaml
+description: ""
+
+contributors:
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  closure incomplete: PATO:0000609
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+ anatomical_entity: "'anatomical entity'"
+ 
+name:
+  text: "abnormal incomplete closing of the %s"
+  vars:
+   - anatomical_entity
+   
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormally incompletely closed %s"
+    vars:
+     - anatomical_entity   
+
+def:
+  text: "Abnormally incompletely closed %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('closure incomplete' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

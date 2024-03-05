@@ -1,0 +1,42 @@
+pattern_name: abnormallyOpenAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyOpenAnatomicalEntity.yaml
+description: "Example: abnormal open anterior neural tube"
+
+contributors:
+- https://orcid.org/0000-0002-7356-1779
+- https://orcid.org/0000-0002-3528-5267
+classes:
+  open: PATO:0000610
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+name:
+  text: "abnormal opening of the %s"
+  vars:
+  - anatomical_entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "abnormally open %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "Abnormally open %s."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('open' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

@@ -1,0 +1,52 @@
+pattern_name: hyperplasticAnatomicalEntity.yaml
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/hyperplasticAnatomicalEntity.yaml
+
+description: 'Hyperplastic anatomical entity, for example, thyroid gland hyperplasia, characterised by an increase in cell number.'
+
+# examples:
+#   - http://purl.obolibrary.org/obo/HP_0008249
+#   - http://purl.obolibrary.org/obo/MP_0000630
+#   - http://purl.obolibrary.org/obo/MP_0013765
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140
+  - https://orcid.org/0000-0003-4606-0597
+  - https://orcid.org/0000-0002-9900-7880
+
+classes:
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+  hyperplastic: PATO:0000644
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "%s hyperplasia"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "hyperplastic %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "%s shows abnormally increased number of cells in a tissue (hyperplasia) typically resulting in increased size."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('hyperplastic' and ('characteristic_of' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

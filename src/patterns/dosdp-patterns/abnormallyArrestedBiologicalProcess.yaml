@@ -1,0 +1,58 @@
+pattern_name: abnormallyArrestedBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyArrestedBiologicalProcess.yaml
+description: "A partial failure or arrested development of a biological process, such as arrested cell migration."
+
+contributors:
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0002-9611-1279
+
+classes:
+  arrested: PATO:0000297
+  abnormal: PATO:0000460
+  biological_process: GO:0008150
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  biological_process: "'biological_process'"
+
+name:
+  text: "arrested %s"
+  vars:
+   - biological_process
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "incomplete %s"
+    vars:
+     - biological_process
+  - annotationProperty: exact_synonym
+    text: "failure to complete %s"
+    vars:
+     - biological_process
+  - annotationProperty: exact_synonym
+    text: "failed %s"
+    vars:
+     - biological_process
+  - annotationProperty: exact_synonym
+    text: "%s arrest"
+    vars:
+     - biological_process
+
+def:
+  text: "Arrested %s."
+  vars:
+    - biological_process
+
+equivalentTo:
+  text: "'has_part' some ('arrested' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - biological_process

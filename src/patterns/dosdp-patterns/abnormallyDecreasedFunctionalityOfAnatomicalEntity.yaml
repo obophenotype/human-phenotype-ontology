@@ -1,0 +1,34 @@
+pattern_name: abnormallyDecreasedFunctionalityOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedFunctionalityOfAnatomicalEntity.yaml
+description: "Decreased functionality of an anatomical entity or part, such as decreased functionality of the gall bladder."
+
+contributors:
+- https://orcid.org/0000-0001-9076-6015
+
+classes:
+  decreased functionality: PATO:0001624
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormally decreased functionality of the %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "An abnormally decreased functionality of the %s."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('decreased functionality' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

@@ -1,0 +1,39 @@
+pattern_name: abnormallyDecreasedOccurrenceOfBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedOccurrenceOfBiologicalProcess.yaml
+description: "Occurrence of a biological process that is abnormally low."
+
+contributors:
+- https://orcid.org/0000-0002-7356-1779
+- https://orcid.org/0000-0002-9900-7880
+- https://orcid.org/0000-0002-9611-1279
+
+classes:
+  decreased occurrence: PATO:0002052
+  abnormal: PATO:0000460
+  biological_process: GO:0008150
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  biological_process: "'biological_process'"
+
+name:
+  text: "decreased occurrence of %s"
+  vars:
+  - biological_process
+
+def:
+  text: "A decreased occurrence of %s."
+  vars:
+  - biological_process
+
+equivalentTo:
+  text: "'has_part' some ('decreased occurrence' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - biological_process

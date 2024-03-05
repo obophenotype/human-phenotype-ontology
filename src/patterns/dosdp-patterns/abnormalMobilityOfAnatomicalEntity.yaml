@@ -1,0 +1,35 @@
+pattern_name: abnormalMobilityOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalMobilityOfAnatomicalEntity.yaml
+description: "An abnormality of the ability to move (mobility) an anatomical entity, including cells. Examples include HP_0006256 'Abnormality of hand joint mobility' and MP_0008069 'abnormal joint mobility'."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  mobility: PATO:0000004
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+vars:
+ anatomical_entity: "'anatomical entity'"
+ 
+name:
+  text: "abnormal %s mobility"
+  vars:
+   - anatomical_entity
+    
+
+def:
+  text: "anomaly in the ability to move %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('mobility' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

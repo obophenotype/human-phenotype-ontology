@@ -1,0 +1,42 @@
+pattern_name: abnormalDegenerationOfCellularComponent
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalDegenerationOfCellularComponent.yaml
+description: "Deterioration or loss of function of a cellular component that was once present."
+
+classes:
+  degenerate: PATO:0000639
+  abnormal: PATO:0000460
+  cellular component: GO:0005575
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  cellular_component: "'cellular component'"
+
+name:
+  text: "%s degeneration"
+  vars:
+  - cellular_component
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "degeneration of the %s"
+  vars:
+  - cellular_component
+
+def:
+  text: "Partial or complete degeneration of %s."
+  vars:
+  - cellular_component
+
+equivalentTo:
+  text: "'has_part' some ('degenerate' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - cellular_component
+contributors:
+- https://orcid.org/0000-0002-3528-5267

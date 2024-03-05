@@ -1,0 +1,53 @@
+pattern_name: abnormallyProtrudingAnatomicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyProtrudingAnatomicalEntityInLocation.yaml
+description: ""
+
+contributors: 
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  
+classes:
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  protruding out of: PATO:0001646
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+  towards: RO:0002503
+ 
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  location: "'independent continuant'"
+
+name:
+  text: "abnormal protrusion of %s through %s"
+  vars:
+   - anatomical_entity
+   - location
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "protruding %s in %s"
+    vars:
+     - anatomical_entity
+     - location
+
+def:
+  text: "hernial protrusion of the %s through an opening or defect in the %s."
+  vars:
+    - anatomical_entity
+    - location
+
+equivalentTo:
+  text: "'has_part' some ('protruding out of' and ('inheres_in' some %s) and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity
+    - location
