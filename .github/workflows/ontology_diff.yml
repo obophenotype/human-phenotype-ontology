@@ -38,7 +38,7 @@ jobs:
                 if (content) {
                     // GitHub's max issue body size is approximately 65536 characters
                     const maxBodySize = 65536;
-                    const truncateMsg = '\n</details>\n\n... [truncated due to excessive length] ...';
+                    const truncateMsg = '\n</details>\n\n... ### WARNING: This diff is too large and has been truncated....';
                     if (content.length > maxBodySize) {
                         // Truncate the content to fit within the GitHub comment size limit
                         content = content.substring(0, maxBodySize - truncateMsg.length) + truncateMsg;
