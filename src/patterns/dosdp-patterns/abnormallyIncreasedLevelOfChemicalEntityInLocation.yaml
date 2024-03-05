@@ -1,0 +1,48 @@
+pattern_name: abnormallyIncreasedLevelOfChemicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedLevelOfChemicalEntityInLocation.yaml
+description: "An abnormal increase of a chemical entity in a lcoation. Example 'Increased CSF lactate', i.e. increased lactate in cerebrospinal fluid (HP_0002490)."
+
+classes:
+  increased amount: PATO:0000470
+  abnormal: PATO:0000460
+  chemical entity: CHEBI:24431
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  chemical_entity: "'chemical entity'"
+  location: "'independent continuant'"
+name:
+  text: "increased level of %s in %s"
+  vars:
+  - chemical_entity
+  - location
+
+def:
+  text: "An increase in the level of %s in %s."
+  vars:
+  - chemical_entity
+  - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "increased level of %s in %s"
+  vars:
+  - chemical_entity
+  - location
+
+equivalentTo:
+  text: "'has_part' some ('increased amount' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - chemical_entity
+  - location
+contributors:
+- https://orcid.org/0000-0002-3528-5267

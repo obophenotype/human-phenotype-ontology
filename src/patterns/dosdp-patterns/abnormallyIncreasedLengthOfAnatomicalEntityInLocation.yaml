@@ -1,0 +1,50 @@
+pattern_name: abnormallyIncreasedLengthOfAnatomicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedLengthOfAnatomicalEntityInLocation.yaml
+description: "Increased length/abnormally long in a particular anatomical entity. Example: HP_0012743 'Abdominal obesity'"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+
+# Declaration of entities used in pattern: classes, relations, annotation props.
+# This is used to relate labels to their term IDs. The labels are NOT related to
+# the rdfs:label used in the ontology.
+classes:
+  increased length: PATO:0000573
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+# These are the variables used in string variable substitution.
+# These vars are only ever classes, not relations.
+vars:
+  anatomical_entity: "'anatomical entity'"
+  location: "'independent continuant'"
+
+# Corresponds to rdfs:label
+name:
+  text: "increased %s length in %s"
+  vars:
+   - anatomical_entity
+   - location
+
+def:
+  text: "An abnormal increase in length in %s in location %s."
+  vars:
+    - anatomical_entity
+    - location
+
+equivalentTo:
+  text: "'has_part' some ('increased length' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity
+    - location

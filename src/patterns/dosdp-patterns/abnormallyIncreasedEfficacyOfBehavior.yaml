@@ -1,0 +1,35 @@
+pattern_name: abnormallyIncreasedEfficacyOfBehavior
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedEfficacyOfBehavior.yaml
+description: "Behavior occurs with a higher efficacy, i.e. an increased ability to produce its output. For example, male courtship behavior that is more attractive to females, or memory that results in a stronger aversive response to a stimulus associated with punishment."
+
+contributors: 
+  - http://orcid.org/0000-0002-1373-1705
+
+classes:
+  increased efficacy: PATO:0015004
+  abnormal: PATO:0000460
+  behavior process: NBO:0000313
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+vars:
+  behavior_process: "'behavior process'"
+ 
+name:
+  text: "abnormally increased efficacy of %s"
+  vars:
+   - behavior_process
+
+def:
+  text: "Increased ability of %s to produce its output."
+  vars:
+    - behavior_process
+
+equivalentTo:
+  text: "'has_part' some ('increased efficacy' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - behavior_process
+    

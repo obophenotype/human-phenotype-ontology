@@ -1,0 +1,45 @@
+pattern_name: abnormallyIncreasedResistanceOfWholeOrganismToEntity.yaml
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedResistanceOfWholeOrganismToEntity.yaml
+description: "A phenotype in which an organism shows increased resistance to something, for example radition."
+
+contributors:
+- https://orcid.org/0000-0002-7356-1779
+- https://orcid.org/0000-0002-3528-5267
+classes:
+  increased resistance to: PATO:0001650
+  abnormal: PATO:0000460
+  cellular organism: CARO:0010004
+  entity: BFO:0000001
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  towards: RO:0002503
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  entity: "'entity'"
+
+name:
+  text: "increased resistance of organism to %s"
+  vars:
+  - entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "decreased sensitivity of organism to %s"
+  vars:
+  - entity
+
+def:
+  text: "Increased resistance of organism to %s."
+  vars:
+  - entity
+
+equivalentTo:
+  text: "'has_part' some ('increased resistance to' and ('inheres_in' some 'cellular organism') and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - entity

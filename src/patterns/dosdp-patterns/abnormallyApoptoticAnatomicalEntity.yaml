@@ -1,0 +1,45 @@
+pattern_name: abnormallyApoptoticAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyApoptoticAnatomicalEntity.yaml
+description: "The abnormal presence of programmed cell death (apoptosis), consisting of blebbing of the nucleus and DNA fragmentation, in an anatomical entity."
+
+contributors:
+- https://orcid.org/0000-0002-7356-1779
+- https://orcid.org/0000-0002-9900-7880
+- https://orcid.org/0000-0002-9611-1279
+
+classes:
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  apoptotic: PATO:0000638
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormally apoptotic %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "An abnormally apoptotic %s."
+  vars:
+  - anatomical_entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "%s with apoptosis"
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('apoptotic' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

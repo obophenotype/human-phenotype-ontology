@@ -1,0 +1,68 @@
+pattern_name: abnormallyPunctateAnatomicalEntityInLocation
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyPunctateAnatomicalEntityInLocation.yaml
+
+description: 'Use this pattern for punctate morphological phenotypes where the surface of the anatomical entity in location exhibits dots, punctures, points or pits. Also use this pattern in cases of dotted or stippled anatomical entity surface in location phenotypes, e.g. stippling of the epiphyses of the 3rd toe.'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0100064  # Stippling of the epiphyses of the 3rd toe
+#    - http://purl.obolibrary.org/obo/HP_0009165  # Stippling of the epiphysis of the distal phalanx of the 5th finger
+#    - http://purl.obolibrary.org/obo/HP_0009344  # Stippling of the epiphysis of the distal phalanx of the 3rd finger
+#    - http://purl.obolibrary.org/obo/ZP_0004687  # basement membrane median fin fold punctate, abnormal
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  punctate: PATO:0001512
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+  independent_continuant: BFO:0000004
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+  location: "'independent_continuant'"
+
+name:
+  text: "abnormally punctate %s of %s"
+  vars:
+    - anatomical_entity
+    - location
+
+annotations:
+  - annotationProperty: related_synonym
+    text: "abnormally stippled %s of %s"
+    vars:
+      - anatomical_entity
+      - location
+
+def:
+  text: "The presence of abnormal dots, punctures, points or pits in %s of %s."
+  vars:
+    - anatomical_entity
+    - location
+
+equivalentTo:
+  text: "'has_part' some (
+            'punctate' and
+            'characteristic_of' some (
+                %s and
+                'part_of' some %s) and
+            'has_modifier' some 'abnormal')"
+  vars:
+    - anatomical_entity
+    - location

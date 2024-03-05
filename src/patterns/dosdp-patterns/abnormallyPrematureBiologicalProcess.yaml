@@ -1,0 +1,37 @@
+pattern_name: abnormallyPrematureBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyPrematureBiologicalProcess.yaml
+description: "A biological process which starts earlier than the natural start time or the reference process."
+
+contributors:
+- https://orcid.org/0000-0001-7487-610X
+- https://orcid.org/0000-0002-3528-5267
+classes:
+  premature: PATO:0000694
+  abnormal: PATO:0000460
+  biological process: GO:0008150
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  biological_process: "'biological process'"
+
+name:
+  text: "premature %s"
+  vars:
+  - biological_process
+
+def:
+  text: "An abnormally early start time of %s."
+  vars:
+  - biological_process
+
+equivalentTo:
+  text: "'has_part' some ('premature' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - biological_process

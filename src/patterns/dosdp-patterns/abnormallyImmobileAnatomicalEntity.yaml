@@ -1,0 +1,35 @@
+pattern_name: abnormallyImmobileAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyImmobileAnatomicalEntity.yaml
+description: "An abnormality of the complete lack of the ability to move (immobility) an anatomical entity, including cells."
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+
+classes:
+  immobile: PATO:0000300
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+vars:
+ anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormally immobile %s"
+  vars:
+   - anatomical_entity
+
+
+def:
+  text: "complete lack of mobility of the %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('immobile' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

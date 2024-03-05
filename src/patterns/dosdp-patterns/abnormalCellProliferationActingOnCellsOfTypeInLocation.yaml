@@ -1,0 +1,46 @@
+pattern_name: abnormalCellProliferationActingOnCellsOfTypeInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalCellProliferationActingOnCellsOfTypeInLocation.yaml
+description: "Any abnormal cell proliferation in a specific cell type in a location, such as abnormal retinal vascular proliferation in the eye."
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+
+classes:
+  abnormal: PATO:0000460
+  cell population proliferation: GO:0008283
+  cell: CL:0000003
+  process quality: PATO:0001236
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  acts_on_population_of: obo:GOREL_0001006
+  occurs_in: BFO:0000066
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  cell: "'cell'"
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "abnormal %s proliferation in %s"
+  vars:
+   - cell
+   - anatomical_entity
+
+def:
+  text: "Abnormal proliferation of %s in %s."
+  vars:
+   - cell
+   - anatomical_entity
+
+
+equivalentTo:
+  text: "'has_part' some ('process quality' and ('inheres_in' some ('cell population proliferation' and ('acts_on_population_of' some %s) and ('occurs_in' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - cell
+    - anatomical_entity

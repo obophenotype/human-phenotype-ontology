@@ -1,0 +1,38 @@
+pattern_name: abnormalRateOfBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalRateOfBiologicalProcess.yaml
+description: "Changed rate of a biological process, i.e. changed number of events per unit time of a biological process, or changed output of a continuous biological process)."
+
+contributors:
+  - https://orcid.org/0000-0001-9076-6015
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0002-6490-7723
+  - https://orcid.org/0000-0002-7356-1779
+classes:
+  rate: PATO:0000161
+  abnormal: PATO:0000460
+  biological_process: GO:0008150
+
+relations:
+  inheres_in: RO:0000052
+  qualifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  biological_process: "'biological_process'"
+name:
+  text: "changed %s rate"
+  vars:
+  - biological_process
+
+def:
+  text: "Changed rate of %s."
+  vars:
+  - biological_process
+
+equivalentTo:
+  text: "'has_part' some ('rate' and ('inheres_in' some %s) and ('qualifier' some 'abnormal'))"
+  vars:
+  - biological_process
