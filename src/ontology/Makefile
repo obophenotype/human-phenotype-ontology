@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                8d55e728180d605e6fbf1dacceb05b773d17b69e18bd6af471f89be4b2f65ab3
+CONFIG_HASH=                ab8c40cd1cac34eb21e9d0f95c87ff82020f04cc67b93398138596943da426a0
 
 
 # ----------------------------------------
@@ -654,7 +654,7 @@ $(PATTERNDIR)/data/full/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)
 
 
 dosdp-matches-matches: tmp/hp-edit-merged-reasoned.owl $(ALL_PATTERN_FILES)
-	if [ $(PAT) = true ]; then $(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --restrict-axioms-to=logical \
+	if [ $(PAT) = true ]; then $(DOSDPT) query --ontology=$< --catalog=$(CATALOG) --reasoner=elk --obo-prefixes=true --restrict-axioms-to=logical \
     --batch-patterns="$(ALL_PATTERN_NAMES)" --template="$(PATTERNDIR)/dosdp-patterns" --outfile="$(PATTERNDIR)/data/matches/"; fi
 # Generating the seed file from all the TSVs. If Pattern generation is deactivated, we still extract a seed from definitions.owl
 $(TMPDIR)/all_pattern_terms.txt: $(DOSDP_TERM_FILES_DEFAULT)   $(DOSDP_TERM_FILES_FULL) $(TMPDIR)/pattern_owl_seed.txt
