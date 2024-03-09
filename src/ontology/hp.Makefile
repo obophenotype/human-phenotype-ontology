@@ -222,6 +222,13 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
+# This updates all British English in Mondo to American English.
+.PHONY: americanize
+
+americanize: $(SRC) hpo_british_english_dictionary.csv
+	python ../scripts/americanize.py $^
+
+
 #########################################################################################################
 ### Process for merging a large template and remove existing content: ###################################
 #########################################################################################################
