@@ -32,7 +32,11 @@ def replace_words_from_dict(text, word_dict):
             result_lines.append(line)
         else:
             # This regex will capture words and preserve punctuations.
-            result_lines.append(re.sub(r"\b[\w\'-]+\b", replacement, line))
+            new_line = re.sub(r"\b[\w\'-]+\b", replacement, line)
+            # Special case for 'optic disk' -> 'optic disc'; this contradicts the dictionary.
+            new_line = new_line.replace('optic disk', 'optic disc')
+            new_line = new_line.replace('gasses', 'gases')
+            result_lines.append(new_line)
 
     return '\n'.join(result_lines)
 
