@@ -132,8 +132,15 @@ reports/hp_xrefs.csv: $(SRC)
 ###### SKIP DEFAULTS #############
 ##################################
 
+$(EDIT_PREPROCESSED): $(SRC)
+	# Instead of making the prepare-robot-plugins a dependency, we just call the goal
+	# to update the plugins when we need it
+	$(MAKE) prepare-robot-plugins
+	$(ROBOT) monarch:upheno-augment -i $< --relation has_phenotype_affecting  \
+		convert --format ofn --output $@
+
 # We overwrite the .owl release to be, for now, a simple merged version of the editors file.
-$(ONT).owl: $(SRC)
+$(ONT).owl: $(EDIT_PREPROCESSED)	
 	$(ROBOT) merge --input $< \
 		annotate --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
@@ -577,3 +584,27 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
+
+###########################################
+### Testing new custom plugin system ######
+###########################################
+
+# Make sure ROBOT knows where to find plugins
+export ROBOT_PLUGINS_DIRECTORY=$(TMPDIR)/plugins
+
+# List of "repository plugins" (plugins permanently installed in top-level plugins directory, entirely managed by users)
+ROBOT_REPOSITORY_PLUGINS=$(wildcard ../../plugins/*.jar)
+
+# Standard rule to create symlinks in $(TMPDIR)/plugins, so that the repository plugins
+# are visible to ROBOT
+prepare-robot-plugins:
+	for plugin in $(ROBOT_REPOSITORY_PLUGINS) ; do ln $plugin $(TMPDIR)/plugins ; done
+
+# in the custom.Makefile, users can simply attach any custom plugins they need
+# as dependencies to the prepare-robot-plugins goal
+prepare-robot-plugins: $(ROBOT_PLUGINS_DIRECTORY)/monarch.jar
+
+$(ROBOT_PLUGINS_DIRECTORY)/monarch.jar:
+	mkdir -p $(ROBOT_PLUGINS_DIRECTORY)
+	# Ignore this obviously this will be replaced by a download step
+	cp ~/ws/robot-phenotype-toolkit/target/robot-plugins-0.0.1-SNAPSHOT.jar $(ROBOT_PLUGINS_DIRECTORY)/monarch.jar
