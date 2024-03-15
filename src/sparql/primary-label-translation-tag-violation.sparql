@@ -7,7 +7,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE
 {
-  VALUES ?property { rdfs:label IAO:0000115 }
+  VALUES ?property { rdfs:label IAO:0000115 <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> }
   ?entity ?property ?value .
  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/HP_"))
   FILTER(lang(?value) != "")
