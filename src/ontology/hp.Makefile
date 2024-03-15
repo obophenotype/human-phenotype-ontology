@@ -171,7 +171,7 @@ imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 ##### Code for removing patternised classes ###########
 #######################################################
 
-patternised_classes.txt: .FORCE
+patternised_classes.txt: ../patterns/definitions.owl .FORCE
 	$(ROBOT) query -f csv -i ../patterns/definitions.owl --query ../sparql/$(ONT)_terms.sparql $@
 	sed -i 's/http[:][/][/]purl.obolibrary.org[/]obo[/]//g' $@
 	sed -i '/^[^H]/d' $@
@@ -181,13 +181,13 @@ patternised_classes.txt: .FORCE
 remove_patternised_classes: $(SRC) patternised_classes.txt
 	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | tr -d '\r' | tr '\n' '-' | sed -r 's/[-]+/\|/g' ))/d" $<
 
-tmp/eqs.ofn: #../patterns/definitions.owl
+tmp/eqs.ofn: ../patterns/definitions.owl
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
 	sed -i '/^Declaration/d' $@
 
 migrate_definitions_to_edit: $(SRC) tmp/eqs.ofn
 	echo "Not regenerating definitions.owl.. Is it up to date?"
-	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+	$(ROBOT) merge -i hp-edit.owl -i tmp/eqs.ofn --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 	#$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
 
 tmp/hp_pattern_subclasses.owl: $(SRC)
