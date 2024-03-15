@@ -1,0 +1,14 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# Test if an annotation has a language tag, which it shouldnt as per
+# https://github.com/obophenotype/human-phenotype-ontology/issues/10387#issuecomment-1999034724
+
+SELECT DISTINCT ?entity ?property ?value WHERE
+{
+  VALUES ?property { rdfs:label IAO:0000115 }
+  ?entity ?property ?value .
+ FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/HP_"))
+  FILTER(lang(?value) != "")
+} 
