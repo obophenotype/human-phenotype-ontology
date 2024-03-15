@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                ab8c40cd1cac34eb21e9d0f95c87ff82020f04cc67b93398138596943da426a0
+CONFIG_HASH=                4a34191ec01b0d40547b09e5c942aeec3345fd881201f81bc0df620c997f468e
 
 
 # ----------------------------------------
@@ -44,7 +44,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference synonym_ends_with_illegal_character deprecated_class_reference iri-range label-with-iri taxon-range double-space illegal-synonym-type deprecated-consider illegal-annotation-property orcid-contributor orcid-xref-is-not-formatted-correctly xref-uses-unknown-prefix noparent nolabels missing-parent-hpo 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference synonym_ends_with_illegal_character deprecated_class_reference iri-range label-with-iri taxon-range double-space illegal-synonym-type deprecated-consider illegal-annotation-property orcid-contributor orcid-xref-is-not-formatted-correctly xref-uses-unknown-prefix noparent nolabels missing-parent-hpo primary-label-translation-tag 
 SPARQL_EXPORTS =            basic-report xrefs synonyms layperson-synonyms autoimmune-antibody-report hp-attribution-report 
 ODK_VERSION_MAKEFILE =      v1.5
 
