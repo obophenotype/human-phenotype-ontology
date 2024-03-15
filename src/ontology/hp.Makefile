@@ -577,3 +577,30 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
+
+SNOMED_HPO=https://docs.google.com/spreadsheets/d/e/2PACX-1vTHNmZFJJ0zExDORNE1rekVfeSny1Bv5_q6XXAFeuBkLHbeucokTPvjuTBZlRUbHyuAm26PQlzkMBAH/pub?gid=488628125&single=true&output=tsv
+tmp/hp-snomed-external.sssom.tsv:
+	wget "$(SNOMED_HPO)" -O $@
+
+tmp/hp-snomed.sssom.tsv: tmp/hp-snomed-external.sssom.tsv
+	sssom parse $< -m config/hp-snomed.sssom.yml -o $@
+
+tmp/snomed-hp.sssom.tsv: tmp/hp-snomed.sssom.tsv
+	sssom invert $< --inverse-map config/inverse-map.yml -o $@
+
+tmp/snomed-hp.sssom.ttl: tmp/snomed-hp.sssom.tsv
+	sssom convert $< -O owl -o $@
+
+tmp/snomed.owl: tmp/snomed-hp.sssom.ttl
+	$(ROBOT) merge -i tmp/snomed-0324.owl -i tmp/hp-snomed.sssom.ttl convert -f owl -o $@
+
+tmp/hp-snomed.basic-validation.txt: tmp/snomed.db
+	runoak -i $< validate-mappings -o $@
+
+tmp/hp-snomed.llm-validation.txt: tmp/snomed.db hp.obo
+	runoak -i llm:$< validate-mappings --adapter-mapping hp=hp.obo > $@
+
+validate-mappings:
+	make IMP=false MIR=false PAT=false tmp/hp-snomed.basic-validation.txt
+	make IMP=false MIR=false PAT=false tmp/hp-snomed.llm-validation.txt
+
