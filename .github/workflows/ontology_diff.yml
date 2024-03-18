@@ -34,9 +34,10 @@ jobs:
           git config --global --add safe.directory /__w/human-phenotype-ontology/human-phenotype-ontology
           git add src/ontology/reports/difference_main-branch_base.md
           git diff --staged --quiet || git commit -m "Update difference_main-branch_base.md"
-          git push origin "${{ github.head_ref }}"
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push
+        # git push origin "${{ github.head_ref }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
 
       # Post or update comment on pull request if difference_md.md exists
