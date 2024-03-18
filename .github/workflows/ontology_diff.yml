@@ -27,6 +27,15 @@ jobs:
           cd src/ontology
           make kgcl-diff-md-main-branch-base
 
+      # Commit and push the updated markdown file
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/ontology/reports/difference_main-branch_base.md
+          git commit -m "Update difference_main-branch_base.md" || echo "No changes to commit"
+          git push
+
       # Post or update comment on pull request if difference_md.md exists
       - name: Post or update comment on pull request
         uses: actions/github-script@v7
@@ -39,7 +48,7 @@ jobs:
                 if (content) {
                     // GitHub's max issue body size is approximately 65536 characters
                     const maxBodySize = 65536;
-                    const truncateMsg = '\n</details>\n\n ### WARNING: This diff is too large and has been truncated. For full diff see [here](https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/src/ontology/reports/difference_release_base.md).';
+                    const truncateMsg = '\n</details>\n\n ### WARNING: This diff is too large and has been truncated. For full diff see [here](https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/src/ontology/reports/difference_main-branch_base.md).';
                     if (content.length > maxBodySize) {
                         // Truncate the content to fit within the GitHub comment size limit
                         content = content.substring(0, maxBodySize - truncateMsg.length) + truncateMsg;
