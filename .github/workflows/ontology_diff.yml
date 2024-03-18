@@ -33,7 +33,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = 'src/ontology/reports/difference_md.md';
+            const path = 'src/ontology/reports/difference_main-branch_base.md';
             if (fs.existsSync(path)) {
                 let content = fs.readFileSync(path, 'utf8');
                 if (content) {
