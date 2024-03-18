@@ -29,12 +29,15 @@ jobs:
 
       # Commit and push the updated markdown file
       - name: Commit and push changes
+        env:
+          PR_ACTOR: ${{ github.actor }}
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name "$PR_ACTOR"
+          git config --global user.email "$PR_ACTOR@users.noreply.github.com"
           git add src/ontology/reports/difference_main-branch_base.md
-          git commit -m "Update difference_main-branch_base.md" || echo "No changes to commit"
+          git commit -m "Update difference_main-branch_base.md by $PR_ACTOR" || echo "No changes to commit"
           git push
+     
 
       # Post or update comment on pull request if difference_md.md exists
       - name: Post or update comment on pull request
