@@ -2,7 +2,6 @@ site_name: Human Phenotype Ontology (Documentation)
 theme:
   name: material
   features:
-    - content.tabs.link
     - navigation.tabs
     - navigation.sections
     - toc.integrate
@@ -49,7 +48,12 @@ nav:
       - genes_to_phenotype.txt: annotations/genes_to_phenotype.md
       - phenotype_to_genes.txt: annotations/phenotype_to_genes.md
       - genes_to_disease.txt: annotations/genes_to_disease.md
-  
+  - Documentation:
+    - Overview: documentation/overview.md
+    - Clinical:
+      - Clinician's guide: documentation/clinicians.md
+      - HPO term selection: documentation/HPO_term_selection.md
+    - FAQs: documentation/FAQs.md
   - Developers:
       - Tools: developers/tools.md
       - Documentation: developers/documentation.md
@@ -67,12 +71,12 @@ nav:
           - Managing the documentation: odk-workflows/ManageDocumentation.md
           - Managing your automated testing: odk-workflows/ManageAutomatedTest.md
           - Continuous Integration: odk-workflows/ContinuousIntegration.md
-          - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md 
+          - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md
       - Design Patterns:
           - Design Patterns Overview: templates/dosdp.md
-  - Community: 
+  - Community:
       - Introduction: community/index.md
       - Contributing: community/contributing.md
       - Cite the HPO: community/cite.md
       - HPO Internationalization Effort: https://obophenotype.github.io/hpo-translations/
-     
+
