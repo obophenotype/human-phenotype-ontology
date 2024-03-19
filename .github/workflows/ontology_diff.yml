@@ -22,11 +22,6 @@ jobs:
       - name: Install oaklib
         run: pip install oaklib
 
-      - name: Run make kgcl-diff-md-main-branch-base
-        run: |
-          cd src/ontology
-          make kgcl-diff-md-main-branch-base
-
       - name: Configure git with GitHub Actions user
         run: |
           git config --global user.name "github-actions[bot]"
@@ -40,6 +35,11 @@ jobs:
       - name: Checkout the head branch of the pull request
         run: |
           git checkout ${{ github.head_ref }}
+
+      - name: Run make kgcl-diff-md-main-branch-base
+        run: |
+          cd src/ontology
+          make kgcl-diff-md-main-branch-base
 
       - name: Stage the report file
         run: |
