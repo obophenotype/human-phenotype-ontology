@@ -24,12 +24,6 @@ jobs:
       - name: Install oaklib
         run: pip install oaklib
 
-      - name: Run make kgcl-diff-md-main-branch-base
-        run: |
-          cd src/ontology
-          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' kgcl-diff-md-main-branch-base IMP=false PAT=false
-
-
       - name: Configure git with GitHub Actions user
         run: |
           git config --global user.name "github-actions[bot]"
@@ -40,9 +34,11 @@ jobs:
         run: |
           git fetch origin ${{ github.head_ref }}
 
-      # - name: Checkout the head branch of the pull request
-      #   run: |
-      #     git checkout ${{ github.head_ref }}
+      - name: Run make kgcl-diff-md-main-branch-base
+        run: |
+          cd src/ontology
+          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' kgcl-diff-md-main-branch-base IMP=false PAT=false
+
 
       - name: Stage the report file
         run: |
