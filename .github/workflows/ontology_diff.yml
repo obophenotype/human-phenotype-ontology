@@ -40,9 +40,9 @@ jobs:
         run: |
           git fetch origin ${{ github.head_ref }}
 
-      - name: Checkout the head branch of the pull request
-        run: |
-          git checkout ${{ github.head_ref }}
+      # - name: Checkout the head branch of the pull request
+      #   run: |
+      #     git checkout ${{ github.head_ref }}
 
       - name: Stage the report file
         run: |
