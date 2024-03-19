@@ -8,7 +8,7 @@ on:
 jobs:
   post-comment:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.4.3
+    container: obolibrary/odkfull:v1.5
     env:
       DIFFERENCE_MD_PATH: src/ontology/reports/difference_main-branch_base.md 
 
@@ -24,6 +24,12 @@ jobs:
       - name: Install oaklib
         run: pip install oaklib
 
+      - name: Run make kgcl-diff-md-main-branch-base
+        run: |
+          cd src/ontology
+          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' kgcl-diff-md-main-branch-base IMP=false PAT=false
+
+
       - name: Configure git with GitHub Actions user
         run: |
           git config --global user.name "github-actions[bot]"
@@ -37,11 +43,6 @@ jobs:
       - name: Checkout the head branch of the pull request
         run: |
           git checkout ${{ github.head_ref }}
-
-      - name: Run make kgcl-diff-md-main-branch-base
-        run: |
-          cd src/ontology
-          make kgcl-diff-md-main-branch-base
 
       - name: Stage the report file
         run: |
