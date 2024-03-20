@@ -34,13 +34,13 @@ jobs:
           make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' kgcl-diff-md-main-branch-base IMP=false PAT=false
 
 
-      - name: Stage the report file
-        run: |
-          git add src/ontology/reports/difference_main-branch_base.md 
+      # - name: Stage the report file
+      #   run: |
+      #     git add src/ontology/reports/difference_main-branch_base.md 
 
-      - name: Commit and push if there are changes
-        run: |
-          git diff --staged || (git commit -m "Update difference_main-branch_base.md" && git push origin ${{ github.head_ref }})
+      # - name: Commit and push if there are changes
+      #   run: |
+      #     git diff --staged || (git commit -m "Update difference_main-branch_base.md" && git push origin ${{ github.head_ref }})
       
       
 
