@@ -9,8 +9,6 @@ jobs:
   post-comment:
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.5
-    env:
-      DIFFERENCE_MD_PATH: src/ontology/reports/difference_main-branch_base.md 
 
     steps:
       - name: Checkout repository
@@ -42,7 +40,7 @@ jobs:
 
       - name: Stage the report file
         run: |
-          git add ${{ env.DIFFERENCE_MD_PATH }}
+          git add reports/difference_main-branch_base.md 
 
       - name: Commit and push if there are changes
         run: |
@@ -56,7 +54,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = process.env.DIFFERENCE_MD_PATH; 
+            const path = 'src/ontology/reports/difference_main-branch_base.md'; 
             if (fs.existsSync(path)) {
                 let content = fs.readFileSync(path, 'utf8');
                 if (content) {
