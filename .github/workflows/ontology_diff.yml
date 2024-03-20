@@ -22,11 +22,11 @@ jobs:
       - name: Install oaklib
         run: pip install oaklib
 
-      - name: Configure git with GitHub Actions user
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global --add safe.directory /__w/human-phenotype-ontology/human-phenotype-ontology
+      # - name: Configure git with GitHub Actions user
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git config --global --add safe.directory /__w/human-phenotype-ontology/human-phenotype-ontology
 
       - name: Run make kgcl-diff-md-main-branch-base
         run: |
