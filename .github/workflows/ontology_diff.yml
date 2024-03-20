@@ -28,9 +28,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global --add safe.directory /__w/human-phenotype-ontology/human-phenotype-ontology
 
-      - name: Fetch the head branch of the pull request
-        run: |
-          git fetch origin ${{ github.head_ref }}
+      # - name: Fetch the head branch of the pull request
+      #   run: |
+      #     git fetch origin ${{ github.head_ref }}
 
       - name: Run make kgcl-diff-md-main-branch-base
         run: |
