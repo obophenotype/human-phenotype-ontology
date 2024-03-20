@@ -28,10 +28,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global --add safe.directory /__w/human-phenotype-ontology/human-phenotype-ontology
 
-      # - name: Fetch the head branch of the pull request
-      #   run: |
-      #     git fetch origin ${{ github.head_ref }}
-
       - name: Run make kgcl-diff-md-main-branch-base
         run: |
           cd src/ontology
@@ -44,7 +40,7 @@ jobs:
 
       - name: Commit and push if there are changes
         run: |
-          git diff --staged --quiet || (git commit -m "Update difference_main-branch_base.md" && git push origin ${{ github.head_ref }})
+          git diff --staged || (git commit -m "Update difference_main-branch_base.md" && git push origin ${{ github.head_ref }})
       
       
 
