@@ -64,7 +64,7 @@ jobs:
       - name: Diff classification
         run: | 
             export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology;
-            runoak -i simpleobo:src/ontology/tmp/hp-edit-master.obo diff -X simpleobo:src/ontology/tmp/hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 
+            runoak -i simpleobo:hp-edit-master.obo diff -X simpleobo:hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 
       - name: Upload diff
         uses: actions/upload-artifact@v4
         with:
