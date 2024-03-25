@@ -18,12 +18,13 @@ jobs:
       - name: Classify ontology
         run: |
             cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl && make tmp/hp-edit.obo
+            cp tmp/hp-edit.obo tmp/hp-edit-pr.obo
             
       - name: Upload PR hp-edit.obo
         uses: actions/upload-artifact@v4
         with:
           name: hp-edit-pr.obo
-          path: src/ontology/tmp/hp-edit.obo
+          path: src/ontology/tmp/hp-edit-pr.obo
           retention-days: 1
   classify_main:
     runs-on: ubuntu-latest
