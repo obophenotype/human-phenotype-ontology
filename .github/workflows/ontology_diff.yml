@@ -55,12 +55,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-master.obo
-          path: src/ontology/tmp/hp-edit-master.obo
+          path: hp-edit-master.obo
       - name: Download PR classification
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-pr.obo
-          path: src/ontology/tmp/hp-edit-pr.obo
+          path: hp-edit-pr.obo
       - name: Diff classification
         run: | 
             export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology;
