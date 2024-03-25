@@ -35,14 +35,14 @@ jobs:
       - name: Classify ontology
         run: |
           cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl
-          robot convert --input hp-edit.owl --output tmp/hp-edit.obo --format obo
+          robot convert --input hp-edit.owl --output tmp/hp-edit-master.obo --format obo
       # The robot convert above stays for now since the make target is not yet available in the main branch
 
       - name: Upload master hp-edit.obo
         uses: actions/upload-artifact@v4
         with:
           name: hp-edit-master.obo
-          path: src/ontology/tmp/hp-edit.obo
+          path: src/ontology/tmp/
           retention-days: 1
   diff_classification:
     needs:
@@ -56,12 +56,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-master.obo
-          path: src/ontology/tmp/
+          path: src/ontology/tmp/hp-edit-master.obo
       - name: Download PR classification
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-pr.obo
-          path: src/ontology/tmp/
+          path: src/ontology/tmp/hp-edit-pr.obo
       - name: Diff classification
         run: | 
             cd src/ontology;
