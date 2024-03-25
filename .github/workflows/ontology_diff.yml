@@ -57,12 +57,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-master.obo
-          path: src/ontology/tmp/hp-edit-master.obo
+          path: src/ontology/tmp/
       - name: Download PR classification
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-pr.obo
-          path: src/ontology/tmp/hp-edit-pr.obo
+          path: src/ontology/tmp/
       - name: Diff classification
         run: | 
             cd src/ontology;
