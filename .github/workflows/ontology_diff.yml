@@ -83,29 +83,60 @@ jobs:
         with:
           name: difference_main-branch_base.md
           path: src/ontology/reports/
-      - name: Prepare reasoned comment
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology: </summary> \n\" >comment.md; cat src/ontology/reports/difference_main-branch_base.md >>comment.md"
-      - name: Post reasoned comment
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: NejcZdovc/comment-pr@v1.1.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "../../comment.md"
-          identifier: "REASONED"
-      # - uses: actions/checkout@v4
-      # - name: Download edit diff
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: edit-diff.md
-      #     path: edit-diff.md
-      # - name: Prepare edit file comment
-      #   run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" >edit-comment.md; cat edit-diff.md >>edit-comment.md"
-      # - name: Post comment
+      # - name: Prepare reasoned comment
+      #   run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology: </summary> \n\" >comment.md; cat src/ontology/reports/difference_main-branch_base.md >>comment.md"
+      # - name: Post reasoned comment
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #   uses: NejcZdovc/comment-pr@v1.1.1
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     file: "../../edit-comment.md"
-      #     identifier: "UNREASONED"
+      #     file: "../../comment.md"
+      #     identifier: "REASONED"
+      # Post or update comment on pull request if difference_md.md exists
+      - name: Post or update comment on pull request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'src/ontology/reports/difference_main-branch_base.md'; 
+            if (fs.existsSync(path)) {
+                let content = fs.readFileSync(path, 'utf8');
+                if (content) {
+                    // GitHub's max issue body size is approximately 65536 characters
+                    const maxBodySize = 65536;
+                    const truncateMsg = '\n</details>\n\n ### WARNING: This diff is too large and has been truncated. For full diff see [here](https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/src/ontology/reports/difference_main-branch_base.md).';
+                    if (content.length > maxBodySize) {
+                        // Truncate the content to fit within the GitHub comment size limit
+                        content = content.substring(0, maxBodySize - truncateMsg.length) + truncateMsg;
+                    }
+
+                    const { owner, repo } = context.repo;
+                    const { number } = context.issue;
+                    const existingComments = await github.rest.issues.listComments({
+                        owner,
+                        repo,
+                        issue_number: number
+                    });
+                    const existingComment = existingComments.data.find(comment => comment.user.login === 'github-actions[bot]');
+                    if (existingComment) {
+                        await github.rest.issues.updateComment({
+                            owner,
+                            repo,
+                            comment_id: existingComment.id,
+                            body: content
+                        });
+                    } else {
+                        await github.rest.issues.createComment({
+                            owner,
+                            repo,
+                            issue_number: number,
+                            body: content
+                        });
+                    }
+                } else {
+                    console.log("The markdown file is empty."); // Debug print if the file is empty
+                }
+            } else {
+                console.log("The markdown file does not exist."); // Debug print if the file does not exist
+            }
