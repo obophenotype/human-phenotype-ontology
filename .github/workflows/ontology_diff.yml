@@ -84,7 +84,7 @@ jobs:
           name: difference_main-branch_base.md
           path: src/ontology/reports/
       - name: Prepare reasoned comment
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology: </summary> \n\" >comment.md; cat difference_main-branch_base.md >>comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology: </summary> \n\" >comment.md; cat src/ontology/reports/difference_main-branch_base.md >>comment.md"
       - name: Post reasoned comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -94,13 +94,13 @@ jobs:
           file: "../../comment.md"
           identifier: "REASONED"
       - uses: actions/checkout@v4
-      - name: Download edit diff
-        uses: actions/download-artifact@v4
-        with:
-          name: edit-diff.md
-          path: edit-diff.md
-      - name: Prepare edit file comment
-        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" >edit-comment.md; cat edit-diff.md >>edit-comment.md"
+      # - name: Download edit diff
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: edit-diff.md
+      #     path: edit-diff.md
+      # - name: Prepare edit file comment
+      #   run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" >edit-comment.md; cat edit-diff.md >>edit-comment.md"
       - name: Post comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
