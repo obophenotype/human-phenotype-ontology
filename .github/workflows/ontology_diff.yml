@@ -10,29 +10,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # edit_file:
-  #   runs-on: ubuntu-latest
-  #   container: obolibrary/odkfull:v1.5
-  #   steps:
-  #     # Checks-out main branch under "main" directory
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         ref: master
-  #         path: master
-
-  #     - name: Install oaklib
-  #       run: pip install oaklib
-
-  #     - name: Diff classification
-  #       run: |
-  #           export ROBOT_JAVA_ARGS=-Xmx6G
-  #           runoak -i simpleobo:tmp/hp-edit-master.obo diff -X simpleobo:tmp/hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 
-
-  #     - name: Upload diff
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: difference_main-branch_base.md
-  #         path: src/ontology/reports/difference_main-branch_base.md
   classify_branch:
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.5
@@ -94,7 +71,7 @@ jobs:
           name: difference_main-branch_base.md
           path: src/ontology/reports/difference_main-branch_base.md
   post_comment:
-    needs: diff_classification   #, edit_file]
+    needs: diff_classification
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
