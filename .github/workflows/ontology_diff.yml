@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: hp-edit-master.obo
-          path: src/ontology/tmp/
+          path: src/ontology/tmp/hp-edit-master.obo
           retention-days: 1
   diff_classification:
     needs:
@@ -65,7 +65,7 @@ jobs:
       - name: Diff classification
         run: | 
             cd src/ontology;
-            ls -l tmp;
+            ls -l tmp/hp-edit-master.obo;
             make gh-action-diff
       - name: Upload diff
         uses: actions/upload-artifact@v4
