@@ -82,7 +82,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: difference_main-branch_base.md
-          path: src/ontology/reports/difference_main-branch_base.md
+          path: src/ontology/reports/
       - name: Prepare reasoned comment
         run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology: </summary> \n\" >comment.md; cat difference_main-branch_base.md/difference_main-branch_base.md >>comment.md"
       - name: Post reasoned comment
