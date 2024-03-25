@@ -36,6 +36,7 @@ jobs:
         run: |
           cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl
           robot convert --input hp-edit.owl --output tmp/hp-edit.obo --format obo
+      # The robot convert above stays for now since the make target is not yet available in the main branch
 
       - name: Upload master hp-edit.obo
         uses: actions/upload-artifact@v4
@@ -55,17 +56,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-master.obo
-          path: hp-edit-master.obo
+          path: src/ontology/tmp/hp-edit-master.obo
       - name: Download PR classification
         uses: actions/download-artifact@v4
         with:
           name: hp-edit-pr.obo
-          path: hp-edit-pr.obo
+          path: src/ontology/tmp/hp-edit-pr.obo
       - name: Diff classification
         run: | 
-            export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology;
-            ls -l;
-            runoak -i simpleobo:hp-edit-master.obo diff -X simpleobo:hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 
+            cd src/ontology;
+            ls -l tmp;
+            make gh-action-diff
       - name: Upload diff
         uses: actions/upload-artifact@v4
         with:

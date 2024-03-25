@@ -707,3 +707,6 @@ reports/difference_main-branch_base.txt: tmp/hp-main-branch.obo tmp/hp-edit.obo
 reports/difference_main-branch_base.yaml: tmp/hp-main-branch.obo tmp/hp-edit.obo
 	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
 	-o $@ --output-type yaml
+
+gh-action-diff:
+	runoak -i simpleobo:tmp/hp-edit-master.obo diff -X simpleobo:tmp/hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 
