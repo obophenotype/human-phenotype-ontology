@@ -101,11 +101,11 @@ jobs:
       #     path: edit-diff.md
       # - name: Prepare edit file comment
       #   run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" >edit-comment.md; cat edit-diff.md >>edit-comment.md"
-      - name: Post comment
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: NejcZdovc/comment-pr@v1.1.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "../../edit-comment.md"
-          identifier: "UNREASONED"
+      # - name: Post comment
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   uses: NejcZdovc/comment-pr@v1.1.1
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     file: "../../edit-comment.md"
+      #     identifier: "UNREASONED"
