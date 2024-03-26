@@ -38,7 +38,7 @@ jobs:
           robot convert --input hp-edit.owl --output tmp/hp-edit-master.obo --format obo
       # The robot convert above stays for now since the make target is not yet available in the main branch
 
-      - name: Upload master hp-edit-pr.obo
+      - name: Upload master hp-edit-master.obo
         uses: actions/upload-artifact@v4
         with:
           name: hp-edit-master.obo
