@@ -17,8 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Classify ontology
         run: |
-            cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl && make tmp/hp-edit.obo
-            cp tmp/hp-edit.obo tmp/hp-edit-pr.obo
+            cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl && make tmp/hp-edit-pr.obo
             
       - name: Upload PR hp-edit.obo
         uses: actions/upload-artifact@v4
