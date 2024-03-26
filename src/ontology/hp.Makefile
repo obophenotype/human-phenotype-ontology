@@ -640,18 +640,13 @@ mappings:
 .PHONY: diff
 diff: diff-release-base diff-main-branch-base
 
-tmp/hp-edit-pr.obo: hp-edit.owl
+tmp/hp-edit.obo: hp-edit.owl
 	$(ROBOT) convert --input $< --check false -f obo -o $@
-
-tmp/hp-main-branch.owl:
-	wget https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/src/ontology/hp-edit.owl -O $@
 
 tmp/hp-main-branch.obo: tmp/hp-main-branch.owl
 	$(ROBOT) convert --input $< --check false -f obo -o $@
 
 
-tmp/%.db: tmp/%.owl
-	semsql make $@
 
 tmp/hp-released.owl:
 	wget http://purl.obolibrary.org/obo/hp.owl -O $@
@@ -686,6 +681,11 @@ reports/difference_release_base.yaml: tmp/hp-released.obo tmp/hp-edit-pr.obo
 #################################
 ### Main branch comparisons #####
 #################################
+.PHONY: kgcl-diff-md-main-branch-base \
+        kgcl-diff-table-main-branch-base \
+        kgcl-diff-txt-main-branch-base \
+        kgcl-diff-yaml-main-branch-base \
+        diff-main-branch-base
 kgcl-diff-md-main-branch-base: reports/difference_main-branch_base.md
 kgcl-diff-table-main-branch-base: reports/difference_main-branch_base.tsv
 kgcl-diff-txt-main-branch-base: reports/difference_main-branch_base.txt
