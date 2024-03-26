@@ -651,7 +651,7 @@ tmp/hp-main-branch.obo: tmp/hp-main-branch.owl
 tmp/hp-released.owl:
 	wget http://purl.obolibrary.org/obo/hp.owl -O $@
 
-tmp/hp-released.obo: tmp/hp-edit-pr.obo
+tmp/hp-released.obo: tmp/hp-edit.obo
 	wget http://purl.obolibrary.org/obo/hp.obo -O tmp/hp-released.obo
 
 
@@ -663,19 +663,19 @@ kgcl-diff-yaml-release-base: reports/difference_release_base.yaml
 diff-release-base: kgcl-diff-md-release-base kgcl-diff-table-release-base kgcl-diff-txt-release-base kgcl-diff-yaml-release-base
 
 
-reports/difference_release_base.md: tmp/hp-released.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:tmp/hp-edit-pr.obo -o $@ --output-type md
+reports/difference_release_base.md: tmp/hp-released.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:tmp/hp-edit.obo -o $@ --output-type md
 
-reports/difference_release_base.tsv: tmp/hp-released.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-edit-pr.obo diff -X simpleobo:tmp/hp-released.obo \
+reports/difference_release_base.tsv: tmp/hp-released.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-released.obo \
 	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
 
-reports/difference_release_base.txt: tmp/hp-released.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-edit-pr.obo diff -X simpleobo:tmp/hp-released.obo \
+reports/difference_release_base.txt: tmp/hp-released.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-released.obo \
 	-o $@ --output-type kgcl
 
-reports/difference_release_base.yaml: tmp/hp-released.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-edit-pr.obo diff -X simpleobo:tmp/hp-released.obo \
+reports/difference_release_base.yaml: tmp/hp-released.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-released.obo \
 	-o $@ --output-type yaml
 
 #################################
@@ -693,20 +693,17 @@ kgcl-diff-yaml-main-branch-base: reports/difference_main-branch_base.yaml
 diff-main-branch-base: kgcl-diff-md-main-branch-base kgcl-diff-table-main-branch-base kgcl-diff-txt-main-branch-base kgcl-diff-yaml-main-branch-base
 
 
-reports/difference_main-branch_base.md: tmp/hp-main-branch.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-main-branch.obo diff -X simpleobo:tmp/hp-edit-pr.obo -o $@ --output-type md
+reports/difference_main-branch_base.md: tmp/hp-main-branch.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-main-branch.obo diff -X simpleobo:tmp/hp-edit.obo -o $@ --output-type md
 
-reports/difference_main-branch_base.tsv: tmp/hp-main-branch.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-edit-pr.obo diff -X simpleobo:tmp/hp-main-branch.obo \
+reports/difference_main-branch_base.tsv: tmp/hp-main-branch.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
 	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
 
-reports/difference_main-branch_base.txt: tmp/hp-main-branch.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-edit-pr.obo diff -X simpleobo:tmp/hp-main-branch.obo \
+reports/difference_main-branch_base.txt: tmp/hp-main-branch.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
 	-o $@ --output-type kgcl
 
-reports/difference_main-branch_base.yaml: tmp/hp-main-branch.obo tmp/hp-edit-pr.obo
-	runoak -i simpleobo:tmp/hp-edit-pr.obo diff -X simpleobo:tmp/hp-main-branch.obo \
+reports/difference_main-branch_base.yaml: tmp/hp-main-branch.obo tmp/hp-edit.obo
+	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
 	-o $@ --output-type yaml
-
-gh-action-diff:
-	runoak -i simpleobo:tmp/hp-edit-master.obo diff -X simpleobo:tmp/hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 

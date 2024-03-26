@@ -17,7 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Classify ontology
         run: |
-            cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl && make tmp/hp-edit-pr.obo
+            cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl && make tmp/hp-edit.obo
+            cp tmp/hp-edit.obo tmp/hp-edit-pr.obo
             
       - name: Upload PR hp-edit-pr.obo
         uses: actions/upload-artifact@v4
@@ -35,7 +36,8 @@ jobs:
       - name: Classify ontology
         run: |
           cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp-edit.owl
-          robot convert --input hp-edit.owl --output tmp/hp-edit-master.obo --format obo
+          robot convert --input hp-edit.owl --output tmp/hp-edit.obo --format obo
+          cp tmp/hp-edit.obo tmp/hp-edit-master.obo
       # The robot convert above stays for now since the make target is not yet available in the main branch
 
       - name: Upload master hp-edit-master.obo
@@ -65,8 +67,7 @@ jobs:
       - name: Diff classification
         run: | 
             cd src/ontology;
-            ls -l tmp/hp-edit-master.obo;
-            make gh-action-diff
+            runoak -i simpleobo:tmp/hp-edit-master.obo diff -X simpleobo:tmp/hp-edit.obo -o reports/difference_main-branch_base.md --output-type md 
       - name: Upload diff
         uses: actions/upload-artifact@v4
         with:
