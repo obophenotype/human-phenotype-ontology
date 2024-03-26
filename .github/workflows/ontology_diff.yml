@@ -67,7 +67,7 @@ jobs:
       - name: Diff classification
         run: | 
             cd src/ontology;
-            runoak -i simpleobo:tmp/hp-edit-master.obo diff -X simpleobo:tmp/hp-edit.obo -o reports/difference_main-branch_base.md --output-type md 
+            runoak -i simpleobo:tmp/hp-edit-master.obo diff -X simpleobo:tmp/hp-edit-pr.obo -o reports/difference_main-branch_base.md --output-type md 
       - name: Upload diff
         uses: actions/upload-artifact@v4
         with:
