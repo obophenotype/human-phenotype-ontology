@@ -646,8 +646,6 @@ tmp/hp-edit.obo: hp-edit.owl
 tmp/hp-main-branch.obo: tmp/hp-main-branch.owl
 	$(ROBOT) convert --input $< --check false -f obo -o $@
 
-
-
 tmp/hp-released.owl:
 	wget http://purl.obolibrary.org/obo/hp.owl -O $@
 
@@ -676,34 +674,4 @@ reports/difference_release_base.txt: tmp/hp-released.obo tmp/hp-edit.obo
 
 reports/difference_release_base.yaml: tmp/hp-released.obo tmp/hp-edit.obo
 	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-released.obo \
-	-o $@ --output-type yaml
-
-#################################
-### Main branch comparisons #####
-#################################
-.PHONY: kgcl-diff-md-main-branch-base \
-        kgcl-diff-table-main-branch-base \
-        kgcl-diff-txt-main-branch-base \
-        kgcl-diff-yaml-main-branch-base \
-        diff-main-branch-base
-kgcl-diff-md-main-branch-base: reports/difference_main-branch_base.md
-kgcl-diff-table-main-branch-base: reports/difference_main-branch_base.tsv
-kgcl-diff-txt-main-branch-base: reports/difference_main-branch_base.txt
-kgcl-diff-yaml-main-branch-base: reports/difference_main-branch_base.yaml
-diff-main-branch-base: kgcl-diff-md-main-branch-base kgcl-diff-table-main-branch-base kgcl-diff-txt-main-branch-base kgcl-diff-yaml-main-branch-base
-
-
-reports/difference_main-branch_base.md: tmp/hp-main-branch.obo tmp/hp-edit.obo
-	runoak -i simpleobo:tmp/hp-main-branch.obo diff -X simpleobo:tmp/hp-edit.obo -o $@ --output-type md
-
-reports/difference_main-branch_base.tsv: tmp/hp-main-branch.obo tmp/hp-edit.obo
-	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
-	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
-
-reports/difference_main-branch_base.txt: tmp/hp-main-branch.obo tmp/hp-edit.obo
-	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
-	-o $@ --output-type kgcl
-
-reports/difference_main-branch_base.yaml: tmp/hp-main-branch.obo tmp/hp-edit.obo
-	runoak -i simpleobo:tmp/hp-edit.obo diff -X simpleobo:tmp/hp-main-branch.obo \
 	-o $@ --output-type yaml
