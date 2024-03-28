@@ -1,0 +1,60 @@
+pattern_name: abnormallyFusedAnatomicalEntitiesInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyFusedAnatomicalEntitiesInLocation.yaml
+description: "An anatomical entity in a particular location that is abnormally fused with another anatomical entity in a particular location. Before using this pattern make sure abnormallyFusedAnatomicalEntities is not applicable."
+
+classes:
+  fused: PATO:0000642
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  independent continuant: BFO:0000004
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  towards: RO:0002503
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+  anatomical_entity_fused_with: "'anatomical entity'"
+  location: "'independent continuant'"
+  location_fused_with: "'independent continuant'"
+
+name:
+  text: "abnormally fused %s in %s with %s in %s"
+  vars:
+  - anatomical_entity
+  - location
+  - anatomical_entity_fused_with
+  - location_fused_with
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "abnormal fusion of %s in %s and %s in %s"
+  vars:
+  - anatomical_entity
+  - location
+  - anatomical_entity_fused_with
+  - location_fused_with
+
+def:
+  text: "Any abnormal fusion of the %s in the %s and the %s in the %s."
+  vars:
+  - anatomical_entity
+  - location
+  - anatomical_entity_fused_with
+  - location_fused_with
+
+equivalentTo:
+  text: "'has_part' some ('fused' and ('inheres_in' some (%s and ('part_of' some %s))) and ('towards' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity
+  - location
+  - anatomical_entity_fused_with
+  - location_fused_with
+contributors:
+- https://orcid.org/0000-0002-3528-5267

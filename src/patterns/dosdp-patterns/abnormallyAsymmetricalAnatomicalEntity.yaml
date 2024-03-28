@@ -1,0 +1,68 @@
+pattern_name: abnormallyAsymmetricalAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyAsymmetricalAnatomicalEntity.yaml
+
+description: 'Use this pattern for morphologically asymmetrical anatomical entity phenotypes. Here abnormal asymmetry includes the lack of radial, bilateral and other types of symmetry in size, shape, and relative position of anatomical entities, e.g. craniofacial asymmetry or foot asymmetry.'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/MP_0008863  # craniofacial asymmetry
+#    - http://purl.obolibrary.org/obo/HP_0002678  # Skull asymmetry
+#    - http://purl.obolibrary.org/obo/HP_0010507  # Foot asymmetry
+#    - http://purl.obolibrary.org/obo/ZP_0011548  # neural tube asymmetrical, abnormal
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford
+
+classes:
+  asymmetrical: PATO:0000616
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "abnormal asymmetry of %s"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormally asymmetrical %s"
+    vars:
+      - anatomical_entity
+
+  - annotationProperty: related_synonym
+    text: "%s asymmetry"
+    vars:
+      - anatomical_entity
+
+  - annotationProperty: related_synonym
+    text: "asymmetry of %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "Abnormal morphological asymmetry of %s (or a set of thereof) across an axis of symmetry."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+          'asymmetrical' and
+          'characteristic_of' some %s and
+          'has_modifier' some 'abnormal')"
+  vars:
+    - anatomical_entity

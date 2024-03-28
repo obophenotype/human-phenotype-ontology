@@ -1,0 +1,34 @@
+pattern_name: metaplasticAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/metaplasticAnatomicalEntity.yaml
+description: "The abnormal change from one fully differentiated cellular state into another in an anatomical entity."
+
+contributors:
+- https://orcid.org/0000-0002-9611-1279
+
+classes:
+  metaplastic: PATO:0002101
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "metaplastic %s"
+  vars:
+  - anatomical_entity
+
+def:
+  text: "Abnormal change from one fully differentiated cellular state into another in %s."
+  vars:
+  - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('metaplastic' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+  - anatomical_entity

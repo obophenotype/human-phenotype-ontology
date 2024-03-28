@@ -1,0 +1,54 @@
+pattern_name: abnormallyDecreasedWeightOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyDecreasedWeightOfAnatomicalEntity.yaml
+description: "Decreased mass of an anatomical entity, e.g. decreased mass of the whole organism. NOTE: We are using decreased mass (PATO:0001562), not weight, to model this phenotype, see also https://github.com/obophenotype/bio-attribute-ontology/issues/39"
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-9611-1279
+
+classes:
+  decreased mass: PATO:0001562
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  narrow_synonym: oio:hasNarrowSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "decreased %s mass"
+  vars:
+   - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "small %s mass"
+    vars:
+    - anatomical_entity
+  - annotationProperty: exact_synonym
+    text: "low %s mass"
+    vars:
+    - anatomical_entity
+  - annotationProperty: narrow_synonym
+    text: "decreased %s weight"
+    vars:
+    - anatomical_entity
+
+def:
+  text: "An abnormal decrease in mass in the %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('decreased mass' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

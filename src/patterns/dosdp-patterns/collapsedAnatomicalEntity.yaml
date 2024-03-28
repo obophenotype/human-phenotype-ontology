@@ -1,0 +1,55 @@
+---
+pattern_name: collapsedAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/collapsedAnatomicalEntity.yaml
+
+description: 'Use this phenotype pattern when an anatomical entity has
+  collapsed and loses its normal structure by becoming flat or caved in.'
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/MP_0006024  # collapsed Reissner membrane
+#    - http://purl.obolibrary.org/obo/MP_0012681  # collapsed brain ventricles
+#    - http://purl.obolibrary.org/obo/ZP_0000118  # forebrain ventricle collapsed, abnormal
+#    - http://purl.obolibrary.org/obo/ZP_0131104  # atrioventricular canal collapsed, abnormal
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford [ybradford]
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  collapsed: PATO:0001478
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "collapsed %s"
+  vars:
+    - anatomical_entity
+
+def:
+  text: "A structural failure that affects %s so that it becomes flat or caved
+    in."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'collapsed' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...

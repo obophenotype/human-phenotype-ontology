@@ -1,0 +1,63 @@
+---
+pattern_name: perforateAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/perforateAnatomicalEntity.yaml
+
+description: "Use this pattern for phenotypes when an anatomical entity has an
+  abnormal hole or a series of holes. Consider the alternative 'PATO:0000609
+  closure incomplete' pattern for anatomical entities where a hole is present
+  normally at one developmental period but it remains open."
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/ZP_0002341  # retina perforate, abnormal
+#    - http://purl.obolibrary.org/obo/HP_0100583  # Corneal perforation
+#    - http://purl.obolibrary.org/obo/MP_0030414  # tympanic membrane perforation
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+  - https://orcid.org/0000-0002-7356-1779  # Nicolas Matentzoglu
+
+classes:
+  perforate: PATO:0002112
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "%s perforation"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "perforated %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "The presence of one or more abnormal holes in %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'perforate' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...

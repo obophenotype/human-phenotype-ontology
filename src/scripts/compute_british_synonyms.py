@@ -29,7 +29,8 @@ df_dict_cap = df_dict.copy()
 df_dict_cap = df_dict_cap.astype(str)
 df_dict_cap['ae']=df_dict_cap['ae'].str.capitalize()
 df_dict_cap['be']=df_dict_cap['be'].str.capitalize()
-df_dict=df_dict.append(df_dict_cap,ignore_index = True)
+#df_dict=df_dict.append(df_dict_cap,ignore_index = True)
+df_dict=pd.concat([df_dict, df_dict_cap], ignore_index=True)
 df_dict=df_dict.set_index('ae').T.to_dict('list')
 
 def translate_be(df, dict):
@@ -66,12 +67,13 @@ for syn_type in df_synonyms['synonym_type'].unique():
 		df_rem['synonym_type'] = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
 		df_rem.drop_duplicates(inplace=True)
 		allowed_syns.extend(df_labels['be'].tolist())
-		df_be_syns.append(df_rem,ignore_index = True)
+		df_be_syns=pd.concat([df_be_syns, df_rem], ignore_index=True)
+  		#df_be_syns.append(df_rem,ignore_index = True)
 	
 	df_be_syns.drop_duplicates(inplace=True)
 	
 	df_be_syns=df_be_syns[~df_be_syns['be'].isin(allowed_syns)]
-	df_be_syns['Type']="http://purl.obolibrary.org/obo/hp#uk_spelling"
+	df_be_syns['synonym_type']="http://purl.obolibrary.org/obo/hp#uk_spelling"
 	print(df_be_syns.head())
 	df_be_syns.loc[-1] = ['ID', 'A '+syn_type,'>AI http://www.geneontology.org/formats/oboInOwl#hasSynonymType']  # adding a row
 	df_be_syns.index = df_be_syns.index + 1  # shifting index

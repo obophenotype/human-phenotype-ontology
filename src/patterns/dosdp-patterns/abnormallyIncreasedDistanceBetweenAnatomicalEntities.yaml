@@ -1,0 +1,52 @@
+pattern_name: abnormallyIncreasedDistanceBetweenAnatomicalEntities 
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormallyIncreasedDistanceBetweenAnatomicalEntities.yaml
+description: "The distance between two anatomical entites has increased. For example the distance between eyes."
+ 
+contributors: 
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0003-4148-4606
+  
+classes:
+  abnormal: PATO:0000460
+  entity1: UBERON:0001062
+  entity2: UBERON:0001062 
+  increased distance: PATO:0000374
+
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  towards: RO:0002503
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym 
+
+vars:
+  entity1: "'entity1'"
+  entity2: "'entity2'"
+
+name:
+  text: "increased distance between %s and %s"
+  vars:
+   - entity1
+   - entity2
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "distance increased between %s and %s"
+    vars:
+     - entity1
+     - entity2
+
+def:
+  text: "Increased distance between %s and %s."
+  vars:
+    - entity1
+    - entity2
+
+equivalentTo:
+  text: "'has_part' some ('increased distance' and ('inheres_in' some %s) and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - entity1
+    - entity2

@@ -1,0 +1,66 @@
+---
+pattern_name: dislocatedAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/dislocatedAnatomicalEntity.yaml
+
+description: "Use this phenotype pattern when an anatomical entity developed in
+  its normal location, but later it is found outside of that original place or
+  position. Consider the alternative 'mislocalised PATO:0000628' positional
+  quality pattern when the anatomical entity is found outside of its usual or
+  proper place, because it developed in the wrong (ectopic) location."
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0001373  # Joint dislocation
+#    - http://purl.obolibrary.org/obo/HP_0002827  # Hip dislocation
+#    - http://purl.obolibrary.org/obo/MP_0030795  # joint dislocation
+#    - http://purl.obolibrary.org/obo/MP_0030796  # hip dislocation
+#    - http://purl.obolibrary.org/obo/MP_0030843  # elbow dislocation
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-7356-1779  # Nicolas Matentzoglu
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  dislocated: PATO:0001852
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "%s dislocation"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "dislocation of %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "Dislocation or displacement of %s from the place or position where it
+    developed."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'dislocated' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity
+...

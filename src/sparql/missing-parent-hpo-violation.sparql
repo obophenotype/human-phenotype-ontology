@@ -1,0 +1,26 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX HP: <http://purl.obolibrary.org/obo/HP_>
+
+# This test checks that all HP classes that are not deprecated
+# have a parent that is one of the top distinctions in HPO under "All"
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+  { 
+    ?entity a owl:Class .
+    FILTER NOT EXISTS { ?entity owl:deprecated true . }
+    FILTER ( STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/HP_"))
+    FILTER (?entity != HP:0000001)
+  }
+  MINUS
+  { 
+     SELECT ?entity WHERE {
+       ?entity a owl:Class .
+       ?entity rdfs:subClassOf* ?parent .
+       VALUES ?parent { HP:0032223 HP:0012823 HP:0040279 HP:0000005 HP:0032443 HP:0000118 HP:0020228 }
+    }
+  } .
+  ?entity rdfs:label ?label .
+  BIND(CONCAT(?label, " is not in a legal branch of HPO.") AS ?value)
+  BIND(rdfs:subClassOf AS ?property)
+}

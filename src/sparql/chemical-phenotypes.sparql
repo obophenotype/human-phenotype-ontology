@@ -1,0 +1,38 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix HP: <http://purl.obolibrary.org/obo/HP_>
+
+SELECT DISTINCT ?concentration_phenotype ?label ?definition (GROUP_CONCAT(DISTINCT STR(?parent_label); separator=", ") as ?parents)
+WHERE {
+
+?concentration_phenotype rdfs:subClassOf+ <http://purl.obolibrary.org/obo/HP_0000118> ;
+        rdfs:label ?label .
+
+OPTIONAL {
+    ?concentration_phenotype IAO:0000115 ?definition .
+}
+
+OPTIONAL {
+    ?concentration_phenotype rdfs:subClassOf ?parent .
+    ?parent rdfs:label ?parent_label .
+}
+
+{ 
+  FILTER (
+     (CONTAINS(LCASE(?label), "level") || CONTAINS(LCASE(?label), "concentration") || CONTAINS(LCASE(?label), "amount") || STRENDS(LCASE(?label), "emia") || STRENDS(LCASE(?label), "uria"))
+ )
+ 
+  } UNION {
+  
+    ?concentration_phenotype rdfs:subClassOf+ ?concentration_phenotype_parent .
+    ?concentration_phenotype_parent rdfs:label ?parent_label . 
+    
+    FILTER (
+      (CONTAINS(LCASE(?parent_label), "level") || CONTAINS(LCASE(?parent_label), "concentration") || CONTAINS(LCASE(?parent_label), "amount") || STRENDS(LCASE(?parent_label), "emia") || STRENDS(LCASE(?parent_label), "uria"))
+    )
+
+  }
+  
+} GROUP BY ?concentration_phenotype ?label ?definition

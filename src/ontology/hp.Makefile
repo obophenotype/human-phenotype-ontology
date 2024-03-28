@@ -171,7 +171,7 @@ imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 ##### Code for removing patternised classes ###########
 #######################################################
 
-patternised_classes.txt: .FORCE
+patternised_classes.txt: ../patterns/definitions.owl .FORCE
 	$(ROBOT) query -f csv -i ../patterns/definitions.owl --query ../sparql/$(ONT)_terms.sparql $@
 	sed -i 's/http[:][/][/]purl.obolibrary.org[/]obo[/]//g' $@
 	sed -i '/^[^H]/d' $@
@@ -181,13 +181,13 @@ patternised_classes.txt: .FORCE
 remove_patternised_classes: $(SRC) patternised_classes.txt
 	sed -i -r "/^EquivalentClasses[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]($(shell cat patternised_classes.txt | tr -d '\r' | tr '\n' '-' | sed -r 's/[-]+/\|/g' ))/d" $<
 
-tmp/eqs.ofn: #../patterns/definitions.owl
+tmp/eqs.ofn: ../patterns/definitions.owl
 	$(ROBOT) filter -i ../patterns/definitions.owl --axioms equivalent -o $@
 	sed -i '/^Declaration/d' $@
 
 migrate_definitions_to_edit: $(SRC) tmp/eqs.ofn
 	echo "Not regenerating definitions.owl.. Is it up to date?"
-	$(ROBOT) merge -i hp-edit.owl -i ../patterns/definitions.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
+	$(ROBOT) merge -i hp-edit.owl -i tmp/eqs.ofn --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 	#$(ROBOT) remove -i ../patterns/definitions.owl -o ../patterns/definitions.owl
 
 tmp/hp_pattern_subclasses.owl: $(SRC)
@@ -222,6 +222,13 @@ tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
 add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 	$(ROBOT) merge -i hp-edit.owl -i tmp/british_synonyms.owl --collapse-import-closure false -o hp-edit.ofn && mv hp-edit.ofn hp-edit.owl
 
+# This updates all British English in Mondo to American English.
+.PHONY: americanize
+
+americanize: $(SRC) hpo_british_english_dictionary.csv
+	python ../scripts/americanize.py $^
+
+
 #########################################################################################################
 ### Process for merging a large template and remove existing content: ###################################
 #########################################################################################################
@@ -236,12 +243,12 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 
 template_behaviour_pipeline:
 	git checkout master -- hp-edit.owl
-	make rm_defs -B
-	make db -B
-	make re-assemble -B
-	make merge_annotation_assertions -B
-	make reports/hp-edit.owl-obo-report.tsv -B
-	# make drop_synonyms_wo_support -B
+	make rm_defs PAT=false -B
+	make db PAT=false -B
+	make re-assemble PAT=false -B
+	make merge_annotation_assertions PAT=false -B
+	make reports/hp-edit.owl-obo-report.tsv PAT=false -B
+	# make drop_synonyms_wo_support PAT=false -B
 
 tmp/remove_behaviours.ofn:
 	# Recipe for doing the manually with grep / easier than trying to use SPARQL or ROBOT
@@ -359,7 +366,13 @@ tmp/patternised_classes.txt: patternised_classes.txt
 
 reports/hpo_dosdp_table.csv: tmp/hp-build.owl tmp/patternised_classes.txt
 	$(ROBOT) merge -i $< filter -T tmp/patternised_classes.txt --signature true --preserve-structure false query --use-graphs true -f csv --query ../sparql/hp_term_table.sparql $@
-	
+
+# This goal is needed for the `dosdp-matches-matches` pipeline. 
+# The pipeline, right now, only creates a report if there are matches.
+# TODO: Make the pipeline create a report for classes where there are no matches.
+tmp/hp-edit-merged-reasoned.owl: $(SRC)
+	$(ROBOT) merge -i $< reason -o $@	
+
 
 imports/ncit_import.owl: mirror/ncit.owl imports/ncit_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/ncit_terms_combined.txt --force true --method BOT \
@@ -409,12 +422,17 @@ qc: test hp.owl hp.obo
 iconv:
 	iconv -f UTF-8 -t ISO-8859-15 $(SRC) > $(TMPDIR)/converted.txt || (echo "found special characters in ontology. remove those!"; exit 1)
 
-MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vT82SayHeKRYE3UcMpdwJhxa8UnKMY_u4GUTFO7B4-QKWEam8lH5Qtxujt5KMFzqqWQ3iZa9HOSFKoT/pub?gid=1687083078&single=true&output=tsv"
-tmp/merge.tsv:
-	wget $(MERGE_TEMPLATE_URL) -O $@
+# Merge template workflow
+# The template to be merged is expected to be located at 
+# the location indicated by the MERGE_TEMPLATE_FILE variable
 
-merge_template: tmp/merge.tsv
-	$(ROBOT) template --merge-before --input $(SRC) \
+MERGE_TEMPLATE_FILE=NOFILE
+MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR99Cz13ykiPwq-WdLjAGsPod6n7daSjyhpJa2FJS5bjEDDBlkjJYGrS2hYckvtGAIO2JzpCYMueuUM/pub?gid=1430967911&single=true&output=tsv"
+sync_google_template:
+	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
+
+merge_template: $(MERGE_TEMPLATE_FILE)
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 reset_edit:
@@ -517,103 +535,26 @@ help:
 	echo "Migrating EQs from MP to HP:"
 	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
-#### Translations #####
-LANGUAGES=nl fr cs tr zh nna tw dtp
-TRANSLATIONDIR=translations
-HP_TRANSLATIONS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.owl, $(LANGUAGES))
+###########################################
+### Translations, Internationalisation ####
+###########################################
 
-BABELON_SCHEMA=https://raw.githubusercontent.com/monarch-initiative/babelon/main/src/schema/babelon.yaml
-BABELON_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=534060692&single=true&output=tsv
-BABELON_NNA=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-nna.babelon.tsv
-BABELON_DTP=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-dtp.babelon.tsv
-BABELON_TW=https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tw.babelon.tsv
-SYNONYMS_FR=https://docs.google.com/spreadsheets/d/e/2PACX-1vTSW8DZMQ0tuLj-oDf4wn2OQz5CcPjCSYp7yfgUCwdzBzy90z4oIAyyDixDVAn_WUdt8qOOjCIxAu4-/pub?gid=1827507876&single=true&output=tsv
-
-translations/:
-	mkdir -p $@
-
-# Note to matentzn, this should all happen here using the babelon CLI
-sync_translations_from_babelon:
-	cp -r /Users/matentzn/ws/obable/tests/data/translations/*.tsv tmp/
-
-translations/babelon.yaml: | translations/
-	wget "$(BABELON_SCHEMA)" -O $@
-
-#### French translation
-
-tmp/hp-fr.babelon.tsv: | translations/
-	wget "$(BABELON_FR)" -O $@
-
-translations/hp-fr.babelon.tsv: tmp/hp-fr.babelon.tsv | translations/
-	cut --complement -f5 $< | grep -v NOT_TRANSLATED > $@
-
-translations/hp-fr.synonyms.tsv: | translations/
-	wget "$(SYNONYMS_FR)" -O $@
-
-#### Translations managed on platform
-
-# This is the default goal for the raw, untranslated HPO translation files
-# We simply download the file from the HPO-translations repo
-$(TMPDIR)/hp-%.babelon.tsv: | translations/
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-$*.babelon.tsv" -O $@
-.PRECIOUS: $(TMPDIR)/hp-%.babelon.tsv
-
-translations/hp-%.babelon.tsv: tmp/hp-%.babelon.tsv | translations/
-	grep -v NOT_TRANSLATED $< > $@ || cp $< $@
-.PRECIOUS: translations/hp-%.babelon.tsv
-
-$(TMPDIR)/hp-%.synonyms.tsv: | translations/
-	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-$*.synonyms.tsv" -O $@
-.PRECIOUS: $(TMPDIR)/hp-%.synonyms.tsv
-
-translations/hp-%.synonyms.tsv: $(TMPDIR)/hp-%.synonyms.tsv | translations/
-	cp $< $@
-.PRECIOUS: translations/hp-%.synonyms.owl
-
-translations/hp-%.synonyms.owl: translations/hp-%.synonyms.tsv | translations/
-	$(ROBOT) template --template $< --output $@
-.PRECIOUS: translations/hp-%.synonyms.owl
-
-translations/hp-profile-%.owl: translations/hp-%.babelon.tsv translations/babelon.yaml
-	linkml-convert -t rdf -s translations/babelon.yaml -C Profile -S translations $< -o $@.tmp
-	echo "babelon:source_language a owl:AnnotationProperty ." >> $@.tmp
-	echo "babelon:source_value a owl:AnnotationProperty ." >> $@.tmp
-	echo "babelon:translation_language a owl:AnnotationProperty ." >> $@.tmp
-	echo "babelon:translation_status a owl:AnnotationProperty ." >> $@.tmp
-	echo "<http://purl.obolibrary.org/obo/IAO_0000115> a owl:AnnotationProperty ." >> $@.tmp
-	sed -i '1s/^/@prefix babelon: <https:\/\/w3id.org\/babelon\/> . \n/' $@.tmp
-	$(ROBOT) merge -i $@.tmp query --update ../sparql/tag-source-language.ru --update ../sparql/rm-rdf.ru -o $@	
-.PRECIOUS: translations/hp-profile-%.owl
-
-#$(patsubst %, -i %, $^)
-#query --update ../sparql/rm_translated.ru \ <- remove the babelon metadata from the profile?
-#query --query ../sparql/print_translated.sparql $@-skipped-translations.tsv | Not needed anymore.
-
-translations/hp-%.owl: translations/hp-profile-%.owl translations/hp-%.synonyms.owl hp.owl
-	robot merge -i translations/hp-profile-$*.owl -i translations/hp-$*.synonyms.owl -i hp.owl \
-	query --query ../sparql/relegate-updated-labels-to-candidate-status.sparql reports/updated-labels-to-candidate-status-$*.tsv \
-	query --update ../sparql/relegate-updated-labels-to-candidate-status.ru \
+# TODO: factor out into babelon toolkit
+hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl hp.owl
+	robot merge -i $(TRANSLATIONSDIR)/hp-fr.babelon.owl -i hp.owl \
 	query --update ../sparql/rm-original-translation.ru \
 	remove --base-iri $(URIBASE)/HP --axioms external --preserve-structure false --trim false \
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
-.PRECIOUS: translations/hp-%.owl
+.PRECIOUS: hp-fr.owl
+
+#diff:
+#	robot diff --left tmp/int.owl --right hp-international.owl -o intdiff.txt
+#	#wget "http://purl.obolibrary.org/obo/hp/hp-international.owl" -O tmp/int.owl
 
 .PHONY: prepare_translations
 prepare_translations:
-	$(MAKE) IMP=false COMP=false PAT=false MIR=false $(HP_TRANSLATIONS) $(REPORTDIR)/diff-international.txt
-
-$(ONT)-international.owl: $(ONT).owl $(HP_TRANSLATIONS)
-	$(ROBOT) merge $(patsubst %, -i %, $^) \
-		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
-
-$(REPORTDIR)/diff-international.txt: hp.owl hp-international.owl
-	$(ROBOT) diff --left hp.owl --right hp-international.owl -o $@
-
-HP_TRANSLATIONS_TSVS=$(patsubst %, $(TRANSLATIONDIR)/hp-%.babelon.tsv, $(LANGUAGES))
-
-
-$(TRANSLATIONDIR)/hp-all.babelon.tsv:
-	python ../scripts/merge_tables.py $(HP_TRANSLATIONS_TSVS) -o $@
+	$(MAKE) IMP=false COMP=false PAT=false MIR=false \
+		$(TRANSLATIONSDIR)/hp-all.babelon.tsv $(TRANSLATIONSDIR)/hp-all.babelon.json
 
 #################
 ### Mappings ####

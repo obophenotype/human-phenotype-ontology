@@ -1,0 +1,46 @@
+pattern_name: mislocalisedAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/mislocalisedAnatomicalEntity.yaml
+description : "Abnormal anatomic location of an anatomicaly entity, such as HP_0012731 'Ectopic anterior pituitary gland'."
+
+contributors:
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0001-9076-6015
+
+classes:
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+  mislocalised: PATO:0000628
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical entity'"
+
+
+name:
+  text: "abnormally localised %s"
+  vars:
+   - anatomical_entity
+
+def:
+  text: "An abnormally localised %s."
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormal position of %s"
+    vars:
+     - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('mislocalised' and ('inheres_in' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - anatomical_entity

@@ -1,0 +1,49 @@
+pattern_name: abnormalHasFewerPartsOfTypeAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalHasFewerPartsOfTypeAnatomicalEntity.yaml
+description: "An anatomical entity has fewer instances of a part. For example, has the hand has fewer digits. Consider using decreased number of anatomical entity in location instead."
+
+contributors:
+  - https://orcid.org/0000-0002-3528-5267
+  
+classes:
+  has fewer parts of type: PATO:0002001
+  abnormal: PATO:0000460
+  anatomical entity: UBERON:0001062
+
+relations:
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  towards: RO:0002503
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  whole_anatomical_entity: "'anatomical entity'"
+  part_anatomical_entity: "'anatomical entity'"
+
+name:
+  text: "%s that has fewer parts of type %s"
+  vars:
+   - whole_anatomical_entity
+   - part_anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "fewer %ss in %s"
+    vars:
+     - part_anatomical_entity
+     - whole_anatomical_entity
+
+def:
+  text: "Any structural anomaly of %s that causes there to be fewer parts of type %s."
+  vars:
+    - whole_anatomical_entity
+    - part_anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some ('has fewer parts of type' and ('inheres_in' some %s) and ('towards' some %s) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - whole_anatomical_entity
+    - part_anatomical_entity

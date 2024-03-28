@@ -1,0 +1,64 @@
+---
+pattern_name: abnormalLengthOfAnatomicalEntity
+
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns-dev/abnormalLengthOfAnatomicalEntity.yaml
+
+description: "Use this phenotype pattern when the length of an anatomical
+  entity is abnormal. If the anatomical entity is specifically longer or
+  shorter than normal, then use the more specific increased length or decreased
+  length phenotype patterns, respectively."
+
+#  examples:
+#    - http://purl.obolibrary.org/obo/HP_0040157  # Abnormal intermamillary distance
+#    - http://purl.obolibrary.org/obo/HP_0200011  # Abnormal length of corpus callosum
+#    - http://purl.obolibrary.org/obo/MP_0011999  # abnormal tail length
+#    - http://purl.obolibrary.org/obo/MP_0020999  # abnormal small intestine length
+#    - http://purl.obolibrary.org/obo/ZP_0022039  # head length, abnormal
+
+contributors:
+  - https://orcid.org/0000-0001-8314-2140  # Ray Stefancsik
+  - https://orcid.org/0000-0003-4606-0597  # Susan Bello
+  - https://orcid.org/0000-0002-9900-7880  # Yvonne M. Bradford
+  - https://orcid.org/0000-0002-6490-7723  # Anna V. Anagnostopoulos
+
+classes:
+  length: PATO:0000122
+  abnormal: PATO:0000460
+  anatomical_entity: UBERON:0001062
+
+relations:
+  characteristic_of: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+vars:
+  anatomical_entity: "'anatomical_entity'"
+
+name:
+  text: "abnormal %s length"
+  vars:
+    - anatomical_entity
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "abnormal length of %s"
+    vars:
+      - anatomical_entity
+
+def:
+  text: "Abnormal length of %s."
+  vars:
+    - anatomical_entity
+
+equivalentTo:
+  text: "'has_part' some (
+    'length' and
+    ('characteristic_of' some %s) and
+    ('has_modifier' some 'abnormal')
+    )"
+  vars:
+    - anatomical_entity
+...
