@@ -16,12 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build ontology
-        run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp.obo
+        run: |
+          cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp.obo -B
+          cp hp.obo tmp/hp-branch.obo
       - name: Upload tmp/hp-branch.obo
         uses: actions/upload-artifact@v4
         with:
           name: hp-branch.obo
-          path: src/ontology/hp.obo
+          path: src/ontology/tmp/hp-branch.obo
           retention-days: 1
   build_main:
     runs-on: ubuntu-latest
@@ -32,12 +34,13 @@ jobs:
           ref: master
       - name: Classify ontology
         run: |
-          cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp.obo
+          cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE hp.obo -B
+          cp hp.obo tmp/hp-main.obo
       - name: Upload tmp/hp-main.obo
         uses: actions/upload-artifact@v4
         with:
           name: hp-main.obo
-          path: src/ontology/hp.obo
+          path: src/ontology/tmp/hp-main.obo
           retention-days: 1
   diff:
     needs:
