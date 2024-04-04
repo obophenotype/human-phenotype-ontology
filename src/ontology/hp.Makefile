@@ -587,7 +587,7 @@ kgcl-diff: kgcl-diff-release-base
 
 .PHONY: kgcl-diff-md-release-base kgcl-diff-table-release-base kgcl-diff-txt-release-base kgcl-diff-yaml-release-base 
 kgcl-diff-md-release-base: reports/difference_release_base.md
-#kgcl-diff-table-release-base: reports/difference_release_base.tsv
+kgcl-diff-table-release-base: reports/difference_release_base.tsv
 kgcl-diff-txt-release-base: reports/difference_release_base.txt
 kgcl-diff-yaml-release-base: reports/difference_release_base.yaml
 kgcl-diff-release-base: kgcl-diff-md-release-base kgcl-diff-table-release-base kgcl-diff-txt-release-base kgcl-diff-yaml-release-base
