@@ -577,3 +577,33 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
+
+##################
+### KGCL Diff ####
+##################
+
+.PHONY: kgcl-diff
+kgcl-diff: kgcl-diff-release-base
+
+.PHONY: kgcl-diff-md-release-base kgcl-diff-table-release-base kgcl-diff-txt-release-base kgcl-diff-yaml-release-base 
+kgcl-diff-md-release-base: reports/difference_release_base.md
+kgcl-diff-table-release-base: reports/difference_release_base.tsv
+kgcl-diff-txt-release-base: reports/difference_release_base.txt
+kgcl-diff-yaml-release-base: reports/difference_release_base.yaml
+kgcl-diff-release-base: kgcl-diff-md-release-base kgcl-diff-table-release-base kgcl-diff-txt-release-base kgcl-diff-yaml-release-base
+
+tmp/hp-released.obo:
+	wget http://purl.obolibrary.org/obo/hp.obo -O tmp/hp-released.obo
+
+reports/difference_release_base.md: tmp/hp-released.obo hp.obo
+	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:hp.obo -o $@ --output-type md
+
+reports/difference_release_base.tsv: tmp/hp-released.obo hp.obo
+	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:hp.obo \
+	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
+
+reports/difference_release_base.txt: tmp/hp-released.obo hp.obo
+	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:hp.obo -o $@ --output-type kgcl
+
+reports/difference_release_base.yaml: tmp/hp-released.obo hp.obo
+	runoak -i simpleobo:tmp/hp-released.obo diff -X simpleobo:hp.obo -o $@ --output-type yaml
