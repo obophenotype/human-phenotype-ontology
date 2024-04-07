@@ -612,3 +612,16 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
 
+##################################
+#### Components ##################
+##################################
+
+components/upheno-relations.owl: $(SRCMERGED) | $(ROBOT_PLUGINS_DIRECTORY)/upheno.jar
+	$(ROBOT) merge -i $< \
+		monarch:extract-upheno-relations \
+			--root-phenotype HP:0001627 \
+			--relation UPHENO:0000003 \
+		filter --term UPHENO:0000003 --trim false \
+		annotate --ontology-iri $(ONTBASE)/$@ \
+		--version-iri $(ONTBASE)/releases/$(TODAY)/$@ -o $@
+
