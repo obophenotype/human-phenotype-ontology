@@ -616,13 +616,11 @@ mappings:
 #### Components ##################
 ##################################
 
-components/upheno-relations.owl: $(SRCMERGED)
-	$(MAKE) all_robot_plugins
+components/upheno-relations.owl: $(SRCMERGED) | all_robot_plugins
 	$(ROBOT) merge -i $< \
 		upheno:extract-upheno-relations \
-			--root-phenotype HP:0001627 \
+			--root-phenotype HP:0000118 \
 			--relation UPHENO:0000003 \
 		filter --term UPHENO:0000003 --trim false \
 		annotate --ontology-iri $(ONTBASE)/$@ \
 		--version-iri $(ONTBASE)/releases/$(TODAY)/$@ -o $@
-
