@@ -71,7 +71,7 @@ test_obo: test.owl
 
 # Tests that the full hp.owl including imports is logically consistent
 consistency:
-	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success"
+	$(ROBOT) reason --input $(SRC) -I http://purl.obolibrary.org/obo/ro.owl --reasoner ELK --output test.owl && rm test.owl && echo "Success"
 
 fastobo: hp.obo
 	fastobo-validator $<
