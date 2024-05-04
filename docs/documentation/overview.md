@@ -1,6 +1,13 @@
 # Documentation
 
-Our documentation is arranged.
+
+- [Clinician's Guide](clinicians.md)
+- [Choosing HPO terms for data entry](HPO_term_selection.md)
+- [Documentation about HPO annotations](../annotations/introduction.md)
+- [Documentation about the GA4GH Phenopacket Schema and HPO](../phenopackets.md)
+- [Documentation for bioinformaticians, developers, and HPO editors](../developers/documentation.md)
+- [Documentation about the HPO Community](../community/index.md)
+- [Frequently asked questions](FAQs.md)
 
 
 
