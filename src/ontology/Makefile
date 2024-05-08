@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                454730069a4e28566362982a4d6c8de5b64f19911adc4cfc33cfeb9458b7e21a
+CONFIG_HASH=                937b9440c5d560b0e524b404e2812767130f33d1fa4eb96d64e5ad5f2faaee11
 
 
 # ----------------------------------------
@@ -153,7 +153,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/upheno.jar:
-	curl -L -o $@ https://github.com/monarch-initiative/monarch-robot-plugins/releases/download/v0.0.1/monarch-robot-extensions-0.0.1.jar
+	curl -L -o $@ https://github.com/monarch-initiative/monarch-robot-plugins/releases/download/v0.0.3/monarch-robot-extensions.jar
 
 
 # ----------------------------------------
