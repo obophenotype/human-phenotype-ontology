@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                4a34191ec01b0d40547b09e5c942aeec3345fd881201f81bc0df620c997f468e
+CONFIG_HASH=                0ad81655f00a54dd91673581a011a7061e51b18a76c3ac595a81aeac94837d45
 
 
 # ----------------------------------------
@@ -63,8 +63,8 @@ PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.
 
 TRANSLATIONSDIR=            ../translations
 BABELONPY=                  babelon -q
-TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/hp-de.babelon.owl  $(TRANSLATIONSDIR)/hp-de.synonyms.owl $(TRANSLATIONSDIR)/hp-nl.babelon.owl  $(TRANSLATIONSDIR)/hp-nl.synonyms.owl $(TRANSLATIONSDIR)/hp-fr.babelon.owl  $(TRANSLATIONSDIR)/hp-fr.synonyms.owl $(TRANSLATIONSDIR)/hp-cs.babelon.owl  $(TRANSLATIONSDIR)/hp-cs.synonyms.owl $(TRANSLATIONSDIR)/hp-tr.babelon.owl $(TRANSLATIONSDIR)/hp-zh.babelon.owl $(TRANSLATIONSDIR)/hp-nna.babelon.owl $(TRANSLATIONSDIR)/hp-tw.babelon.owl $(TRANSLATIONSDIR)/hp-dtp.babelon.owl $(TRANSLATIONSDIR)/hp-ja.babelon.owl $(TRANSLATIONSDIR)/hp-es.babelon.owl 
-TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nl-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-fr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-zh-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nna-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tw-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-es-preprocessed.babelon.tsv 
+TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/hp-de.babelon.owl $(TRANSLATIONSDIR)/hp-it.babelon.owl $(TRANSLATIONSDIR)/hp-nl.babelon.owl  $(TRANSLATIONSDIR)/hp-nl.synonyms.owl $(TRANSLATIONSDIR)/hp-fr.babelon.owl  $(TRANSLATIONSDIR)/hp-fr.synonyms.owl $(TRANSLATIONSDIR)/hp-cs.babelon.owl  $(TRANSLATIONSDIR)/hp-cs.synonyms.owl $(TRANSLATIONSDIR)/hp-tr.babelon.owl $(TRANSLATIONSDIR)/hp-zh.babelon.owl $(TRANSLATIONSDIR)/hp-nna.babelon.owl $(TRANSLATIONSDIR)/hp-tw.babelon.owl $(TRANSLATIONSDIR)/hp-dtp.babelon.owl $(TRANSLATIONSDIR)/hp-ja.babelon.owl $(TRANSLATIONSDIR)/hp-es.babelon.owl 
+TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-it-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nl-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-fr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-zh-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nna-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tw-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-es-preprocessed.babelon.tsv 
 TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 
 
@@ -691,9 +691,6 @@ TRANSLATE_PREDICATES=rdfs:label
 $(TRANSLATIONSDIR)/hp-de.babelon.tsv:
 	test -f $@
 
-$(TRANSLATIONSDIR)/hp-de.synonyms.tsv:
-	test -f $@
-
 
 
 $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
@@ -703,6 +700,26 @@ $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
 		--output-source-changed $(TRANSLATIONSDIR)/hp-de-changed.babelon.tsv  \
 		--output-not-translated $(TRANSLATIONSDIR)/hp-de-not-translated.babelon.tsv \
+		--include-not-translated false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
+		-o $@
+
+
+
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(TRANSLATIONSDIR)/hp-it.babelon.tsv:
+	test -f $@
+
+
+
+$(TRANSLATIONSDIR)/hp-it-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-it.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-it.babelon.tsv \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code de \
+		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
+		--output-source-changed $(TRANSLATIONSDIR)/hp-it-changed.babelon.tsv  \
+		--output-not-translated $(TRANSLATIONSDIR)/hp-it-not-translated.babelon.tsv \
 		--include-not-translated false \
 		--update-translation-status true \
 		--drop-unknown-columns true \
