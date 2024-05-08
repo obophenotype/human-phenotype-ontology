@@ -612,3 +612,15 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
 
+##################################
+#### Components ##################
+##################################
+
+components/upheno-relations.owl: $(EDIT_PREPROCESSED) | all_robot_plugins
+	$(ROBOT) merge -i $< \
+		upheno:extract-upheno-relations \
+			--root-phenotype HP:0000118 \
+			--relation UPHENO:0000003 \
+		filter --term UPHENO:0000003 --trim false \
+		annotate --ontology-iri $(ONTBASE)/$@ \
+		--version-iri $(ONTBASE)/releases/$(TODAY)/$@ -o $@
