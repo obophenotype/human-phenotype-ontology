@@ -616,7 +616,7 @@ mappings:
 #### Components ##################
 ##################################
 
-components/upheno-relations.owl: $(SRCMERGED) | all_robot_plugins
+components/upheno-relations.owl: $(EDIT_PREPROCESSED) | all_robot_plugins
 	$(ROBOT) merge -i $< \
 		upheno:extract-upheno-relations \
 			--root-phenotype HP:0000118 \

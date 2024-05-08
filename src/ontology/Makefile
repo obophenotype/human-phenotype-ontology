@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                937b9440c5d560b0e524b404e2812767130f33d1fa4eb96d64e5ad5f2faaee11
+CONFIG_HASH=                4fa8d7e9562f1378635619d615afe7e6a347cd5b447f5245b9b8a170a3ea2d33
 
 
 # ----------------------------------------
@@ -173,7 +173,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  nbo pr go uberon ro chebi hsapdv pato cl mpath upheno-relations
+IMPORTS =  nbo pr go uberon ro chebi hsapdv pato cl mpath upheno-properties
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -546,10 +546,10 @@ mirror-mpath: | $(TMPDIR)
 	$(ROBOT) remove -i $(TMPDIR)/mpath-download.owl --base-iri $(OBOBASE)/MPATH --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
 
 
-## ONTOLOGY: upheno-relations
-.PHONY: mirror-upheno-relations
-.PRECIOUS: $(MIRRORDIR)/upheno-relations.owl
-mirror-upheno-relations: | $(TMPDIR)
+## ONTOLOGY: upheno-properties
+.PHONY: mirror-upheno-properties
+.PRECIOUS: $(MIRRORDIR)/upheno-properties.owl
+mirror-upheno-properties: | $(TMPDIR)
 	$(ROBOT) convert -I https://raw.githubusercontent.com/obophenotype/upheno-dev/master/src/ontology/components/upheno-relations.owl -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
