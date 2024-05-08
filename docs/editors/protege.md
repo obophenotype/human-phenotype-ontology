@@ -1,6 +1,6 @@
 # Protege: Guide for HPO developers
 
-[Protege](https://protege.stanford.edu/){:target="_blank"}  and [hpo2robot](https://github.com/monarch-initiative/hpo2robot){:target="_blank"}  are used to edit the *hp-edit.owl* file, from which all other HPO ontology files are generated. This document summarizes how to set up Protege for editing.
+[Protege](https://protege.stanford.edu/){:target="_blank"}  and [hpo2robot](https://github.com/monarch-initiative/hpo2robot){:target="_blank"}  are used to edit the *hp-edit.owl* file, from which all other HPO ontology files are generated. This document summarizes how to set up Protege for editing. The instructions are intended for HPO team members and anybody who is interested in how we do our work. Most users of the HPO do not need to understand these steps.
 
 ## Protege setup
 
@@ -29,8 +29,9 @@ Set up Protege to show term IDs instead of labels.
 Use the search box to search for classes starting within your range, such as "HP_04" for Melissa's range. Check the "show all results" box to see all of your results.
 
 <figure markdown>
-![Phenopacket Schema](../img/IDrange2.png){ width="400" }
-<figcaption><b>PSetting up ID Range</b>.
+![Phenopacket Schema](../img/IDrange2.png){ width="600" }
+<figcaption><b>Setting up the ID Range</b>.
+Find the highest previously used HPO id in your range 
 </figcaption>
 </figure>
 
@@ -39,8 +40,9 @@ Find the last used ID in your range, e.g. HP_0400008.
 Go to *Protege->Preferences*, and click the New Entities tab. Set Protege to the next unused ID in your range (e.g., "HP_00400009") rather than the beginning of the range.
 
 <figure markdown>
-![Phenopacket Schema](../img/IDrange4.png){ width="400" }
-<figcaption><b>PSetting up ID Range</b>.
+![Phenopacket Schema](../img/IDrange4.png){ width="600" }
+<figcaption><b>Setting up ID Range</b>.
+Entering correct settings for the ID range in Protege.
 </figcaption>
 </figure>
 
@@ -65,7 +67,16 @@ Protege should then remember your last used ID on the computer you are currently
 
 Finally, go to Protege->Preferences, “New Entities Metadata” tab and set the following items. This will ensure that we are all using the same tag to get credit for making new terms.
 
-- annotate new entities with creator. Use http://purl.org/dc/terms/creator
-- Creator property Add http://purl.org/dc/terms/creator
-- Creator value: user ORCID (enter you ORCID id under User!)
-- Annotate new entities with data/time - Date property Add http://purl.org/dc/terms/date Date value format Select ISO-8601
+- activate: ``Annotate new entities with creator (user)``. 
+- Creator property: http://purl.org/dc/elements/1.1/creator
+- Creator value: user ORCID (enter your ORCID id under User!)
+- activate: ``Annotate new entities with data/time``.
+- Date property: http://purl.org/dc/elements/1.1/date
+- Date value format: ISO-8601
+
+<figure markdown>
+![Phenopacket Schema](../img/protege-new-entities-metadata.png){ width="600" }
+<figcaption><b>New entities metadata</b>.
+Set up Protege to set up metadata for new entries.
+</figcaption>
+</figure>
