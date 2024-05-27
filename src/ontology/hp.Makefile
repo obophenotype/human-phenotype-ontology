@@ -200,6 +200,60 @@ diff_migration:
 	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
 
 #######################################################
+##### EQ normalisation pipeline #######################
+#######################################################
+
+NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
+
+$(TMPDIR)/normalised_patterns.tsv:
+	wget "$(NORM_PATTERN_URL)" -O $@
+
+$(TMPDIR)/norm_patterns/README.md: $(TMPDIR)/normalised_patterns.tsv
+	rm -rf $(TMPDIR)/norm_patterns
+	mkdir -p $(TMPDIR)/norm_patterns
+	python $(SCRIPTSDIR)/split_pattern_table.py $< $(TMPDIR)/norm_patterns
+	echo "$(TODAY)" > $@
+
+NORM_PATTERNS=abnormalLevelOfChemicalEntityInLocation \
+	abnormallyDecreasedLevelOfChemicalEntityInLocation \
+	abnormallyIncreasedLevelOfChemicalEntityInLocation
+
+$(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
+	$(DOSDPT) generate --catalog=$(CATALOG) \
+    --infile=$(TMPDIR)/norm_patterns --template=$(PATTERNDIR)/dosdp-patterns/ --batch-patterns="$(NORM_PATTERNS)" \
+    --ontology=$< --obo-prefixes=true --outfile=$(TMPDIR)/norm_patterns
+	$(ROBOT) merge $(foreach n,$(NORM_PATTERNS), -i $(TMPDIR)/norm_patterns/$(n).ofn) -o $@
+	sed -i '/^Declaration/d' $@
+
+tmp/chemical_phenotypes.txt: $(TMPDIR)/norm_patterns.ofn
+	$(ROBOT) query -i $< --query $(SPARQLDIR)/hp_terms.sparql $@
+
+tmp/chemical_phenotypes_incl_properties.txt: tmp/chemical_phenotypes.txt
+	cp $< $@
+	echo "rdfs:label" >> $@
+	echo "IAO:00000115" >> $@
+
+NORM_PATTERNS_YAML_HPO=$(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns-hpo/$(n).yaml)
+
+# This is a convenience method to copy all uPheno patterns to the HPO-specific directory 
+# So they can be processed by the curator. It should
+# only be run manually when needed.
+cp_patterns_for_hpo:
+	rsync -av --ignore-existing $(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns/$(n).yaml) $(PATTERNDIR)/dosdp-patterns-hpo/
+
+.PHONY: hpo_phenotype_pipeline
+hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotypes_incl_properties.txt
+	git restore $(SRC) 
+	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --signature true --trim false --preserve-structure false \
+	merge -i $(TMPDIR)/norm_patterns.ofn --collapse-import-closure false \
+	query --update ../sparql/upper-case-labels.ru \
+	-o $(SRC).ofn
+	mv $(SRC).ofn $(SRC)
+
+
+# Generate template file seeds
+
+#######################################################
 ##### British synonyms pipeline #######################
 #######################################################
 
