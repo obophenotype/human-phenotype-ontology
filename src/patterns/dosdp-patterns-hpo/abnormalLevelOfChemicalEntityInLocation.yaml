@@ -1,0 +1,47 @@
+pattern_name: abnormalLevelOfChemicalEntityInLocation
+pattern_iri: http://purl.obolibrary.org/obo/upheno/patterns/abnormalLevelOfChemicalEntityInLocation.yaml
+description: "An abnormal level of a chemical in an anatomical entity, such as abnormal level of sodium in the blood."
+
+contributors:
+  - https://orcid.org/0000-0003-4606-0597
+  - https://orcid.org/0000-0002-9900-7880
+  - https://orcid.org/0000-0002-3528-5267
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0003-4148-4606
+  - https://orcid.org/0000-0001-7941-2961
+  - https://orcid.org/0000-0002-7356-1779
+  - https://orcid.org/0000-0001-9076-6015
+
+classes:
+  amount: PATO:0000070
+  abnormal: PATO:0000460
+  chemical entity: CHEBI:24431
+  independent continuant: BFO:0000004
+   
+relations: 
+  inheres_in: RO:0000052
+  has_modifier: RO:0002573
+  has_part: BFO:0000051
+  part_of: BFO:0000050
+
+vars:
+  chemical_entity: "'chemical entity'"
+  location: "'independent continuant'"
+
+name:
+  text: "Abnormal %s %s level"
+  vars:
+   - location
+   - chemical_entity
+
+def:
+  text: "An abnormal level of %s in the %s."
+  vars:
+    - chemical_entity
+    - location
+
+equivalentTo:
+  text: "'has_part' some ('amount' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
+  vars:
+    - chemical_entity
+    - location
