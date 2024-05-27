@@ -250,17 +250,36 @@ NORM_PATTERNS_YAML_HPO=$(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-pattern
 cp_patterns_for_hpo:
 	rsync -av --ignore-existing $(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns/$(n).yaml) $(PATTERNDIR)/dosdp-patterns-hpo/
 
+# This is the main pipeline
 .PHONY: hpo_phenotype_pipeline
 hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt
+	# In cases where this is rerun often, it makes sense to simply reset hp-edit.owl to the state on the branch
 	git restore $(SRC) 
+	
+	# We create a version of hp.obo for the diff later, to monitor the changes
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
+	
+	# We remove all EQs, labels and definitions from hp-edit.owl
 	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --axioms annotation --signature true --trim false --preserve-structure false \
 	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
 	merge -i $(TMPDIR)/norm_patterns.ofn --collapse-import-closure false -o $(SRC).ofn
+	
+	# Then use a reasoner to classify the the chemical phenotypes. 
+	# The result of that classification are stored in a temporary file...
 	$(ROBOT) reason -i $(SRC).ofn relax reduce \
-		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -O $(SRC)-subclass.ofn
+		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -O tmp/$(SRC)-subclass.ofn
+	
+	# ...which is then merged back into the main file
+	$(ROBOT) remove -i $(SRC).ofn -T tmp/chemical_phenotypes.txt --axioms subclass --signature true --trim false --preserve-structure false \
+		merge -i tmp/$(SRC)-subclass.ofn --collapse-import-closure false -o $(SRC).ofn
+	
+	# (I like to work on temporary files instead of the main for no reason.)
 	mv $(SRC).ofn $(SRC)
+	
+	# Generate hp.obo again with the changes...
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-after.obo
+	
+	# ... and generate the diff to look at it...
 	runoak -i simpleobo:tmp/hp-branch.obo diff -X simpleobo:tmp/hp-after.obo -o reports/hp_chemical_phenotype_diff.md --output-type md
 	@echo "$@ pipeline finished!"
 
