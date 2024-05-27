@@ -251,12 +251,14 @@ cp_patterns_for_hpo:
 	rsync -av --ignore-existing $(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns/$(n).yaml) $(PATTERNDIR)/dosdp-patterns-hpo/
 
 .PHONY: hpo_phenotype_pipeline
-hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotypes_incl_properties.txt
+hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt
 	git restore $(SRC) 
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
-	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --signature true --trim false --preserve-structure false \
-	remove -T tmp/chemical_phenotypes_incl_properties.txt --axioms equivalent --signature true --trim false --preserve-structure false \
+	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --axioms annotation --signature true --trim false --preserve-structure false \
+	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
 	merge -i $(TMPDIR)/norm_patterns.ofn --collapse-import-closure false -o $(SRC).ofn
+	$(ROBOT) reason -i $(SRC).ofn relax reduce \
+		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -O $(SRC)-subclass.ofn
 	mv $(SRC).ofn $(SRC)
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-after.obo
 	runoak -i simpleobo:tmp/hp-branch.obo diff -X simpleobo:tmp/hp-after.obo -o reports/hp_chemical_phenotype_diff.md --output-type md
