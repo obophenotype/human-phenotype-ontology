@@ -203,6 +203,15 @@ diff_migration:
 ##### EQ normalisation pipeline #######################
 #######################################################
 
+#### How to use this pipeline #####
+# 1. Update NORM_PATTERN_URL to contain a wide table with all phenotypes, and a single 'pattern' column with the names of the target pattern.
+# 2. Update `NORM_PATTERNS` to list all patterns you would like to process
+# 3. If necessary, run `cp_patterns_for_hpo` to ensure you have all the HPO specific patterns in the patterns directory. Modify the patterns in necessary, e.g. Uppercasing labels, adding synonym patterns.
+# 4. Run `sh run.sh make hpo_phenotype_pipeline -B`. This will 
+#        1. update the ontology with the new labels, EQs and definitions
+#        2. create a diff (reports/hp_chemical_phenotype_diff.md) you can paste on any pull request for easier review
+#        3. 
+
 NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
 
 $(TMPDIR)/normalised_patterns.tsv:
@@ -220,7 +229,7 @@ NORM_PATTERNS=abnormalLevelOfChemicalEntityInLocation \
 
 $(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
 	$(DOSDPT) generate --catalog=$(CATALOG) \
-    --infile=$(TMPDIR)/norm_patterns --template=$(PATTERNDIR)/dosdp-patterns/ --batch-patterns="$(NORM_PATTERNS)" \
+    --infile=$(TMPDIR)/norm_patterns --template=$(PATTERNDIR)/dosdp-patterns-hpo/ --batch-patterns="$(NORM_PATTERNS)" \
     --ontology=$< --obo-prefixes=true --outfile=$(TMPDIR)/norm_patterns
 	$(ROBOT) merge $(foreach n,$(NORM_PATTERNS), -i $(TMPDIR)/norm_patterns/$(n).ofn) -o $@
 	sed -i '/^Declaration/d' $@
@@ -244,12 +253,14 @@ cp_patterns_for_hpo:
 .PHONY: hpo_phenotype_pipeline
 hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotypes_incl_properties.txt
 	git restore $(SRC) 
+	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
 	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --signature true --trim false --preserve-structure false \
-	merge -i $(TMPDIR)/norm_patterns.ofn --collapse-import-closure false \
-	query --update ../sparql/upper-case-labels.ru \
-	-o $(SRC).ofn
+	remove -T tmp/chemical_phenotypes_incl_properties.txt --axioms equivalent --signature true --trim false --preserve-structure false \
+	merge -i $(TMPDIR)/norm_patterns.ofn --collapse-import-closure false -o $(SRC).ofn
 	mv $(SRC).ofn $(SRC)
-
+	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-after.obo
+	runoak -i simpleobo:tmp/hp-branch.obo diff -X simpleobo:tmp/hp-after.obo -o reports/hp_chemical_phenotype_diff.md --output-type md
+	@echo "$@ pipeline finished!"
 
 # Generate template file seeds
 
