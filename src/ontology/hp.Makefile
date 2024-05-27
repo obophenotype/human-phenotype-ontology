@@ -267,7 +267,7 @@ hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotyp
 	# Then use a reasoner to classify the the chemical phenotypes. 
 	# The result of that classification are stored in a temporary file...
 	$(ROBOT) reason -i $(SRC).ofn relax reduce \
-		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -O tmp/$(SRC)-subclass.ofn
+		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -o tmp/$(SRC)-subclass.ofn
 	
 	# ...which is then merged back into the main file
 	$(ROBOT) remove -i $(SRC).ofn -T tmp/chemical_phenotypes.txt --axioms subclass --signature true --trim false --preserve-structure false \
