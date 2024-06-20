@@ -1,0 +1,44 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix HP: <http://purl.obolibrary.org/obo/HP_>
+
+SELECT DISTINCT ?entity ?entity_label ?definition 
+	(GROUP_CONCAT(DISTINCT STR(?definition_source); separator=", ") as ?definition_sources)
+	(GROUP_CONCAT(DISTINCT STR(?parent); separator=", ") as ?parents) 
+    (GROUP_CONCAT(DISTINCT STR(?synonym); separator=", ") as ?synonyms)
+?comment
+
+WHERE {
+  ?entity 
+  	rdfs:subClassOf* HP:0001098 ; # Abnormal fundus morphology
+  	rdfs:label ?entity_label .
+
+  OPTIONAL {
+  	?entity rdfs:subClassOf ?parent_id .
+    ?parent_id rdfs:label ?parent_label .
+    FILTER(STRSTARTS(STR(?parent_id), "http://purl.obolibrary.org/obo/HP_"))
+    BIND(CONCAT(CONCAT(CONCAT(?parent_label, " ("), REPLACE(STR(?parent_id), "http://purl.obolibrary.org/obo/HP_","HP:")), ")") as ?parent)
+  }
+  
+  OPTIONAL {
+  	?entity IAO:0000115 ?definition .
+    OPTIONAL {
+        [] owl:annotatedSource ?entity ;
+         owl:annotatedProperty IAO:0000115 ;
+         owl:annotatedTarget ?definition ;
+         oboInOwl:hasDbXref ?definition_source .
+      }
+  }
+  
+  OPTIONAL {
+  	?entity oboInOwl:hasExactSynonym ?synonym .
+  }
+  
+  OPTIONAL {
+  	?entity rdfs:comment ?comment .
+  }
+    
+} GROUP BY ?entity ?entity_label ?definition ?comment
