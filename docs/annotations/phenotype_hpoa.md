@@ -16,7 +16,7 @@ The HPO project provides a comprehensive set of computable definitions of rare d
 |  8	| Frequency  	            |  	 No  |HP:0003577 or 12/45 or 22%                              |
 |  9	|  Sex  	            |  No	   |   MALE or FEMALE                          |
 | 10 	|  Modifier 	            |  	No   |   HP:0025257                           |
-|  11	|   	 Aspect           |  Yes	   |     ‘P’ or ‘C’ or ‘I’ or ‘M’                         |
+|  11	|   	 Aspect           |  Yes	   |     ‘P’ or ‘C’ or ‘I’, 'H', or ‘M’                         |
 | 12 | BiocurationBy | Yes |	HPO:skoehler[YYYY-MM-DD]  |
 
 
