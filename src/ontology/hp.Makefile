@@ -362,6 +362,8 @@ KGCL_ONTOLOGY=hp-base.obo
 upgrade_oak:
 	pip install -U oaklib
 
+prepare_release: kgcl-diff
+
 .PHONY: kgcl-diff
 kgcl-diff: kgcl-diff-release-base
 
