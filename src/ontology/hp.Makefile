@@ -212,7 +212,8 @@ diff_migration:
 #        2. create a diff (reports/hp_chemical_phenotype_diff.md) you can paste on any pull request for easier review
 #        3. 
 
-NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
+#NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
+NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=590692028&single=true&output=tsv
 
 $(TMPDIR)/normalised_patterns.tsv:
 	wget "$(NORM_PATTERN_URL)" -O $@
@@ -228,6 +229,7 @@ NORM_PATTERNS=abnormalLevelOfChemicalEntityInLocation \
 	abnormallyIncreasedLevelOfChemicalEntityInLocation
 
 $(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
+	touch $(foreach n,$(NORM_PATTERNS), $(TMPDIR)/norm_patterns/$(n).tsv)
 	$(DOSDPT) generate --catalog=$(CATALOG) \
     --infile=$(TMPDIR)/norm_patterns --template=$(PATTERNDIR)/dosdp-patterns-hpo/ --batch-patterns="$(NORM_PATTERNS)" \
     --ontology=$< --obo-prefixes=true --outfile=$(TMPDIR)/norm_patterns
