@@ -1,792 +1,700 @@
 <details>
-<summary>Text definitions changed: 175</summary>
-
-| Term | Old Text Definition | New Text Definition |
-----|----|----|
-| Reduced branched-chain alpha-keto acid dehydrogenase activity in cultured fibroblasts (HP:4000207) | Acitivity of branched-chain alpha-keto acid dehydrogenase complex (EC 1.2.4.4) below the lower limit of normal in cultured fibroblasts. |                  Activity of branched-chain alpha-keto acid dehydrogenase complex (EC 1.2.4.4) below the lower limit of normal in cultured fibroblasts. |
-| Decreased maximal oxygen uptake (HP:0033760) | Maximum oxygen uptake (VO2max) is defined as the highest rate of oxygen uptake and utilization by the body during intense, maximal exercise, whereby further increases in work rate do not bring on additional rises in VO2 (i.e. plateau). VO2Max is typically measured with a treadmill anad ergometer and the participant exercises with increasing levels of intensity. VO2Max is the point at which oxygen uptake no longer increases despite an increase in workload. |                  Maximum oxygen uptake (VO2max) is defined as the highest rate of oxygen uptake and utilization by the body during intense, maximal exercise, whereby further increases in work rate do not bring on additional rises in VO2 (i.e. plateau). VO2Max is typically measured with a treadmill and ergometer and the participant exercises with increasing levels of intensity. VO2Max is the point at which oxygen uptake no longer increases despite an increase in workload. |
-| Increased circulating very long-chain fatty acid concentration (HP:0033643) | Increased concentation of very long-chain fatty acids in the blood circulation. Very long-chain fatty acids are fatty acids (FAs) with a chain-length of 22 or more carbons. |                  Increased concentration of very long-chain fatty acids in the blood circulation. Very long-chain fatty acids are fatty acids (FAs) with a chain-length of 22 or more carbons. |
-| Increased airway neuroendocrine cells (HP:0033377) | Presence of increased numbers of bombesin-immuno-positive neuroendocrine cells (NECs) within distal airways. There are no formal criteria for an increase (which is also dependend on the sensitivity of the staining method), findings of neuroendocrine cells in at least 70% of bronchioles by lung biopsy and at least 10% NECs in an individual airway are consistent with the diagnosis of Neuroendocrine cell hyperplasia of infancy in the appropriate clinical setting. Increases are also seen in other clicnial settings. Neuroendocrine neoplasms of the lung encompass NE tumors (NETs), which split into typical and atypical carcinoids, and NE carcinomas (NECs). |                  Presence of increased numbers of bombesin-immuno-positive neuroendocrine cells (NECs) within distal airways. There are no formal criteria for an increase (which is also dependent on the sensitivity of the staining method), findings of neuroendocrine cells in at least 70% of bronchioles by lung biopsy and at least 10% NECs in an individual airway are consistent with the diagnosis of Neuroendocrine cell hyperplasia of infancy in the appropriate clinical setting. Increases are also seen in other clinical settings. Neuroendocrine neoplasms of the lung encompass NE tumors (NETs), which split into typical and atypical carcinoids, and NE carcinomas (NECs). |
-| Decreased circulating carnosine concentration (HP:0500162) | A decreased amount of carnosine in bood. |                  A decreased amount of carnosine in blood. |
-| Abnormal temporal lobe morphology (HP:0034221) | An abnormal strcutural of the zone (lobe) of the cerebral cortex that is located inferior to the lateral fissure on other cerebral hemispheres. |                  An abnormal structural of the zone (lobe) of the cerebral cortex that is located inferior to the lateral fissure on other cerebral hemispheres. |
-| HbS hemoglobin (HP:0045047) | Presence of an abnormal type of hemoglobin characterized by the subsitution of a glutamic acid residue at position 7 following the initial methionine residue by a valine (the mutation causative of sickle cell disease). The mutation promotes the polymerization of the HbS under conditions of low oxygen concentration. HbS can be identified by multiple methodologies including hemoglobin electrophoresis and high-performance liquid chromatography. |                  Presence of an abnormal type of hemoglobin characterized by the substitution of a glutamic acid residue at position 7 following the initial methionine residue by a valine (the mutation causative of sickle cell disease). The mutation promotes the polymerization of the HbS under conditions of low oxygen concentration. HbS can be identified by multiple methodologies including hemoglobin electrophoresis and high-performance liquid chromatography. |
-| Impaired distal proprioception (HP:0006858) | A loss or impairment of the sensation of the relative position of parts of the body and joint position occuring at distal joints. |                  A loss or impairment of the sensation of the relative position of parts of the body and joint position occurring at distal joints. |
-| Curvilinear subcortical heterotopia (HP:0032395) | Large subcortical heterotopia of variable morphology wiht streaks and swirls. These always connect to the overlying cortex in at least one, but usually in multiple, locations. Spaces with the signal intensity of CSF are usually seen within the heterotopia. |                  Large subcortical heterotopia of variable morphology with streaks and swirls. These always connect to the overlying cortex in at least one, but usually in multiple, locations. Spaces with the signal intensity of CSF are usually seen within the heterotopia. |
-| Dull foveal reflex (HP:0034362) | Reduced brigthness of the foveal reflex, which normally is a bright pinpoint of light that is observed to move sideways or up and down in response to movement of the opthalmoscope. |                  Reduced brightness of the foveal reflex, which normally is a bright pinpoint of light that is observed to move sideways or up and down in response to movement of the opthalmoscope. |
-| Juvenile type ovarian granulosa cell tumor (HP:0031919) | Juvenile granulosa cell ovarian tumor (JGCOT) is a rare sex cord stromal tumor, occuring most frequently in premenarchal girls or young women. In contrast to adult granulosa cell tumor, JGCOT has a high mitotic index and more aggressive tumor growth. Microscopically it is seen as diffuse and regularly distributed neoplastic cells with a wide cytoplasm and pleomorphic hyperchromatic nucleus. Follicle formation, in various sizes and shapes, is important in JGCOT. Call-Exner bodies are infrequently seen in JGCOT in contrast to the adult type. |                  Juvenile granulosa cell ovarian tumor (JGCOT) is a rare sex cord stromal tumor, occurring most frequently in premenarchal girls or young women. In contrast to adult granulosa cell tumor, JGCOT has a high mitotic index and more aggressive tumor growth. Microscopically it is seen as diffuse and regularly distributed neoplastic cells with a wide cytoplasm and pleomorphic hyperchromatic nucleus. Follicle formation, in various sizes and shapes, is important in JGCOT. Call-Exner bodies are infrequently seen in JGCOT in contrast to the adult type. |
-| Dibasicaminoaciduria (HP:0003168) | An increased level of a dibasic amino acid in the urine. Dibasic amino acids are usually refered to simply as basic aminoacids because they contain basic side chains at neutral pH. These are arginine (Arg), lysine (Lys), and histidine (His). |                  An increased level of a dibasic amino acid in the urine. Dibasic amino acids are usually referred to simply as basic aminoacids because they contain basic side chains at neutral pH. These are arginine (Arg), lysine (Lys), and histidine (His). |
-| Peripheral retinal detachment (HP:0007929) | Separation of the inner layers of the retina (neural retina) from the pigment epithelium occuring near the outer limit (periphery) of the retina. |                  Separation of the inner layers of the retina (neural retina) from the pigment epithelium occurring near the outer limit (periphery) of the retina. |
-| Alternating laterality (HP:4000152) | Occuring on the left and right in succession. This term can refer to alternating sides of the body (e.g., Alternating hemiplegia) or alternative sides of the visual field (e.g., some migraine auras). |                  Occurring on the left and right in succession. This term can refer to alternating sides of the body (e.g., Alternating hemiplegia) or alternative sides of the visual field (e.g., some migraine auras). |
-| Notched T wave (HP:0034303) | A bifid T-wave with a notch duration between the 2 peaks at leasy 0.04 sec and an amplitude at least 0.05 mV. |                  A bifid T-wave with a notch duration between the 2 peaks at least 0.04 sec and an amplitude at least 0.05 mV. |
-| Arcuate vein lumen organized thrombi (HP:0033878) | Thrombi containg fibrous tissue and capillary-like vascular channels located within the lumen of the arcuate veins of the kidney. |                  Thrombi containing fibrous tissue and capillary-like vascular channels located within the lumen of the arcuate veins of the kidney. |
-| Reduced glycerol kinase activity in cultured fibroblasts (HP:4000211) | Acitivity of glycerol kinase (EC 2.7.1.30) below the lower limit of normal in cultured fibroblasts. |                  Activity of glycerol kinase (EC 2.7.1.30) below the lower limit of normal in cultured fibroblasts. |
-| Humeral exostoses (HP:0003872) | Presence of more than one exostosis originating in one or noth humerus bones. An exostosis is a benign growth the projects outward from the bone surface. It is capped by cartilage, and arises from a bone that develops from cartilage. |                  Presence of more than one exostosis originating in one or both humerus bones. An exostosis is a benign growth the projects outward from the bone surface. It is capped by cartilage, and arises from a bone that develops from cartilage. |
-| Pseudoepiphysis of the 4th metacarpal (HP:0010225) | The normal epiphysis of the fourth metacarpal is localized at the distal end of the metacarpal bone. This term aplies if an accesory epiphysis, located at the proximal end of the metacarpal bone, is present. |                  The normal epiphysis of the fourth metacarpal is localized at the distal end of the metacarpal bone. This term applies if an accessory epiphysis, located at the proximal end of the metacarpal bone, is present. |
-| Celiac disease (HP:0002608) | Celiac disease (CD) is an autoimmune condition affecting the small intestine, triggered by the ingestion of gluten, the protein fraction of wheat, barley, and rye. Clinical manifestations of CD are highly variable and include both gastrointestinal and non-gastrointestinal features. The hallmark of CD is an immune-mediated enteropathy. This term is included because the occurence of CD is seen as a feature of a number of other diseases. |                  Celiac disease (CD) is an autoimmune condition affecting the small intestine, triggered by the ingestion of gluten, the protein fraction of wheat, barley, and rye. Clinical manifestations of CD are highly variable and include both gastrointestinal and non-gastrointestinal features. The hallmark of CD is an immune-mediated enteropathy. This term is included because the occurrence of CD is seen as a feature of a number of other diseases. |
-| Decreased facial expression mirroring (HP:5200220) | Decreased mirroring or reflection of facial expressions in another person during social interactions, compared to the person's normal behavior. |                  Diminished mirroring or reflection of facial expressions in another person during social interactions. |
-| Joint contracture (HP:0034392) | A limitation in the passive range of motion of the elbow resulting from loss of elasticity in the periarticular tissues owing to structural changes of non-bony tissues, such as muscles, tendons, ligaments, joint capsules or skin. A contracture prevents movement of the associated body part. |                  A limitation in the passive range of motion of a joint resulting from loss of elasticity in the periarticular tissues owing to structural changes of non-bony tissues, such as muscles, tendons, ligaments, joint capsules or skin. A contracture prevents movement of the associated body part. |
-| Reduced 3-methylcrotonyl CoA carboxylase activity in cultured fibroblasts (HP:4000206) | Acitivity of 3-methylcrotonyl-CoA carboxylase (EC 6.4.1.4) below the lower limit of normal in cultured fibroblasts. |                  Activity of 3-methylcrotonyl-CoA carboxylase (EC 6.4.1.4) below the lower limit of normal in cultured fibroblasts. |
-| Uterine mass (HP:0034881) | A swelling or enlargment localized to the uterus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the uterus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Subglottic laryngitis (HP:0033000) | Narrowing of the larynx, commonly occuring during viral respiratory tract infections, in particular in children, leads to symptoms such as hoarseness, a barking cough, stridor, and sometimes dyspnea and respiratory failure. |                  Narrowing of the larynx, commonly occurring during viral respiratory tract infections, in particular in children, leads to symptoms such as hoarseness, a barking cough, stridor, and sometimes dyspnea and respiratory failure. |
-| Peritoneal mass (HP:0034971) | A swelling or enlargment localized to the peritoneal cavity. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the peritoneal cavity. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Gallbladder adhesions (HP:6000452) | Strands of scar tissue bands of scar tissue that form an abnormal connection between the gallbladder and another abdominal structure. Adhesions can form followiing gallbladder inflamation (cholecystitis). |                  Strands of scar tissue bands of scar tissue that form an abnormal connection between the gallbladder and another abdominal structure. Adhesions can form followiing gallbladder inflammation (cholecystitis). |
-| Impaired heel-walking ability (HP:6000490) | Difficulty or reduced ability to walk on heels. Heel-walking can be tested as a part of the neurological examination. Foot dorsal extention weakness leads to difficulties in walking on heels. |                  Difficulty or reduced ability to walk on heels. Heel-walking can be tested as a part of the neurological examination. Foot dorsal extension weakness leads to difficulties in walking on heels. |
-| Reduced alpha-aminoadipic semialdehyde synthase activity in cultured fibroblasts (HP:6000081) | Acitivity of alpha-aminoadipic semialdehyde synthase below the lower limit of normal in cultured fibroblasts. |                  Activity of alpha-aminoadipic semialdehyde synthase below the lower limit of normal in cultured fibroblasts. |
-| Retroperitoneal paraganglioma (HP:0006729) | A paraganglioma (previously refered to as chemodectoma) located in the retroperitoneal space. Paragangliomas (also known as extra-adrenal pheochromocytomas) are rare tumors that arise from extra-adrenal chromaffin cells. Paragangliomas are characterized by secretions of excessive catecholamines, including epinephrine, norepinephrine and dopamine, which may lead to clinical symptoms, including episodic hypertension, tachycardia and diaphoresis. However, between 40 and 50% of paragangliomas are non-functional. |                  A paraganglioma (previously referred to as chemodectoma) located in the retroperitoneal space. Paragangliomas (also known as extra-adrenal pheochromocytomas) are rare tumors that arise from extra-adrenal chromaffin cells. Paragangliomas are characterized by secretions of excessive catecholamines, including epinephrine, norepinephrine and dopamine, which may lead to clinical symptoms, including episodic hypertension, tachycardia and diaphoresis. However, between 40 and 50% of paragangliomas are non-functional. |
-| Abnormal circulating creatine concentration (HP:0012113) | A deviation from the normal concentration of creatine in the blood circulation. Creatine is a derivative of glycine having methyl and amidino groups attached to the nitrogen. Creatine is naturally produced from amino acids, primarily in liver and kidney, and acts as an energy source for cells, primarly for muscle cells. |                  A deviation from the normal concentration of creatine in the blood circulation. Creatine is a derivative of glycine having methyl and amidino groups attached to the nitrogen. Creatine is naturally produced from amino acids, primarily in liver and kidney, and acts as an energy source for cells, primarily for muscle cells. |
-| Ovarian mass (HP:0034879) | A swelling or enlargment localized to the ovary. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the ovary. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Hyperdynamic left ventricular ejection fraction (HP:0034313) | An abnoramlly increased ejection fraction of the left ventricle, usually defined as a left ventricular ejection fraction greater than 70 percent. |                  An abnormally increased ejection fraction of the left ventricle, usually defined as a left ventricular ejection fraction greater than 70 percent. |
-| Hemimacroglossia (HP:0100875) | Increased length and width of one half of the tounge. |                  Increased length and width of one half of the tongue. |
-| Abnormal circulating C-peptide concentration (HP:0030794) | An anomolous circulating concentration of the connecting (C) peptide, which links the insulin A and B chains in proinsulin, providing thereby a means to promote their efficient folding and assembly in the endoplasmic reticulum during insulin biosynthesis. After cleavage of proinsulin, C-peptide is stored with insulin in the soluble phase of the secretory granules and is subsequently released in equimolar amounts with insulin, providing a useful independent indicator of insulin secretion. |                  An anomalous circulating concentration of the connecting (C) peptide, which links the insulin A and B chains in proinsulin, providing thereby a means to promote their efficient folding and assembly in the endoplasmic reticulum during insulin biosynthesis. After cleavage of proinsulin, C-peptide is stored with insulin in the soluble phase of the secretory granules and is subsequently released in equimolar amounts with insulin, providing a useful independent indicator of insulin secretion. |
-| Lack of insight (HP:0000757) | Lack of insight (Anosognosia) is a neurological condition in which an individual is unaware of his or her own neurological deficit or psychiatric condition. Anosognosia can be associated with mental illness, dementia, and structural brain lesions and can affect an indviduals's conscious awareness of deficits involving judgment, emotions, memory, executive function, language skills, and motor ability. |                  Lack of insight (Anosognosia) is a neurological condition in which an individual is unaware of his or her own neurological deficit or psychiatric condition. Anosognosia can be associated with mental illness, dementia, and structural brain lesions and can affect an individual's conscious awareness of deficits involving judgment, emotions, memory, executive function, language skills, and motor ability. |
-| Poorly demarcated skin lesion (HP:6000538) | Applies to an abnormality of the skin whose boundry to the surrounding normal skin is not clearly defined. |                  Applies to an abnormality of the skin whose boundary to the surrounding normal skin is not clearly defined. |
-| Pulmonary arterial hypertension with positive acute response to NO challenge (HP:0033423) | A form of pulmonary arterial hypertension in which there is a reduction of mean pulmonary artery pressure (mPAP) at leasy 10 mmHg to reach an absolute value of mPAP not more than 40 mmHg with an increased or unchanged cardiac output (CO) in response to inhaled nitric oxide at 10-20 ppm. |                  A form of pulmonary arterial hypertension in which there is a reduction of mean pulmonary artery pressure (mPAP) at least 10 mmHg to reach an absolute value of mPAP not more than 40 mmHg with an increased or unchanged cardiac output (CO) in response to inhaled nitric oxide at 10-20 ppm. |
-| Angiokeratoma circumscriptum naeviforme (HP:0034410) | A type of angiokeratoma that typically presents in childhood as a large, mostly linear and unilateral hyperkeratotic plaque which is composed of confluent keratotic papules. The size ranges from a few centimeters up to a major part of the body surface. Initially the lesions present asa multile reddish macules, clinically similar to a nevus flammeus. Within several years they develop into acanthokeratotic papules that agrregate into plaques which may have a hyperkeratotic surface. |                  A type of angiokeratoma that typically presents in childhood as a large, mostly linear and unilateral hyperkeratotic plaque which is composed of confluent keratotic papules. The size ranges from a few centimeters up to a major part of the body surface. Initially the lesions present as multiple reddish macules, clinically similar to a nevus flammeus. Within several years they develop into acanthokeratotic papules that agrregate into plaques which may have a hyperkeratotic surface. |
-| Reduced HMG-CoA lyase activity in cultured fibroblasts (HP:6000216) | Acitivity of 3-hydroxy-3-methylglutaryl coenzyme A lyase (HMG CoA lyase) below the lower limit of normal in cultured fibroblasts. |                  Activity of 3-hydroxy-3-methylglutaryl coenzyme A lyase (HMG CoA lyase) below the lower limit of normal in cultured fibroblasts. |
-| Thoracic platyspondyly (HP:0004592) | A flattened vertebral body shape with reduced distance beween the vertebral endplates affecting the thoracic spine. |                  A flattened vertebral body shape with reduced distance between the vertebral endplates affecting the thoracic spine. |
-| Solitary angiokeratoma (HP:0034408) | A dark, keratotic papule about 2-10 mm in diameter, usually occuring on the lower extremeities. Usually the lesions begin as bright, soft, and nonkeratotic paules which grow larger and change to a firm, blue to black and keratotic stage. |                  A dark, keratotic papule about 2-10 mm in diameter, usually occurring on the lower extremeities. Usually the lesions begin as bright, soft, and nonkeratotic paules which grow larger and change to a firm, blue to black and keratotic stage. |
-| Lumbar platyspondyly (HP:0005787) | A flattened vertebral body shape with reduced distance beween the vertebral endplates affecting the lumbar spine. |                  A flattened vertebral body shape with reduced distance between the vertebral endplates affecting the lumbar spine. |
-| Intrapartum fever (HP:0030245) | The occurence of maternal fever during labor. |                  The occurrence of maternal fever during labor. |
-| Optically empty vitreous (HP:0030663) | Vestigial vitreous gel occupying the immediate retrolental space and minimal to no discernable gel in the central vitreous cavity, giving the appearance of an empty vitreous cavity. |                  Vestigial vitreous gel occupying the immediate retrolental space and minimal to no discernible gel in the central vitreous cavity, giving the appearance of an empty vitreous cavity. |
-| Malignant mesothelioma (HP:0100001) | Malignant mesothelioma is a form of cancer that originates from the cells of the mesothelium, a thin tissue layer surrounding the body's internal organs. Malignant mesothelioma is almost exclusively caused by asbestos exposure, pleural mesothelioma beeing the most common form, affecting the lining of the lungs called the pleura. Other forms such as perioneal-, percardial- or testicular- mesothelioma are much rarer. |                  Malignant mesothelioma is a form of cancer that originates from the cells of the mesothelium, a thin tissue layer surrounding the body's internal organs. Malignant mesothelioma is almost exclusively caused by asbestos exposure, pleural mesothelioma being the most common form, affecting the lining of the lungs called the pleura. Other forms such as perioneal-, percardial- or testicular- mesothelioma are much rarer. |
-| Reduced responsiveness to social cues (HP:5200028) | Abnormality in the way one responds to social cues such as a verbal cue (which should cause one to shift attention) or someone sharing their emotions (which should elicit a sympathetic response). |                  A tendency to display responces to social cues that are interpreted (e.g., by family members, peers, or caregivers) as diminished compared to what would be expected based on the developmental stage and cultural context of an individual. |
-| Ureteral mass (HP:0034963) | A swelling or enlargment localized to the ureter. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the ureter. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Reduced 3-beta-hydroxysteroid-delta-5-desaturase activity in cultured fibroblasts (HP:6000199) | Acitivity of 3-beta-hydroxysteroid-delta-5-desaturase, also known as Sterol C5-desaturase (EC 1.3.3.2), or SC5D below the lower limit of normal in cultured fibroblasts. |                  Activity of 3-beta-hydroxysteroid-delta-5-desaturase, also known as Sterol C5-desaturase (EC 1.3.3.2), or SC5D below the lower limit of normal in cultured fibroblasts. |
-| Retinal arterial macroaneurysms (HP:0025355) | Acquired focal dilatations of branches of the retinal artery, usually second-order retinal arterioles, that range in size from 100 to 200 micrometers in diameter. Macroaneurysms are generally located at the termporal retina and may be hemorrhagic or exudative. |                  Acquired focal dilatations of branches of the retinal artery, usually second-order retinal arterioles, that range in size from 100 to 200 micrometers in diameter. Macroaneurysms are generally located at the temporal retina and may be hemorrhagic or exudative. |
-| Maternal fever in pregnancy (HP:0030244) | The occurence of an elevated body temperature of the mother during pregnancy. |                  The occurrence of an elevated body temperature of the mother during pregnancy. |
-| Diffusely thickened glomerular basement membrane (HP:0033284) | Prominent glomerular basement membrane (GBM) reflecting an diffuse and relativly uniform increase in thickness (subjective estimate) with no evidence of electron dense deposits by EM. Thickening is measured from endothelial to visceral epithelial plasma membrane and mainly attributable to an increase in thickness of the lamina densa, generally to an overall thickness more than 2 standard deviations greater than that of the normal mean GBM thickness for health age- and sex matched individuals. |                  Prominent glomerular basement membrane (GBM) reflecting an diffuse and relatively uniform increase in thickness (subjective estimate) with no evidence of electron dense deposits by EM. Thickening is measured from endothelial to visceral epithelial plasma membrane and mainly attributable to an increase in thickness of the lamina densa, generally to an overall thickness more than 2 standard deviations greater than that of the normal mean GBM thickness for health age- and sex matched individuals. |
-| Decreased light- and dark-adapted electroretinogram amplitude (HP:0000654) | Descreased amplitude of eletrical response upon electroretinography. |                  Decreased amplitude of eletrical response upon electroretinography. |
-| Fetal vascular malperfusion (HP:0025729) | The term fetal vascular malperfusion (FVM) is used to describe placental pathology that is throught to result from an obstruction in fetal blood flow that could result from a number of conditions (eg, umbilical cord lesions, hypercoagulability, complications of fetal cardiac dysfunction, such as hypoxia, etc.). |                  The term fetal vascular malperfusion (FVM) is used to describe placental pathology that is thought to result from an obstruction in fetal blood flow that could result from a number of conditions (eg, umbilical cord lesions, hypercoagulability, complications of fetal cardiac dysfunction, such as hypoxia, etc.). |
-| Complete duplication of the phalanges of the 2nd finger (HP:0009957) | A complete duplication affecting one or more of the phalanges of the 2nd finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, is a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the phalanges of the 2nd finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, is a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| EBV encephalitis (HP:0033509) | Inflamation of the brain related to infection by Epstein-Barr virus. |                  Inflammation of the brain related to infection by Epstein-Barr virus. |
-| Cerebral ventricular adhesions (HP:0100311) | Bands of scar-like tissue that hve formed within a cerebral ventricle. |                  Bands of scar-like tissue that have formed within a cerebral ventricle. |
-| Fetal oral mass (HP:6000470) | A swelling or enlargment localized to the oral cavity of a fetus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. This finding is generally first observed by prenatal sonography or magnetic resonance imaging. |                  A swelling or enlargement localized to the oral cavity of a fetus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. This finding is generally first observed by prenatal sonography or magnetic resonance imaging. |
-| Impaired ability to form peer relationships (HP:0000728) | Difficulty to establish relations with others in a comparable social group (peers) that may be manifested in pehnomena such as not being able to initiative a conversation, undersand social cues, or to discuss shared interests. This feature is associated with poor integration within a community or group. |                  Difficulty to establish relations with others in a comparable social group (peers) that may be manifested in pehnomena such as not being able to initiative a conversation, understand social cues, or to discuss shared interests. This feature is associated with poor integration within a community or group. |
-| Abnormal alveolar volume (HP:0033632) | Alveolar volume (VA) is a volume accessible during 10-second breath-hold, measured during a single breath manouver. VA is calculated by knowing the fractional concentration of the tracer gas (eg helium) and the volume of the gas inhaled. VA = Vi*(Fi tracer/Fa tracer). In this equation, Vi = inspired volume of tracer gas, Fi tracer= inspired fraction of tracer gas, Fa tracer = alveolar (exhaled) fraction of tracer gas. |                  Alveolar volume (VA) is a volume accessible during 10-second breath-hold, measured during a single breath maneuver. VA is calculated by knowing the fractional concentration of the tracer gas (eg helium) and the volume of the gas inhaled. VA = Vi*(Fi tracer/Fa tracer). In this equation, Vi = inspired volume of tracer gas, Fi tracer= inspired fraction of tracer gas, Fa tracer = alveolar (exhaled) fraction of tracer gas. |
-| Anterior tibial bowing (HP:0006390) | An abnormal anterior bending or curvature of the tibia. |                  An abnormal anterior bending or curvature of the tibia. |
-| Cherry red spot of the macula (HP:0010729) | Pallor of the perifoveal macula of the retina with appearance of a small circular reddish choroid shape as seen through the fovea centralis due to relative transparancy of the macula. |                  Pallor of the perifoveal macula of the retina with appearance of a small circular reddish choroid shape as seen through the fovea centralis due to relative transparency of the macula. |
-| Excessive bleeding from superficial cuts (HP:0030138) | An abnormally increased degree of bleeding following a superfical injury to the surface of the skin. |                  An abnormally increased degree of bleeding following a superficial injury to the surface of the skin. |
-| Arcuate artery lumen organized thrombi (HP:0033899) | Thrombi containg fibrous tissue and capillary-like vascular channels located within the lumen of the arcuate arteries of the kidney. |                  Thrombi containing fibrous tissue and capillary-like vascular channels located within the lumen of the arcuate arteries of the kidney. |
-| Pancreatic mass (HP:6000409) | A swelling or enlargment localized to the pancreas. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the pancreas. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Absent cavum septum pellucidum (HP:4000138) | The cavum septum pellucidum (CSP) is an important fetal midline forebrain landmark that is normally visible by prenatal sonography. This term refers to the lack of visiblity of the CSP on prenatal sonography. The CSP normally can be visualized between 18 and 37 weeks of gestation. Lack of visualization of the CSP in this time period generally requires follow up and may indicate the presence of underlying malformations such as malformations of the corpus callosum. The lack of CSP before 18 weeks or after 37 weeks of gestation (or postnatally) is considered a normal finding. |                  The cavum septum pellucidum (CSP) is an important fetal midline forebrain landmark that is normally visible by prenatal sonography. This term refers to the lack of visibility of the CSP on prenatal sonography. The CSP normally can be visualized between 18 and 37 weeks of gestation. Lack of visualization of the CSP in this time period generally requires follow up and may indicate the presence of underlying malformations such as malformations of the corpus callosum. The lack of CSP before 18 weeks or after 37 weeks of gestation (or postnatally) is considered a normal finding. |
-| Optic nerve hypoplasia (HP:0000609) | Underdevelopment of the optic nerve. |                  Underdevelopment of the optic nerve. |
-| Abnormal lymph node cell composition (HP:0034582) | A deviation from the normal distribution of cell types or their relative proprotions in a lymph node. |                  A deviation from the normal distribution of cell types or their relative proportions in a lymph node. |
-| Abnormal portal venous system morphology (HP:0031941) | Any structural anomaly of the portal venous sytem, which comprises all of the veins draining the abdominal part of the digestive tract, including the lower esophagus but excluding the lower anal canal. The portal vein conveys blood from viscera and ramifies like an artery at the liver, ending at the sinusoids. Tributaries of the portal vein, which make up the portal venous system, are the splenic, superior mesenteric, left gastric, right gastric, paraumbilical, and cystic veins. |                  Any structural anomaly of the portal venous system, which comprises all of the veins draining the abdominal part of the digestive tract, including the lower esophagus but excluding the lower anal canal. The portal vein conveys blood from viscera and ramifies like an artery at the liver, ending at the sinusoids. Tributaries of the portal vein, which make up the portal venous system, are the splenic, superior mesenteric, left gastric, right gastric, paraumbilical, and cystic veins. |
-| Fallopian tube mass (HP:0034972) | A swelling or enlargment localized to the Fallopian tube. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the Fallopian tube. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Abnormal urinary organic compound level (HP:6000531) | The amount of an organic compound in the urine, normalized for urine concentration, is outside the limits of normal. An organic compound is defined here as a chemical compound that contains a carbon-hydrogen or carbon-carbon bond, although some other definitions exist. Examples of organic compounds includea alkanes, alkenes, alkynes, aromatic compounds, alcohols, ketones, aldehydes, carboxylic acids, and esters. |                  The amount of an organic compound in the urine, normalized for urine concentration, is outside the limits of normal. An organic compound is defined here as a chemical compound that contains a carbon-hydrogen or carbon-carbon bond, although some other definitions exist. Examples of organic compounds includes alkanes, alkenes, alkynes, aromatic compounds, alcohols, ketones, aldehydes, carboxylic acids, and esters. |
-| Reduced sepiapterin reductase activity in cultured fibroblasts (HP:6000563) | Acitivity of sepiapterin reductase (7,8-dihydrobiopterin:NADP+ oxidoreductase; EC 1.1.1.153) below the lower limit of normal in cultured fibroblasts. |                  Activity of sepiapterin reductase (7,8-dihydrobiopterin:NADP+ oxidoreductase; EC 1.1.1.153) below the lower limit of normal in cultured fibroblasts. |
-| Medication crystalluria (HP:0033068) | A variety of drugs may occasionally cause transient crystalluria, in isolation or in conjunction with other urinary abnormalities. Overdose, dehydration, or hypoalbuminaemia, which increases the unbound drug which is ultrafiltrated by the glomerulus, are the factors usally favoring the precipitation of crystals within the tubular lumina. In some cases, medication-induced crystalluria has a distinct phenotypic appearance. For instance, Sulphadiazine crystals appear as strongly birefringent 'shocks of wheat' or 'shells' with an amber color. Acyclovir crystals are birefringent and needle-shaped, and when present in abundance give to urine a silky and opalescent macroscopic appearance. |                  A variety of drugs may occasionally cause transient crystalluria, in isolation or in conjunction with other urinary abnormalities. Overdose, dehydration, or hypoalbuminaemia, which increases the unbound drug which is ultrafiltrated by the glomerulus, are the factors usually favoring the precipitation of crystals within the tubular lumina. In some cases, medication-induced crystalluria has a distinct phenotypic appearance. For instance, Sulphadiazine crystals appear as strongly birefringent 'shocks of wheat' or 'shells' with an amber color. Acyclovir crystals are birefringent and needle-shaped, and when present in abundance give to urine a silky and opalescent macroscopic appearance. |
-| Reduced social responsiveness (HP:0012760) | A reduced ability to participate in the back-and-forth flow of social interaction appropriate to culture and developmental level, which is normally characterized by an influence of the behavior of one person on the behavior of another person. This results in difficulty interacting with others through emotional, physical, or verbal communication. |                  A reduced ability to participate in the back-and-forth flow of social interaction appropriate to culture and developmental level, which is normally characterized by an influence of the behavior of one person on the behavior of another person. This results in difficulty interacting with others through emotional, physical, or verbal communication. |
-| Complete duplication of the phalanges of the 5th finger (HP:0009986) | A complete duplication affecting one or more of the phalanges of the 5th finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the phalanges of the 5th finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| Esophageal mass (HP:6000247) | A swelling or enlargment localized to the esophagus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the esophagus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Complete duplication of phalanx of hand (HP:0009998) | A complete duplication affecting one or more of the phalanges of the hand. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, is a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the phalanges of the hand. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, is a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| Non-infectious meningitis (HP:0033430) | Inflammation of the layers of tissue that cover the brain and spinal cord (meninges) and of the fluid-filled space between the meninges (subarachnoid space) when it is caused by disorders that are not infections or by drugs or vaccines. |                  Inflammation of the layers of tissue that cover the brain and spinal cord (meninges) and of the fluid-filled space between the meninges (subarachnoid space) when it is caused by disorders that are not infections or by drugs or vaccines. |
-| Glomerular hyaline subepithelial deposits (HP:0033602) | A type of glomerular subepithelial deposit characterized by a moderately electron-dense, generally homogenous, amorphous-appearing extracellular material located between the outer (epithelial) aspect of the glomerular basement membrane (GBM) and the visceral epithelial cell, with varying degrees of incorporation into the GBM. This feature is associated with a prominent GBM reflecting an diffuse and relativly uniform increase in thickness (subjective estimate). |                  A type of glomerular subepithelial deposit characterized by a moderately electron-dense, generally homogenous, amorphous-appearing extracellular material located between the outer (epithelial) aspect of the glomerular basement membrane (GBM) and the visceral epithelial cell, with varying degrees of incorporation into the GBM. This feature is associated with a prominent GBM reflecting an diffuse and relatively uniform increase in thickness (subjective estimate). |
-| Adrenal mass (HP:0034880) | A swelling or enlargment localized to the adrenal gland. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the adrenal gland. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Mitochondrial hypertrophy (HP:0033686) | Enlargment of mitochondria. Mitochondrial hypertrophy is not discernible by light microscopy. By electron microscopy (EM), hypertrophic mitochondria have normal cristae and normal matrix density. In contrast, swollen mitochondria display swollen cristae and irregular matrix densities in EM. |                  Enlargement of mitochondria. Mitochondrial hypertrophy is not discernible by light microscopy. By electron microscopy (EM), hypertrophic mitochondria have normal cristae and normal matrix density. In contrast, swollen mitochondria display swollen cristae and irregular matrix densities in EM. |
-| Limited neck flexion (HP:0005991) | Reduced abilty to lower the chin towards the chest by bending the neck. |                  Reduced ability to lower the chin towards the chest by bending the neck. |
-| Cortical peritubular capillary lumen organized thrombi (HP:0033874) | Thrombi containg fibrous tissue and capillary-like vascular channels located within the lumen of the peritubular capillaries of the cortex of the kidney. |                  Thrombi containing fibrous tissue and capillary-like vascular channels located within the lumen of the peritubular capillaries of the cortex of the kidney. |
-| Vaginal mass (HP:6000105) | A swelling or enlargment localized to the vagina. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the vagina. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Oral lichenoid lesion (HP:0031453) | Mutliple lesions of the oral mucosa resembling those characteristic of the disease lichen planus. These are symmetric reticular lesions that resemble a white, lacelike network, as well as by papules, plaques, erythematous lesions, and erosions. |                  Multiple lesions of the oral mucosa resembling those characteristic of the disease lichen planus. These are symmetric reticular lesions that resemble a white, lacelike network, as well as by papules, plaques, erythematous lesions, and erosions. |
-| Segmental glomerulosclerosis away from the vascular and tubular poles (HP:0033498) | Segmental solidification of the glomerular tuft characterized by increased extracellular matrix, causing glomerular capillary obliteration at neirhter the tubular or vascular poles. Features including hyalinosis, foam cells, hypertrophy of overlying glomerular epithelial cells can also be observed. |                  Segmental solidification of the glomerular tuft characterized by increased extracellular matrix, causing glomerular capillary obliteration at neither the tubular or vascular poles. Features including hyalinosis, foam cells, hypertrophy of overlying glomerular epithelial cells can also be observed. |
-| Abnormal cerumen color (HP:0030790) | An anomolous earwax color. Earwax (cerumen) is usually light to dark brown or orange in color. |                  An anomalous earwax color. Earwax (cerumen) is usually light to dark brown or orange in color. |
-| Episodic (HP:0025303) | Applied to a sign, symptom, or other manifestation that occurs multiple times at usually irregular intervals. The occurences are separated by an interval in which the sign, symptom, or manifestation is not present. |                  Applied to a sign, symptom, or other manifestation that occurs multiple times at usually irregular intervals. The occurrences are separated by an interval in which the sign, symptom, or manifestation is not present. |
-| Abnormal zona pellucida morphology (HP:0020156) | Abnormal structure of the oocyte extracellular matrix region known as teh zona pellucida. |                  Abnormal structure of the oocyte extracellular matrix region known as the zona pellucida. |
-| Pseudoepiphysis of the 3rd metacarpal (HP:0010223) | The normal epiphysis of the third metacarpal is localized at the distal end of the metacarpal bone. This term aplies if an accesory epiphysis, located at the proximal end of the metacarpal bone, is present. |                  The normal epiphysis of the third metacarpal is localized at the distal end of the metacarpal bone. This term applies if an accessory epiphysis, located at the proximal end of the metacarpal bone, is present. |
-| Reduced cooperative imaginative play (HP:5200035) | Failure of a child to engage with peers games that involve creating imaginary scenarios or narratives, for instance, in which children pretend to be characters or act out adventerous scenarios. |                  Failure of a child to engage with peers games that involve creating imaginary scenarios or narratives, for instance, in which children pretend to be characters or act out adventurous scenarios. |
-| Positive stool Giardia antigen test (HP:6000324) | Fecal analysis for Giardia antigen is abnormal. Tests include direct fluorescent-antibody (DFA), which detect sintact organisms, and enzyme immunoassays (EIAs), which detect soluble stool antigens. |                  Fecal analysis for Giardia antigen is abnormal. Tests include direct fluorescent-antibody (DFA), which detects intact organisms, and enzyme immunoassays (EIAs), which detect soluble stool antigens. |
-| Portal vein hypoplasia (HP:0034548) | A developmental defect characterized by underdevelopment of hte portal vein. |                  A developmental defect characterized by underdevelopment of the portal vein. |
-| Trapezoidal vertebral body (HP:0005621) | An anomalous trapezoidal appearance of a vertebral body. A trapezoid is a four-sided shape that has two sides that are parallel and two sides that are not parallel. In this case, the two lateral sides of the vertebra are parallel, and the top and the bottom are slanted with respect to each other such that the vertebra is shorter in the fron or back than on the other side. |                  An anomalous trapezoidal appearance of a vertebral body. A trapezoid is a four-sided shape that has two sides that are parallel and two sides that are not parallel. In this case, the two lateral sides of the vertebra are parallel, and the top and the bottom are slanted with respect to each other such that the vertebra is shorter in the front or back than on the other side. |
-| Absent sperm axoneme central pair complex (HP:0033525) | Absense of the central pair of microtubules in the sperm axoneme, thereby forming a 9+0 pattern instead of the normal 9+2 pattern. |                  Absence of the central pair of microtubules in the sperm axoneme, thereby forming a 9+0 pattern instead of the normal 9+2 pattern. |
-| Substantia nigra dopaminergic neuron loss (HP:0034694) | Degeneration and loss of neruons in the substantia nigra of the brain. |                  Degeneration and loss of neurons in the substantia nigra of the brain. |
-| Enteroviral encephalitis (HP:0034285) | Inflamation of the brain related to infection by an enterovirus. |                  Inflammation of the brain related to infection by an enterovirus. |
-| Glomerular subepithelial deposits (HP:0033603) | Deposits located between the outer (epithelial) aspect of the glomerular basement membrane (GBM) and the visceral epithelial cell, with varying degrees of incorporation into the GBM. This feature may be associated with a prominent GBM reflecting an diffuse and relativly uniform increase in thickness (subjective estimate). |                  Deposits located between the outer (epithelial) aspect of the glomerular basement membrane (GBM) and the visceral epithelial cell, with varying degrees of incorporation into the GBM. This feature may be associated with a prominent GBM reflecting an diffuse and relatively uniform increase in thickness (subjective estimate). |
-| Abnormal connection of the cardiac segments (HP:0011545) | A deviance in the normal connections between two cardiac segements. |                  A deviance in the normal connections between two cardiac segments. |
-| Nocturnal hypoventilation (HP:0002877) | An abnormal reduction in alveolar ventilation occuring during sleep. This is characterized by a rise in arterial carbon dioxide. |                  An abnormal reduction in alveolar ventilation occurring during sleep. This is characterized by a rise in arterial carbon dioxide. |
-| Abnormal renal corpuscle morphology (HP:0031263) | Any anomolous structure of the renal corpuscle, which is the initial component of the nephron that filters blood. The renal corpuscle consists of a knot of capillaries (glomerulus) that is surrounded by a double-walled capsule (Bowman capsule) that opens into a renal tubule. |                  Any anomalous structure of the renal corpuscle, which is the initial component of the nephron that filters blood. The renal corpuscle consists of a knot of capillaries (glomerulus) that is surrounded by a double-walled capsule (Bowman capsule) that opens into a renal tubule. |
-| Organized thrombi within interlobular vein lumen (HP:0033858) | Thrombi containg fibrous tissue and capillary-like vascular channels located within the lumen of the interlobular veins of the kidney. |                  Thrombi containing fibrous tissue and capillary-like vascular channels located within the lumen of the interlobular veins of the kidney. |
-| Triangular epiphyses of the metacarpals (HP:0009171) | A triangular appearance of the epiphyses of the metacarpals. Thess epiphyses are located at the distal end of the metacarpals. |                  A triangular appearance of the epiphyses of the metacarpals. These epiphyses are located at the distal end of the metacarpals. |
-| Complete duplication of the phalanges of the 3rd finger (HP:0009960) | A complete duplication affecting one or more of the phalanges of the 3rd finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the phalanges of the 3rd finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| Delayed adrenarche (HP:0025453) | Occurence of adrenarche at a later than normal age. Adrenarche normally occurs between six and eight years of age with increased adrenal androgen secretion; its exact biologic role is not well understood. It is accompanied by changes in pilosebaceous units, a transient growth spurt and the appearance of axillary and pubic hair in some children, but no sexual development. |                  Occurrence of adrenarche at a later than normal age. Adrenarche normally occurs between six and eight years of age with increased adrenal androgen secretion; its exact biologic role is not well understood. It is accompanied by changes in pilosebaceous units, a transient growth spurt and the appearance of axillary and pubic hair in some children, but no sexual development. |
-| Reduced cystathionine beta-synthase activity in cultured fibroblasts (HP:6000357) | Acitivity of cystathionine beta-synthase (EC 4.2.1.22) below the lower limit of normal in cultured fibroblasts. |                  Activity of cystathionine beta-synthase (EC 4.2.1.22) below the lower limit of normal in cultured fibroblasts. |
-| HbC hemoglobin (HP:0032146) | Presence of an abnormal type of hemoglobin characterized by the subsitution of a glutamic acid residue at position 7 following the initial methionine residue by a lysine (6GAG>6AAG). The presence of HbC can be determined by hemoglobin electrophoresis. |                  Presence of an abnormal type of hemoglobin characterized by the substitution of a glutamic acid residue at position 7 following the initial methionine residue by a lysine (6GAG>6AAG). The presence of HbC can be determined by hemoglobin electrophoresis. |
-| Paravertebral mass (HP:6000660) | A swelling or enlargment localized next to the vertebral column. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized next to the vertebral column. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Abnormality of fibrinolysis (HP:0040224) | Clincial phenotype characterized by delayed bleeding accelerated break down of blood clot (fibrinolysis) |                  Clinical phenotype characterized by delayed bleeding accelerated break down of blood clot (fibrinolysis) |
-| Scintillating scotoma (HP:0010822) | A scintillating scotoma is a common visual aura that can preced a migraine, whereby a spot of flickering light near the center of the visual fields occurs. The spot prevents vision, and is thus termed scotoma. The scotoma can extend into one or more shimmering arcs of white or colored flashing lights. |                  A scintillating scotoma is a common visual aura that can precede a migraine, whereby a spot of flickering light near the center of the visual fields occurs. The spot prevents vision, and is thus termed scotoma. The scotoma can extend into one or more shimmering arcs of white or colored flashing lights. |
-| Poor head control (HP:0002421) | Difficulty to maintain correct position of the head while standing or sitting. |                  Difficulty to maintain correct position of the head while standing or sitting. Infant head lag is observed when the head seems to flop around or lags posteriorly behind the trunk. Several articles have maintained that head lag should be absent by age 3 to 4 months. |
-| Jaw mass (HP:6000307) | A swelling or enlargment localized to the jaw. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the jaw. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Reduced isovaleryl CoA dehydrogenase activity in cultured fibroblasts (HP:4000210) | Acitivity of isovaleryl-CoA dehydrogenase (EC 1.3.99.10) below the lower limit of normal in cultured fibroblasts. |                  Activity of isovaleryl-CoA dehydrogenase (EC 1.3.99.10) below the lower limit of normal in cultured fibroblasts. |
-| Lateral canthal tendon laxity (HP:0032030) | Laxity of the tendon stabilizing the lateral aspect of the tarsal plate to the zygomatic bone. This can result in rounded appearence of the lateral canthus. Also, when the eyelid is pulled medially, more than 2 mm movement of the canthal angle may be observed. |                  Laxity of the tendon stabilizing the lateral aspect of the tarsal plate to the zygomatic bone. This can result in rounded appearance of the lateral canthus. Also, when the eyelid is pulled medially, more than 2 mm movement of the canthal angle may be observed. |
-| Polyneuritis (HP:0031003) | Simulataneous inflammation of multiple nerves. |                  Simultaneous inflammation of multiple nerves. |
-| Superior oblique muscle overaction (HP:0025594) | An ocular motility abnormality characterized by an overacting superior oblique muscle resulting to vertical incomitance of the eyes in lateral gaze. On examination, this is commonly seen as a downshoot of the adducting eye occuring when gaze is directed into the field of action of the inferior oblique muscle, producing a greater downward excursion of the adducted eye than of the abducted eye. |                  An ocular motility abnormality characterized by an overacting superior oblique muscle resulting to vertical incomitance of the eyes in lateral gaze. On examination, this is commonly seen as a downshoot of the adducting eye occurring when gaze is directed into the field of action of the inferior oblique muscle, producing a greater downward excursion of the adducted eye than of the abducted eye. |
-| Enlarged lunula (HP:6000137) | Abnormal enlargement of the visible portion of the distal nail matrix that extends beyond the proximal nail fold, which is refered to as the lunula. |                  Abnormal enlargement of the visible portion of the distal nail matrix that extends beyond the proximal nail fold, which is referred to as the lunula. |
-| Superficial dermal perivascular inflammatory infiltrate (HP:0031190) | Numerous lymphocytes surrounding blood vessels in the superfical part of the dermis. |                  Numerous lymphocytes surrounding blood vessels in the superficial part of the dermis. |
-| Pseudoepiphysis of the 5th metacarpal (HP:0010227) | The normal epiphysis of the fifth metacarpal is localized at the distal end of the metacarpal bone. This term aplies if an accesory epiphysis, located at the proximal end of the metacarpal bone, is present. |                  The normal epiphysis of the fifth metacarpal is localized at the distal end of the metacarpal bone. This term applies if an accessory epiphysis, located at the proximal end of the metacarpal bone, is present. |
-| Reduced breast milk zinc concentration (HP:6000700) | The concentration of zink in breast milk is below the lower limit of normal. |                  The concentration of zinc in breast milk is below the lower limit of normal. |
-| Small intestine mass (HP:6000410) | A swelling or enlargment localized to the small intestine. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the small intestine. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Retroperitoneal mass (HP:6000285) | A swelling or enlargment localized to the retroperitoneal region. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the retroperitoneal region. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| History of recent hospitalization (HP:6000034) | A past medical histry of recently being hospitalized. |                  A past medical history of recently being hospitalized. |
-| Abnormal demeanor (HP:5200261) | Abnormalities in the intensity, frequency, or duration of observable and expressed emotions. |                  An anomaly in the intensity, frequency, or duration of observable and expressed emotions. |
-| Paradoxical splitting of the second heart sound (HP:0031663) | Normally, the aortic valve closure (A2) is followed by the pulmonic valve closure (P2) but the A2-P2 interval increases with inspiration and decreases with expiration. With paradoxical splitting, there is a delay in the closure of the aortic valve, so that A2 can follow P2; the individual components can be appreciated at the end of expiration and the interval narrows with inspiration (which is the oposite of the normal pattern). |                  Normally, the aortic valve closure (A2) is followed by the pulmonic valve closure (P2) but the A2-P2 interval increases with inspiration and decreases with expiration. With paradoxical splitting, there is a delay in the closure of the aortic valve, so that A2 can follow P2; the individual components can be appreciated at the end of expiration and the interval narrows with inspiration (which is the opposite of the normal pattern). |
-| Microgastria (HP:0100841) | A developmental anomaly wtih a small tubular or saccular midline stomach. |                  A developmental anomaly with a small tubular or saccular midline stomach. |
-| Uterine cervix mass (HP:0034884) | A swelling or enlargment localized to the cervis of the uterus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the cervis of the uterus. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Urinary bladder mass (HP:0034968) | A swelling or enlargment localized to the urinary bladder. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |                  A swelling or enlargement localized to the urinary bladder. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
-| Inheritance qualifier (HP:0034335) | The terms in this hierarchy can be used to specificy the context in which inheritance of a disease is typically observed. |                  The terms in this hierarchy can be used to specify the context in which inheritance of a disease is typically observed. |
-| Prominent superficial veins (HP:0001015) | A condition in which superficial veins (i.e., veins just under the skin) are more conspicuous or noticable than normal. |                  A condition in which superficial veins (i.e., veins just under the skin) are more conspicuous or noticeable than normal. |
-| Glomerular subepithelial immune-complex deposits (HP:0033601) | A type of glomerular subepithelial deposit characterized by finely granular material deposited between the outer (epithelial) aspect of the glomerular basement membrane (GBM) and the visceral epithelial cell, with varying degrees of incorporation into the GBM and corresponding to immunoglobulin and/or complement by immunofluorescence/immunohistochemistry. This feature is associated with a prominent GBM reflecting an diffuse and relativly uniform increase in thickness (subjective estimate). |                  A type of glomerular subepithelial deposit characterized by finely granular material deposited between the outer (epithelial) aspect of the glomerular basement membrane (GBM) and the visceral epithelial cell, with varying degrees of incorporation into the GBM and corresponding to immunoglobulin and/or complement by immunofluorescence/immunohistochemistry. This feature is associated with a prominent GBM reflecting an diffuse and relatively uniform increase in thickness (subjective estimate). |
-| Derealization (HP:5200218) | Depersonalization is a subjective experience in which an individual feels a sense of detachment or estrangement from their surroundings, leading to a distorted perception of the external world. It is characterized by a feeling of unreality or unfamiliarity with one's environment, as if things are dreamlike, artificial, or lacking in significance. |                  Depersonalization is a subjective experience in which an individual feels a sense of detachment or estrangement from their surroundings, leading to a distorted perception of the external world. It is characterized by a feeling of unreality or unfamiliarity with one's environment, as if things are dreamlike, artificial, or lacking in significance. |
-| Rhythmic movements of the tympanic membrane (HP:6000043) | Regularly occuring motion of the tympanic membrane (eardrum), which is located between the inner and middle ear. This can be a manifestation of tensor tympani myoclonus, which can also be ascertained as sawtooth patterns on long-term tympanometry. |                  Regularly occurring motion of the tympanic membrane (eardrum), which is located between the inner and middle ear. This can be a manifestation of tensor tympani myoclonus, which can also be ascertained as sawtooth patterns on long-term tympanometry. |
-| Severe varicella zoster infection (HP:0032170) | An unusually severe form of varicella zoster virus (VZV) infection. In the majority of the cases, especially in children, varicella is a very mild infection characterized by skin lesions, low grade fever and malaise. Severe infection is characterized by manifestions including VZV pneumonia, hepatitis, meningitis, and disseminated varicella. |                  An unusually severe form of varicella zoster virus (VZV) infection. In the majority of the cases, especially in children, varicella is a very mild infection characterized by skin lesions, low grade fever and malaise. Severe infection is characterized by manifestations including VZV pneumonia, hepatitis, meningitis, and disseminated varicella. |
-| Maternal first trimester fever (HP:0030246) | The occurence of fever in a mother during the first trimester of pregnancy. |                  The occurrence of fever in a mother during the first trimester of pregnancy. |
-| Hand paresthesia (HP:0033660) | Tingling (often refered to as a pins and needles feeling) and numbness in the hand. |                  Tingling (often referred to as a pins and needles feeling) and numbness in the hand. |
-| Clasp-knife sign (HP:0031866) | Clasp-knife phenomonen refers to increased muscle tone while bending or stretching a limb, whereby there is a sudden relaxation (decrease in resistance) as the muscle continues to be streched. This phenomenon has been likened to opening a clasp knife. |                  Clasp-knife phenomenon refers to increased muscle tone while bending or stretching a limb, whereby there is a sudden relaxation (decrease in resistance) as the muscle continues to be stretched. This phenomenon has been likened to opening a clasp knife. |
-| Abnormal glycosidase enzyme activity (HP:0003649) | Abnormality of glycoside metabolism. |                  Abnormality of glycosidase enzyme activity. Glycoside hydrolases (GHs), including glycosidases and transglycosidases. These enzymes constitute 113 protein families that are responsible for the hydrolysis and/or transglycosylation of glycosidic bonds. |
-| Mesangial immunotactoid deposits (HP:0033547) | Extracellular mesangial aggregates composed of non-branching fibrils, focally parralel over 30 nM in diameter. The term immunotactoid refers to highly organized immune depositions appearing as rod-like microtubular structures in ultrastructural examination. |                  Extracellular mesangial aggregates composed of non-branching fibrils, focally parallel over 30 nM in diameter. The term immunotactoid refers to highly organized immune depositions appearing as rod-like microtubular structures in ultrastructural examination. |
-| EEG with photoparoxysmal response grade II (HP:0011212) | Occurence of epileptiform discharges in occipital and central regions during photic stimulation. |                  Occurrence of epileptiform discharges in occipital and central regions during photic stimulation. |
-| Reduced phosphoserine phosphatase activity in cultured fibroblasts (HP:6000080) | Acitivity of phosphoserine phosphatase below the lower limit of normal in cultured fibroblasts. |                  Activity of phosphoserine phosphatase below the lower limit of normal in cultured fibroblasts. |
-| Reduced Acyl-CoA:dihydroxyacetone phosphate acyltransferase activity in cultured fibroblasts (HP:6000426) | Acitivity of acyl-CoA:dihydroxyacetone phosphate acyltransferase below the lower limit of normal in cultured fibroblasts. |                  Activity of acyl-CoA:dihydroxyacetone phosphate acyltransferase below the lower limit of normal in cultured fibroblasts. |
-| Renal arteriolar lumen organized thrombi (HP:0033893) | Thrombi containg fibrous tissue and capillary-like vascular channels located within the lumen of the arterioles of the kidney. |                  Thrombi containing fibrous tissue and capillary-like vascular channels located within the lumen of the arterioles of the kidney. |
-| Abnormal response to ACTH stimulation test (HP:0031074) | An anomolous response to stimulation by adminstration of the adrenocorticotropic hormone (ACTH). ACTH stimulation normally stimulates the adrenal glands to release cortisol and adrenaline. |                  An anomalous response to stimulation by administration of the adrenocorticotropic hormone (ACTH). ACTH stimulation normally stimulates the adrenal glands to release cortisol and adrenaline. |
-| Supraventricular tachycardia with a concealed accessory connection (HP:0011689) | Supraventricular tachycardia with an accessory connection mediated pathway that is called concealed becasue it is not seen on the ECG during sinus rhythm. |                  Supraventricular tachycardia with an accessory connection mediated pathway that is called concealed because it is not seen on the ECG during sinus rhythm. |
-| Subepithelial glomerular basement membrane electron dense deposits (HP:0033501) | Prominent glomerular basement membrane (GBM) reflecting a diffuse and relativly uniform increase in thickness (subjective estimate) with exogenous material deposited between the outer (epithelial) aspect of the GBM and the visceral epithelial cell, with varying degrees of incorporation into the GBM. |                  Prominent glomerular basement membrane (GBM) reflecting a diffuse and relatively uniform increase in thickness (subjective estimate) with exogenous material deposited between the outer (epithelial) aspect of the GBM and the visceral epithelial cell, with varying degrees of incorporation into the GBM. |
-| Reduced fetal long bone echogenicity (HP:0034073) | An abnormally decreased echogenicity of fetal long bones in a prenatal sonographic investigation. Ths finding is due to hypomineralization and can be seen in some disorders such as hypophosphatasia, osteogenesis imperfecta, and achondrogenesis. |                  An abnormally decreased echogenicity of fetal long bones in a prenatal sonographic investigation. This finding is due to hypomineralization and can be seen in some disorders such as hypophosphatasia, osteogenesis imperfecta, and achondrogenesis. |
-| Complete duplication of the phalanges of the 4th finger (HP:0009973) | A complete duplication affecting one or more of the phalanges of the 4th finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the phalanges of the 4th finger. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| Complete duplication of the proximal phalanges of the hand (HP:0010000) | A complete duplication affecting one or more of the proximal phalanges of the hand. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the proximal phalanges of the hand. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| Twin pregnancy (HP:6000104) | Maternal history of a pregancy with two fetuses in the uterus. |                  Maternal history of a pregnancy with two fetuses in the uterus. |
-| Reduced tissue beta-mannosidase activity (HP:4000205) | Concentration or activity of beta-mannosidase (EC 3.2.1.25) as measured in cultured fibroblasts is below the limits of normal. |                  Concentration or activity of beta-mannosidase (EC 3.2.1.25) below the lower limit of normal. Beta-mannosidas enzyme can be measured in multiple tissues including leukocytes and cultured fibroblasts. |
-| Reduced malonyl-CoA decarboxylase activity in cultured fibroblasts (HP:6000355) | Acitivity of malonyl-CoA decarboxylase (EC 4.1.1.9) below the lower limit of normal in cultured fibroblasts. |                  Activity of malonyl-CoA decarboxylase (EC 4.1.1.9) below the lower limit of normal in cultured fibroblasts. |
-| Lichenoid skin lesion (HP:0031452) | Mutliple skin lesions resembling those characteristic of the disease lichen planus. These lesions are violaceous (reddish-purple), shiny, isolated, flat-topped papules and plaques. |                  Multiple skin lesions resembling those characteristic of the disease lichen planus. These lesions are violaceous (reddish-purple), shiny, isolated, flat-topped papules and plaques. |
-| Maturity-onset diabetes of the young (HP:0004904) | The term Maturity-onset diabetes of the young (MODY) was initially used for patients diagnosed with fasting hyperglycemia that could be treated without insulin for more than two years, where the initial diagnosis was made at a young age (under 25 years). Thus, MODY combines characteristics of type 1 diabetes (young age at diagnosis) and type 2 diabetes (less insulin dependence than type 1 diabetes). The term MODY is now most often used to refer to a group of monogenic diseases with these characteristics. Here, the term is used to describe hyperglycemia diagnosed at a young age with no or minor insulin dependency, no evidence of insulin resistence, and lack of evidence of autoimmune destruction of the beta cells. |                  The term Maturity-onset diabetes of the young (MODY) was initially used for patients diagnosed with fasting hyperglycemia that could be treated without insulin for more than two years, where the initial diagnosis was made at a young age (under 25 years). Thus, MODY combines characteristics of type 1 diabetes (young age at diagnosis) and type 2 diabetes (less insulin dependence than type 1 diabetes). The term MODY is now most often used to refer to a group of monogenic diseases with these characteristics. Here, the term is used to describe hyperglycemia diagnosed at a young age with no or minor insulin dependency, no evidence of insulin resistance, and lack of evidence of autoimmune destruction of the beta cells. |
-| Acral overgrowth (HP:0033794) | Excessive growth of hands and feet (predominantly due to soft tissue swelling). Typical manifestations include shoe size increase, foot enlargment, glove tightness, and hand enlargement. |                  Excessive growth of hands and feet (predominantly due to soft tissue swelling). Typical manifestations include shoe size increase, foot enlargement, glove tightness, and hand enlargement. |
-| Alexithymia (HP:0031433) | A deficit in emotional awareness is characterized by difficulties in recognizing and expressing feelings and emotions. This deficit manifests as a limited ability to respond to facial cues or other signs of emotions in others, often accompanied by detached connections to others. |                  Alexithymia is characterized by an impaired ability to be aware of, explicitly identify, and describe one's feelings. |
-| Split hand (HP:0001171) | A condition in which middle parts of the hand (fingers and metacarpals) are missing giving a cleft appearance. The severity is very variable ranging from slightly hypoplastic middle fingers over absent middel fingers as far as oligo- or monodactyl hands. |                  A condition in which middle parts of the hand (fingers and metacarpals) are missing giving a cleft appearance. The severity is very variable ranging from slightly hypoplastic middle fingers over absent middle fingers as far as oligo- or monodactyl hands. |
-| Glomerular amyloid subepithelial deposits (HP:0033599) | A type of fibrillar glomerular subepithelial deposit characterized by extracellular aggregates composed of fine, randomly oriented, non-branching fibrils 8-12 nm in diameter, often forming a cottony mass. This feature is associated with a prominent glomerular basement membrane (GBM) reflecting an diffuse and relativly uniform increase in thickness (subjective estimate). |                  A type of fibrillar glomerular subepithelial deposit characterized by extracellular aggregates composed of fine, randomly oriented, non-branching fibrils 8-12 nm in diameter, often forming a cottony mass. This feature is associated with a prominent glomerular basement membrane (GBM) reflecting an diffuse and relatively uniform increase in thickness (subjective estimate). |
-| Lymphadenopathy (HP:0002716) | Enlargment (swelling) of a lymph node. |                  Enlargement (swelling) of a lymph node. |
-| Atherosclerotic lesion (HP:0031678) | A lesion associated with atherosclerosis, a multifactorial and multipart progressive disease manifested by the focal development within the arterial wall of lesions, that ranges from teh development of a fatty streak, plaque progression, and plaque disruption. Atherosclerotic lesions demonstrate consistent morphological characteristics, which indicate that each type may stabilize temporarily or permanently and that progression to the next type may require an additional stimulus. |                  A lesion associated with atherosclerosis, a multifactorial and multipart progressive disease manifested by the focal development within the arterial wall of lesions, that ranges from the development of a fatty streak, plaque progression, and plaque disruption. Atherosclerotic lesions demonstrate consistent morphological characteristics, which indicate that each type may stabilize temporarily or permanently and that progression to the next type may require an additional stimulus. |
-| Muscle hemorrhage (HP:0040242) | Bleeding occuring within a muscle |                  Bleeding occurring within a muscle |
-| Medullary peritubular capillary lumen organized thrombi (HP:0033871) | Thrombi containg fibrous tissue and capillary-like vascular channels located within the lumen of the peritubular capillaries of the medulla of the kidney. |                  Thrombi containing fibrous tissue and capillary-like vascular channels located within the lumen of the peritubular capillaries of the medulla of the kidney. |
-| Tessier number 12 facial cleft (HP:0031584) | There is a soft tissue cleft medial to the inner canthus with a cleft of the root of the eyebrow. The frontal process of the maxilla is flat and broadened, and the ethmoid labyrinth is increased in tranverse dimension, thereby producing orbital hypertelorism. The cribriform plate is of normal width. The frontal sinus is enlarged. Even though the frontal bone is flattened, bony clefts with encephalocele have not been observed. There is a lateral displacement of the inner canthus with a mild thinning, aplasia, or irregularity of the medial end of the eyebrow. There are no eyelid clefts. The soft tissue contour of the forehead is normal, with only a short downward prolongation of the paramedian frontal hairline to mark the superior extent of the soft tissue cleft. Flattening of the frontal process of the maxilla, an increase in the transverse dimension of the ethmoid sinus, and a laterally convex bowing of the medial orbital wall produce orbital hypertelorism. Superiorly there is a minor flattening of the frontal bone medially, and the nasofrontal angle is somewhat obtuse. The extensive pneumatization of the sinuses on the cleft side extends backward through the frontal and ethmoid sinuses and into the sphenoid sinus. The anatomy of the sphenoid, including the pterygoid processes, is otherwise normal. The anterior and middle cranial fossae floors are both broadened on the cleft side with minor widening of the cribriform plate. |                  There is a soft tissue cleft medial to the inner canthus with a cleft of the root of the eyebrow. The frontal process of the maxilla is flat and broadened, and the ethmoid labyrinth is increased in transverse dimension, thereby producing orbital hypertelorism. The cribriform plate is of normal width. The frontal sinus is enlarged. Even though the frontal bone is flattened, bony clefts with encephalocele have not been observed. There is a lateral displacement of the inner canthus with a mild thinning, aplasia, or irregularity of the medial end of the eyebrow. There are no eyelid clefts. The soft tissue contour of the forehead is normal, with only a short downward prolongation of the paramedian frontal hairline to mark the superior extent of the soft tissue cleft. Flattening of the frontal process of the maxilla, an increase in the transverse dimension of the ethmoid sinus, and a laterally convex bowing of the medial orbital wall produce orbital hypertelorism. Superiorly there is a minor flattening of the frontal bone medially, and the nasofrontal angle is somewhat obtuse. The extensive pneumatization of the sinuses on the cleft side extends backward through the frontal and ethmoid sinuses and into the sphenoid sinus. The anatomy of the sphenoid, including the pterygoid processes, is otherwise normal. The anterior and middle cranial fossae floors are both broadened on the cleft side with minor widening of the cribriform plate. |
-| Disseminated molluscum contagiosum (HP:0032185) | The presense of molluscum contagiosum lesions across multiple areas of the body. |                  The presence of molluscum contagiosum lesions across multiple areas of the body. |
-| Fibrillary glomerular subepithelial deposits (HP:0033600) | A type of fibrillar glomerular subepithelial deposit characterized by extracellular aggregates of randomly arranged, straight, non-branching fibrils that are thicker than amyloid fibrils (average diameter about 20 nm) and are often admixed with smudgy, electron-dense material. This feature is associated with a prominent glomerular basement membrane (GBM) reflecting an diffuse and relativly uniform increase in thickness (subjective estimate). |                  A type of fibrillar glomerular subepithelial deposit characterized by extracellular aggregates of randomly arranged, straight, non-branching fibrils that are thicker than amyloid fibrils (average diameter about 20 nm) and are often admixed with smudgy, electron-dense material. This feature is associated with a prominent glomerular basement membrane (GBM) reflecting an diffuse and relatively uniform increase in thickness (subjective estimate). |
-| Increased serum zinc (HP:0011424) | An increased consentration of zinc in the blood. |                  An increased concentration of zinc in the blood. |
-| Limited neck extension (HP:0033453) | Reduced abilty to move the head back towards the ceiling so that one is looking upwards. |                  Reduced ability to move the head back towards the ceiling so that one is looking upwards. |
-| Complete duplication of thumb phalanx (HP:0009943) | A complete duplication affecting one or more of the phalanges of the thumb. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accesory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |                  A complete duplication affecting one or more of the phalanges of the thumb. As opposed to a partial duplication were there is still a variable degree of fusion between the duplicated bones, a complete duplication leads to two separate bones appearing side to side (radio-ulnar axis) as seen on x-rays. A duplication leading to an accessory bone appearing in the proximo-distal axis on x-rays, this is actually a different entity called a Pseudoepiphyses (see according terms) sometimes also referred to as Hyperphalangism. |
-| Disseminated viral infection (HP:0031696) | A viral infection that fails to be contained by the immune sytem and spreads throughout the body. |                  A viral infection that fails to be contained by the immune system and spreads throughout the body. |
-| Altered location of the longitudinal column in the fibrous sheath (HP:0034947) | The fibrous sheath is a structure in the midpiece of the sperm flagellum surrounding the outer dense fibers. It comprises two longitudinal columns and tranverse ribs. In case of altered location of the longitudinal column in the fibrous sheath the symmetrical structure is lost, most commonly with the columns not being opposite to each other, which can be visualized by electron microscopy. |                  The fibrous sheath is a structure in the midpiece of the sperm flagellum surrounding the outer dense fibers. It comprises two longitudinal columns and transverse ribs. In case of altered location of the longitudinal column in the fibrous sheath the symmetrical structure is lost, most commonly with the columns not being opposite to each other, which can be visualized by electron microscopy. |
-| obsolete Toe walking (HP:0040083) | Toe walking is a pattern of walking in which a person walks on balls of his or her feet, with no contact between the heels and ground. Toe-walking is common in children who are learning to walk, but most children outgrow it around the age of two years. This term refers to the persistance of toe-walking beyond the usual age. |                  Toe walking is a pattern of walking in which a person walks on balls of his or her feet, with no contact between the heels and ground. Toe-walking is common in children who are learning to walk, but most children outgrow it around the age of two years. This term refers to the persistence of toe-walking beyond the usual age. |
-| Renal tubular epithelial cell apoptosis (HP:0032647) | Increased apoptosis (programmed cell death) of tubular epithelial cells. The cells arre rounded with increased eosinophilia and contain fragmented, densely basophilic nuclear debris. |                  Increased apoptosis (programmed cell death) of tubular epithelial cells. The cells are rounded with increased eosinophilia and contain fragmented, densely basophilic nuclear debris. |
-| Abnormal femoral torsion (HP:0031069) | Femoral torsion, also known as femoral rotation or femoral version, refers to the twist between the proximal and distal parts of the femur on the transverse plane. Femoral anteversion averages between 30-40 degress at birth, and between 8-14 degrees in adults. This term applies if the amount of femoral torsion deviates from this range. |                  Femoral torsion, also known as femoral rotation or femoral version, refers to the twist between the proximal and distal parts of the femur on the transverse plane. Femoral anteversion averages between 30-40 degrees at birth, and between 8-14 degrees in adults. This term applies if the amount of femoral torsion deviates from this range. |
-| Reduced aspartoacylase activity in cultured fibroblasts (HP:6000354) | Acitivity of aspartoacylase below the lower limit of normal in cultured fibroblasts. Aspartoacylase (EC 3.5.1.15), also called aminoacylase-2, is an enzyme that hydrolyzes N-acetyl-L-aspartic acid (NAA) to aspartate and acetate. |                  Activity of aspartoacylase below the lower limit of normal in cultured fibroblasts. Aspartoacylase (EC 3.5.1.15), also called aminoacylase-2, is an enzyme that hydrolyzes N-acetyl-L-aspartic acid (NAA) to aspartate and acetate. |
-| Intermittent hypothermia (HP:0005964) | Episodes of reduced body termperature. |                  Episodes of reduced body temperature. |
-
-</details>
-
-<details>
-<summary>Relationships added: 122</summary>
-
-| Subject | Predicate | Object|
-----|----|----|
-| Reduced social smiling (HP:5200102) | subClassOf (rdfs:subClassOf) |                Delayed early-childhood social milestone development (HP:0012434) |
-| Elevated urinary 4-tyramine level (HP:6000775) | subClassOf (rdfs:subClassOf) |                Abnormal femoral neck morphology (HP:0003367) |
-| Elevated urinary 4-tyramine level (HP:6000775) | subClassOf (rdfs:subClassOf) |                Abnormal urinary nitrogen compound level (HP:0040416) |
-| Positive CSF treponemal antibody positivity (HP:6000767) | subClassOf (rdfs:subClassOf) |                Positive CSF pathogen-specific antibody positivity (HP:0430139) |
-| Premature glabellar skin wrinkling (HP:6000744) | subClassOf (rdfs:subClassOf) |                Abnormality of the glabella (HP:0002056) |
-| Premature glabellar skin wrinkling (HP:6000744) | subClassOf (rdfs:subClassOf) |                Premature skin wrinkling (HP:0100678) |
-| Anti-glycosylphosphatidylinositol anchored high-density lipoprotein binding protein 1 antibody positivity (HP:0025731) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
-| Flexural reticulate hyperpigmentation (HP:6000745) | subClassOf (rdfs:subClassOf) |                Reticulated skin pigmentation (HP:0007427) |
-| Lack of interest in peers (HP:4000083) | subClassOf (rdfs:subClassOf) |                Reduced social responsiveness (HP:0012760) |
-| Elevated erythrocyte AICA-ribotide concentration (HP:6000752) | subClassOf (rdfs:subClassOf) |                Abnormal erythrocyte metabolite concentration (HP:0034737) |
-| Dalen Fuchs nodules (HP:6000710) | subClassOf (rdfs:subClassOf) |                Yellow/white lesions of the retina (HP:0030506) |
-| Scalp nodule (HP:6000726) | subClassOf (rdfs:subClassOf) |                Abnormal scalp morphology (HP:0001965) |
-| Infantile onset (HP:0003593) | RO:0002488 |                HsapDv:0000083 |
-| Infantile onset (HP:0003593) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Elevated circulating dimethyl sterol concentration (HP:6000754) | subClassOf (rdfs:subClassOf) |                Abnormal circulating lipid concentration (HP:0003119) |
-| Elevated circulating 3-hydroxykynurenine concentration (HP:6000776) | subClassOf (rdfs:subClassOf) |                Abnormal form of the vertebral bodies (HP:0003312) |
-| Elevated circulating 3-hydroxykynurenine concentration (HP:6000776) | subClassOf (rdfs:subClassOf) |                Abnormal circulating non-proteinogenic amino acid concentration (HP:0033109) |
-| Positive CSF human T-lymphotropic virus type I antibody positivity (HP:6000730) | subClassOf (rdfs:subClassOf) |                Positive CSF pathogen-specific antibody positivity (HP:0430139) |
-| Positive synovial mycobacterial culture (HP:6000734) | subClassOf (rdfs:subClassOf) |                Positive synonvial fluid culture (HP:6000582) |
-| Ovarian fibrosis (HP:0034571) | subClassOf (rdfs:subClassOf) |                Abnormal ovarian morphology (HP:0031065) |
-| Positive mycobacterial synovial nucleic acid test (HP:6000735) | subClassOf (rdfs:subClassOf) |                Positive synonvial fluid infectious agent test (HP:6000581) |
-| Antenatal onset (HP:0030674) | RO:0002488 |                HsapDv:0000045 |
-| Reduced erythrocyte galactokinase activity (HP:6000723) | subClassOf (rdfs:subClassOf) |                Abnormal erythrocyte enzyme concentration or activity (HP:0030272) |
-| Abnormal social development (HP:0025732) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| Triggering by ocular trauma (HP:6000711) | subClassOf (rdfs:subClassOf) |                Triggered by physical trauma (HP:0031135) |
-| Paracentral hyper-autofluorecence (HP:6000769) | subClassOf (rdfs:subClassOf) |                Abnormal fundus autofluorescence imaging (HP:0030602) |
-| Decreased circulating pancreatic isoamylase activity (HP:6000721) | subClassOf (rdfs:subClassOf) |                Abnormal circulating enzyme concentration or activity (HP:0012379) |
-| Delayed early-childhood social milestone development (HP:0012434) | subClassOf (rdfs:subClassOf) |                Abnormal social development (HP:0025732) |
-| Decreased urinary creatine level (HP:6000748) | subClassOf (rdfs:subClassOf) |                Abnormal urinary organic compound level (HP:6000531) |
-| Olanzapine exposure (HP:6000780) | subClassOf (rdfs:subClassOf) |                Medication history (HP:4000112) |
-| Elevated urinary 5-hydroxyindoleacetic acid level (HP:6000756) | subClassOf (rdfs:subClassOf) |                Elevated urinary carboxylic acid (HP:0040156) |
-| Echophenomenon (HP:6000768) | subClassOf (rdfs:subClassOf) |                Motor stereotypy (HP:0000733) |
-| Reduced responsiveness to social cues (HP:5200028) | subClassOf (rdfs:subClassOf) |                Reduced social responsiveness (HP:0012760) |
-| Fixed fetal extremities (HP:6000770) | subClassOf (rdfs:subClassOf) |                Abnormal fetal physiology (HP:0034059) |
-| Abnormal peripapillary microvascular network (HP:6000771) | subClassOf (rdfs:subClassOf) |                Abnormal optic disc morphology (HP:0012795) |
-| Abnormal interest in others (HP:5200020) | subClassOf (rdfs:subClassOf) |                Abnormal social development (HP:0025732) |
-| Reduced tissue guanidinoacetate methyltransferase activity (HP:6000722) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Decreased tissue S-adenosylhomocysteine hydrolase activity (HP:6000750) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Reduced tissue phosphomannose isomerase activity (HP:6000782) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Late onset (HP:0003584) | RO:0002488 |                HsapDv:0000091 |
-| Late onset (HP:0003584) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Decreased CSF tetrahydrobiopterin level (HP:6000764) | subClassOf (rdfs:subClassOf) |                Abnormal CSF biopterin concentration (HP:0040207) |
-| Gelatinous drop-like dystrophic cornea (HP:6000712) | subClassOf (rdfs:subClassOf) |                Corneal dystrophy (HP:0001131) |
-| Anti-streptococcus deoxyribonuclease-B antibody positivity (HP:6000732) | subClassOf (rdfs:subClassOf) |                Positive bloodstream antibacterial antibody positivity (HP:0430061) |
-| Reduced social responsiveness (HP:0012760) | subClassOf (rdfs:subClassOf) |                Abnormal social development (HP:0025732) |
-| Posiitive rubella CSF culture (HP:6000762) | subClassOf (rdfs:subClassOf) |                Positive CSF infectious agent test (HP:0430123) |
-| Thickened fibular cortex (HP:6000705) | subClassOf (rdfs:subClassOf) |                Thickened cortex of long bones (HP:0000935) |
-| Thickened fibular cortex (HP:6000705) | subClassOf (rdfs:subClassOf) |                Abnormal fibula morphology (HP:0002991) |
-| Decreased urinary dopamine level (HP:6000751) | subClassOf (rdfs:subClassOf) |                Decreased urinary catecholamine concentration (HP:0045012) |
-| Positive bloodstream influenza nucleic test (HP:6000737) | subClassOf (rdfs:subClassOf) |                Positive bloodstream nucleic acid pathogen test (HP:0430067) |
-| Axonal spheroids (HP:6000717) | subClassOf (rdfs:subClassOf) |                Abnormal neuron morphology (HP:0012757) |
-| Decreased CSF N-acetyl-aspartyl-glutamate concentration (HP:6000765) | subClassOf (rdfs:subClassOf) |                Abnormal CSF protein concentration (HP:0025456) |
-| Cone-shaped distal tibial epiphysis (HP:6000778) | subClassOf (rdfs:subClassOf) |                Abnormality of the distal tibial epiphysis (HP:0010592) |
-| Cone-shaped distal tibial epiphysis (HP:6000778) | subClassOf (rdfs:subClassOf) |                Elevated urinary carboxylic acid (HP:0040156) |
-| Reduced tissue type II iodothyronine deiodinase activity (HP:6000719) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Abnormal social emotional interactions (HP:5200120) | subClassOf (rdfs:subClassOf) |                Abnormal social development (HP:0025732) |
-| Maternal household cat exposure (HP:6000784) | subClassOf (rdfs:subClassOf) |                Pregnancy history (HP:0002686) |
-| Auriculitis (HP:6000772) | subClassOf (rdfs:subClassOf) |                Abnormal pinna morphology (HP:0000377) |
-| Positive CSF West Nile virus nucleic acid test (HP:6000759) | subClassOf (rdfs:subClassOf) |                Positive CSF nucleic acid pathogen test (HP:0430140) |
-| Positive chlamydia trachomatis urine nucleic acid test (HP:6000731) | subClassOf (rdfs:subClassOf) |                Positive urine infectious agent nucleic acid test (HP:0034889) |
-| Osteoporotic femoral neck (HP:6000779) | subClassOf (rdfs:subClassOf) |                Abnormal femoral neck morphology (HP:0003367) |
-| Auspitz sign (HP:6000724) | subClassOf (rdfs:subClassOf) |                Abnormality of skin physiology (HP:0011122) |
-| Central giant cell lesion of the jaw (HP:6000715) | subClassOf (rdfs:subClassOf) |                Abnormal jaw morphology (HP:0030791) |
-| Reduced tissue palmitoyl-protein thioesterase activity (HP:6000783) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Posterior vertebral body notching (HP:6000777) | subClassOf (rdfs:subClassOf) |                Abnormal form of the vertebral bodies (HP:0003312) |
-| Posterior vertebral body notching (HP:6000777) | subClassOf (rdfs:subClassOf) |                Triggered by (HP:0025204) |
-| Fetal onset (HP:0011461) | RO:0002488 |                HsapDv:0000037 |
-| Fetal onset (HP:0011461) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Positive bloodstream babesia nucleic acid pathogen test (HP:6000736) | subClassOf (rdfs:subClassOf) |                Positive bloodstream nucleic acid pathogen test (HP:0430067) |
-| Positive bloodstream adenovirus nucleic acid test (HP:6000739) | subClassOf (rdfs:subClassOf) |                Positive bloodstream nucleic acid pathogen test (HP:0430067) |
-| Anti-Francisella tularensis antibody positivity (HP:6000740) | subClassOf (rdfs:subClassOf) |                Positive bloodstream antibacterial antibody positivity (HP:0430061) |
-| Elevated circulating monomethyl sterol concentration (HP:6000753) | subClassOf (rdfs:subClassOf) |                Abnormal circulating lipid concentration (HP:0003119) |
-| Decreased liver bile salt export pump expression (HP:6000718) | subClassOf (rdfs:subClassOf) |                Abnormal liver metabolite concentration (HP:0034644) |
-| Young adult onset (HP:0011462) | RO:0002488 |                HsapDv:0000089 |
-| Young adult onset (HP:0011462) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Elevated circulating thiosulfate concentration (HP:6000757) | subClassOf (rdfs:subClassOf) |                Abnormal blood ion concentration (HP:0003111) |
-| Streak gonad (HP:0025733) | subClassOf (rdfs:subClassOf) |                Gonadal dysgenesis (HP:0000133) |
-| Positive CSF fungus test (HP:6000729) | subClassOf (rdfs:subClassOf) |                Positive CSF infectious agent test (HP:0430123) |
-| Elevated circulating C-terminal fibroblast growth factor 23 concentration (HP:6000755) | subClassOf (rdfs:subClassOf) |                Abnormal circulating fibroblast growth factor 23 concentration (HP:6000489) |
-| History of undercooked pork ingestion (HP:6000727) | subClassOf (rdfs:subClassOf) |                Nutrition history (HP:4000123) |
-| Absent Bell phenomenon (HP:6000709) | subClassOf (rdfs:subClassOf) |                Abnormal involuntary eye movements (HP:0012547) |
-| Salty tasting skin (HP:6000725) | subClassOf (rdfs:subClassOf) |                Abnormality of skin physiology (HP:0011122) |
-| Positive bloodstream parainfluenza virus nucleic acid test (HP:6000738) | subClassOf (rdfs:subClassOf) |                Positive bloodstream nucleic acid pathogen test (HP:0430067) |
-| Elevated circulating type I procollagen aminoterminal propeptide concentration (HP:6000749) | subClassOf (rdfs:subClassOf) |                Abnormal circulating protein concentration (HP:0010876) |
-| Elevated fractional excretion of urate (HP:6000746) | subClassOf (rdfs:subClassOf) |                Abnormality of renal excretion (HP:0011036) |
-| Positive CSF herpes simplex virus nucleic acid test (HP:6000760) | subClassOf (rdfs:subClassOf) |                Positive CSF nucleic acid pathogen test (HP:0430140) |
-| Positive CSF Tropheryma whipplei bacteria microscopy (HP:6000766) | subClassOf (rdfs:subClassOf) |                Positive CSF infectious agent test (HP:0430123) |
-| Reduced epidermal kindlin-1 expression (HP:6000714) | subClassOf (rdfs:subClassOf) |                Abnormal epidermal protein expression (HP:0034573) |
-| Streak ovary (HP:0010464) | subClassOf (rdfs:subClassOf) |                Streak ovary (HP:0010464) |
-| Elevated urinary 5-hydroxyhexanoic acid level (HP:0025734) | subClassOf (rdfs:subClassOf) |                Elevated urinary carboxylic acid (HP:0040156) |
-| Femoral osteosclerosis (HP:6000708) | subClassOf (rdfs:subClassOf) |                Abnormal femur morphology (HP:0002823) |
-| Femoral osteosclerosis (HP:6000708) | subClassOf (rdfs:subClassOf) |                Increased bone mineral density (HP:0011001) |
-| Abnormal urinary creatine level (HP:6000747) | subClassOf (rdfs:subClassOf) |                Abnormal urinary organic compound level (HP:6000531) |
-| Terminal hepatic lobular vascular occlusion (HP:6000716) | subClassOf (rdfs:subClassOf) |                Abnormality of the hepatic vasculature (HP:0006707) |
-| Positive CSF cryptococcal antigen test (HP:6000761) | subClassOf (rdfs:subClassOf) |                Positive CSF infectious agent test (HP:0430123) |
-| New medication added in recent weeks (HP:6000706) | subClassOf (rdfs:subClassOf) |                Recent past medical history (HP:4000144) |
-| Hepatic reticuloendothelial system cell iron deposition (HP:6000713) | subClassOf (rdfs:subClassOf) |                Abnormal hepatic iron concentration (HP:0040134) |
-| Middle age onset (HP:0003596) | RO:0002488 |                HsapDv:0000092 |
-| Middle age onset (HP:0003596) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Reduced tissue phosphomannomutase activity (HP:6000781) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Protein craving (HP:6000785) | subClassOf (rdfs:subClassOf) |                Abnormal eating behavior (HP:0100738) |
-| Reduced tissue beta-mannosidase activity (HP:4000205) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Reduced tissue fatty aldehyde dehydrogenase activity (HP:6000720) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
-| Poor conversational reciprocity (HP:4000092) | subClassOf (rdfs:subClassOf) |                Reduced social responsiveness (HP:0012760) |
-| Adult onset (HP:0003581) | RO:0002488 |                HsapDv:0000087 |
-| Pediculosis capitis (HP:6000743) | subClassOf (rdfs:subClassOf) |                Positive skin infectious agent test (HP:0430117) |
-| Noctural pain (HP:6000707) | subClassOf (rdfs:subClassOf) |                Pain characteristic (HP:0025280) |
-| Abnormal response to social norms (HP:5200123) | subClassOf (rdfs:subClassOf) |                Abnormal social development (HP:0025732) |
-| Alexithymia (HP:0031433) | subClassOf (rdfs:subClassOf) |                Reduced social responsiveness (HP:0012760) |
-| Neonatal onset (HP:0003623) | RO:0002488 |                HsapDv:0000082 |
-| Embryonal onset (HP:0011460) | RO:0002488 |                HsapDv:0000002 |
-| Embryonal onset (HP:0011460) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| History of recent trauma to external ear canal (HP:6000774) | subClassOf (rdfs:subClassOf) |                Recent past medical history (HP:4000144) |
-| Positive CSF treponema pallidum nucleic acid test (HP:6000763) | subClassOf (rdfs:subClassOf) |                Positive CSF nucleic acid pathogen test (HP:0430140) |
-| Positive bloodstream MERS coronavirus nucleic acid test (HP:6000741) | subClassOf (rdfs:subClassOf) |                Positive bloodstream nucleic acid pathogen test (HP:0430067) |
-| History of recent rodent exposure (HP:6000728) | subClassOf (rdfs:subClassOf) |                Recent past medical history (HP:4000144) |
-| Positive nasopharyngeal corynebacterium diphtheriae nucleic acid test (HP:6000742) | subClassOf (rdfs:subClassOf) |                Positive oropharangeal infectious agent test (HP:6000579) |
-| Elevated circulating interleukin 1 receptor antagonist concentration (HP:6000758) | subClassOf (rdfs:subClassOf) |                Abnormal immune serum protein physiology (HP:0011111) |
-| Recent history of moisture in external ear canal (HP:6000773) | subClassOf (rdfs:subClassOf) |                Recent past medical history (HP:4000144) |
-| Positive streptococcus A rapid antigen detection test (HP:6000733) | subClassOf (rdfs:subClassOf) |                Positive oropharangeal infectious agent test (HP:6000579) |
-| Childhood onset (HP:0011463) | RO:0002488 |                HsapDv:0000081 |
-| Childhood onset (HP:0011463) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-
-</details>
-
-<details>
-<summary>Classes added: 170</summary>
+<summary>Classes added: 230</summary>
 
 | Term |
 ----|
-| Elevated urinary 4-tyramine level (HP:6000775) |
-| Elevated urinary 4-tyramine level (HP:6000775) |
-| Positive CSF treponemal antibody positivity (HP:6000767) |
-| Positive CSF treponemal antibody positivity (HP:6000767) |
-| Premature glabellar skin wrinkling (HP:6000744) |
-| Premature glabellar skin wrinkling (HP:6000744) |
-| Anti-glycosylphosphatidylinositol anchored high-density lipoprotein binding protein 1 antibody positivity (HP:0025731) |
-| Anti-glycosylphosphatidylinositol anchored high-density lipoprotein binding protein 1 antibody positivity (HP:0025731) |
-| Flexural reticulate hyperpigmentation (HP:6000745) |
-| Flexural reticulate hyperpigmentation (HP:6000745) |
-| Elevated erythrocyte AICA-ribotide concentration (HP:6000752) |
-| Elevated erythrocyte AICA-ribotide concentration (HP:6000752) |
-| Dalen Fuchs nodules (HP:6000710) |
-| Dalen Fuchs nodules (HP:6000710) |
-| Scalp nodule (HP:6000726) |
-| Scalp nodule (HP:6000726) |
-| Elevated circulating dimethyl sterol concentration (HP:6000754) |
-| Elevated circulating dimethyl sterol concentration (HP:6000754) |
-| Elevated circulating 3-hydroxykynurenine concentration (HP:6000776) |
-| Elevated circulating 3-hydroxykynurenine concentration (HP:6000776) |
-| Positive CSF human T-lymphotropic virus type I antibody positivity (HP:6000730) |
-| Positive CSF human T-lymphotropic virus type I antibody positivity (HP:6000730) |
-| Positive synovial mycobacterial culture (HP:6000734) |
-| Positive synovial mycobacterial culture (HP:6000734) |
-| Positive mycobacterial synovial nucleic acid test (HP:6000735) |
-| Positive mycobacterial synovial nucleic acid test (HP:6000735) |
-| Reduced erythrocyte galactokinase activity (HP:6000723) |
-| Reduced erythrocyte galactokinase activity (HP:6000723) |
-| Abnormal social development (HP:0025732) |
-| Abnormal social development (HP:0025732) |
-| Triggering by ocular trauma (HP:6000711) |
-| Triggering by ocular trauma (HP:6000711) |
-| Paracentral hyper-autofluorecence (HP:6000769) |
-| Paracentral hyper-autofluorecence (HP:6000769) |
-| Decreased circulating pancreatic isoamylase activity (HP:6000721) |
-| Decreased circulating pancreatic isoamylase activity (HP:6000721) |
-| Decreased urinary creatine level (HP:6000748) |
-| Decreased urinary creatine level (HP:6000748) |
-| Olanzapine exposure (HP:6000780) |
-| Olanzapine exposure (HP:6000780) |
-| Elevated urinary 5-hydroxyindoleacetic acid level (HP:6000756) |
-| Elevated urinary 5-hydroxyindoleacetic acid level (HP:6000756) |
-| Echophenomenon (HP:6000768) |
-| Echophenomenon (HP:6000768) |
-| Fixed fetal extremities (HP:6000770) |
-| Fixed fetal extremities (HP:6000770) |
-| Abnormal peripapillary microvascular network (HP:6000771) |
-| Abnormal peripapillary microvascular network (HP:6000771) |
-| Reduced tissue guanidinoacetate methyltransferase activity (HP:6000722) |
-| Reduced tissue guanidinoacetate methyltransferase activity (HP:6000722) |
-| Decreased tissue S-adenosylhomocysteine hydrolase activity (HP:6000750) |
-| Decreased tissue S-adenosylhomocysteine hydrolase activity (HP:6000750) |
-| Reduced tissue phosphomannose isomerase activity (HP:6000782) |
-| Reduced tissue phosphomannose isomerase activity (HP:6000782) |
-| Decreased CSF tetrahydrobiopterin level (HP:6000764) |
-| Decreased CSF tetrahydrobiopterin level (HP:6000764) |
-| Gelatinous drop-like dystrophic cornea (HP:6000712) |
-| Gelatinous drop-like dystrophic cornea (HP:6000712) |
-| Anti-streptococcus deoxyribonuclease-B antibody positivity (HP:6000732) |
-| Anti-streptococcus deoxyribonuclease-B antibody positivity (HP:6000732) |
-| Posiitive rubella CSF culture (HP:6000762) |
-| Posiitive rubella CSF culture (HP:6000762) |
-| Thickened fibular cortex (HP:6000705) |
-| Thickened fibular cortex (HP:6000705) |
-| Decreased urinary dopamine level (HP:6000751) |
-| Decreased urinary dopamine level (HP:6000751) |
-| Positive bloodstream influenza nucleic test (HP:6000737) |
-| Positive bloodstream influenza nucleic test (HP:6000737) |
-| Axonal spheroids (HP:6000717) |
-| Axonal spheroids (HP:6000717) |
-| Decreased CSF N-acetyl-aspartyl-glutamate concentration (HP:6000765) |
-| Decreased CSF N-acetyl-aspartyl-glutamate concentration (HP:6000765) |
-| Cone-shaped distal tibial epiphysis (HP:6000778) |
-| Cone-shaped distal tibial epiphysis (HP:6000778) |
-| Reduced tissue type II iodothyronine deiodinase activity (HP:6000719) |
-| Reduced tissue type II iodothyronine deiodinase activity (HP:6000719) |
-| Maternal household cat exposure (HP:6000784) |
-| Maternal household cat exposure (HP:6000784) |
-| Auriculitis (HP:6000772) |
-| Auriculitis (HP:6000772) |
-| Positive CSF West Nile virus nucleic acid test (HP:6000759) |
-| Positive CSF West Nile virus nucleic acid test (HP:6000759) |
-| Positive chlamydia trachomatis urine nucleic acid test (HP:6000731) |
-| Positive chlamydia trachomatis urine nucleic acid test (HP:6000731) |
-| Osteoporotic femoral neck (HP:6000779) |
-| Osteoporotic femoral neck (HP:6000779) |
-| Auspitz sign (HP:6000724) |
-| Auspitz sign (HP:6000724) |
-| Central giant cell lesion of the jaw (HP:6000715) |
-| Central giant cell lesion of the jaw (HP:6000715) |
-| Reduced tissue palmitoyl-protein thioesterase activity (HP:6000783) |
-| Reduced tissue palmitoyl-protein thioesterase activity (HP:6000783) |
-| Posterior vertebral body notching (HP:6000777) |
-| Posterior vertebral body notching (HP:6000777) |
-| Positive bloodstream babesia nucleic acid pathogen test (HP:6000736) |
-| Positive bloodstream babesia nucleic acid pathogen test (HP:6000736) |
-| Positive bloodstream adenovirus nucleic acid test (HP:6000739) |
-| Positive bloodstream adenovirus nucleic acid test (HP:6000739) |
-| Anti-Francisella tularensis antibody positivity (HP:6000740) |
-| Anti-Francisella tularensis antibody positivity (HP:6000740) |
-| Elevated circulating monomethyl sterol concentration (HP:6000753) |
-| Elevated circulating monomethyl sterol concentration (HP:6000753) |
-| Decreased liver bile salt export pump expression (HP:6000718) |
-| Decreased liver bile salt export pump expression (HP:6000718) |
-| Elevated circulating thiosulfate concentration (HP:6000757) |
-| Elevated circulating thiosulfate concentration (HP:6000757) |
-| Streak gonad (HP:0025733) |
-| Streak gonad (HP:0025733) |
-| Positive CSF fungus test (HP:6000729) |
-| Positive CSF fungus test (HP:6000729) |
-| Elevated circulating C-terminal fibroblast growth factor 23 concentration (HP:6000755) |
-| Elevated circulating C-terminal fibroblast growth factor 23 concentration (HP:6000755) |
-| History of undercooked pork ingestion (HP:6000727) |
-| History of undercooked pork ingestion (HP:6000727) |
-| Absent Bell phenomenon (HP:6000709) |
-| Absent Bell phenomenon (HP:6000709) |
-| Salty tasting skin (HP:6000725) |
-| Salty tasting skin (HP:6000725) |
-| Positive bloodstream parainfluenza virus nucleic acid test (HP:6000738) |
-| Positive bloodstream parainfluenza virus nucleic acid test (HP:6000738) |
-| Elevated circulating type I procollagen aminoterminal propeptide concentration (HP:6000749) |
-| Elevated circulating type I procollagen aminoterminal propeptide concentration (HP:6000749) |
-| Elevated fractional excretion of urate (HP:6000746) |
-| Elevated fractional excretion of urate (HP:6000746) |
-| Positive CSF herpes simplex virus nucleic acid test (HP:6000760) |
-| Positive CSF herpes simplex virus nucleic acid test (HP:6000760) |
-| Positive CSF Tropheryma whipplei bacteria microscopy (HP:6000766) |
-| Positive CSF Tropheryma whipplei bacteria microscopy (HP:6000766) |
-| Reduced epidermal kindlin-1 expression (HP:6000714) |
-| Reduced epidermal kindlin-1 expression (HP:6000714) |
-| Elevated urinary 5-hydroxyhexanoic acid level (HP:0025734) |
-| Elevated urinary 5-hydroxyhexanoic acid level (HP:0025734) |
-| Femoral osteosclerosis (HP:6000708) |
-| Femoral osteosclerosis (HP:6000708) |
-| Abnormal urinary creatine level (HP:6000747) |
-| Abnormal urinary creatine level (HP:6000747) |
-| Terminal hepatic lobular vascular occlusion (HP:6000716) |
-| Terminal hepatic lobular vascular occlusion (HP:6000716) |
-| Positive CSF cryptococcal antigen test (HP:6000761) |
-| Positive CSF cryptococcal antigen test (HP:6000761) |
-| New medication added in recent weeks (HP:6000706) |
-| New medication added in recent weeks (HP:6000706) |
-| Hepatic reticuloendothelial system cell iron deposition (HP:6000713) |
-| Hepatic reticuloendothelial system cell iron deposition (HP:6000713) |
-| Reduced tissue phosphomannomutase activity (HP:6000781) |
-| Reduced tissue phosphomannomutase activity (HP:6000781) |
-| Protein craving (HP:6000785) |
-| Protein craving (HP:6000785) |
-| Reduced tissue fatty aldehyde dehydrogenase activity (HP:6000720) |
-| Reduced tissue fatty aldehyde dehydrogenase activity (HP:6000720) |
-| Pediculosis capitis (HP:6000743) |
-| Pediculosis capitis (HP:6000743) |
-| Noctural pain (HP:6000707) |
-| Noctural pain (HP:6000707) |
-| History of recent trauma to external ear canal (HP:6000774) |
-| History of recent trauma to external ear canal (HP:6000774) |
-| Positive CSF treponema pallidum nucleic acid test (HP:6000763) |
-| Positive CSF treponema pallidum nucleic acid test (HP:6000763) |
-| Positive bloodstream MERS coronavirus nucleic acid test (HP:6000741) |
-| Positive bloodstream MERS coronavirus nucleic acid test (HP:6000741) |
-| History of recent rodent exposure (HP:6000728) |
-| History of recent rodent exposure (HP:6000728) |
-| Positive nasopharyngeal corynebacterium diphtheriae nucleic acid test (HP:6000742) |
-| Positive nasopharyngeal corynebacterium diphtheriae nucleic acid test (HP:6000742) |
-| Elevated circulating interleukin 1 receptor antagonist concentration (HP:6000758) |
-| Elevated circulating interleukin 1 receptor antagonist concentration (HP:6000758) |
-| Recent history of moisture in external ear canal (HP:6000773) |
-| Recent history of moisture in external ear canal (HP:6000773) |
-| Positive streptococcus A rapid antigen detection test (HP:6000733) |
-| Positive streptococcus A rapid antigen detection test (HP:6000733) |
+| Popcorn calcification (HP:6000871) |
+| Popcorn calcification (HP:6000871) |
+| Elevated CSF 5-hydroxyindoleacetic acid concentration (HP:6000823) |
+| Elevated CSF 5-hydroxyindoleacetic acid concentration (HP:6000823) |
+| Recent history of sedation by propofol infusion (HP:6000883) |
+| Recent history of sedation by propofol infusion (HP:6000883) |
+| Amyloid goiter (HP:6000815) |
+| Amyloid goiter (HP:6000815) |
+| Eschar (HP:6000793) |
+| Eschar (HP:6000793) |
+| Megacolon (HP:6000852) |
+| Megacolon (HP:6000852) |
+| Enlarged distal tibial epiphysis (HP:6000886) |
+| Enlarged distal tibial epiphysis (HP:6000886) |
+| Proximal radioulnar joint dislocation (HP:6000890) |
+| Proximal radioulnar joint dislocation (HP:6000890) |
+| Anti-DCC netrin 1 receptor antibody positivity (HP:6000881) |
+| Anti-DCC netrin 1 receptor antibody positivity (HP:6000881) |
+| Periumbilical depression (HP:6000808) |
+| Periumbilical depression (HP:6000808) |
+| Positive bloodstream HIV p24 antigen test (HP:6000798) |
+| Positive bloodstream HIV p24 antigen test (HP:6000798) |
+| Gastric carcinoid tumor (HP:6000898) |
+| Gastric carcinoid tumor (HP:6000898) |
+| Elevated circulating beta-glucuronidase activity (HP:6000819) |
+| Elevated circulating beta-glucuronidase activity (HP:6000819) |
+| Positive Quantiferon tuberculosis test (HP:6000799) |
+| Positive Quantiferon tuberculosis test (HP:6000799) |
+| Elevated urinary phosphohydroxylysine level (HP:6000806) |
+| Elevated urinary phosphohydroxylysine level (HP:6000806) |
+| Positive lacrimal tract actinomyces culture (HP:6000792) |
+| Positive lacrimal tract actinomyces culture (HP:6000792) |
+| Elevated urine fructose level (HP:6000804) |
+| Elevated urine fructose level (HP:6000804) |
+| Temporomandibular joint dislocation (HP:6000814) |
+| Temporomandibular joint dislocation (HP:6000814) |
+| Decreased circulating sulfate concentration (HP:6000854) |
+| Decreased circulating sulfate concentration (HP:6000854) |
+| Pancreatic VIPoma (HP:6000897) |
+| Pancreatic VIPoma (HP:6000897) |
+| Beaded bile ducts (HP:6000846) |
+| Beaded bile ducts (HP:6000846) |
+| Thickened cortex of the ulna (HP:6000812) |
+| Thickened cortex of the ulna (HP:6000812) |
+| Enlarged radial head (HP:6000885) |
+| Enlarged radial head (HP:6000885) |
+| Toe hyperphalangy (HP:6000868) |
+| Toe hyperphalangy (HP:6000868) |
+| Cerebrospinal fluid eosinophilia (HP:6000824) |
+| Cerebrospinal fluid eosinophilia (HP:6000824) |
+| Anti-dachshund family transcription factor 1 antibody positivity (HP:6000877) |
+| Anti-dachshund family transcription factor 1 antibody positivity (HP:6000877) |
+| Reduced C27 3beta-HSD activity in cultured fibroblasts (HP:6000825) |
+| Reduced C27 3beta-HSD activity in cultured fibroblasts (HP:6000825) |
+| Elevated osmolality gap (HP:6000820) |
+| Elevated osmolality gap (HP:6000820) |
+| Positive CSF mycobacterial culture (HP:6000835) |
+| Positive CSF mycobacterial culture (HP:6000835) |
+| Cardiac mass (HP:6000847) |
+| Cardiac mass (HP:6000847) |
+| Nonexudative conjunctivitis (HP:6000843) |
+| Nonexudative conjunctivitis (HP:6000843) |
+| Symmetric distribution (HP:6000857) |
+| Symmetric distribution (HP:6000857) |
+| Elevated urine bismuth level (HP:6000888) |
+| Elevated urine bismuth level (HP:6000888) |
+| Dermal foam cells (HP:6000859) |
+| Dermal foam cells (HP:6000859) |
+| Exacerbated by pronation (HP:6000790) |
+| Exacerbated by pronation (HP:6000790) |
+| Elevated circulating aspartate aminotransferase to alanine aminotransferase ratio (HP:6000813) |
+| Elevated circulating aspartate aminotransferase to alanine aminotransferase ratio (HP:6000813) |
+| Long-bone fracture (HP:0025736) |
+| Long-bone fracture (HP:0025736) |
+| Sclerotic ilium (HP:6000869) |
+| Sclerotic ilium (HP:6000869) |
+| Breast apocrine adenoma (HP:6000895) |
+| Breast apocrine adenoma (HP:6000895) |
+| Positive respiratory tract nucleic acid pathogen test (HP:6000836) |
+| Positive respiratory tract nucleic acid pathogen test (HP:6000836) |
+| Hyperkalemia while symptomatic (HP:6000833) |
+| Hyperkalemia while symptomatic (HP:6000833) |
+| Multiple eyelid beaded papules (HP:6000842) |
+| Multiple eyelid beaded papules (HP:6000842) |
+| Positive respiratory tract SARS-CoV-2 coronavirus nucleic acid test (HP:6000837) |
+| Positive respiratory tract SARS-CoV-2 coronavirus nucleic acid test (HP:6000837) |
+| Wide sacroiliac joint (HP:6000875) |
+| Wide sacroiliac joint (HP:6000875) |
+| Muscle extensor surface location (HP:6000858) |
+| Muscle extensor surface location (HP:6000858) |
+| Thickened femoral cortex (HP:6000810) |
+| Thickened femoral cortex (HP:6000810) |
+| Elevated blood bismuth concentration (HP:6000887) |
+| Elevated blood bismuth concentration (HP:6000887) |
+| Fibrocystic breast lesion (HP:6000896) |
+| Fibrocystic breast lesion (HP:6000896) |
+| Delayed tibial epiphyseal ossification (HP:6000867) |
+| Delayed tibial epiphyseal ossification (HP:6000867) |
+| Delayed ossification of the clavicle (HP:6000874) |
+| Delayed ossification of the clavicle (HP:6000874) |
+| Elevated urinary 2,8-dihydroxyadenine level (HP:6000803) |
+| Elevated urinary 2,8-dihydroxyadenine level (HP:6000803) |
+| Diminished tissue glycogen branching enzyme activity (HP:6000861) |
+| Diminished tissue glycogen branching enzyme activity (HP:6000861) |
+| Thyroid cyst (HP:6000853) |
+| Thyroid cyst (HP:6000853) |
+| Horizontal position of testicle (HP:6000839) |
+| Horizontal position of testicle (HP:6000839) |
+| Diminished alpha-ketoglutarate dehydrogenase activity in cultured fibroblasts (HP:6000830) |
+| Diminished alpha-ketoglutarate dehydrogenase activity in cultured fibroblasts (HP:6000830) |
+| Gaucher cells (HP:6000893) |
+| Gaucher cells (HP:6000893) |
+| Basilar artery fenestration (HP:6000787) |
+| Basilar artery fenestration (HP:6000787) |
+| Anti-potassium channel tetramerization domain containing 16 antibody positivity (HP:6000878) |
+| Anti-potassium channel tetramerization domain containing 16 antibody positivity (HP:6000878) |
+| Tzanck smear with multinucleated giant cells (HP:6000800) |
+| Tzanck smear with multinucleated giant cells (HP:6000800) |
+| Displacement of the extensor tendon in metacarpophalangeal joint (HP:6000788) |
+| Displacement of the extensor tendon in metacarpophalangeal joint (HP:6000788) |
+| Metaphyseal chevron deformity (HP:6000870) |
+| Metaphyseal chevron deformity (HP:6000870) |
+| Reduced tissue peptidase D activity (HP:6000828) |
+| Reduced tissue peptidase D activity (HP:6000828) |
+| Anti-Glutamate Receptor delta2 antibody positivity (HP:6000876) |
+| Anti-Glutamate Receptor delta2 antibody positivity (HP:6000876) |
+| Abnormal scleral thickness (HP:6000841) |
+| Abnormal scleral thickness (HP:6000841) |
+| Elevated urinary gamma-glutamylcysteine level (HP:6000834) |
+| Elevated urinary gamma-glutamylcysteine level (HP:6000834) |
+| Thickened cortex of the radius (HP:6000811) |
+| Thickened cortex of the radius (HP:6000811) |
+| Anti-regulator of G protein signaling 8 antibody positivity (HP:6000879) |
+| Anti-regulator of G protein signaling 8 antibody positivity (HP:6000879) |
+| Cervical C6/C7 vertebrae fusion (HP:6000807) |
+| Cervical C6/C7 vertebrae fusion (HP:6000807) |
+| Elevated serum-ascites albumin gradient (SAAG) (HP:6000863) |
+| Elevated serum-ascites albumin gradient (SAAG) (HP:6000863) |
+| Distal radioulnar joint dislocation (HP:6000889) |
+| Distal radioulnar joint dislocation (HP:6000889) |
+| Absent superficial temporal artery pulse (HP:6000786) |
+| Absent superficial temporal artery pulse (HP:6000786) |
+| Absent toe phalanx flexion crease (HP:6000891) |
+| Absent toe phalanx flexion crease (HP:6000891) |
+| Positive fecal cryptosporidium antigen test (HP:6000838) |
+| Positive fecal cryptosporidium antigen test (HP:6000838) |
+| Transverse terminal limb defect (HP:6000818) |
+| Transverse terminal limb defect (HP:6000818) |
+| Positive bloodstream rapid plasma reagin test (HP:6000797) |
+| Positive bloodstream rapid plasma reagin test (HP:6000797) |
+| Reduced tissue phosphorylase kinase activity (HP:6000832) |
+| Reduced tissue phosphorylase kinase activity (HP:6000832) |
+| Reduced tissue glycine cleavage enzyme activity (HP:6000829) |
+| Reduced tissue glycine cleavage enzyme activity (HP:6000829) |
+| Reduced procollagen-lysine,2-oxoglutarate 5-dioxygenase 1 activity in cultured fibroblasts (HP:6000826) |
+| Reduced procollagen-lysine,2-oxoglutarate 5-dioxygenase 1 activity in cultured fibroblasts (HP:6000826) |
+| Hyperphalangy of the 4th finger (HP:6000865) |
+| Hyperphalangy of the 4th finger (HP:6000865) |
+| White matter globoid cells (HP:6000892) |
+| White matter globoid cells (HP:6000892) |
+| Elevated circulating bile alcohol concentration (HP:6000821) |
+| Elevated circulating bile alcohol concentration (HP:6000821) |
+| Bowdler spurs (HP:6000873) |
+| Bowdler spurs (HP:6000873) |
+| Transverse smile (HP:6000864) |
+| Transverse smile (HP:6000864) |
+| Positive Mazzotti test (HP:6000801) |
+| Positive Mazzotti test (HP:6000801) |
+| Vascular compression of the eighth cranial nerve (HP:6000845) |
+| Vascular compression of the eighth cranial nerve (HP:6000845) |
+| Diminished tissue fumarylacetoacetate hydrolase activity (HP:6000827) |
+| Diminished tissue fumarylacetoacetate hydrolase activity (HP:6000827) |
+| Breast adenoma (HP:6000894) |
+| Breast adenoma (HP:6000894) |
+| Heloma (HP:6000789) |
+| Heloma (HP:6000789) |
+| Basilar meningeal enhancement (HP:6000851) |
+| Basilar meningeal enhancement (HP:6000851) |
+| Aplasia/Hypoplasia of the calvaria (HP:6000872) |
+| Aplasia/Hypoplasia of the calvaria (HP:6000872) |
+| Delayed distal femoral epiphyseal ossification (HP:6000866) |
+| Delayed distal femoral epiphyseal ossification (HP:6000866) |
+| Prominent lesser trochanter (HP:6000816) |
+| Prominent lesser trochanter (HP:6000816) |
+| Anti-neurochondrin antibody positivity (HP:6000880) |
+| Anti-neurochondrin antibody positivity (HP:6000880) |
+| Cold intolerance (HP:6000855) |
+| Cold intolerance (HP:6000855) |
+| Nematode in retina (HP:6000844) |
+| Nematode in retina (HP:6000844) |
+| Diminished tissue very long-chain acyl-CoA dehydrogenase activity (HP:6000860) |
+| Diminished tissue very long-chain acyl-CoA dehydrogenase activity (HP:6000860) |
+| Distortion of the anterior part of the interhemispheric fissure (HP:6000791) |
+| Distortion of the anterior part of the interhemispheric fissure (HP:6000791) |
+| Thickened tibial cortex (HP:6000809) |
+| Thickened tibial cortex (HP:6000809) |
+| History of wearing tightly fitted clothing (HP:6000794) |
+| History of wearing tightly fitted clothing (HP:6000794) |
+| Superior olive hypertrophy (HP:6000848) |
+| Superior olive hypertrophy (HP:6000848) |
+| Abnormal third cranial nerve morphology (HP:0025735) |
+| Abnormal third cranial nerve morphology (HP:0025735) |
+| Enlarged humeral head (HP:6000884) |
+| Enlarged humeral head (HP:6000884) |
+| Positive bloodstream Tropheryma whippelii nucleic acid test (HP:6000802) |
+| Positive bloodstream Tropheryma whippelii nucleic acid test (HP:6000802) |
+| Anti-recoverin antibody positivity (HP:6000882) |
+| Anti-recoverin antibody positivity (HP:6000882) |
+| Temporal cortex localization (HP:6000850) |
+| Temporal cortex localization (HP:6000850) |
+| Increased circulating dihydroxycholestanoic acid concentration (HP:6000831) |
+| Increased circulating dihydroxycholestanoic acid concentration (HP:6000831) |
+| Localized soft-tissue swelling on extremity (HP:6000840) |
+| Localized soft-tissue swelling on extremity (HP:6000840) |
+| Head and neck distribution (HP:6000856) |
+| Head and neck distribution (HP:6000856) |
+| Melorheostosis (HP:6000817) |
+| Melorheostosis (HP:6000817) |
+| Parotid adenoma (HP:6000862) |
+| Parotid adenoma (HP:6000862) |
+| Elevated CSF tetrahydrobiopterin level (HP:6000822) |
+| Elevated CSF tetrahydrobiopterin level (HP:6000822) |
+| Anti-folate receptor antibody positivity (HP:6000795) |
+| Anti-folate receptor antibody positivity (HP:6000795) |
+| Elevated urinary uroporphyrin level (HP:6000805) |
+| Elevated urinary uroporphyrin level (HP:6000805) |
+| Positive bloodstream VDRL test (HP:6000796) |
+| Positive bloodstream VDRL test (HP:6000796) |
+| Spinal extradural arachnoid cyst (HP:6000849) |
+| Spinal extradural arachnoid cyst (HP:6000849) |
 
 </details>
 
 <details>
-<summary>Text definitions added: 87</summary>
+<summary>Relationships added: 172</summary>
+
+| Subject | Predicate | Object|
+----|----|----|
+| Popcorn calcification (HP:6000871) | subClassOf (rdfs:subClassOf) |                Epiphyseal stippling (HP:0010655) |
+| Third cranial nerve hypoplasia (HP:6000597) | subClassOf (rdfs:subClassOf) |                Abnormal third cranial nerve morphology (HP:0025735) |
+| Tracheal cartilaginous sleeve (HP:0005347) | subClassOf (rdfs:subClassOf) |                Anomalous tracheal cartilage (HP:0004468) |
+| Fractured fused metatarsal bones 2-4 (HP:0041215) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Elevated CSF 5-hydroxyindoleacetic acid concentration (HP:6000823) | subClassOf (rdfs:subClassOf) |                Abnormal CSF carboxylic acid concentration (HP:0500183) |
+| Recent history of sedation by propofol infusion (HP:6000883) | subClassOf (rdfs:subClassOf) |                Recent past medical history (HP:4000144) |
+| Amyloid goiter (HP:6000815) | subClassOf (rdfs:subClassOf) |                Goiter (HP:0000853) |
+| Amyloid goiter (HP:6000815) | subClassOf (rdfs:subClassOf) |                Amyloidosis (HP:0011034) |
+| Eschar (HP:6000793) | subClassOf (rdfs:subClassOf) |                Localized skin lesion (HP:0011355) |
+| Fractured metatarsal bone of digit 5 (HP:0041223) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Megacolon (HP:6000852) | subClassOf (rdfs:subClassOf) |                Abnormal large intestine morphology (HP:0002250) |
+| Enlarged distal tibial epiphysis (HP:6000886) | subClassOf (rdfs:subClassOf) |                Abnormality of the distal tibial epiphysis (HP:0010592) |
+| Abnormal myeloid cell morphology (HP:0020047) | subClassOf (rdfs:subClassOf) |                Abnormal bone marrow cell morphology (HP:0005561) |
+| Proximal radioulnar joint dislocation (HP:6000890) | subClassOf (rdfs:subClassOf) |                Radioulnar dislocation (HP:0006439) |
+| Anti-DCC netrin 1 receptor antibody positivity (HP:6000881) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Periumbilical depression (HP:6000808) | subClassOf (rdfs:subClassOf) |                Abnormal umbilicus morphology (HP:0001551) |
+| Positive bloodstream HIV p24 antigen test (HP:6000798) | subClassOf (rdfs:subClassOf) |                Positive bloodstream infectious agent antigen test (HP:0430109) |
+| Gastric carcinoid tumor (HP:6000898) | subClassOf (rdfs:subClassOf) |                Carcinoid tumor (HP:0100570) |
+| Elevated circulating beta-glucuronidase activity (HP:6000819) | subClassOf (rdfs:subClassOf) |                Abnormal circulating enzyme concentration or activity (HP:0012379) |
+| Positive Quantiferon tuberculosis test (HP:6000799) | subClassOf (rdfs:subClassOf) |                Positive bloodstream infectious agent antigen test (HP:0430109) |
+| Pseudoepiphysis of the 4th metacarpal (HP:0010225) | subClassOf (rdfs:subClassOf) |                Metacarpal pseudoepiphysis (HP:0009193) |
+| Pseudoepiphysis of the 3rd metacarpal (HP:0010223) | subClassOf (rdfs:subClassOf) |                Metacarpal pseudoepiphysis (HP:0009193) |
+| Elevated urinary phosphohydroxylysine level (HP:6000806) | subClassOf (rdfs:subClassOf) |                Increased urinary non-proteinogenic amino acid level (HP:0033098) |
+| Positive lacrimal tract actinomyces culture (HP:6000792) | subClassOf (rdfs:subClassOf) |                Positive respiratory tract infectious agent test (HP:0430151) |
+| Elevated urine fructose level (HP:6000804) | subClassOf (rdfs:subClassOf) |                Abnormal urine carbohydrate level (HP:0031979) |
+| Temporomandibular joint dislocation (HP:6000814) | subClassOf (rdfs:subClassOf) |                Abnormality of the temporomandibular joint (HP:0010754) |
+| Decreased circulating sulfate concentration (HP:6000854) | subClassOf (rdfs:subClassOf) |                Abnormal blood ion concentration (HP:0003111) |
+| Fractured tibia (HP:0041143) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Pancreatic VIPoma (HP:6000897) | subClassOf (rdfs:subClassOf) |                Neoplasm of the pancreas (HP:0002894) |
+| Beaded bile ducts (HP:6000846) | subClassOf (rdfs:subClassOf) |                Abnormal biliary tract morphology (HP:0012440) |
+| Thickened cortex of the ulna (HP:6000812) | subClassOf (rdfs:subClassOf) |                Thickened cortex of long bones (HP:0000935) |
+| Thickened cortex of the ulna (HP:6000812) | subClassOf (rdfs:subClassOf) |                Cortical thickening of the forearm bones (HP:0003957) |
+| Enlarged radial head (HP:6000885) | subClassOf (rdfs:subClassOf) |                Abnormality of the radial head (HP:0003995) |
+| Toe hyperphalangy (HP:6000868) | subClassOf (rdfs:subClassOf) |                Abnormal toe phalanx morphology (HP:0010161) |
+| Cerebrospinal fluid eosinophilia (HP:6000824) | subClassOf (rdfs:subClassOf) |                CSF pleocytosis (HP:0012229) |
+| Reduced tissue galactocerebrosidase activity (HP:0034322) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Anti-dachshund family transcription factor 1 antibody positivity (HP:6000877) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Reduced C27 3beta-HSD activity in cultured fibroblasts (HP:6000825) | subClassOf (rdfs:subClassOf) |                Abnormal enzyme activity in cultured fibroblasts (HP:4000195) |
+| Elevated osmolality gap (HP:6000820) | subClassOf (rdfs:subClassOf) |                Abnormal serum osmolality (HP:6000679) |
+| Positive CSF mycobacterial culture (HP:6000835) | subClassOf (rdfs:subClassOf) |                Positive CSF infectious agent test (HP:0430123) |
+| Cardiac mass (HP:6000847) | subClassOf (rdfs:subClassOf) |                Abnormal heart morphology (HP:0001627) |
+| Neonatal onset (HP:0003623) | RO:0002488 |                HsapDv:0000082 |
+| Nonexudative conjunctivitis (HP:6000843) | subClassOf (rdfs:subClassOf) |                Conjunctivitis (HP:0000509) |
+| Symmetric distribution (HP:6000857) | subClassOf (rdfs:subClassOf) |                Spatial pattern (HP:0012836) |
+| Elevated urine bismuth level (HP:6000888) | subClassOf (rdfs:subClassOf) |                Urine xenobiotic (HP:0031840) |
+| Dermal foam cells (HP:6000859) | subClassOf (rdfs:subClassOf) |                Abnormal dermis morphology (HP:0034924) |
+| Abnormal erythroid lineage cell morphology (HP:0012130) | subClassOf (rdfs:subClassOf) |                Abnormal bone marrow cell morphology (HP:0005561) |
+| Exacerbated by pronation (HP:6000790) | subClassOf (rdfs:subClassOf) |                Aggravated by (HP:0025285) |
+| Elevated circulating aspartate aminotransferase to alanine aminotransferase ratio (HP:6000813) | subClassOf (rdfs:subClassOf) |                Abnormal circulating hepatic transaminase concentration (HP:0430135) |
+| Long-bone fracture (HP:0025736) | subClassOf (rdfs:subClassOf) |                Abnormal long bone morphology (HP:0011314) |
+| Long-bone fracture (HP:0025736) | subClassOf (rdfs:subClassOf) |                Bone fracture (HP:0020110) |
+| Pseudoepiphysis of the 5th metacarpal (HP:0010227) | subClassOf (rdfs:subClassOf) |                Metacarpal pseudoepiphysis (HP:0009193) |
+| Sclerotic ilium (HP:6000869) | subClassOf (rdfs:subClassOf) |                Abnormal ilium morphology (HP:0002867) |
+| Breast apocrine adenoma (HP:6000895) | subClassOf (rdfs:subClassOf) |                Neoplasm of the breast (HP:0100013) |
+| Positive respiratory tract nucleic acid pathogen test (HP:6000836) | subClassOf (rdfs:subClassOf) |                Positive respiratory tract infectious agent test (HP:0430151) |
+| Hyperkalemia while symptomatic (HP:6000833) | subClassOf (rdfs:subClassOf) |                Abnormal blood potassium concentration (HP:0011042) |
+| Fractured ulna (HP:0003987) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Fractured epiphysis (HP:0041147) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Middle age onset (HP:0003596) | RO:0002488 |                HsapDv:0000092 |
+| Middle age onset (HP:0003596) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Multiple eyelid beaded papules (HP:6000842) | subClassOf (rdfs:subClassOf) |                Abnormal eyelid morphology (HP:0000492) |
+| Positive respiratory tract SARS-CoV-2 coronavirus nucleic acid test (HP:6000837) | subClassOf (rdfs:subClassOf) |                Positive respiratory tract nucleic acid pathogen test (HP:6000836) |
+| Wide sacroiliac joint (HP:6000875) | subClassOf (rdfs:subClassOf) |                Abnormal sacroiliac joint morphology (HP:0100781) |
+| Muscle extensor surface location (HP:6000858) | subClassOf (rdfs:subClassOf) |                Spatial pattern (HP:0012836) |
+| Thickened femoral cortex (HP:6000810) | subClassOf (rdfs:subClassOf) |                Abnormal femur morphology (HP:0002823) |
+| Thickened femoral cortex (HP:6000810) | subClassOf (rdfs:subClassOf) |                Thickened fibular cortex (HP:6000705) |
+| Elevated blood bismuth concentration (HP:6000887) | subClassOf (rdfs:subClassOf) |                Blood xenobiotic (HP:0410172) |
+| Fibrocystic breast lesion (HP:6000896) | subClassOf (rdfs:subClassOf) |                Abnormal breast morphology (HP:0031093) |
+| Delayed tibial epiphyseal ossification (HP:6000867) | subClassOf (rdfs:subClassOf) |                Abnormality of tibial epiphyses (HP:0006508) |
+| Delayed ossification of the clavicle (HP:6000874) | subClassOf (rdfs:subClassOf) |                Abnormal clavicle morphology (HP:0000889) |
+| Elevated urinary 2,8-dihydroxyadenine level (HP:6000803) | subClassOf (rdfs:subClassOf) |                Abnormal urinary purine level (HP:0033161) |
+| Fractured metatarsal bone of digit 4 (HP:0041230) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Diminished tissue glycogen branching enzyme activity (HP:6000861) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Thyroid cyst (HP:6000853) | subClassOf (rdfs:subClassOf) |                Abnormal thyroid morphology (HP:0011772) |
+| Horizontal position of testicle (HP:6000839) | subClassOf (rdfs:subClassOf) |                Abnormal testis morphology (HP:0000035) |
+| Diminished alpha-ketoglutarate dehydrogenase activity in cultured fibroblasts (HP:6000830) | subClassOf (rdfs:subClassOf) |                Abnormal enzyme activity in cultured fibroblasts (HP:4000195) |
+| Fetal onset (HP:0011461) | RO:0002488 |                HsapDv:0000037 |
+| Fetal onset (HP:0011461) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Embryonal onset (HP:0011460) | RO:0002488 |                HsapDv:0000002 |
+| Embryonal onset (HP:0011460) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Gaucher cells (HP:6000893) | subClassOf (rdfs:subClassOf) |                Abnormal cell morphology (HP:0025461) |
+| Basilar artery fenestration (HP:6000787) | subClassOf (rdfs:subClassOf) |                Abnormal systemic arterial morphology (HP:0011004) |
+| Anti-potassium channel tetramerization domain containing 16 antibody positivity (HP:6000878) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Fractured clavicle bone (HP:0041144) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Infantile onset (HP:0003593) | RO:0002488 |                HsapDv:0000083 |
+| Infantile onset (HP:0003593) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Tzanck smear with multinucleated giant cells (HP:6000800) | subClassOf (rdfs:subClassOf) |                Positive skin infectious agent test (HP:0430117) |
+| Fractured metacarpal bone of digit 1 (HP:0041225) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Displacement of the extensor tendon in metacarpophalangeal joint (HP:6000788) | subClassOf (rdfs:subClassOf) |                Abnormal finger morphology (HP:0001167) |
+| Late onset (HP:0003584) | RO:0002488 |                HsapDv:0000091 |
+| Late onset (HP:0003584) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Metaphyseal chevron deformity (HP:6000870) | subClassOf (rdfs:subClassOf) |                Abnormal metaphysis morphology (HP:0000944) |
+| Fractured phalanx (HP:0041083) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Reduced tissue peptidase D activity (HP:6000828) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Anti-Glutamate Receptor delta2 antibody positivity (HP:6000876) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Abnormal scleral thickness (HP:6000841) | subClassOf (rdfs:subClassOf) |                Abnormal sclera morphology (HP:0000591) |
+| Fractured rib (HP:0041159) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Elevated urinary gamma-glutamylcysteine level (HP:6000834) | subClassOf (rdfs:subClassOf) |                Increased urinary non-proteinogenic amino acid level (HP:0033098) |
+| Thickened cortex of the radius (HP:6000811) | subClassOf (rdfs:subClassOf) |                Thickened cortex of long bones (HP:0000935) |
+| Thickened cortex of the radius (HP:6000811) | subClassOf (rdfs:subClassOf) |                Abnormal morphology of the radius (HP:0002818) |
+| Antenatal onset (HP:0030674) | RO:0002488 |                HsapDv:0000045 |
+| Anti-regulator of G protein signaling 8 antibody positivity (HP:6000879) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Cervical C6/C7 vertebrae fusion (HP:6000807) | subClassOf (rdfs:subClassOf) |                Fused cervical vertebrae (HP:0002949) |
+| Elevated serum-ascites albumin gradient (SAAG) (HP:6000863) | subClassOf (rdfs:subClassOf) |                Abnormality of digestive system physiology (HP:0025032) |
+| Distal radioulnar joint dislocation (HP:6000889) | subClassOf (rdfs:subClassOf) |                Radioulnar dislocation (HP:0006439) |
+| Absent superficial temporal artery pulse (HP:6000786) | subClassOf (rdfs:subClassOf) |                Abnormal pulse (HP:0032552) |
+| Absent toe phalanx flexion crease (HP:6000891) | subClassOf (rdfs:subClassOf) |                Abnormal toe morphology (HP:0001780) |
+| Positive fecal cryptosporidium antigen test (HP:6000838) | subClassOf (rdfs:subClassOf) |                Positive stool infectious agent test (HP:0034866) |
+| Transverse terminal limb defect (HP:6000818) | subClassOf (rdfs:subClassOf) |                Abnormality of limbs (HP:0040064) |
+| Fractured radius (HP:0003978) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Positive bloodstream rapid plasma reagin test (HP:6000797) | subClassOf (rdfs:subClassOf) |                Bloodstream infectious agent (HP:0031863) |
+| Fractured metaphysis of femur (HP:0041114) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Reduced tissue phosphorylase kinase activity (HP:6000832) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Recurrent long bone fractures (HP:0003084) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Reduced tissue glycine cleavage enzyme activity (HP:6000829) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Reduced procollagen-lysine,2-oxoglutarate 5-dioxygenase 1 activity in cultured fibroblasts (HP:6000826) | subClassOf (rdfs:subClassOf) |                Abnormal enzyme activity in cultured fibroblasts (HP:4000195) |
+| Adult onset (HP:0003581) | RO:0002488 |                HsapDv:0000087 |
+| Vestibular nystagmus (HP:0010542) | subClassOf (rdfs:subClassOf) |                Abnormal cranial nerve physiology (HP:0031910) |
+| Hyperphalangy of the 4th finger (HP:6000865) | subClassOf (rdfs:subClassOf) |                Finger hyperphalangy (HP:0030367) |
+| Refractory anemia with ringed sideroblasts (HP:0004828) | subClassOf (rdfs:subClassOf) |                Abnormal erythroid lineage cell morphology (HP:0012130) |
+| White matter globoid cells (HP:6000892) | subClassOf (rdfs:subClassOf) |                Abnormal cerebral white matter morphology (HP:0002500) |
+| Elevated circulating bile alcohol concentration (HP:6000821) | subClassOf (rdfs:subClassOf) |                Abnormal circulating organic compound concentration (HP:0430071) |
+| Bowdler spurs (HP:6000873) | subClassOf (rdfs:subClassOf) |                Abnormal long bone morphology (HP:0011314) |
+| Fractured lateral malleolus of fibula (HP:0041210) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Childhood onset (HP:0011463) | RO:0002488 |                HsapDv:0000081 |
+| Childhood onset (HP:0011463) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Transverse smile (HP:6000864) | subClassOf (rdfs:subClassOf) |                Weakness of facial musculature (HP:0030319) |
+| Positive Mazzotti test (HP:6000801) | subClassOf (rdfs:subClassOf) |                Positive skin infectious agent test (HP:0430117) |
+| Fractured metatarsal bone of digit 1 (HP:0041231) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Vascular compression of the eighth cranial nerve (HP:6000845) | subClassOf (rdfs:subClassOf) |                Abnorma vestibulocochlear nerve morphology (HP:0009591) |
+| Diminished tissue fumarylacetoacetate hydrolase activity (HP:6000827) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Breast adenoma (HP:6000894) | subClassOf (rdfs:subClassOf) |                Neoplasm of the breast (HP:0100013) |
+| Heloma (HP:6000789) | subClassOf (rdfs:subClassOf) |                Localized skin lesion (HP:0011355) |
+| Fractured fibula (HP:0041222) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Basilar meningeal enhancement (HP:6000851) | subClassOf (rdfs:subClassOf) |                Abnormal meningeal morphology (HP:0010651) |
+| Aplasia/Hypoplasia of the calvaria (HP:6000872) | subClassOf (rdfs:subClassOf) |                Abnormal calvaria morphology (HP:0002683) |
+| Aplasia/Hypoplasia of the calvaria (HP:6000872) | subClassOf (rdfs:subClassOf) |                Aplasia/Hypoplasia involving bones of the skull (HP:0009116) |
+| Delayed distal femoral epiphyseal ossification (HP:6000866) | subClassOf (rdfs:subClassOf) |                Abnormality of the distal femoral epiphysis (HP:0010590) |
+| Prominent lesser trochanter (HP:6000816) | subClassOf (rdfs:subClassOf) |                Abnormal femoral neck/head morphology (HP:0003366) |
+| Anti-neurochondrin antibody positivity (HP:6000880) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Cold intolerance (HP:6000855) | subClassOf (rdfs:subClassOf) |                Heat intolerance (HP:0002046) |
+| Nematode in retina (HP:6000844) | subClassOf (rdfs:subClassOf) |                Positive infectious agent test (HP:0430030) |
+| Diminished tissue very long-chain acyl-CoA dehydrogenase activity (HP:6000860) | subClassOf (rdfs:subClassOf) |                Abnormal tissue enzyme concentration or activity (HP:6000231) |
+| Distortion of the anterior part of the interhemispheric fissure (HP:6000791) | subClassOf (rdfs:subClassOf) |                Abnormal subarachnoid space morphology (HP:0012703) |
+| Elevated bone marrow ring sideroblast count (HP:0004864) | subClassOf (rdfs:subClassOf) |                Abnormal erythroid lineage cell morphology (HP:0012130) |
+| Thickened tibial cortex (HP:6000809) | subClassOf (rdfs:subClassOf) |                Thickened cortex of long bones (HP:0000935) |
+| Thickened tibial cortex (HP:6000809) | subClassOf (rdfs:subClassOf) |                Abnormal tibia morphology (HP:0002992) |
+| History of wearing tightly fitted clothing (HP:6000794) | subClassOf (rdfs:subClassOf) |                Past medical history (HP:0032443) |
+| Superior olive hypertrophy (HP:6000848) | subClassOf (rdfs:subClassOf) |                Abnormal pons morphology (HP:0007361) |
+| Abnormal third cranial nerve morphology (HP:0025735) | subClassOf (rdfs:subClassOf) |                Abnormal cranial nerve morphology (HP:0001291) |
+| Enlarged humeral head (HP:6000884) | subClassOf (rdfs:subClassOf) |                Abnormal humeral head morphology (HP:0003887) |
+| Positive bloodstream Tropheryma whippelii nucleic acid test (HP:6000802) | subClassOf (rdfs:subClassOf) |                Positive bloodstream nucleic acid pathogen test (HP:0430067) |
+| Fractured humerus (HP:0041055) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Aganglionic megacolon (HP:0002251) | subClassOf (rdfs:subClassOf) |                Megacolon (HP:6000852) |
+| Fractured head of femur (HP:0041221) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Anti-recoverin antibody positivity (HP:6000882) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Temporal cortex localization (HP:6000850) | subClassOf (rdfs:subClassOf) |                Brain localization (HP:0430127) |
+| Increased circulating dihydroxycholestanoic acid concentration (HP:6000831) | subClassOf (rdfs:subClassOf) |                Increased serum bile acid concentration (HP:0012202) |
+| Localized soft-tissue swelling on extremity (HP:6000840) | subClassOf (rdfs:subClassOf) |                Abnormality of limbs (HP:0040064) |
+| Head and neck distribution (HP:6000856) | subClassOf (rdfs:subClassOf) |                Localized (HP:0012838) |
+| Femur fracture (HP:0031846) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Melorheostosis (HP:6000817) | subClassOf (rdfs:subClassOf) |                Abnormal long bone morphology (HP:0011314) |
+| Third cranial nerve thickening (HP:6000291) | subClassOf (rdfs:subClassOf) |                Abnormal third cranial nerve morphology (HP:0025735) |
+| Parotid adenoma (HP:6000862) | subClassOf (rdfs:subClassOf) |                Salivary gland neoplasm (HP:0100684) |
+| Elevated CSF tetrahydrobiopterin level (HP:6000822) | subClassOf (rdfs:subClassOf) |                Abnormal CSF biopterin concentration (HP:0040207) |
+| Young adult onset (HP:0011462) | RO:0002488 |                HsapDv:0000089 |
+| Young adult onset (HP:0011462) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Anti-folate receptor antibody positivity (HP:6000795) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Fractured sternal end of clavicle (HP:0041200) | subClassOf (rdfs:subClassOf) |                Long-bone fracture (HP:0025736) |
+| Elevated urinary uroporphyrin level (HP:6000805) | subClassOf (rdfs:subClassOf) |                Elevated urinary porphyrin level (HP:6000535) |
+| Positive bloodstream VDRL test (HP:6000796) | subClassOf (rdfs:subClassOf) |                Bloodstream infectious agent (HP:0031863) |
+| Spinal extradural arachnoid cyst (HP:6000849) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord morphology (HP:0002143) |
+
+</details>
+
+<details>
+<summary>Text definitions added: 115</summary>
 
 | Term | New Text Definition |
 ----|----|
-| Elevated urinary 4-tyramine level (HP:6000775) | The amount of 4-tyramine in the urine, normalized for urine concentration, is above the upper limit of normal. |
-| Positive CSF treponemal antibody positivity (HP:6000767) | The presence of antibodies in the cerebrospinal fluid (CSF) that react against a component of treponema pallidum (syphilis). |
-| Premature glabellar skin wrinkling (HP:6000744) | The presence in the skin of the glabellar region of an increased degree of wrinkling (irregular folds and indentations) of the skin as compared with age-related norms. |
-| Anti-glycosylphosphatidylinositol anchored high-density lipoprotein binding protein 1 antibody positivity (HP:0025731) | The presence of autoantibodies (immunoglobulins) in the blood circulation that react against glycosylphosphatidylinositol anchored high-density lipoprotein binding protein 1. |
-| Flexural reticulate hyperpigmentation (HP:6000745) | Hyperpigmented macules with a reticulate (net-like) pattern involving the neck, axillae, groins, and other flexures like the inframammary folds in females. Histopathology shows orthokeratosis or hyperkeratosis, thinning of the suprapapillary epithelium, elongation of the rete ridges, hyperpigmentation of the basal layer, and follicular cysts. A perivascular lymphohistiocytic infiltrate can be observed in the papillary dermis. |
-| Elevated erythrocyte AICA-ribotide concentration (HP:6000752) | Concentration of 5-amino-4-imidazolecarboxamide (AICA-riboside) in red blood cells is above the upper limit of normal. |
-| Dalen Fuchs nodules (HP:6000710) | Nodules (yellow-white subretinal pigment epithelium lesions) that form between Bruch's membrane and the retinal pigment epithelium. |
-| Scalp nodule (HP:6000726) | A small firm lump located in the skin of the scalp that is greater than one cm in diameter. |
-| Abscess (HP:0025615) | An abscess is a localized collection of purulent material surrounded by inflammation and granulation. |
-| Elevated circulating dimethyl sterol concentration (HP:6000754) | The concentration of dimethylsterols in the blood circulation is above the upper limit of normal. |
-| Elevated circulating 3-hydroxykynurenine concentration (HP:6000776) | The concentration of 3-hydroxykynurenine in the blood circulation is above the upper limit of normal. |
-| Positive CSF human T-lymphotropic virus type I antibody positivity (HP:6000730) | The presence of antibodies in the cerebrospinal fluid (CSF) that react against a component of human T-lymphotropic virus type I. |
-| Positive synovial mycobacterial culture (HP:6000734) | Growth of a mycobacteria in a culture derived from synovial fluid. |
-| Positive mycobacterial synovial nucleic acid test (HP:6000735) | Detection of nucleic acid of mycobacteria in the synovial fluid by a method such as polymerase chain reaction (PCR). |
-| Reduced erythrocyte galactokinase activity (HP:6000723) | Activity or concentration of in the level of galactokinase (EC 2.7.1.6) in erythrocytes below the lower limit of normal. |
-| Abnormal social development (HP:0025732) | A substantial lag in the ahcievement of or divergence from typical milestones in social interaction and communication skills. Social-emotional competencies in young children include helping, sharing, comforting, and exhibiting empathy and compliance. |
-| Triggering by ocular trauma (HP:6000711) | Applies to a sign or symptom that is provoked or brought about by trauma to the eye. |
-| Paracentral hyper-autofluorecence (HP:6000769) | Increased autofluorescence in areas adjacent to the central macula (but not including the very center). |
-| Decreased circulating pancreatic isoamylase activity (HP:6000721) | The activity of alpha-Amylase (1,4-alpha-D-glucan-4-glucanohydrolase E. C. 3.2.1.1, pancreatic isoamylase) in the blood circulation is below the lower limit of normal. |
-| Decreased urinary creatine level (HP:6000748) | The amount of creatine in the urine, normalized for urine concentration, is below the lower limit of normal. |
-| Olanzapine exposure (HP:6000780) | History of having taken olanzapine. |
-| Elevated urinary 5-hydroxyindoleacetic acid level (HP:6000756) | The amount of 5-hydroxyindoleacetic acid (5-HIAA) in the urine, normalized for urine concentration, is above the upper limit of normal. |
-| Echophenomenon (HP:6000768) | A stimulus triggered repetition of an action (echopraxia) or sound (echolalia) performed without the explicit awareness of an individual. |
-| Fixed fetal extremities (HP:6000770) | A condition in which the limbs of a fetus are immobile or held in a rigid position. The limbs are consistently immobile and rigid. Fixed extremities can be observed during prenatal imaging (e.g., ultrasound). |
-| Abnormal peripapillary microvascular network (HP:6000771) | The density of the deep peripapillary microvascular network (i.e., the number of blood vessels) is below the lower limit of normal. This finding is observable by optical coherence tomography angiography. |
-| Reduced tissue guanidinoacetate methyltransferase activity (HP:6000722) | Activity of the mitochondrial enzyme guanidinoacetate methyltransferase in tissues below the lower limit of normal. The activity can be measured in multiple tissues including culutured fibroblasts. |
-| Decreased tissue S-adenosylhomocysteine hydrolase activity (HP:6000750) | Concentration or activity of S-adenosylhomocysteine hydrolase (EC 3.3.1.1) below the lower limit of normal. FECH enzyme can be measured in multiple tissues including erythrocytes and liver. |
-| Reduced tissue phosphomannose isomerase activity (HP:6000782) | Activity of the mitochondrial enzyme phosphomannose isomerase (PMI; EC 5.3.1.8) in tissues below the lower limit of normal. The activity can be measured in multiple tissues including leukocytes, fibroblasts, and liver. |
-| Decreased CSF tetrahydrobiopterin level (HP:6000764) | Concentration of tetrahydrobiopterin in the cerebrospinal fluid (CSF) below the lower limit of normal. |
-| Gelatinous drop-like dystrophic cornea (HP:6000712) | Deposition of amyloid material in the subepithelial space of the cornea. |
-| Anti-streptococcus deoxyribonuclease-B antibody positivity (HP:6000732) | The presence of antibodies in the blood circulation that react against streptococcal deoxyribonuclease-B (ADN-B). Almost all group A streptococci have this antigen and a strong elevation of the antibody is observed in patients with acute rheumatic fever, acute glomerulonephritis and other streptococcal infections. |
-| Posiitive rubella CSF culture (HP:6000762) | Growth of rubella virus in a culture derived from cerebrospinal fluid (CSF). |
-| Thickened fibular cortex (HP:6000705) | Abnormal increase in the thickness (distance between the inner and outer boundaries) of the outer layer (cortex) of the fibula. |
-| Decreased urinary dopamine level (HP:6000751) | The concentration of dopamine in the urine, normalized for urine concentration, is below the lower limit of normal. |
-| Positive bloodstream influenza nucleic test (HP:6000737) | Detection of nucleic acid of an influenza virus in the blood circulation by a method such as polymerase chain reaction (PCR). |
-| Axonal spheroids (HP:6000717) | During neurodegeneration, bubble-like swellings form along the length of the axon, a primary and early effect of dynamic axonal deformation. These varicosities, spheroids, or swellings have been described as beads on a string and branches bearing fruit, and they frequently appear on degenerating axons. |
-| Decreased CSF N-acetyl-aspartyl-glutamate concentration (HP:6000765) | The concentration of N-acetyl-aspartyl-glutamate (NAAG) in the cerebrospinal fluid (CSF) is below the lower limit of normal. |
-| Cone-shaped distal tibial epiphysis (HP:6000778) | The distal epiphysis (rounded portion of bone at the far end of the tibia distal to the growth plate) has an abnormal cone-shaped appearance, that is, the epiphysis has a globular form at the bottom, tapering to a point at the top. |
-| Reduced tissue type II iodothyronine deiodinase activity (HP:6000719) | Concentration or activity of type II iodothyronine deiodinase below the lower limit of normal. The activity can be measured in tissues such as cultured fibroblasts. |
-| Maternal household cat exposure (HP:6000784) | The mother of a fetus or index patient has a history of regular exposure to one or more cats, e.g., in the household. |
-| Auriculitis (HP:6000772) | Inflammation of the skin and soft tissues of the outer ear. |
-| Positive CSF West Nile virus nucleic acid test (HP:6000759) | Detection of West Nile virus nucleic acid in the cerebrospinal fluid (CSF) by a method such as polymerase chain reaction (PCR) or reverse transcriptase (RT)-PCR. |
-| Positive chlamydia trachomatis urine nucleic acid test (HP:6000731) | Detection of Chlamydia trachomatis nucleic acid in the urine by a method such as polymerase chain reaction. |
-| Osteoporotic femoral neck (HP:6000779) | Low bone mass localized in the neck of the femur. Osteoporosis is defined based on a T-score of -2.5 or lower (bone mineral density of 2.5 or more standard deviations below that of a normal young adult). |
-| Auspitz sign (HP:6000724) | The appearance of small bleeding points after successive layers of scale have been removed from the surface of psoriatic papules or plaques. |
-| Central giant cell lesion of the jaw (HP:6000715) | A benign proliferative and asymptomatic intraosseous lesion of the jaw formed by fibrous tissue that contains multiple focus of hemorrhage and an aggregation of multinucleated giant cells. |
-| Reduced tissue palmitoyl-protein thioesterase activity (HP:6000783) | Activity of the enzyme palmitoyl-protein thioesterase (PPT; EC 3.1.2.22) in tissues below the lower limit of normal. The activity can be measured in multiple tissues including culutured fibroblasts and leukocytes. |
-| Posterior vertebral body notching (HP:6000777) | Exaggerated posterior vertebral notches. |
-| Positive bloodstream babesia nucleic acid pathogen test (HP:6000736) | Detection of nucleic acid of genus Babesia (parasite) in the blood circulation by a method such as polymerase chain reaction (PCR). |
-| Positive bloodstream adenovirus nucleic acid test (HP:6000739) | Detection of nucleic acid of an adenovirus in the blood circulation by a methiod such as polymerase chain reaction (PCR). |
-| Anti-Francisella tularensis antibody positivity (HP:6000740) | The presence of antibodies in the blood circulation that react against a component of Francisella tularensis. |
-| Elevated circulating monomethyl sterol concentration (HP:6000753) | Concentration of monomethylsterols (such as 4alpha-monomethylsterol) in the blood circulation above the upper limit of normal. |
-| Decreased liver bile salt export pump expression (HP:6000718) | Amount of bile salt export pump (BSEP, coded by the ABCB11 gene) in liver tissue below the lower limit of normal. |
-| Elevated circulating thiosulfate concentration (HP:6000757) | The concentration of thiosulfate in the blood circulation is above the upper limit of normal. |
-| Streak gonad (HP:0025733) | A type of gonadal dysgenesis in which the gonadal tissue is underdeveloped and appears as fibrous, streak-like structures instead of fully formed ovaries or testes. |
-| Positive CSF fungus test (HP:6000729) | Any kind of test for a fungal infectious agent in the cerebrospinal fluid (CSF) positive. |
-| Elevated circulating C-terminal fibroblast growth factor 23 concentration (HP:6000755) | The concentration of the C-terminal portion of fibroblast growth factor 23 in the blood circulation is outside of the limits of normal. |
-| Reduced social reciprocity with peers (HP:5200136) | Reduced back and forth interactions with others compared to what would be expected for the developmental level. |
-| History of undercooked pork ingestion (HP:6000727) | A history of ingestion of undercooked pork. This is particularly relevant in areas with a high prevalence of cysticercosis. |
-| Absent Bell phenomenon (HP:6000709) | The Bell phenomenon is the reflex upward movement of the front of the eyeball when the eyelids close (or blink). It protects the eye by helping to keep the cornea moist. This term refers to a lack of this phenomenon, which can be observed with certain conditions such as congenital fibrosis of the extraocular muscles. |
-| Salty tasting skin (HP:6000725) | Skin tastes marked salty without an obvious explanation such as heat or exercise. This finding can be observed in infants with cystic fibrosis. |
-| Positive bloodstream parainfluenza virus nucleic acid test (HP:6000738) | Detection of nucleic acid of parainfluenza virus in the blood circulation by a methiod such as polymerase chain reaction (PCR). |
-| Elevated circulating type I procollagen aminoterminal propeptide concentration (HP:6000749) | The concentration of type I procollagen aminoterminal propeptide in the blood circulation is above the upper limit of normal. The aminoterminal propeptide of type I procollagen (PINP) in serum is a sensitive indicator of the synthesis of type I collagen. |
-| Elevated fractional excretion of urate (HP:6000746) | Abnormally increased proportion of filtered urate that is excreted in the urine as calculated using the concentrations of urate and creatinine in both blood and urine. Clinically this manifests as uric acid wasting. |
-| Positive CSF herpes simplex virus nucleic acid test (HP:6000760) | Detection of herpes simplex virus (HSV) nucleic acid in the cerebrospinal fluid (CSF) by a method such as polymerase chain reaction (PCR) or reverse transcriptase (RT)-PCR. |
-| Positive CSF Tropheryma whipplei bacteria microscopy (HP:6000766) | Demonstration of Tropheryma whipplei bacteria in the cerebrospinal fluid (CSF) my microscopic analysis. |
-| Reduced epidermal kindlin-1 expression (HP:6000714) | Lower than normal amount of kindlin-1 in the epidermis. |
-| Elevated urinary 5-hydroxyhexanoic acid level (HP:0025734) | The amount of 5-hydroxyhexanoic acid in the urine, normalized for urine concentration, is above the upper limit of normal. |
-| Femoral osteosclerosis (HP:6000708) | An abnormal increase of bone mineral density of the femur. Sclerosis is normally detected on a radiograph as an area of increased opacity. |
-| Abnormal urinary creatine level (HP:6000747) | The amount of creatine in the urine, normalized for urine concentration, is outside the limits of normal. |
-| Terminal hepatic lobular vascular occlusion (HP:6000716) | A type of Hepatic venous outflow obstruction characterized by fibrous concentric narrowing of zone 3 terminal hepatic venules, centrilobular hepatocyte necrosis, and sinusoidal congestion, accomapnied by necrosis of pericentral hepatocytes, and narrowing and eventual fibrosis of central veins. |
-| Positive CSF cryptococcal antigen test (HP:6000761) | A test result demonstrating the presence of a cryptococal antigen in the cerebrospinal fluid (CSF). |
-| New medication added in recent weeks (HP:6000706) | Medical history of starting a new medication recently. |
-| Hepatic reticuloendothelial system cell iron deposition (HP:6000713) | Abnormal accumulation of iron in reticuloendothelial cells of the liver. This feature can be appreciated on liver biopsy by Perls iron stain for granular iron deposition, based on agreement that only discernible hemosiderin granules represent significant iron deposition. |
-| Reduced tissue phosphomannomutase activity (HP:6000781) | Activity of the enzyme phosphomannomutase (EC 5.4.2.8) in tissues below the lower limit of normal. The activity can be measured in multiple tissues including leukocytes, fibroblasts, and liver. |
-| Protein craving (HP:6000785) | Unusually strong preference for protein-rich foods. |
-| Reduced tissue fatty aldehyde dehydrogenase activity (HP:6000720) | Activity of fatty aldehyde dehydrogenase (EC 1.2.1.3) in tissues below the lower limit of normal. The activity can be measured in multiple tissues including culutured fibroblasts and leukocytes. |
-| Pediculosis capitis (HP:6000743) | Visualization of at least one louse on visual inspection of the head hair. Use of a bright light, magnifying lens, or fine-toothed comb (lice comb) can aid in diagnosis. |
-| Noctural pain (HP:6000707) | Pain at night. |
-| History of recent trauma to external ear canal (HP:6000774) | Medical history of trauma to the external ear canal, including cotton-swab use, in recent weeks. |
-| Positive CSF treponema pallidum nucleic acid test (HP:6000763) | Detection of Treponema pallidum (syphillis) nucleic acid in the cerebrospinal fluid (CSF) by a method such as polymerase chain reaction (PCR) or reverse transcriptase (RT)-PCR. |
-| Positive bloodstream MERS coronavirus nucleic acid test (HP:6000741) | Detection of nucleic acid of Middle East Respiratory Syndrome coronavirus (MERS-CoV) in the blood circulation by a method such as polymerase chain reaction (PCR). |
-| History of recent rodent exposure (HP:6000728) | A history of exposed to rodents (mice, rats, prarie dogs) within several weeks of the current presenting complaint. |
-| Positive nasopharyngeal corynebacterium diphtheriae nucleic acid test (HP:6000742) | Detection of nucleic acid of Corynebacterium diphtheriae in nasopharyngeal secretions by a method such as polymerase chain reaction (PCR). |
-| Elevated circulating interleukin 1 receptor antagonist concentration (HP:6000758) | The concentration of interleukin 1 receptor antagonist (IL-1RA) in the blood circulation is above the upper limit of normal. |
-| Recent history of moisture in external ear canal (HP:6000773) | A recent history of being exposed to moisture in the external ear canal. |
-| Positive streptococcus A rapid antigen detection test (HP:6000733) | Positive detection of a group A streptococcal antigen in a test perforned on a throat swab. |
+| Popcorn calcification (HP:6000871) | Popcorn calcifications are areas of amorphous calcifications often with rings and arcs that resemble popped corn kernels in the metaphysis and epiphysis around the growth plate. |
+| Elevated CSF 5-hydroxyindoleacetic acid concentration (HP:6000823) | The concentration of 5-hydroxyindoleacetic acid in the cerebrospinal fluid (CSF) is above the upper limit of normal. |
+| Recent history of sedation by propofol infusion (HP:6000883) | A history of exposure to anesthesia by propofanol infusion recently before the presenting complaint. |
+| Amyloid goiter (HP:6000815) | Amyloidosis is defined as the accumulation of amorphous, proteinaceous material in different parts of the body. Amyloid can be deposited in the thyroid gland in such quantities to cause a clinically apparent enlargement of the gland known as Amyloid goiter. |
+| Eschar (HP:6000793) | A type of wound characterized by dry, black, hard necrotic tissue. |
+| Megacolon (HP:6000852) | Persistent and substantial increase in diameter diameter and length of the colon. |
+| Enlarged distal tibial epiphysis (HP:6000886) | Size (volume) of the distal epiphysis of the tiba above the upper limit of normal. |
+| Proximal radioulnar joint dislocation (HP:6000890) | he proximal radioulnar translocation means that both the radius and ulna are dislocated from the humerus. |
+| Anti-DCC netrin 1 receptor antibody positivity (HP:6000881) | The presence of autoantibodies in the serum that react against Netrin-1 receptors DCC (deleted in colorectal carcinoma). |
+| Periumbilical depression (HP:6000808) | The tissue that immediately surrounds the umbilicus is located below the normal plane of the abdomen. |
+| Positive bloodstream HIV p24 antigen test (HP:6000798) | Demonstration of the p24 antigen of human immunodeficiency virus in the bloodstream. |
+| Gastric carcinoid tumor (HP:6000898) | Originating from enterochromaffin-like cells, gastric carcinoid tumors are rare tumors that develop within the gastric mucosa. They can present as an isolated lesion or there can be multiple lesions. The tumor can invade locally into deeper structures of the gastrointestinal tract wall. Solitary gastric carcinoids have a greater chance for the development of malignancy and metastasis as compared to multiple gastric carcinoids due to hypergastrinemia. |
+| Elevated circulating beta-glucuronidase activity (HP:6000819) | The activity of beta-glucuronidase (EC 3.2.1.31) in the blood circulation is above the upper limit of normal. |
+| Positive Quantiferon tuberculosis test (HP:6000799) | A positive Quantiferon test result indicating Mycobacterium tuberculosis. The Quantiferon assay is designed to stimulate IFN-gamma release from CD4+ T cells in a single tuberculosis antigen tube using long peptides from three M. tuberculosis antigens. |
+| Elevated urinary phosphohydroxylysine level (HP:6000806) | The amount of phosphohydroxylysine in the urine, normalized for urine concentration, is above the upper limit of normal. |
+| Positive lacrimal tract actinomyces culture (HP:6000792) | Growth of Actinomyces israelii (anaerobic filamentous gram positive) culture of lacrimal discharge or concretions. |
+| Elevated urine fructose level (HP:6000804) | Amount of fructose in the urine above the upper limit of normal. |
+| Temporomandibular joint dislocation (HP:6000814) | The lower jawbone (mandible) pulls away from the temporomandibular joints (TMJ). It is characterized by pain, clicking and functional restriction. |
+| Decreased circulating sulfate concentration (HP:6000854) | The concentration of sulfate in the blood circulation is below the lower limit of normal. |
+| Pancreatic VIPoma (HP:6000897) | A type of neuroendocrine tumor that originates in the pancreas and secretes excessive amounts of vasoactive intestinal peptide (VIP). |
+| Beaded bile ducts (HP:6000846) | Multifocal intra- and extra-hepatic bile duct strictures alternating with normal caliber or slightly dilated segments, resembling beads on a string. |
+| Thickened cortex of the ulna (HP:6000812) | Abnormally increased thickness of the cortical layer of the ulna. |
+| Enlarged radial head (HP:6000885) | Size (volume) of the head of the radius above the upper limit of normal. |
+| Toe hyperphalangy (HP:6000868) | Hyperphalangy is a digit morphology in which increased numbers of phalanges are arranged linearly within a toe. That is, there is an accessory phalanx that is arranged linearly with the other phalanges. |
+| Cerebrospinal fluid eosinophilia (HP:6000824) | Presence of at least 10% eosinophils in the total cerebrospinal fluid (CSF) leukocyte count. |
+| Anti-dachshund family transcription factor 1 antibody positivity (HP:6000877) | The presence of autoantibodies in the serum that react against dachshund-homolog 1 (DACH1) autoantigen. |
+| Reduced C27 3beta-HSD activity in cultured fibroblasts (HP:6000825) | Concentration or activity of 3beta-hydroxy-delta5-C27-steroid oxidoreductase (C27 3beta-HSD) as measured in cultured fibroblasts is below the limits of normal. |
+| Elevated osmolality gap (HP:6000820) | Plasma osmolality is determined mainly by Sodium, its counter ions, and uncharged species such as Glucose and Urea. Knowledge of the plasma concentration of these species allows calculation of the plasma osmolality quite accurately. If the difference between the measured osmolality (MO) and calculated osmolality (CO) is known as the osmolar gap (OG) is large (greater than 15) osmolar gap can help identify the presence in plasma of substances such as ethanol, methanol, isopropanol, ethylene glycol, propylene glycol.. |
+| Positive CSF mycobacterial culture (HP:6000835) | Growth of mycobacteria in a culture derived from cerebrospinal fluid (CSF). |
+| Cardiac mass (HP:6000847) | An abnormal enlargement or swelling localized in the heart. The word mass is usually used at an early stage of the diagnostic workup before the precise nature of the swelling has been determined. |
+| Nonexudative conjunctivitis (HP:6000843) | A type of conjunctivitis that is not characterized by appreciable exudate, i.e., fluid, cells, or other substances that have escaped from blood vessels and have been deposited around the eyelids. |
+| Symmetric distribution (HP:6000857) | Applies to an abnormality that is highly similar on the left and right sides of the body. |
+| Elevated urine bismuth level (HP:6000888) | Detection of a level of bismuth in the urine high enough to raise the suspicion of bismuth toxicity, usually greater than 20microgram per deciliter. |
+| Dermal foam cells (HP:6000859) | Presence of lipid-laden macrophages (foam cells) in the inner layer of the skin (dermis). |
+| Exacerbated by pronation (HP:6000790) | Applied to a sign or symptom that is aggravated by (or made more painful by) pronation. Pronation of the hand involves the rotation of the forearm and wrist so that the palm of the hand faces downwards or towards the back (posteriorly). |
+| Elevated circulating aspartate aminotransferase to alanine aminotransferase ratio (HP:6000813) | Aspartate aminotransferase to alanine aminotransferase ratio increased greater than 1.5. |
+| Long-bone fracture (HP:0025736) | A partial or complete breakage of a lone bone (e.g., the femur, tibia, fibula, humerus, radius, and ulna). |
+| Sclerotic ilium (HP:6000869) | An elevation in bone density in the ilium. Sclerosis is normally detected on a radiograph as an area of increased opacity. |
+| Breast apocrine adenoma (HP:6000895) | A type of breast adenoma composed of benign apocrine cells. |
+| Positive respiratory tract nucleic acid pathogen test (HP:6000836) | Positive (abnormal) result of a sputum or pharyngeal sample test such as polymerase chain reaction that is targeted against a nucleic acid sequence specific for a pathogen. |
+| Hyperkalemia while symptomatic (HP:6000833) | Increased concentration of potassium in the blood circulation specifically measured during a disease flareup, attack, or exacerbation. |
+| Multiple eyelid beaded papules (HP:6000842) | Multiple beaded papules along the eyelid margins and inner canthus. |
+| Positive respiratory tract SARS-CoV-2 coronavirus nucleic acid test (HP:6000837) | Detection of SARS-CoV-2 coronavirus nucleic acid in the sputum or pharyngeal sample by a method such as polymerase chain reaction. |
+| Wide sacroiliac joint (HP:6000875) | Distance between the sacrum and the ilium bones of the pelvis at the sacroiliac joint is above the upper limit of normal. |
+| Muscle extensor surface location (HP:6000858) | Applies to an abnormality that is situated in extensor surface of an extremity. |
+| Thickened femoral cortex (HP:6000810) | Abnormally increased thicknes of the cortical layer of the femur. |
+| Elevated blood bismuth concentration (HP:6000887) | The concentration of bismuth in the blood is above the upper limit of a guidance value for total blood bismuth concentrations that implies possible injurious effects. |
+| Fibrocystic breast lesion (HP:6000896) | A type of benign cyst or cysts in breast tissue that are typically mobile within the glandular breast tissue, chest wall, and skin and are rubber-like in texture. The main histological features are an extracellular matrix of collagen, peri canalicular patterns of stromal cells with the presence of florid epithelial hyperplasia. |
+| Delayed tibial epiphyseal ossification (HP:6000867) | Developmental delay of ossification of an epiphysis of the tibia. |
+| Delayed ossification of the clavicle (HP:6000874) | Delayed maturation and calcification of the clavicle. |
+| Elevated urinary 2,8-dihydroxyadenine level (HP:6000803) | The amount of 2,8-dihydroxyadenine in the urine, normalized for urine concentration, is above the upper limit of normal. |
+| Diminished tissue glycogen branching enzyme activity (HP:6000861) | Activity of glycogen branching enzyme in tissues below the lower limit of normal. The activity can be measured in multiple tissues including culutured fibroblasts. |
+| Thyroid cyst (HP:6000853) | A fluid-filled sac or cavity that develops due to fluid accumulation within the thyroid tissue. |
+| Horizontal position of testicle (HP:6000839) | The Bell Clapper deformity is one of the causes for the testicular torsion. In this condition, testis lacks a normal attachment to tunica vaginalis and hangs freely, causing it to sit horizontally rather than vertically in the scrotum. |
+| Diminished alpha-ketoglutarate dehydrogenase activity in cultured fibroblasts (HP:6000830) | Concentration or activity of the alpha-ketoglutarate dehydrogenase complex as measured in cultured fibroblasts is below the limits of normal. This enzyme is a multienzyme complex consisting of 3 protein subunits, oxoglutarate dehydrogenase, also known as alpha-ketoglutarate dehydrogenase or E1k (EC 1.2.4.2.), dihydrolipoyl succinyltransferase (DLST, or E2k; 126063), and dihydrolipoyl dehydrogenase (DLD, or E3; 238331). The complex catalyzes a key reaction in the Krebs tricarboxylic acid cycle. |
+| Gaucher cells (HP:6000893) | Glucosylceramide forms fibrillar aggregates that accumulate in macrophages and result in the cell cytoplasm presenting a characteristic crumpled tissue paper appearance. These cells, known as Gaucher cells, infiltrate various organs (e.g., bone marrow, spleen, and liver) and are responsible for the major signs of Gaucher disease. |
+| Basilar artery fenestration (HP:6000787) | A fenestration affecting the basilar artery. Basilar fenestration typically occurs at the lower end of the basilar artery just as the vertebral arteries join Fenestrations of intracranial arteries are segmental duplications of the lumen into two distinct endothelium-lined channels, which may or may not share their adventitial layer. They can range from a small focus of divided tissue to long-segment duplication. Fenestrations are the result of partial failure of fusion of paired primitive embryologic vessels or incomplete obliteration of different anastomosis in a primitive vascular network. The association of fenestrations with aneurysms has been suggested in many small case series, though the exact relationship is not well defined. |
+| Anti-potassium channel tetramerization domain containing 16 antibody positivity (HP:6000878) | The presence of autoantibodies (immunoglobulins) in the blood circulation that react against potassium channel tetramerization domain containing 16 (KCTD16). |
+| Tzanck smear with multinucleated giant cells (HP:6000800) | Tzanck smear demonstrates multinucleated giant cells, a sign that is suggestive for herpetic infections. Such smears are taken from skin lesions and display multinucleated cells with ground glass nuclei, nuclear moulding, and margination of nuclear chromatin typical of herpes simplex and varicella infection. |
+| Displacement of the extensor tendon in metacarpophalangeal joint (HP:6000788) | Dislocation of the extensor tendons from their central position on the metacarpal heads can be traumatic, congenital, spontaneous, or degenerative. |
+| Metaphyseal chevron deformity (HP:6000870) | The chevron sign refers to an inverted V-shape metaphyses. It is most commonly seen in the distal femur and tends to disappear with age. |
+| Reduced tissue peptidase D activity (HP:6000828) | Concentration or activity of Peptidase D (EC 3.4.13.9; also known as prolidase, imidodipeptidase, proline dipeptidase, and aminoacyl-L-proline hydrolase) below the lower limit of normal. The activity of this enzyme can be measured in erythrocytes, leukocytes, or fibroblasts. |
+| Anti-Glutamate Receptor delta2 antibody positivity (HP:6000876) | The presence of autoantibodies in the serum that react against glutamate receptor delta2. |
+| Abnormal scleral thickness (HP:6000841) | Any deviation from the normal height of the sclera, the white part of the eye that forms the tough, fibrous outer layer of the exterior of the eyeball. |
+| Elevated urinary gamma-glutamylcysteine level (HP:6000834) | The amount of gamma-glutamylcysteine in the urine, normalized for urine concentration, is above the upper limit of normal. |
+| Thickened cortex of the radius (HP:6000811) | Abnormally increased thickness of the cortical layer of the radius. |
+| Anti-regulator of G protein signaling 8 antibody positivity (HP:6000879) | The presence of autoantibodies in the serum that react against regulator of G-protein signaling 8 (RGS8). |
+| Cervical C6/C7 vertebrae fusion (HP:6000807) | Fusion of cervical vertebrae at C6 and C7, caused by a failure in the normal segmentation or division of the cervical vertebrae during the early weeks of fetal development, leading to a short neck with a low hairline at the back of the head, and restricted mobility of the upper spine. |
+| Elevated serum-ascites albumin gradient (SAAG) (HP:6000863) | An elevation of the serum ascites albumin gradient (SAAG), which is based on the difference between the albumin level of serum and of ascitic fluid, may be used to assess the extent of ascites. The SAAG is thought to reflect the colloid osmotic pressure gradient and the degree of portal hypertension. It has been shown that SAAG is a better discriminator of portal hypertension than ascites. A SAAG of 1.1 gm/dL or higher is considered as high, indicating the presence of portal hypertension, while SAAG less than 1.1 gm/dL is low, indicating the absence of portal hypertension. |
+| Distal radioulnar joint dislocation (HP:6000889) | Distal radioulnar joint dislocation is more commonly displaced dorsally (i.e. the distal ulna is dorsally dislocated with respect to the distal radius), but can be volarly displaced. |
+| Absent superficial temporal artery pulse (HP:6000786) | The pulsation of the superficial temporal artery cannot be detected on physical examination. |
+| Absent toe phalanx flexion crease (HP:6000891) | Absence of one or more interphalangeal creases of a toe (i.e., of the transverse lines in the skin between the phalanges of the toes). |
+| Positive fecal cryptosporidium antigen test (HP:6000838) | Cryptosporidium antigen present in stool. Tests include direct fluorescent-antibody (DFA), which detects intact organisms, and enzyme immunoassays (EIAs), which detect soluble stool antigens. |
+| Transverse terminal limb defect (HP:6000818) | A congenital anomaly that appears as an amputation at different levels of the extremity. The limb is missing the terminal (distal) segment(s), with preservation of all the segment(s) proximal to the missing segment. |
+| Positive bloodstream rapid plasma reagin test (HP:6000797) | Positive result of the the rapid plasma reagin test (RPR test. This is a rapid diagnostic test that looks for non-specific antibodies in the blood of the patient that may indicate an infection by syphilis or related non-venereal treponematoses. |
+| Reduced tissue phosphorylase kinase activity (HP:6000832) | Concentration or activity of phosphorylase kinase below the lower limit of normal. This enzyme can be measured in multiple tissues including leukocytes and cultured fibroblasts. |
+| Reduced tissue glycine cleavage enzyme activity (HP:6000829) | Concentration or activity of the glycine cleavage enzyme below the lower limit of normal. This enzyme can be measured in multiple tissues including leukocytes and cultured fibroblasts. |
+| Reduced procollagen-lysine,2-oxoglutarate 5-dioxygenase 1 activity in cultured fibroblasts (HP:6000826) | Concentration or activity of procollagen-lysine,2-oxoglutarate 5-dioxygenase 1 (PLOD1; also known as Lysyl hydroxylase; EC 1.14.11.4) as measured in cultured fibroblasts is below the limits of normal. PLOD1 catalyzes the formation of hydroxylysine in collagens and other proteins with collagen-like amino acid sequences, by the hydroxylation of lysine residues in X-lys-gly sequences. |
+| Hyperphalangy of the 4th finger (HP:6000865) | An accessory phalanx of the fourth (ring) finger that is arranged linearly with the other phalanges. Hyperphalangy results from an accessory ossification center at the metacarpophalangeal joint. |
+| White matter globoid cells (HP:6000892) | Multinucleated phagocytes in the cerebral white matter, typically are 10-15 micrometers in diameter, that contain fatty filamentous inclusions that stain positive for periodic acid-Schiff (PAS), which may be phagocytized myelin, as these cells are often found in proximity to sites where demyelination is prominent. Globoid cells have been to thought to originate from CNS resident microglia and/or infiltrating peripheral macrophages. |
+| Elevated circulating bile alcohol concentration (HP:6000821) | The concentration of bile alcohols in the blood circulation is above the upper limit of normal. |
+| Bowdler spurs (HP:6000873) | Transverse long bone midshaft spurs or osteochondral projections typically occuring in the fibulae and less commonly in the forearms. |
+| Transverse smile (HP:6000864) | Inability to raise the corners of the mouth during the act of smiling due to facial muscle weakness. The act of smiling is accompanied by a horizontal movement of the mouth. |
+| Positive Mazzotti test (HP:6000801) | Locally applied 1.6 percent diethylcarbamazine citrate in Nivea lotion can be used as a diagnostic test for onchocerciasis. Papular reactions are considered as positive test results. |
+| Vascular compression of the eighth cranial nerve (HP:6000845) | A condition in which blood vessels adjacent to the eighth cranial nerve (vestibulocochlear nerve) such as the anterior inferior cerebellar artery abnormally contact or compress the vestibulocochlear nerve as it exits the brainstem or travels within the cerebellopontine angle. |
+| Diminished tissue fumarylacetoacetate hydrolase activity (HP:6000827) | Concentration or activity of fumarylacetoacetate hydrolase (FAH; EC 3.7.1.2) below the lower limit of normal. This enzyme can be measured in multiple tissues including leukocytes and cultured fibroblasts. |
+| Breast adenoma (HP:6000894) | A benign, well circumscribed neoplasm that arises from the breast. |
+| Heloma (HP:6000789) | A corn, also known as a clavus, heloma, or focal intractable plantar hyperkeratosis, is a type of callosity. Corns are uncomfortable, thickened skin lesions that result from repeated mechanical trauma due to friction or pressure forces. |
+| Basilar meningeal enhancement (HP:6000851) | Abnormal enhancement of CT or MIR contrast medium in the basilar meninges, that is, those located in the basal cisterns or spaces at the base of the brain, due to increased permeability of blood vessels in these areas. |
+| Aplasia/Hypoplasia of the calvaria (HP:6000872) | A developmental defect characterized by absence or underdevelopment of the calvaria. |
+| Delayed distal femoral epiphyseal ossification (HP:6000866) | Developmental delay of ossification of the distal epiphysis of the femur. |
+| Prominent lesser trochanter (HP:6000816) | Abnormally large lesser trochanter. |
+| Anti-neurochondrin antibody positivity (HP:6000880) | The presence of autoantibodies in the serum that react against neurochondrin . |
+| Cold intolerance (HP:6000855) | The inability to maintain a comfortable body temperature in a cold environment or cold temperatures. |
+| Nematode in retina (HP:6000844) | Demonstration of a nematode (roundworm) in the retina, generally by an imaging procedure such as fundoscopy. |
+| Diminished tissue very long-chain acyl-CoA dehydrogenase activity (HP:6000860) | Diminished activity of Very long-chain acyl-CoA dehydrogenase (VLCAD), an enzyme that catalyzes the initial step of mitochondrial beta-oxidation of long-chain fatty acids with a chain length of 14 to 20 carbons. VLCAD activity can be measured with biochemical testing using cultured fibroblasts or lymphocytes. |
+| Distortion of the anterior part of the interhemispheric fissure (HP:6000791) | Change in the normal shape (displacement, asymmetry) of the anterior part of the interhemispheric fissure. This finding can be identified prenatally by sonography or magnetic resonance imaging. |
+| Thickened tibial cortex (HP:6000809) | Abnormally increased thicknes of the cortical layer of the tibia. |
+| History of wearing tightly fitted clothing (HP:6000794) | History of wearing tight clothing such as compression shorts, sports bras, bike shorts, wet suits, spandex, veils, and tight hats. |
+| Superior olive hypertrophy (HP:6000848) | Abnormal increase in size of the superior olive, also known as the superior olivary complex. The superior olive is a collection of brainstem nuclei that is located in pons, functions in multiple aspects of hearing and is an important component of the ascending and descending auditory pathways of the auditory system. |
+| Abnormal third cranial nerve morphology (HP:0025735) | Any structural abnormality of the third (oculomotor) cranial nerve. |
+| Enlarged humeral head (HP:6000884) | Size (volume) of the head of the humerus above the upper limit of normal. |
+| Positive bloodstream Tropheryma whippelii nucleic acid test (HP:6000802) | Detection of nucleic acid of Tropheryma whippelii in the blood circulation by a method such as polymerase chain reaction (PCR) or reverse transcriptase (RT)-PCR. |
+| Anti-recoverin antibody positivity (HP:6000882) | The presence of autoantibodies in the serum that react against recoverin. Recoverins are calcium-binding proteins primarily expressed in retinal rod photoreceptors and primarily involved in phototransduction. |
+| Temporal cortex localization (HP:6000850) | Localization to or predominance in the temporal cortex of the brain. |
+| Increased circulating dihydroxycholestanoic acid concentration (HP:6000831) | The concentration of dihydroxycholestanoic acid (DHCA) in the blood circulation is above the upper limit of normal. |
+| Localized soft-tissue swelling on extremity (HP:6000840) | Abnormal enlargement (swelling) that is restricted to a specific part of a limb. |
+| Head and neck distribution (HP:6000856) | Applies to an abnormality that is situated in (or predominant in) the head and neck region. |
+| Melorheostosis (HP:6000817) | Regions of sclerosing hyperostosis in the cortex of long bones, which might have a radiologic appearance of dripping candle wax. |
+| Parotid adenoma (HP:6000862) | A benign tumor of the parotid salivary gland. |
+| Elevated CSF tetrahydrobiopterin level (HP:6000822) | Concentration of tetrahydrobiopterin in the cerebrospinal fluid (CSF) above the upper limit of normal. |
+| Anti-folate receptor antibody positivity (HP:6000795) | The presence of autoantibodies (immunoglobulins) in the serum that react against the folate receptor in the blood circulation. |
+| Elevated urinary uroporphyrin level (HP:6000805) | The amount of uroporphyrin in the urine, normalized for urine concentration, is above the upper limit of normal. |
+| Positive bloodstream VDRL test (HP:6000796) | An abnormal (positive) result of the Venereal Disease Research Laboratory (VDRL) test performed in peripheral blood, suggesting past or present syphilis. |
+| Spinal extradural arachnoid cyst (HP:6000849) | Spinal extradural arachnoid cyst is a cyst in the spinal canal that protrudes into the epidural space from a defect in the dura mater. |
 
 </details>
 
 <details>
-<summary>Synonyms added: 70</summary>
-
-| Term | New Synonym | Predicate |
-----|----|----|
-| Positive CSF treponemal antibody positivity (HP:6000767) | Positive Fluorescent treponemal antibody absorption | oio:hasExactSynonym |
-| Positive CSF treponemal antibody positivity (HP:6000767) | Positive Treponema pallidum hemoagglutination assay | oio:hasExactSynonym |
-| Positive CSF treponemal antibody positivity (HP:6000767) | Positive Treponema pallidum particle agglutination test | oio:hasExactSynonym |
-| Anti-glycosylphosphatidylinositol anchored high-density lipoprotein binding protein 1 antibody positivity (HP:0025731) | Anti-GPIHBP1 antibody positivity | oio:hasExactSynonym |
-| Flexural reticulate hyperpigmentation (HP:6000745) | Reticular pigmented anomaly of the flexures | oio:hasExactSynonym |
-| Flexural reticulate hyperpigmentation (HP:6000745) | Reticulate hyperpigmentation of the flexures | oio:hasExactSynonym |
-| Scalp nodule (HP:6000726) | Scalp nodules | oio:hasExactSynonym |
-| Hyperautofluorescent retinal lesion (HP:0025158) | Retinal lipofuscin accumulation | oio:hasRelatedSynonym |
-| Positive CSF human T-lymphotropic virus type I antibody positivity (HP:6000730) | Positive CSF HTLV-1 antibody positivity | oio:hasExactSynonym |
-| Decreased facial expression mirroring (HP:5200220) | Decreased facial expression reciprocity | oio:hasExactSynonym |
-| Delayed upper limb epiphyseal ossification (HP:0003840) | Delayed maturation of the end part of the upper limb bone | oio:hasRelatedSynonym |
-| Hip dislocation (HP:0002827) | Dislocated femoral heads | oio:hasExactSynonym |
-| Hip dislocation (HP:0002827) | Dislocation of the femoral head | oio:hasExactSynonym |
-| Crumpled ear (HP:0009901) | Cauliflower ear | oio:hasBroadSynonym |
-| Mirror image hand polydactyly (HP:0010690) | Mirror image duplication of fingers | oio:hasExactSynonym |
-| Facial hyperostosis (HP:0005465) | Enlargement of the facial bones | oio:hasExactSynonym |
-| Reduced responsiveness to social cues (HP:5200028) | Lack of response to verbal cues | oio:hasNarrowSynonym |
-| Reduced responsiveness to social cues (HP:5200028) | Reduced responsiveness to verbal cues | oio:hasNarrowSynonym |
-| Anterior tibial bowing (HP:0006390) | Saber shin | oio:hasExactSynonym |
-| Anterior tibial bowing (HP:0006390) | Saber tibia | oio:hasExactSynonym |
-| Anterior tibial bowing (HP:0006390) | Sabre shin | oio:hasExactSynonym |
-| Mirror image foot polydactyly (HP:0010691) | Mirror image duplication of toes | oio:hasExactSynonym |
-| Optic nerve hypoplasia (HP:0000609) | Double ring sign | oio:hasRelatedSynonym |
-| Frontal bossing (HP:0002007) | Frontal protuberance | oio:hasExactSynonym |
-| Elevated circulating phosphoethanolamine concentration (HP:0033406) | Elevated circulating o-phosphoethanolamine concentration | oio:hasExactSynonym |
-| Ectopic thyroid (HP:0100028) | Abnormal thyroid location | oio:hasExactSynonym |
-| Reduced social responsiveness (HP:0012760) | Reduced social reciprocity | oio:hasNarrowSynonym |
-| Thickened fibular cortex (HP:6000705) | Broad cortex of fibula | oio:hasExactSynonym |
-| Thickened fibular cortex (HP:6000705) | Cortical thickening of the fibula | oio:hasExactSynonym |
-| Thickened fibular cortex (HP:6000705) | Thickened cortex of the fibula | oio:hasExactSynonym |
-| Thickened fibular cortex (HP:6000705) | Thickened cortices of fibula | oio:hasExactSynonym |
-| Non-infectious meningitis (HP:0033430) | Aseptic meningitis | oio:hasExactSynonym |
-| Auriculitis (HP:6000772) | Auricular inflammation | oio:hasExactSynonym |
-| Osteoporotic femoral neck (HP:6000779) | Osteoporosis of femoral neck | oio:hasExactSynonym |
-| Abnormal lung morphology (HP:0002088) | Unusual lung shape | oio:hasExactSynonym |
-| Poor head control (HP:0002421) | Delay in head control | oio:hasExactSynonym |
-| Poor head control (HP:0002421) | Delay in head righting | oio:hasExactSynonym |
-| Poor head control (HP:0002421) | Infant head lag | oio:hasExactSynonym |
-| Heavy proteinuria (HP:0012597) | Severely high blood protein levels | oio:hasExactSynonym |
-| Duplicated tragus (HP:0011270) | Accessory tragus | oio:hasExactSynonym |
-| Abnormal circulating vitamin B6 concentration (HP:0032476) | Abnormal circulating pyridoxal 5'-phosphate concentration | oio:hasNarrowSynonym |
-| Positive urine cannabinoid test (HP:0500110) | Positive urine pot test | oio:hasExactSynonym |
-| Absent Bell phenomenon (HP:6000709) | Absent palpebral-oculogyric reflex | oio:hasExactSynonym |
-| Bent long bone (HP:0034530) | Angulated long bone | oio:hasExactSynonym |
-| Elevated fractional excretion of urate (HP:6000746) | Uric acid wasting | oio:hasExactSynonym |
-| Abnormal glycosidase enzyme activity (HP:0003649) | Abnormality of glycoside metabolism | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Didelphic uteri | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Didelphic uterus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Didelphyc uterus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Doubling of uterus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Duplex uterus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Duplicated uterus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Duplication of uterus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Uterine didelphis | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Uterine didelphys | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Uterus didelphis | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Uterus didelphus | oio:hasExactSynonym |
-| Uterus didelphys (HP:0003762) | Uterus duplex | oio:hasExactSynonym |
-| Femoral osteosclerosis (HP:6000708) | Osteosclerosis of the femur | oio:hasExactSynonym |
-| Terminal hepatic lobular vascular occlusion (HP:6000716) | Hepatic sinusoidal obstruction syndrome | oio:hasExactSynonym |
-| Terminal hepatic lobular vascular occlusion (HP:6000716) | Hepatic veno-occlusive disease | oio:hasExactSynonym |
-| Enlarged tonsils (HP:0030812) | Enlargement of tonsils | oio:hasExactSynonym |
-| Reduced tissue beta-mannosidase activity (HP:4000205) | Reduced beta-mannosidase activity in cultured fibroblasts | oio:hasNarrowSynonym |
-| Blind-spot enlargement (HP:0030644) | Blind spot enlargement | oio:hasExactSynonym |
-| Erythroid dysplasia (HP:0031688) | Dyserythropoiesis | oio:hasRelatedSynonym |
-| Abnormal galactosidase enyzme activity (HP:0004342) | Abnormality of galactoside metabolism | oio:hasExactSynonym |
-| Triggered by fructose ingestion (HP:0025209) | Triggered by fruit sugar | oio:hasExactSynonym |
-| Abnormal proportion of gamma-delta T cells (HP:0500269) | Abnormal proportion of gamma-delta T lymphocytes | oio:hasExactSynonym |
-| Hematemesis (HP:0002248) | Vomiting blood | oio:hasExactSynonym |
-| Delayed pubic bone ossification (HP:0008788) | Delayed maturation of pubic bone | oio:hasRelatedSynonym |
-
-</details>
-
-<details>
-<summary>Relationships removed: 26</summary>
+<summary>Relationships removed: 29</summary>
 
 | Subject| Predicate| Object|
 ----|----|----|
-| Lack of interest in peers (HP:4000083) | subClassOf (rdfs:subClassOf) |                obsolete Reduced social responsiveness (HP:5200103) |
-| obsolete Dislocation of the femoral head (HP:0008826) | subClassOf (rdfs:subClassOf) |                Abnormal femoral head morphology (HP:0003368) |
-| obsolete Dislocation of the femoral head (HP:0008826) | subClassOf (rdfs:subClassOf) |                Lower extremity joint dislocation (HP:0030311) |
-| Ovarian fibrosis (HP:0034571) | subClassOf (rdfs:subClassOf) |                Abnormality of the ovary (HP:0000137) |
-| obsolete Reduced social responsiveness (HP:5200103) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| Delayed early-childhood social milestone development (HP:0012434) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| Reduced responsiveness to social cues (HP:5200028) | subClassOf (rdfs:subClassOf) |                obsolete Reduced social responsiveness (HP:5200103) |
-| Abnormal interest in others (HP:5200020) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| obsolete Difficulty communicating emotions (HP:5200122) | subClassOf (rdfs:subClassOf) |                Abnormal social emotional interactions (HP:5200120) |
-| obsolete Difficulty communicating emotions (HP:5200122) | subClassOf (rdfs:subClassOf) |                obsolete Deficit applying language skills across context (HP:5200128) |
-| Reduced social responsiveness (HP:0012760) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| Abnormal social emotional interactions (HP:5200120) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| obsolete Reduced responsiveness to verbal cues (HP:5200036) | subClassOf (rdfs:subClassOf) |                obsolete Reduced social responsiveness (HP:5200103) |
-| Drooling (HP:0002307) | subClassOf (rdfs:subClassOf) |                Atypical behavior (HP:0000708) |
-| obsolete Deficit applying language skills across context (HP:5200128) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| obsolete Deficit applying language skills across context (HP:5200128) | subClassOf (rdfs:subClassOf) |                Abnormal communication (HP:0034434) |
-| Hair-nail ectodermal dysplasia (HP:0007436) | subClassOf (rdfs:subClassOf) |                Ectodermal dysplasia (HP:0000968) |
-| obsolete Reduced use of language for social purposes (HP:5200131) | subClassOf (rdfs:subClassOf) |                obsolete Deficit applying language skills across context (HP:5200128) |
-| Reduced tissue beta-mannosidase activity (HP:4000205) | subClassOf (rdfs:subClassOf) |                Abnormal enzyme activity in cultured fibroblasts (HP:4000195) |
-| Poor conversational reciprocity (HP:4000092) | subClassOf (rdfs:subClassOf) |                obsolete Deficit applying language skills across context (HP:5200128) |
-| obsolete Reduced response to another's attempt to get direct attention (HP:5200004) | subClassOf (rdfs:subClassOf) |                obsolete Reduced social responsiveness (HP:5200103) |
-| obsolete Reduced verbal responsiveness to verbal cues (HP:5200054) | subClassOf (rdfs:subClassOf) |                obsolete Reduced responsiveness to verbal cues (HP:5200036) |
-| Abnormal response to social norms (HP:5200123) | subClassOf (rdfs:subClassOf) |                Abnormal social behavior (HP:0012433) |
-| Alexithymia (HP:0031433) | subClassOf (rdfs:subClassOf) |                Difficulty recognizing another's emotions (HP:5200118) |
-| Alexithymia (HP:0031433) | subClassOf (rdfs:subClassOf) |                obsolete Difficulty communicating emotions (HP:5200122) |
-| obsolete Reduced nonverbal responsiveness to verbal cues (HP:5200053) | subClassOf (rdfs:subClassOf) |                obsolete Reduced responsiveness to verbal cues (HP:5200036) |
+| Third cranial nerve hypoplasia (HP:6000597) | subClassOf (rdfs:subClassOf) |                Abnormal cranial nerve morphology (HP:0001291) |
+| Tracheal cartilaginous sleeve (HP:0005347) | subClassOf (rdfs:subClassOf) |                Abnormal tracheal morphology (HP:0002778) |
+| Fractured fused metatarsal bones 2-4 (HP:0041215) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured metatarsal bone of digit 5 (HP:0041223) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Abnormal myeloid cell morphology (HP:0020047) | subClassOf (rdfs:subClassOf) |                Abnormality of blood and blood-forming tissues (HP:0001871) |
+| Streak ovary (HP:0010464) | subClassOf (rdfs:subClassOf) |                Streak ovary (HP:0010464) |
+| Fractured tibia (HP:0041143) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Reduced tissue galactocerebrosidase activity (HP:0034322) | subClassOf (rdfs:subClassOf) |                Abnormal circulating enzyme concentration or activity (HP:0012379) |
+| Abnormal erythroid lineage cell morphology (HP:0012130) | subClassOf (rdfs:subClassOf) |                Abnormal myeloid cell morphology (HP:0020047) |
+| Fractured ulna (HP:0003987) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured epiphysis (HP:0041147) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured metatarsal bone of digit 4 (HP:0041230) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured clavicle bone (HP:0041144) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured metacarpal bone of digit 1 (HP:0041225) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured phalanx (HP:0041083) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured rib (HP:0041159) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured radius (HP:0003978) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured metaphysis of femur (HP:0041114) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Recurrent long bone fractures (HP:0003084) | subClassOf (rdfs:subClassOf) |                Bone fracture (HP:0020110) |
+| Vestibular nystagmus (HP:0010542) | subClassOf (rdfs:subClassOf) |                Abnorma vestibulocochlear nerve morphology (HP:0009591) |
+| Fractured lateral malleolus of fibula (HP:0041210) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured metatarsal bone of digit 1 (HP:0041231) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured fibula (HP:0041222) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Elevated bone marrow ring sideroblast count (HP:0004864) | subClassOf (rdfs:subClassOf) |                Sideroblastic anemia (HP:0001924) |
+| Fractured humerus (HP:0041055) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Fractured head of femur (HP:0041221) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Femur fracture (HP:0031846) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
+| Third cranial nerve thickening (HP:6000291) | subClassOf (rdfs:subClassOf) |                Abnormal cranial nerve morphology (HP:0001291) |
+| Fractured sternal end of clavicle (HP:0041200) | subClassOf (rdfs:subClassOf) |                Recurrent long bone fractures (HP:0003084) |
 
 </details>
 
 <details>
-<summary>Nodes renamed: 23</summary>
+<summary>Synonyms added: 60</summary>
+
+| Term | New Synonym | Predicate |
+----|----|----|
+| Amyloid goiter (HP:6000815) | Thyroid gland amyloidosis | oio:hasExactSynonym |
+| Eschar (HP:6000793) | Black eschar | oio:hasExactSynonym |
+| Eschar (HP:6000793) | Black spot | oio:hasExactSynonym |
+| Eschar (HP:6000793) | Tache noire | oio:hasExactSynonym |
+| Global developmental delay (HP:0001263) | GDD | oio:hasExactSynonym |
+| Abnormal 3rd metacarpal epiphysis morphology (HP:0010222) | Abnormality of the epiphysis of the 3rd metacarpal | oio:hasExactSynonym |
+| Enlarged distal tibial epiphysis (HP:6000886) | Large distal tibial epiphysis | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Alcohol during pregnancy | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Alcohol exposure before birth | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Alcohol exposure during gestation | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Alcohol exposure during pregnancy | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Alcohol exposure in pregnancy | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Alcohol use during pregnancy | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Antenatal alcohol exposure | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Antenatal ETOH exposure | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Exposure to alcohol during gestation | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Exposure to alcohol in the womb | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Exposure to alcohol in utero | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Prenatal alcohol exposure | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Prenatal ETOH exposure | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Prenatal exposure to alcohol | oio:hasExactSynonym |
+| Fetal alcohol exposure (HP:0034984) | Prenatal exposure to ETOH | oio:hasExactSynonym |
+| Pancreatic VIPoma (HP:6000897) | Vasoactive intestinal peptide-secreting tumor of the pancreas | oio:hasExactSynonym |
+| Cerebrospinal fluid eosinophilia (HP:6000824) | Eosinophilia in the CSF | oio:hasExactSynonym |
+| Anti-dachshund family transcription factor 1 antibody positivity (HP:6000877) | Anti-neuronal nuclear antibody-type 3 positivity | oio:hasExactSynonym |
+| Positive CSF mycobacterial culture (HP:6000835) | Positive CSF mycobacterium culture | oio:hasExactSynonym |
+| Abnormal 4th metacarpal epiphysis morphology (HP:0010224) | Abnormality of the epiphysis of the 4th metacarpal | oio:hasExactSynonym |
+| Sclerotic ilium (HP:6000869) | Increased bone density of the ilium | oio:hasExactSynonym |
+| Sclerotic ilium (HP:6000869) | Sclerosis of iliac bone | oio:hasExactSynonym |
+| Breast apocrine adenoma (HP:6000895) | Apocrine adenoma of the breast | oio:hasExactSynonym |
+| Hyperkalemia while symptomatic (HP:6000833) | Hyperkalemia during attack | oio:hasExactSynonym |
+| Metacarpal pseudoepiphysis (HP:0009193) | Pseudoepiphyses of the metacarpals | oio:hasExactSynonym |
+| Multiple eyelid beaded papules (HP:6000842) | Moniliform blepharosis | oio:hasExactSynonym |
+| Retinal edema (HP:0031527) | Intraretinal fluid | oio:hasExactSynonym |
+| Vestibular hyporeflexia (HP:0001756) | Vestibular hypofunction | oio:hasExactSynonym |
+| Horizontal position of testicle (HP:6000839) | Bell-clapper deformity | oio:hasExactSynonym |
+| Basilar artery fenestration (HP:6000787) | Basilar fenestration | oio:hasExactSynonym |
+| Anti-potassium channel tetramerization domain containing 16 antibody positivity (HP:6000878) | Anti-KCTD16 | oio:hasExactSynonym |
+| Abnorma vestibulocochlear nerve morphology (HP:0009591) | Abnormal eighth cranial nerve morphology | oio:hasExactSynonym |
+| Abnorma vestibulocochlear nerve morphology (HP:0009591) | Abnormality of the vestibulocochlear nerve | oio:hasExactSynonym |
+| Reduced tissue peptidase D activity (HP:6000828) | Reduced tissue prolidase activity | oio:hasExactSynonym |
+| Low semen volume (HP:6000135) | Hypospermia | oio:hasExactSynonym |
+| Elevated serum-ascites albumin gradient (SAAG) (HP:6000863) | Abnormally high serum-ascites albumin gradient (SAAG) | oio:hasExactSynonym |
+| Calcification of the interosseus membrane of the forearm (HP:0030267) | Interosseous membrane calcification of forearm | oio:hasExactSynonym |
+| Transverse terminal limb defect (HP:6000818) | Transverse terminal limb reduction | oio:hasExactSynonym |
+| Recurrent long bone fractures (HP:0003084) | Fractures of the long bones | oio:hasExactSynonym |
+| Hyperphalangy of the 4th finger (HP:6000865) | Hyperphalangy of fourth finger | oio:hasExactSynonym |
+| Vascular compression of the eighth cranial nerve (HP:6000845) | Neurovascular compression syndrome of the vestibulocochlear nerve | oio:hasExactSynonym |
+| Vascular compression of the eighth cranial nerve (HP:6000845) | Vestibulocochlear nerve compression syndrome | oio:hasExactSynonym |
+| Heloma (HP:6000789) | Clavus | oio:hasExactSynonym |
+| Heloma (HP:6000789) | Corn | oio:hasExactSynonym |
+| Heloma (HP:6000789) | Focal intractable plantar hyperkeratosis | oio:hasExactSynonym |
+| Cone-shaped capital femoral epiphysis (HP:0008789) | Tear drop-shaped capital femoral epiphysis | oio:hasExactSynonym |
+| Thickened tibial cortex (HP:6000809) | Thickened cortex of the tibia | oio:hasExactSynonym |
+| Anti-recoverin antibody positivity (HP:6000882) | Anti-retinal CAR antigen antibody | oio:hasExactSynonym |
+| Abnormal 5th metacarpal epiphysis morphology (HP:0010226) | Abnormality of the epiphysis of the 5th metacarpal | oio:hasExactSynonym |
+| Anti-dsDNA antibody positivity (HP:0020151) | Anti-double-stranded DNA antibody positivity | oio:hasExactSynonym |
+| Positive bloodstream VDRL test (HP:6000796) | VDRL positive in blood | oio:hasExactSynonym |
+| Positive bloodstream VDRL test (HP:6000796) | VDRL reactive in blood circulation | oio:hasExactSynonym |
+| Spinal extradural arachnoid cyst (HP:6000849) | SEDAC | oio:hasExactSynonym |
+
+</details>
+
+<details>
+<summary>Nodes renamed: 12</summary>
 
 | ID | Old Label | New Label |
 ----|----|----|
-| HP:6000437 | Reduced criculating stearoylcarnitine concentration | Reduced circulating stearoylcarnitine concentration |
-| HP:0008826 | Dislocation of the femoral head | obsolete Dislocation of the femoral head |
-| HP:5200220 | Decreased facial expression reciprocity | Decreased facial expression mirroring |
-| HP:5200103 | Reduced social responsiveness | obsolete Reduced social responsiveness |
-| HP:6000236 | Iappropriately low concentration of beta-hydroxybutyrate | Inappropriately low concentration of beta-hydroxybutyrate |
-| HP:6000543 | Posiitive mycobacterium CSF culture | Positive mycobacterium CSF culture |
-| HP:5200122 | Difficulty communicating emotions | obsolete Difficulty communicating emotions |
-| HP:0033406 | Elevated circulating o-phosphoethanolamine concentration | Elevated circulating phosphoethanolamine concentration |
-| HP:0009092 | Progressive alveolar ridge hypertropy | Progressive alveolar ridge hypertrophy |
-| HP:0012760 | Reduced social reciprocity | Reduced social responsiveness |
-| HP:5200036 | Reduced responsiveness to verbal cues | obsolete Reduced responsiveness to verbal cues |
-| HP:5200261 | Abnormal affect | Abnormal demeanor |
-| HP:5200128 | Deficit applying language skills across context | obsolete Deficit applying language skills across context |
-| HP:5200131 | Reduced use of language for social purposes | obsolete Reduced use of language for social purposes |
-| HP:0003649 | Abnormality of glycoside metabolism | Abnormal glycosidase enzyme activity |
-| HP:4000205 | Reduced beta-mannosidase activity in cultured fibroblasts | Reduced tissue beta-mannosidase activity |
-| HP:0030644 | Blind-spot enlargment | Blind-spot enlargement |
-| HP:5200004 | Reduced response to another's attempt to get direct attention | obsolete Reduced response to another's attempt to get direct attention |
-| HP:5200054 | Reduced verbal responsiveness to verbal cues | obsolete Reduced verbal responsiveness to verbal cues |
-| HP:0004342 | Abnormality of galactoside metabolism | Abnormal galactosidase enyzme activity |
-| HP:5200053 | Reduced nonverbal responsiveness to verbal cues | obsolete Reduced nonverbal responsiveness to verbal cues |
-| HP:6000445 | Elevated thallium cadmiun concentration | Elevated thallium concentration |
-| HP:0010440 | Ectopic accesory toe-like appendage | Ectopic accessory toe-like appendage |
+| HP:0010222 | Abnormality of the epiphysis of the 3rd metacarpal | Abnormal 3rd metacarpal epiphysis morphology |
+| HP:0430141 | Positive CSF varicella zoster antibody positivity | CSF varicella zoster antibody positivity |
+| HP:0034322 | Reduced galactocerebrosidase activity | Reduced tissue galactocerebrosidase activity |
+| HP:0010224 | Abnormality of the epiphysis of the 4th metacarpal | Abnormal 4th metacarpal epiphysis morphology |
+| HP:0009193 | Pseudoepiphyses of the metacarpals | Metacarpal pseudoepiphysis |
+| HP:0031527 | Intraretinal fluid | Retinal edema |
+| HP:0001756 | Vestibular hypofunction | Vestibular hyporeflexia |
+| HP:6000767 | Positive CSF treponemal antibody positivity | CSF treponemal antibody positivity |
+| HP:0009591 | Abnormality of the vestibulocochlear nerve | Abnorma vestibulocochlear nerve morphology |
+| HP:0003084 | Fractures of the long bones | Recurrent long bone fractures |
+| HP:0004864 | Refractory sideroblastic anemia | Elevated bone marrow ring sideroblast count |
+| HP:0010226 | Abnormality of the epiphysis of the 5th metacarpal | Abnormal 5th metacarpal epiphysis morphology |
 
 </details>
 
 <details>
-<summary>Nodes obsoleted with replacement: 10</summary>
+<summary>Text definitions changed: 4</summary>
 
-| Term | Replacement |
-----|----|
-| obsolete Dislocation of the femoral head (HP:0008826) |                  Hip dislocation (HP:0002827) |
-| obsolete Reduced social responsiveness (HP:5200103) |                  Reduced social responsiveness (HP:0012760) |
-| obsolete Difficulty communicating emotions (HP:5200122) |                  Alexithymia (HP:0031433) |
-| obsolete Reduced responsiveness to verbal cues (HP:5200036) |                  Reduced responsiveness to social cues (HP:5200028) |
-| obsolete Deficit applying language skills across context (HP:5200128) |                  Abnormal communication (HP:0034434) |
-| Hair-nail ectodermal dysplasia (HP:0007436) |                  Ectodermal dysplasia (HP:0000968) |
-| obsolete Reduced use of language for social purposes (HP:5200131) |                  Reduced social responsiveness (HP:0012760) |
-| obsolete Reduced response to another's attempt to get direct attention (HP:5200004) |                  Reduced social responsiveness (HP:0012760) |
-| obsolete Reduced verbal responsiveness to verbal cues (HP:5200054) |                  Reduced responsiveness to social cues (HP:5200028) |
-| obsolete Reduced nonverbal responsiveness to verbal cues (HP:5200053) |                  Reduced responsiveness to social cues (HP:5200028) |
+| Term | Old Text Definition | New Text Definition |
+----|----|----|
+| Reduced tissue galactocerebrosidase activity (HP:0034322) | Diminished enzyme activity of galactocerebrosidase. |                  Concentration or activity of galactocerebrosidase (EC 3.2.1.46) below the lower limit of normal. This enzyme can be measured in multiple tissues including leukocytes and cultured fibroblasts. |
+| Retinal edema (HP:0031527) | Edema/fluid accumulating within the retinal layers. |                  Accumulation of fluid within the layers of the retina not limited to the macular region. |
+| Elevated bone marrow ring sideroblast count (HP:0004864) | A type of sideroblastic anemia that is not responsive to treatment. |                  Count of ring sideroblasts in the bone marrow above the upper limit of normal. Ring sideroblasts are nucleated erythroblasts with a pathologic accumulation of iron granules in the mitochondrial matrix. They can be detected by Prussian blue staining as blue perinuclear aggregates in bone marrow aspirate erythroblasts. |
+| Bent long bone (HP:0034530) | A developmental defect of a long bone, such as the femur or the humerus, characterized by a sharply curve deviation located in the metaphysis (shaft) of the bone. |                  A developmental defect of a long bone, such as the femur or the humerus, characterized by a sharply curve deviation located in the diaphysis (shaft) of the bone. |
 
 </details>
 
 <details>
-<summary>Text definitions removed: 7</summary>
+<summary>Nodes removed: 3</summary>
 
-| Term | Removed Text Definition |
-----|----|
-| obsolete Dislocation of the femoral head (HP:0008826) | Joint dislocation of the femoral head. |
-| obsolete Reduced social responsiveness (HP:5200103) | Atypically low ability to process social information and respond appropriately in interpersonal interactions |
-| obsolete Difficulty communicating emotions (HP:5200122) | Inability or difficulty in describing one's emotions because of a lack of emotional awareness or difficulty describing felt emotions in words. |
-| obsolete Reduced responsiveness to verbal cues (HP:5200036) | A consistent failure to respond to any verbal cues. |
-| obsolete Reduced response to another's attempt to get direct attention (HP:5200004) | There is a diminished interest in all individuals, including both peers and non-peers. |
-| obsolete Reduced verbal responsiveness to verbal cues (HP:5200054) | A consistent failure to verbally respond to verbal cues which are intended to elicit a verbal response. |
-| obsolete Reduced nonverbal responsiveness to verbal cues (HP:5200053) | A consistent failure to nonverbally respond to verbal cues such as a failure to shift attention or look at the source of the cue. |
+| Term |
+----|
+| inheres_in_part_of |
+| part_of |
+| inheres_in |
 
 </details>
 
 <details>
-<summary>Synonyms removed: 23</summary>
+<summary>Synonyms removed: 3</summary>
 
 | Term | Removed Synonym |
 ----|----|
-| obsolete Dislocation of the femoral head (HP:0008826) | Dislocated femoral heads |
-| obsolete Dislocation of the femoral head (HP:0008826) | Dislocated head of thigh bone |
-| Delayed upper limb epiphyseal ossification (HP:0003840) | Delayed maturation fo the end part of the upper limb bone |
-| Pretragal ectopia (HP:0030024) | Accessory Tragus |
-| Mirror image hand polydactyly (HP:0010690) | Mirror image dupliction of fingers |
-| Facial hyperostosis (HP:0005465) | Enlargment of the facial bones |
-| Mirror image foot polydactyly (HP:0010691) | Mirror image dupliction of toes |
-| Frontal bossing (HP:0002007) | Frontal protruberance |
-| Ectopic thyroid (HP:0100028) | Abnormal thryoid location |
-| Abnormal lung morphology (HP:0002088) | Unusal lung shape |
-| obsolete Reduced responsiveness to verbal cues (HP:5200036) | Lack of response to verbal cues |
-| Heavy proteinuria (HP:0012597) | Severly high blood protein levels |
-| Duplicated tragus (HP:0011270) | Accesory tragus |
-| Positive urine cannabinoid test (HP:0500110) | Postive urine pot test |
-| Enlarged tonsils (HP:0030812) | Enlargment of tonsils |
-| Blind-spot enlargement (HP:0030644) | Blind spot enlargment |
-| obsolete Reduced response to another's attempt to get direct attention (HP:5200004) | Ignores others |
-| obsolete Reduced verbal responsiveness to verbal cues (HP:5200054) | Lack of verbal response to verbal cues |
-| Triggered by fructose ingestion (HP:0025209) | Trigged by fruit sugar |
-| Abnormal proportion of gamma-delta T cells (HP:0500269) | Abnormal proprotion of gamma-delta T lymphocytes |
-| obsolete Reduced nonverbal responsiveness to verbal cues (HP:5200053) | Lack of nonverbal response to verbal cues |
-| Hematemesis (HP:0002248) | Vomitting blood |
-| Delayed pubic bone ossification (HP:0008788) | Delayed maturation fo pubic bone |
+| Abnorma vestibulocochlear nerve morphology (HP:0009591) | Abnormality of the eighth cranial nerve |
+| Aganglionic megacolon (HP:0002251) | Congenital megacolon |
+| Aganglionic megacolon (HP:0002251) | Megacolon |
 
 </details>
+
