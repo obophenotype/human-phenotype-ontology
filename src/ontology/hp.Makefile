@@ -213,7 +213,7 @@ diff_migration:
 #        3. 
 
 #NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
-NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=590692028&single=true&output=tsv
+NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1913984323&single=true&output=tsv
 
 $(TMPDIR)/normalised_patterns.tsv:
 	wget "$(NORM_PATTERN_URL)" -O $@
@@ -256,7 +256,7 @@ cp_patterns_for_hpo:
 .PHONY: hpo_phenotype_pipeline
 hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt
 	# In cases where this is rerun often, it makes sense to simply reset hp-edit.owl to the state on the branch
-	git restore $(SRC) 
+	git checkout master -- $(SRC) 
 	
 	# We create a version of hp.obo for the diff later, to monitor the changes
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
