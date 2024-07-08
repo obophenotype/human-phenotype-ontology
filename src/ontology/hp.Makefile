@@ -155,8 +155,10 @@ $(ONT).json: $(ONT)-simple-non-classified.owl
 #	echo "PRO IMPORT currently skipped!"
 #.PRECIOUS: imports/pr_import.owl
 
-
-	
+# Overwriting this goal to avoid important behavioral phenotypes
+mirror-nbo: | $(TMPDIR)
+	curl -L $(OBOBASE)/nbo/nbo-base.owl --create-dirs -o $(TMPDIR)/nbo-download.owl --retry 4 --max-time 400 && \
+	$(ROBOT) merge -i $(TMPDIR)/nbo-download.owl remove --term NBO:0000243 --select "self descendants" convert -o $(TMPDIR)/$@.owl
 
 imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i mirror/nbo.owl -T imports/nbo_terms_combined.txt --force true --method BOT \
