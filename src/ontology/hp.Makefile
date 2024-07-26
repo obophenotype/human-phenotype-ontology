@@ -530,6 +530,14 @@ public_release:
 	gh release create $(GHVERSION) --title "$(VERSION) Release" --draft $(RELEASE_ASSETS_AFTER_RELEASE) --generate-notes
 
 
+tmp/workshops.csv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT1u_xxXqS0rHR2lAF0NmdGHEaOuCFV3XDYPmdMldelAGmpUQSGTlU93bGvCSHDWDFRkzjq4vYe609/pub?gid=1322735303&single=true&output=csv" -O $@
+
+../../docs/community/workshops.md: tmp/workshops.csv config/workshops.md.jinja2
+	pip install j2cli
+	python3 -c "import csv, json, sys; print(json.dumps({'workshops': list(csv.DictReader(open('$<')))}))" > tmp/workshops.json
+	j2 --format=json config/workshops.md.jinja2 tmp/workshops.json > $@
+
 #############################
 #### Adopt MP EQs ###########
 #############################
