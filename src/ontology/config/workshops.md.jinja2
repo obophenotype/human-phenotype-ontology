@@ -1,7 +1,7 @@
 # Workshop List
 
-| Topic | Type | Status | When | Where |
-|-------|------|--------|------|-------|
-{%- for item in workshops | sort(attribute='When', reverse=true) %}
-| {{ item.Topic }} | {{ item.Type }} | {{ item.Status }} | {{ item.When }} | {{ item.Where }} |
+| Date | Location | Topic | Coordination | Status |
+| ---- | -------- | ----- | ------------ | ------ |
+{%- for item in workshops | sort(attribute='When', reverse=true) %}{% if 'Complete' in item.Status %}
+| {{ item.When }} | {{ item.Where }} | {{ item.Topic }} | {% if item.Coordination is defined %} {{ item.Coordination }} {% endif %}| {{ item.Status }} |{% endif %}
 {%- endfor %}
