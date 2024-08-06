@@ -530,6 +530,14 @@ public_release:
 	gh release create $(GHVERSION) --title "$(VERSION) Release" --draft $(RELEASE_ASSETS_AFTER_RELEASE) --generate-notes
 
 
+tmp/workshops.csv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT1u_xxXqS0rHR2lAF0NmdGHEaOuCFV3XDYPmdMldelAGmpUQSGTlU93bGvCSHDWDFRkzjq4vYe609/pub?gid=1737274956&single=true&output=csv" -O $@
+
+../../docs/community/workshops.md: tmp/workshops.csv config/workshops.md.jinja2
+	pip install jinjanator #Needed after/with ODK 1.5.3 --break-system-packages
+	python3 -c "import csv, json, sys; print(json.dumps({'workshops': list(csv.DictReader(open('$<')))}))" > tmp/workshops.json
+	jinjanate config/workshops.md.jinja2 tmp/workshops.json > $@
+
 #############################
 #### Adopt MP EQs ###########
 #############################
