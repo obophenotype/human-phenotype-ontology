@@ -39,8 +39,8 @@ java -jar $OWL_CHECK_JAR $HP_EDIT
 
 # The ODK QC and build:
 
-sh -e run.sh make IMP=false test #&> log.txt
-sh -e run.sh make IMP=false PAT=false MIR=false $HP_OBO
+sh -e run.sh make IMP=false PAT=false MIR=false test $HP_OBO -B #&> log.txt
+
 #- tail -n 100 log.txt
 # now check hp.obo for duplicated labels, synonyms that are used for different classes
 java -jar $OBO_CHECK_JAR $HP_OBO
