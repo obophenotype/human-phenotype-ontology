@@ -80,7 +80,7 @@ fastobo: hp.obo
 noequivalents:
 	$(ROBOT) reason --input $(SRC) remove --select imports reason --reasoner ELK --equivalent-classes-allowed asserted-only --output test.owl && rm test.owl && echo "Success"
 
-test: sparql_test all_reports test_obo hp_error consistency noequivalents fastobo
+test: sparql_test test_obo hp_error consistency noequivalents fastobo
 
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
