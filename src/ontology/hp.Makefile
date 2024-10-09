@@ -594,6 +594,14 @@ prepare_translations:
 	$(MAKE) IMP=false COMP=false PAT=false MIR=false \
 		$(TRANSLATIONSDIR)/hp-all.babelon.tsv $(TRANSLATIONSDIR)/hp-all.babelon.json
 
+$(TRANSLATIONSDIR)/hp-example-not-translated.babelon.tsv: $(TRANSLATIONS_ONTOLOGY)
+	$(BABELONPY) prepare-translation \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code example --field rdfs:label \
+		--output-not-translated $@ -o $@
+
+prepare_release: $(TRANSLATIONSDIR)/hp-example-not-translated.babelon.tsv
+
 #################
 ### Mappings ####
 #################
