@@ -94,7 +94,7 @@ if [ -n "$USE_SINGULARITY" ]; then
         -W $WORK_DIR \
         docker://obolibrary/$ODK_IMAGE:$ODK_TAG $TIMECMD "$@"
 else
-    BIND_OPTIONS="-v $(echo $VOLUME_BIND | sed 's/,/ -v /g')"
+    BIND_OPTIONS="-v $(echo $VOLUME_BIND | sed 's/,/ -v /')"
     docker run $ODK_DOCKER_OPTIONS $BIND_OPTIONS -w $WORK_DIR \
         -e ROBOT_JAVA_ARGS="$ODK_JAVA_OPTS" -e JAVA_OPTS="$ODK_JAVA_OPTS" -e SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock -e ODK_USER_ID=$ODK_USER_ID -e ODK_GROUP_ID=$ODK_GROUP_ID -e ODK_DEBUG=$ODK_DEBUG \
         --rm -ti obolibrary/$ODK_IMAGE:$ODK_TAG $TIMECMD "$@"
