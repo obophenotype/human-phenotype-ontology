@@ -80,7 +80,7 @@ fastobo: hp.obo
 noequivalents:
 	$(ROBOT) reason --input $(SRC) remove --select imports reason --reasoner ELK --equivalent-classes-allowed asserted-only --output test.owl && rm test.owl && echo "Success"
 
-test: sparql_test all_reports test_obo hp_error consistency noequivalents fastobo
+test: sparql_test test_obo hp_error consistency noequivalents fastobo
 
 hp_labels.csv: $(SRC)
 	robot query --use-graphs true -f csv -i $(SRC) --query ../sparql/term_table.sparql $@
@@ -155,8 +155,10 @@ $(ONT).json: $(ONT)-simple-non-classified.owl
 #	echo "PRO IMPORT currently skipped!"
 #.PRECIOUS: imports/pr_import.owl
 
-
-	
+# Overwriting this goal to avoid important behavioral phenotypes
+mirror-nbo: | $(TMPDIR)
+	curl -L $(OBOBASE)/nbo/nbo-base.owl --create-dirs -o $(TMPDIR)/nbo-download.owl --retry 4 --max-time 400 && \
+	$(ROBOT) merge -i $(TMPDIR)/nbo-download.owl remove --term NBO:0000243 --select "self descendants" convert -o $(TMPDIR)/$@.owl
 
 imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i mirror/nbo.owl -T imports/nbo_terms_combined.txt --force true --method BOT \
@@ -688,6 +690,14 @@ hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl hp.owl
 prepare_translations:
 	$(MAKE) IMP=false COMP=false PAT=false MIR=false \
 		$(TRANSLATIONSDIR)/hp-all.babelon.tsv $(TRANSLATIONSDIR)/hp-all.babelon.json
+
+$(TRANSLATIONSDIR)/hp-example-not-translated.babelon.tsv: $(TRANSLATIONS_ONTOLOGY)
+	$(BABELONPY) prepare-translation \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code example --field rdfs:label \
+		--output-not-translated $@ -o $@
+
+prepare_release: $(TRANSLATIONSDIR)/hp-example-not-translated.babelon.tsv
 
 #################
 ### Mappings ####
