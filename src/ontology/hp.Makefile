@@ -585,6 +585,19 @@ hp-fr.owl: $(TRANSLATIONSDIR)/hp-fr.babelon.owl hp.owl
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@
 .PRECIOUS: hp-fr.owl
 
+# Only until we can set translation predicates on a translation by translation basis
+$(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-cs.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/hp-cs.babelon.tsv \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code cs \
+		--field rdfs:label --field IAO:0000115 \
+		--output-source-changed $(TRANSLATIONSDIR)/hp-cs-changed.babelon.tsv  \
+		--output-not-translated $(TRANSLATIONSDIR)/hp-cs-not-translated.babelon.tsv \
+		--include-not-translated false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
+		-o $@
+
 #diff:
 #	robot diff --left tmp/int.owl --right hp-international.owl -o intdiff.txt
 #	#wget "http://purl.obolibrary.org/obo/hp/hp-international.owl" -O tmp/int.owl
