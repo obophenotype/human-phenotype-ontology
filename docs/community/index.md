@@ -1,6 +1,6 @@
 # HPO Community
 
-The HPO has been a community project since its inception in 2008. We are indebtled to all those who have made contributions of new terms, annotations, and other improvements. See the [Community page](https://hpo.jax.org/app/community){:target="_blank"} for more information.
+The HPO has been a community project since its inception in 2008. We are indebted to all those who have made contributions of new terms, annotations, and other improvements. See the [Community page](https://hpo.jax.org/app/community){:target="_blank"} for more information.
 
 # Monarch Initiative
 
