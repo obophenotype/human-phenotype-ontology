@@ -2,7 +2,7 @@
 
 set -e
 
-ODK=v1.5.2
+ODK=v1.5.4
 
 echo docker pull obolibrary/odkfull:$ODK
 
