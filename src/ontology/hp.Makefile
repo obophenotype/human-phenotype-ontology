@@ -637,3 +637,5 @@ $(TMPDIR)/hp-%-merged.owl: hp-base.owl tmp/%.owl
 mappings: 
 	$(MAKE_FAST) ../mappings/hp-snomed.lexmatch.sssom.tsv
 
+babelon:
+	pip install -U babelon==0.3.4 --break-system-packages
