@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                0fcd636feea85fce01a9e5009487aad06aedf4ba32833cb10c92bcf68fbc2cc2
+CONFIG_HASH=                3a5afcd02a25dc79d50036cccc5351438f736858c55ac01f7abd367aa2dd6172
 
 
 # ----------------------------------------
@@ -63,7 +63,7 @@ PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.
 
 TRANSLATIONSDIR=            ../translations
 BABELONPY=                  babelon -q
-TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/hp-de.babelon.owl $(TRANSLATIONSDIR)/hp-it.babelon.owl $(TRANSLATIONSDIR)/hp-nl.babelon.owl  $(TRANSLATIONSDIR)/hp-nl.synonyms.owl $(TRANSLATIONSDIR)/hp-fr.babelon.owl  $(TRANSLATIONSDIR)/hp-fr.synonyms.owl $(TRANSLATIONSDIR)/hp-cs.babelon.owl  $(TRANSLATIONSDIR)/hp-cs.synonyms.owl $(TRANSLATIONSDIR)/hp-pt.babelon.owl  $(TRANSLATIONSDIR)/hp-pt.synonyms.owl $(TRANSLATIONSDIR)/hp-tr.babelon.owl $(TRANSLATIONSDIR)/hp-zh.babelon.owl $(TRANSLATIONSDIR)/hp-nna.babelon.owl $(TRANSLATIONSDIR)/hp-tw.babelon.owl $(TRANSLATIONSDIR)/hp-dtp.babelon.owl $(TRANSLATIONSDIR)/hp-ja.babelon.owl $(TRANSLATIONSDIR)/hp-es.babelon.owl 
+TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/hp-de.babelon.owl  $(TRANSLATIONSDIR)/hp-de.synonyms.owl $(TRANSLATIONSDIR)/hp-it.babelon.owl  $(TRANSLATIONSDIR)/hp-it.synonyms.owl $(TRANSLATIONSDIR)/hp-nl.babelon.owl  $(TRANSLATIONSDIR)/hp-nl.synonyms.owl $(TRANSLATIONSDIR)/hp-fr.babelon.owl  $(TRANSLATIONSDIR)/hp-fr.synonyms.owl $(TRANSLATIONSDIR)/hp-cs.babelon.owl  $(TRANSLATIONSDIR)/hp-cs.synonyms.owl $(TRANSLATIONSDIR)/hp-pt.babelon.owl  $(TRANSLATIONSDIR)/hp-pt.synonyms.owl $(TRANSLATIONSDIR)/hp-tr.babelon.owl  $(TRANSLATIONSDIR)/hp-tr.synonyms.owl $(TRANSLATIONSDIR)/hp-zh.babelon.owl  $(TRANSLATIONSDIR)/hp-zh.synonyms.owl $(TRANSLATIONSDIR)/hp-nna.babelon.owl $(TRANSLATIONSDIR)/hp-tw.babelon.owl $(TRANSLATIONSDIR)/hp-dtp.babelon.owl $(TRANSLATIONSDIR)/hp-ja.babelon.owl  $(TRANSLATIONSDIR)/hp-ja.synonyms.owl $(TRANSLATIONSDIR)/hp-es.babelon.owl  $(TRANSLATIONSDIR)/hp-es.synonyms.owl 
 TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-it-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nl-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-fr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-pt-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-zh-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-nna-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-tw-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv $(TRANSLATIONSDIR)/hp-es-preprocessed.babelon.tsv 
 TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 
@@ -690,6 +690,9 @@ TRANSLATE_PREDICATES=rdfs:label
 $(TRANSLATIONSDIR)/hp-de.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-de.babelon.tsv" -O $@
 
+$(TRANSLATIONSDIR)/hp-de.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-de.synonyms.tsv" -O $@
+
 
 
 $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-de.babelon.tsv
@@ -708,6 +711,9 @@ $(TRANSLATIONSDIR)/hp-de-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 
 $(TRANSLATIONSDIR)/hp-it.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-it.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-it.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-it.synonyms.tsv" -O $@
 
 
 
@@ -816,6 +822,9 @@ $(TRANSLATIONSDIR)/hp-pt-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 $(TRANSLATIONSDIR)/hp-tr.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tr.babelon.tsv" -O $@
 
+$(TRANSLATIONSDIR)/hp-tr.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-tr.synonyms.tsv" -O $@
+
 
 
 $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/hp-tr.babelon.tsv
@@ -834,6 +843,9 @@ $(TRANSLATIONSDIR)/hp-tr-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 
 $(TRANSLATIONSDIR)/hp-zh.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-zh.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-zh.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-zh.synonyms.tsv" -O $@
 
 
 
@@ -909,7 +921,10 @@ $(TRANSLATIONSDIR)/hp-dtp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(T
 
 
 $(TRANSLATIONSDIR)/hp-ja.babelon.tsv:
-	wget "https://raw.githubusercontent.com/ogishima/HPO-Japanese/master/HPO-japanese.alpha.21Jul2023.tsv" -O $@
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-ja.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-ja.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-ja.synonyms.tsv" -O $@
 
 
 
@@ -929,6 +944,9 @@ $(TRANSLATIONSDIR)/hp-ja-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 
 $(TRANSLATIONSDIR)/hp-es.babelon.tsv:
 	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-es.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/hp-es.synonyms.tsv:
+	wget "https://raw.githubusercontent.com/obophenotype/hpo-translations/main/babelon/hp-es.synonyms.tsv" -O $@
 
 
 
