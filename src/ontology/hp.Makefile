@@ -255,7 +255,7 @@ NORM_PATTERNS_YAML_HPO=$(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-pattern
 cp_patterns_for_hpo:
 	rsync -av --ignore-existing $(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns/$(n).yaml) $(PATTERNDIR)/dosdp-patterns-hpo/
 
-tmp/chemical_old_labels_as_synonyms.owl: $(SRC) #tmp/chemical_phenotypes_incl_properties.txt
+tmp/chemical_old_labels_as_synonyms.owl: $(SRC) tmp/chemical_phenotypes_incl_properties.txt
 	$(ROBOT) filter -i $(SRC) -T tmp/chemical_phenotypes.txt --axioms annotation --signature true --trim false --preserve-structure false \
 		filter --term rdfs:label --trim false --preserve-structure false \
 		query \
