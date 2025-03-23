@@ -215,7 +215,8 @@ diff_migration:
 #        3. 
 
 #NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
-NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1913984323&single=true&output=tsv
+#NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1913984323&single=true&output=tsv
+NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=719064169&single=true&output=tsv
 
 $(TMPDIR)/normalised_patterns.tsv:
 	wget "$(NORM_PATTERN_URL)" -O $@
@@ -226,9 +227,9 @@ $(TMPDIR)/norm_patterns/README.md: $(TMPDIR)/normalised_patterns.tsv
 	python $(SCRIPTSDIR)/split_pattern_table.py $< $(TMPDIR)/norm_patterns
 	echo "$(TODAY)" > $@
 
-NORM_PATTERNS=abnormalLevelOfChemicalEntityInLocation \
-	abnormallyDecreasedLevelOfChemicalEntityInLocation \
-	abnormallyIncreasedLevelOfChemicalEntityInLocation
+NORM_PATTERNS=abnormalLevelOfChemicalEntityInBlood \
+	abnormallyDecreasedLevelOfChemicalEntityInBlood \
+	abnormallyIncreasedLevelOfChemicalEntityInBlood
 
 $(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
 	touch $(foreach n,$(NORM_PATTERNS), $(TMPDIR)/norm_patterns/$(n).tsv)
