@@ -1,0 +1,224 @@
+name: 'Create ROBOT diffs on Pull requests'
+
+on: 
+
+  issue_comment:
+        types: [created]
+env:
+  DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  branch_status:
+    if: ${{ github.event.issue.pull_request && github.event.issue.state == 'open' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      # Checks-out current branch
+      - uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+      # Checks-out master branch under "master" directory
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+          fetch-depth: 0
+      - name: Check current branch status
+        if: steps.check.outputs.triggered == 'true'
+        id: info
+        run: |
+          echo "status=$(git rev-list --left-right --count origin/$DEFAULT_BRANCH...origin/`git branch --show-current` | awk '{print $1}')"
+          echo "status=$(git rev-list --left-right --count origin/$DEFAULT_BRANCH...origin/`git branch --show-current` | awk '{print $1}')" >> $GITHUB_OUTPUT
+      - name: Warn users with a comment
+        if: steps.info.outputs.status >= 1
+        run: echo "Your branch is ${{ steps.info.outputs.status }} commit/s behind, please update your branch." > warncomment.md
+      - name: Post comment
+        if: steps.info.outputs.status >= 1 && steps.check.outputs.triggered == 'true'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          file: "../../warncomment.md"
+      - name: Fail step if branch is behind
+        if: steps.info.outputs.status >= 1 && steps.check.outputs.triggered == 'true'
+        run: |
+          echo "Your branch is ${{ steps.info.outputs.status }} commit/s behind, please update your branch."
+          exit 1
+  edit_file:
+    needs: [branch_status]
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+          path: branch
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: master
+          path: master
+      - name: Diff classification
+        if: steps.check.outputs.triggered == 'true'
+        run: export ROBOT_JAVA_ARGS='-Xmx9G'; robot diff --labels True --left master/src/ontology/hp-edit.owl --left-catalog master/src/ontology/catalog-v001.xml --right branch/src/ontology/hp-edit.owl --right-catalog branch/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
+      - name: Upload diff
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: edit-diff.md
+          path: edit-diff.md
+  classify_branch:
+    needs: [branch_status]
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+      - name: Classify ontology PR branch
+        if: steps.check.outputs.triggered == 'true'
+        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=false hp-base.owl > TESTLOG.log
+      - name: Upload classified ontology in PR branch
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hp-base-pr.owl
+          path: src/ontology/hp-base.owl
+          retention-days: 1
+  classify_main:
+    needs: [branch_status]
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: master
+      - name: Classify ontology main branch
+        if: steps.check.outputs.triggered == 'true'
+        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=false hp-base.owl > TESTLOG.log
+      - name: Upload classified ontology main branch
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hp-base-main.owl
+          path: src/ontology/hp-base.owl
+          retention-days: 1
+  diff_classification:
+    needs: [classify_branch, classify_main]
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:  
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+      - name: Download classified ontology main branch
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: hp-base-main.owl
+          path: src/ontology/hp-base-main.owl
+      - name: Download classified ontology in PR branch
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: hp-base-pr.owl
+          path: src/ontology/hp-base-pr.owl
+      - name: Diff classification
+        if: steps.check.outputs.triggered == 'true'
+        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; robot diff --labels True --left hp-base-main.owl/hp-base.owl --left-catalog catalog-v001.xml --right hp-base-pr.owl/hp-base.owl --right-catalog catalog-v001.xml -f markdown -o classification-diff.md
+      - name: Upload diff
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: classification-diff.md
+          path: src/ontology/classification-diff.md
+  post_comment:
+    needs: [edit_file, diff_classification]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+      - name: Download reasoned diff
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: classification-diff.md
+      - name: Prepare reasoned comment
+        if: steps.check.outputs.triggered == 'true'
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -base file): </summary> \n\" > comment.md; cat classification-diff.md >> comment.md"
+      - name: Post reasoned comment
+        if: steps.check.outputs.triggered == 'true'
+        uses: NejcZdovc/comment-pr@v2.0.0
+        with:
+          file: "../../comment.md"
+          identifier: "REASONED"
+          github_token: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+      - name: Download edit diff
+        if: steps.check.outputs.triggered == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: edit-diff.md
+      - name: Prepare edit file comment
+        if: steps.check.outputs.triggered == 'true'
+        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
+      - name: Post comment
+        if: steps.check.outputs.triggered == 'true'
+        uses: NejcZdovc/comment-pr@v2.0.0
+        with:
+          file: "../../edit-comment.md"
+          identifier: "UNREASONED"
+          github_token: ${{secrets.GITHUB_TOKEN}}
