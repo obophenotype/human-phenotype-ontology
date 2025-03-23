@@ -246,7 +246,7 @@ tmp/chemical_phenotypes.txt: $(TMPDIR)/norm_patterns.ofn
 tmp/chemical_phenotypes_incl_properties.txt: tmp/chemical_phenotypes.txt
 	cp $< $@
 	echo "rdfs:label" >> $@
-	echo "IAO:00000115" >> $@
+	echo "IAO:0000115" >> $@
 
 NORM_PATTERNS_YAML_HPO=$(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns-hpo/$(n).yaml)
 
@@ -262,7 +262,6 @@ tmp/chemical_old_labels_as_synonyms.owl: $(SRC) tmp/chemical_phenotypes_incl_pro
 		query \
 			--update ../sparql/add-labels-as-synonyms.ru \
 			-o $@
-	
 
 # This is the main pipeline
 .PHONY: hpo_phenotype_pipeline
