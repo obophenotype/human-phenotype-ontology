@@ -17,7 +17,7 @@ If you find a description in a publication such as "Sparse eyebrows and eyelashe
 [Sparse eyelashes (HP:0000653)](https://hpo.jax.org/browse/term/HP:0000653){:target="\_blank"}. The idea is that one HPO term should refer to an atomic phenotypic abnormality rather than to a collection of abnormalities observed in an individual patient. Please debundle the description and proceed as described above. This is a central tenet of Deep phenotyping.
 
 ## Anatomy of a good term suggestion
-A good term request provides the information shown in Table 1. Please use our GitHub issue tracker, choosing the “New Term” template.
+A good term request provides the information shown in Table 1. Please use our GitHub [issue tracker](https://github.com/obophenotype/human-phenotype-ontology/issues){:target="\_blank"}, choosing the “New Term” template.
 <table class="alt-rows-table">
   <thead>
     <tr>
@@ -27,36 +27,28 @@ A good term request provides the information shown in Table 1. Please use our Gi
   </thead>
   <tbody>
     <tr>
-      <td>Disease ID</td>
-      <td>OMIM:265380</td>
+      <td>Label</td>
+      <td>Corneal guttata</td>
     </tr>
     <tr>
-      <td>Disease Name</td>
-      <td>Alveolar capillary dysplasia with misalignment of pulmonary veins</td>
-    </tr>
-    <tr>
-      <td>HPO ID</td>
-      <td>HP:0001734</td>
-    </tr>
-    <tr>
-      <td>HPO Term Name</td>
-      <td>Annular pancreas</td>
-    </tr>
-    <tr>
-      <td>Frequency</td>
-      <td>2/14</td>
-    </tr>
-    <tr>
-      <td>Onset</td>
-      <td>Congenital onset (use terms from the HPO Onset hierarchy)</td>
-    </tr>
-    <tr>
-      <td>PMID</td>
-      <td>PMID:19500772</td>
+      <td>Definition</td>
+      <td>Corneal guttata are droplet-like accumulations of non-banded collagen on the posterior surface of Descemet's membrane. The presence of focal thickenings of Descemet's membrane histologically named guttae. Cornea guttata can be easily diagnosed in vivo and ex vivo by means of specular microscopy as it gives dark areas where no endothelial cells are visible.</td>
     </tr>
     <tr>
       <td>Comment</td>
-      <td>Any other information or context</td>
+      <td>Corneal guttata are often observed in elderly people and are known to be associated with Fuchs corneal endothelial dystrophy, and also with trauma, congenital glaucoma, and macular dystrophy.</td>
+    </tr>
+    <tr>
+      <td>Synonyms</td>
+      <td>Corneal endothelial guttata, Corneal guttae</td>
+    </tr>
+    <tr>
+      <td>Parent term</td>
+      <td>Abnormal Descemet membrane morphology [HP:0011490](https://hpo.jax.org/browse/term/HP:0011490){:target="\_blank"}</td>
+    </tr>
+    <tr>
+      <td>Disease association</td>
+      <td>Optionally, provide information about diseases characterized by this term and if available PubMed identifiers (PMIDs).</td>
     </tr>
   </tbody>
 </table>
