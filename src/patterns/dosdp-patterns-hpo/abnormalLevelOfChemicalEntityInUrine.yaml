@@ -24,15 +24,31 @@ relations:
   has_part: BFO:0000051
   part_of: BFO:0000050
 
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  broad_synonym: oio:hasBroadSynonym
+
 vars:
   chemical_entity: "'chemical entity'"
   location: "'independent continuant'"
 
 name:
-  text: "Abnormal circulating %s %s level"
+  text: "Abnormal %s %s level"
   vars:
    - location
    - chemical_entity
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "Abnormal %s levels in %s"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: broad_synonym
+  text: "Abnormal %s levels"
+  vars:
+  - chemical_entity
+  - location
 
 def:
   text: "An abnormal level of %s in the %s."

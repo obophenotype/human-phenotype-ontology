@@ -24,17 +24,35 @@ relations:
   part_of: BFO:0000050
 
 annotationProperties:
-  exact_synonym: oio:hasExactSynonym 
+  exact_synonym: oio:hasExactSynonym
+  broad_synonym: oio:hasBroadSynonym
 
 vars:
   chemical_entity: "'chemical entity'"
   location: "'independent continuant'"
  
 name:
-  text: "Decreased concentration of %s in %s"
+  text: "Decreased circulating %s concentration"
   vars:
    - chemical_entity
    - location
+
+annotations:
+- annotationProperty: exact_synonym
+  text: "Decreased %s level in %s"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: broad_synonym
+  text: "Decreased %s level"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: broad_synonym
+  text: "Decreased %s concentration"
+  vars:
+  - chemical_entity
+  - location
 
 def:
   text: "A decrease in the concentration of %s in %s."

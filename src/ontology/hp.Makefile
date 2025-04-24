@@ -263,6 +263,15 @@ tmp/chemical_old_labels_as_synonyms.owl: $(SRC) tmp/chemical_phenotypes_incl_pro
 			--update ../sparql/add-labels-as-synonyms.ru \
 			-o $@
 
+rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
+	cp $(SRC) temp.txt
+	grep -E '^http://purl.obolibrary.org/obo/HP_' tmp/chemical_phenotypes_incl_properties.txt | tr -d '\r' | while read id; do \
+	  echo "Removing IAO_0000115 annotations for: $$id"; \
+	  grep -v "IAO_0000115> <$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
+	done
+	mv temp.txt $(SRC)
+
+
 # This is the main pipeline
 .PHONY: hpo_phenotype_pipeline
 hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt
@@ -273,6 +282,8 @@ hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labe
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
 
 	# We remove all EQs, labels and definitions from hp-edit.owl
+	$(MAKE) rm_def_chem
+
 	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --axioms annotation --signature true --trim false --preserve-structure false \
 	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
 	merge -i $(TMPDIR)/norm_patterns.ofn -i tmp/chemical_old_labels_as_synonyms.owl --collapse-import-closure false -o $(SRC).ofn

@@ -16,12 +16,14 @@ relations:
 
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
+  broad_synonym: oio:hasBroadSynonym
 
 vars:
   chemical_entity: "'chemical entity'"
   location: "'independent continuant'"
+
 name:
-  text: "Increased concentration of %s in %s"
+  text: "Increased circulating %s concentration"
   vars:
   - chemical_entity
   - location
@@ -34,15 +36,32 @@ def:
 
 annotations:
 - annotationProperty: exact_synonym
-  text: "increased level of %s in %s"
+  text: "Increased level of %s in %s"
   vars:
   - chemical_entity
   - location
-
+- annotationProperty: exact_synonym
+  text: "Increased %s level in %s"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: broad_synonym
+  text: "Increased %s level"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: broad_synonym
+  text: "Elevated %s level"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: exact_synonym
+  text: "Elevated %s level in %s"
+  vars:
+  - chemical_entity
+  - location
 equivalentTo:
   text: "'has_part' some ('increased amount' and ('inheres_in' some (%s and ('part_of' some %s))) and ('has_modifier' some 'abnormal'))"
   vars:
   - chemical_entity
   - location
-contributors:
-- https://orcid.org/0000-0002-3528-5267
