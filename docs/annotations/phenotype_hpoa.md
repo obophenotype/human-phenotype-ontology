@@ -59,11 +59,11 @@ One or more terms from the [Clinical modifier](https://hpo.jax.org/browse/term/H
 ## 11. aspect
 This field denotes what part of the HPO hierarchy an annotation comes from. For use in semantic similarity analysis, some approaches use only terms that descend from [Phenotypic abnormality](https://hpo.jax.org/browse/term/HP:0000118){target="_blank"} and filter other annotations out.
 
-    - P:  [Phenotypic abnormality HP:0000118](https://hpo.jax.org/browse/term/HP:0000118)
-    - C: [Clinical course HP:0031797](https://hpo.jax.org/browse/term/HP:0031797)
-    - I: [Mode of inheritance HP:0000005](https://hpo.jax.org/browse/term/HP:0000005)
-    - M: [Clinical modifier HP:0012823](https://hpo.jax.org/browse/term/HP:0012823)
-    - H: [Past medical history HP:0032443](https://hpo.jax.org/browse/term/HP:0032443)
+- P:  [Phenotypic abnormality (HP:0000118)](https://hpo.jax.org/browse/term/HP:0000118)
+- C: [Clinical course (HP:0031797)](https://hpo.jax.org/browse/term/HP:0031797)
+- I: [Mode of inheritance (HP:0000005)](https://hpo.jax.org/browse/term/HP:0000005)
+- M: [Clinical modifier (HP:0012823)](https://hpo.jax.org/browse/term/HP:0012823)
+- H: [Past medical history (HP:0032443)](https://hpo.jax.org/browse/term/HP:0032443)
 
 
 ## 12. biocuration

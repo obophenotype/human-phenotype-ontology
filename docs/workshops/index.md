@@ -13,4 +13,5 @@ There are many ways of contributing to the HPO project. One of the most importan
 - [What is a good HPO term?](good_term.md)
 - [Rules For Good HPO Structure](good_structure.md)
 - [What is the difference between a disease and a phenotypic feature?](../documentation/clinicians.md)
+- [Synonyms](synonyms.md)
 - [Previous workshops](../community/workshops.md)
