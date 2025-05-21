@@ -81,3 +81,19 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
   background-color: #ffffff; /* White for odd rows */
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item img {
+  width: auto !important;
+}
