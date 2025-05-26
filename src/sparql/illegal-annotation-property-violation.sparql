@@ -4,8 +4,10 @@ SELECT DISTINCT ?annotation WHERE {
   ?subj ?annotation ?o .
   FILTER (?annotation NOT IN (
     <http://purl.obolibrary.org/obo/IAO_0000115>,
+    <http://purl.obolibrary.org/obo/IAO_0000233>,
     <http://purl.obolibrary.org/obo/IAO_0100001>,
     <http://purl.org/dc/terms/contributor>,
+    <http://purl.org/dc/terms/date>,
     <http://purl.org/dc/terms/creator>,
     <http://purl.org/dc/terms/source>,
     <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>,
