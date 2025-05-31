@@ -1231,7 +1231,9 @@ normalize_src: $(SRC)
 
 .PHONY: validate_idranges
 validate_idranges:
-	if [ -f hp-idranges.owl ]; then dicer-cli policy hp-idranges.owl ; fi
+	if [ -f hp-idranges.owl ]; then \
+		dicer-cli policy --assume-manchester --show-owlapi-error hp-idranges.owl ; \
+	fi
 
 # Deprecated: Use 'sh run.sh odk.py update' without using the Makefile.
 .PHONY: update_repo
