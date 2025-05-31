@@ -9,4 +9,3 @@ SELECT ?term WHERE {
   { ?term owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first [ owl:someValuesFrom ?term ] ] ] }
   FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/HP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/hp")))
 }
-
