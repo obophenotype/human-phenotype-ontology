@@ -62,7 +62,6 @@ jobs:
           path: src/ontology/tmp/
       - name: Diff classification
         run: | 
-            pip install -U oaklib
             cd src/ontology;
             runoak -i simpleobo:tmp/hp-main.obo diff -X simpleobo:tmp/hp-branch.obo -o reports/difference_main-branch_base.md --output-type md 
       - name: Upload diff
