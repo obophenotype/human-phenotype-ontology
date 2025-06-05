@@ -644,3 +644,19 @@ mappings:
 
 babelon:
 	pip install -U babelon==0.3.4 --break-system-packages
+
+##########################
+### Miscellaneous ########
+##########################
+
+.PHONY: update-alternative-ids merge-alternative-ids
+update-alternative-ids: $(SRC)
+	$(ROBOT) query -i $(SRC) -f ttl --query ../sparql/update-alternative-id.ru tmp/alternative_ids.ttl
+
+merge-alternative-ids:
+	$(ROBOT) merge -i $(SRC) -i tmp/alternative_ids.ttl --collapse-import-closure false \
+		convert -f ofn -o $(SRC)
+
+update-alternative-ids-and-merge:
+	$(MAKE) update-alternative-ids
+	$(MAKE) merge-alternative-ids
