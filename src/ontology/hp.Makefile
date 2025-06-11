@@ -598,6 +598,11 @@ $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--drop-unknown-columns true \
 		-o $@
 
+.PRECIOUS: babelon_stats
+# This goal is used to generate statistics for the babelon translations
+babelon_stats:
+	babelon -vvv statistics ../translations/hp-all.babelon.tsv
+
 #diff:
 #	robot diff --left tmp/int.owl --right hp-international.owl -o intdiff.txt
 #	#wget "http://purl.obolibrary.org/obo/hp/hp-international.owl" -O tmp/int.owl
