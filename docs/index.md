@@ -1,6 +1,6 @@
 # Documentation for Human Phenotype Ontology (HPO)
 
-Human Phenotype Ontology (HPO) is an ontology developed by the Monarch Initiative used to describe human phenotypic abnormalities seen in genetic disorders and clinical research.
+Human Phenotype Ontology (HPO) is an ontology used to describe human phenotypic abnormalities seen in genetic disorders and clinical research.
 It provides a structured representation of abnormal characteristics associated with diseases.
 HPO helps researchers and clinicians share and integrate phenotypic data, making understanding and diagnosing genetic disorders easier.
 It uses a hierarchical organization and semantic relationships between terms and allows for annotation of genes and diseases. HPO is used in multiple diagnosis and variant prioritization tools, aiding healthcare professionals and researchers in identifying and classifying genetic conditions.
