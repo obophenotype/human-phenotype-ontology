@@ -11,8 +11,9 @@
 
 # Download
 
- * You should download HPO using the URLs: http://purl.obolibrary.org/obo/hp.obo or http://purl.obolibrary.org/obo/hp.owl
+ * You should download HPO using the URLs<sup>1</sup>: http://purl.obolibrary.org/obo/hp.obo or http://purl.obolibrary.org/obo/hp.owl
 
+<sup>1</sup>The official OBO URI/PURL of HPO is `http://purl.obolibrary.org/obo/hp.owl`.
 
 # Project Homepage
 
