@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                8f52c9b23e82bb299fb87691d64e15ab4b9f4e84ffcb66503c8d97fa998c4548
+CONFIG_HASH=                94e0e1d86c92599163ef9551167382a18859312b860d307796b0a222f6631f16
 
 
 # ----------------------------------------
@@ -423,6 +423,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://www.informatics.jax.org/marker/MGI:*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/OBI_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/CARO_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/COB_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/ENVO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/BFO_0000002*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/BFO_0000003*>" \
