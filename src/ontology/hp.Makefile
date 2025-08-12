@@ -448,6 +448,9 @@ reports/count-phenotypes.tsv: $(SRC)
 reports/count-all.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-all.sparql $@
 
+reports/eye-ern-workshop.tsv: $(SRC)
+	$(ROBOT) query -f tsv -i $< --query ../sparql/report-eye-ern-workshop.sparql $@
+
 reports/count-synonyms.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-synonyms.sparql $@
 
