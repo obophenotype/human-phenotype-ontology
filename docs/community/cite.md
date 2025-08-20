@@ -25,17 +25,3 @@ The Human Phenotype Ontology project linking molecular biology and disease throu
 **Robinson PN**, **Köhler S**, **Bauer S**, Seelow D, Horn D, Mundlos S  
 The Human Phenotype Ontology A Tool for Annotating and Analyzing Human Hereditary Disease  
  *Am J Hum Genet*, 2008; **83**:610-615 [PMID:18950739](https://pubmed.ncbi.nlm.nih.gov/18950739/){:target="_blank"}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
