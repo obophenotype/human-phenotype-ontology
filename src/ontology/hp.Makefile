@@ -499,7 +499,7 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
+	#$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
 	test -f hp.json
 	#test -f hp.obo
 	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
