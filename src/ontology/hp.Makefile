@@ -445,6 +445,14 @@ reports/layperson-synonyms.tsv: $(SRC)
 reports/count-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-phenotypes.sparql $@
 
+tmp/hp-inferred.owl: $(SRC)
+	$(ROBOT) query -i hp-edit.owl --update ../sparql/add-subclass-asserted.ru \
+		reason -a true reduce -o $@
+
+reports/inferred-phenotype-classification.tsv: tmp/hp-inferred.owl
+	$(ROBOT) query -f tsv -i $< --query ../sparql/hpo-subclass-relationships.sparql $@
+
+
 reports/count-all.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-all.sparql $@
 
