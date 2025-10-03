@@ -553,6 +553,14 @@ reports/layperson-synonyms.tsv: $(SRC)
 reports/count-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-phenotypes.sparql $@
 
+tmp/hp-inferred.owl: $(SRC)
+	$(ROBOT) query -i hp-edit.owl --update ../sparql/add-subclass-asserted.ru \
+		reason -a true reduce -o $@
+
+reports/inferred-phenotype-classification.tsv: tmp/hp-inferred.owl
+	$(ROBOT) query -f tsv -i $< --query ../sparql/hpo-subclass-relationships.sparql $@
+
+
 reports/count-all.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-all.sparql $@
 
@@ -607,7 +615,7 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
+	#$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
 	test -f hp.json
 	#test -f hp.obo
 	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
@@ -752,3 +760,19 @@ mappings:
 
 babelon:
 	pip install -U babelon==0.3.4 --break-system-packages
+
+##########################
+### Miscellaneous ########
+##########################
+
+.PHONY: update-alternative-ids merge-alternative-ids
+update-alternative-ids: $(SRC)
+	$(ROBOT) query -i $(SRC) -f ttl --query ../sparql/update-alternative-id.ru tmp/alternative_ids.ttl
+
+merge-alternative-ids:
+	$(ROBOT) merge -i $(SRC) -i tmp/alternative_ids.ttl --collapse-import-closure false \
+		convert -f ofn -o $(SRC)
+
+update-alternative-ids-and-merge:
+	$(MAKE) update-alternative-ids
+	$(MAKE) merge-alternative-ids

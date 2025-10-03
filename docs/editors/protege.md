@@ -68,7 +68,7 @@ Protege should then remember your last used ID on the computer you are currently
 Finally, go to Protege->Preferences, “New Entities Metadata” tab and set the following items. This will ensure that we are all using the same tag to get credit for making new terms.
 
 - activate: ``Annotate new entities with creator (user)``. 
-- Creator property: http://purl.org/dc/elements/1.1/creator
+- Creator property: http://purl.org/dc/terms/creator
 - Creator value: user ORCID (enter your ORCID id under User!)
 - activate: ``Annotate new entities with data/time``.
 - Date property: http://purl.org/dc/elements/1.1/date

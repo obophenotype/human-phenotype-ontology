@@ -1,0 +1,25 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?subclass ?subclass_label ?superclass ?superclass_label ?is_inferred
+WHERE {
+  # Get subclass relationships for HPO terms
+  ?subclass rdfs:subClassOf ?superclass .
+  ?subclass rdfs:label ?subclass_label .
+  ?superclass rdfs:label ?superclass_label .
+
+  # Filter for HPO terms only
+  FILTER (isIRI(?subclass) && regex(str(?subclass), "^http://purl.obolibrary.org/obo/HP_"))
+  FILTER (isIRI(?superclass) && regex(str(?superclass), "^http://purl.obolibrary.org/obo/HP_"))
+
+  FILTER NOT EXISTS {
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?subclass ;
+           owl:annotatedProperty rdfs:subClassOf ;
+           owl:annotatedTarget ?superclass ;
+           oboInOwl:is_inferred "false"^^xsd:boolean .
+  }
+}
+ORDER BY ?subclass ?superclass
