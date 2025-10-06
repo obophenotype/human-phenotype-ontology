@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix HP: <http://purl.obolibrary.org/obo/HP_>
+
+SELECT ?sub ?label WHERE {
+  ?sub rdfs:subClassOf* HP:0010876 .
+  ?sub rdfs:label ?label .
+  FILTER (
+    STRSTARTS(STR(?sub),"http://purl.obolibrary.org/obo/HP_")
+  )
+}
