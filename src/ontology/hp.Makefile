@@ -299,6 +299,15 @@ re-assemble:
 	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
 	cat tmp/hp >> hp-edit.owl
 
+prepare_release: $(REPORTDIR)/upheno-relations.csv
+
+$(REPORTDIR)/upheno-relations.csv: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		upheno:extract-upheno-relations \
+			--root-phenotype HP:0000118 \
+			--relation UPHENO:0000003 --relation UPHENO:0000001 \
+		query --query ../sparql/upheno_fillers.sparql $@
+
 #drop_synonyms_wo_support:
 #	# Remove the remaining exactMatches
 #	grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour_exact2
