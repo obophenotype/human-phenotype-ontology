@@ -93,6 +93,12 @@ import_group:
     - id: mpath
       make_base: TRUE
 robot_java_args: '-Xmx8G'
+robot_plugins:
+  plugins:
+    - name: upheno
+      mirror_from: https://github.com/monarch-initiative/monarch-robot-plugins/releases/latest/download/monarch-robot-extensions.jar
+    - name: sssom
+      mirror_from: https://github.com/gouttegd/sssom-java/releases/download/sssom-java-1.9.0/sssom-robot-plugin-1.9.0.jar
 allow_equivalents: asserted-only
 pattern_pipelines_group:
   products:

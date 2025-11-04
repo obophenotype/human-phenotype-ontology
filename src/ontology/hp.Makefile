@@ -407,6 +407,15 @@ re-assemble:
 	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
 	cat tmp/hp >> hp-edit.owl
 
+prepare_release: $(REPORTDIR)/upheno-relations.csv
+
+$(REPORTDIR)/upheno-relations.csv: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		upheno:extract-upheno-relations \
+			--root-phenotype HP:0000118 \
+			--relation UPHENO:0000003 --relation UPHENO:0000001 \
+		query --query ../sparql/upheno_fillers.sparql $@
+
 #drop_synonyms_wo_support:
 #	# Remove the remaining exactMatches
 #	grep -f behaviour_seed.txt hp-edit.owl | grep "AnnotationAssertion.*hasExactSynonym.*" | grep -v ORCID > tmp/behaviour_exact2
@@ -615,20 +624,16 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	#$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
 	test -f hp.json
-	#test -f hp.obo
-	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
-	#mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
+	@echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
 	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
-	#mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
 	
-	echo "##### HPOA: Running Make pipeline"
+	@echo "##### HPOA: Running Make pipeline"
 	cd $(RARE_DISEASE_DIR)/ \
 		&& echo "##### HPOA: Running CURRENT Makefile" \
 		&& $(MAKE) -C current
 	
-	echo "##### HPOA: COPYING all result files into HPOA results directory"
+	@echo "##### HPOA: COPYING all result files into HPOA results directory"
 	mkdir -p $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/genes_to_phenotype.txt $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/phenotype_to_genes.txt $(HPOA_DIR)
