@@ -23,7 +23,7 @@ vars:
   location: "'independent continuant'"
 
 name:
-  text: "Increased circulating %s concentration"
+  text: "Elevated circulating %s concentration"
   vars:
   - chemical_entity
   - location
@@ -36,12 +36,27 @@ def:
 
 annotations:
 - annotationProperty: exact_synonym
-  text: "Increased level of %s in %s"
+  text: "Increased %s level"
   vars:
   - chemical_entity
   - location
 - annotationProperty: exact_synonym
   text: "Elevated %s level"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: exact_synonym
+  text: "Increased %s concentration"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: exact_synonym
+  text: "Elevated %s concentration"
+  vars:
+  - chemical_entity
+  - location
+- annotationProperty: exact_synonym
+  text: "Increased %s level in %s"
   vars:
   - chemical_entity
   - location
