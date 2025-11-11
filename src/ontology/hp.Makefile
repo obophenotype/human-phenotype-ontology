@@ -283,7 +283,6 @@ hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labe
 
 	# We remove all EQs, labels and definitions from hp-edit.owl
 	$(MAKE) rm_def_chem
-
 	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --axioms annotation --signature true --trim false --preserve-structure false \
 	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
 	merge -i $(TMPDIR)/norm_patterns.ofn -i tmp/chemical_old_labels_as_synonyms.owl --collapse-import-closure false -o $(SRC).ofn
@@ -299,7 +298,7 @@ hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labe
 	
 	# (I like to work on temporary files instead of the main for no reason.)
 	mv $(SRC).ofn $(SRC)
-	
+	sed -i 's/ (human)//g' $(SRC)
 	# Generate hp.obo again with the changes...
 	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-after.obo
 	
