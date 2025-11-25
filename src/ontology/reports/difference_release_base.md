@@ -1,123 +1,807 @@
 <details>
-<summary>Nodes obsoleted with replacement: 6</summary>
+<summary>Classes added: 140</summary>
 
-| Term | Replacement |
+| Term |
+----|
+| Local paresthesia at bite site (HP:0020014) |
+| Decreased fetal head circumference (HP:0020306) |
+| Abnormal CSF 5-hydroxyindoleacetic acid concentration (HP:0020019) |
+| Irregularity of the retinal pigment epithelium layer on OCT (HP:0020033) |
+| Abnormal fetal head circumference (HP:0020305) |
+| Squamous metaplasia (HP:0020094) |
+| Subcutaneous abscess (HP:0020116) |
+| Hallux dorsiflexion weakness (HP:6001374) |
+| Cystic changes in greater tuberosity of the humerus (HP:6001371) |
+| Positive Hawkins test (HP:6001372) |
+| Hip extension contracture (HP:0020024) |
+| Elevated circulating lysosphingomyelin concentration (HP:6001380) |
+| Elbow instability (HP:6001426) |
+| Abnormal fetal femur length (HP:6001418) |
+| Necrotizing lymph node granuloma (HP:0020052) |
+| Lateral epicondylitis of the elbow (HP:6001364) |
+| Amyloid deposition by type of amyloid (HP:0020016) |
+| Diminished MLH1 expression (HP:0020055) |
+| Distal biceps tendon ruptre (HP:6001367) |
+| Pain exacerbated by wrist radial deviation (HP:6001420) |
+| Direct antiglobulin test positive for IgG (HP:0020027) |
+| Hallux pain (HP:6001401) |
+| Negative ulnar variance (HP:6001422) |
+| Hip adduction contracture (HP:0020023) |
+| Pathological inclusion body by subcellular location (HP:0020066) |
+| Valgus instability of the elbow (HP:6001427) |
+| History of disease onset in winter (HP:0020008) |
+| Increased fetal head circumference (HP:0020307) |
+| Echopraxia (HP:0020124) |
+| Diminished MSH2 expression (HP:0020056) |
+| Limited foot inversion (HP:6001430) |
+| Abnormal lens capsule morphology (HP:6001381) |
+| Pain exacerbated by wrist ulnar deviation (HP:6001419) |
+| Abnormal elbow morphology (HP:0020300) |
+| Abnormal anteroposterior retina thickness on OCT (HP:0020040) |
+| Diminished MSH6 expression (HP:0020057) |
+| Hip flexion contracture (HP:0020025) |
+| Skin tenting due to fracture (HP:6001384) |
+| Areas of hypopigmentation and hyperpigmentation that follow Blaschko lines (HP:6001387) |
+| Restrictive eating (HP:0020302) |
+| Flat palate (HP:6001411) |
+| Posterior tibial tendon injury (HP:6001398) |
+| Bleeding into skin lesions (HP:0020011) |
+| Urinary ascites (HP:6001378) |
+| Granulomatous conjunctivitis (HP:6001386) |
+| Hyperlordotic gait (HP:6001360) |
+| Volar wrist pain (HP:6001405) |
+| Transthyretin amyloid deposition (HP:0020017) |
+| Transillumination test shows high light transmission (HP:6001424) |
+| Spilled teacup sign of the wrist (HP:6001395) |
+| Abnormal Q wave (HP:0020232) |
+| Tumor signet ring cell (HP:0020168) |
+| Abnormal spinal cord white matter morphology (HP:0020029) |
+| Distal radioulnar joint space widening (HP:5000040) |
+| Positive Coombs test (HP:0020026) |
+| Acute retinal necrosis (HP:6001370) |
+| Hyperleukocytosis (HP:6001425) |
+| Abnormal mixed venous oxygen saturation (HP:6001379) |
+| Fleck sign of elbow (HP:6001362) |
+| Ulnar positive variance (HP:6001421) |
+| Slough (HP:0020013) |
+| Popeye sign (HP:6001366) |
+| Peroneal tendon tenderness (HP:6001407) |
+| Retinal thickening on OCT (HP:0020039) |
+| Decreased biparietal diameter (HP:0020259) |
+| Hallux sesamoid injury (HP:6001403) |
+| Varus instability of the elbow (HP:6001428) |
+| Abnormal spinal cord lateral corticospinal tract morphology (HP:0020030) |
+| Direct antiglobulin test positive for C3d (HP:0020031) |
+| Increased occipitofrontal diameter (HP:0020299) |
+| Positive Finkelstein sign (HP:6001396) |
+| Increased biparietal diameter (HP:0020260) |
+| Decreased occipitofrontal diameter (HP:0020298) |
+| Crusted skin lesions (HP:0020012) |
+| Appendicular location (HP:0020069) |
+| Elevated bursal fluid leukocyte count (HP:0020256) |
+| Positive synovial Tropheryma whipplei bacteria microscopy (HP:6001431) |
+| Hallux plantarflexion weakness (HP:6001375) |
+| Cutaneous lesion morphology (HP:0020010) |
+| Exacerbated by pulmonary vasodilator exposure (HP:6001413) |
+| Elevated circulating C-terminal telopeptide cross-link of type1 collagen concentration (HP:6001412) |
+| Plantar pain (HP:6001399) |
+| Distal radioulnar joint translation (HP:5000049) |
+| Pathological inclusion body by anatomical location (HP:0020067) |
+| Dorsal intercalated segment instability (HP:6001393) |
+| Hallux weakness (HP:6001373) |
+| Spur at inferior pole of patella (HP:6001377) |
+| Increased fetal abdominal circumference (HP:0020304) |
+| Cerebral transthyretin amyloid deposition (HP:0020018) |
+| Bronchial stenosis (HP:6001383) |
+| Proximal biceps tendon rupture (HP:6001368) |
+| Flexor carpi radialis tendonitis (HP:6001423) |
+| Follicular conjunctivitis (HP:6001385) |
+| Forefoot pain (HP:6001376) |
+| Abnormal seminiferous tubule morphology (HP:0020051) |
+| Peroneal tendon injury (HP:6001409) |
+| Achilles tendon tear (HP:6001433) |
+| Intrauterine amputation (HP:6001389) |
+| Abnormal occipitofrontal diameter (HP:0020297) |
+| Dorsal wrist pain (HP:6001406) |
+| Intrauterine digital amputation (HP:6001390) |
+| Radial wrist pain (HP:6001404) |
+| Mercury exposure (HP:6001414) |
+| Disruption of carpal arcs (HP:6001394) |
+| Proximal interphalangeal joint arthritis (HP:6001392) |
+| Abnormal CD8+ T cell subset proportion (HP:0020115) |
+| Hip external rotation contracture (HP:0020021) |
+| Decreased CSF 5-hydroxyindoleacetic acid concentration (HP:0020020) |
+| Elevated circulating succinylacetone concentration (HP:6001410) |
+| Radioulnar interosseous membrane tear (HP:6001361) |
+| Direct antiglobulin test positive for IgM (HP:0020028) |
+| Abnormal bursal fluid morphology (HP:0020252) |
+| Abnormal marker expression (HP:0020053) |
+| Diminished PMS2 expression (HP:0020065) |
+| Peroneal tendon subluxation (HP:6001408) |
+| Hip abduction contracture (HP:0020022) |
+| Medial epicondylitis of the elbow (HP:6001365) |
+| Limited foot eversion (HP:6001429) |
+| Histopathological abnormality (HP:0020092) |
+| Abnormal biparietal diameter (HP:6001417) |
+| History of disease onset in summer (HP:0020009) |
+| Forefoot abduction (HP:6001397) |
+| Abnormal neoplastic cell morphology (HP:0020162) |
+| Pain on the medial aspect of the foot (HP:6001402) |
+| Hyperreflective retinal dots on OCT (HP:0020032) |
+| Positive bursal fluid infectious agent test (HP:6001369) |
+| Amyloid deposition by anatomical site (HP:0020015) |
+| Glomerular basement membrane duplication (HP:0020109) |
+| Urinoma (HP:6001415) |
+| Resisted wrist flexion provokes pain (HP:6001363) |
+| Abnormal elbow physiology (HP:0020301) |
+| Flexor hallucis longus tendon injury (HP:6001400) |
+| Abnormal fetal abdominal circumference (HP:0020303) |
+| Umbilical discharge (HP:6001416) |
+| Exposure to humid conditions (HP:0020070) |
+| Intranuclear inclusion bodies (HP:0020068) |
+| Retinal drusen (HP:6001388) |
+| Posterior capsule opacification (HP:6001382) |
+| Positive calf squeeze test (HP:6001432) |
+| Intrauterine limb amputation (HP:6001391) |
+
+</details>
+
+<details>
+<summary>Text definitions added: 145</summary>
+
+| Term | New Text Definition |
 ----|----|
-| obsolete Intellectual disability, progressive (HP:0006887) |                  Intellectual disability (HP:0001249) |
-| obsolete Abnormal positive emotional state (HP:0025767) |                  Euphoria (HP:0031844) |
-| obsolete Bruxism during sleep (HP:5200284) |                  Bruxism (HP:0003763) |
-| obsolete Inappropriate elation (HP:0025768) |                  Euphoria (HP:0031844) |
-| obsolete Reduced circulating ADAMTS13 activity (HP:6001288) |                  Decreased circulating ADAMTS13 activity (HP:6001276) |
-| obsolete Severe B lymphocytopenia (HP:0005365) |                  Decreased total B cell count (HP:0010976) |
+| Squamous metaplasia (HP:0020094) | Metaplasia of an epithelium (normally a unilayer of cuboidal or columnar cells) with squamous epithelium (squamous means scale-like). Metaplastic squamous epithelium becomes stratified (i.e., has multiple layers). |
+| Umbilical discharge (HP:6001416) | Abnormal fluid draining from the umbilicus (from wounds, surgical sites, or fistulas). |
+| Skin tenting due to fracture (HP:6001384) | Skin tenting may occur in the setting of a fracture when a displaced bone fragment pushes on the skin, causing it to bulge outward in a tent-like shape. |
+| Intrauterine amputation (HP:6001389) | A developmental anomaly characterized by partial or complete absence of a limb or digit at birth, resulting from interruption of normal limb development in utero. |
+| Abnormal mixed venous oxygen saturation (HP:6001379) | Abnormal oxygen saturation in mixed venous blood (SvO2). SvO2 can be measured in a sample of mixed venous blood drawn from the distal lumen of a catheter placed in the pulmonary artery. The SvO2 is dependent on arterial oxygen saturation, hemoglobin concentration, cardiac output, and tissue oxygen demands. |
+| Diminished MSH2 expression (HP:0020056) | Immunohistochemistry (IHC) demonstrating loss of expression of the mismatch repair gene product mutS homolog 2 (MSH2). |
+| Abnormal fetal head circumference (HP:0020305) | Any deviation from the normal range of the fetal head circumference, which is typically measured sonographically in the axial plane at the level of the thalami and cavum septic pellucidi, using the outer border of the bony calvarium. Abnormal fetal head circumference is defined as less than the thrid percentile or 2 standard deviations below the mean or greater than the 97the percentile or 2 standard deviations above the mean. |
+| Spinal cord dorsal column hypomyelination (HP:0008311) | Lower than normal amount of myelin in the dorsal (posterior) tract of the spinal cord white matter. |
+| Positive synovial Tropheryma whipplei bacteria microscopy (HP:6001431) | Demonstration of Tropheryma whipplei bacteria in the synovial (joint) fluid by microscopic analysis. |
+| Elevated bursal fluid leukocyte count (HP:0020256) | The count of leukocytes per unit volume in a bursa aspirate specimen is above the uppper limit of normal. |
+| Abnormal anteroposterior retina thickness on OCT (HP:0020040) | Anteroposterior thickness of the retina outside the limits of normal. This phenotype can be appreciated by retinal optical coherence tomography (OCT). |
+| Increased fetal abdominal circumference (HP:0020304) | The distance around the abdomen of a fetus, generally as measured by prenatal sonography, is above the upper limit of normal. |
+| Hallux sesamoid injury (HP:6001403) | Damage affecting one or both of the two small, pea-shaped bones (sesamoids) embedded in the tendons beneath the first metatarsophalangeal joint of the big toe. Foot x-ray shows fracture, subluxation, or dislocation of the sesamoid of the hallux. |
+| Plantar pain (HP:6001399) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized to palpation of plantar aspect of the foot (the sole). |
+| Glomerular basement membrane duplication (HP:0020109) | Glomerular basement membrane duplication (GBM-DP) can be seen with Periodic acid-Schiff and silver stains. This appearance results from the presence of subendothelial deposits and the so-called mesangial interposition whereby mesangial cells, infiltrating mononuclear cells, or even portions of endothelial cells interpose themselves between the endothelium and basement membrane, with new, inner GBM-like material being laid down. This produces a double contour or tram-track appearance on light or electron microscopy. This finding often reflects splitting of the lamina densa and is associated with disease processes such as membranoproliferative glomerulonephritis, transplant glomerulopathy, and diabetic nephropathy. |
+| Abnormal fetal femur length (HP:6001418) | Femur length is measured between the outer border of one end of the the femoral diaphysis to the other outer border, excluding the epiphysis or other artifact. Abnormal femur length is defined as being more than two standard deviations away from the mean. |
+| Abnormal CD8+ T cell subset proportion (HP:0020115) | Abnormal increase or decrease of any CD8+ T cell subpopulation, measured as percentage of total CD8+ T cells in the blood, compared to a reference range for a given sex and age-group. |
+| Volar wrist pain (HP:6001405) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized to the volar side of the wrist (i.e., to the palm side - front - of the wrist). |
+| Forefoot abduction (HP:6001397) | Outward deviation or turning of the front part of the foot away from the body's midline. An anteroposterior foot x-ray shows increased Simmon angle (angle between the talus and first metatarsal, normal is 7 degrees plus/minus 4 to 5 degrees) or increased talonavicular uncoverage of over 30 to 40 percent. A common clinical observation is the too many toes sign; when viewed from behind, more than two toes will flare out laterally due to the valgus alignment of the foot. |
+| Intrauterine limb amputation (HP:6001391) | A developmental anomaly characterized by partial or complete absence of an arm or leg at birth, resulting from interruption of normal development in utero. |
+| Abnormal fetal abdominal circumference (HP:0020303) | Any deviation from the normal range of the fetal abdominal circumference, which is typically measured sonographically in a transverse view using the outer borders of the skin line at the plane where the fetal stomach, umbilical vein and portal sinus is visible. Abnormal fetal abdominal circumference is defined as less than the 10th or greater than the 90th percentile for gestational age. |
+| Spilled teacup sign of the wrist (HP:6001395) | Dislocation of the lunate bone, generally as a result of trauma. Volar displacement of the lunate is said to result a tipped teacup. |
+| Retinal thickening on OCT (HP:0020039) | Anteroposterior thickness of the retina above the upper limit of normal. This phenotype can be appreciated by retinal optical coherence tomography (OCT). |
+| History of disease onset in winter (HP:0020008) | The initial manifestation of a disease or symptom occurring during the winter season. |
+| Valgus instability of the elbow (HP:6001427) | A type of elbow instability that arises through injuries to the medial collateral ligament (MCL), specifically the anterior bundle (AMCL). In the valgus stress test, the elbow is placed in 20 to 30 degrees of flexion with the forearm supinated and a valgus stress is applied. The test is positive when no firm end point is palpated, greater than 1 mm of medial joint opening is noted (fluoroscopically), or there is reproduction of the patient's pain. |
+| Distal biceps tendon ruptre (HP:6001367) | Rupture (tear) of the distal biceps tendon. Ultrasound imaging showing complete discontinuity of the distal biceps tendon or MRI revealing complete distal biceps tendon discontinuity or increased signal intensity in the distal biceps tendon. |
+| Disruption of carpal arcs (HP:6001394) | The arcs of the Gilula are used on PA wrist radiographs as part of assessing the normal alignment of the carpus. The 1st arc (red) outlines the proximal surfaces and the 2nd arc (yellow) the distal surfaces of the scaphoid, lunate and triquetrum. The 3rd arc (white) outlines the proximal surfaces of the capitate and hamate. Disruption of carpal arcs (i.e., the arcs appear broken or discontinuous on radiographs) indicates a fracture or ligamentous injury in the wrist. |
+| Irregularity of the retinal pigment epithelium layer on OCT (HP:0020033) | Lack of uniformity in the morphology of the retinal pigment epithelium (RPE) layer observed on optical coherence tomography (OCT) imaging. The RPE lies between the neurosensory retina (photoreceptors) and Bruch membrane/choroid, and normally appears as a thin, hyperreflective (bright) band on OCT imaging. This term comprises irregularities which may manifest as thickening, thinning, undulations, or loss of normal reflectivity, potentially affecting retinal structure or function. |
+| Elevated circulating C-terminal telopeptide cross-link of type1 collagen concentration (HP:6001412) | The concentration of C-terminal telopeptide cross-link of type1 collagen in the blood circulation is above the upper limit of normal. |
+| Appendicular location (HP:0020069) | Applies to a lesion that is localized on the arm or leg. |
+| Pain exacerbated by wrist ulnar deviation (HP:6001419) | Pain worsens with wrist ulnar deviation (i.e., the pain is exacerbated if the hand is moved towards the side with the fifth finger). |
+| Fleck sign of elbow (HP:6001362) | A radiograpzhic sign in which small bone fragments detached from the olecranon are seen on lateral radiographs in cases with avulsion of the tendon. |
+| Abnormal neoplastic cell morphology (HP:0020162) | A morphological abnormality of of tumor or neoplastic cells, characterized by atypical size, shape, cytoplasmic or nuclear features, or other deviations from normal cellular architecture. |
+| Radioulnar interosseous membrane tear (HP:6001361) | A tear in the fibrous sheet connecting the radius and ulna bones in the forearm. |
+| Pain exacerbated by wrist radial deviation (HP:6001420) | Pain worsens with wrist radial deviation (i.e., the pain is exacerbated if the hand is moved towards the side with the thumb). |
+| Bleeding into skin lesions (HP:0020011) | Presence of bleeding within (pre-existing) cutaneous lesions such as blisters or vesicles, resulting in blood-filled lesions. |
+| Hip abduction contracture (HP:0020022) | Abduction contracture of the hip is characterized by the limitation of active and/or passive adduction of the hip joint in the coronal plane; a chronic reduction in the ability to move the proximal segment of the lower extremity actively or passively medially towards the body midline past the sagittal plane of the body. |
+| Necrotizing lymph node granuloma (HP:0020052) | A granuloma located within a lymph node that is associated with necrosis. Usually, the necrosis is surrounded by collections of histiocytes. A granuloma is a focal aggregate of immune cells that forms in response to a persistent inflammatory stimulus. It characteristically demonstrates the compact organization of mature macrophages, which may or may not be associated with other inflammatory cell types. |
+| Mercury exposure (HP:6001414) | History of exposure to mercury. |
+| Hip internal rotation contracture (HP:0034993) | The inability to rotate the proximal or upper limb segment laterally past anatomic neutral moving away from the midline, when viewed from anteriorly. Anatomic neutral position is defined as the trans-epicondylar axis of the distal humerus (for upper extremity) or femur (for lower extremity) is parallel to the sagittal plane of the body. This type of contracture is characterized by a turning of the knee from a neutral position to one facing more the midline, where the neutral position for the hip is with knee pointing directly anteriorly (less than or equal to 45 degrees). |
+| Tumor signet ring cell (HP:0020168) | A signet ring has a flattened surface at the top of the ring with an engraved or raised symbol, historically used to stamp a seal into correspondence. Comparatively, these cells acquire a signet cell morphology due to accumulation of abundant mucin in cytoplasm, leading to nuclei dislocation to the periphery. |
+| Dorsal intercalated segment instability (HP:6001393) | A nondissociative form of carpal instability, in which the lunate bone angulates to the dorsal side of the hand. |
+| Flat palate (HP:6001411) | Reduced height of the palate. A flat palate is present with a palatal index angle below 30 degrees, a normal palate with an angle between 30 and 45 degrees, and a steep palate with an angle above 45 degrees. |
+| Diminished PMS2 expression (HP:0020065) | Immunohistochemistry (IHC) demonstrating loss of expression of the mismatch repair gene product PMS1 homolog 2 (PMS2). |
+| Resisted wrist flexion provokes pain (HP:6001363) | Active wrist flexion against resistance increases pain in the arm. |
+| Abnormal Q wave (HP:0020232) | An anomaly of the Q wave of the electrocardiogram. |
+| Abnormal optical coherence tomography (HP:0030603) | Optical coherence tomography (OCT) is an optical method for cross-sectional imaging with a resolution approaching that of histopathology and a depth of penetration of a few mm. In ophthalmology, OCT has become a standard of care for retinal imaging. This term groups abnormal findings that are considered OCT-specific. |
+| Decreased occipitofrontal diameter (HP:0020298) | Occipitofrontal diameter, measured with fetal sonography, below the lower limit of normal. |
+| Hallux weakness (HP:6001373) | Reduced ability to exert force or power with the hallux (big toe), i.e., reduced strength of the hallux. |
+| Posterior tibial tendon injury (HP:6001398) | Damage to the posterior tibialis tendon, which runs along the inside of the ankle and foot, supporting the arch of the foot. MRI or ultrasound of the ankle/foot shows posterior tibial tendon degeneration such as tendinosis, tenosynovitis, edema around the tendon, or tendon tear. |
+| Follicular conjunctivitis (HP:6001385) | A type of conjunctivitis characterized by the formation of conjunctival follicles, which appear as raised domes on the are round collections of lymphocytes, and are often most prominent in the inferior fornix (interior part of the lower eyelid). |
+| Hip external rotation contracture (HP:0020021) | A condition where the hip joint is limited in its range of motion due to the shortening of muscles that externally rotate the hip, causing the leg and foot to point outward when standing or walking. The knee is turned past neutral in the direction moving away from the midline, where the neutral position for the hip is with knee pointing directly anteriorly. |
+| Hyperreflective retinal dots on OCT (HP:0020032) | Abnormal hyperreflective dots (HRDs) detected in Optical coherence tomography (OCT) scans. The HRDs are scattered, punctiform, small in size, mainly located in the outer retinal layers and/or around pockets of fluid accumulation and are typically not confluent. |
+| Ulnar positive variance (HP:6001421) | A phenomenon whereby the distal ulna articular surface is more distal than the distal radius articular surface. |
+| Exacerbated by pulmonary vasodilator exposure (HP:6001413) | Applied to a sign or symptom that is worsened by treatment with a pulmonary vasodilator medication such as prostacyclin analogs, endothelin receptor antagonists, and phosphodiesterase-5 (PDE5) inhibitors. |
+| Posterior capsule opacification (HP:6001382) | Posterior capsule opacification, also known as secondary cataract, is the most frequent complication following manual extracapsular cataract extraction. Secondary cataract results from the proliferation and migration of residual epithelial cells in the posterior region of the lens capsule into the visual axis, leading to thickening and reduction in transparency (opacification), which in turn can cause a decrease in visual acuity. |
+| Proximal biceps tendon rupture (HP:6001368) | Rupture (tear) of the proximal biceps tendon. MRI reveals a tear of the proximal aspect of the biceps tendon near its site of origin at the supraglenoid tubercle. |
+| Positive Coombs test (HP:0020026) | A positive (abnormal) result of the direct antiglobulin test (DAT; sometimes referred to as the Coombs test). The test is a method of demonstrating the presence of antibody or complement bound to red blood cell (RBC) membranes by the use of anti-human globulin to form a visible agglutination reaction. The DAT tests for antibodies or complement bound directly to erythrocytes, indicating in vivo sensitization. |
+| Direct antiglobulin test positive for C3d (HP:0020031) | Demonstration of the presence of C3d complement fragments bound to red blood cell (RBC) membranes using anti-human globulin (Coombs reagent), which produces a visible agglutination reaction. |
+| Urinary ascites (HP:6001378) | The presence of urine in the peritoneal cavity, an entity that typically results from bladder rupture or damage to the ureters. |
+| Direct antiglobulin test positive for IgG (HP:0020027) | Demonstration of the presence of IgG antibodies bound to red blood cell (RBC) membranes by the use of anti-human globulin to form a visible agglutination reaction. |
+| Diminished MLH1 expression (HP:0020055) | Immunohistochemistry (IHC) demonstrating loss of expression of the mismatch repair gene product mutL homolog 1 (MLH1). |
+| Distal radioulnar joint translation (HP:5000049) | Abnormal linear movement or displacement of the ulnar head relative to the radius at the wrist, indicating instability of the distal radioulnar joint, which is the distal articulation between the radius and ulna, acting as a major weight-bearing joint at the wrist and distributing forces across the forearm bones. |
+| Transillumination test shows high light transmission (HP:6001424) | A transillumination test involves shining light through an area of the body or a mass. This term refers to a transillumination test that shows especially high (positive) transillumination, which may be observed when a mass or swelling contains clear fluid rather than solid tissue or blood. |
+| Lateral epicondylitis of the elbow (HP:6001364) | A chronic symptomatic degeneration of the wrist extensor tendons involving their attachment to the lateral epicondyle of the humerus, and is associated clinically with lateral elbow pain (tennis elbow). This term refers to the associated imaging finding. Ultrasound imaging showing extensor carpi radialis brevis (ECRB) tendon thickening and hypoechoic areas with increased vascularity or MRI showing increased signal intensity or tear at the insertion site of the ECRB on the lateral aspect of the elbow. |
+| Distal radioulnar joint space widening (HP:5000040) | Increased space between the distal radius and distal ulna at sigmoid notch (radioulnar distance more than 6 mm at the sigmoid notch). |
+| Cerebral transthyretin amyloid deposition (HP:0020018) | Accumulation of misfolded transthyretin protein in brain tissue. |
+| Hallux dorsiflexion weakness (HP:6001374) | Reduced ability to lift the big toe (hallux) upward toward the shin. |
+| Peroneal tendon subluxation (HP:6001408) | Dynamic ultrasound of the lateral ankle showing subluxation or dislocation of one or both of the peroneal tendons out of the peroneal groove. |
+| Abnormal seminiferous tubule morphology (HP:0020051) | Any anomaly in the structure or density (count of tubules per volume) of the seminiferous tubules, i.e., the coiled structures within the testis that contain Sertoli cells, which support and nurture germ cells as they develop into mature spermatozoa. |
+| Urinoma (HP:6001415) | Encapsulated collections of urine around the kidney in the retroperitoneum, most commonly in the perirenal space, as a consequence of renal tract leakage caused by urinary obstruction, trauma, or post-instrumentation. |
+| Diminished MSH6 expression (HP:0020057) | Immunohistochemistry (IHC) demonstrating loss of expression of the mismatch repair gene product mutS homolog 6 (MSH6). |
+| Negative ulnar variance (HP:6001422) | Negative ulnar variance is a condition in which the ulna is relatively shorter than the radius at the carpus. AP wrist X-ray shows the distal ulna articular surface more proximal than the distal radius articular surface. |
+| Limited foot inversion (HP:6001430) | Decreased foot inversion secondary to pain, weakness, or mechanical block. |
+| Amyloid deposition by anatomical site (HP:0020015) | Amyloid deposition categorized according to the anatomical site of deposition. |
+| Acute retinal necrosis (HP:6001370) | A condition characterized by the death of retinal tissue due to ischemia, infection, or inflammation. |
+| History of disease onset in summer (HP:0020009) | The initial manifestation of a disease or symptom occurring during the summer season. |
+| Abnormal spinal cord lateral corticospinal tract morphology (HP:0020030) | Any structural abnormality affecting the lateral corticospinal tracts of the spinal cord, which may involve axonal loss, demyelination, or tract degeneration, and can result in motor deficits such as weakness, spasticity, or impaired voluntary movement. |
+| Hip flexion contracture (HP:0020025) | The inability to bring a flexed hip to neutral in the sagittal plane, where the neutral position for the hip is with the thigh segment in line with the anatomic plane of the pelvis, both in the coronal and sagittal planes. |
+| Slough (HP:0020013) | Slough is a type of necrotic skin lesion that is characterized as being yellow, tan, green or brown in color and may be moist, loose and stringy in appearance. |
+| Bronchial stenosis (HP:6001383) | A narrowing (constriction) of the lumen of a bronchus, which may involve one or more of the major airways branching from the trachea. |
+| Osseous stenosis of the external auditory canal (HP:0040104) | A narrowing of the bony part of the ear canal, which can be congenital or acquired through causes like chronic infections, trauma, or radiation therapy. |
+| Hyperlordotic gait (HP:6001360) | A gait abnormality characterized by excessive lumbar lordosis (swayback posture, i.e., an inward curvature of the lower spine) and gait pattern with forward tilt of the pelvis and increased lumbar curvature. Hyperlordotic gait is often as a compensatory mechanism for hip extensor weakness, proximal muscle weakness, or hip flexion contracture. |
+| Granulomatous conjunctivitis (HP:6001386) | A type of conjunctivitis characterized by the formation of conjunctival granulomata, i.e., localized nodular inflammatory lesions of the conjunctiva, characterized histologically by aggregates of epithelioid histiocytes, often with multinucleated giant cells, surrounded by lymphocytes and fibroblasts. |
+| Pain on the medial aspect of the foot (HP:6001402) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized to the side of the foot nearest to the big toe (hallux). |
+| Dorsal wrist pain (HP:6001406) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized to the dorsal side (back) of the wrist. |
+| Peroneal tendon tenderness (HP:6001407) | Pain elicited with palpation along the course of the peroneal tendons, located posterior to the lateral malleolus and extending distally toward the base of the fifth metatarsal. |
+| Intrauterine digital amputation (HP:6001390) | A developmental anomaly characterized by partial or complete absence of a finger or toe at birth, resulting from interruption of normal development in utero. |
+| Decreased fetal head circumference (HP:0020306) | Fetal head circumference less than the third percentile or 2 standard deviations below the mean. |
+| Direct antiglobulin test positive for IgM (HP:0020028) | Demonstration of the presence of IgM antibodies bound to red blood cell (RBC) membranes by the use of anti-human globulin to form a visible agglutination reaction. |
+| Increased fetal head circumference (HP:0020307) | Fetal head circumference above the 97th percentile or 2 standard deviations above the mean. |
+| Areas of hypopigmentation and hyperpigmentation that follow Blaschko lines (HP:6001387) | Linear streaks of hypopigmentation or hyperpigmentation that are distributed according to Blaschko lines, which are V-shaped, S-shaped, or linear patterns on the skin that reflect the embryonic migration pathways of epidermal cells (keratinocytes, melanocytes, etc.) during early development. |
+| Abnormal bursal fluid morphology (HP:0020252) | An anomaly of the synovial-like fluid found within a bursa, which is a small, closed sac lined by synovial membrane that reduces friction between tissues such as tendons, muscles, ligaments, and bones. |
+| Radial wrist pain (HP:6001404) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized to the radial side of the wrist. |
+| Dysplastic testis (HP:0008733) | A descriptive term denoting a developmental anomaly of the male gonad characterized by architectural disorganization of the testicular parenchyma, which may include irregular or poorly formed seminiferous tubules, a thinned tunica albuginea, and increased or fibrotic interstitial tissue. Macroscopically, the testis may range from near-normal in size and appearance to a small, firm, or streak-like structure. |
+| Decreased biparietal diameter (HP:0020259) | Fetal head width measurement, taken between the outer edge of the proximal parietal bone and the inner edge of the distal parietal bone, below the lower limit of normal, usually taken to be two standard deviations below the norm or above the 3rd percentile for the gestational age. |
+| Local paresthesia at bite site (HP:0020014) | Abnormal tingling, burning, or itching sensation localized to the site of an animal bite, typically occurring after the wound has healed. |
+| Cystic changes in greater tuberosity of the humerus (HP:6001371) | Cystic lesions of the proximal humerus are commonly encountered on routine shoulder magnetic resonance imaging (MRI). True cysts are defined as fluid-filled structures or lesions with an epithelial lining, whereas pseudocysts are fluid-filled lesions without epithelial lining. Cystic lesion encompasses both true cysts, pseudocysts and other lesions which could mimic the appearance of a cyst on MRI, with increased signal on fluid sensitive sequences. |
+| Limited foot eversion (HP:6001429) | Decreased foot eversion secondary to pain, weakness, or mechanical block. |
+| Hallux plantarflexion weakness (HP:6001375) | Reduced ability to push the big toe (hallux) downward, away from the shin. |
+| Abnormal response to social norms (HP:5200123) | An atypical understanding or application of social rules and conventions that guide interpersonal behavior. This may include reduced awareness of social norms or rigid, context-insensitive adherence to them. |
+| Spur at inferior pole of patella (HP:6001377) | A bone spur (osteophyte), i.e., de novo bone formation at the lower edge of the patella (knee cap). Radiographically, it is visible as calcification at inferior pole of the patella. |
+| Proximal interphalangeal joint arthritis (HP:6001392) | Inflammation and deterioration of the proximal interphalangeal (PIP) joints. Radiographically, PIP arthritis can be characterized by PIP joint space narrowing, subchondral cysts, and osteophytes. |
+| Abnormal elbow morphology (HP:0020300) | A structural anomaly of the joint that connects the upper and the lower arm. |
+| Positive Hawkins test (HP:6001372) | Manual internal rotation on the forearm with the shoulders flexed forward to 90 degrees, elbows bent to 90 degrees so that the forearm is parallel to the ground, and palm facing down recreates pain in the shoulder region; named after Dr. Hawkins. |
+| Increased biparietal diameter (HP:0020260) | Fetal head width measurement, taken between the outer edge of the proximal parietal bone and the inner edge of the distal parietal bone, above the upper limit of normal, usually taken to be two standard deviations above the norm or above the 97th percentile for the gestational age. |
+| Transthyretin amyloid deposition (HP:0020017) | Deposition of misfolded transthyretin (TTR) protein in tissue. |
+| Subcutaneous abscess (HP:0020116) | A circumscribed area of pus or necrotic debris located in the subcutaneous tissue (subcutaneous fat layer), below the dermis. |
+| Hip adduction contracture (HP:0020023) | Inability of hip to bring from medial side to neutral position, where the neutral position for the hip is with the thigh segment in line with the anatomic plane of the pelvis, both in the coronal and sagittal planes. |
+| Flexor carpi radialis tendonitis (HP:6001423) | Inflammation of the flexor carpi radialis (FCR) tendon, which traverses the carpus through a narrow fibro-osseous tunnel. |
+| Achilles tendon tear (HP:6001433) | A partial or complete break in the Achilles tendon (the tendon that connects the gastrocnemius and soleus to the calcaneus). This feature can be ascertained by magnetic resonance imaing (MRI) of the foot/ankle showing partial or complete tear of the achilles tendon. |
+| Exposure to humid conditions (HP:0020070) | A history of living in an environment characterized by excess moisture and heat, tropical conditions, or muggy weather. |
+| Positive calf squeeze test (HP:6001432) | An abnormal result of the calf-squeeze test (also known as the Thompson test), which is considered a sign of Achilles tendon rupture. The test is positive (abnormal) if no plantar flexion of the foot occurs at calf squeezing. |
+| Peroneal tendon injury (HP:6001409) | Ankle MRI or ultrasound showing edema or thickening of peroneal tendon(s), fluid within peroneal tendon sheath, partial or complete tear in one or both of the peroneal tendons, or subluxation/dislocation of one or both of the tendons. |
+| Hallux pain (HP:6001401) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized to the big toe (hallux). |
+| Hip extension contracture (HP:0020024) | Inability to flex the hip past the extension range from the neutral position, where the neutral position for the hip is with the hip and thigh segment in line in the same coronal plane as the pelvis. |
+| Retinal drusen (HP:6001388) | Small focal extracellular deposits underneath the retina, visible ophthalmoscopically as yellow dots. |
+| Flexor hallucis longus tendon injury (HP:6001400) | Damage to the flexor hallucis longus (FHL) tendon. The FHL tendon is a long tendon that runs from the deep calf muscle down through the ankle to the big toe, enabling toe flexion and supporting foot mechanics.. MRI or ultrasound of the ankle/foot shows degenerative changes of the FHL tendon such as fluid around the tendon at the level of the ankle joint, intra-substance tendinous signal, tendon thickening, tendonitis, or tenosynovitis, or tendon rupture. |
+| Abnormal spinal cord white matter morphology (HP:0020029) | Any structural abnormality affecting the white matter of the spinal cord, including sensory tracts (dorsal columns) and motor tracts (corticospinal tracts). Abnormalities may involve myelin, axons, or tract organization and can result in sensory, motor, or autonomic deficits. |
+| Crusted skin lesions (HP:0020012) | Lesions covered by a hardened layer of dried exudate, blood, or serum. |
+| Forefoot pain (HP:6001376) | An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) localized about the metatarsal heads in the front part of the foot. |
+| Medial epicondylitis of the elbow (HP:6001365) | Medial epicondylitis, often referred to as golfer's elbow, is a common pathology. Flexor-pronator tendon degeneration occurs with repetitive forced wrist extension and forearm supination during activities involving wrist flexion and forearm pronation. This term refers to the associated imaging finding. Ultrasound imaging showing ECRB tendon thickening and hypoechoic areas with increased vascularity or MRI showing increased signal intensity or tear at the insertion site of the common flexor tendon. |
+| Histopathological abnormality (HP:0020092) | Any microscopic alteration in the cellular or tissue morphology of a biospecimen, identified through histologic examination, including changes in differentiation, organization, or cytologic features. |
+| Abnormal CD4+ T cell proportion (HP:0025183) | Abnormal increase or decrease of helper CD3+CD4+ T cells, measured as percentage of total CD3+ T cells in the blood, compared to a reference range for a given sex and age-group. These are usually measured within the TCR alpha/beta positive population. |
+| Abnormal occipitofrontal diameter (HP:0020297) | Abnormal occipitofrontal diameter (OFD) refers to a fetal head width measurement, taken between the root of the nose to the most prominent part of the occiput on an ultrasound image that lies outside the expected range for a given gestational age. The expected range typically falls between the 3rd percentile (or more than 2 standard deviations below the mean) and the 97th percentile (or more than 2 standard deviations above the mean). |
+| Abnormal marker expression (HP:0020053) | Aberrant marker expression is a phenomenon of abnormal gain or loss of lineage specific or associated antigens. It involves changes in the presence, absence, quantity, or localization of molecular or immunohistochemical markers. |
+| Abnormal elbow physiology (HP:0020301) | A functional anomaly of the joint that connects the upper and the lower arm. |
+| Amyloid deposition by type of amyloid (HP:0020016) | Amyloid deposition categorized according to the category of pathological amyloid fiber being deposited. |
+| Intranuclear inclusion bodies (HP:0020068) | Inclusion bodies (deposits of stainable material, usually misfolded proteins) localized in the nucleus. |
+| Varus instability of the elbow (HP:6001428) | A type of elbow insttability characterized by abnormal widening or gapping of the lateral (radial) side of the elbow joint when a varus stress is applied, due to insufficiency of the lateral collateral ligament complex. |
+| Popeye sign (HP:6001366) | Exaggerated bulging of the belly of the biceps muscle upon contraction. |
+| Elevated circulating lysosphingomyelin concentration (HP:6001380) | The concentration of lysosphingomyelin in the blood circulation is above the upper limit of normal. Acid sphingomyelinase deficiency (ASMD) or Niemann-Pick type A/B is a lysosomal disorder caused by the deficiency of acid sphingomyelinase (ASM) due to pathogenic variants in the SMPD1 gene. Sphingomyelin (SM) is the substrate for ASM that cleaves the phosphorylcholine linkage of SM producing ceramide. SM is a major compound of most cell membranes and coupled with cholesterol constitutes most of the membrane rafts. In the deficiency of ASM, there is primary storage of SM, and the concentration of lysosphingomyelin in dried blood spots and in the blood circulation is typically elevated. |
+| Elbow instability (HP:6001426) | Impairment of the ability of the elbow joint to maintain proper anatomical alignment and functional mechanics. Elbow instability is a spectrum from subluxation to dislocation, with corresponding clinical and pathologic features and therapeutic implications. |
+| Decreased CSF 5-hydroxyindoleacetic acid concentration (HP:0020020) | The concentration of 5-hydroxyindoleacetic acid in the cerebrospinal fluid (CSF) is below the lower limit of normal. |
+| Abnormal biparietal diameter (HP:6001417) | Abnormal biparietal diameter (BPD) refers to a fetal head width measurement, taken between the outer edge of the proximal parietal bone and the inner edge of the distal parietal bone on an ultrasound image, that lies outside the expected range for a given gestational age. The expected range typically falls between the 10th and 90th percentiles, with microcephaly defined as a BPD below the 3rd percentile (or more than 2 standard deviations below the mean) and macrocephaly defined as a BPD above the 97th percentile (or more than 2 standard deviations above the mean). |
+| Abnormal CSF 5-hydroxyindoleacetic acid concentration (HP:0020019) | The concentration of 5-hydroxyindoleacetic acid in the cerebrospinal fluid (CSF) is above or below the limits of normal. |
+| Abnormal lens capsule morphology (HP:6001381) | A structural anomaly of the lens capsule, the smooth, transparent, acellular basement membrane that envelops the lens of the eye and serves as the attachment site for the lens zonules and the lens epithelium. |
+| Cutaneous lesion morphology (HP:0020010) | A description of structural or physical characteristics of a skin lesion, describing how the lesion appears or is composed. |
+| Increased occipitofrontal diameter (HP:0020299) | Occipitofrontal diameter, measured with fetal sonography, above the upper limit of normal. |
+| Restrictive eating (HP:0020302) | A behavioral pattern characterized by a deliberate and sustained limitation of food intake, often involving avoidance of certain foods, restriction of portion size, or prolonged fasting, resulting in reduced energy or nutrient consumption relative to physiological needs. |
+| Hyperleukocytosis (HP:6001425) | Hyperleukocytosis is commonly defined as a white blood cell (WBC) count of greater than 100,000 luekocytes per microliter. |
+| Acquired stenosis of the external ear canal (HP:0040103) | Stenosis or narrowing of the external ear canal (EAC) occurs lateral to the tympanic membrane resulting in a skin lined blind canal. |
+| Positive bursal fluid infectious agent test (HP:6001369) | Detection of an infectious agent, or evidence thereof, in aspirated bursal fluid using microbiological, molecular, or antigen-based testing methods. |
+| Elevated circulating succinylacetone concentration (HP:6001410) | The concentration of succinylacetone in the blood circulation is above the upper limit of normal. |
+| Positive Finkelstein sign (HP:6001396) | Finkelstein's test produces severe tenderness and usually pain on the radial aspect of the wrist when the thumb is flexed into the palm and the wrist is ulnar deviated. |
 
 </details>
 
 <details>
-<summary>Nodes renamed: 57</summary>
+<summary>Synonyms added: 86</summary>
 
-| ID | Old Label | New Label |
+| Term | New Synonym | Predicate |
 ----|----|----|
-| HP:0020111 | Abnormal proportion of regulatory T cells | Abnormal regulatory T cell proportion |
-| HP:6001288 | Reduced circulating ADAMTS13 activity | obsolete Reduced circulating ADAMTS13 activity |
-| HP:0025838 | Increased proportion of RTE CD4+ T cells | Increased RTE CD4+ T cell proportion |
-| HP:0025768 | Inappropriate elation | obsolete Inappropriate elation |
-| HP:0031461 | Intramuscular Myxoma | Intramuscular myxoma |
-| HP:5200284 | Bruxism during sleep | obsolete Bruxism during sleep |
-| HP:5200273 | Abnormal sadness | Pathological sadness |
-| HP:0025767 | Abnormal positive emotional state | obsolete Abnormal positive emotional state |
-| HP:0031397 | Decreased proportion of naive T cells | Decreased naive T cell proportion |
-| HP:0006889 | Intellectual disability, borderline | Borderline intellectual disability |
-| HP:5200297 | Abnormal hypnopompia | Abnormal transition from wakefulness to sleep |
-| HP:0031398 | Increased proportion of naive T cells | Increased naive T cell proportion |
-| HP:0008994 | Proximal muscle weakness in lower limbs | Proximal lower limb muscle weakness |
-| HP:5200293 | Disturbance during transitions between sleep and wake states | Sleep-wake transition abnormality |
-| HP:0410374 | Abnormal proportion of naive CD8+ T cells | Abnormal naive CD8+ T cell proportion |
-| HP:0032219 | Increased proportion of CD4+ T cells | Increased CD4+ T cell proportion |
-| HP:5200288 | Sleep-related eating disorder | Sleep-related eating behavior |
-| HP:0006887 | Intellectual disability, progressive | obsolete Intellectual disability, progressive |
-| HP:0410375 | Increased proportion of naive CD4+ T cells | Increased naive CD4+ T cell proportion |
-| HP:0020112 | Increased proportion of regulatory T cells | Increased regulatory T cell proportion |
-| HP:0410377 | Decreased proportion of naive CD8+ T cells | Decreased naive CD8+ T cell proportion |
-| HP:5200295 | Periodic limb movements | Periodic limb movements of sleep |
-| HP:0002360 | Sleep abnormality | Sleep disturbance |
-| HP:0002330 | Paroxysmal drowsiness | Sleep attack |
-| HP:5200287 | Nightmare disorder | Recurrent distressing nightmares |
-| HP:0410378 | Decreased proportion of naive CD4+ T cells | Decreased naive CD4+ T cell proportion |
-| HP:6001101 | crossed brainstem sign | Crossed brainstem sign |
-| HP:0002187 | Intellectual disability, profound | Profound intellectual disability |
-| HP:0410391 | Increased proportion of CD4+ memory T cells | Increased CD4+ memory T cell proportion |
-| HP:0410379 | Abnormal proportion of CD4+ memory T cells | Abnormal CD4+ memory T cell proportion |
-| HP:0010864 | Intellectual disability, severe | Severe intellectual disability |
-| HP:0032218 | Decreased proportion of CD4+ T cells | Decreased CD4+ T cell proportion |
-| HP:0006812 | White mater abnormalities in the posterior periventricular region | Abnormal posterior periventricular white matter morphology |
-| HP:0025840 | Abnormal proportion of HLA DR+ CD4+ T cells | Abnormal HLA DR+ CD4+ T cell proportion |
-| HP:6000011 | Excessive guilt | Guilt |
-| HP:6000537 | Ecrrine sweat gland predominance | Eccrine sweat gland predominance |
-| HP:0025625 | Increased proportion of CD4+ effector memory T cells | Increased CD4+ effector memory T cell proportion |
-| HP:0001256 | Intellectual disability, mild | Mild intellectual disability |
-| HP:0025236 | Somnambulism | Sleep walking |
-| HP:6000802 | Positive bloodstream Tropheryma whippelii nucleic acid test | Positive bloodstream Tropheryma whipplei nucleic acid test |
-| HP:0002342 | Intellectual disability, moderate | Moderate intellectual disability |
-| HP:0025839 | Decreased proportion of RTE CD4+ T cells | Decreased RTE CD4+ T cell proportion |
-| HP:0031516 | Oocyte arrest at metaphase I | Metaphase I oocyte maturation arrest |
-| HP:0005365 | Severe B lymphocytopenia | obsolete Severe B lymphocytopenia |
-| HP:0034423 | triggered by allergens | Triggered by allergens |
-| HP:0410386 | Decreased proportion of CD4-positive memory T cells | Decreased CD4+ memory T cell proportion |
-| HP:0041236 | Fractured middle finger phalanx | Fractured middle phalanx of finger |
-| HP:0007436 | Hair-nail ectodermal dysplasia | obsolete Hair-nail ectodermal dysplasia |
-| HP:0025237 | Confusional arousal | obsolete Confusional arousal |
-| HP:0410376 | Increased proportion of naive CD8+ T cells | Increased naive CD8+ T cell proportion |
-| HP:0020113 | Decreased proportion of regulatory T cells | Decreased regulatory T cell proportion |
-| HP:0008997 | Proximal muscle weakness in upper limbs | Proximal upper limb muscle weakness |
-| HP:0031467 | Abnormal negative emotional state | Dysregulated negative emotional state |
-| HP:5200296 | Abnormal hypnagogia | Abnormal transition from sleep to wakefulness |
-| HP:0011393 | Aplasia of the vestibular nerve. | Aplasia of the vestibular nerve |
-| HP:0410373 | Abnormal proportion of naive CD4+ T cells | Abnormal naive CD4+ T cell proportion |
-| HP:0025837 | Abnormal proportion of RTE CD4+ T cells | Abnormal RTE CD4+ T cell proportion |
+| Decreased fetal abdominal circumference (HP:6000339) | Small fetal abdominal circumference | oio:hasExactSynonym |
+| Fragmented metacarpal epiphysis (HP:0009189) | Fragmentation of the metacarpal epiphyses | oio:hasExactSynonym |
+| Flexor carpi radialis tendonitis (HP:6001423) | FCR inflammation | oio:hasExactSynonym |
+| Abnormal transition from wakefulness to sleep (HP:5200297) | Abnormal falling asleep | oio:hasExactSynonym |
+| Bronchial stenosis (HP:6001383) | Bronchial narrowing | oio:hasExactSynonym |
+| Forefoot pain (HP:6001376) | Metatarsalgia | oio:hasExactSynonym |
+| Intrauterine amputation (HP:6001389) | Intra-uterine amputation | oio:hasExactSynonym |
+| Abnormal biparietal diameter (HP:6001417) | Abnormal BPD | oio:hasExactSynonym |
+| Decreased total B cell count (HP:0010976) | CD19 lymphocytes low | oio:hasNarrowSynonym |
+| Dysplastic testis (HP:0008733) | Dysgenetic testis | oio:hasRelatedSynonym |
+| Aplasia of distal finger phalanx (HP:0009881) | Absent distal finger phalanx | oio:hasExactSynonym |
+| Levotransposition of the great arteries (HP:0011540) | Congenitally corrected transposition of the great arteries | oio:hasExactSynonym |
+| Glomerular basement membrane duplication (HP:0020109) | GBM reduplication | oio:hasExactSynonym |
+| Levotransposition of the great arteries (HP:0011540) | L-TGA | oio:hasExactSynonym |
+| Amyloid deposition (HP:0011034) | Amyloid disease | oio:hasRelatedSynonym |
+| Fleck sign of elbow (HP:6001362) | Flake sign of the elbow | oio:hasExactSynonym |
+| Positive calf squeeze test (HP:6001432) | Positive Simmonds-Thompson test | oio:hasExactSynonym |
+| Reduced ability to form peer relationships (HP:0000728) | Impaired ability to form peer relationships | oio:hasExactSynonym |
+| Acquired stenosis of the external ear canal (HP:0040103) | Obliterative otitis externa | oio:hasExactSynonym |
+| Glomerular basement membrane duplication (HP:0020109) | Tram-track appearance of GBM | oio:hasExactSynonym |
+| Increased biparietal diameter (HP:0020260) | Increased BPD | oio:hasExactSynonym |
+| Acquired stenosis of the external ear canal (HP:0040103) | Medial meatal fibrosis | oio:hasExactSynonym |
+| Hallux pain (HP:6001401) | Pain in hallux | oio:hasExactSynonym |
+| Bleeding into skin lesions (HP:0020011) | Hemorrhagic nature to skin lesions | oio:hasExactSynonym |
+| Restrictive eating (HP:0020302) | Anorexia nervosa | oio:hasRelatedSynonym |
+| Direct antiglobulin test positive for IgG (HP:0020027) | IgG+ Coombs test | oio:hasExactSynonym |
+| Radial wrist pain (HP:6001404) | Radial-sided wrist pain | oio:hasExactSynonym |
+| Abnormal transition from wakefulness to sleep (HP:5200297) | Abnormal hypnagogia | oio:hasExactSynonym |
+| Disruption of carpal arcs (HP:6001394) | Disruption of Gilula carpal arcs | oio:hasExactSynonym |
+| Cutaneous necrosis (HP:0033126) | Skin necrotic patch | oio:hasExactSynonym |
+| Hallux pain (HP:6001401) | First toe pain | oio:hasExactSynonym |
+| Reduced social reciprocity (HP:5200136) | Reduced social reciprocity with peers | oio:hasExactSynonym |
+| Abnormal proximal radial epiphysis morphology (HP:0010596) | Abnormality of the proximal radial epiphysis | oio:hasExactSynonym |
+| Elevated circulating succinylacetone concentration (HP:6001410) | Succinylacetone high in blood | oio:hasExactSynonym |
+| Levotransposition of the great arteries (HP:0011540) | L-transposition of the great arteries | oio:hasExactSynonym |
+| Limited foot eversion (HP:6001429) | Foot eversion limited | oio:hasExactSynonym |
+| Abnormal transition from sleep to wakefulness (HP:5200296) | Abnormal hypnopompia | oio:hasExactSynonym |
+| Positive calf squeeze test (HP:6001432) | Positive Thompson test | oio:hasExactSynonym |
+| Fleck sign of elbow (HP:6001362) | Dunn-Kusnezov sign | oio:hasExactSynonym |
+| Cardiac transthyretin amyloid deposition (HP:0031327) | TTR cardiac amyloidosis | oio:hasBroadSynonym |
+| Cataplexy (HP:0002524) | Narcolepsy | oio:hasRelatedSynonym |
+| Spinal cord dorsal column hypomyelination (HP:0008311) | Spinal cord posterior columns myelin loss | oio:hasExactSynonym |
+| Direct antiglobulin test positive for IgM (HP:0020028) | IgM+ Coombs test | oio:hasExactSynonym |
+| Hallux pain (HP:6001401) | Big toe pain | oio:hasExactSynonym |
+| Abnormal elbow epiphysis morphology (HP:0003946) | Abnormality of the epiphyses of the elbow | oio:hasExactSynonym |
+| Proximal biceps tendon rupture (HP:6001368) | Proximal biceps tendon tear | oio:hasExactSynonym |
+| Positive Hawkins test (HP:6001372) | Positive Kennedy impingement test | oio:hasExactSynonym |
+| Abnormal CD8+ T cell subset proportion (HP:0020115) | Abnormal CD8+ T cell subsets | oio:hasExactSynonym |
+| Fragmented finger phalanx epiphysis (HP:0010232) | Fragmentation of the epiphyses of the phalanges of the hand | oio:hasExactSynonym |
+| Cardiac transthyretin amyloid deposition (HP:0031327) | Transthyretin cardiac amyloidosis | oio:hasBroadSynonym |
+| Abnormal radial epiphysis morphology (HP:0003999) | Abnormality of radial epiphyses | oio:hasExactSynonym |
+| Decreased circulating thyroxine-binding globulin concentration (HP:0034591) | Reduced thyroxin-binding globulin | oio:hasExactSynonym |
+| Medial epicondylitis of the elbow (HP:6001365) | Golfer's elbow | oio:hasExactSynonym |
+| Appendicular location (HP:0020069) | Skin lesions on limbs | oio:hasNarrowSynonym |
+| Aplasia of distal finger phalanx (HP:0009881) | Absent distal finger phalanges | oio:hasExactSynonym |
+| Acquired stenosis of the external ear canal (HP:0040103) | Acquired medial canal fibrosis | oio:hasExactSynonym |
+| Elbow fracture (HP:0041219) | Fractured elbow | oio:hasExactSynonym |
+| Dysplastic testis (HP:0008733) | Dysplastic testes | oio:hasExactSynonym |
+| Limited foot inversion (HP:6001430) | Foot inversion limited | oio:hasExactSynonym |
+| Transillumination test shows high light transmission (HP:6001424) | Bright transillumination | oio:hasExactSynonym |
+| Increased circulating globulin level (HP:0032311) | Hyperglobulinemia | oio:hasExactSynonym |
+| Abnormal spinocerebellar tract morphology (HP:0003133) | Abnormality of the spinocerebellar tracts | oio:hasExactSynonym |
+| Hyperreflective retinal dots on OCT (HP:0020032) | Hyperreflective retinal foci on OCT | oio:hasExactSynonym |
+| Abnormal spinal cord dorsal column morphology (HP:0011397) | Abnormality of the dorsal column of the spinal cord | oio:hasExactSynonym |
+| Decreased biparietal diameter (HP:0020259) | Decreased BPD | oio:hasExactSynonym |
+| Acute retinal necrosis (HP:6001370) | Acute necrosis of the retina | oio:hasExactSynonym |
+| Hyperlordotic gait (HP:6001360) | Gait with exaggerated lumbar lordosis | oio:hasExactSynonym |
+| Intrauterine amputation (HP:6001389) | Congenital amputation | oio:hasExactSynonym |
+| Posterior capsule opacification (HP:6001382) | Secondary cataract | oio:hasExactSynonym |
+| Abnormal distal humeral epiphysis morphology (HP:0010599) | Abnormality of the distal humeral epiphysis | oio:hasExactSynonym |
+| Saccadic smooth pursuit interruptions (HP:0001152) | Saccadic smooth pursuit | oio:hasExactSynonym |
+| Reduced social reciprocity (HP:5200136) | Reduced friendship reciprocity | oio:hasNarrowSynonym |
+| Acquired stenosis of the external ear canal (HP:0040103) | Cutaneous stenosis of the external auditory canal | oio:hasExactSynonym |
+| Positive Hawkins test (HP:6001372) | Positive Hawkins impingement test | oio:hasExactSynonym |
+| Hallux pain (HP:6001401) | Great toe pain | oio:hasExactSynonym |
+| Exacerbated by pulmonary vasodilator exposure (HP:6001413) | Exacerbated by pulmonary vasodilators | oio:hasExactSynonym |
+| Aplasia of distal finger phalanx (HP:0009881) | Aplasia of the distal phalanges of the hand | oio:hasExactSynonym |
+| Amyloid deposition (HP:0011034) | Amyloidosis | oio:hasBroadSynonym |
+| Glomerular basement membrane duplication (HP:0020109) | Double contour of glomerular basement membrane | oio:hasExactSynonym |
+| Distal biceps tendon ruptre (HP:6001367) | Distal biceps tendon tear | oio:hasExactSynonym |
+| Fragmented upper limb epiphysis (HP:0003841) | Fragmented epiphyses of the upper limbs | oio:hasExactSynonym |
+| Dysplastic testis (HP:0008733) | Testicular dysgenesis | oio:hasRelatedSynonym |
+| Glomerular basement membrane duplication (HP:0020109) | GBM duplication | oio:hasExactSynonym |
+| Abnormal transition from sleep to wakefulness (HP:5200296) | Abnormality waking up | oio:hasExactSynonym |
+| Coronary sinus atrial septal defect (HP:0011643) | Unroofed coronary sinus | oio:hasExactSynonym |
+| Abnormal Q wave (HP:0020232) | Pathological Q wave | oio:hasNarrowSynonym |
 
 </details>
 
 <details>
-<summary>Relationships removed: 36</summary>
+<summary>Relationships added: 225</summary>
+
+| Subject | Predicate | Object|
+----|----|----|
+| Hallux plantarflexion weakness (HP:6001375) | subClassOf (rdfs:subClassOf) |                Limb muscle weakness (HP:0003690) |
+| Pain on the medial aspect of the foot (HP:6001402) | subClassOf (rdfs:subClassOf) |                Foot pain (HP:0025238) |
+| Abnormal naive CD8+ T cell proportion (HP:0410374) | subClassOf (rdfs:subClassOf) |                Abnormal CD8+ T cell subset proportion (HP:0020115) |
+| Intrauterine limb amputation (HP:6001391) | subClassOf (rdfs:subClassOf) |                Intrauterine amputation (HP:6001389) |
+| Fleck sign of elbow (HP:6001362) | subClassOf (rdfs:subClassOf) |                Abnormal olecranon morphology (HP:0004032) |
+| Abnormal mixed venous oxygen saturation (HP:6001379) | subClassOf (rdfs:subClassOf) |                Abnormal blood oxygen level (HP:0500165) |
+| Abnormal neoplastic cell morphology (HP:0020162) | subClassOf (rdfs:subClassOf) |                Histopathological abnormality (HP:0020092) |
+| Pulmonary amyloidosis (HP:0033247) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Cubitus varus (HP:0025317) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Synovial chondromatosis of the elbow (HP:0003942) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Motor stereotypy (HP:0000733) | subClassOf (rdfs:subClassOf) |                Echophenomenon (HP:6000768) |
+| Lateral epicondylitis of the elbow (HP:6001364) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Dorsal intercalated segment instability (HP:6001393) | subClassOf (rdfs:subClassOf) |                Abnormal wrist physiology (HP:0025799) |
+| Limb joint contracture (HP:0003121) | subClassOf (rdfs:subClassOf) |                Joint contracture (HP:0034392) |
+| Abnormality of the joint spaces of the elbow (HP:0003943) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Spilled teacup sign of the wrist (HP:6001395) | subClassOf (rdfs:subClassOf) |                Abnormal lunate bone morphology (HP:0004248) |
+| Local paresthesia at bite site (HP:0020014) | subClassOf (rdfs:subClassOf) |                Paresthesia (HP:0003401) |
+| Middle age onset (HP:0003596) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Retinal drusen (HP:6001388) | subClassOf (rdfs:subClassOf) |                Abnormal retinal morphology (HP:0000479) |
+| Abnormal anteroposterior retina thickness on OCT (HP:0020040) | subClassOf (rdfs:subClassOf) |                Abnormal optical coherence tomography (HP:0030603) |
+| Pathological inclusion body by anatomical location (HP:0020067) | subClassOf (rdfs:subClassOf) |                Pathological inclusion body (HP:6001025) |
+| Abnormal lens capsule morphology (HP:6001381) | subClassOf (rdfs:subClassOf) |                Abnormal anterior eye segment morphology (HP:0004328) |
+| Elevated bursal fluid leukocyte count (HP:0020256) | subClassOf (rdfs:subClassOf) |                Abnormal bursal fluid morphology (HP:0020252) |
+| Decreased CSF 5-hydroxyindoleacetic acid concentration (HP:0020020) | subClassOf (rdfs:subClassOf) |                Abnormal CSF 5-hydroxyindoleacetic acid concentration (HP:0020019) |
+| Perianal anesthesia (HP:0034982) | subClassOf (rdfs:subClassOf) |                Hypoesthesia (HP:0033748) |
+| Large elbow (HP:0030865) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Pain exacerbated by wrist radial deviation (HP:6001420) | subClassOf (rdfs:subClassOf) |                Pain exacerbated by wrist deviation (HP:6001152) |
+| Transthyretin amyloid deposition (HP:0020017) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by type of amyloid (HP:0020016) |
+| Varus instability of the elbow (HP:6001428) | subClassOf (rdfs:subClassOf) |                Elbow instability (HP:6001426) |
+| Cholesterol gallblader polyp (HP:6001359) | subClassOf (rdfs:subClassOf) |                Gallbladder polyp (HP:6001260) |
+| Increased fetal head circumference (HP:0020307) | subClassOf (rdfs:subClassOf) |                Abnormal fetal head circumference (HP:0020305) |
+| Flexor carpi radialis tendonitis (HP:6001423) | subClassOf (rdfs:subClassOf) |                Tendonitis (HP:0025230) |
+| Disruption of carpal arcs (HP:6001394) | subClassOf (rdfs:subClassOf) |                Abnormal wrist morphology (HP:0025798) |
+| Exacerbated by pulmonary vasodilator exposure (HP:6001413) | subClassOf (rdfs:subClassOf) |                Aggravated by exposure to medication (HP:4000176) |
+| Peroneal tendon tenderness (HP:6001407) | subClassOf (rdfs:subClassOf) |                Foot pain (HP:0025238) |
+| Impaired tactile sensation (HP:0010830) | subClassOf (rdfs:subClassOf) |                Hypoesthesia (HP:0033748) |
+| Medial epicondylitis of the elbow (HP:6001365) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Ulnar positive variance (HP:6001421) | subClassOf (rdfs:subClassOf) |                Abnormal forearm morphology (HP:0002973) |
+| Hyperleukocytosis (HP:6001425) | subClassOf (rdfs:subClassOf) |                Increased total leukocyte count (HP:0001974) |
+| Elevated circulating lysosphingomyelin concentration (HP:6001380) | subClassOf (rdfs:subClassOf) |                Abnormal circulating lipid concentration (HP:0003119) |
+| Abnormal spinal cord lateral corticospinal tract morphology (HP:0020030) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord white matter morphology (HP:0020029) |
+| Cutaneous amyloidosis (HP:0012309) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Eschar (HP:6000793) | subClassOf (rdfs:subClassOf) |                Cutaneous necrosis (HP:0033126) |
+| Elbow fracture (HP:0041219) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Diminished MLH1 expression (HP:0020055) | subClassOf (rdfs:subClassOf) |                Abnormal marker expression (HP:0020053) |
+| Acute retinal necrosis (HP:6001370) | subClassOf (rdfs:subClassOf) |                Abnormal retinal morphology (HP:0000479) |
+| Abnormal biparietal diameter (HP:6001417) | subClassOf (rdfs:subClassOf) |                Fetal head anomaly (HP:0034245) |
+| Cardiac amyloidosis (HP:0030843) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Posterior fat pad sign of the elbow (HP:6001143) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Hip external rotation contracture (HP:0020021) | subClassOf (rdfs:subClassOf) |                Hip contracture (HP:0003273) |
+| Umbilical discharge (HP:6001416) | subClassOf (rdfs:subClassOf) |                Abnormal abdominal wall morphology (HP:0004298) |
+| Stippled calcification of the elbow (HP:0003941) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Positive Hawkins test (HP:6001372) | subClassOf (rdfs:subClassOf) |                Positive provocative functional shoulder test (HP:0025823) |
+| Popeye sign (HP:6001366) | subClassOf (rdfs:subClassOf) |                Abnormal joint physiology (HP:0034430) |
+| Transillumination test shows high light transmission (HP:6001424) | subClassOf (rdfs:subClassOf) |                Characteristic of mass (HP:0025758) |
+| Increased occipitofrontal diameter (HP:0020299) | subClassOf (rdfs:subClassOf) |                Abnormal occipitofrontal diameter (HP:0020297) |
+| Abnormal bursal fluid morphology (HP:0020252) | subClassOf (rdfs:subClassOf) |                Abnormal joint morphology (HP:0001367) |
+| Histopathological abnormality (HP:0020092) | subClassOf (rdfs:subClassOf) |                Biospecimen phenotypic feature (HP:0020228) |
+| Hepatic amyloidosis (HP:0012280) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Amyloidosis of peripheral nerves (HP:0100292) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Increased fetal abdominal circumference (HP:0020304) | subClassOf (rdfs:subClassOf) |                Abnormal fetal abdominal circumference (HP:0020303) |
+| Abnormal fetal abdominal circumference (HP:0020303) | subClassOf (rdfs:subClassOf) |                Abnormal fetal gastrointestinal system morphology (HP:0034207) |
+| Negative ulnar variance (HP:6001422) | subClassOf (rdfs:subClassOf) |                Abnormal forearm morphology (HP:0002973) |
+| Positive gastric CMV intranuclear inclusions (HP:6001005) | subClassOf (rdfs:subClassOf) |                Intranuclear inclusion bodies (HP:0020068) |
+| Intranuclear inclusion bodies (HP:0020068) | subClassOf (rdfs:subClassOf) |                Pathological inclusion body by subcellular location (HP:0020066) |
+| Diminished MSH6 expression (HP:0020057) | subClassOf (rdfs:subClassOf) |                Abnormal marker expression (HP:0020053) |
+| Corneal amyloidosis (HP:0034701) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Increased carrying angle (HP:0003102) | subClassOf (rdfs:subClassOf) |                Abnormal elbow physiology (HP:0020301) |
+| Intrauterine amputation (HP:6001389) | subClassOf (rdfs:subClassOf) |                Abnormal fetal skeletal morphology (HP:0025662) |
+| Coronary sinus atrial septal defect (HP:0011643) | subClassOf (rdfs:subClassOf) |                Atrial septal defect (HP:0001631) |
+| Direct antiglobulin test positive for IgM (HP:0020028) | subClassOf (rdfs:subClassOf) |                Positive Coombs test (HP:0020026) |
+| Abnormality of the humeroulnar joint (HP:0100745) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Mercury exposure (HP:6001414) | subClassOf (rdfs:subClassOf) |                Exposure history (HP:4000110) |
+| Positive bursal fluid infectious agent test (HP:6001369) | subClassOf (rdfs:subClassOf) |                Positive infectious agent test (HP:0430030) |
+| Hip abduction contracture (HP:0020022) | subClassOf (rdfs:subClassOf) |                Hip contracture (HP:0003273) |
+| Late onset (HP:0003584) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Diminished MSH2 expression (HP:0020056) | subClassOf (rdfs:subClassOf) |                Abnormal marker expression (HP:0020053) |
+| Cerebral amyloid angiopathy (HP:0011970) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Thickened Achilles tendon (HP:0004690) | subClassOf (rdfs:subClassOf) |                Tendon thickening (HP:0032523) |
+| Hip extension contracture (HP:0020024) | subClassOf (rdfs:subClassOf) |                Hip contracture (HP:0003273) |
+| Forefoot abduction (HP:6001397) | subClassOf (rdfs:subClassOf) |                Abnormal foot morphology (HP:0001760) |
+| Synostosis involving the elbow (HP:0003938) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Irregularity of the retinal pigment epithelium layer on OCT (HP:0020033) | subClassOf (rdfs:subClassOf) |                Abnormal optical coherence tomography (HP:0030603) |
+| Crusted skin lesions (HP:0020012) | subClassOf (rdfs:subClassOf) |                Cutaneous lesion morphology (HP:0020010) |
+| Hyperreflective retinal dots on OCT (HP:0020032) | subClassOf (rdfs:subClassOf) |                Abnormal retinal morphology on macular OCT (HP:0030612) |
+| Amyloid goiter (HP:6000815) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Dorsal wrist pain (HP:6001406) | subClassOf (rdfs:subClassOf) |                Wrist pain (HP:0030836) |
+| Retinal thinning on OCT (HP:0030329) | subClassOf (rdfs:subClassOf) |                Abnormal anteroposterior retina thickness on OCT (HP:0020040) |
+| Embryonal onset (HP:0011460) | RO:0002488 |                HsapDv:0000002 |
+| Increased biparietal diameter (HP:0020260) | subClassOf (rdfs:subClassOf) |                Abnormal biparietal diameter (HP:6001417) |
+| Achilles tendon tear (HP:6001433) | subClassOf (rdfs:subClassOf) |                Abnormal Achilles tendon morphology (HP:0005109) |
+| Retinal pigment epithelial loss on macular OCT (HP:0030611) | subClassOf (rdfs:subClassOf) |                Abnormal optical coherence tomography (HP:0030603) |
+| Abnormal Q wave (HP:0020232) | subClassOf (rdfs:subClassOf) |                Abnormal QRS complex (HP:0025074) |
+| Necrotizing lymph node granuloma (HP:0020052) | subClassOf (rdfs:subClassOf) |                Abnormal lymph-node biospecimen (HP:0020229) |
+| Crescent-shaped iliac bone (HP:6000653) | subClassOf (rdfs:subClassOf) |                Abnormal ilium morphology (HP:0002867) |
+| History of disease onset in winter (HP:0020008) | subClassOf (rdfs:subClassOf) |                Past medical history (HP:0032443) |
+| Diminished PMS2 expression (HP:0020065) | subClassOf (rdfs:subClassOf) |                Abnormal marker expression (HP:0020053) |
+| Distal biceps tendon ruptre (HP:6001367) | subClassOf (rdfs:subClassOf) |                Biceps tendon rupture (HP:6001262) |
+| Elbow ankylosis (HP:0003070) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Limited elbow movement (HP:0002996) | subClassOf (rdfs:subClassOf) |                Abnormal elbow physiology (HP:0020301) |
+| Neuronal intranuclear inclusion bodies (HP:6000155) | subClassOf (rdfs:subClassOf) |                Intranuclear inclusion bodies (HP:0020068) |
+| Echopraxia (HP:0020124) | subClassOf (rdfs:subClassOf) |                Echophenomenon (HP:6000768) |
+| Cutaneous lesion morphology (HP:0020010) | subClassOf (rdfs:subClassOf) |                Clinical modifier (HP:0012823) |
+| Decreased fetal abdominal circumference (HP:6000339) | subClassOf (rdfs:subClassOf) |                Abnormal fetal abdominal circumference (HP:0020303) |
+| Abnormal elbow physiology (HP:0020301) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Subcutaneous abscess (HP:0020116) | subClassOf (rdfs:subClassOf) |                Abscess (HP:0025615) |
+| Elbow dislocation (HP:0003042) | subClassOf (rdfs:subClassOf) |                Elbow instability (HP:6001426) |
+| Embryonal onset (HP:0011460) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Cerebral transthyretin amyloid deposition (HP:0020018) | subClassOf (rdfs:subClassOf) |                Transthyretin amyloid deposition (HP:0020017) |
+| Abnormal seminiferous tubule morphology (HP:0020051) | subClassOf (rdfs:subClassOf) |                Abnormal testis morphology (HP:0000035) |
+| Granulomatous conjunctivitis (HP:6001386) | subClassOf (rdfs:subClassOf) |                Conjunctivitis (HP:0000509) |
+| Peroneal tendon injury (HP:6001409) | subClassOf (rdfs:subClassOf) |                Abnormal ankle morphology (HP:0034673) |
+| Conjunctival amyloidosis (HP:0010637) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Abnormal elbow epiphysis morphology (HP:0003946) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Positive calf squeeze test (HP:6001432) | subClassOf (rdfs:subClassOf) |                Abnormal musculoskeletal physiology (HP:0011843) |
+| Muscle fiber intranuclear inclusion bodies (HP:0100304) | subClassOf (rdfs:subClassOf) |                Intranuclear inclusion bodies (HP:0020068) |
+| Resisted wrist flexion provokes pain (HP:6001363) | subClassOf (rdfs:subClassOf) |                Wrist pain (HP:0030836) |
+| Positive Finkelstein sign (HP:6001396) | subClassOf (rdfs:subClassOf) |                Abnormal wrist physiology (HP:0025799) |
+| Abnormal fetal femur length (HP:6001418) | subClassOf (rdfs:subClassOf) |                Abnormal fetal skeletal morphology (HP:0025662) |
+| Abnormal elbow metaphysis morphology (HP:0003949) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Cubitus valgus (HP:0002967) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Echophenomenon (HP:6000768) | subClassOf (rdfs:subClassOf) |                Atypical behavior (HP:0000708) |
+| Plantar pain (HP:6001399) | subClassOf (rdfs:subClassOf) |                Foot pain (HP:0025238) |
+| Elbow medial collateral ligament tear (HP:6001133) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Abnormal CSF 5-hydroxyindoleacetic acid concentration (HP:0020019) | subClassOf (rdfs:subClassOf) |                Abnormal CSF carboxylic acid concentration (HP:0500183) |
+| Abnormality of the humeroradial joint (HP:0100744) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Elbow lateral collateral ligament tear (HP:6001132) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Limited foot inversion (HP:6001430) | subClassOf (rdfs:subClassOf) |                Abnormal joint physiology (HP:0034430) |
+| Abnormal HLA DR+ CD8+ T cell proportion (HP:0025842) | subClassOf (rdfs:subClassOf) |                Abnormal CD8+ T cell subset proportion (HP:0020115) |
+| Cardiac transthyretin amyloid deposition (HP:0031327) | subClassOf (rdfs:subClassOf) |                Transthyretin amyloid deposition (HP:0020017) |
+| Young adult onset (HP:0011462) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Decreased biparietal diameter (HP:0020259) | subClassOf (rdfs:subClassOf) |                Abnormal biparietal diameter (HP:6001417) |
+| Hip adduction contracture (HP:0020023) | subClassOf (rdfs:subClassOf) |                Hip contracture (HP:0003273) |
+| Abnormal spinal cord dorsal column morphology (HP:0011397) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord white matter morphology (HP:0020029) |
+| Radioulnar interosseous membrane tear (HP:6001361) | subClassOf (rdfs:subClassOf) |                Abnormal morphology of the radius (HP:0002818) |
+| Elevated CSF 5-hydroxyindoleacetic acid concentration (HP:6000823) | subClassOf (rdfs:subClassOf) |                Abnormal CSF 5-hydroxyindoleacetic acid concentration (HP:0020019) |
+| Areas of hypopigmentation and hyperpigmentation that follow Blaschko lines (HP:6001387) | subClassOf (rdfs:subClassOf) |                Mixed hypo- and hyperpigmentation of the skin (HP:0009123) |
+| Decreased fetal head circumference (HP:0020306) | subClassOf (rdfs:subClassOf) |                Abnormal fetal head circumference (HP:0020305) |
+| Impaired lymphocyte transformation with phytohemagglutinin (HP:0003347) | subClassOf (rdfs:subClassOf) |                Abnormal lymphocyte physiology (HP:0031409) |
+| Middle age onset (HP:0003596) | RO:0002488 |                HsapDv:0000267 |
+| Cystic changes in greater tuberosity of the humerus (HP:6001371) | subClassOf (rdfs:subClassOf) |                Abnormal humerus morphology (HP:0031095) |
+| Bronchial stenosis (HP:6001383) | subClassOf (rdfs:subClassOf) |                Abnormal bronchus morphology (HP:0025426) |
+| Hip flexion contracture (HP:0020025) | subClassOf (rdfs:subClassOf) |                Hip contracture (HP:0003273) |
+| Abnormal elbow morphology (HP:0020300) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Elbow instability (HP:6001426) | subClassOf (rdfs:subClassOf) |                Abnormal elbow physiology (HP:0020301) |
+| Muscle fiber inclusion bodies (HP:0100299) | subClassOf (rdfs:subClassOf) |                Pathological inclusion body by anatomical location (HP:0020067) |
+| Bleeding into skin lesions (HP:0020011) | subClassOf (rdfs:subClassOf) |                Cutaneous lesion morphology (HP:0020010) |
+| Retinal thickening on OCT (HP:0020039) | subClassOf (rdfs:subClassOf) |                Abnormal anteroposterior retina thickness on OCT (HP:0020040) |
+| Restrictive eating (HP:0020302) | subClassOf (rdfs:subClassOf) |                Abnormal eating behavior (HP:0100738) |
+| Distal radioulnar joint translation (HP:5000049) | subClassOf (rdfs:subClassOf) |                Radioulnar dislocation (HP:0006439) |
+| Hallux pain (HP:6001401) | subClassOf (rdfs:subClassOf) |                Toe pain (HP:0030841) |
+| Amyloid deposition by anatomical site (HP:0020015) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Abnormal occipitofrontal diameter (HP:0020297) | subClassOf (rdfs:subClassOf) |                Fetal head anomaly (HP:0034245) |
+| History of disease onset in summer (HP:0020009) | subClassOf (rdfs:subClassOf) |                Past medical history (HP:0032443) |
+| Slough (HP:0020013) | subClassOf (rdfs:subClassOf) |                Cutaneous necrosis (HP:0033126) |
+| Impaired temperature sensation (HP:0010829) | subClassOf (rdfs:subClassOf) |                Hypoesthesia (HP:0033748) |
+| Appendicular location (HP:0020069) | subClassOf (rdfs:subClassOf) |                Spatial pattern (HP:0012836) |
+| Osteoarthritis of the elbow (HP:0003940) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Urinoma (HP:6001415) | subClassOf (rdfs:subClassOf) |                Retroperitoneal mass (HP:6000285) |
+| Peroneal tendon subluxation (HP:6001408) | subClassOf (rdfs:subClassOf) |                Abnormal ankle morphology (HP:0034673) |
+| Positive synovial Tropheryma whipplei bacteria microscopy (HP:6001431) | subClassOf (rdfs:subClassOf) |                Positive synonvial fluid infectious agent test (HP:6000581) |
+| Neonatal onset (HP:0003623) | RO:0002488 |                HsapDv:0000262 |
+| Spur at inferior pole of patella (HP:6001377) | subClassOf (rdfs:subClassOf) |                Abnormal patella morphology (HP:0003045) |
+| Abnormal CD8+ T cell subset proportion (HP:0020115) | subClassOf (rdfs:subClassOf) |                Abnormal T cell subset distribution (HP:0025540) |
+| Hyperlordotic gait (HP:6001360) | subClassOf (rdfs:subClassOf) |                Gait disturbance (HP:0001288) |
+| Childhood onset (HP:0011463) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Urinary ascites (HP:6001378) | subClassOf (rdfs:subClassOf) |                Ascites (HP:0001541) |
+| Elevated circulating succinylacetone concentration (HP:6001410) | subClassOf (rdfs:subClassOf) |                Abnormal circulating carboxylic acid concentration (HP:0004354) |
+| Fetal onset (HP:0011461) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Cerebellar cyst (HP:0002350) | subClassOf (rdfs:subClassOf) |                Abnormal cerebellum morphology (HP:0001317) |
+| Abnormal spinal cord white matter morphology (HP:0020029) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord morphology (HP:0002143) |
+| Abnormal memory CD8+ T cell proportion (HP:0410380) | subClassOf (rdfs:subClassOf) |                Abnormal CD8+ T cell subset proportion (HP:0020115) |
+| Episodic hypersomnia (HP:0007200) | subClassOf (rdfs:subClassOf) |                Excessive daytime somnolence (HP:0001262) |
+| Elevated circulating C-terminal telopeptide cross-link of type1 collagen concentration (HP:6001412) | subClassOf (rdfs:subClassOf) |                Abnormal circulating collagen degradation product concentration (HP:0033386) |
+| Chiari malformation (HP:0002308) | subClassOf (rdfs:subClassOf) |                Abnormal cerebellum morphology (HP:0001317) |
+| Young adult onset (HP:0011462) | RO:0002488 |                HsapDv:0000266 |
+| Amyloid deposition by type of amyloid (HP:0020016) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Valgus instability of the elbow (HP:6001427) | subClassOf (rdfs:subClassOf) |                Elbow instability (HP:6001426) |
+| Antenatal onset (HP:0030674) | RO:0002488 |                HsapDv:0000045 |
+| Spinal cord dorsal column hypomyelination (HP:0008311) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord dorsal column morphology (HP:0011397) |
+| Exposure to humid conditions (HP:0020070) | subClassOf (rdfs:subClassOf) |                Exposure history (HP:4000110) |
+| Decreased occipitofrontal diameter (HP:0020298) | subClassOf (rdfs:subClassOf) |                Abnormal occipitofrontal diameter (HP:0020297) |
+| Abnormal marker expression (HP:0020053) | subClassOf (rdfs:subClassOf) |                Biospecimen phenotypic feature (HP:0020228) |
+| Infantile onset (HP:0003593) | RO:0002488 |                HsapDv:0000261 |
+| Infantile onset (HP:0003593) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
+| Limited foot eversion (HP:6001429) | subClassOf (rdfs:subClassOf) |                Abnormal joint physiology (HP:0034430) |
+| Decreased natural killer cell perforin expression (HP:0025846) | subClassOf (rdfs:subClassOf) |                Abnormal natural killer cell physiology (HP:0012177) |
+| Follicular conjunctivitis (HP:6001385) | subClassOf (rdfs:subClassOf) |                Conjunctivitis (HP:0000509) |
+| Flat palate (HP:6001411) | subClassOf (rdfs:subClassOf) |                Abnormal palate morphology (HP:0000174) |
+| Distal radioulnar joint space widening (HP:5000040) | subClassOf (rdfs:subClassOf) |                Radioulnar dislocation (HP:0006439) |
+| Chordee (HP:0000041) | subClassOf (rdfs:subClassOf) |                Angulation of penis (HP:6000085) |
+| Volar wrist pain (HP:6001405) | subClassOf (rdfs:subClassOf) |                Wrist pain (HP:0030836) |
+| Radial wrist pain (HP:6001404) | subClassOf (rdfs:subClassOf) |                Wrist pain (HP:0030836) |
+| Posterior tibial tendon injury (HP:6001398) | subClassOf (rdfs:subClassOf) |                Abnormal foot morphology (HP:0001760) |
+| Generalized amyloid deposition (HP:0003216) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Skin tenting due to fracture (HP:6001384) | subClassOf (rdfs:subClassOf) |                Localized skin lesion (HP:0011355) |
+| Late onset (HP:0003584) | RO:0002488 |                HsapDv:0000227 |
+| Renal amyloidosis (HP:0001917) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Squamous metaplasia (HP:0020094) | subClassOf (rdfs:subClassOf) |                Histopathological abnormality (HP:0020092) |
+| Abnormal fetal head circumference (HP:0020305) | subClassOf (rdfs:subClassOf) |                Fetal head anomaly (HP:0034245) |
+| Pathological inclusion body by subcellular location (HP:0020066) | subClassOf (rdfs:subClassOf) |                Pathological inclusion body (HP:6001025) |
+| Hallux weakness (HP:6001373) | subClassOf (rdfs:subClassOf) |                Limb muscle weakness (HP:0003690) |
+| Proximal interphalangeal joint arthritis (HP:6001392) | subClassOf (rdfs:subClassOf) |                Arthritis (HP:0001369) |
+| Glomerular basement membrane duplication (HP:0020109) | subClassOf (rdfs:subClassOf) |                Abnormal glomerular basement membrane morphology (HP:0033282) |
+| Irregular articular surfaces of the elbow joints (HP:0003945) | subClassOf (rdfs:subClassOf) |                Abnormal elbow morphology (HP:0020300) |
+| Direct antiglobulin test positive for IgG (HP:0020027) | subClassOf (rdfs:subClassOf) |                Positive Coombs test (HP:0020026) |
+| Hallux dorsiflexion weakness (HP:6001374) | subClassOf (rdfs:subClassOf) |                Limb muscle weakness (HP:0003690) |
+| Forefoot pain (HP:6001376) | subClassOf (rdfs:subClassOf) |                Foot pain (HP:0025238) |
+| Positive Coombs test (HP:0020026) | subClassOf (rdfs:subClassOf) |                Autoimmune antibody positivity (HP:0030057) |
+| Pain exacerbated by wrist ulnar deviation (HP:6001419) | subClassOf (rdfs:subClassOf) |                Pain exacerbated by wrist deviation (HP:6001152) |
+| Patent foramen ovale (HP:0001655) | subClassOf (rdfs:subClassOf) |                Abnormal atrial septum morphology (HP:0011994) |
+| Sleep-related eating behavior (HP:5200288) | subClassOf (rdfs:subClassOf) |                Abnormal eating behavior (HP:0100738) |
+| Posterior capsule opacification (HP:6001382) | subClassOf (rdfs:subClassOf) |                Abnormal anterior eye segment morphology (HP:0004328) |
+| Hallux sesamoid injury (HP:6001403) | subClassOf (rdfs:subClassOf) |                Abnormal hallux morphology (HP:0001844) |
+| Childhood onset (HP:0011463) | RO:0002488 |                HsapDv:0000265 |
+| Flexor hallucis longus tendon injury (HP:6001400) | subClassOf (rdfs:subClassOf) |                Abnormal hallux morphology (HP:0001844) |
+| Tumor signet ring cell (HP:0020168) | subClassOf (rdfs:subClassOf) |                Abnormal neoplastic cell morphology (HP:0020162) |
+| Neck joint contracture (HP:0005997) | subClassOf (rdfs:subClassOf) |                Joint contracture (HP:0034392) |
+| Direct antiglobulin test positive for C3d (HP:0020031) | subClassOf (rdfs:subClassOf) |                Positive Coombs test (HP:0020026) |
+| Intrauterine digital amputation (HP:6001390) | subClassOf (rdfs:subClassOf) |                Intrauterine amputation (HP:6001389) |
+| Amyloid deposition in the vitreous humor (HP:0007841) | subClassOf (rdfs:subClassOf) |                Amyloid deposition by anatomical site (HP:0020015) |
+| Fetal onset (HP:0011461) | RO:0002488 |                HsapDv:0000037 |
+| Adult onset (HP:0003581) | RO:0002488 |                HsapDv:0000258 |
+| Proximal biceps tendon rupture (HP:6001368) | subClassOf (rdfs:subClassOf) |                Biceps tendon rupture (HP:6001262) |
+| Levotransposition of the great arteries (HP:0011540) | subClassOf (rdfs:subClassOf) |                Transposition of the great arteries (HP:0001669) |
+
+</details>
+
+<details>
+<summary>Relationships removed: 72</summary>
 
 | Subject| Predicate| Object|
 ----|----|----|
-| Sleep drunkeness (HP:6000456) | subClassOf (rdfs:subClassOf) |                Sleep disturbance (HP:0002360) |
-| Decreased CD4+ effector memory T cell proportion (HP:0025624) | subClassOf (rdfs:subClassOf) |                Decreased CD4+ T cell proportion (HP:0032218) |
-| obsolete Inappropriate elation (HP:0025768) | subClassOf (rdfs:subClassOf) |                obsolete Abnormal positive emotional state (HP:0025767) |
-| Exploding head syndrome (HP:5200290) | subClassOf (rdfs:subClassOf) |                Auditory hallucination (HP:0008765) |
-| Dysphoria (HP:0033838) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| Sleep paralysis (HP:0025233) | subClassOf (rdfs:subClassOf) |                Abnormal movement during sleep (HP:5200300) |
-| Distal upper limb muscle weakness (HP:0008959) | subClassOf (rdfs:subClassOf) |                Abnormality of the upper limb (HP:0002817) |
-| Microsleep (HP:5200289) | subClassOf (rdfs:subClassOf) |                Reduced consciousness (HP:0004372) |
-| obsolete Severe B lymphocytopenia (HP:0005365) | subClassOf (rdfs:subClassOf) |                Decreased total B cell count (HP:0010976) |
-| Increased CD4+ T cell proportion (HP:0032219) | subClassOf (rdfs:subClassOf) |                Abnormal CD4+ T cell subset proportion (HP:0031392) |
-| Increased CD4+ effector memory T cell proportion (HP:0025625) | subClassOf (rdfs:subClassOf) |                Increased CD4+ T cell proportion (HP:0032219) |
-| Elevated CSF guanidinoacetic acid concentration (HP:6000396) | subClassOf (rdfs:subClassOf) |                Abnormal CSF amino acid concentration (HP:0500184) |
-| Distal lower limb muscle weakness (HP:0009053) | subClassOf (rdfs:subClassOf) |                Abnormality of the lower limb (HP:0002814) |
-| obsolete Bruxism during sleep (HP:5200284) | subClassOf (rdfs:subClassOf) |                Abnormal movement during sleep (HP:5200300) |
-| Euphoria (HP:0031844) | subClassOf (rdfs:subClassOf) |                obsolete Abnormal positive emotional state (HP:0025767) |
-| obsolete Confusional arousal (HP:0025237) | subClassOf (rdfs:subClassOf) |                Abnormal transition from wakefulness to sleep (HP:5200297) |
-| Sleep attack (HP:0002330) | subClassOf (rdfs:subClassOf) |                Drowsiness (HP:0002329) |
-| Increased naive CD4+ T cell proportion (HP:0410375) | subClassOf (rdfs:subClassOf) |                Increased CD4+ T cell proportion (HP:0032219) |
-| Narcolepsy (HP:0030050) | subClassOf (rdfs:subClassOf) |                Hypersomnia (HP:0100786) |
-| Emotional insecurity (HP:0033625) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| obsolete Abnormal positive emotional state (HP:0025767) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| Hypnagogic hallucination (HP:0002519) | subClassOf (rdfs:subClassOf) |                Hallucinations (HP:0000738) |
-| Increased CD4+ memory T cell proportion (HP:0410391) | subClassOf (rdfs:subClassOf) |                Increased CD4+ T cell proportion (HP:0032219) |
-| obsolete Bruxism during sleep (HP:5200284) | subClassOf (rdfs:subClassOf) |                Bruxism (HP:0003763) |
-| Decreased CD4+ T cell proportion (HP:0032218) | subClassOf (rdfs:subClassOf) |                Abnormal CD4+ T cell subset proportion (HP:0031392) |
-| Emotional hypersensitivity (HP:0041092) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| Increased CD4+ memory T cell proportion (HP:0410391) | subClassOf (rdfs:subClassOf) |                Increased memory T cell proportion (HP:0032184) |
-| Exploding head syndrome (HP:5200290) | subClassOf (rdfs:subClassOf) |                Sleep-wake transition abnormality (HP:5200293) |
-| obsolete Reduced circulating ADAMTS13 activity (HP:6001288) | subClassOf (rdfs:subClassOf) |                Abnormal circulating enzyme concentration or activity (HP:0012379) |
-| Low frustration tolerance (HP:0000744) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| obsolete Intellectual disability, progressive (HP:0006887) | subClassOf (rdfs:subClassOf) |                Intellectual disability (HP:0001249) |
-| Hypnopompic hallucination (HP:0006896) | subClassOf (rdfs:subClassOf) |                Hallucinations (HP:0000738) |
-| Emotional lability (HP:0000712) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| Insistence on sameness (HP:5200130) | subClassOf (rdfs:subClassOf) |                Disinhibition (HP:0000734) |
-| Irritability (HP:0000737) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| Non-restorative sleep (HP:5200292) | subClassOf (rdfs:subClassOf) |                Insomnia (HP:0100785) |
+| Perianal anesthesia (HP:0034982) | subClassOf (rdfs:subClassOf) |                Abnormal exteroceptive sensation (HP:0033747) |
+| Cardiac amyloidosis (HP:0030843) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| obsolete Levotransposition of the great arteries (HP:0031349) | subClassOf (rdfs:subClassOf) |                Transposition of the great arteries (HP:0001669) |
+| Retinal thinning on OCT (HP:0030329) | subClassOf (rdfs:subClassOf) |                Abnormal retinal morphology (HP:0000479) |
+| Irregular articular surfaces of the elbow joints (HP:0003945) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Limb joint contracture (HP:0003121) | subClassOf (rdfs:subClassOf) |                Flexion contracture (HP:0001371) |
+| Elbow dislocation (HP:0003042) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Cholesterol gallblader polyp (HP:6001359) | subClassOf (rdfs:subClassOf) |                Inflammatory abnormality of the skin (HP:0011123) |
+| Elbow fracture (HP:0041219) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| obsolete Socially inappropriate behavior (HP:0030220) | subClassOf (rdfs:subClassOf) |                Inappropriate behavior (HP:0000719) |
+| Cubitus varus (HP:0025317) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Decreased natural killer cell perforin expression (HP:0025846) | subClassOf (rdfs:subClassOf) |                Abnormal natural killer cell morphology (HP:0012176) |
+| obsolete Hypersomnia (HP:0100786) | subClassOf (rdfs:subClassOf) |                Drowsiness (HP:0002329) |
+| Abnormality of the humeroradial joint (HP:0100744) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Elbow medial collateral ligament tear (HP:6001133) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Sleep-related eating behavior (HP:5200288) | subClassOf (rdfs:subClassOf) |                Abnormal consumption behavior (HP:0040202) |
+| Patent foramen ovale (HP:0001655) | subClassOf (rdfs:subClassOf) |                Atrial septal defect (HP:0001631) |
+| Cerebellar cyst (HP:0002350) | subClassOf (rdfs:subClassOf) |                obsolete Cerebellar malformation (HP:0002438) |
+| Abnormal spinal cord dorsal column morphology (HP:0011397) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord morphology (HP:0002143) |
+| Cutaneous amyloidosis (HP:0012309) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Synostosis involving the elbow (HP:0003938) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Renal amyloidosis (HP:0001917) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Impaired temperature sensation (HP:0010829) | subClassOf (rdfs:subClassOf) |                Abnormal exteroceptive sensation (HP:0033747) |
+| Synovial chondromatosis of the elbow (HP:0003942) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Chordee (HP:0000041) | subClassOf (rdfs:subClassOf) |                Abnormal penis morphology (HP:0000036) |
+| obsolete Hypersomnia (HP:0100786) | subClassOf (rdfs:subClassOf) |                Sleep disturbance (HP:0002360) |
+| Abnormal naive CD8+ T cell proportion (HP:0410374) | subClassOf (rdfs:subClassOf) |                Abnormal CD8+ T cell proportion (HP:0031393) |
+| obsolete Cerebellar malformation (HP:0002438) | subClassOf (rdfs:subClassOf) |                Abnormal cerebellum morphology (HP:0001317) |
+| obsolete Narcolepsy (HP:0030050) | subClassOf (rdfs:subClassOf) |                Sleep disturbance (HP:0002360) |
+| Neck joint contracture (HP:0005997) | subClassOf (rdfs:subClassOf) |                Flexion contracture (HP:0001371) |
+| Conjunctival amyloidosis (HP:0010637) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Episodic hypersomnia (HP:0007200) | subClassOf (rdfs:subClassOf) |                obsolete Hypersomnia (HP:0100786) |
+| Abnormality of the humeroulnar joint (HP:0100745) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Spinal cord dorsal column hypomyelination (HP:0008311) | subClassOf (rdfs:subClassOf) |                Abnormal spinal cord morphology (HP:0002143) |
+| Impaired lymphocyte transformation with phytohemagglutinin (HP:0003347) | subClassOf (rdfs:subClassOf) |                Abnormal lymphocyte morphology (HP:0004332) |
+| Pulmonary amyloidosis (HP:0033247) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Generalized amyloid deposition (HP:0003216) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Levotransposition of the great arteries (HP:0011540) | subClassOf (rdfs:subClassOf) |                Congenital malformation of the great arteries (HP:0011603) |
+| Osteoarthritis of the elbow (HP:0003940) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Retinal pigment epithelial loss on macular OCT (HP:0030611) | subClassOf (rdfs:subClassOf) |                Abnormal retinal morphology on macular OCT (HP:0030612) |
+| Cerebral amyloid angiopathy (HP:0011970) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Large elbow (HP:0030865) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Crescent-shaped iliac bone (HP:6000653) | subClassOf (rdfs:subClassOf) |                Abnormal rib morphology (HP:0000772) |
+| Decreased fetal abdominal circumference (HP:6000339) | subClassOf (rdfs:subClassOf) |                Abnormal fetal gastrointestinal system morphology (HP:0034207) |
+| Posterior fat pad sign of the elbow (HP:6001143) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Elbow lateral collateral ligament tear (HP:6001132) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Hepatic amyloidosis (HP:0012280) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| obsolete Coronary sinus atrial septal defect (HP:0031297) | subClassOf (rdfs:subClassOf) |                Atrial septal defect (HP:0001631) |
+| Abnormal elbow metaphysis morphology (HP:0003949) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Primum atrial septal defect (HP:0010445) | subClassOf (rdfs:subClassOf) |                Atrioventricular canal defect (HP:0006695) |
+| Abnormal memory CD8+ T cell proportion (HP:0410380) | subClassOf (rdfs:subClassOf) |                Abnormal CD8+ T cell proportion (HP:0031393) |
+| Eschar (HP:6000793) | subClassOf (rdfs:subClassOf) |                Localized skin lesion (HP:0011355) |
+| Corneal amyloidosis (HP:0034701) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| obsolete Testicular dysgenesis (HP:0008715) | subClassOf (rdfs:subClassOf) |                Abnormal testis morphology (HP:0000035) |
+| Anorexia (HP:0002039) | subClassOf (rdfs:subClassOf) |                Abnormal consumption behavior (HP:0040202) |
+| Limited elbow movement (HP:0002996) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| obsolete Reduced thyroxin-binding globulin (HP:0012509) | subClassOf (rdfs:subClassOf) |                Abnormal circulating protein concentration (HP:0010876) |
+| Elbow ankylosis (HP:0003070) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| obsolete Coronary sinus atrial septal defect (HP:0031297) | subClassOf (rdfs:subClassOf) |                Abnormal coronary sinus morphology (HP:0011642) |
+| Chiari malformation (HP:0002308) | subClassOf (rdfs:subClassOf) |                obsolete Cerebellar malformation (HP:0002438) |
+| Elevated CSF 5-hydroxyindoleacetic acid concentration (HP:6000823) | subClassOf (rdfs:subClassOf) |                Abnormal CSF carboxylic acid concentration (HP:0500183) |
+| Amyloidosis of peripheral nerves (HP:0100292) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Abnormal HLA DR+ CD8+ T cell proportion (HP:0025842) | subClassOf (rdfs:subClassOf) |                Abnormal CD8+ T cell proportion (HP:0031393) |
+| Amyloid goiter (HP:6000815) | subClassOf (rdfs:subClassOf) |                Amyloid deposition (HP:0011034) |
+| Increased carrying angle (HP:0003102) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Impaired tactile sensation (HP:0010830) | subClassOf (rdfs:subClassOf) |                Abnormal exteroceptive sensation (HP:0033747) |
+| obsolete Absent distal finger phalanx (HP:0005807) | subClassOf (rdfs:subClassOf) |                Aplasia/Hypoplasia of the distal phalanges of the hand (HP:0009835) |
+| Echophenomenon (HP:6000768) | subClassOf (rdfs:subClassOf) |                Motor stereotypy (HP:0000733) |
+| Abnormal elbow epiphysis morphology (HP:0003946) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Stippled calcification of the elbow (HP:0003941) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Cubitus valgus (HP:0002967) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+| Abnormality of the joint spaces of the elbow (HP:0003943) | subClassOf (rdfs:subClassOf) |                Abnormality of the elbow (HP:0009811) |
+
+</details>
+
+<details>
+<summary>Nodes renamed: 34</summary>
+
+| ID | Old Label | New Label |
+----|----|----|
+| HP:0004298 | Abnormality of the abdominal wall | Abnormal abdominal wall morphology |
+| HP:6000339 | Small fetal abdominal circumference | Decreased fetal abdominal circumference |
+| HP:0008715 | Testicular dysgenesis | obsolete Testicular dysgenesis |
+| HP:0030220 | Socially inappropriate behavior | obsolete Socially inappropriate behavior |
+| HP:0030329 | Retinal thinning | Retinal thinning on OCT |
+| HP:0031349 | Levotransposition of the great arteries | obsolete Levotransposition of the great arteries |
+| HP:0009189 | Fragmentation of the metacarpal epiphyses | Fragmented metacarpal epiphysis |
+| HP:5200136 | Reduced social reciprocity with peers | Reduced social reciprocity |
+| HP:6001359 | Subcutaneous abscess | Cholesterol gallblader polyp |
+| HP:0003133 | Abnormality of the spinocerebellar tracts | Abnormal spinocerebellar tract morphology |
+| HP:0005109 | Abnormality of the Achilles tendon | Abnormal Achilles tendon morphology |
+| HP:0040103 | Cutaneous stenosis of the external auditory canal | Acquired stenosis of the external ear canal |
+| HP:0030050 | Narcolepsy | obsolete Narcolepsy |
+| HP:0100786 | Hypersomnia | obsolete Hypersomnia |
+| HP:0031297 | Unroofed coronary sinus | obsolete Coronary sinus atrial septal defect |
+| HP:0003999 | Abnormality of radial epiphyses | Abnormal radial epiphysis morphology |
+| HP:0041219 | Fractured elbow | Elbow fracture |
+| HP:0000728 | Impaired ability to form peer relationships | Reduced ability to form peer relationships |
+| HP:0010596 | Abnormality of the proximal radial epiphysis | Abnormal proximal radial epiphysis morphology |
+| HP:0010599 | Abnormality of the distal humeral epiphysis | Abnormal distal humeral epiphysis morphology |
+| HP:0003946 | Abnormality of the epiphyses of the elbow | Abnormal elbow epiphysis morphology |
+| HP:0012509 | Reduced thyroxin-binding globulin | obsolete Reduced thyroxin-binding globulin |
+| HP:0009881 | Aplasia of the distal phalanges of the hand | Aplasia of distal finger phalanx |
+| HP:0031327 | Transthyretin cardiac amyloidosis | Cardiac transthyretin amyloid deposition |
+| HP:0005807 | Absent distal phalanges | obsolete Absent distal finger phalanx |
+| HP:0011540 | Congenitally corrected transposition of the great arteries | Levotransposition of the great arteries |
+| HP:0001152 | Saccadic smooth pursuit | Saccadic smooth pursuit interruptions |
+| HP:0008733 | Dysplastic testes | Dysplastic testis |
+| HP:0008311 | Spinal cord posterior columns myelin loss | Spinal cord dorsal column hypomyelination |
+| HP:0002438 | Cerebellar malformation | obsolete Cerebellar malformation |
+| HP:0003841 | Fragmented epiphyses of the upper limbs | Fragmented upper limb epiphysis |
+| HP:0011397 | Abnormality of the dorsal column of the spinal cord | Abnormal spinal cord dorsal column morphology |
+| HP:0010232 | Fragmentation of the epiphyses of the phalanges of the hand | Fragmented finger phalanx epiphysis |
+| HP:0011034 | Amyloidosis | Amyloid deposition |
+
+</details>
+
+<details>
+<summary>Synonyms removed: 14</summary>
+
+| Term | Removed Synonym |
+----|----|
+| Reduced social responsiveness (HP:0012760) | Reduced friendship reciprocity |
+| Abnormal transition from wakefulness to sleep (HP:5200297) | Abnormal hypnopompia |
+| Abnormal transition from sleep to wakefulness (HP:5200296) | Abnormal hypnagogia |
+| Amyloid deposition (HP:0011034) | Amyloid disease |
+| obsolete Levotransposition of the great arteries (HP:0031349) | L-TGA |
+| Abnormal transition from sleep to wakefulness (HP:5200296) | Abnormality falling asleep |
+| Abnormal transition from wakefulness to sleep (HP:5200297) | Abnormal waking |
+| obsolete Absent distal finger phalanx (HP:0005807) | Absent outermost digital bones |
+| obsolete Hypersomnia (HP:0100786) | Excessive sleepiness |
+| Increased circulating immunoglobulin concentration (HP:0010702) | Hyperglobulinemia |
+| Cardiac transthyretin amyloid deposition (HP:0031327) | TTR cardiac amyloidosis |
+| obsolete Socially inappropriate behavior (HP:0030220) | Socially inappropriate behavior |
+| Reduced social responsiveness (HP:0012760) | Reduced social reciprocity |
+| obsolete Socially inappropriate behavior (HP:0030220) | Socially inappropriate behaviour |
+
+</details>
+
+<details>
+<summary>Text definitions changed: 27</summary>
+
+| Term | Old Text Definition | New Text Definition |
+----|----|----|
+| Excessive daytime somnolence (HP:0001262) | A state of abnormally strong desire for sleep during the daytime. |                  A state of abnormally strong desire for sleep during the daytime. |
+| Primum atrial septal defect (HP:0010445) | An ostium primum atrial septal defect is located in the most anterior and inferior aspect of the atrial septum. The ostium primum refers to an anterior and inferior opening (ostium) within the septum primum, which divides the rudimentary atrium during fetal development. The ostium primum is normally sealed by fusion of the superior and inferior endocardial cushions around 5 weeks' gestation. Ostium primum defects result from a failure of the fusion of the embryologic endocardial cushion and septum primum. |                  An ostium primum atrial septal defect is located in the most anterior and inferior aspect of the atrial septum. The ostium primum refers to an anterior and inferior opening (ostium) within the septum primum, which divides the rudimentary atrium during fetal development. The ostium primum is normally sealed by fusion of the superior and inferior endocardial cushions around 5 weeks' gestation. Ostium primum defects result from a failure of the fusion of the embryologic endocardial cushion and septum primum. |
+| Levotransposition of the great arteries (HP:0011540) | The essence of the lesion is the combination of discordant atrioventricular and ventriculo-arterial connections. Thus, the morphologically right atrium is connected to a morphologically left ventricle across the mitral valve, with the left ventricle then connected to the pulmonary trunk. The morphologically left atrium is connected to the morphologically right ventricle across the tricuspid valve, with the morphologically right ventricle connected to the aorta. |                  Congenitally corrected transposition of the great arteries (ccTGA) is a discordance of atrioventricular (AV) and ventriculoarterial connections. The anatomy of ccTGA involves systemic venous drainage to the morphologic right atrium (mRA), which is connected via the mitral valve to the morphologic left ventricle (mLV) whose outflow is the pulmonary arterial system. The pulmonary venous drainage arrives at the morphologic left atrium (mLA), which crosses the tricuspid valve into the morphologic right ventricle (mRV) with outflow into the systemic arterial system. In isolation, ccTGA has an in-series circulation without mixing; therefore, the presence or absence of associated defects dictates the patient's clinical presentation. |
+| Abnormal CD4+ T cell subset proportion (HP:0031392) | Abnormal increase or decrease of helper CD3+CD4+ T cells, measured as percentage of total CD3+ T cells in the blood, compared to a reference range for a given sex and age-group. These are usually measured within the TCR alpha/beta positive population. |                  Abnormal increase or decrease of any CD4+ T cell subpopulation, measured as percentage of total CD4+ T cells in the blood, compared to a reference range for a given sex and age-group. |
+| Amyloid deposition (HP:0011034) | The presence of amyloid deposition in one or more tissues. Amyloidosis may be defined as the extracellular deposition of amyloid in one or more sites of the body. |                  Pathologic deposits of specific fibrillar protein aggregates with distinct microscopic properties, particularly affinity for the dye Congo red with typical birefringence. |
+| Cutaneous abscess (HP:0031292) | A circumscribed area of pus or necrotic debris in the skin. |                  A circumscribed area of pus or necrotic debris in the skin (within the epidermis or dermis). |
+| Abnormal social emotional interactions (HP:5200120) | Social emotional interactions refer to the exchange of feelings during social interactions by means of a wide range of communicative behaviors including facial expressions, body language, and verbal communication. This term refers to an atypically low production of emotion social communication by an individual. |                  An atypically low production of emotion social communications including those produced by communicative behaviors such as facial expressions, body language, and verbal communication. |
+| Abnormal interest in others (HP:5200020) | A social interest in others that is abnormal given the social context. This can include an increased interest with another person or an abnormal lack of interest in other people. |                  A deviation from typical perceived social engagement with other individuals given the social context. This may manifest as either an excessive interest (e.g., persistent preoccupation with another person, excessive attempts to engage) or an abnormal lack of interest (e.g., minimal or absent social curiosity) in others. |
+| Difficulty recognizing another's emotions (HP:5200118) | A difficulty in being able to understand the emotions of other people. This can range from recognizing emotions from facial expressions to an inability to empathize with others when they describe their feelings |                  A difficulty in recognizing or interpreting the emotional states of other individuals. |
+| Lack of interest in peers (HP:4000083) | Lack of interest in peers of comparable age and social groups is evident when an individual, such as a child, shows more interest in socializing with adults rather than children their own age. |                  Lack of interest in peers of comparable age and social groups is evident when an individual, such as a child, shows more interest in socializing with adults rather than children their own age. |
+| Increased circulating isovaleric acid concentration (HP:0033148) | Increased concentration of isovaleric acid, a C5, branched-chain saturated fatty acid, in the blood concentration. |                  Increased concentration of isovaleric acid, a C5, branched-chain saturated fatty acid, in the blood concentration. |
+| Abnormal social development (HP:0025732) | A substantial lag in the ahcievement of or divergence from typical milestones in social interaction and communication skills. Social-emotional competencies in young children include helping, sharing, comforting, and exhibiting empathy and compliance. |                  A substantial lag in the achievement of or divergence from typical milestones in social interaction and communication skills. Social-emotional competencies in young children include helping, sharing, comforting, and exhibiting empathy and compliance. |
+| Anorexia (HP:0002039) | Anorexia, or the loss of appetite for food, is a medical condition. |                  Lack of desire to eat (loss of appetite). |
+| Abnormal transition from wakefulness to sleep (HP:5200297) | Abnormal transition of consciousness from sleeping to wakefulness. |                  Abnormal transition of consciousness from wakefulness to sleep. |
+| Abnormal social behavior (HP:0012433) | An abnormality of actions or reactions of a person taking place during interactions with others. |                  An abnormality of actions or reactions of a person exhibited during social interactions with other individuals. |
+| Cutaneous necrosis (HP:0033126) | Skin and subcutaneous tissue necrosis (tissue death). Clinically, cutaneous necrosis may present as a painful and extremely tender black eschar (dead tissue found in a full-thickness wound) surrounded by dusky grey-red colored skin. |                  Skin and subcutaneous tissue necrosis (tissue death). Clinically, cutaneous necrosis may present as a painful and extremely tender black eschar (dead tissue found in a full-thickness wound) surrounded by dusky grey-red colored skin or as slough (dead tissue, usually cream or yellow in colour). |
+| Chordee (HP:0000041) | Ventral (i.e., downward), lateral, or ventrolateral curvature of the shaft and glans penis of more than 30 degrees. |                  A congenital anomaly of the penis characterized by ventral (i.e., downward), lateral, or ventrolateral curvature of the shaft and glans penis of more than 30 degrees. |
+| Decreased circulating thyroxine-binding globulin concentration (HP:0034591) | A reduction from the normal concentration of thyroxine-binding globulin (TBG) in the blood circulation. |                  The concentration of thyroxine-binding globulin (TBG) in the blood circulation is below the lower limit of normal. |
+| Cholesterol gallblader polyp (HP:6001359) | A localised collection of pus within the subcutaneous space (i.e., the deeper layer of tissue below the skin). |                  A non-neoplastic gallbladder polyp that is hyperplastic and consists of a lipid deposit. Cholesterol polyps are generally less than 10 mm. often multiple cholesterol polyps are present. They are often associated with vesicular cholesterolosis and are thought to have no malignant potential. |
+| Avoidance of emotional intimacy (HP:5200111) | An atypically high tendency to avoid interpersonal exchanges characterizing by sharing of personal feelings, expressions of understanding, affirmation, and demonstrations of caring. |                  An atypically high tendency to avoid interpersonal exchanges characterizing by sharing of personal feelings, expressions of understanding, affirmation, and demonstrations of caring. |
+| Coronary sinus atrial septal defect (HP:0011643) | An atrial septal defect characterized by a deficiency in the tissue separating the coronary sinus from the left atrium (LA). This results in partial or complete unroofing of the coronary sinus leading to a predominantly left-to-right shunt through the coronary sinus (LA to coronary sinus to right atrium [RA]). The orifice of the ostium is frequently large because of the increased flow. From the RA side, the defect is located at the level of the coronary sinus ostium and may also include some deficiency in atrial tissue around the ostium. From the LA side, the size can be variable depending on the degree of unroofing of the coronary sinus. |                  An atrial septal defect characterized by a deficiency in the tissue separating the coronary sinus from the left atrium (LA). This results in partial or complete unroofing of the coronary sinus leading to a predominantly left-to-right shunt through the coronary sinus (LA to coronary sinus to right atrium [RA]). The orifice of the ostium is frequently large because of the increased flow. From the RA side, the defect is located at the level of the coronary sinus ostium and may also include some deficiency in atrial tissue around the ostium. From the LA side, the size can be variable depending on the degree of unroofing of the coronary sinus. There is partial (either focal or fenestrated) or complete absence of the roof of the CS, which results in a communication between the CS and the LA. Unroofed CS is the rarest type of atrial septal defect. It is often associated with persistent left superior vena cava (LSVC) and other forms of complex congenital heart disease, usually heterotaxia syndromes. |
+| Abnormal transition from sleep to wakefulness (HP:5200296) | Abnormal transition of consciousness from wakefulness to sleep. |                  Abnormal transition of consciousness from sleeping to wakefulness. |
+| Delayed early-childhood social milestone development (HP:0012434) | A failure to meet one or more age-related milestones of social behavior. |                  A failure to meet one or more age-related milestones of social behavior. |
+| Reduced social reciprocity (HP:5200136) | Reduced back and forth interactions with others compared to what would be expected for the developmental level. |                  Reduced responses to other people's emotions and/or a lack of modulation of behaviour according to social context. |
+| Indifference to social norms (HP:5200124) | Failure to follow social norms (shared standards of acceptable behavior) even though one has awareness of these norms and the ability to follow them. This is characterized by an indifference to the consequences of breaking social norms. |                  Failure to follow social norms (shared standards of acceptable behavior) even though one has awareness of these norms and the ability to follow them. |
+| Infrequent social engagement with peers (HP:5200110) | Social engagement refers to the interaction of an individual with others in a contextually appropriate manner. This term refers to a lower than typical number of attempts to engage peers in conversation, play, or other interactions. |                  Lower than typical number of attempts to engage peers in conversation, play, or other interactions. |
+| Lack of expressed empathy (HP:5200037) | This term refers to the observation that an affected person tends not to provide situationally appropriate responses to other people in times when these people are in emotional need. For instance, failure to provide comfort to a person who is sad or crying. |                  The observation that an affected person tends not to provide situationally appropriate responses to other people in times when these people are in emotional need. For instance, failure to provide comfort to a person who is sad or crying. |
 
 </details>
 
@@ -126,541 +810,48 @@
 
 | Term | Removed Text Definition |
 ----|----|
-| obsolete Severe B lymphocytopenia (HP:0005365) | A severe form of B lymphocytopenia in which the count of B cells is very low or absent. |
-| obsolete Reduced circulating ADAMTS13 activity (HP:6001288) | Activity of the enzyme ADAMTS13 below the lower limit of normal. ADAMTS13 is an enzyme that acts by cleaving prothrombotic von Willebrand factor (VWF) multimers from the vasculature in a highly regulated manner. |
-| obsolete Bruxism during sleep (HP:5200284) | Bruxism is a condition in which you grind, gnash, or clench your teeth while asleep. |
-| obsolete Abnormal positive emotional state (HP:0025767) | Persistent and pathologically elevated emotional experiences, preoccupations, or internal state that may arise spontaneously or may be related to positive perceptions of self, the world, and the future. |
-| obsolete Confusional arousal (HP:0025237) | A nocturnal episode is characterized by disorientation, grogginess, and, at times, significant agitation upon awakening from slow-wave sleep or following forced awakenings. |
-| obsolete Inappropriate elation (HP:0025768) | A feeling of cheerfulness expressed in speech or actions, including facial expressions, movements, or gesticulations, that is considered beyond the norm for the context and interactions. It is a sustained elevated emotional state that is generally not responsive to contextual cues and frequently stands out for being inappropriate or out of place in a social circumstance. |
-| obsolete Intellectual disability, progressive (HP:0006887) | The term progressive intellectual disability should be used if intelligence decreases/deteriorates over time. |
+| obsolete Coronary sinus atrial septal defect (HP:0031297) | Unroofed coronary sinus (CS) is a rare congenital cardiac anomaly in which there is partial (either focal or fenestrated) or complete absence of the roof of the CS, which results in a communication between the CS and the LA. Unroofed CS is the rarest type of atrial septal defect. It is often associated with persistent left superior vena cava (LSVC) and other forms of complex congenital heart disease, usually heterotaxia syndromes. The morphological types have been classified into 4 groups: Type I, completely unroofed with persistent LSVC; type II, completely unroofed without persistent LSVC; type III, partially unroofed mid portion; and type IV, partially unroofed terminal portion. |
+| obsolete Socially inappropriate behavior (HP:0030220) | Behavior that is not in line with social norms. |
+| obsolete Reduced thyroxin-binding globulin (HP:0012509) | An abnormally decreased amount of thyroxin-binding globulin (TBG) in blood. TBG is responsible for carrying the thyroid hormones thyroxine (T4) and 3,5,3'-triiodothyronine (T3) in the bloodstream. |
+| obsolete Narcolepsy (HP:0030050) | An abnormal phenomenon characterized by a classic tetrad of excessive daytime sleepiness with irresistible sleep attacks, cataplexy (sudden bilateral loss of muscle tone), hypnagogic hallucinations, and sleep paralysis. |
+| obsolete Absent distal finger phalanx (HP:0005807) | Aplasia (absence) of the distal phalanges. |
+| obsolete Levotransposition of the great arteries (HP:0031349) | A type of transposition of the great arteries (TGA) in which aorta is in front of and primarily to the left of the pulmonary artery. |
+| obsolete Hypersomnia (HP:0100786) | Excessive sleepiness or feeling of sleepiness, or difficulty staying awake despite having had adequate sleep, which persists over several days. |
 
 </details>
 
 <details>
-<summary>Synonyms added: 240</summary>
-
-| Term | New Synonym | Predicate |
-----|----|----|
-| Increased RTE CD4+ T cell proportion (HP:0025838) | Increased proportion of RTE CD4+ T cells | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Dysphoric agitation | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Depressed mood | oio:hasRelatedSynonym |
-| Sleep drunkeness (HP:6000456) | Confusional arousal | oio:hasExactSynonym |
-| Dysphoria (HP:0033838) | Emotional discord | oio:hasBroadSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Mood dysregulation | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Elevated positive affect | oio:hasRelatedSynonym |
-| Profound intellectual disability (HP:0002187) | Intellectual disability, profound | oio:hasExactSynonym |
-| Decreased regulatory T cell proportion (HP:0020113) | Decreased proportion of regulatory T cells | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Low self attitude | oio:hasRelatedSynonym |
-| Euphoria (HP:0031844) | Pathological cheerfulness | oio:hasRelatedSynonym |
-| Hyperalbuminemia (HP:0012117) | Increased circulating abumin concentration | oio:hasExactSynonym |
-| Sleep-related eating behavior (HP:5200288) | Sleep-related eating disorder | oio:hasRelatedSynonym |
-| Emotional dearth (HP:0030213) | Lack of Emotional Reactivity | oio:hasRelatedSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Negative attitude | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Elevated frustration | oio:hasRelatedSynonym |
-| Emotional dearth (HP:0030213) | Restricted Emotional Range | oio:hasRelatedSynonym |
-| Sleep walking (HP:0025236) | Somnambulism | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Overpowering grief | oio:hasNarrowSynonym |
-| Elevated circulating C-triol concentration (HP:6001353) | Elevated circulating cholestane-3beta,5alpha,6beta-triol concentration | oio:hasExactSynonym |
-| Terminal insomnia (HP:0031356) | Premature awakening | oio:hasExactSynonym |
-| Anger (HP:0031473) | Wrath | oio:hasBroadSynonym |
-| Decreased CSF guanidinoacetic acid concentration (HP:0020005) | Low CSF guanidinoacetic acid concentration | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Maladaptive affect response | oio:hasBroadSynonym |
-| Metaphase I oocyte maturation arrest (HP:0031516) | Oocyte arrest at metaphase I | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Dysthymia | oio:hasNarrowSynonym |
-| Emotional dearth (HP:0030213) | Flat Affect | oio:hasBroadSynonym |
-| Anger (HP:0031473) | Boiling mad | oio:hasExactSynonym |
-| Fragmented sleep (HP:0025199) | Interrupted sleep | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Pathologically negative emotions | oio:hasExactSynonym |
-| Anger (HP:0031473) | Fury | oio:hasBroadSynonym |
-| Abnormal transition from wakefulness to sleep (HP:5200297) | Abnormal hypnopompia | oio:hasExactSynonym |
-| Abnormal emotional state (HP:0100851) | Mood disturbance | oio:hasBroadSynonym |
-| Abnormal CD4+ memory T cell proportion (HP:0410379) | Abnormal proportion of CD4+ memory T cells | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Overwhelming negative emotions | oio:hasExactSynonym |
-| Extended nighttime sleep (HP:0025298) | Long nighttime sleep | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Extreme positive valence | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Emotional pain | oio:hasNarrowSynonym |
-| Emotional dearth (HP:0030213) | Affective insufficiency | oio:hasBroadSynonym |
-| Guilt (HP:6000011) | Unfounded sense of culpability | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Hyperreactivity | oio:hasRelatedSynonym |
-| Decreased naive CD4+ T cell proportion (HP:0410378) | Decreased proportion of naive CD4+ T cells | oio:hasExactSynonym |
-| Abnormal naive CD4+ T cell proportion (HP:0410373) | Abnormal proportion of naive CD4+ T cells | oio:hasExactSynonym |
-| Decreased CSF guanidinoacetic acid concentration (HP:0020005) | Reduced CSF GAA concentration | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Mood volatility | oio:hasRelatedSynonym |
-| Irritability (HP:0000737) | Heightened reactivity state | oio:hasBroadSynonym |
-| Frequent napping (HP:0025299) | Frequent daytime naps | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Foul mood | oio:hasExactSynonym |
-| Anhedonia (HP:0012154) | Loss of ability to enjoy things | oio:hasExactSynonym |
-| Emotional lability (HP:0000712) | Can't control feelings | oio:hasBroadSynonym |
-| Poor sleep (HP:4000064) | Low-quality sleep | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | In a funk | oio:hasExactSynonym |
-| Guilt (HP:6000011) | Self-blame | oio:hasBroadSynonym |
-| Guilt (HP:6000011) | Remorse | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Hyperthymia | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Inappropriately happy | oio:hasRelatedSynonym |
-| Pathological sadness (HP:5200273) | Pathological dysthymia | oio:hasRelatedSynonym |
-| Euphoria (HP:0031844) | High emotions | oio:hasBroadSynonym |
-| Emotional dearth (HP:0030213) | Restricted Affect | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Abnormal positive emotional state | oio:hasBroadSynonym |
-| Anger (HP:0031473) | Unmanaged hostility | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Exasperation | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Profound sorrow | oio:hasNarrowSynonym |
-| Recurrent distressing nightmares (HP:5200287) | Nightmare disorder | oio:hasRelatedSynonym |
-| Anger (HP:0031473) | Extreme hostility | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Extreme affective distress | oio:hasBroadSynonym |
-| Positive heel squeeze test (HP:6001350) | Positive calcaneal squeeze test | oio:hasExactSynonym |
-| Abnormal emotional state (HP:0100851) | Psychological distress | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Heightened agitation state | oio:hasRelatedSynonym |
-| Pathological sadness (HP:5200273) | Down in the dumps | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Revved | oio:hasBroadSynonym |
-| Guilt (HP:6000011) | Excessive self-reproach | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Profound despair | oio:hasNarrowSynonym |
-| Anhedonia (HP:0012154) | Loss of interest in pleasurable activities | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Abnormal grief reaction | oio:hasNarrowSynonym |
-| Guilt (HP:6000011) | Unrealistic self-blame | oio:hasNarrowSynonym |
-| Decreased naive T cell proportion (HP:0031397) | Decreased proportion of naive T cells | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Overreactive emotional state | oio:hasRelatedSynonym |
-| Irritability (HP:0000737) | Increased emotional sensitivity | oio:hasBroadSynonym |
-| Sleep-wake cycle disturbance (HP:0006979) | Sleep-wake mistiming | oio:hasExactSynonym |
-| Decreased RTE CD4+ T cell proportion (HP:0025839) | Decreased proportion of RTE CD4+ T cells | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Unregulated negative emotions | oio:hasExactSynonym |
-| Acromioclavicular joint arthritis (HP:6001339) | Osteoarthritis of the acromioclavicular joint | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Extreme elation | oio:hasExactSynonym |
-| Proximal upper limb muscle weakness (HP:0008997) | Proximal muscle weakness in upper limbs | oio:hasExactSynonym |
-| Anger (HP:0031473) | Furious | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Emotional high | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Affective depression | oio:hasBroadSynonym |
-| Dysphoria (HP:0033838) | Emotional unrest | oio:hasRelatedSynonym |
-| Euphoria (HP:0031844) | Abnormally elevated mood | oio:hasRelatedSynonym |
-| Dysphoria (HP:0033838) | Emotionally unsettled | oio:hasExactSynonym |
-| Positive anterior drawer test (HP:6001342) | Anterior drawer test positive | oio:hasExactSynonym |
-| Proximal humeral epiphysiolysis (HP:6001341) | Little league shoulder | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Hyperthymic state | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Exhilaration | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Short fuse | oio:hasExactSynonym |
-| Emotional dearth (HP:0030213) | Diminished Emotional Response | oio:hasBroadSynonym |
-| Guilt (HP:6000011) | Obsessive remorse over imagined wrongs | oio:hasNarrowSynonym |
-| Sleep drunkeness (HP:6000456) | Slow speech or confused thinking upon waking | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Persistent negative affect state | oio:hasExactSynonym |
-| Guilt (HP:6000011) | Unwarranted self-blame | oio:hasExactSynonym |
-| Non-restorative sleep (HP:5200292) | Waking up tired | oio:hasExactSynonym |
-| Sleep attack (HP:0002330) | Sleep attacks | oio:hasExactSynonym |
-| Metatarsal head osteochondrosis (HP:6001347) | Freiberg infarction | oio:hasExactSynonym |
-| Anger (HP:0031473) | Explosive temper | oio:hasNarrowSynonym |
-| Emotional dearth (HP:0030213) | Emotionally barren | oio:hasExactSynonym |
-| Anhedonia (HP:0012154) | Reduced pleasure response | oio:hasBroadSynonym |
-| Anger (HP:0031473) | Prolonged resentment | oio:hasNarrowSynonym |
-| Anhedonia (HP:0012154) | Inability to experience pleasure | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Cranky | oio:hasExactSynonym |
-| Emotional lability (HP:0000712) | Mood lability | oio:hasBroadSynonym |
-| Anger (HP:0031473) | Hostile outbursts | oio:hasNarrowSynonym |
-| Decreased CD4+ T cell proportion (HP:0032218) | Decreased proportion of CD4+ T cells | oio:hasExactSynonym |
-| Moderate intellectual disability (HP:0002342) | Intellectual disability, moderate | oio:hasExactSynonym |
-| Abnormal CD4+ T cell subset proportion (HP:0031392) | Abnormal CD4+ T cell subsets | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Emotional hyperexcitability | oio:hasBroadSynonym |
-| Sleep attack (HP:0002330) | Paroxysmal drowsiness | oio:hasExactSynonym |
-| Emotional dearth (HP:0030213) | Emotional poverty | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Easily annoyed | oio:hasExactSynonym |
-| Anhedonia (HP:0012154) | Diminished capacity for joy | oio:hasBroadSynonym |
-| Sleep terror (HP:0030765) | Waking up screaming | oio:hasExactSynonym |
-| Free-running sleep pattern (HP:0025365) | Non-24 sleep pattern | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Feeling bad | oio:hasExactSynonym |
-| Non-restorative sleep (HP:5200292) | Unrefreshing sleep | oio:hasExactSynonym |
-| Increased regulatory T cell proportion (HP:0020112) | Increased proportion of regulatory T cells | oio:hasExactSynonym |
-| Muscle spasm (HP:0003394) | Nocturnal leg cramp | oio:hasNarrowSynonym |
-| Fifth metatarsal apophysitis (HP:6001344) | Iselin disease | oio:hasExactSynonym |
-| Anhedonia (HP:0012154) | Loss of enjoyment | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Affect lability | oio:hasRelatedSynonym |
-| Metaphase II oocyte maturation arrest (HP:6001355) | Oocyte arrest at metaphase II | oio:hasExactSynonym |
-| Dysphoria (HP:0033838) | Inner turmoil | oio:hasBroadSynonym |
-| Emotional dearth (HP:0030213) | Emotional Detachment | oio:hasRelatedSynonym |
-| Abnormal RTE CD4+ T cell proportion (HP:0025837) | Abnormal proportion of RTE CD4+ T cells | oio:hasExactSynonym |
-| Decreased CD4+ memory T cell proportion (HP:0410386) | Decreased proportion of CD4-positive memory T cells | oio:hasExactSynonym |
-| Dysphoria (HP:0033838) | Inner distress | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Profound unhappiness | oio:hasBroadSynonym |
-| Fragmented sleep (HP:0025199) | Restless sleep | oio:hasExactSynonym |
-| Metaphase II oocyte maturation arrest (HP:6001355) | Metaphase II oocyte meiotic arrest | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Jubilation | oio:hasBroadSynonym |
-| Arousal parasomnia (HP:0025184) | Arousal related sleep disturbance | oio:hasExactSynonym |
-| Abnormal naive CD8+ T cell proportion (HP:0410374) | Abnormal proportion of naive CD8+ T cells | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Hot-temper | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Grumpy | oio:hasExactSynonym |
-| Sleep onset insomnia (HP:0031354) | Early insomnia | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Deep emotional pain | oio:hasRelatedSynonym |
-| Pathological sadness (HP:5200273) | Sustained sadness | oio:hasBroadSynonym |
-| Abnormal posterior periventricular white matter morphology (HP:0006812) | White matter abnormalities in the posterior periventricular region | oio:hasExactSynonym |
-| Irritability (HP:0000737) | On edge | oio:hasExactSynonym |
-| Insomnia (HP:0100785) | Inability to sleep | oio:hasExactSynonym |
-| Emotional dearth (HP:0030213) | Blunted Affect | oio:hasBroadSynonym |
-| Increased naive CD8+ T cell proportion (HP:0410376) | Increased proportion of naive CD8+ T cells | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Dysregulated moods | oio:hasBroadSynonym |
-| Increased naive CD4+ T cell proportion (HP:0410375) | Increased proportion of naive CD4+ T cells | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Low self-attitude | oio:hasNarrowSynonym |
-| Abnormal emotional state (HP:0100851) | Emotional dysregulation | oio:hasBroadSynonym |
-| Dysphoria (HP:0033838) | Psychological unease | oio:hasRelatedSynonym |
-| Pathological sadness (HP:5200273) | Profound feelings of unhappiness | oio:hasRelatedSynonym |
-| Dysphoria (HP:0033838) | Emotional discomfort | oio:hasBroadSynonym |
-| Dysphoria (HP:0033838) | Emotional discontent | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Low spirits | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Enhanced pleasure response | oio:hasRelatedSynonym |
-| Guilt (HP:6000011) | Inappropriate sense of responsibility | oio:hasBroadSynonym |
-| Increased CD4+ memory T cell proportion (HP:0410391) | Increased proportion of CD4+ memory T cells | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | High mood | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Frustration intolerance | oio:hasBroadSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Negative valence dysregulation | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Pathological emotional elevation | oio:hasRelatedSynonym |
-| Anger (HP:0031473) | Resentment | oio:hasNarrowSynonym |
-| Pathological sadness (HP:5200273) | Dysregulated negative affect | oio:hasBroadSynonym |
-| Sleep drunkeness (HP:6000456) | Excessive sleep inertia | oio:hasRelatedSynonym |
-| Sleep disturbance (HP:0002360) | Sleep-wake disturbance | oio:hasExactSynonym |
-| Emotional dearth (HP:0030213) | Flattened Emotional Expression | oio:hasRelatedSynonym |
-| Emotional dearth (HP:0030213) | Restricted emotional capacity | oio:hasRelatedSynonym |
-| Pathological sadness (HP:5200273) | Dysregulated sadness | oio:hasBroadSynonym |
-| Muscle spasm (HP:0003394) | Nocturnal hand and foot cramps | oio:hasNarrowSynonym |
-| Sleep-wake transition abnormality (HP:5200293) | Disturbance during transitions between sleep and wake states | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Maladaptive emotions | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Feeling hopeless all the time | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Abnormal sadness | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Extreme hedonic state | oio:hasBroadSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Feeling out of sorts | oio:hasExactSynonym |
-| Tibial tubercle apophysitis (HP:6001345) | Osgood-Schlatter disease | oio:hasExactSynonym |
-| Emotional lability (HP:0000712) | Emotional instability | oio:hasBroadSynonym |
-| Fragmented sleep (HP:0025199) | Broken sleep | oio:hasExactSynonym |
-| Euphoria (HP:0031844) | Inappropriate elation | oio:hasExactSynonym |
-| Metatarsal head osteochondrosis (HP:6001347) | Metatarsal head osteonecrosis | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Gloomy mood | oio:hasExactSynonym |
-| Dysregulated negative emotional state (HP:0031467) | Dysregulated emotions | oio:hasBroadSynonym |
-| Sleep disturbance (HP:0002360) | Sleep abnormality | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Pathological grief | oio:hasNarrowSynonym |
-| Anhedonia (HP:0012154) | Joylessness | oio:hasBroadSynonym |
-| Extended nighttime sleep (HP:0025298) | Prolonged nocturnal sleep | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Easily bothered | oio:hasExactSynonym |
-| Hypnic jerks (HP:0025189) | Sleep starts | oio:hasExactSynonym |
-| Decreased circulating guanidinoacetic acid concentration (HP:6001352) | Reduced circulating guanidinoacetic acid concentration | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Quick-temper | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Abnormal grief response | oio:hasNarrowSynonym |
-| Anger (HP:0031473) | Rage | oio:hasBroadSynonym |
-| Guilt (HP:6000011) | Feelings of worthlessness | oio:hasRelatedSynonym |
-| Pathological sadness (HP:5200273) | Intense anguish | oio:hasRelatedSynonym |
-| Bruxism (HP:0003763) | Grinding teeth during sleep | oio:hasNarrowSynonym |
-| Irritability (HP:0000737) | Emotional overactivity | oio:hasBroadSynonym |
-| Euphoria (HP:0031844) | Excessive joyfulness | oio:hasRelatedSynonym |
-| Excessive sleep (HP:0025288) | Sleeping too much | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Oversensitivity | oio:hasRelatedSynonym |
-| Irritability (HP:0000737) | Easily upset | oio:hasExactSynonym |
-| Abnormal HLA DR+ CD4+ T cell proportion (HP:0025840) | Abnormal proportion of HLA DR+ CD4+ T cells | oio:hasExactSynonym |
-| Muscle spasm (HP:0003394) | Sleep-related dystonia | oio:hasNarrowSynonym |
-| Irritability (HP:0000737) | Short tempered | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Unrelenting despondency | oio:hasRelatedSynonym |
-| Irritability (HP:0000737) | Behavioral irritation state | oio:hasBroadSynonym |
-| Irritability (HP:0000737) | Heightened emotional reactivity | oio:hasRelatedSynonym |
-| Decreased naive CD8+ T cell proportion (HP:0410377) | Decreased proportion of naive CD8+ T cells | oio:hasExactSynonym |
-| Dysphoria (HP:0033838) | Feeling off inside | oio:hasExactSynonym |
-| Excessive sleep (HP:0025288) | Prolonged sleep duration | oio:hasExactSynonym |
-| Dysphoria (HP:0033838) | Ill at ease | oio:hasExactSynonym |
-| Hypoalbuminemia (HP:0003073) | Decreased circulating abumin concentration | oio:hasExactSynonym |
-| Poor sleep (HP:4000064) | Sleeping badly | oio:hasExactSynonym |
-| Metatarsal head osteochondrosis (HP:6001347) | Freiberg disease | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Has the blues | oio:hasExactSynonym |
-| Emotional dearth (HP:0030213) | Unable to feel emotion | oio:hasBroadSynonym |
-| Increased naive T cell proportion (HP:0031398) | Increased proportion of naive T cells | oio:hasExactSynonym |
-| Anger (HP:0031473) | Pissed off | oio:hasExactSynonym |
-| Irritability (HP:0000737) | Increased emotional instability | oio:hasBroadSynonym |
-| Emotional dearth (HP:0030213) | Emotional Numbness | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Morbid sadness | oio:hasExactSynonym |
-| Maintenance insomnia (HP:0031355) | Difficulty staying asleep | oio:hasExactSynonym |
-| Poor sleep (HP:4000064) | Poor sleep quality | oio:hasExactSynonym |
-| Abnormal transition from sleep to wakefulness (HP:5200296) | Abnormal hypnagogia | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Persistent despair | oio:hasRelatedSynonym |
-| Anhedonia (HP:0012154) | Diminished pleasure response | oio:hasExactSynonym |
-| Abnormal regulatory T cell proportion (HP:0020111) | Abnormal proportion of regulatory T cells | oio:hasExactSynonym |
-| Positive shoulder cross-body adduction test (HP:6001340) | Positive scarf test | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Melancholy | oio:hasNarrowSynonym |
-| Proximal lower limb muscle weakness (HP:0008994) | Proximal muscle weakness in lower limbs | oio:hasExactSynonym |
-| Pathological sadness (HP:5200273) | Severe unhappiness | oio:hasBroadSynonym |
-| Fragmented sleep (HP:0025199) | Fitful sleep | oio:hasExactSynonym |
-| Anhedonia (HP:0012154) | Lack of joy or delight | oio:hasBroadSynonym |
-| Pathological sadness (HP:5200273) | Abnormal sorrow | oio:hasBroadSynonym |
-| Decreased circulating guanidinoacetic acid concentration (HP:6001352) | Low serum GAA concentration | oio:hasExactSynonym |
-
-</details>
-
-<details>
-<summary>Classes added: 37</summary>
-
-| Term |
-----|
-| Extended nighttime sleep (HP:0025298) |
-| Fifth metatarsal apophysitis (HP:6001344) |
-| Positive heel squeeze test (HP:6001350) |
-| Volar forearm pain (HP:6001358) |
-| Embryo developmental arrest (HP:0020003) |
-| Enteric anendocrinosis (HP:6001346) |
-| Peroneal tendon tear (HP:6001343) |
-| Metatarsal head osteochondrosis (HP:6001347) |
-| Subcutaneous abscess (HP:6001359) |
-| Proximal humeral epiphysiolysis (HP:6001341) |
-| Dorsal forearm pain (HP:6001357) |
-| Hypnic jerks (HP:0025189) |
-| Metaphase II oocyte maturation arrest (HP:6001355) |
-| Positive anterior drawer test (HP:6001342) |
-| Elevated circulating C-triol concentration (HP:6001353) |
-| Abnormal CD4+ T cell proportion (HP:0025183) |
-| Frequent napping (HP:0025299) |
-| Sleep talking (HP:0025187) |
-| Free-running sleep pattern (HP:0025365) |
-| Acromioclavicular joint separation (HP:6001338) |
-| Hallux sesamoiditis (HP:6001348) |
-| Abnormal CSF guanidinoacetic acid concentration (HP:0020004) |
-| Decreased CSF guanidinoacetic acid concentration (HP:0020005) |
-| Calcaneal apophysitis (HP:6001351) |
-| Os trigonum (HP:6001349) |
-| Abnormal affect regulation (HP:0020007) |
-| Mixed oocyte maturation arrest (HP:6001356) |
-| Tibial tubercle apophysitis (HP:6001345) |
-| Fragmented sleep (HP:0025199) |
-| Positive shoulder cross-body adduction test (HP:6001340) |
-| Poor sleep (HP:4000064) |
-| Arousal parasomnia (HP:0025184) |
-| Germinal vesicle oocyte maturation arrest (HP:6001354) |
-| Sleep related hallucination (HP:4000063) |
-| Acromioclavicular joint arthritis (HP:6001339) |
-| Decreased circulating guanidinoacetic acid concentration (HP:6001352) |
-| Excessive sleep (HP:0025288) |
-
-</details>
-
-<details>
-<summary>Relationships added: 81</summary>
-
-| Subject | Predicate | Object|
-----|----|----|
-| Recurrent distressing nightmares (HP:5200287) | subClassOf (rdfs:subClassOf) |                Arousal parasomnia (HP:0025184) |
-| Adult onset (HP:0003581) | RO:0002488 |                HsapDv:0000258 |
-| Mixed oocyte maturation arrest (HP:6001356) | subClassOf (rdfs:subClassOf) |                Oocyte maturation arrest (HP:0034914) |
-| Embryonal onset (HP:0011460) | RO:0002488 |                HsapDv:0000002 |
-| Low frustration tolerance (HP:0000744) | subClassOf (rdfs:subClassOf) |                Abnormal affect regulation (HP:0020007) |
-| Insistence on sameness (HP:5200130) | subClassOf (rdfs:subClassOf) |                Recurrent maladaptive behavior (HP:5200241) |
-| Exploding head syndrome (HP:5200290) | subClassOf (rdfs:subClassOf) |                Sleep related hallucination (HP:4000063) |
-| Increased CD4+ T cell proportion (HP:0032219) | subClassOf (rdfs:subClassOf) |                Abnormal CD4+ T cell proportion (HP:0025183) |
-| Sleep drunkeness (HP:6000456) | subClassOf (rdfs:subClassOf) |                Arousal parasomnia (HP:0025184) |
-| Emotional insecurity (HP:0033625) | subClassOf (rdfs:subClassOf) |                Abnormal affect regulation (HP:0020007) |
-| Sleep attack (HP:0002330) | subClassOf (rdfs:subClassOf) |                Excessive sleep (HP:0025288) |
-| Abnormal CD4+ T cell proportion (HP:0025183) | subClassOf (rdfs:subClassOf) |                Abnormal T cell subset distribution (HP:0025540) |
-| Middle age onset (HP:0003596) | RO:0002488 |                HsapDv:0000267 |
-| Sleep terror (HP:0030765) | subClassOf (rdfs:subClassOf) |                Arousal parasomnia (HP:0025184) |
-| Late onset (HP:0003584) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Positive heel squeeze test (HP:6001350) | subClassOf (rdfs:subClassOf) |                Abnormal ankle physiology (HP:0034674) |
-| Sleep related hallucination (HP:4000063) | subClassOf (rdfs:subClassOf) |                Sleep-wake transition abnormality (HP:5200293) |
-| Young adult onset (HP:0011462) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Dysphoria (HP:0033838) | subClassOf (rdfs:subClassOf) |                Dysregulated negative emotional state (HP:0031467) |
-| Sleep related hallucination (HP:4000063) | subClassOf (rdfs:subClassOf) |                Hallucinations (HP:0000738) |
-| Dorsal forearm pain (HP:6001357) | subClassOf (rdfs:subClassOf) |                Forearm pain (HP:6000299) |
-| Decreased CD4+ effector memory T cell proportion (HP:0025624) | subClassOf (rdfs:subClassOf) |                Increased CD4+ memory T cell proportion (HP:0410391) |
-| Elevated CSF guanidinoacetic acid concentration (HP:6000396) | subClassOf (rdfs:subClassOf) |                Abnormal CSF guanidinoacetic acid concentration (HP:0020004) |
-| Fragmented sleep (HP:0025199) | subClassOf (rdfs:subClassOf) |                Poor sleep (HP:4000064) |
-| Increased CD4+ effector memory T cell proportion (HP:0025625) | subClassOf (rdfs:subClassOf) |                Increased CD4+ memory T cell proportion (HP:0410391) |
-| Bruxism (HP:0003763) | subClassOf (rdfs:subClassOf) |                Abnormal movement during sleep (HP:5200300) |
-| Excessive sleep (HP:0025288) | subClassOf (rdfs:subClassOf) |                Sleep disturbance (HP:0002360) |
-| Free-running sleep pattern (HP:0025365) | subClassOf (rdfs:subClassOf) |                Sleep-wake cycle disturbance (HP:0006979) |
-| Abnormal CSF guanidinoacetic acid concentration (HP:0020004) | subClassOf (rdfs:subClassOf) |                Abnormal CSF amino acid concentration (HP:0500184) |
-| Young adult onset (HP:0011462) | RO:0002488 |                HsapDv:0000266 |
-| Decreased CSF guanidinoacetic acid concentration (HP:0020005) | subClassOf (rdfs:subClassOf) |                Abnormal CSF guanidinoacetic acid concentration (HP:0020004) |
-| Fifth metatarsal apophysitis (HP:6001344) | subClassOf (rdfs:subClassOf) |                Abnormality of the fifth metatarsal bone (HP:0008089) |
-| Arousal parasomnia (HP:0025184) | subClassOf (rdfs:subClassOf) |                Parasomnia (HP:0025234) |
-| Tibial tubercle apophysitis (HP:6001345) | subClassOf (rdfs:subClassOf) |                Abnormal tibia morphology (HP:0002992) |
-| Acromioclavicular joint separation (HP:6001338) | subClassOf (rdfs:subClassOf) |                Abnormal clavicle morphology (HP:0000889) |
-| Embryonal onset (HP:0011460) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Calcaneal apophysitis (HP:6001351) | subClassOf (rdfs:subClassOf) |                Abnormality of the calcaneus (HP:0008364) |
-| Positive anterior drawer test (HP:6001342) | subClassOf (rdfs:subClassOf) |                Abnormal ankle physiology (HP:0034674) |
-| Childhood onset (HP:0011463) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Microsleep (HP:5200289) | subClassOf (rdfs:subClassOf) |                Excessive sleep (HP:0025288) |
-| Extended nighttime sleep (HP:0025298) | subClassOf (rdfs:subClassOf) |                Excessive sleep (HP:0025288) |
-| Childhood onset (HP:0011463) | RO:0002488 |                HsapDv:0000265 |
-| Elevated circulating C-triol concentration (HP:6001353) | subClassOf (rdfs:subClassOf) |                Abnormal circulating lipid concentration (HP:0003119) |
-| Emotional hypersensitivity (HP:0041092) | subClassOf (rdfs:subClassOf) |                Abnormal affect regulation (HP:0020007) |
-| Frequent napping (HP:0025299) | subClassOf (rdfs:subClassOf) |                Excessive sleep (HP:0025288) |
-| Euphoria (HP:0031844) | subClassOf (rdfs:subClassOf) |                Abnormal emotional state (HP:0100851) |
-| Hypnic jerks (HP:0025189) | subClassOf (rdfs:subClassOf) |                Abnormal movement during sleep (HP:5200300) |
-| Fetal onset (HP:0011461) | RO:0002488 |                HsapDv:0000037 |
-| Subcutaneous abscess (HP:6001359) | subClassOf (rdfs:subClassOf) |                Inflammatory abnormality of the skin (HP:0011123) |
-| Fetal onset (HP:0011461) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Infantile onset (HP:0003593) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Neonatal onset (HP:0003623) | RO:0002488 |                HsapDv:0000262 |
-| Decreased circulating guanidinoacetic acid concentration (HP:6001352) | subClassOf (rdfs:subClassOf) |                Abnormal circulating proteinogenic amino acid derivative concentration (HP:0033108) |
-| Hallux sesamoiditis (HP:6001348) | subClassOf (rdfs:subClassOf) |                Abnormal hallux morphology (HP:0001844) |
-| Positive shoulder cross-body adduction test (HP:6001340) | subClassOf (rdfs:subClassOf) |                Abnormal shoulder physiology (HP:0033129) |
-| Metatarsal head osteochondrosis (HP:6001347) | subClassOf (rdfs:subClassOf) |                Abnormal metatarsal morphology (HP:0001832) |
-| Infantile onset (HP:0003593) | RO:0002488 |                HsapDv:0000261 |
-| Non-restorative sleep (HP:5200292) | subClassOf (rdfs:subClassOf) |                Poor sleep (HP:4000064) |
-| Emotional lability (HP:0000712) | subClassOf (rdfs:subClassOf) |                Abnormal affect regulation (HP:0020007) |
-| Irritability (HP:0000737) | subClassOf (rdfs:subClassOf) |                Dysregulated negative emotional state (HP:0031467) |
-| Decreased CD4+ T cell proportion (HP:0032218) | subClassOf (rdfs:subClassOf) |                Abnormal CD4+ T cell proportion (HP:0025183) |
-| Middle age onset (HP:0003596) | subClassOf (rdfs:subClassOf) |                Onset (HP:0003674) |
-| Antenatal onset (HP:0030674) | RO:0002488 |                HsapDv:0000045 |
-| Narcolepsy (HP:0030050) | subClassOf (rdfs:subClassOf) |                Sleep disturbance (HP:0002360) |
-| Peroneal tendon tear (HP:6001343) | subClassOf (rdfs:subClassOf) |                Abnormal ankle morphology (HP:0034673) |
-| Metaphase II oocyte maturation arrest (HP:6001355) | subClassOf (rdfs:subClassOf) |                Oocyte maturation arrest (HP:0034914) |
-| Abnormal affect regulation (HP:0020007) | subClassOf (rdfs:subClassOf) |                Abnormal affect (HP:0025766) |
-| Enteric anendocrinosis (HP:6001346) | subClassOf (rdfs:subClassOf) |                Abnormal intestine morphology (HP:0002242) |
-| Acromioclavicular joint arthritis (HP:6001339) | subClassOf (rdfs:subClassOf) |                Abnormal clavicle morphology (HP:0000889) |
-| Proximal humeral epiphysiolysis (HP:6001341) | subClassOf (rdfs:subClassOf) |                Abnormality of the proximal humeral epiphysis (HP:0010598) |
-| Os trigonum (HP:6001349) | subClassOf (rdfs:subClassOf) |                Abnormal talus morphology (HP:0008365) |
-| Sleep-related eating behavior (HP:5200288) | subClassOf (rdfs:subClassOf) |                Arousal parasomnia (HP:0025184) |
-| Sleep talking (HP:0025187) | subClassOf (rdfs:subClassOf) |                Abnormal movement during sleep (HP:5200300) |
-| Late onset (HP:0003584) | RO:0002488 |                HsapDv:0000227 |
-| Embryo developmental arrest (HP:0020003) | subClassOf (rdfs:subClassOf) |                Abnormal preimplantation embryonic development (HP:0033335) |
-| Hypnopompic hallucination (HP:0006896) | subClassOf (rdfs:subClassOf) |                Sleep related hallucination (HP:4000063) |
-| Hypnagogic hallucination (HP:0002519) | subClassOf (rdfs:subClassOf) |                Sleep related hallucination (HP:4000063) |
-| Germinal vesicle oocyte maturation arrest (HP:6001354) | subClassOf (rdfs:subClassOf) |                Oocyte maturation arrest (HP:0034914) |
-| Volar forearm pain (HP:6001358) | subClassOf (rdfs:subClassOf) |                Forearm pain (HP:6000299) |
-| Distal upper limb muscle weakness (HP:0008959) | subClassOf (rdfs:subClassOf) |                Upper limb muscle weakness (HP:0003484) |
-| Poor sleep (HP:4000064) | subClassOf (rdfs:subClassOf) |                Sleep disturbance (HP:0002360) |
-
-</details>
-
-<details>
-<summary>Text definitions added: 37</summary>
-
-| Term | New Text Definition |
-----|----|
-| Fragmented sleep (HP:0025199) | Sleep characterized by frequent interruptions, stopping and starting, which disrupt the normal progression of sleep stages. |
-| Mixed oocyte maturation arrest (HP:6001356) | A type of oocyte maturation failure whereby oocytes arrest at more than one stage of meiosis. |
-| Germinal vesicle oocyte maturation arrest (HP:6001354) | A type of oocyte maturation arrest that occurs prior to the breakdown of the germinal vesicle (which is a hallmark of reinitiation of meiosis I and entry into M phase). |
-| Sleep talking (HP:0025187) | Vocalization (production of recognizable words or other sounds) during sleep with lack of awareness. |
-| Decreased CSF guanidinoacetic acid concentration (HP:0020005) | The concentration of guanidinoacetic acid in the cerebrospinal fluid (CSF) is below the lower limit of normal. |
-| Calcaneal apophysitis (HP:6001351) | Inflammation of the calcaneal apophysis (bony projection where the Achilles tendon attaches to the heel). Lateral foot x-ray shows increased density in the calcaneal apophysis or fragmentation of the apophysis. |
-| Positive heel squeeze test (HP:6001350) | The squeeze test is the most common examination for diagnosing calcaneal apophysitis (Sever disease) and is conducted by compressing the medial and lateral aspects of the calcaneus. The test is considered positive (abnormal) if squeezing elicits pain. |
-| Free-running sleep pattern (HP:0025365) | A condition in which the intrinsic circadian rhythm is no longer entrained to the 24-h schedule. Normal individuals who are exposed to an environment devoid of zeitgebers develop free-running rhythms with a period longer than 24 h. |
-| Hypnic jerks (HP:0025189) | Hypnic jerks are characterized by sudden and brief (less than 1 second), non-periodic simultaneous contractions of the whole body or one or more extremities at the onset of sleep. |
-| Arousal parasomnia (HP:0025184) | An altered state of arousal during sleep that may be reported by the individual or an observation of others. |
-| Frequent napping (HP:0025299) | Regular episodes of sleep that occur during the day outside of the main sleep period. |
-| Enteric anendocrinosis (HP:6001346) | Near absence of small intestinal and colonic endocrine cells. This feature can be ascertained histopathologically and may also be manifested as a lack of staining for enteroendocrive markers such as synaptophysin. |
-| Volar forearm pain (HP:6001358) | Pain on the volar (palmar) aspect of the forearm. |
-| Poor sleep (HP:4000064) | Subjectively or observationally reported sleep that is insufficiently restorative, disrupted, or of inadequate quality, regardless of duration. Poor sleep may involve difficulty maintaining sleep continuity, frequent awakenings, a sense of light or shallow sleep, or waking up feeling unrefreshed. It is typically identified through self-report or clinical interview and not by objective measurements. |
-| Abnormal posterior periventricular white matter morphology (HP:0006812) | An anomaly of the white matter of the brain localized in the region posterior to the cerebral ventricles. |
-| Peroneal tendon tear (HP:6001343) | Injury to a peroneal tendon, as can be ascertained by an MRI study of the ankle showing partial or complete tear of one or both of the peroneal tendons. |
-| Acromioclavicular joint arthritis (HP:6001339) | Degenerative disease of the acromioclavicular (AC) joint that manifests radiographically as Zanca view X-ray of the AC joint showing radiographic evidence of osteoarthritis such as joint space narrowing, subchondral sclerosis, subchondral cysts, and/or osteophyte formation in the AC joint. |
-| Excessive sleep (HP:0025288) | A clinical phenomenon characterized by sleeping longer than what is typical or necessary for a person's age and context, or by recurrent episodes of sleep that intrude upon the waking hours. Excessive sleep is identified through self-reports or observations and may involve prolonged nighttime sleep, frequent daytime naps, or episodes of unintentional sleep. |
-| Metatarsal head osteochondrosis (HP:6001347) | Avascular necrosis of a metatarsal head, most commonly involving the second, but also the third or fourth, metatarsal.\nComment: Affected individuals may present with foot pain on weight-bearing, swelling, and tenderness. Radiological features include widening of the metatarsophalangeal joint space and flattening of the affected metatarsal head, at later stages metatarsal head sclerosis, cortical thickening, and intra-articular loose bodies. Osteochondrosis is a condition resulting from an epiphysis injury that alters enchondral ossification and produces irregularity at the joint surface. Freiberg disease is characterized as osteochondrosis of the metatarsal heads (primarily the second). |
-| Hallux sesamoiditis (HP:6001348) | Inflammation of the sesamoid bones of the hallux ( two ovoid-shaped ossicles embedded within the tendons under the big toe). This feature can be ascertained by MRI of the foot, revealing edema within one or both of the hallux sesamoids. |
-| Acromioclavicular joint separation (HP:6001338) | An acromioclavicular (AC) joint joint separation, often called a shoulder separation, is a dislocation of the clavicle from the acromion. This feature is ascertainable radiographically by AC joint x-ray views including bilateral anteroposterior (AP) view, axillary lateral view, and/or Zanca view showing either superior, posterior, or inferior displacement of the distal clavicle in relation to the acromion at the AC joint. |
-| Proximal humeral epiphysiolysis (HP:6001341) | Proximal humeral epiphysiolysis (Little League shoulder) is a shear or stress injury of the epiphyseal cartilage of the proximal humerus. Anteroposterior (AP) view of the shoulder in external rotation showing widening of the proximal humerus physis in comparison to contralateral shoulder with possible metaphyseal bony irregularity. |
-| Tibial tubercle apophysitis (HP:6001345) | Lateral knee radiograph showing tibial tuberosity apophysis irregularity and fragmentation; tibial tubercle osteochondrosis; traction apophysitis of the tibial tubercle. |
-| Sleep related hallucination (HP:4000063) | Hallucination during onset/falling asleep in any sensory modality, usually auditory, visual, or tactile. |
-| Subcutaneous abscess (HP:6001359) | A localised collection of pus within the subcutaneous space (i.e., the deeper layer of tissue below the skin). |
-| Abnormal CSF guanidinoacetic acid concentration (HP:0020004) | The concentration of guanidinoacetic acid in the cerebrospinal fluid (CSF) is outside the limits of normal. |
-| Embryo developmental arrest (HP:0020003) | A failure of an embryo to progress through the early stages of preimplantation development (typically from fertilization, i.e., 1-cell zygote, to blastocyst on day 5-6), and is used clinically when embryos fail to reach transferable stages in assisted reproductive technologies (ARTs) such in vitro fertilization (IVF). Arrested embryo development is characterized by downregulation of metabolic activity and cessation of cell division. In order for an embryo to be characterized as non-viable, i.e., arrested, it should present with a lack of cleaving activity and fail to show a sign of mitotic cellular division for at least 24 hours. One can observe failure of a zygote to cleave, cleavage stage arrest either on day 2 or day 3 when the embryo is expected to be between the 2 and 8-cell stage, failure to compact to morula, or failure to form a blastocyst. |
-| Abnormal affect regulation (HP:0020007) | A disturbance in the processes by which emotional responses are initiated, modulated, sustained, or terminated in a contextually appropriate manner. Abnormal affect regulation involves maladaptive patterns in the generation, intensity, or control of affective experience and expression, leading to inconsistent, excessive, or insufficient modulation of emotion relative to situational demands. |
-| Metaphase II oocyte maturation arrest (HP:6001355) | The morphologic classification of MII generally denotes an oocyte that is mature, having arrested in metaphase II and is presumed to be capable of fertilization. However, there are subsets of women who produce oocytes with MII morphology that are not capable of embryo formation even with fertilization. This incongruence between morphologic maturity and capacity could be attributed to either the inclusion within the morphologic classification immature oocytes arrested at any stage between PBI formation and metaphase II, which are not capable of fertilization, or oocytes arrested normally at metaphase II that do not possess the ability to complete meiosis. |
-| Dorsal forearm pain (HP:6001357) | Pain localized to dorsal (non-palmar) aspect of the forearm. |
-| Fifth metatarsal apophysitis (HP:6001344) | Iselin's disease is a traction apophysitis of base of fifth metatarsal. The apophysis is within the peroneus brevis tendon insertion site and appears radiographically at about age 10 in female and age 12 in male and usually fuses by age 11 in female and by age 14 in male. Repetitive microtrauma from the peroneus brevis tendon, as occurs in sports activities is the cause of traction apophysitis. It can be ascertained by oblique foot radiographs showing apophyseal irregularity (enlarged apophysis, disordered ossification, widened chondro-osseous junction) at the base of the fifth metatarsal. |
-| Positive anterior drawer test (HP:6001342) | A test for ankle instability in which an anterior pull on the calcaneus with is applied with one hand while stabilizing the end of the tibia/fibula with the other hand. The test is considered positive (abnormal) if it results in more than one cm of anterior translation of the foot compared to the healthy, contralateral ankle. |
-| Extended nighttime sleep (HP:0025298) | Sleeping for a longer duration than usual during the night. |
-| Elevated circulating C-triol concentration (HP:6001353) | The concentration of cholestane-3beta, 5alpha, 6beta-triol (C-triol) in the blood circulation is above the upper limit of normal. C-triol is a diagnostic biomarker for Niemann-Pick disease type C. |
-| Positive shoulder cross-body adduction test (HP:6001340) | A test used with suspected chronic acromioclavicular joint lesions (which are a common source of pain and disability in the shoulder). The test is considered positive with pain in the ipsilateral acromioclavicular joint when patient straightens the affected arm forward and reaches for the contralateral shoulder with extra manual cross body (adduction) pressure on the arm from the examiner. |
-| Os trigonum (HP:6001349) | Os trigonum (OT) is one of the most common accessory ossicles in the foot and ankle region. In clinical practice, OT is a considerable factor that may predispose patients to posterior ankle impingement syndrome (PAIS). Lateral ankle x-ray with foot in plantarflexion reveals an accessory ossicle at the posterior aspect of the talus, between the posterior distal tibia and calcaneal tuberosity. |
-| Decreased circulating guanidinoacetic acid concentration (HP:6001352) | The concentration of guanidinoacetic acid in the blood circulation is below the lower limit of normal. |
-
-</details>
-
-<details>
-<summary>Text definitions changed: 43</summary>
-
-| Term | Old Text Definition | New Text Definition |
-----|----|----|
-| Non-restorative sleep (HP:5200292) | Perception of feeling unrefreshed after sleep. |                  Sleep that is subjectively reported as unrefreshing even though the duration is adequate. |
-| Hypoalbuminemia (HP:0003073) | Reduction in the concentration of albumin in the blood. |                  Concentration of albumin in the blood circulation below the lower limit of normal. |
-| Anhedonia (HP:0012154) | Decreased ability to experience or feel joy or pleasure from any experience that is usually found to be pleasurable by the individual. This applies to any of the senses, e.g., taste, smell, and sound. Food may no longer be tasty, or a musical experience may no longer be enjoyable. Anhedonia also refers to an inability to feel pleasure related to activities that an affected individual previously derived pleasure from. |                  Decreased ability or inability to experience, feel, or anticipate pleasure from activities, experiences, or stimuli that are typically found pleasurable by the individual. This may involve diminished enjoyment of previously rewarding experiences (e.g., hobbies, social interactions, or sexual activity) or reduced pleasure in response to stimuli processed through the senses (e.g., music, food, or tactile contact). Anhedonia is a disruption in the capacity to derive emotional reward and is not due to primary sensory deficits or medical conditions (e.g., anosmia from viral illness). The phenomenon involves altered affective processing rather than impaired sensory perception. |
-| Intellectual disability (HP:0001249) | Intellectual disability, previously referred to as mental retardation, is characterized by subnormal intellectual functioning that occurs during the developmental period. It is defined by an IQ score below 70. |                  The term intellectual disability or intellectual developmental disorder is used to describe significantly sub-average intellectual and adaptive functioning based on clinical assessment and as measured by individually administered, appropriately normed, standardized and validated tests of intellectual functioning and adaptive behavior, with onset during the developmental period from infancy through adolescence. |
-| Emotional dearth (HP:0030213) | The inability to feel or express emotions. It is generally recognized by the person who often complains that they are unable to feel anything; sadness, joy, or contentment are not experienced, rather a sense of nothingness prevails. This may be dimensional, ranging from limited ability to experience emotions to the perceived complete inability to feel emotions. |                  A diminished ability to experience, express, or connect with emotions whether positive or negative. This state is often characterized by a pervasive sense of emotional disconnection or detachment, where the individual may report feeling \"numb\" or lacking emotional responses that were previously present. The reduction in emotional response can range from mild dampening of emotional responses to a near-total absence of emotional engagement. It is essential to consider the individual's baseline emotional capacity, as changes may be more significant in those who previously had a wide emotional range. |
-| Episodic hypersomnia (HP:0007200) | Recurrent episodes of severe hypersomnia are accompanied by cognitive and behavioral disturbances, including confusion, derealization, apathy, compulsive eating, and hypersexuality. |                  Recurrent episodes of hypersomnia (sleeping 16 or more hours a day) over a period of days or weeks. |
-| Severe intellectual disability (HP:0010864) | Severe mental retardation is defined as an intelligence quotient (IQ) in the range of 20-34. |                  Severe intellectual disability (ID) is defined as a type of ID characterized by severely sub-average adaptive functioning and intellectual functioning, with an intelligence quotient (IQ) the range of 20-34. |
-| Elevated urinary thymidine level (HP:6000128) | The amount of thymidine in the urine, normalized for urine concentration, is below the lower limit of normal. |                  The amount of thymidine in the urine, normalized for urine concentration, is above the upper limit of normal. |
-| Recurrent distressing nightmares (HP:5200287) | Nightmare disorder is defined by the repeated occurrence of nightmares that cause clinically significant distress or impairment in social, occupational or other important areas of functioning, which are not attributable to the physiological effects of a substance (e.g. drug abuse or medication) and which cannot be adequately explained by coexisting mental and medical disorders. |                  Repeated occurrence of nightmares that cause clinically significant distress or impairment in social, occupational or other important areas of functioning, which are not attributable to the physiological effects of a substance (e.g. drug abuse or medication) and which cannot be adequately explained by coexisting mental and medical disorders. |
-| Bruxism (HP:0003763) | Bruxism is characterized by the grinding of the teeth including the clenching of the jaw and typically occur during sleep, but also can occur while the affected individual is awake. |                  Bruxism is characterized by the grinding of the teeth including the clenching of the jaw and typically occur during sleep. |
-| Abnormal emotional state (HP:0100851) | Emotions are complex psychological states that involve three distinct components: a subjective experience, a physiological response, and a behavioral or expressive response. In an abnormal emotional state, an affected individual shows altered intensity, frequency, or duration of emotional experiences. |                  A disturbance in the experience or expression of emotion, characterized by alterations in valence, intensity, frequency, or duration. It may also involve emotional responses that are mismatched, exaggerated, or incongruent relative to internal expectations or external contextual stimuli, such as experiencing negative affect in response to neutral or positive events. |
-| Guilt (HP:6000011) | Excessive guilt is an internal feeling that is intense and considered clinically to be beyond normal range, out of proportion for the act or offense; excessive guilt is typically based on an incorrect judgment of responsibility for an unfavorable outcome. Excessive guilt is typically pervasive and enduring, i.e. it is not fleeting or a temporary thought associated with a specific action. |                  The experience of remorse, self-reproach, or perceived culpability for a real or perceived unfavorable outcome. Guilt may be proportionate to the context or disproportionate, and it may occur in the absence of an identifiable act, event, or offense. It reflects the interplay of cognitive processes, such as judgments about responsibility, and emotional responses, which can lead to persistent rumination or preoccupation. Guilt may extend to situations outside the individual's control and, in some cases, be accompanied by inaccurate or exaggerated beliefs about one's role in an outcome. |
-| Sleep drunkeness (HP:6000456) | Sleep drunkenness refers to the prolonged and pronounced difficulty with awakening from nocturnal sleep and daytime naps. This symptom should be distinguished from the milder and physiologic state of sleep inertia seen even in healthy controls . |                  Sleep drunkenness refers to the prolonged and pronounced difficulty with awakening from nocturnal sleep and daytime naps. This symptom should be distinguished from the milder and physiologic state of sleep inertia seen even in healthy controls. |
-| Emotional hypersensitivity (HP:0041092) | Heightened emotional reactivity to environmental stimuli, including the emotions of others. |                  Heightened emotional reactivity or response to environmental stimuli, including the emotions of others that include behaviors or expressive outbursts that are beyond the accepted cultural range and norms. |
-| Dysregulated negative emotional state (HP:0031467) | An aversive emotional state characterized by negative emotional experiences, preoccupations, or internal states that are often related to negative perceptions of the self, the world, or the future. |                  An emotional state characterized by excessive, persistent, or contextually inappropriate negative inner experiences involving emotional arousal and valence. These experiences are often associated with negative perceptions of the self, the future, the past, or the surrounding environment, and may include affective bias such as interpreting neutral or ambiguous stimuli as negative. The intensity, duration, or impact of the state exceeds what would be expected for the individual based on their baseline emotional functioning, the context, cultural norms, or situational triggers, or when it persists despite efforts at self-regulation. |
-| Hypnopompic hallucination (HP:0006896) | Brief hallucinations that occur as you wake up in the morning, in a state that falls somewhere between dreaming and being fully awake. |                  Hallucinations occurring during the transition from sleep to wakefulness. |
-| Euphoria (HP:0031844) | Euphoria is an overwhelming and all-encompassing feeling of intense inner sense of joy, happiness, excitement, or elation that is far beyond and blatantly abnormal for what would typically be anticipated in the context or social circumstance. It is experienced as an unusual pleasurable feeling often with an inspirational sense of profound insight. |                  Elevation of emotional tone or mood that significantly deviates from normative affective functioning. This state is characterized by an overwhelming and all-encompassing sense of joyous well-being; it is associated with unfounded grandiosity, or grossly inflated self-esteem, rapid speech, impulsivity, and an impaired capacity for self-regulation, irrespective of context. |
-| Low frustration tolerance (HP:0000744) | The feeling of frustration can be defined as an emotional reaction that occurs when a desired goal is not achieved. Frustration intolerance is defined as an age-inappropriate response to frustration, characterized by crying or temper tantrums in children, or aggressive or other undesirable behaviors. |                  The feeling of frustration can be defined as an emotional reaction that occurs when a desired goal is not achieved. Frustration intolerance is defined as an age-inappropriate response to frustration, characterized by crying or temper tantrums in children, or aggressive or other maladaptive behaviors. |
-| Hypnagogic hallucination (HP:0002519) | Hypnagogic hallucinations are brief hallucinations that occur as you are falling asleep. |                  Hypnagogic hallucinations are brief hallucinations that occur when falling asleep. |
-| Moderate intellectual disability (HP:0002342) | Moderate mental retardation is defined as an intelligence quotient (IQ) in the range of 35-49. |                  Moderate intellectual disability (ID) is defined as a type of ID characterized by moderately sub-average adaptive functioning and intellectual functioning, with an intelligence quotient (IQ) the range of 35-49. |
-| Abnormal circulating albumin concentration (HP:0012116) | Deviation from normal concentration of albumin in the blood. |                  Concentration of albumin in the blood circulation outside of the normal range. |
-| Abnormal affect (HP:0025766) | An anomaly in intensity, frequency, or duration of the verbal or behavioral expression of emotions, feelings, or thoughts. |                  An anomaly in intensity, frequency, or duration of the verbal or behavioral expression of emotions, feelings, or thoughts. |
-| Decreased circulating ADAMTS13 activity (HP:6001276) | Activity of the enzyme von Willebrand factor-cleaving protease (ADAMTS13) in the blood circulation below the lower limit of normal. |                  Activity of the enzyme von Willebrand factor-cleaving protease (ADAMTS13) in the blood circulation below the lower limit of normal. |
-| Sleep terror (HP:0030765) | Episodes of intense fear, screaming, and flailing occur even though the affected individuals are still asleep. |                  Autonomic arousal, screaming, sweating, crying, outbursts during sleep, usually no recollection at the individual level; typically observed by others. |
-| Sleep walking (HP:0025236) | Ambulation or other complex motor behaviors may occur after getting out of bed in a sleep-like state. During sleepwalking episodes, the individual who is somnambulating appears confused or dazed, with their eyes usually open. They may mumble or give inappropriate answers to questions, and occasionally appear agitated. |                  Ambulation during sleep with lack awareness and limited or no recall of the event. |
-| Insomnia (HP:0100785) | Persistent difficulty initiating or maintaining sleep. |                  Persistent difficulty in starting or maintaining sleep, or waking up earlier than desired, despite having adequate opportunities and conditions for sleep. |
-| Periodic limb movements of sleep (HP:5200295) | Repetitive limb movements during sleep can affect the quality of your sleep. |                  Repetitive, stereotyped limb movements occurring during sleep, typically involving brief flexion of the toes, ankles, knees, or hips. These movements recur at regular intervals, often every 20-40 seconds, and may cause sleep fragmentation or daytime fatigue. PLMS commonly co-occurs with restless legs syndrome but may also occur independently. |
-| Parasomnia (HP:0025234) | An undesirable physical event or experience that occurs during the process of falling asleep, while asleep, or when waking up from sleep. |                  A clinically observable or self-reported abnormal behavior, experience, or physiological event that occurs in association with sleep, specific sleep stages, or sleep-wake transitions. |
-| Dysphoria (HP:0033838) | A state of feeling very unhappy, uneasy, or dissatisfied. |                  A pervasive state of negatively valenced emotional unease and dissatisfaction along with an inner discomfort that is disproportionate to external circumstances and may include heightened emotional reactivity. It is associated with a mixture of overlapping negative emotions that are difficult to disentangle. |
-| Positive bloodstream Tropheryma whipplei nucleic acid test (HP:6000802) | Detection of nucleic acid of Tropheryma whippelii in the blood circulation by a method such as polymerase chain reaction (PCR) or reverse transcriptase (RT)-PCR. |                  Detection of nucleic acid of Tropheryma whipplei in the blood circulation by a method such as polymerase chain reaction (PCR) or reverse transcriptase (RT)-PCR. |
-| Exploding head syndrome (HP:5200290) | Sleep disorder in which one hears a loud noise or explosive crashing sound in their head. The sound is not real or heard by anyone else. The episode typically happens suddenly, either when beginning to fall asleep or when waking up during the night. |                  Sleep disorder in which one hears a loud noise or explosive crashing sound in one's head. The sound is not real or heard by anyone else. The episode typically happens suddenly, either when beginning to fall asleep or when waking up during the night. |
-| Sleep attack (HP:0002330) | A neurological disorder marked by a sudden recurrent uncontrollable compulsion to sleep |                  A sleep attack is a sudden, irresistable episode of sleep that occurs during waking hours. |
-| Sleep-related eating behavior (HP:5200288) | Eating while asleep can be problematic, as it may involve potentially harmful behaviors like overeating or consuming raw meat. |                  Eating during sleep with limited to no recall of involuntary eating while asleep. |
-| Anger (HP:0031473) | Persistent or frequent inner feelings of anger, irritability, or resentment that may be in response to an action or statement by others that is perceived to be a slight or challenge to the person regardless of the nature. Anger may also occur or arise spontaneously in the absence of any provocation and can be directed to another person or social entity. |                  A state of excessive negative emotional reactivity characterized by strong feelings of hostility or antagonism typically in response to perceived provocation. It is often accompanied by physiological arousal (e.g., increased heart rate, muscle tension, or activation of the sympathetic nervous system) and expressions of blame, perceived injustice, or judgment. The experience of anger may be directed outwardly toward individuals, groups, objects, or abstract entities, or inwardly toward oneself. |
-| Restless legs (HP:0012452) | Restless Leg Syndrome (RLS) is a condition characterized by an uncomfortable and restless sensation in the legs that occurs after going to bed, often leading to insomnia. |                  An irresistible urge to move the legs, usually accompanied by unpleasant sensations deep within the limbs. Symptoms typically begin or worsen during periods of rest or inactivity, are most pronounced in the evening or at night, and are temporarily relieved by movement such as walking or stretching. The disturbance often interferes with the initiation or maintenance of sleep. |
-| Hyperalbuminemia (HP:0012117) | Elevation in the concentration of albumin in the blood. |                  Concentration of albumin in the blood circulation above the upper limit of normal. |
-| Pathological sadness (HP:5200273) | Experience of intense or excessively negative feelings that may include profound unhappiness, feeling low, down, or sorrowful and are beyond cultural or societal norms. Commonly associated with a low self-attitude and grim outlook. |                  A negative emotional state characterized by sadness, unhappiness, or sorrow that is excessive in intensity, duration, or resistance to self-regulation compared with culturally appropriate norms or the individual's usual emotional range. It may arise spontaneously or in response to significant life events, but when reactive, it is disproportionate to or persists beyond what is typically expected for the context. Pathological sadness can be associated with feelings of hopelessness, helplessness, anhedonia, and a pessimistic outlook, but these features are not invariably present. It may also be accompanied by increased tearfulness, low energy, cognitive difficulties such as impaired concentration, and somatic changes including disrupted sleep or appetite. |
-| Sleep paralysis (HP:0025233) | An inability to move the body at the onset of sleep or upon awakening from sleep, lasting for seconds to a few minutes. |                  Inability to move trunk and limbs and inability to speak during transition into or out of sleep; awareness is preserved and recall is present. |
-| Mild intellectual disability (HP:0001256) | Mild intellectual disability is defined as an intelligence quotient (IQ) in the range of 50-69. |                  Mild intellectual disability (ID) is defined as a type of ID characterized by mildly sub-average adaptive functioning and intellectual functioning, with an intelligence quotient (IQ) the range of 50-69. |
-| Irritability (HP:0000737) | A proneness to anger, i.e., a tendency to become easily bothered or annoyed. |                  An emotional state characterized by negative feelings of heightened frustration, annoyance, or feeling upset, often triggered by internal factors (e.g., fatigue, hunger, unfulfilled desires) or external factors (e.g., social or environmental challenges). Irritability may be unpredictable, and is accompanied by a lowered threshold for emotional reactivity and observable features (speech, facial expressions, or psychomotor activity). |
-| Terminal insomnia (HP:0031356) | A type of insomnia characterized by waking up too early in the morning is known as early morning awakening. The termination of sleep must occur at least 30 minutes before the desired time. |                  Waking up earlier than intended and being unable to return to sleep. |
-| Profound intellectual disability (HP:0002187) | Profound mental retardation is defined as an intelligence quotient (IQ) below 20. |                  Profound intellectual disability (ID) is defined as a type of ID characterized by profoundly sub-average adaptive functioning and intellectual functioning, with an intelligence quotient (IQ) below 20. |
-| Sleep-wake transition abnormality (HP:5200293) | A group of parasomnias that occur during the transition from wakefulness to sleep or from one sleep stage to another. Rhythmic Movement Disorder, Sleep Starts, Sleep Talking, and Nocturnal Leg Cramps - these four disorders belong to Sleep-Wake Transition Disorders in the International Classification of Sleep Disorders. |                  A parasomnia that occurs with awareness and recollection during the transition between sleep and and awake states. |
-
-</details>
-
-<details>
-<summary>Synonyms removed: 31</summary>
-
-| Term | Removed Synonym |
-----|----|
-| obsolete Severe B lymphocytopenia (HP:0005365) | Absence of B cells |
-| Emotional lability (HP:0000712) | Mood alterations |
-| obsolete Abnormal positive emotional state (HP:0025767) | Positive emotion disturbance |
-| Sleep onset insomnia (HP:0031354) | Insomnia early |
-| Abnormal emotional state (HP:0100851) | Abnormal emotion/affect behaviour |
-| Emotional lability (HP:0000712) | Mood lability |
-| obsolete Confusional arousal (HP:0025237) | Slow speech or confused thinking upon waking |
-| Abnormal emotional state (HP:0100851) | Abnormal mood/emotion/affect |
-| Sleep attack (HP:0002330) | A neurological disorder marked by a sudden recurrent uncontrollable compulsion to sleep |
-| Abnormal emotional state (HP:0100851) | Abnormal emotion processing |
-| Abnormal emotional state (HP:0100851) | Emotion dysregulation |
-| obsolete Bruxism during sleep (HP:5200284) | Grinding teeth during sleep |
-| Hypersomnia (HP:0100786) | Excessive sleep |
-| Abnormal emotional state (HP:0100851) | Abnormal emotion/affect behavior |
-| obsolete Severe B lymphocytopenia (HP:0005365) | Absent B cells |
-| Emotional lability (HP:0000712) | Emotional instability |
-| Pathological sadness (HP:5200273) | Sad |
-| Emotional lability (HP:0000712) | Mood swings |
-| obsolete Confusional arousal (HP:0025237) | Disoriented |
-| Sleep onset insomnia (HP:0031354) | Insomnia initial |
-| Abnormal emotional state (HP:0100851) | Abnormal mood/emotion/affect/thought |
-| obsolete Intellectual disability, progressive (HP:0006887) | Mental retardation, progressive |
-| Dysregulated negative emotional state (HP:0031467) | Negative affect |
-| Sleep disturbance (HP:0002360) | Sleep disturbance |
-| obsolete Intellectual disability, progressive (HP:0006887) | Progressive mental retardation |
-| obsolete Intellectual disability, progressive (HP:0006887) | Intellectual disability, progressive |
-| obsolete Confusional arousal (HP:0025237) | Unresponsive |
-| Emotional lability (HP:0000712) | Mood changes |
-| Dysregulated negative emotional state (HP:0031467) | Neuroticism |
-| Insomnia (HP:0100785) | Fragmented sleep |
-| Sleep paralysis (HP:0025233) | Inability to move or speak |
-
-</details>
-
-<details>
-<summary>Mappings removed: 3</summary>
+<summary>Mappings removed: 10</summary>
 
 | Subject | Predicate | Object |
 ----|----|----|
-| obsolete Severe B lymphocytopenia (HP:0005365) | oio:hasDbXref | UMLS:C1863715 |
-| obsolete Intellectual disability, progressive (HP:0006887) | oio:hasDbXref | UMLS:C1846149 |
-| obsolete Severe B lymphocytopenia (HP:0005365) | oio:hasDbXref | UMLS:C4020824 |
+| obsolete Narcolepsy (HP:0030050) | oio:hasDbXref | UMLS:C0027404 |
+| obsolete Reduced thyroxin-binding globulin (HP:0012509) | oio:hasDbXref | UMLS:C4022872 |
+| obsolete Testicular dysgenesis (HP:0008715) | oio:hasDbXref | UMLS:C0302885 |
+| obsolete Narcolepsy (HP:0030050) | oio:hasDbXref | SNOMEDCT_US:60380001 |
+| obsolete Cerebellar malformation (HP:0002438) | oio:hasDbXref | UMLS:C4025708 |
+| obsolete Testicular dysgenesis (HP:0008715) | oio:hasDbXref | SNOMEDCT_US:253847002 |
+| obsolete Socially inappropriate behavior (HP:0030220) | oio:hasDbXref | UMLS:C2220010 |
+| obsolete Hypersomnia (HP:0100786) | oio:hasDbXref | SNOMEDCT_US:77692006 |
+| obsolete Hypersomnia (HP:0100786) | oio:hasDbXref | UMLS:C0917799 |
+| obsolete Absent distal finger phalanx (HP:0005807) | oio:hasDbXref | UMLS:C1861339 |
+
+</details>
+
+<details>
+<summary>Nodes obsoleted with replacement: 9</summary>
+
+| Term | Replacement |
+----|----|
+| obsolete Cerebellar malformation (HP:0002438) |                  Abnormal cerebellum morphology (HP:0001317) |
+| obsolete Levotransposition of the great arteries (HP:0031349) |                  Levotransposition of the great arteries (HP:0011540) |
+| obsolete Narcolepsy (HP:0030050) |                  Cataplexy (HP:0002524) |
+| obsolete Testicular dysgenesis (HP:0008715) |                  Dysplastic testis (HP:0008733) |
+| obsolete Hypersomnia (HP:0100786) |                  Excessive daytime somnolence (HP:0001262) |
+| obsolete Coronary sinus atrial septal defect (HP:0031297) |                  Coronary sinus atrial septal defect (HP:0011643) |
+| obsolete Reduced thyroxin-binding globulin (HP:0012509) |                  Decreased circulating thyroxine-binding globulin concentration (HP:0034591) |
+| obsolete Absent distal finger phalanx (HP:0005807) |                  Aplasia of distal finger phalanx (HP:0009881) |
+| obsolete Socially inappropriate behavior (HP:0030220) |                  Inappropriate behavior (HP:0000719) |
 
 </details>
 
@@ -669,18 +860,9 @@
 
 | Term |
 ----|
-| inheres_in_part_of |
-| part_of |
 | inheres_in |
-
-</details>
-
-<details>
-<summary>Nodes obsoleted without replacement: 1</summary>
-
-| Term |
-----|
-| obsolete Confusional arousal (HP:0025237) |
+| part_of |
+| inheres_in_part_of |
 
 </details>
 
