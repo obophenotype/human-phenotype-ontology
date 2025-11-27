@@ -12,6 +12,16 @@ theme:
     - content.code.annotation
     - content.code.copy
     - content.code.select
+  palette:
+    - scheme: default
+      primary: custom-hpo
+      accent: custom-hpo-accent
+    - scheme: slate
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
 plugins:
   - search
 markdown_extensions:
@@ -36,6 +46,10 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
 site_url: https://obophenotype.github.io/human-phenotype-ontology/
 repo_url: https://github.com/obophenotype/human-phenotype-ontology/
 
@@ -44,12 +58,34 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Documentation:
-    - Overview: documentation/overview.md
-    - Clinical:
-      - Clinician's guide: documentation/clinicians.md
-      - HPO term selection: documentation/HPO_term_selection.md
-    - FAQs: documentation/FAQs.md
+  - Clinician's guide:
+    - Overview: clinicians/overview.md
+    - How does the HPO define 'phenotype'?: clinicians/what-is-phenotype.md
+    - HPO term selection: clinicians/HPO_term_selection.md
+    - FAQs: clinicians/FAQs.md
+  - Developers' Guide:
+    - Overview: developers/overview.md
+    - Libraries: developers/libraries.md
+    - Text mining: developers/text-mining.md
+    - Mappings: developers/mappings.md
+    - Documentation: developers/documentation.md
+    - Running an HPO release: developers/release.md
+    - Editors guides:
+        - Protege: editors/protege.md
+        - Standard ODK workflows:
+            - Overview: odk-workflows/index.md
+            - Editors Workflow: odk-workflows/EditorsWorkflow.md
+            - Release Workflow: odk-workflows/ReleaseWorkflow.md
+            - Manage your ODK Repository: odk-workflows/RepoManagement.md
+            - Setting up Docker for ODK: odk-workflows/SettingUpDockerForODK.md
+            - Imports management: odk-workflows/UpdateImports.md
+            - Components management: odk-workflows/components.md
+            - Managing the documentation: odk-workflows/ManageDocumentation.md
+            - Managing your automated testing: odk-workflows/ManageAutomatedTest.md
+            - Continuous Integration: odk-workflows/ContinuousIntegration.md
+            - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md
+        - Design Patterns:
+            - Design Patterns Overview: templates/dosdp.md
   - Phenopackets: phenopackets.md
   - Annotations:
       - Intro: annotations/introduction.md
@@ -57,27 +93,9 @@ nav:
       - genes_to_phenotype.txt: annotations/genes_to_phenotype.md
       - phenotype_to_genes.txt: annotations/phenotype_to_genes.md
       - genes_to_disease.txt: annotations/genes_to_disease.md
-  - Developers:
-      - Tools: developers/tools.md
-      - Mappings: developers/mappings.md
-      - Documentation: developers/documentation.md
-      - Running an HPO release: developers/release.md
-      - Editors guides:
-          - Protege: editors/protege.md
-          - Standard ODK workflows:
-              - Overview: odk-workflows/index.md
-              - Editors Workflow: odk-workflows/EditorsWorkflow.md
-              - Release Workflow: odk-workflows/ReleaseWorkflow.md
-              - Manage your ODK Repository: odk-workflows/RepoManagement.md
-              - Setting up Docker for ODK: odk-workflows/SettingUpDockerForODK.md
-              - Imports management: odk-workflows/UpdateImports.md
-              - Components management: odk-workflows/components.md
-              - Managing the documentation: odk-workflows/ManageDocumentation.md
-              - Managing your automated testing: odk-workflows/ManageAutomatedTest.md
-              - Continuous Integration: odk-workflows/ContinuousIntegration.md
-              - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md
-          - Design Patterns:
-              - Design Patterns Overview: templates/dosdp.md
+  - Tools: 
+      -Overview: tools/overview.md
+      -SAMS: tools/sams.md
   - Community:
       - Introduction: community/index.md
       - Contributing: community/contributing.md

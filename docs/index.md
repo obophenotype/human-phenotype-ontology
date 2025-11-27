@@ -1,4 +1,33 @@
-# Documentation for Human Phenotype Ontology (HPO)
+---
+title: Human Phenotype Ontology
+hide:
+  - toc
+---
+
+# Human Phenotype Ontology
+
+
+## Quick Links
+<div class="grid cards" markdown>
+- :material-stethoscope: **Clinician’s Guide**  
+  [Overview](clinicians/overview.md)
+
+- :material-dna: **Annotations**  
+  [Learn about HPO annotations](annotations/introduction.md)
+
+- :material-code-tags: **Developer Tools**  
+  [Tools for working with HPO](developers/overview.md)
+
+- :material-cogs: **Run an HPO Release**  
+  [Release instructions](developers/release.md)
+
+- :material-toolbox-outline: **HPO Software Tools**  
+  [Libraries & utilities](tools/overview.md)
+
+- :material-file-document-multiple: **Phenopackets**  
+  [Phenopacket standard](phenopackets/overview.md)
+</div>
+
 
 Human Phenotype Ontology (HPO) is an ontology used to describe human phenotypic abnormalities seen in genetic disorders and clinical research.
 It provides a structured representation of abnormal characteristics associated with diseases.
@@ -9,12 +38,21 @@ The translations are displayed in the various browsers (e.g. [HPO App](https://h
 
 This site contains documentation for clinicians, researchers, developers, and other users of the [HPO](https://hpo.jax.org/){:target="\_blank"}.
 
-### A snapshot of the HPO hierarchy
 
-![HPO Hierarchy](img/hpo-hierarchy.png){:target="\_blank"}
+<div class="hpo-figure">
 
-### The HPO App
+  <div class="narrow">
+    <img src="img/hpo-hierarchy.png" alt="HPO Hierarchy">
+  </div>
 
-![HPO App](img/hpo-app.png){:target="\_blank"}
+  <div class="wide">
+    <img src="img/hpo-app.png" alt="HPO App">
+  </div>
+
+</div>
+
+<p class="hpo-caption">
+  A snapshot of the HPO hierarchy (left) and the HPO App (right).
+</p>
 
 To learn more, explore the [HPO app](https://hpo.jax.org/).
