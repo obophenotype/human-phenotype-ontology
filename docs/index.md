@@ -13,19 +13,19 @@ hide:
   [Overview](clinicians/overview.md)
 
 - :material-dna: **Annotations**  
-  [Learn about HPO annotations](annotations/introduction.md)
+  [HPO annotation file formats](annotations/introduction.md)
 
 - :material-code-tags: **Developer Tools**  
-  [Tools for working with HPO](developers/overview.md)
-
-- :material-cogs: **Run an HPO Release**  
-  [Release instructions](developers/release.md)
+  [Software libraries & utilities](developers/overview.md)
 
 - :material-toolbox-outline: **HPO Software Tools**  
-  [Libraries & utilities](tools/overview.md)
+  [Tools for working with HPO](tools/overview.md)
 
 - :material-file-document-multiple: **Phenopackets**  
   [Phenopacket standard](phenopackets/overview.md)
+
+- :material-cogs: **Contributing to the HPO**  
+  [New term requests, bug reports, workshops](contributing/index.md)
 </div>
 
 

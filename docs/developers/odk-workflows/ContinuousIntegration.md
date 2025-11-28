@@ -9,7 +9,7 @@ ci:
   - github_actions
 ```
 
-When [updateing your repo](RepoManagement.md), you will notice a new file being added: `.github/workflows/qc.yml`.
+When [updating your repo](RepoManagement.md), you will notice a new file being added: `.github/workflows/qc.yml`.
 
 This file contains your CI logic, so if you need to change, or add anything, this is the place!
 

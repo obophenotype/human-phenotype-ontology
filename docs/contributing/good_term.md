@@ -106,3 +106,7 @@ We welcome suggestions for novel disease annotations (HPOAs) to add to HPO. Thes
 <strong>Table 2</strong>: Components of a complete and well-structured new disease annotation request. 
 </div>
 
+What is the desired level of granularity of an HPO term?
+--------------------------------------------------------
+
+In general, each HPO term refers to a recognizable entity that occurs in multiple patients and often in multiple diseases. We do not try to create an HPO term for very specific manifestations in individual patients. For instance, _hamartomatous proliferation containing malformed hair follicles in various stages of development_ would be too detailed to be a good HPO term.

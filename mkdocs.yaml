@@ -1,4 +1,4 @@
-site_name: Human Phenotype Ontology (Documentation)
+site_name: Human Phenotype Ontology
 theme:
   name: material
   features:
@@ -86,7 +86,12 @@ nav:
             - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md
         - Design Patterns:
             - Design Patterns Overview: templates/dosdp.md
-  - Phenopackets: phenopackets.md
+  - Phenopackets: 
+      - Introduction: phenopackets/index.md
+      - Biocuration: phenopackets/curation.md
+      - For developers: phenopackets/developers.md
+      - HPO-related applications: phenopackets/applications.md
+      - FHIR IG: phenopackets/fhir.md
   - Annotations:
       - Intro: annotations/introduction.md
       - phenotype.hpoa: annotations/phenotype_hpoa.md
@@ -98,15 +103,18 @@ nav:
       -SAMS: tools/sams.md
   - Community:
       - Introduction: community/index.md
-      - Contributing: community/contributing.md
-      - Workshops: community/workshops.md
+ 
       - Cite the HPO: community/cite.md
       - HPO Internationalization Effort: https://obophenotype.github.io/hpo-translations/
-  - Workshops:
-      - Introduction: workshops/index.md
-      - What is a good HPO term?: workshops/good_term.md
-      - Rules For Good HPO Structure: workshops/good_structure.md
-      - Disease annotations: workshops/annotations.md
-      - Workshop procedure: workshops/practical.md
-      - Updates: workshops/changes.md
+  - Contributing:
+      - Introduction: contributing/index.md
+      - What is a good HPO term?: contributing/good_term.md
+      - Rules For Good HPO Structure: contributing/good_structure.md
+      - Disease annotations: contributing/annotations.md
+      - Workshop procedure: contributing/practical.md
+      - Previous workshops: community/workshops.md
+      - Updates: contributing/changes.md
 
+repo_url: https://github.com/obophenotype/human-phenotype-ontology/
+repo_name: GitHub
+edit_uri: edit/master/docs/

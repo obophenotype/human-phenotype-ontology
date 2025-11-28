@@ -9,7 +9,7 @@ The Phenopacket Schema is flexible and can represent clinical data for any kind 
 
 
 <figure markdown>
-![Phenopacket Schema](img/phenopackets-overview.jpg){ width="600" }
+![Phenopacket Schema](../img/phenopackets-overview.jpg){ width="600" }
 <figcaption><b>Phenopacket schema overview</b>.
 The GA4GH Phenopacket schema consists of several optional elements, each of which contains information about a certain topic, such as phenotype, variant, or pedigree. An element can contain other elements, which allows a hierarchical representation of data. For instance, Phenopacket contains elements of type Individual, PhenotypicFeature, Biosample, and so on. Individual elements can therefore be regarded as building blocks that are combined to create larger structures.
 </figcaption>
@@ -29,31 +29,16 @@ The GA4GH Phenopacket Schema allows more context to be provided for phenotypic a
 
 
 <figure markdown>
-![Phenopacket Schema](img/phenopackets-pfeature.png){ width="600" }
+![Phenopacket Schema](../img/phenopackets-pfeature.png){ width="600" }
 <figcaption><b>Overview of the PhenotypicFeature element of the GA4GH Phenopacket Schema.</b>.
 </figcaption>
 </figure>
 
 We have provided recommendations of how to encode clinical data with HPO terms that can be used as a guide to creating phenopackets for individuals with rare disease ([Oien et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31479590/){:target="\_blank"}).
 
-## Creating Phenopackets: PhenopacketLab
 
-PhenopacketLab is an Angular/Springboot web application for the loading, editing, saving of data that follows the Phenopacket Schema.
-PhenopacketLab is available on GitHub.
 
-## Creating Phenopackets for developers
-
-Phenopacket-tools is an open-source Java library and command-line application for construction, conversion, and validation of phenopackets. Phenopacket-tools simplifies construction of phenopackets by providing concise builders, programmatic shortcuts, and predefined building blocks (ontology classes) for concepts such as anatomical organs, age of onset, biospecimen type, and clinical modifiers.
-The phenopacket-tools library is freely available on GitHub. An article describing phenopacket-tools was published (Danis et al., 2023).
-A python package for working with phenopackets is generated directly from the Protobuf framework and is available on PyPI: phenopackets. A Rust crate is also available to build from the rust-build branch of the schema repository.
-
-The library pyphetools is intended to simplify the creation of phenopackets from tabular data or relational databases by providing a number of convenience functions and quality control measures.
 
 ## Phenopackets on FHIR
 
 A Fast Healthcare Interoperability Resources (FHIR) Implementation Guide (IG) is being developed as a wy of working with phenopackets in electronic health record (EHR) settings: core-ig. The IG is being developed under the aegis of the HL7 Vulcan Accelerator program.
-
-## Using phenopackets for HPO-driven genomic diagnostics
-
-
-Exomiser and LIRICAL are software packages for prioritizing variants and genes in the genomic diagnostics of rare Mendelian disease. Both packages have adopted the GA4GH Phenopacket Schema as an input format.
