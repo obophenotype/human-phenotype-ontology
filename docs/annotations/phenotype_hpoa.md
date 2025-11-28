@@ -45,10 +45,7 @@ This required field indicates the level of evidence supporting the annotation. A
 Age of onset of the phenotypic feature using terms from the [Onset](https://hpo.jax.org/browse/term/HP:0003674){target="_blank"} branch of the HPO
 
 ## 8. frequency
-There are three allowed options for this field.
-- A term-id from the HPO-sub-ontology below the term Frequency.
-- A count of patients affected within a cohort. For instance, 7/13 would indicate that 7 of the 13 patients with the specified disease were found to have the phenotypic abnormality referred to by the HPO term in question in the study referred to by the DB_Reference
-- A percentage value such as 17%, again referring to the percentage of patients found to have the phenotypic abnormality referred to by the HPO term in question in the study referred to by the DB_Reference. If possible, the 7/13 format is preferred over the percentage format if the exact data is available (Note: We are deprecating the use of percentages, and will disallow this type of annotation in the future).
+There are three allowed options for this field explained [here](frequency.md).
 
 ## 9. sex
 MALE or FEMALE  (for cases in which the annotation is sex-specific)
