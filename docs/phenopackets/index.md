@@ -2,7 +2,6 @@
 
 The Global Alliance for Genomics and Health ([GA4GH](https://www.ga4gh.org/){:target="\_blank"}) is a standards-setting organization that is developing a suite of coordinated standards for genomics. The GA4GH Phenopacket Schema is a standard for sharing disease and phenotype information that characterizes an individual person or biosample ([Jacobsen et al., 2022](https://pubmed.ncbi.nlm.nih.gov/35705716/){:target="\_blank"}).
 
-## Introduction
 
 The Phenopacket Schema is flexible and can represent clinical data for any kind of human disease including rare disease, complex disease, and cancer. It also allows consortia or databases to apply additional constraints to ensure uniform data collection for specific goals.
 
@@ -30,15 +29,9 @@ The GA4GH Phenopacket Schema allows more context to be provided for phenotypic a
 
 <figure markdown>
 ![Phenopacket Schema](../img/phenopackets-pfeature.png){ width="600" }
-<figcaption><b>Overview of the PhenotypicFeature element of the GA4GH Phenopacket Schema.</b>.
+<figcaption><b>Overview of the PhenotypicFeature element of the GA4GH Phenopacket Schema</b>.
 </figcaption>
 </figure>
 
 We have provided recommendations of how to encode clinical data with HPO terms that can be used as a guide to creating phenopackets for individuals with rare disease ([Oien et al., 2019](https://pubmed.ncbi.nlm.nih.gov/31479590/){:target="\_blank"}).
 
-
-
-
-## Phenopackets on FHIR
-
-A Fast Healthcare Interoperability Resources (FHIR) Implementation Guide (IG) is being developed as a wy of working with phenopackets in electronic health record (EHR) settings: core-ig. The IG is being developed under the aegis of the HL7 Vulcan Accelerator program.

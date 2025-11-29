@@ -165,3 +165,19 @@ table tr:nth-child(odd) {
   margin: auto;      /* this horizontally centers block elements */
   display: block;    /* required for margin:auto to work */
 }
+
+.hpo-pill a {
+  background: var(--md-code-bg);
+  padding: 0.25em 0.55em;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  border: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.hpo-pill a:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-fg-color);
+}

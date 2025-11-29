@@ -45,7 +45,7 @@ This site contains documentation for clinicians, researchers, developers, and ot
     <img src="img/hpo-hierarchy.png" alt="HPO Hierarchy">
   </div>
 
-  <div class="wide">
+  <div class="narrow">
     <img src="img/hpo-app.png" alt="HPO App">
   </div>
 
@@ -55,4 +55,4 @@ This site contains documentation for clinicians, researchers, developers, and ot
   A snapshot of the HPO hierarchy (left) and the HPO App (right).
 </p>
 
-To learn more, explore the [HPO app](https://hpo.jax.org/).
+To learn more, explore the [HPO app](https://hpo.jax.org/){:target="\_blank"}.

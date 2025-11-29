@@ -29,13 +29,13 @@ The procedure that we perform is
 
 Software and databases should update annotations to an obsoleted term using the 'term replaced by' annotation.
 
-### alternate identifiers
+## alternate identifiers
 An alt_id is thus the identifier of a term that was merged into the current term.
 Please note that obsolete terms cannot have alt_ids, since this will cause obscure error messages. 
 
 
-# When terms are updated (i.e. same ID, different term), can the relationship in the hierarchy also change? 
+## When terms are updated (i.e. same ID, different term), can the relationship in the hierarchy also change? 
 In general, the updated term will retain the position of one of the merged terms in the hierarchy. In rare cases, domain experts will recommend revising the hierarchy while merging terms. 
 
-# When a term is updated, can the meaning of the term  significantly change? 
+## When a term is updated, can the meaning of the term  significantly change? 
 Terms are only updated in this way of the clinical meaning of the term is not changed (or if there is at most a trivial change).

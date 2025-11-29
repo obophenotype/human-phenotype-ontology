@@ -18,4 +18,4 @@ SAMS offers four main modes:
 <p class="hpo-caption" markdown="1">
   [Steinhaus R, et al. (2022) Nucleic Acids Res 50:W677-W681](https://pubmed.ncbi.nlm.nih.gov/35524573/){:target="\_blank"}
 </p>
-SAMS is freely available at https://www.genecascade.org/SAMS/.
+SAMS is freely available at <span class="hpo-pill">[https://www.genecascade.org/SAMS/](https://www.genecascade.org/SAMS/)</span>.
