@@ -54,7 +54,16 @@ HPO-based tools support data entry, diagnostics, biocuration, and genomic analys
   [:material-open-in-new: GitHub](https://github.com/exomiser/Exomiser){ target="_blank" }
   [:material-open-in-new: PubMed](https://pubmed.ncbi.nlm.nih.gov/24162188/){ target="_blank" }
 
+- :material-dna: **SvAnna**  
+  <small>Structural variant Annotation and analysis</small>  
+  [:material-open-in-new: GitHub](https://github.com/monarch-initiative/SvAnna){ target="_blank" }
+  [:material-open-in-new: PubMed](https://pubmed.ncbi.nlm.nih.gov/35484572/){ target="_blank" }
+
 </div>
+
+
+
+
 
 ---
 

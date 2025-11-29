@@ -15,7 +15,7 @@ hide:
 - :material-dna: **Annotations**  
   [HPO annotation file formats](annotations/introduction.md)
 
-- :material-code-tags: **Developer Tools**  
+- :material-cog: **Developer Tools**  
   [Software libraries & utilities](developers/overview.md)
 
 - :material-toolbox-outline: **HPO Software Tools**  
@@ -24,7 +24,7 @@ hide:
 - :material-file-document-multiple: **Phenopackets**  
   [Phenopacket standard](phenopackets/overview.md)
 
-- :material-cogs: **Contributing to the HPO**  
+- :material-pencil-plus: **Contributing to the HPO**  
   [New term requests, bug reports, workshops](contributing/index.md)
 </div>
 
