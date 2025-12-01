@@ -11,12 +11,12 @@ The HPO project provides a comprehensive set of computable definitions of rare d
 |  3	| qualifier	    | No       | NOT or empty                            |
 |  4	| hpo_id	    | Yes      | HP:0002487                              |
 |  5	| reference	    | Yes      | OMIM:154700 or PMID:15517394            |
-|  6	| evidence	    | Yes      | TAS or PCS                              |
+|  6	| evidence	    | Yes      | IEA, TAS, or PCS                              |
 |  7	| onset  	    | No       | HP:0003577                              |
 |  8	| frequency  	| No       | HP:0003577 or 12/45 or 22%              |
 |  9	| sex  	        | No       | MALE or FEMALE                          |
 | 10 	| modifier 	    | No       | HP:0025257                              |
-|  11	| aspect        | Yes      | ‘P’ or ‘C’ or ‘I’, 'H', or ‘M’          |
+|  11	| aspect        | Yes      | ‘P’, ‘C’, ‘I’, 'H', or ‘M’          |
 | 12    | biocuration   | Yes      | HPO:skoehler[YYYY-MM-DD]                |
 
 

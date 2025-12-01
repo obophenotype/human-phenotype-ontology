@@ -1,4 +1,4 @@
-# Clinician's Guide
+# Clinician Guide
 
 The Human Phenotype Ontology (HPO) project offers a variety of resources for working with the HPO. Several of the tools generate lists of diseases that best match a set of HPO terms (some of these tools additionally analyze lists of variants identified by exome or genome sequencing). The choice of terms made by clinicians or researchers using the tools can influence the output of the tools, and therefore, it is important to choose the terms well.
 
