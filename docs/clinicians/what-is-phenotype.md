@@ -22,7 +22,3 @@ To summarize, the  HPO defines a disease as an entity that has  of the following
 - a set of phenotypic features that is the sum of all of the phenotypes manifested by an individual with the disease. A disease can be a feature of another disease (e.g. diabetes mellitus is a disease and is a feature of Bardet Biedl syndrome).
 - if treatments exist, there is a characteristic response to them.
 
-
-# How to choose HPO terms for data entry?
-
-Please see the [Term Selection](HPO_term_selection.md) page for details.

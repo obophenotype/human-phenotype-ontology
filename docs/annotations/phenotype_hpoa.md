@@ -11,12 +11,12 @@ The HPO project provides a comprehensive set of computable definitions of rare d
 |  3	| qualifier	    | No       | NOT or empty                            |
 |  4	| hpo_id	    | Yes      | HP:0002487                              |
 |  5	| reference	    | Yes      | OMIM:154700 or PMID:15517394            |
-|  6	| evidence	    | Yes      | TAS or PCS                              |
+|  6	| evidence	    | Yes      | IEA, TAS, or PCS                              |
 |  7	| onset  	    | No       | HP:0003577                              |
 |  8	| frequency  	| No       | HP:0003577 or 12/45 or 22%              |
 |  9	| sex  	        | No       | MALE or FEMALE                          |
 | 10 	| modifier 	    | No       | HP:0025257                              |
-|  11	| aspect        | Yes      | ‘P’ or ‘C’ or ‘I’, 'H', or ‘M’          |
+|  11	| aspect        | Yes      | ‘P’, ‘C’, ‘I’, 'H', or ‘M’          |
 | 12    | biocuration   | Yes      | HPO:skoehler[YYYY-MM-DD]                |
 
 
@@ -45,10 +45,7 @@ This required field indicates the level of evidence supporting the annotation. A
 Age of onset of the phenotypic feature using terms from the [Onset](https://hpo.jax.org/browse/term/HP:0003674){target="_blank"} branch of the HPO
 
 ## 8. frequency
-There are three allowed options for this field.
-- A term-id from the HPO-sub-ontology below the term Frequency.
-- A count of patients affected within a cohort. For instance, 7/13 would indicate that 7 of the 13 patients with the specified disease were found to have the phenotypic abnormality referred to by the HPO term in question in the study referred to by the DB_Reference
-- A percentage value such as 17%, again referring to the percentage of patients found to have the phenotypic abnormality referred to by the HPO term in question in the study referred to by the DB_Reference. If possible, the 7/13 format is preferred over the percentage format if the exact data is available (Note: We are deprecating the use of percentages, and will disallow this type of annotation in the future).
+There are three allowed options for this field explained [here](frequency.md).
 
 ## 9. sex
 MALE or FEMALE  (for cases in which the annotation is sex-specific)
@@ -59,11 +56,12 @@ One or more terms from the [Clinical modifier](https://hpo.jax.org/browse/term/H
 ## 11. aspect
 This field denotes what part of the HPO hierarchy an annotation comes from. For use in semantic similarity analysis, some approaches use only terms that descend from [Phenotypic abnormality](https://hpo.jax.org/browse/term/HP:0000118){target="_blank"} and filter other annotations out.
 
-- P:  [Phenotypic abnormality (HP:0000118)](https://hpo.jax.org/browse/term/HP:0000118)
-- C: [Clinical course (HP:0031797)](https://hpo.jax.org/browse/term/HP:0031797)
-- I: [Mode of inheritance (HP:0000005)](https://hpo.jax.org/browse/term/HP:0000005)
-- M: [Clinical modifier (HP:0012823)](https://hpo.jax.org/browse/term/HP:0012823)
-- H: [Past medical history (HP:0032443)](https://hpo.jax.org/browse/term/HP:0032443)
+- P: <span class="hpo-pill">[Phenotypic abnormality (HP:0000118)](https://hpo.jax.org/browse/term/HP:0000118)</span>
+- C: <span class="hpo-pill">[Clinical course (HP:0031797)](https://hpo.jax.org/browse/term/HP:0031797)</span>
+- I: <span class="hpo-pill">[Mode of inheritance (HP:0000005)](https://hpo.jax.org/browse/term/HP:0000005)</span>
+- M: <span class="hpo-pill">[Clinical modifier (HP:0012823)](https://hpo.jax.org/browse/term/HP:0012823)</span>
+- H: <span class="hpo-pill">[Past medical history (HP:0032443)](https://hpo.jax.org/browse/term/HP:0032443)</span>
+
 
 
 ## 12. biocuration

@@ -10,7 +10,7 @@ If you would like to use the reasoner, download and install the [Elk plugin](htt
 
 ## Setting your ID ranges
 
-Do you have an ID range in the idranges file (hp-idranges.owl), in the src/ontology/ directory)? If not, Peter, Nicole, Chris or Melissa can add one for you.
+Do you have an ID range in the idranges file (hp-idranges.owl), in the src/ontology/ directory)? If not, the HPO team can add one for you.
 
 Ensure that you have Protege configured to generate new URIs in your own range. Note that if you edit multiple files, you need to check this every time to ensure that the proper settings are in place. HP URIs should look like this: http://purl.obolibrary.org/obo/HP_0000473 Do a test to ensure that the ID generator is working properly.
 
