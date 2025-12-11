@@ -220,6 +220,12 @@ NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2x
 
 $(TMPDIR)/normalised_patterns.tsv:
 	wget "$(NORM_PATTERN_URL)" -O $@
+	head -2 $@ > $@.tmp && mv $@.tmp $@
+
+MANUAL_CURATION_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1931038653&single=true&output=tsv
+
+$(TMPDIR)/manual_curation.robot.tsv:
+	wget "$(MANUAL_CURATION_URL)" -O $@
 
 $(TMPDIR)/norm_patterns/README.md: $(TMPDIR)/normalised_patterns.tsv
 	rm -rf $(TMPDIR)/norm_patterns
@@ -243,8 +249,11 @@ $(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
 tmp/chemical_phenotypes.txt: $(TMPDIR)/norm_patterns.ofn
 	$(ROBOT) query -i $< --query $(SPARQLDIR)/hp_terms.sparql $@
 
-tmp/chemical_phenotypes_incl_properties.txt: tmp/chemical_phenotypes.txt
-	cp $< $@
+tmp/chemical_phenotypes_template.txt: $(TMPDIR)/manual_curation.robot.tsv
+	cut -f1 $< | grep "HP:" | sed 's|HP:|http://purl.obolibrary.org/obo/HP_|g' > $@
+
+tmp/chemical_phenotypes_incl_properties.txt: tmp/chemical_phenotypes.txt tmp/chemical_phenotypes_template.txt
+	cat $^ > $@
 	echo "rdfs:label" >> $@
 	echo "IAO:0000115" >> $@
 
@@ -274,7 +283,7 @@ rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
 
 # This is the main pipeline
 .PHONY: hpo_phenotype_pipeline
-hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt
+hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt $(TMPDIR)/manual_curation.robot.tsv
 	# In cases where this is rerun often, it makes sense to simply reset hp-edit.owl to the state on the branch
 	git checkout master -- $(SRC) 
 	
@@ -294,6 +303,7 @@ hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labe
 	
 	# ...which is then merged back into the main file
 	$(ROBOT) remove -i $(SRC).ofn -T tmp/chemical_phenotypes.txt --axioms subclass --signature true --trim false --preserve-structure false \
+		template --template $(TMPDIR)/manual_curation.robot.tsv --merge-after \
 		merge -i tmp/$(SRC)-subclass.ofn --collapse-import-closure false -o $(SRC).ofn
 	
 	# (I like to work on temporary files instead of the main for no reason.)
