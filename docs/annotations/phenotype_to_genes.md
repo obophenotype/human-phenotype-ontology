@@ -17,6 +17,10 @@ then phenotype_to_genes.txt contains:
 - HP_3 annotated to geneA 
 - HP_3 annotated to geneB
 
+### Included terms
+This file only contains annotations to HPO terms that are descendants of
+[Phenotypic abnormality](https://hpo.jax.org/app/browse/term/HP:0000118){:target="\_blank"}.
+
 
 ### File format
 Here is a sample of the file format.
