@@ -202,6 +202,113 @@ diff_migration:
 	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
 
 #######################################################
+##### EQ normalisation pipeline #######################
+#######################################################
+
+#### How to use this pipeline #####
+# 1. Update NORM_PATTERN_URL to contain a wide table with all phenotypes, and a single 'pattern' column with the names of the target pattern.
+# 2. Update `NORM_PATTERNS` to list all patterns you would like to process
+# 3. If necessary, run `cp_patterns_for_hpo` to ensure you have all the HPO specific patterns in the patterns directory. Modify the patterns in necessary, e.g. Uppercasing labels, adding synonym patterns.
+# 4. Run `sh run.sh make hpo_phenotype_pipeline -B`. This will 
+#        1. update the ontology with the new labels, EQs and definitions
+#        2. create a diff (reports/hp_chemical_phenotype_diff.md) you can paste on any pull request for easier review
+#        3. 
+
+#NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
+#NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1913984323&single=true&output=tsv
+NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=719064169&single=true&output=tsv
+
+$(TMPDIR)/normalised_patterns.tsv:
+	wget "$(NORM_PATTERN_URL)" -O $@
+
+$(TMPDIR)/norm_patterns/README.md: $(TMPDIR)/normalised_patterns.tsv
+	rm -rf $(TMPDIR)/norm_patterns
+	mkdir -p $(TMPDIR)/norm_patterns
+	python $(SCRIPTSDIR)/split_pattern_table.py $< $(TMPDIR)/norm_patterns
+	echo "$(TODAY)" > $@
+
+NORM_PATTERNS=abnormalLevelOfChemicalEntityInBlood \
+	abnormallyDecreasedLevelOfChemicalEntityInBlood \
+	abnormallyIncreasedLevelOfChemicalEntityInBlood
+
+$(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
+	touch $(foreach n,$(NORM_PATTERNS), $(TMPDIR)/norm_patterns/$(n).tsv)
+	$(DOSDPT) generate --catalog=$(CATALOG) \
+    --infile=$(TMPDIR)/norm_patterns --template=$(PATTERNDIR)/dosdp-patterns-hpo/ --batch-patterns="$(NORM_PATTERNS)" \
+    --ontology=$< --obo-prefixes=true --outfile=$(TMPDIR)/norm_patterns
+	$(ROBOT) merge $(foreach n,$(NORM_PATTERNS), -i $(TMPDIR)/norm_patterns/$(n).ofn) \
+		query --update ../sparql/update-chemical-labels.ru -o $@
+	sed -i '/^Declaration/d' $@
+
+tmp/chemical_phenotypes.txt: $(TMPDIR)/norm_patterns.ofn
+	$(ROBOT) query -i $< --query $(SPARQLDIR)/hp_terms.sparql $@
+
+tmp/chemical_phenotypes_incl_properties.txt: tmp/chemical_phenotypes.txt
+	cp $< $@
+	echo "rdfs:label" >> $@
+	echo "IAO:0000115" >> $@
+
+NORM_PATTERNS_YAML_HPO=$(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns-hpo/$(n).yaml)
+
+# This is a convenience method to copy all uPheno patterns to the HPO-specific directory 
+# So they can be processed by the curator. It should
+# only be run manually when needed.
+cp_patterns_for_hpo:
+	rsync -av --ignore-existing $(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns/$(n).yaml) $(PATTERNDIR)/dosdp-patterns-hpo/
+
+tmp/chemical_old_labels_as_synonyms.owl: $(SRC) tmp/chemical_phenotypes_incl_properties.txt
+	$(ROBOT) filter -i $(SRC) -T tmp/chemical_phenotypes.txt --axioms annotation --signature true --trim false --preserve-structure false \
+		filter --term rdfs:label --trim false --preserve-structure false \
+		query \
+			--update ../sparql/add-labels-as-synonyms.ru \
+			-o $@
+
+rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
+	cp $(SRC) temp.txt
+	grep -E '^http://purl.obolibrary.org/obo/HP_' tmp/chemical_phenotypes_incl_properties.txt | tr -d '\r' | while read id; do \
+	  echo "Removing IAO_0000115 annotations for: $$id"; \
+	  grep -v "IAO_0000115> <$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
+	done
+	mv temp.txt $(SRC)
+
+
+# This is the main pipeline
+.PHONY: hpo_phenotype_pipeline
+hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt
+	# In cases where this is rerun often, it makes sense to simply reset hp-edit.owl to the state on the branch
+	git checkout master -- $(SRC) 
+	
+	# We create a version of hp.obo for the diff later, to monitor the changes
+	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
+
+	# We remove all EQs, labels and definitions from hp-edit.owl
+	$(MAKE) rm_def_chem
+	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --axioms annotation --signature true --trim false --preserve-structure false \
+	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
+	merge -i $(TMPDIR)/norm_patterns.ofn -i tmp/chemical_old_labels_as_synonyms.owl --collapse-import-closure false -o $(SRC).ofn
+	
+	# Then use a reasoner to classify the the chemical phenotypes. 
+	# The result of that classification are stored in a temporary file...
+	$(ROBOT) reason -i $(SRC).ofn relax reduce \
+		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -o tmp/$(SRC)-subclass.ofn
+	
+	# ...which is then merged back into the main file
+	$(ROBOT) remove -i $(SRC).ofn -T tmp/chemical_phenotypes.txt --axioms subclass --signature true --trim false --preserve-structure false \
+		merge -i tmp/$(SRC)-subclass.ofn --collapse-import-closure false -o $(SRC).ofn
+	
+	# (I like to work on temporary files instead of the main for no reason.)
+	mv $(SRC).ofn $(SRC)
+	sed -i 's/ (human)//g' $(SRC)
+	# Generate hp.obo again with the changes...
+	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-after.obo
+	
+	# ... and generate the diff to look at it...
+	runoak -i simpleobo:tmp/hp-branch.obo diff -X simpleobo:tmp/hp-after.obo -o reports/hp_chemical_phenotype_diff.md --output-type md
+	@echo "$@ pipeline finished!"
+
+# Generate template file seeds
+
+#######################################################
 ##### British synonyms pipeline #######################
 #######################################################
 
