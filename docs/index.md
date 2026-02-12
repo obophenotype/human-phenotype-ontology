@@ -22,7 +22,7 @@ hide:
   [Tools for working with HPO](tools/overview.md)
 
 - :material-file-document-multiple: **Phenopackets**  
-  [Phenopacket standard](phenopackets/overview.md)
+  [Phenopacket standard](phenopackets/index.md)
 
 - :material-pencil-plus: **Contributing to the HPO**  
   [New term requests, bug reports, workshops](contributing/index.md)
