@@ -673,3 +673,47 @@ merge-alternative-ids:
 update-alternative-ids-and-merge:
 	$(MAKE) update-alternative-ids
 	$(MAKE) merge-alternative-ids
+#######################################################
+##### Missing dates pipeline ##########################
+#######################################################
+
+# Find HP terms missing dcterms:date annotations
+tmp/terms_missing_dates.txt: hp-edit.owl
+	@echo "Finding terms with dates..."
+	@grep 'AnnotationAssertion(dcterms:date <http://purl.obolibrary.org/obo/HP_' $< | \
+		sed 's/.*HP_/HP_/' | sed 's/>.*$$//' | sort -u > tmp/terms_with_dates.txt
+	@echo "Finding all HP terms..."
+	@grep 'Declaration(Class(<http://purl.obolibrary.org/obo/HP_' $< | \
+		sed 's/.*HP_/HP_/' | sed 's/>).*//' | sort -u > tmp/all_hp_terms.txt
+	@echo "Computing difference..."
+	@comm -23 tmp/all_hp_terms.txt tmp/terms_with_dates.txt > $@
+	@echo "Found $$(wc -l < $@) terms missing dates"
+
+# Search git history for term creation dates (resumable)
+tmp/term_creation_dates.tsv: tmp/terms_missing_dates.txt
+	python3 ../scripts/find_term_creation_dates_resumable.py $< $@
+
+# Convert TSV to ROBOT template format
+#tmp/term_dates_template.tsv: tmp/term_creation_dates.tsv
+#	@echo "ID	LABEL	>AT dcterms:date^^xsd:dateTime" > $@
+#	@tail -n +2 $< | cut -f1,3 | awk -F'\t' '{print $$1"\t\t"$$2}' >> $@
+#	@echo "Created ROBOT template with $$(tail -n +2 $@ | wc -l) terms"
+
+# Merge missing dates into hp-edit.owl
+.PHONY: add-missing-dates
+add-missing-dates: tmp/term_dates_template.tsv
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --merge-before --input $(SRC) \
+		--template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+	@echo "Merged dates into $(SRC)"
+
+# Full pipeline: find missing dates and add them
+.PHONY: fix-missing-dates
+fix-missing-dates: tmp/terms_missing_dates.txt tmp/term_creation_dates.tsv tmp/term_dates_template.tsv
+	@echo "Ready to merge. Review tmp/term_dates_template.tsv then run: make add-missing-dates"
+
+# Clean missing dates artifacts
+.PHONY: missing-dates-clean
+missing-dates-clean:
+	rm -f tmp/terms_missing_dates.txt tmp/terms_with_dates.txt tmp/all_hp_terms.txt
+	rm -f tmp/term_creation_dates.tsv tmp/term_creation_dates_checkpoint.json
+	rm -f tmp/term_creation_dates_not_found.txt tmp/term_dates_template.tsv

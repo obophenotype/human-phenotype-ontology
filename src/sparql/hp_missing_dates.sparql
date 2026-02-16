@@ -1,0 +1,13 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?id
+WHERE {
+  ?term a owl:Class .
+  FILTER(STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/HP_"))
+  FILTER NOT EXISTS { ?term owl:deprecated true }
+  FILTER NOT EXISTS { ?term dcterms:date ?date }
+  BIND(REPLACE(STR(?term), "http://purl.obolibrary.org/obo/", "") AS ?id)
+}
+ORDER BY ?id
