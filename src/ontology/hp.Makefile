@@ -487,7 +487,7 @@ sync_google_template:
 	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
 merge_template: $(MERGE_TEMPLATE_FILE)
-	$(ROBOT) template --prefix "orcid: https://orcid.org/" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 reset_edit:
