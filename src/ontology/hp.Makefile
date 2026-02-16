@@ -213,14 +213,15 @@ diff_migration:
 #        1. update the ontology with the new labels, EQs and definitions
 #        2. create a diff (reports/hp_chemical_phenotype_diff.md) you can paste on any pull request for easier review
 #        3. 
+# Sheet: https://docs.google.com/spreadsheets/d/1TwsHHrEDM8cTDZ6meFBgIbeeyHoumSB4CUyoauUrPSA/edit?gid=215679312#gid=215679312
 
-#NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=2015098640&single=true&output=tsv
-#NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1913984323&single=true&output=tsv
+# Methodologically: Go to "next BATCH" add the some ids from the "Finished processing" sheet; run pipeline
+
 NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=719064169&single=true&output=tsv
 
 $(TMPDIR)/normalised_patterns.tsv:
 	wget "$(NORM_PATTERN_URL)" -O $@
-	head -2 $@ > $@.tmp && mv $@.tmp $@
+	#head -2 $@ > $@.tmp && mv $@.tmp $@
 
 MANUAL_CURATION_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1931038653&single=true&output=tsv
 
@@ -235,7 +236,10 @@ $(TMPDIR)/norm_patterns/README.md: $(TMPDIR)/normalised_patterns.tsv
 
 NORM_PATTERNS=abnormalLevelOfChemicalEntityInBlood \
 	abnormallyDecreasedLevelOfChemicalEntityInBlood \
-	abnormallyIncreasedLevelOfChemicalEntityInBlood
+	abnormallyIncreasedLevelOfChemicalEntityInBlood \
+	abnormalLevelOfChemicalEntityInUrine \
+	abnormallyDecreasedLevelOfChemicalEntityInUrine \
+	abnormallyIncreasedLevelOfChemicalEntityInUrine
 
 $(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
 	touch $(foreach n,$(NORM_PATTERNS), $(TMPDIR)/norm_patterns/$(n).tsv)
@@ -279,6 +283,8 @@ rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
 	  grep -v "IAO_0000115> <$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
 	done
 	mv temp.txt $(SRC)
+
+hpop: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt $(TMPDIR)/manual_curation.robot.tsv
 
 
 # This is the main pipeline
