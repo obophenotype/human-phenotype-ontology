@@ -23,8 +23,7 @@ SELECT DISTINCT ?annotation WHERE {
     <http://www.w3.org/2002/07/owl#deprecated>,
     <http://www.geneontology.org/formats/oboInOwl#consider>,
     <http://www.geneontology.org/formats/oboInOwl#creation_date>,
-    <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>,
-    <http://purl.org/dc/elements/1.1/date>
+    <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>
   ))
   FILTER (isIRI(?subj) && STRSTARTS(str(?subj), "http://purl.obolibrary.org/obo/HP_"))
 } 
