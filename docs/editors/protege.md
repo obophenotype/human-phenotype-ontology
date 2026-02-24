@@ -71,7 +71,7 @@ Finally, go to Protege->Preferences, “New Entities Metadata” tab and set the
 - Creator property: http://purl.org/dc/terms/creator
 - Creator value: user ORCID (enter your ORCID id under User!)
 - activate: ``Annotate new entities with data/time``.
-- Date property: http://purl.org/dc/elements/1.1/date
+- Date property: http://purl.org/dc/terms/date
 - Date value format: ISO-8601
 
 <figure markdown>
