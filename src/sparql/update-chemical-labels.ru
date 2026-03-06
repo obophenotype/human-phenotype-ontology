@@ -17,7 +17,7 @@ WHERE {
   # apply replacements step by step
   BIND(REPLACE(?lbl0,  " atom$", "") AS ?lbl1)
   BIND(REPLACE(?lbl1,  " molecular entity$", "") AS ?lbl2)
-  BIND(REPLACE(?lbl2,  " (human)", "") AS ?lbl3)
+  BIND(REPLACE(?lbl2,  " \\(human\\)", "") AS ?lbl3)
   BIND(REPLACE(?lbl3,  "alpha-2-HS-glycoprotein", "fetuin-A") AS ?lbl4)
   BIND(REPLACE(?lbl4,  "serotransferrin", "transferrin") AS ?lbl5)
   BIND(REPLACE(?lbl5,  "chitinase-3-like protein 1", "CHI3L1") AS ?lbl6)
@@ -30,9 +30,13 @@ WHERE {
   BIND(REPLACE(?lbl11, "DnaJ homolog subfamily B member 9", "DNAJB9") AS ?lbl12)
   BIND(REPLACE(?lbl12, "72 kDa type IV collagenase", "matrix metalloproteinase 2") AS ?lbl13)
   BIND(REPLACE(?lbl13, "mucin-16", "CA-125") AS ?lbl14)
-  BIND(REPLACE(?lbl14, "serine protease 1", "cationic trypsinogen") AS ?lbl141)
-  BIND(REPLACE(?lbl141, "choriogonadotropin subunit beta", "beta-hCG") AS ?lbl15)
-  
+  BIND(REPLACE(?lbl14, "calcium\\(2\\+\\)", "calcium") AS ?lbl141)
+  BIND(REPLACE(?lbl141, "magnesium\\(2\\+\\)", "magnesium") AS ?lbl142)
+  BIND(REPLACE(?lbl142, "zinc\\(2\\+\\)", "zinc") AS ?lbl143)
+  BIND(REPLACE(?lbl143, "sodium\\(1\\+\\)", "sodium") AS ?lbl144)
+  BIND(REPLACE(?lbl144, "serine protease 1", "cationic trypsinogen") AS ?lbl145)
+  BIND(REPLACE(?lbl145, "diphosphate\\(4\\-\\)", "pyrophosphate") AS ?lbl146)
+  BIND(REPLACE(?lbl146, "choriogonadotropin subunit beta", "beta-hCG") AS ?lbl15)
 
   # Enzyme activity rule:
   # If the label contains a word ending in "ase" (e.g. dehydrogenase, hexosaminidase),
