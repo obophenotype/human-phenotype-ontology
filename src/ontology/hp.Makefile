@@ -279,8 +279,9 @@ tmp/chemical_old_labels_as_synonyms.owl: $(SRC) tmp/chemical_phenotypes_incl_pro
 rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
 	cp $(SRC) temp.txt
 	grep -E '^http://purl.obolibrary.org/obo/HP_' tmp/chemical_phenotypes_incl_properties.txt | tr -d '\r' | while read id; do \
-	  echo "Removing IAO_0000115 annotations for: $$id"; \
+	  echo "Removing IAO_0000115 and EquivalentClasses for: $$id"; \
 	  grep -v "IAO_0000115> <$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
+	  grep -v "^EquivalentClasses(<$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
 	done
 	mv temp.txt $(SRC)
 
