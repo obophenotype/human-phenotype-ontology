@@ -1,5 +1,6 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX IAO:  <http://purl.obolibrary.org/obo/IAO_>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 DELETE {
   ?s ?property ?oldLabel .
@@ -8,7 +9,7 @@ INSERT {
   ?s ?property ?newLabel .
 }
 WHERE {
-  VALUES ?property { rdfs:label IAO:0000115 }
+  VALUES ?property { rdfs:label IAO:0000115 oboInOwl:hasExactSynonym }
   ?s ?property ?oldLabel .
 
   # start with the original label as a string
@@ -16,7 +17,16 @@ WHERE {
 
   # apply replacements step by step
   BIND(REPLACE(?lbl0,  " atom$", "") AS ?lbl1)
-  BIND(REPLACE(?lbl1,  " molecular entity$", "") AS ?lbl2)
+  BIND(REPLACE(?lbl1,  "nitrogen molecular entity", "nitrogen compound") AS ?lbl1b)
+  BIND(REPLACE(?lbl1b, "o-decenoylcarnitine?\\b", "decenoylcarnitine") AS ?lbl1c)
+  BIND(REPLACE(?lbl1c, "O-octanoylcarnitine", "octanoylcarnitine") AS ?lbl1d0)
+  BIND(REPLACE(?lbl1d0, "O-hexanoylcarnitine", "hexanoylcarnitine") AS ?lbl1d1)
+  BIND(REPLACE(?lbl1d1, "O-propanoylcarnitine", "propionylcarnitine") AS ?lbl1d2)
+  BIND(REPLACE(?lbl1d2, "O-tetradecanoylcarnitine", "tetradecanoylcarnitine") AS ?lbl1d3)
+  BIND(REPLACE(?lbl1d3, "o-decanoylcarnitine", "decanoylcarnitine") AS ?lbl1d4)
+  BIND(REPLACE(?lbl1d4, "O-stearoylcarnitine", "stearoylcarnitine") AS ?lbl1d5)
+  BIND(REPLACE(?lbl1d5, "tetradecanoic acid", "myristic acid") AS ?lbl1d)
+  BIND(REPLACE(?lbl1d, " molecular entity$", "") AS ?lbl2)
   BIND(REPLACE(?lbl2,  " \\(human\\)", "") AS ?lbl3)
   BIND(REPLACE(?lbl3,  "alpha-2-HS-glycoprotein", "fetuin-A") AS ?lbl4)
   BIND(REPLACE(?lbl4,  "serotransferrin", "transferrin") AS ?lbl5)
