@@ -483,11 +483,35 @@ iconv:
 
 MERGE_TEMPLATE_FILE=NOFILE
 MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR99Cz13ykiPwq-WdLjAGsPod6n7daSjyhpJa2FJS5bjEDDBlkjJYGrS2hYckvtGAIO2JzpCYMueuUM/pub?gid=1430967911&single=true&output=tsv"
+
+gram:
+	git checkout master -- hp-edit.owl
+
+	# GRAM POSTIVES
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=0&single=true&output=tsv" -O tmp/template_gram_postives.tsv
+
+	# GRAM NEGATIVES
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=1483369376&single=true&output=tsv" -O tmp/template_gram_negatives.tsv
+
+	# GRAM NEGATIVE updates
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=1561428163&single=true&output=tsv" -O tmp/template_gram_negative_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	# The script is reusable for any ROBOT update template with old_def/old_parents columns.
+	python3 ../scripts/strip_template_old_values.py tmp/template_gram_negative_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_gram_negatives.tsv \
+		--template tmp/template_gram_negative_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
 sync_google_template:
 	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
 merge_template: $(MERGE_TEMPLATE_FILE)
-	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 reset_edit:
