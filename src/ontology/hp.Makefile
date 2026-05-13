@@ -535,6 +535,7 @@ fungal:
 		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 mycobacteria:
+	make download_adam_xlsx -B
 	git checkout master -- hp-edit.owl
 
 	# MYCOBACTERIA INFECTIONS
@@ -554,6 +555,7 @@ mycobacteria:
 		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 parasite:
+	make download_adam_xlsx -B
 	git checkout master -- hp-edit.owl
 
 	# PARASITE INFECTIONS (no -updates sheet in the workbook)
