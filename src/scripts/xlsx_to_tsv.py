@@ -31,6 +31,15 @@ def main():
     ws = wb[sheet_name]
     rows = [list(r) for r in ws.iter_rows(values_only=True)]
 
+    def flatten(v):
+        # ROBOT's template parser handles single-line TSV most reliably.
+        # Replace any in-cell CR/LF with a single space so multi-line cells
+        # don't split a logical row across multiple TSV lines.
+        if v is None:
+            return ""
+        s = str(v)
+        return s.replace("\r\n", " ").replace("\r", " ").replace("\n", " ")
+
     max_col = 0
     for r in rows:
         for i, v in enumerate(r):
@@ -40,7 +49,13 @@ def main():
     with open(out_tsv, "w", newline="", encoding="utf-8") as fh:
         writer = csv.writer(fh, delimiter="\t", lineterminator="\n")
         for r in rows:
-            trimmed = ["" if v is None else v for v in r[:max_col]]
+            trimmed = [flatten(v) for v in r[:max_col]]
+            # Skip rows that are entirely empty after trimming.
+            if not any(cell.strip() for cell in trimmed):
+                continue
+            # Pad short rows so every line has the same field count as the
+            # header — required by tsvalid and by ROBOT's template parser.
+            trimmed += [""] * (max_col - len(trimmed))
             writer.writerow(trimmed)
 
 

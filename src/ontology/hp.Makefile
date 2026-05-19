@@ -566,6 +566,47 @@ parasite:
 		repair --merge-axiom-annotations true \
 		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
+merge_fungal_parasite_myco:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MERGED FUNGAL / PARASITE / MYCOBACTERIA INFECTIONS (no -updates sheet in the workbook)
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merge_fungal_parasite_myco tmp/template_merge_fungal_parasite_myco.tsv
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merge_fungal_parasite_myco.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+merged:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MERGED INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merged tmp/template_merged.tsv
+
+	# MERGED updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merged_updates tmp/template_merged_updates.tsv
+
+	# For merged_updates: whenever new_def or new_parents has a value, the
+	# corresponding old_def / old_parents axioms are stripped from hp-edit.owl
+	# first so the new values don't collide on merge. When new_name has a value
+	# (label is being changed), the current rdfs:label is captured into a
+	# separate synonym template so it can be merged back as an
+	# oboInOwl:hasExactSynonym, and the old label is stripped.
+	python3 ../scripts/process_merged_updates.py tmp/template_merged_updates.tsv $(SRC) tmp/template_merged_old_label_synonyms.tsv
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merged.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merged_updates.tsv \
+		--template tmp/template_merged_old_label_synonyms.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
 sync_google_template:
 	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
