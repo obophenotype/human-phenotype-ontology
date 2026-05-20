@@ -607,6 +607,35 @@ merged:
 		repair --merge-axiom-annotations true \
 		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
+add_inf_merged:
+	make download_adam_xlsx -B
+	git checkout add-merged-infections-adam -- hp-edit.owl
+
+	# ADD_INF_MERGED INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) add_inf_merged tmp/template_add_inf_merged.tsv
+
+	# ADD_INF_MERGED updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) add_inf_merged_updates tmp/template_add_inf_merged_updates.tsv
+
+	# For add_inf_merged_updates: whenever new_def or new_parents has a value, the
+	# corresponding old_def / old_parents axioms are stripped from hp-edit.owl
+	# first so the new values don't collide on merge. When new_name has a value
+	# (label is being changed), the current rdfs:label is captured into a
+	# separate synonym template so it can be merged back as an
+	# oboInOwl:hasExactSynonym, and the old label is stripped.
+	python3 ../scripts/process_merged_updates.py tmp/template_add_inf_merged_updates.tsv $(SRC) tmp/template_add_inf_merged_old_label_synonyms.tsv
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_add_inf_merged.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_add_inf_merged_updates.tsv \
+		--template tmp/template_add_inf_merged_old_label_synonyms.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
 sync_google_template:
 	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
