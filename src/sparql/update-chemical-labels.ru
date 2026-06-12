@@ -49,7 +49,6 @@ WHERE {
   # Add L- stereoisomer specifier for amino acids that are L-form in biology.
   # \b boundaries prevent mangling "Hyperphenylalaninemia" / "Hypophenylalaninemia".
   BIND(REPLACE(?lbl146, "\\bphenylalanine\\b", "L-phenylalanine") AS ?lbl147)
-  # Normalise to CHEBI-preferred "oxo carboxylic acid" instead of "keto acid".
   BIND(REPLACE(?lbl147, "\\boxo carboxylic acid\\b", "keto acid") AS ?lbl148)
   BIND(REPLACE(?lbl148, "choriogonadotropin subunit beta", "beta-hCG") AS ?lbl15)
 
