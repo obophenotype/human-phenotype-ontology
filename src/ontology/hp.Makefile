@@ -607,11 +607,164 @@ iconv:
 
 MERGE_TEMPLATE_FILE=NOFILE
 MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR99Cz13ykiPwq-WdLjAGsPod6n7daSjyhpJa2FJS5bjEDDBlkjJYGrS2hYckvtGAIO2JzpCYMueuUM/pub?gid=1430967911&single=true&output=tsv"
+
+gram:
+	git checkout master -- hp-edit.owl
+
+	# GRAM POSTIVES
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=0&single=true&output=tsv" -O tmp/template_gram_postives.tsv
+
+	# GRAM NEGATIVES
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=1483369376&single=true&output=tsv" -O tmp/template_gram_negatives.tsv
+
+	# GRAM NEGATIVE updates
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=1561428163&single=true&output=tsv" -O tmp/template_gram_negative_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	# The script is reusable for any ROBOT update template with old_def/old_parents columns.
+	python3 ../scripts/strip_template_old_values.py tmp/template_gram_negative_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_gram_negatives.tsv \
+		--template tmp/template_gram_negative_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+# Source workbook for the per-pathogen infection make goals below.
+# Sheets are extracted as TSV via ../scripts/xlsx_to_tsv.py.
+INFECTIONS_XLSX=tmp/splitted_infections_sheets.xlsx
+
+download_adam_xlsx:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?output=xlsx" -O $(INFECTIONS_XLSX)
+
+fungal:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# FUNGAL INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) fungal-infections tmp/template_fungal_infections.tsv
+
+	# FUNGAL updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) fungal-updates tmp/template_fungal_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	python3 ../scripts/strip_template_old_values.py tmp/template_fungal_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_fungal_infections.tsv \
+		--template tmp/template_fungal_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+mycobacteria:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MYCOBACTERIA INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) mycobacteria-infections tmp/template_mycobacteria_infections.tsv
+
+	# MYCOBACTERIA updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) mycobacteria-updates tmp/template_mycobacteria_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	python3 ../scripts/strip_template_old_values.py tmp/template_mycobacteria_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_mycobacteria_infections.tsv \
+		--template tmp/template_mycobacteria_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+parasite:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# PARASITE INFECTIONS (no -updates sheet in the workbook)
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) parasite-infections tmp/template_parasite_infections.tsv
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_parasite_infections.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+merge_fungal_parasite_myco:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MERGED FUNGAL / PARASITE / MYCOBACTERIA INFECTIONS (no -updates sheet in the workbook)
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merge_fungal_parasite_myco tmp/template_merge_fungal_parasite_myco.tsv
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merge_fungal_parasite_myco.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+merged:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MERGED INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merged tmp/template_merged.tsv
+
+	# MERGED updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merged_updates tmp/template_merged_updates.tsv
+
+	# For merged_updates: whenever new_def or new_parents has a value, the
+	# corresponding old_def / old_parents axioms are stripped from hp-edit.owl
+	# first so the new values don't collide on merge. When new_name has a value
+	# (label is being changed), the current rdfs:label is captured into a
+	# separate synonym template so it can be merged back as an
+	# oboInOwl:hasExactSynonym, and the old label is stripped.
+	python3 ../scripts/process_merged_updates.py tmp/template_merged_updates.tsv $(SRC) tmp/template_merged_old_label_synonyms.tsv
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merged.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merged_updates.tsv \
+		--template tmp/template_merged_old_label_synonyms.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+add_inf_merged:
+	make download_adam_xlsx -B
+	git checkout add-merged-infections-adam -- hp-edit.owl
+
+	# ADD_INF_MERGED INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) add_inf_merged tmp/template_add_inf_merged.tsv
+
+	# ADD_INF_MERGED updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) add_inf_merged_updates tmp/template_add_inf_merged_updates.tsv
+
+	# For add_inf_merged_updates: whenever new_def or new_parents has a value, the
+	# corresponding old_def / old_parents axioms are stripped from hp-edit.owl
+	# first so the new values don't collide on merge. When new_name has a value
+	# (label is being changed), the current rdfs:label is captured into a
+	# separate synonym template so it can be merged back as an
+	# oboInOwl:hasExactSynonym, and the old label is stripped.
+	python3 ../scripts/process_merged_updates.py tmp/template_add_inf_merged_updates.tsv $(SRC) tmp/template_add_inf_merged_old_label_synonyms.tsv
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_add_inf_merged.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_add_inf_merged_updates.tsv \
+		--template tmp/template_add_inf_merged_old_label_synonyms.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
 sync_google_template:
 	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
 merge_template: $(MERGE_TEMPLATE_FILE)
-	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 reset_edit:
