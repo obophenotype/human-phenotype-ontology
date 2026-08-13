@@ -50,7 +50,10 @@ WHERE {
   # \b boundaries prevent mangling "Hyperphenylalaninemia" / "Hypophenylalaninemia".
   BIND(REPLACE(?lbl146, "\\bphenylalanine\\b", "L-phenylalanine") AS ?lbl147)
   BIND(REPLACE(?lbl147, "\\boxo carboxylic acid\\b", "keto acid") AS ?lbl148)
-  BIND(REPLACE(?lbl148, "choriogonadotropin subunit beta", "beta-hCG") AS ?lbl15)
+  BIND(REPLACE(?lbl148, "choriogonadotropin subunit beta", "beta-hCG") AS ?lbl14x)
+  # Restore well-known clinical names dropped in favour of CHEBI systematic names.
+  BIND(REPLACE(?lbl14x, "N-benzoylglycine", "hippuric acid") AS ?lbl14y)
+  BIND(REPLACE(?lbl14y, "cholesta-5,7-dien-3beta-ol", "7-dehydrocholesterol") AS ?lbl15)
 
   # Enzyme activity rule:
   # If the label contains a word ending in "ase" (e.g. dehydrogenase, hexosaminidase),
@@ -63,7 +66,11 @@ WHERE {
       REGEX(?lbl15, "\\b(thrombin|plasmin|trypsin|chymotrypsin|pepsin|renin|kallikrein)\\b", "i") )
     &&
     # exclude inhibitors and zymogens that match the pattern but are not enzymes
-    !REGEX(?lbl15, "\\b(alpha-1-antitrypsin|antitrypsin|plasminogen|trypsinogen|chymotrypsinogen|pepsinogen)\\b", "i"),
+    !REGEX(?lbl15, "\\b(alpha-1-antitrypsin|antitrypsin|plasminogen|trypsinogen|chymotrypsinogen|pepsinogen)\\b", "i")
+    &&
+    # exclude words ending in "-base" (nucleobase, purine/pyrimidine base, Schiff base):
+    # these match "\\w+ase" but are not enzymes.
+    !REGEX(?lbl15, "base\\b", "i"),
     REPLACE(?lbl15, "\\bconcentration\\b", "activity"),
     ?lbl15
   ) AS ?lblfinal)
