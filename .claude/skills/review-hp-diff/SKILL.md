@@ -86,6 +86,31 @@ The `update-chemical-labels.ru` file applies these known replacements. If a rena
 
 Flag if a rename does NOT match any known SPARQL rule and also doesn't come from a DOSDP pattern change — this may indicate an issue in the input spreadsheet.
 
+## CHEBI Role Terms — Unsatisfiability Watch-out
+
+The `abnormalLevelOfChemicalEntityInBlood` (and sibling) DOSDP patterns model the CHEBI
+filler as the **material bearer** of an amount: `inheres_in some (<FILLER> and part_of some <location>)`.
+This is only valid when the filler is a **material chemical entity** (under CHEBI:24431
+'chemical entity'). Some CHEBI classes are **roles** (under CHEBI:50906 'role' / 'biological
+role'), not material entities — e.g. **coenzyme (CHEBI:23354)**, **metabolite (CHEBI:25212)**,
+vitamin, cofactor, nutrient. Feeding a role into this pattern produces an **unsatisfiable**
+class (a role cannot bear a concentration), which surfaces at reasoning/CI time
+(`make explain_unsat`, ROBOT `reason` error "N unsatisfiable classes"), not in the OAK diff.
+
+Watch for it: if a renamed/re-defined term's chemical filler is a role word (coenzyme,
+metabolite, vitamin, cofactor, hormone-as-role, etc.), flag it. **Beware knock-on unsats** —
+any subclass of an unsatisfiable class is also unsatisfiable (e.g. HP:0034617 SAM was unsat
+only because it is `SubClassOf` HP:0034616 coenzyme).
+
+Correct modelling (per issue #4952): replace the direct filler with
+`'chemical entity' and 'has role' some <role>`, i.e. the bearer is a chemical entity that
+*has* the role, located in the compartment. Example — HP:0034616 coenzyme fixed to:
+`inheres_in some ('chemical entity' (CHEBI:24431) and 'has role' (RO:0000087) some coenzyme (CHEBI:23354) and part_of some blood)`.
+Until the DOSDP patterns emit this form for role fillers, such terms need a hand-edited EQ in
+`hp-edit.owl` (a temporary hack) — so re-running the normalisation pipeline can silently
+reintroduce the broken direct form. After any pipeline run touching role-filler terms, run a
+consistency/`explain_unsat` check, not just the OAK diff review.
+
 ## Output Format
 
 ```markdown
