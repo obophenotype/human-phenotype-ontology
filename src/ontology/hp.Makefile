@@ -303,16 +303,19 @@ hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labe
 	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
 	merge -i $(TMPDIR)/norm_patterns.ofn -i tmp/chemical_old_labels_as_synonyms.owl --collapse-import-closure false -o $(SRC).ofn
 	
-	# Then use a reasoner to classify the the chemical phenotypes. 
-	# The result of that classification are stored in a temporary file...
-	$(ROBOT) reason -i $(SRC).ofn relax reduce \
-		filter -T tmp/chemical_phenotypes.txt --select "self parents" --axioms subclass -o tmp/$(SRC)-subclass.ofn
-	
-	# ...which is then merged back into the main file
-	$(ROBOT) remove -i $(SRC).ofn -T tmp/chemical_phenotypes.txt --axioms subclass --signature true --trim false --preserve-structure false \
-		template --template $(TMPDIR)/manual_curation.robot.tsv --merge-after \
-		merge -i tmp/$(SRC)-subclass.ofn --collapse-import-closure false -o $(SRC).ofn
-	
+	# NOTE: The reasoner-based re-classification of chemical phenotypes has been dropped.
+	# It used to reason over the new EQs, extract a fresh "self parents" subClassOf
+	# hierarchy, delete all existing subClassOf axioms for these terms and merge the
+	# reasoned ones back in. That step is too flaky (see the spurious relationship churn
+	# in the diff) and needs a concerted effort to redo properly. The pipeline now only
+	# normalises labels, definitions, EQs and synonyms and applies the manual curation
+	# template; the existing subClassOf relationships are left untouched.
+	# NB: we generate the manual curation axioms into a separate file and merge them in
+	# explicitly. Do NOT collapse this into `... template --merge-after -o $(SRC).ofn`:
+	# with an empty template table that emits an empty ontology and wipes $(SRC).ofn.
+	$(ROBOT) template -i $(SRC).ofn --template $(TMPDIR)/manual_curation.robot.tsv -o tmp/manual_curation.owl
+	$(ROBOT) merge -i $(SRC).ofn -i tmp/manual_curation.owl --collapse-import-closure false -o $(SRC).ofn
+
 	# (I like to work on temporary files instead of the main for no reason.)
 	mv $(SRC).ofn $(SRC)
 	sed -i 's/ (human)//g' $(SRC)
