@@ -285,6 +285,9 @@ rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
 	done
 	mv temp.txt $(SRC)
 
+remove_umls_xrefs: $(SRC)
+	sed -i -E '\%^AnnotationAssertion\(<http://www\.geneontology\.org/formats/oboInOwl#hasDbXref> .*"(UMLS|SNOMEDCT_US|SNOMED_CT):[^"]*"\)%d' $<
+
 hpop: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt $(TMPDIR)/manual_curation.robot.tsv
 
 
