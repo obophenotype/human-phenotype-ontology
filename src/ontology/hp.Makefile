@@ -104,6 +104,23 @@ remove_foreign_declarations: $(SRC)
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/][^p]/d' $(SRC)
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]hp[/]patterns[/]definitions[.]owl[>][)]/d' $(SRC)
 
+# Remove synonyms whose value is identical to the term's primary label (incl. any
+# axiom-annotated ones). See ../sparql/remove-synonyms-equal-to-label.ru.
+.PHONY: remove_redundant_synonyms
+remove_redundant_synonyms: $(SRC)
+	$(ROBOT) query --input $(SRC) --update ../sparql/remove-synonyms-equal-to-label.ru \
+		convert --format ofn --output $(SRC).tmp.owl
+	# robot's functional-syntax writer may expand the dc/dcterms/obda CURIEs that $(SRC)
+	# uses to full IRIs *and* drop their Prefix declarations, which would bury the change in
+	# ~31k lines of prefix churn (and leave the CURIEs undeclared). Collapse the IRIs back to
+	# CURIEs and re-add any dropped Prefix declaration in its original header position, so the
+	# diff is only the removed synonyms. All steps are idempotent (no-ops on a clean run).
+	sed -i -E 's|<http://purl.org/dc/terms/([A-Za-z0-9_]+)>|dcterms:\1|g; s|<http://purl.org/dc/elements/1.1/([A-Za-z0-9_]+)>|dc:\1|g; s|<https://w3id.org/obda/vocabulary#([A-Za-z0-9_]+)>|obda:\1|g' $(SRC).tmp.owl
+	grep -q '^Prefix(dc:=' $(SRC).tmp.owl || sed -i '/^Prefix(:=/a Prefix(dc:=<http://purl.org/dc/elements/1.1/>)' $(SRC).tmp.owl
+	grep -q '^Prefix(obda:=' $(SRC).tmp.owl || sed -i '/^Prefix(xsd:=/a Prefix(obda:=<https://w3id.org/obda/vocabulary#>)' $(SRC).tmp.owl
+	grep -q '^Prefix(dcterms:=' $(SRC).tmp.owl || sed -i '/^Prefix(rdfs:=/a Prefix(dcterms:=<http://purl.org/dc/terms/>)' $(SRC).tmp.owl
+	mv $(SRC).tmp.owl $(SRC)
+
 #imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt hp_foreign_obsoletes.csv
 #	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
 #		remove --term-file hp_foreign_obsoletes.csv --trim false \ 
