@@ -40,6 +40,7 @@ This will create all the specified release targets (OBO, OWL, JSON, and the vari
 4. Like with every pull request, we recommend to always employ a second set of eyes when reviewing a PR!
 
 ## Merge the main branch
+
 Once your [CI checks](ContinuousIntegration.md) have passed, and your reviews are completed, you can now merge the branch into your main branch (don't forget to delete the branch afterwards - a big button will appear after the merge is finished).
 
 ## Create a GitHub release

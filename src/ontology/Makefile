@@ -12,7 +12,7 @@
 
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH               = 81ff482df2ac818b8e64f4824e03074d6b4332eb60cf628757c17071d477add8
+CONFIG_HASH               = 1f08bebbb1446cbeceb7bd0359684f07d8e0c837d729f22518a994f92306b8e4
 
 # ----------------------------------------
 # Common variables
@@ -1316,6 +1316,10 @@ validate_idranges:
 .PHONY: update_repo
 update_repo:
 	odk update
+
+.PHONY: update_docs
+update_docs:
+	mkdocs gh-deploy --config-file ../../mkdocs.yaml
 
 .PHONY: clean
 clean:
