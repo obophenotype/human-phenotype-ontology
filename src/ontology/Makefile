@@ -12,7 +12,7 @@
 
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH               = 7315a7a79d5c79e2b42224450d8ecce27f66fd9890c46ca750d05c3d84e72f52
+CONFIG_HASH               = 81ff482df2ac818b8e64f4824e03074d6b4332eb60cf628757c17071d477add8
 
 # ----------------------------------------
 # Common variables
@@ -331,7 +331,7 @@ download-mirror-pr: | $(TMPDIR)
 	odk-helper download --output $(TMPDIR)/$@.owl \
 	                    --reference $(MIRRORDIR)/pr.owl \
 	                    --max-retry 4 \
-	                    https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
+	                    http://purl.obolibrary.org/obo/upheno/pr_slim.owl
 
 $(MIRRORDIR)/pr.owl: download-mirror-pr
 	@if [ -f $(TMPDIR)/download-mirror-pr.owl ]; then \
