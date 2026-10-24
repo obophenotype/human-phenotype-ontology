@@ -10,3 +10,4 @@ SELECT ?cls ?def (group_concat(?xref) as ?xrefs) WHERE
   FILTER (!isBlank(?cls))
 }
 GROUP BY ?cls ?def
+ORDER BY ?cls
