@@ -10,6 +10,7 @@ The documentation is hosted using GitHub pages, on a special branch of the repos
 ## Editing the docs
 
 ### Changing content
+
 All the documentation is contained in the `docs` directory, and is managed in _Markdown_. Markdown is a very simple and convenient way to produce text documents with formatting instructions, and is very easy to learn - it is also used, for example, in GitHub issues. This is a normal editing workflow:
 
 1. Open the `.md` file you want to change in an editor of choice (a simple text editor is often best). _IMPORTANT_: Do not edit any files in the `docs/odk-workflows/` directory. These files are managed by the ODK system and will be overwritten when the repository is upgraded! If you wish to change these files, make an issue on the [ODK issue tracker](https://github.com/INCATools/ontology-development-kit/issues).
@@ -23,12 +24,12 @@ All the documentation is contained in the `docs` directory, and is managed in _M
 The documentation is _not_ automatically updated from the Markdown, and needs to be deployed deliberately. To do this, perform the following steps:
 
 1. In your terminal, navigate to the edit directory of your ontology, e.g.:
-   ```
-   cd hp/src/ontology
+   ```console
+   $ cd hp/src/ontology
    ```
 2. Now you are ready to build the docs as follows:
-   ```
-   sh run.sh make update_docs
+   ```console
+   $ sh run.sh make update_docs
    ```
    [Mkdocs](https://www.mkdocs.org/) now sets off to build the site from the markdown pages. You will be asked to
     - Enter your username

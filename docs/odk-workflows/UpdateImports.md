@@ -12,6 +12,7 @@ Importing a new term is split into two sub-phases:
 2. Refreshing imports dynamically
 
 ### Declaring terms to be imported
+
 There are three ways to declare terms that are to be imported from an external ontology. Choose the appropriate one for your particular scenario (all three can be used in parallel if need be):
 
 1. Protégé-based declaration
@@ -33,12 +34,11 @@ This approach also applies to ontologies that use base module import approach.
 
 Now you can use this term for example to construct logical definitions. The next time the imports are refreshed (see how to refresh [here](#refresh-imports)), the metadata (labels, definitions, etc.) for this term are imported from the respective external source ontology and becomes visible in your ontology.
 
-
 #### Using term files
 
 Every import has, by default a term file associated with it, which can be found in the imports directory. For example, if you have a GO import in `src/ontology/go_import.owl`, you will also have an associated term file `src/ontology/go_terms.txt`. You can add terms in there simply as a list:
 
-```
+```text
 GO:0008150
 GO:0008151
 ```
@@ -54,7 +54,7 @@ This workflow is appropriate if:
 
 To enable this workflow, you add the following to your ODK config file (`src/ontology/hp-odk.yaml`), and [update the repository](RepoManagement.md):
 
-```
+```yaml
 use_custom_import_module: TRUE
 ```
 
@@ -80,32 +80,33 @@ _WARNING_. Note that doing this is a _widespread antipattern_ (see related [issu
 If you want to refresh the import yourself (this may be necessary to pass the travis tests), and you have the ODK installed, you can do the following (using go as an example):
 
 First, you navigate in your terminal to the ontology directory (underneath src in your hpo root directory). 
-```
-cd src/ontology
+
+```console
+$ cd src/ontology
 ```
 
 Then, you regenerate the import that will now include any new terms you have added. Note: You must have [docker installed](SettingUpDockerForODK.md).
 
-```
-sh run.sh make PAT=false imports/go_import.owl -B
+```console
+$ sh run.sh make PAT=false imports/go_import.owl -B
 ```
 
 Since ODK 1.2.27, it is also possible to simply run the following, which is the same as the above:
 
-```
-sh run.sh make refresh-go
+```console
+$ sh run.sh make refresh-go
 ```
 
 Note that in case you changed the defaults, you need to add `IMP=true` and/or `MIR=true` to the command below:
 
-```
-sh run.sh make IMP=true MIR=true PAT=false imports/go_import.owl -B
+```console
+$ sh run.sh make IMP=true MIR=true PAT=false imports/go_import.owl -B
 ```
 
 If you wish to skip refreshing the mirror, i.e. skip downloading the latest version of the source ontology for your import (e.g. `go.owl` for your go import) you can set `MIR=false` instead, which will do the exact same thing as the above, but is easier to remember:
 
-```
-sh run.sh make IMP=true MIR=false PAT=false imports/go_import.owl -B
+```console
+$ sh run.sh make IMP=true MIR=false PAT=false imports/go_import.owl -B
 ```
 
 ## Using the Base Module approach
@@ -146,9 +147,9 @@ merging all mirrors into one huge file and then extracting one mega module from 
 Example: Let's say we are importing terms from Uberon, GO and RO in our ontologies.
 When we use the base pipelines, we
 
-1) First obtain the base (usually by simply downloading it, but there is also an option now to create it with ROBOT)
-2) We merge all base files into one big pile
-3) Then we extract a single module `imports/merged_import.owl`
+1. First obtain the base (usually by simply downloading it, but there is also an option now to create it with ROBOT)
+2. We merge all base files into one big pile
+3. Then we extract a single module `imports/merged_import.owl`
 
 The first implementation of this pipeline is PATO, see https://github.com/pato-ontology/pato/blob/master/src/ontology/pato-odk.yaml.
 
@@ -159,16 +160,18 @@ If your ontology uses Base Module approach, please use the following steps:
 First, add the term to be imported to the term file associated with it (see above "Using term files" section if this is not clear to you)
 
 Next, you navigate in your terminal to the ontology directory (underneath src in your hpo root directory). 
-```
-cd src/ontology
+
+```console
+$ cd src/ontology
 ```
 
 Then refresh imports by running
 
+```console
+$ sh run.sh make imports/merged_import.owl
 ```
-sh run.sh make imports/merged_import.owl
-```
-Note: if your mirrors are updated, you can run `sh run.sh make no-mirror-refresh-merged`
+
+Note: if your mirrors are updated, you can run `sh run.sh make no-mirror-refresh-imports`
 
 This requires quite a bit of memory on your local machine, so if you encounter an error, it might be a lack of memory on your computer. A solution would be to create a ticket in an issue tracker requesting for the term to be imported, and one of the local devs should pick this up and run the import for you.
 

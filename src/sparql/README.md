@@ -2,7 +2,7 @@
 
 [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) is a W3C standard
 query language for RDF. This directory contains useful SPARQL queries
-for perfoming over the ontology.
+for performing over the ontology.
 
 SPARQL can be executed on a triplestore or directly on any OWL
 file. The queries here are all executed on either hp-edit.obo or
