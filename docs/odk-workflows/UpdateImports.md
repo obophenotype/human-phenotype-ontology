@@ -171,7 +171,7 @@ Then refresh imports by running
 $ sh run.sh make imports/merged_import.owl
 ```
 
-Note: if your mirrors are updated, you can run `sh run.sh make no-mirror-refresh-merged`
+Note: if your mirrors are updated, you can run `sh run.sh make no-mirror-refresh-imports`
 
 This requires quite a bit of memory on your local machine, so if you encounter an error, it might be a lack of memory on your computer. A solution would be to create a ticket in an issue tracker requesting for the term to be imported, and one of the local devs should pick this up and run the import for you.
 
