@@ -12,7 +12,7 @@ on:
 jobs:
   build_branch:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: actions/checkout@v4
       - name: Build ontology
@@ -27,7 +27,7 @@ jobs:
           retention-days: 1
   build_main:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: actions/checkout@v3
         with:
@@ -47,7 +47,7 @@ jobs:
       - build_branch
       - build_main
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: actions/checkout@v4
       - name: Download main build
@@ -62,7 +62,6 @@ jobs:
           path: src/ontology/tmp/
       - name: Diff classification
         run: | 
-            pip install -U oaklib
             cd src/ontology;
             runoak -i simpleobo:tmp/hp-main.obo diff -X simpleobo:tmp/hp-branch.obo -o reports/difference_main-branch_base.md --output-type md 
       - name: Upload diff

@@ -10,7 +10,7 @@ If you would like to use the reasoner, download and install the [Elk plugin](htt
 
 ## Setting your ID ranges
 
-Do you have an ID range in the idranges file (hp-idranges.owl), in the src/ontology/ directory)? If not, Peter, Nicole, Chris or Melissa can add one for you.
+Do you have an ID range in the idranges file (hp-idranges.owl), in the src/ontology/ directory)? If not, the HPO team can add one for you.
 
 Ensure that you have Protege configured to generate new URIs in your own range. Note that if you edit multiple files, you need to check this every time to ensure that the proper settings are in place. HP URIs should look like this: http://purl.obolibrary.org/obo/HP_0000473 Do a test to ensure that the ID generator is working properly.
 
@@ -68,10 +68,10 @@ Protege should then remember your last used ID on the computer you are currently
 Finally, go to Protege->Preferences, “New Entities Metadata” tab and set the following items. This will ensure that we are all using the same tag to get credit for making new terms.
 
 - activate: ``Annotate new entities with creator (user)``. 
-- Creator property: http://purl.org/dc/elements/1.1/creator
+- Creator property: http://purl.org/dc/terms/creator
 - Creator value: user ORCID (enter your ORCID id under User!)
 - activate: ``Annotate new entities with data/time``.
-- Date property: http://purl.org/dc/elements/1.1/date
+- Date property: http://purl.org/dc/terms/date
 - Date value format: ISO-8601
 
 <figure markdown>

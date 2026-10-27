@@ -104,6 +104,23 @@ remove_foreign_declarations: $(SRC)
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/][^p]/d' $(SRC)
 	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]hp[/]patterns[/]definitions[.]owl[>][)]/d' $(SRC)
 
+# Remove synonyms whose value is identical to the term's primary label (incl. any
+# axiom-annotated ones). See ../sparql/remove-synonyms-equal-to-label.ru.
+.PHONY: remove_redundant_synonyms
+remove_redundant_synonyms: $(SRC)
+	$(ROBOT) query --input $(SRC) --update ../sparql/remove-synonyms-equal-to-label.ru \
+		convert --format ofn --output $(SRC).tmp.owl
+	# robot's functional-syntax writer may expand the dc/dcterms/obda CURIEs that $(SRC)
+	# uses to full IRIs *and* drop their Prefix declarations, which would bury the change in
+	# ~31k lines of prefix churn (and leave the CURIEs undeclared). Collapse the IRIs back to
+	# CURIEs and re-add any dropped Prefix declaration in its original header position, so the
+	# diff is only the removed synonyms. All steps are idempotent (no-ops on a clean run).
+	sed -i -E 's|<http://purl.org/dc/terms/([A-Za-z0-9_]+)>|dcterms:\1|g; s|<http://purl.org/dc/elements/1.1/([A-Za-z0-9_]+)>|dc:\1|g; s|<https://w3id.org/obda/vocabulary#([A-Za-z0-9_]+)>|obda:\1|g' $(SRC).tmp.owl
+	grep -q '^Prefix(dc:=' $(SRC).tmp.owl || sed -i '/^Prefix(:=/a Prefix(dc:=<http://purl.org/dc/elements/1.1/>)' $(SRC).tmp.owl
+	grep -q '^Prefix(obda:=' $(SRC).tmp.owl || sed -i '/^Prefix(xsd:=/a Prefix(obda:=<https://w3id.org/obda/vocabulary#>)' $(SRC).tmp.owl
+	grep -q '^Prefix(dcterms:=' $(SRC).tmp.owl || sed -i '/^Prefix(rdfs:=/a Prefix(dcterms:=<http://purl.org/dc/terms/>)' $(SRC).tmp.owl
+	mv $(SRC).tmp.owl $(SRC)
+
 #imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt hp_foreign_obsoletes.csv
 #	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
 #		remove --term-file hp_foreign_obsoletes.csv --trim false \ 
@@ -202,6 +219,136 @@ diff_migration:
 	$(ROBOT) diff --left $(SRC) --right main-hp-edit.owl -f markdown -o $@.md
 
 #######################################################
+##### EQ normalisation pipeline #######################
+#######################################################
+
+#### How to use this pipeline #####
+# 1. Update NORM_PATTERN_URL to contain a wide table with all phenotypes, and a single 'pattern' column with the names of the target pattern.
+# 2. Update `NORM_PATTERNS` to list all patterns you would like to process
+# 3. If necessary, run `cp_patterns_for_hpo` to ensure you have all the HPO specific patterns in the patterns directory. Modify the patterns in necessary, e.g. Uppercasing labels, adding synonym patterns.
+# 4. Run `sh run.sh make hpo_phenotype_pipeline -B`. This will 
+#        1. update the ontology with the new labels, EQs and definitions
+#        2. create a diff (reports/hp_chemical_phenotype_diff.md) you can paste on any pull request for easier review
+#        3. 
+# Sheet: https://docs.google.com/spreadsheets/d/1TwsHHrEDM8cTDZ6meFBgIbeeyHoumSB4CUyoauUrPSA/edit?gid=215679312#gid=215679312
+
+# Methodologically: Go to "next BATCH" add the some ids from the "Finished processing" sheet; run pipeline
+
+NORM_PATTERN_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=719064169&single=true&output=tsv
+
+$(TMPDIR)/normalised_patterns.tsv:
+	wget "$(NORM_PATTERN_URL)" -O $@
+	#head -2 $@ > $@.tmp && mv $@.tmp $@
+
+MANUAL_CURATION_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vT597OxlO_uml2xJY6ztzBEOCf1CR6sdZSn9tmyulfHMLHIh7j8HHmfQ0f4aZnoY5bKtMUX3E5JeKOO/pub?gid=1931038653&single=true&output=tsv
+
+$(TMPDIR)/manual_curation.robot.tsv:
+	wget "$(MANUAL_CURATION_URL)" -O $@
+
+$(TMPDIR)/norm_patterns/README.md: $(TMPDIR)/normalised_patterns.tsv
+	rm -rf $(TMPDIR)/norm_patterns
+	mkdir -p $(TMPDIR)/norm_patterns
+	python $(SCRIPTSDIR)/split_pattern_table.py $< $(TMPDIR)/norm_patterns
+	echo "$(TODAY)" > $@
+
+NORM_PATTERNS=abnormalLevelOfChemicalEntityInBlood \
+	abnormallyDecreasedLevelOfChemicalEntityInBlood \
+	abnormallyIncreasedLevelOfChemicalEntityInBlood \
+	abnormalLevelOfChemicalEntityInUrine \
+	abnormallyDecreasedLevelOfChemicalEntityInUrine \
+	abnormallyIncreasedLevelOfChemicalEntityInUrine
+
+$(TMPDIR)/norm_patterns.ofn: $(SRC) $(TMPDIR)/norm_patterns/README.md
+	touch $(foreach n,$(NORM_PATTERNS), $(TMPDIR)/norm_patterns/$(n).tsv)
+	$(DOSDPT) generate --catalog=$(CATALOG) \
+    --infile=$(TMPDIR)/norm_patterns --template=$(PATTERNDIR)/dosdp-patterns-hpo/ --batch-patterns="$(NORM_PATTERNS)" \
+    --ontology=$< --obo-prefixes=true --outfile=$(TMPDIR)/norm_patterns
+	$(ROBOT) merge $(foreach n,$(NORM_PATTERNS), -i $(TMPDIR)/norm_patterns/$(n).ofn) \
+		query --update ../sparql/update-chemical-labels.ru -o $@
+	sed -i '/^Declaration/d' $@
+
+tmp/chemical_phenotypes.txt: $(TMPDIR)/norm_patterns.ofn
+	$(ROBOT) query -i $< --query $(SPARQLDIR)/hp_terms.sparql $@
+
+tmp/chemical_phenotypes_template.txt: $(TMPDIR)/manual_curation.robot.tsv
+	cut -f1 $< | grep "HP:" | sed 's|HP:|http://purl.obolibrary.org/obo/HP_|g' > $@
+
+tmp/chemical_phenotypes_incl_properties.txt: tmp/chemical_phenotypes.txt tmp/chemical_phenotypes_template.txt
+	cat $^ > $@
+	echo "rdfs:label" >> $@
+	echo "IAO:0000115" >> $@
+
+NORM_PATTERNS_YAML_HPO=$(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns-hpo/$(n).yaml)
+
+# This is a convenience method to copy all uPheno patterns to the HPO-specific directory 
+# So they can be processed by the curator. It should
+# only be run manually when needed.
+cp_patterns_for_hpo:
+	rsync -av --ignore-existing $(foreach n,$(NORM_PATTERNS), $(PATTERNDIR)/dosdp-patterns/$(n).yaml) $(PATTERNDIR)/dosdp-patterns-hpo/
+
+tmp/chemical_old_labels_as_synonyms.owl: $(SRC) tmp/chemical_phenotypes_incl_properties.txt
+	$(ROBOT) filter -i $(SRC) -T tmp/chemical_phenotypes.txt --axioms annotation --signature true --trim false --preserve-structure false \
+		filter --term rdfs:label --trim false --preserve-structure false \
+		query \
+			--update ../sparql/add-labels-as-synonyms.ru \
+			-o $@
+
+rm_def_chem: tmp/chemical_phenotypes_incl_properties.txt
+	cp $(SRC) temp.txt
+	grep -E '^http://purl.obolibrary.org/obo/HP_' tmp/chemical_phenotypes_incl_properties.txt | tr -d '\r' | while read id; do \
+	  echo "Removing IAO_0000115 and EquivalentClasses for: $$id"; \
+	  grep -v "IAO_0000115> <$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
+	  grep -v "^EquivalentClasses(<$$id>" temp.txt > temp_filtered.txt && mv temp_filtered.txt temp.txt; \
+	done
+	mv temp.txt $(SRC)
+
+remove_umls_xrefs: $(SRC)
+	sed -i -E '\%^AnnotationAssertion\(<http://www\.geneontology\.org/formats/oboInOwl#hasDbXref> .*"(UMLS|SNOMEDCT_US|SNOMED_CT):[^"]*"\)%d' $<
+
+hpop: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt $(TMPDIR)/manual_curation.robot.tsv
+
+
+# This is the main pipeline
+.PHONY: hpo_phenotype_pipeline
+hpo_phenotype_pipeline: $(SRC) $(TMPDIR)/norm_patterns.ofn tmp/chemical_old_labels_as_synonyms.owl tmp/chemical_phenotypes_incl_properties.txt tmp/chemical_phenotypes.txt $(TMPDIR)/manual_curation.robot.tsv
+	# In cases where this is rerun often, it makes sense to simply reset hp-edit.owl to the state on the branch
+	git checkout master -- $(SRC) 
+	
+	# We create a version of hp.obo for the diff later, to monitor the changes
+	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-branch.obo
+
+	# We remove all EQs, labels and definitions from hp-edit.owl
+	$(MAKE) rm_def_chem
+	$(ROBOT) remove -i $(SRC) -T tmp/chemical_phenotypes_incl_properties.txt --axioms annotation --signature true --trim false --preserve-structure false \
+	remove -T tmp/chemical_phenotypes.txt --axioms equivalent --signature true --trim false --preserve-structure false \
+	merge -i $(TMPDIR)/norm_patterns.ofn -i tmp/chemical_old_labels_as_synonyms.owl --collapse-import-closure false -o $(SRC).ofn
+	
+	# NOTE: The reasoner-based re-classification of chemical phenotypes has been dropped.
+	# It used to reason over the new EQs, extract a fresh "self parents" subClassOf
+	# hierarchy, delete all existing subClassOf axioms for these terms and merge the
+	# reasoned ones back in. That step is too flaky (see the spurious relationship churn
+	# in the diff) and needs a concerted effort to redo properly. The pipeline now only
+	# normalises labels, definitions, EQs and synonyms and applies the manual curation
+	# template; the existing subClassOf relationships are left untouched.
+	# NB: we generate the manual curation axioms into a separate file and merge them in
+	# explicitly. Do NOT collapse this into `... template --merge-after -o $(SRC).ofn`:
+	# with an empty template table that emits an empty ontology and wipes $(SRC).ofn.
+	$(ROBOT) template -i $(SRC).ofn --template $(TMPDIR)/manual_curation.robot.tsv -o tmp/manual_curation.owl
+	$(ROBOT) merge -i $(SRC).ofn -i tmp/manual_curation.owl --collapse-import-closure false -o $(SRC).ofn
+
+	# (I like to work on temporary files instead of the main for no reason.)
+	mv $(SRC).ofn $(SRC)
+	sed -i 's/ (human)//g' $(SRC)
+	# Generate hp.obo again with the changes...
+	make hp.obo IMP=false PAT=false MIR=false && mv hp.obo tmp/hp-after.obo
+	
+	# ... and generate the diff to look at it...
+	runoak -i simpleobo:tmp/hp-branch.obo diff -X simpleobo:tmp/hp-after.obo -o reports/hp_chemical_phenotype_diff.md --output-type md
+	@echo "$@ pipeline finished!"
+
+# Generate template file seeds
+
+#######################################################
 ##### British synonyms pipeline #######################
 #######################################################
 
@@ -298,6 +445,15 @@ re-assemble:
 	echo "Ontology(<http://purl.obolibrary.org/obo/hp.owl>" >> hp-edit.owl
 	echo "Import(<http://purl.obolibrary.org/obo/hp/patterns/definitions.owl>)" >> hp-edit.owl
 	cat tmp/hp >> hp-edit.owl
+
+prepare_release: $(REPORTDIR)/upheno-relations.csv
+
+$(REPORTDIR)/upheno-relations.csv: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		upheno:extract-upheno-relations \
+			--root-phenotype HP:0000118 \
+			--relation UPHENO:0000003 --relation UPHENO:0000001 \
+		query --query ../sparql/upheno_fillers.sparql $@
 
 #drop_synonyms_wo_support:
 #	# Remove the remaining exactMatches
@@ -445,6 +601,14 @@ reports/layperson-synonyms.tsv: $(SRC)
 reports/count-phenotypes.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-phenotypes.sparql $@
 
+tmp/hp-inferred.owl: $(SRC)
+	$(ROBOT) query -i hp-edit.owl --update ../sparql/add-subclass-asserted.ru \
+		reason -a true reduce -o $@
+
+reports/inferred-phenotype-classification.tsv: tmp/hp-inferred.owl
+	$(ROBOT) query -f tsv -i $< --query ../sparql/hpo-subclass-relationships.sparql $@
+
+
 reports/count-all.tsv: $(SRC)
 	$(ROBOT) query -f csv -i $< --query ../sparql/count-all.sparql $@
 
@@ -466,11 +630,164 @@ iconv:
 
 MERGE_TEMPLATE_FILE=NOFILE
 MERGE_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vR99Cz13ykiPwq-WdLjAGsPod6n7daSjyhpJa2FJS5bjEDDBlkjJYGrS2hYckvtGAIO2JzpCYMueuUM/pub?gid=1430967911&single=true&output=tsv"
+
+gram:
+	git checkout master -- hp-edit.owl
+
+	# GRAM POSTIVES
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=0&single=true&output=tsv" -O tmp/template_gram_postives.tsv
+
+	# GRAM NEGATIVES
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=1483369376&single=true&output=tsv" -O tmp/template_gram_negatives.tsv
+
+	# GRAM NEGATIVE updates
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?gid=1561428163&single=true&output=tsv" -O tmp/template_gram_negative_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	# The script is reusable for any ROBOT update template with old_def/old_parents columns.
+	python3 ../scripts/strip_template_old_values.py tmp/template_gram_negative_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_gram_negatives.tsv \
+		--template tmp/template_gram_negative_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+# Source workbook for the per-pathogen infection make goals below.
+# Sheets are extracted as TSV via ../scripts/xlsx_to_tsv.py.
+INFECTIONS_XLSX=tmp/splitted_infections_sheets.xlsx
+
+download_adam_xlsx:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZZdkwYX_uy_IDvvExlz-DYHCq4D975dd1yCt2tfyugJKT7_V-JqpOP_8q6SuTZvtarDa0Ywov8GCk/pub?output=xlsx" -O $(INFECTIONS_XLSX)
+
+fungal:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# FUNGAL INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) fungal-infections tmp/template_fungal_infections.tsv
+
+	# FUNGAL updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) fungal-updates tmp/template_fungal_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	python3 ../scripts/strip_template_old_values.py tmp/template_fungal_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_fungal_infections.tsv \
+		--template tmp/template_fungal_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+mycobacteria:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MYCOBACTERIA INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) mycobacteria-infections tmp/template_mycobacteria_infections.tsv
+
+	# MYCOBACTERIA updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) mycobacteria-updates tmp/template_mycobacteria_updates.tsv
+
+	# Strip the values listed in old_def / old_parents columns of the *_updates.tsv
+	# template from hp-edit.owl, so the new values don't collide with the old ones.
+	python3 ../scripts/strip_template_old_values.py tmp/template_mycobacteria_updates.tsv $(SRC)
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_mycobacteria_infections.tsv \
+		--template tmp/template_mycobacteria_updates.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+parasite:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# PARASITE INFECTIONS (no -updates sheet in the workbook)
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) parasite-infections tmp/template_parasite_infections.tsv
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_parasite_infections.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+merge_fungal_parasite_myco:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MERGED FUNGAL / PARASITE / MYCOBACTERIA INFECTIONS (no -updates sheet in the workbook)
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merge_fungal_parasite_myco tmp/template_merge_fungal_parasite_myco.tsv
+
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merge_fungal_parasite_myco.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+merged:
+	make download_adam_xlsx -B
+	git checkout master -- hp-edit.owl
+
+	# MERGED INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merged tmp/template_merged.tsv
+
+	# MERGED updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) merged_updates tmp/template_merged_updates.tsv
+
+	# For merged_updates: whenever new_def or new_parents has a value, the
+	# corresponding old_def / old_parents axioms are stripped from hp-edit.owl
+	# first so the new values don't collide on merge. When new_name has a value
+	# (label is being changed), the current rdfs:label is captured into a
+	# separate synonym template so it can be merged back as an
+	# oboInOwl:hasExactSynonym, and the old label is stripped.
+	python3 ../scripts/process_merged_updates.py tmp/template_merged_updates.tsv $(SRC) tmp/template_merged_old_label_synonyms.tsv
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merged.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_merged_updates.tsv \
+		--template tmp/template_merged_old_label_synonyms.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+add_inf_merged:
+	make download_adam_xlsx -B
+	git checkout add-merged-infections-adam -- hp-edit.owl
+
+	# ADD_INF_MERGED INFECTIONS
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) add_inf_merged tmp/template_add_inf_merged.tsv
+
+	# ADD_INF_MERGED updates
+	python3 ../scripts/xlsx_to_tsv.py $(INFECTIONS_XLSX) add_inf_merged_updates tmp/template_add_inf_merged_updates.tsv
+
+	# For add_inf_merged_updates: whenever new_def or new_parents has a value, the
+	# corresponding old_def / old_parents axioms are stripped from hp-edit.owl
+	# first so the new values don't collide on merge. When new_name has a value
+	# (label is being changed), the current rdfs:label is captured into a
+	# separate synonym template so it can be merged back as an
+	# oboInOwl:hasExactSynonym, and the old label is stripped.
+	python3 ../scripts/process_merged_updates.py tmp/template_add_inf_merged_updates.tsv $(SRC) tmp/template_add_inf_merged_old_label_synonyms.tsv
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_add_inf_merged.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+	$(ROBOT) -vvv template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
+		--template tmp/template_add_inf_merged_updates.tsv \
+		--template tmp/template_add_inf_merged_old_label_synonyms.tsv \
+		repair --merge-axiom-annotations true \
+		--output $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
 sync_google_template:
 	wget $(MERGE_TEMPLATE_URL) -O $(MERGE_TEMPLATE_FILE)
 
 merge_template: $(MERGE_TEMPLATE_FILE)
-	$(ROBOT) template --prefix "orcid: https://orcid.org/" --merge-before --input $(SRC) \
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --prefix "ORCID: https://orcid.org/" --prefix "dcterms: http://purl.org/dc/terms/" --merge-before --input $(SRC) \
  --template $< --output $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 reset_edit:
@@ -499,20 +816,16 @@ hpoa_clean:
 
 .PHONY: hpoa
 hpoa:
-	$(MAKE) IMP=false MIR=false COMP=false PAT=false hp.json #hp.obo
 	test -f hp.json
-	#test -f hp.obo
-	echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
-	#mkdir -p $(RARE_DISEASE_DIR)/misc/data/ && cp hp.obo $(RARE_DISEASE_DIR)/misc/data/hp.obo
+	@echo "##### HPOA: COPYING hp.obo and hp.json into HPOA pipeline"
 	mkdir -p $(RARE_DISEASE_DIR)/current/data/ && cp hp.json $(RARE_DISEASE_DIR)/current/data/hp.json
-	#mkdir -p $(RARE_DISEASE_DIR)/util/annotation/data/ && cp hp.obo $(RARE_DISEASE_DIR)/util/annotation/data/hp.obo
 	
-	echo "##### HPOA: Running Make pipeline"
+	@echo "##### HPOA: Running Make pipeline"
 	cd $(RARE_DISEASE_DIR)/ \
 		&& echo "##### HPOA: Running CURRENT Makefile" \
 		&& $(MAKE) -C current
 	
-	echo "##### HPOA: COPYING all result files into HPOA results directory"
+	@echo "##### HPOA: COPYING all result files into HPOA results directory"
 	mkdir -p $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/genes_to_phenotype.txt $(HPOA_DIR)
 	cp $(RARE_DISEASE_DIR)/current/phenotype_to_genes.txt $(HPOA_DIR)
@@ -598,6 +911,11 @@ $(TRANSLATIONSDIR)/hp-cs-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TR
 		--drop-unknown-columns true \
 		-o $@
 
+.PRECIOUS: babelon_stats
+# This goal is used to generate statistics for the babelon translations
+babelon_stats:
+	babelon -vvv statistics ../translations/hp-all.babelon.tsv
+
 #diff:
 #	robot diff --left tmp/int.owl --right hp-international.owl -o intdiff.txt
 #	#wget "http://purl.obolibrary.org/obo/hp/hp-international.owl" -O tmp/int.owl
@@ -639,3 +957,19 @@ mappings:
 
 babelon:
 	pip install -U babelon==0.3.4 --break-system-packages
+
+##########################
+### Miscellaneous ########
+##########################
+
+.PHONY: update-alternative-ids merge-alternative-ids
+update-alternative-ids: $(SRC)
+	$(ROBOT) query -i $(SRC) -f ttl --query ../sparql/update-alternative-id.ru tmp/alternative_ids.ttl
+
+merge-alternative-ids:
+	$(ROBOT) merge -i $(SRC) -i tmp/alternative_ids.ttl --collapse-import-closure false \
+		convert -f ofn -o $(SRC)
+
+update-alternative-ids-and-merge:
+	$(MAKE) update-alternative-ids
+	$(MAKE) merge-alternative-ids

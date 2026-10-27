@@ -4,9 +4,9 @@ The phenotype_to_genes.txt file displays  the HPO identifier and term name,  the
 
 
 - HP_1 subclass_of HP_3
-- HP_1 subclass_of HP_3
+- HP_2 subclass_of HP_3
 
-then genes_to_phenotypes.txt would have:
+and genes_to_phenotypes.txt contains:
 
 - geneA annotated to HP_1
 - geneB annotated to HP_2
@@ -14,7 +14,12 @@ then genes_to_phenotypes.txt would have:
 then phenotype_to_genes.txt contains:
 
 
-- HP_3 annotates geneA and geneB
+- HP_3 annotated to geneA 
+- HP_3 annotated to geneB
+
+### Included terms
+This file only contains annotations to HPO terms that are descendants of
+[Phenotypic abnormality](https://hpo.jax.org/app/browse/term/HP:0000118){:target="\_blank"}.
 
 
 ### File format

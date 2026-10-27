@@ -1,0 +1,29 @@
+PREFIX upheno: <http://purl.obolibrary.org/obo/UPHENO_>
+PREFIX hp: <http://purl.obolibrary.org/obo/HP_>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?hp_id ?hp_label ?filler_id ?filler_label ?type
+WHERE {
+    {
+  ?hp_id rdfs:subClassOf* hp:0000118; 
+    rdfs:subClassOf ?restriction .
+    ?restriction a owl:Restriction ;
+        owl:onProperty upheno:0000003 ;
+        owl:someValuesFrom ?filler_id .
+    ?hp_id rdfs:label ?hp_label .
+    ?filler_id rdfs:label ?filler_label .
+    BIND("associated with" as ?type)
+    } UNION {
+       ?hp_id rdfs:subClassOf* hp:0000118; 
+    rdfs:subClassOf ?restriction .
+    ?restriction a owl:Restriction ;
+        owl:onProperty upheno:0000001 ;
+        owl:someValuesFrom ?filler_id .
+    ?hp_id rdfs:label ?hp_label .
+    ?filler_id rdfs:label ?filler_label . 
+    BIND("affects" as ?type)
+    }
+ FILTER(isIRI(?filler_id))
+ FILTER(isIRI(?hp_id))
+} ORDER BY ?hp_id ?hp_label ?filler_id ?filler_label ?type

@@ -33,6 +33,7 @@ import_group:
     - <http://www.informatics.jax.org/marker/MGI:*>
     - <http://purl.obolibrary.org/obo/OBI_*>
     - <http://purl.obolibrary.org/obo/CARO_*>
+    - <http://purl.obolibrary.org/obo/COB_*>
     - <http://purl.obolibrary.org/obo/ENVO_*>
     - <http://purl.obolibrary.org/obo/BFO_0000002*>
     - <http://purl.obolibrary.org/obo/BFO_0000003*>
@@ -46,6 +47,7 @@ import_group:
     - <http://purl.obolibrary.org/obo/BFO_0000040*>
     - <http://purl.obolibrary.org/obo/BFO_0000141*>
     - <http://purl.obolibrary.org/obo/SO_*>
+    - <http://purl.obolibrary.org/obo/CLM_*>
     - <http://purl.obolibrary.org/obo/cl#abbreviation*>
     - <http://purl.obolibrary.org/obo/cl#added_for_HCA*>
     - <http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION*>
@@ -79,7 +81,7 @@ import_group:
       use_base: TRUE
     - id: chebi
       make_base: TRUE
-      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+      mirror_from: http://purl.obolibrary.org/obo/upheno/chebi_slim.owl
     - id: hsapdv
       make_base: TRUE
       base_iris:
@@ -91,6 +93,12 @@ import_group:
     - id: mpath
       make_base: TRUE
 robot_java_args: '-Xmx8G'
+robot_plugins:
+  plugins:
+    - name: upheno
+      mirror_from: https://github.com/monarch-initiative/monarch-robot-plugins/releases/latest/download/monarch-robot-extensions.jar
+    - name: sssom
+      mirror_from: https://github.com/gouttegd/sssom-java/releases/download/sssom-java-1.9.0/sssom-robot-plugin-1.9.0.jar
 allow_equivalents: asserted-only
 pattern_pipelines_group:
   products:
