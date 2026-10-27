@@ -12,7 +12,7 @@
 
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH               = 1f08bebbb1446cbeceb7bd0359684f07d8e0c837d729f22518a994f92306b8e4
+CONFIG_HASH               = 59ed5457fd1b3e3a1ec3dd782074a86170bbd54de2267afa846c9335246efec8
 
 # ----------------------------------------
 # Common variables
@@ -136,7 +136,7 @@ config_check:
 
 .PHONY: test
 test: odkversion validate_idranges dosdp_validation \
-      reason_test sparql_test robot_reports check_rdfxml_products \
+      reason_test sparql_test robot_reports \
       $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
 	@echo "INFO: Finished running all tests successfully."
 
@@ -318,11 +318,10 @@ download-mirror-nbo: | $(TMPDIR)
 	                    --max-retry 4 \
 	                    $(OBOBASE)/nbo/nbo-base.owl
 
-$(MIRRORDIR)/nbo.owl: download-mirror-nbo
-	@if [ -f $(TMPDIR)/download-mirror-nbo.owl ]; then \
-	        $(ROBOT) convert --input $(TMPDIR)/download-mirror-nbo.owl \
-	                         --format ofn --output $@ ; \
-	fi
+$(MIRRORDIR)/nbo.owl:
+	@echo "ERROR: You have configured your default mirror type to be custom;
+	@echo "       this behavior needs to be overwritten in hp.Makefile!"
+	@false
 .PRECIOUS: $(MIRRORDIR)/nbo.owl
 
 ## ONTOLOGY: pr
@@ -1145,6 +1144,8 @@ $(ONT)-simple-non-classified.owl: $(EDIT_PREPROCESSED) $(SIMPLESEED) $(OTHER_SRC
 # International: A variant of the primary release, but with multi-language support.
 $(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
 	$(ROBOT) merge $(foreach src, $^, --input $(src)) \
+	         $(SHARED_ROBOT_COMMANDS) \
+	         annotate --ontology-iri $(ONTBASE)/$@ \
 	         $(ANNOTATE_ONTOLOGY_VERSION) \
 	                  --output $@
 
@@ -1237,7 +1238,7 @@ RELEASED_ASSETS = $(foreach n, $(RELEASE_ASSETS), $(RELEASEDIR)/$(n))
 CLEANFILES      = $(MAIN_FILES)
 
 .PHONY: all_assets
-all_assets: $(ASSETS)
+all_assets: $(ASSETS) check_rdfxml_products
 
 .PHONY: show_assets
 show_assets:
