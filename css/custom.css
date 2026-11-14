@@ -1,0 +1,183 @@
+:root {
+  --md-primary-fg-color:        #00838F;   /* HPO teal */
+  --md-primary-fg-color--light: #4DD0E1;
+  --md-primary-fg-color--dark:  #006974;
+
+  --md-accent-fg-color:         #3949AB;   /* HPO indigo */
+}
+
+
+.legend {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #f9f9f9;
+    border-left: 4px solid #007acc;
+    font-style: italic;
+  }
+
+/* Target the table with the specific class (if using one) */
+.alt-rows-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for table rows */
+  .alt-rows-table tr:nth-child(odd) {
+    background-color: #f2f2f2;  /* Light gray for odd rows */
+  }
+  
+  .alt-rows-table tr:nth-child(even) {
+    background-color: #ffffff;  /* White for even rows */
+  }
+  
+  /* Style for the header row */
+  .alt-rows-table th {
+    background-color: #4CAF50;  /* Change to your desired color (e.g., green) */
+    color: white;  /* White text for contrast */
+    text-align: left;
+    padding: 8px 12px;
+  }
+  
+  /* Optional: Add borders and padding to make the table more readable */
+  .alt-rows-table th, .alt-rows-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+  }
+  
+/* Optional: Add borders and padding to make the table more readable */
+.alt-rows-table th, .alt-rows-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+  }
+  
+.alt-rows-table th {
+    background-color: #4D4DFF;  /* Light gray background for header */
+    text-align: left;
+}
+
+figure .left-align {
+  text-align: left;
+  margin-top: 8px; /* Optional: Adjust spacing above the caption */
+}
+
+/* Highlight box for important sentences */
+.highlight-box {
+  border: 2px solid #4CAF50;  /* Green border */
+  background-color: #f9f9f9;  /* Light gray background */
+  padding: 12px;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 1rem;
+  color: #333;  /* Dark text */
+  margin: 10px 0;  /* Spacing around the box */
+}
+
+.md-typeset table {
+  margin: auto;
+  width: auto; 
+}
+
+table th {
+  background-color: #000; /* Change this to your desired header color */
+  color: white; /* Text color for header */
+  padding: 8px; /* Optional padding */
+  text-align: left; /* Optional alignment */
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff; /* White for odd rows */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item img {
+  width: auto !important;
+}
+
+.hpo-figure {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+
+.hpo-figure .wide {
+  flex: 2;
+}
+
+.hpo-figure .narrow {
+  flex: 1;
+}
+
+.hpo-figure img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.hpo-caption {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive stacking on small screens */
+@media (max-width: 800px) {
+  .hpo-figure {
+    flex-direction: column;
+  }
+}
+
+
+/* Larger body font for readability */
+.md-typeset {
+  font-size: 0.9rem;
+}
+
+/* Slightly increase code block padding */
+.md-typeset pre code {
+  line-height: 1.4;
+  padding: 0.8rem;
+}
+
+/* Make tables more readable */
+.md-typeset table {
+  font-size: 0.85rem;
+}
+
+.img-60 {
+  width: 60%;
+  margin: auto;      /* this horizontally centers block elements */
+  display: block;    /* required for margin:auto to work */
+}
+
+.hpo-pill a {
+  background: var(--md-code-bg);
+  padding: 0.25em 0.55em;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  border: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.hpo-pill a:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-fg-color);
+}
