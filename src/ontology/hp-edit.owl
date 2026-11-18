@@ -10000,6 +10000,7 @@ Declaration(Class(<http://purl.obolibrary.org/obo/HP_0020402>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0020403>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0020404>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0020405>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HP_0020406>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0025002>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0025003>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0025004>))
@@ -20579,6 +20580,8 @@ Declaration(Class(<http://purl.obolibrary.org/obo/HP_6001557>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_6001558>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_6001559>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_6001560>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HP_6001561>))
+Declaration(Class(<http://purl.obolibrary.org/obo/HP_6001562>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000700>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/hp#abbreviation>))
@@ -35334,7 +35337,9 @@ SubClassOf(<http://purl.obolibrary.org/obo/HP_0001579> <http://purl.obolibrary.o
 
 # Class: <http://purl.obolibrary.org/obo/HP_0001580> (Pigmented micronodular adrenocortical disease)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:6329005") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0001580> "The presence of multiple red, or (rarely) yellow nodules in the adrenal cortex; the nodules are typically smaller than one centimeter in diameter and are composed predominantly of enlarged, globular, cortical cells with granular eosinophilic cytoplasm that often contained lipofuscin.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HP_0001580> "HP:0001580")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/HP_0001580> "This is the characteristic lesion of primary pigmented nodular adrenocortical disease.")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0001580> "Pigmented micronodular adrenocortical disease")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_0001580> <http://purl.obolibrary.org/obo/HP_0000849>)
 
@@ -35771,7 +35776,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/HP_0001635> <http://purl.obolibrary.o
 
 # Class: <http://purl.obolibrary.org/obo/HP_0001636> (Tetralogy of Fallot)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-0736-9199>) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0001636> "A congenital cardiac malformation comprising pulmonary stenosis, overriding aorta, ventricular septum defect, and right ventricular hypertrophy. The diagnosis of TOF is made if at least three of the four above mentioned features are present.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0000-0002-0736-9199>) Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:19144126") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:19683809") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:30557849") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0001636> "A congenital cardiac malformation comprising pulmonary stenosis, overriding aorta, ventricular septum defect, and right ventricular hypertrophy. The diagnosis of TOF is made if at least three of the four above mentioned features are present. TOF encompasses a large spectrum of anatomical presentations, ranging from VSD with limited aortic overriding and mild pulmonary obstruction at one end of the spectrum to a critical form of VSD with pulmonary atresia at the other end. Each component can vary in its severity, with the variation directly affecting the manifestation and management of the disease. It can also be associated with additional lesions such as common atrioventricular septal defect, being included in the spectrum of double-outlet RV when the aortic override is severe or present with a variant form such as TOF with absent pulmonary valve.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/HP_0001636> "ICD-10:Q21.3")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_0001636> "Tetrology of fallot")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HP_0001636> "HP:0001636")
@@ -100024,14 +100029,16 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://pu
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0010608> "Hordeolum internum")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_0010608> <http://purl.obolibrary.org/obo/HP_0010606>)
 
-# Class: <http://purl.obolibrary.org/obo/HP_0010609> (Skin tags)
+# Class: <http://purl.obolibrary.org/obo/HP_0010609> (Skin tag)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0009-0006-4530-3154>) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0010609> "Cutaneous skin tags also known as acrochorda or fibroepithelial polyps are small benign tumors that may either form secondarily over time primarily in areas where the skin forms creases, such as the neck, armpit or groin or may also be present at birth, in which case they usually occur in the periauricular region.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <https://orcid.org/0009-0006-4530-3154>) Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:31613504") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0010609> "Skin tags, or acrochordons, represent common benign cutaneous outgrowths that arise from the epidermis and underlying dermis. Lesions typically present as soft, pedunculated papules on a narrow stalk, most often in intertriginous areas such as the neck, axillae, groin, and eyelids.")
 AnnotationAssertion(dcterms:creator <http://purl.obolibrary.org/obo/HP_0010609> <https://orcid.org/0009-0006-4530-3154>)
 AnnotationAssertion(dcterms:date <http://purl.obolibrary.org/obo/HP_0010609> "2009-10-27T11:41:03Z"^^xsd:dateTime)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_0010609> "Acrochorda")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/hp#plural_form>) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_0010609> "Acrochordon")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/hp#plural_form>) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_0010609> "Skin tags")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/HP_0010609> "HP:0010609")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0010609> "Skin tags")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0010609> "Skin tag")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_0010609> <http://purl.obolibrary.org/obo/HP_0011355>)
 
 # Class: <http://purl.obolibrary.org/obo/HP_0010610> (Palmar pits)
@@ -124087,7 +124094,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/HP_0012759> <http://purl.obolibrary.o
 
 # Class: <http://purl.obolibrary.org/obo/HP_0012760> (Reduced social reciprocity)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:28707360") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:34924788") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:21769705") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0012760> "A reduced ability to participate in the back-and-forth flow of social interaction appropriate to culture and developmental level, which is normally characterized by an influence of the behavior of one person on the behavior of another person. This results in difficulty interacting with others through emotional, physical, or verbal communication.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:21769705") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:28707360") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:34924788") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0012760> "A reduced ability to participate in the back-and-forth flow of social interaction appropriate to culture and developmental level, which is normally characterized by an influence of the behavior of one person on the behavior of another person. This results in difficulty interacting with others through emotional, physical, or verbal communication.")
 AnnotationAssertion(dcterms:contributor <http://purl.obolibrary.org/obo/HP_0012760> <https://orcid.org/0000-0001-9112-5148>)
 AnnotationAssertion(dcterms:contributor <http://purl.obolibrary.org/obo/HP_0012760> <https://orcid.org/0000-0002-4142-7153>)
 AnnotationAssertion(dcterms:contributor <http://purl.obolibrary.org/obo/HP_0012760> <https://orcid.org/0000-0002-6670-9157>)
@@ -129326,6 +129333,14 @@ AnnotationAssertion(dcterms:creator <http://purl.obolibrary.org/obo/HP_0020405> 
 AnnotationAssertion(dcterms:date <http://purl.obolibrary.org/obo/HP_0020405> "2026-11-17T17:14:11Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0020405> "Reduced question asking")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_0020405> <http://purl.obolibrary.org/obo/HP_5200027>)
+
+# Class: <http://purl.obolibrary.org/obo/HP_0020406> (Facial nerve hypoplasia)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:22281372") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:31088813") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:42781548") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_0020406> "Underdevelopment of the facial nerve (i.e., the seventh cranial nerve). Visualization by computed tomagraphy may show hypoplasia (narrowness) of the facial canal and magentric responance tomograph may visualize hypoplasia of the nerve. Facial nerve hypoplasia may be accompanied by ipsilateral facial paresis.")
+AnnotationAssertion(dcterms:creator <http://purl.obolibrary.org/obo/HP_0020406> <https://orcid.org/0000-0002-0736-9199>)
+AnnotationAssertion(dcterms:date <http://purl.obolibrary.org/obo/HP_0020406> "2026-11-18T08:18:47Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0020406> "Facial nerve hypoplasia")
+SubClassOf(<http://purl.obolibrary.org/obo/HP_0020406> <http://purl.obolibrary.org/obo/HP_6001557>)
 
 # Class: <http://purl.obolibrary.org/obo/HP_0025002> (Abnormal cecum morphology)
 
@@ -220522,6 +220537,7 @@ AnnotationAssertion(dcterms:date <http://purl.obolibrary.org/obo/HP_6000411> "20
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_6000411> "Compression of seventh cranial nerve")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_6000411> "Facial nerve compression")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_6000411> <http://purl.obolibrary.org/obo/HP_0001293>)
+SubClassOf(<http://purl.obolibrary.org/obo/HP_6000411> <http://purl.obolibrary.org/obo/HP_6001557>)
 
 # Class: <http://purl.obolibrary.org/obo/HP_6000412> (Pulmonary perfusion defect)
 
@@ -231779,6 +231795,27 @@ AnnotationAssertion(dcterms:contributor <http://purl.obolibrary.org/obo/HP_60015
 AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/HP_6001560> "This feature may be observed in individuals with classical-like Ehlers-Danlos syndrome type 1 and periodontal Ehlers-Danlos syndrome.")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_6001560> "Acrogeric hands")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_6001560> <http://purl.obolibrary.org/obo/HP_0007495>)
+
+# Class: <http://purl.obolibrary.org/obo/HP_6001561> (Decreased circulating insulin-like growth factor binding protein 2 concentration)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:17485236") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_6001561> "The concentration of insulin-like growth factor binding protein 2 in the blood circulation is below the lower limit of normal.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000233> <http://purl.obolibrary.org/obo/HP_6001561> <https://github.com/obophenotype/human-phenotype-ontology/issues/11597>)
+AnnotationAssertion(dcterms:contributor <http://purl.obolibrary.org/obo/HP_6001561> <https://orcid.org/0009-0005-6714-5727>)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_6001561> "Reduced IGF binding protein-2 level")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_6001561> "Reduced serum IGFBP-2 level")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/HP_6001561> "The insulin-like growth factors, IGF1 and IGF2, the type 1 and type 2 IGF receptors, and the six known IGF binding proteins, IGFBP1-6, comprise a complex system of peptide hormones, cell surface receptors and circulating factors involved in the regulation of growth, survival and differentiation in a vast number of tissues. IGFBP2 is the major IGFBP in the cerebral spinal fluid and appears to demonstrate a governing role in IGF regulation in the CNS.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_6001561> "Decreased circulating insulin-like growth factor binding protein 2 concentration")
+SubClassOf(<http://purl.obolibrary.org/obo/HP_6001561> <http://purl.obolibrary.org/obo/HP_0010876>)
+
+# Class: <http://purl.obolibrary.org/obo/HP_6001562> (Anti-PHEX antibody positivity)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:39879599") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/HP_6001562> "The presence of autoantibodies (immunoglobulins) in the blood circulation that react against anti-phosphate regulating endopeptidase X-linked (PHEX).")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000233> <http://purl.obolibrary.org/obo/HP_6001562> <https://github.com/obophenotype/human-phenotype-ontology/issues/11601>)
+AnnotationAssertion(dcterms:contributor <http://purl.obolibrary.org/obo/HP_6001562> <https://orcid.org/0000-0002-3387-1836>)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/HP_6001562> "Anti-phosphate regulating endopeptidase X-linked antibody positivity")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/HP_6001562> "Autoantibodies targeting PHEX are associated with autoimmune osteomalacia.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_6001562> "Anti-PHEX antibody positivity")
+SubClassOf(<http://purl.obolibrary.org/obo/HP_6001562> <http://purl.obolibrary.org/obo/HP_0030057>)
 
 
 SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/RO_0000052> <http://purl.obolibrary.org/obo/BFO_0000050>) <http://purl.obolibrary.org/obo/RO_0002314>)
