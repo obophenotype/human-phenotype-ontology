@@ -22,3 +22,30 @@ To summarize, the  HPO defines a disease as an entity that has  of the following
 - a set of phenotypic features that is the sum of all of the phenotypes manifested by an individual with the disease. A disease can be a feature of another disease (e.g. diabetes mellitus is a disease and is a feature of Bardet Biedl syndrome).
 - if treatments exist, there is a characteristic response to them.
 
+## Composite phenotypes and bundled terms
+
+According to the authors of the excellent [Elements of morphology](https://onlinelibrary.wiley.com/doi/full/10.1002/ajmg.a.32601){target="_blank"} series, [Bundling]{.emph}
+ is a word that describes a term that represents two or more component findings. 
+ 
+ The term “large nose” can serve as an example of a bundled term as the term comprises several distinct features: prominent nose; wide nasal ridge; prominent nasal tip; and broad nasal base. We have eliminated most bundled terms as they often include presumptions of pathogenesis or association, which may or may not be correct. 
+ 
+ 
+ Bundling is also problematic because it can obscure component abnormalities and if individuals are described using both the single bundled term and the component terms, it can lead to confusion. A good example of this difficulty is [Tetralogy of Fallot](https://hpo.jax.org/browse/term/HP:0001636){target="_blank"} (ToF), which is a diagnostic term that can be made if four components are present: 
+ 
+* [Pulmonic stenosis](https://hpo.jax.org/browse/term/HP:0001642){target="_blank"}
+* [Overriding aorta](https://hpo.jax.org/browse/term/HP:0002623){target="_blank"}
+* [Ventricular septal defect](https://hpo.jax.org/browse/term/HP:0001629){target="_blank"}
+* [Right ventricular hypertrophy](https://hpo.jax.org/browse/term/HP:0001667){target="_blank"}
+
+The HPO defines ToF as
+
+> A congenital cardiac malformation comprising pulmonary stenosis, overriding aorta, ventricular septum defect, and right ventricular hypertrophy. The diagnosis of TOF is made if at least three of the four above mentioned features are present. TOF encompasses a large spectrum of anatomical presentations, ranging from VSD with limited aortic overriding and mild pulmonary obstruction at one end of the spectrum to a critical form of VSD with pulmonary atresia at the other end. Each component can vary in its severity, with the variation directly affecting the manifestation and management of the disease. It can also be associated with additional lesions such as common atrioventricular septal defect, being included in the spectrum of double-outlet RV when the aortic override is severe or present with a variant form such as TOF with absent pulmonary valve.
+
+In general, it is preferable to avoid bundled terms such as this, because if an individual presents with some or all of the component phenotypes, it may be challenging to match the clinical profile to the bundled term. It may also not always be clear that an individual annotated to such a bundled term has all of the component phenotypes. 
+
+However, bundled terms such as [Tetralogy of Fallot](https://hpo.jax.org/browse/term/HP:0001636){target="_blank"} are extremely common in the medical literature and in clinical reports, and not including such terms in the HPO would make it difficult or impossible to annotate a large body of clinical data. Some other bundled terms that are similar to [Tetralogy of Fallot](https://hpo.jax.org/browse/term/HP:0001636){target="_blank"} include 
+[Diabetes mellitus](https://hpo.jax.org/browse/term/HP:0000819){target="_blank"}
+and
+[Congestive heart failure](https://hpo.jax.org/browse/term/HP:0001635){target="_blank"}
+
+Annotators and users of the HPO should be aware of this.
