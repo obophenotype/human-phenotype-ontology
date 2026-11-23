@@ -150,7 +150,8 @@ reports/hp_xrefs.csv: $(SRC)
 ##################################
 
 # We overwrite the .owl release to be, for now, a simple merged version of the editors file.
-$(ONT).owl: $(SRC)
+# It merges the imports, so it has to be built after they are refreshed.
+$(ONT).owl: $(SRC) $(IMPORT_FILES)
 	$(ROBOT) merge --input $< \
 		annotate --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
