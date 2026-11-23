@@ -882,9 +882,9 @@ merge_annotation_assertions: hp-edit.owl
 
 .PHONY: help
 help:
-	@echo "$$data"
-	echo "Migrating EQs from MP to HP:"
-	echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
+	@echo "$$ODK_HELP_MESSAGE"
+	@echo "Migrating EQs from MP to HP:"
+	@echo "make ADOPT_EQS_MAPPING_URL=SOMEURL migrate_eqs_to_edit"
 
 ###########################################
 ### Translations, Internationalisation ####
