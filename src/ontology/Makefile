@@ -12,7 +12,7 @@
 
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH               = 59975c19c82ec0e5697b51e1d0121784e8679c48d2133ab14c8808bf1b69e43e
+CONFIG_HASH               = 5cc9738ea73b7d05d799327c00ea3204cb4cbdbafb6f832d5d6e345f6a79fbc9
 
 # ----------------------------------------
 # Common variables
@@ -173,7 +173,7 @@ export ROBOT_PLUGINS_DIRECTORY=$(TMPDIR)/plugins
 custom_robot_plugins:
 
 .PHONY: extra_robot_plugins
-extra_robot_plugins:  $(ROBOT_PLUGINS_DIRECTORY)/upheno.jar  $(ROBOT_PLUGINS_DIRECTORY)/sssom.jar 
+extra_robot_plugins:  $(ROBOT_PLUGINS_DIRECTORY)/upheno.jar 
 
 # Install all ROBOT plugins to the runtime plugins directory
 .PHONY: all_robot_plugins
@@ -193,9 +193,6 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Additional rules for plugins defined in the ODK configuration
 $(ROBOT_PLUGINS_DIRECTORY)/upheno.jar:
 	curl --location --output $@ https://github.com/monarch-initiative/monarch-robot-plugins/releases/latest/download/monarch-robot-extensions.jar
-
-$(ROBOT_PLUGINS_DIRECTORY)/sssom.jar:
-	curl --location --output $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-1.9.0/sssom-robot-plugin-1.9.0.jar
 
 # Extra Python packages
 # ----------------------------------------
