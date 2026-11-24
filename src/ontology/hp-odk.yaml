@@ -66,13 +66,13 @@ import_group:
     - <http://purl.obolibrary.org/obo/uberon/core#SENSU*>
     - <http://purl.obolibrary.org/obo/uberon/core#SYSTEMATIC*>
   slme_individuals: exclude
-  mirror_max_time_download: 400
   products:
     - id: nbo
       use_base: TRUE
+      mirror_type: custom
     - id: pr
       make_base: TRUE
-      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
+      mirror_from: http://purl.obolibrary.org/obo/upheno/pr_slim.owl
     - id: go
       make_base: TRUE
     - id: uberon 
@@ -97,8 +97,6 @@ robot_plugins:
   plugins:
     - name: upheno
       mirror_from: https://github.com/monarch-initiative/monarch-robot-plugins/releases/latest/download/monarch-robot-extensions.jar
-    - name: sssom
-      mirror_from: https://github.com/gouttegd/sssom-java/releases/download/sssom-java-1.9.0/sssom-robot-plugin-1.9.0.jar
 allow_equivalents: asserted-only
 pattern_pipelines_group:
   products:

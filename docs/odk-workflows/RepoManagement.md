@@ -4,9 +4,8 @@
 
 Your ODK repositories configuration is managed in `src/ontology/hp-odk.yaml`. The [ODK Project Configuration Schema](https://github.com/INCATools/ontology-development-kit/blob/master/docs/project-schema.md) defines all possible parameters that can be used in this config YAML. Once you have made your changes, you can run the following to apply your changes to the repository:
 
-
-```
-sh run.sh make update_repo
+```console
+$ sh run.sh update_repo
 ```
 
 There are a large number of options that can be set to configure your ODK, but we will only discuss a few of them here.
@@ -28,12 +27,11 @@ You can use the update repository workflow described on this page to perform the
 
 We will discuss all these workflows in the following.
 
-
 ### Add new import
 
 To add a new import, you first edit your odk config as described [above](#updating-your-odk-repository), adding an `id` to the `product` list in the `import_group` section (for the sake of this example, we assume you already import RO, and your goal is to also import GO):
 
-```
+```yaml
 import_group:
   products:
     - id: ro
@@ -51,7 +49,7 @@ Note: our ODK file should only have one `import_group` which can contain multipl
     ...
     ```
 2. Add your imports redirect to your catalog file `src/ontology/catalog-v001.xml`, for example:
-    ```
+    ```xml
     <uri name="http://purl.obolibrary.org/obo/hp/imports/go_import.owl" uri="imports/go_import.owl"/>
     ```
 3. Test whether everything is in order:
@@ -67,7 +65,7 @@ Import(<http://purl.obolibrary.org/obo/hp/imports/go_import.owl>)
 
 in your editors file (the ontology) and
 
-```
+```xml
 <uri name="http://purl.obolibrary.org/obo/hp/imports/go_import.owl" uri="imports/go_import.owl"/>
 ```
 
@@ -97,7 +95,7 @@ By default, an import module extracted from a source ontology will be a SLME mod
 
 The following change to your repo config (`src/ontology/hp-odk.yaml`) will switch the go import from an SLME module to a simple ROBOT filter module:
 
-```
+```yaml
 import_group:
   products:
     - id: ro
@@ -110,8 +108,7 @@ not consider terms/annotations from namespaces other than the base-namespace of 
 example of GO above, only annotations / axioms related to the GO base IRI (http://purl.obolibrary.org/obo/GO_) would be considered. This 
 behaviour can be changed by adding additional base IRIs as follows:
 
-
-```
+```yaml
 import_group:
   products:
     - id: go
@@ -124,7 +121,7 @@ import_group:
 
 If you wish to customise your import entirely, you can specify your own ROBOT command to do so. To do that, add the following to your repo config (`src/ontology/hp-odk.yaml`):
 
-```
+```yaml
 import_group:
   products:
     - id: ro
@@ -134,7 +131,7 @@ import_group:
 
 Now add a new goal in your custom Makefile (`src/ontology/hp.Makefile`, _not_ `src/ontology/Makefile`).
 
-```
+```makefile
 imports/go_import.owl: mirror/ro.owl imports/ro_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query  -i $< --update ../sparql/preprocess-module.ru \
 		extract -T imports/ro_terms_combined.txt --force true --individuals exclude --method BOT \
@@ -156,26 +153,26 @@ A component is an import which _belongs_ to your ontology, e.g. is managed by
 you and your team. 
 
 1. Open `src/ontology/hp-odk.yaml`
-1. If you dont have it yet, add a new top level section `components`
+1. If you don't have it yet, add a new top level section `components`
 1. Under the `components` section, add a new section called `products`. 
-This is where all your components are specified
+   This is where all your components are specified
 1. Under the `products` section, add a new component, e.g. `- filename: mycomp.owl`
 
 _Example_
 
-```
+```yaml
 components:
   products:
     - filename: mycomp.owl
 ```
 
-When running `sh run.sh make update_repo`, a new file `src/ontology/components/mycomp.owl` will 
+When running `sh run.sh update_repo`, a new file `src/ontology/components/mycomp.owl` will 
 be created which you can edit as you see fit. Typical ways to edit:
 
 1. Using a ROBOT template to generate the component (see below)
 1. Manually curating the component separately with Protégé or any other editor
 1. Providing a `components/mycomp.owl:` make target in `src/ontology/hp.Makefile`
-and provide a custom command to generate the component
+   and provide a custom command to generate the component
     - `WARNING`: Note that the custom rule to generate the component _MUST NOT_ depend on any other ODK-generated file such as seed files and the like (see [issue](https://github.com/INCATools/ontology-development-kit/issues/637)).
 1. Providing an additional attribute for the component in `src/ontology/hp-odk.yaml`, `source`,
 to specify that this component should simply be downloaded from somewhere on the web.
@@ -193,7 +190,7 @@ Since ODK 1.3.2, it is possible to simply link a ROBOT template to a component w
 
 _Example_:
 
-```
+```yaml
 components:
   products:
     - filename: mycomp.owl

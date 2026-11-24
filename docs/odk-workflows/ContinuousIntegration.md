@@ -4,7 +4,7 @@ Historically, most repos have been using Travis CI for continuous integration te
 runtime restrictions, we recently switched a lot of our repos to GitHub actions. You can set up your repo with CI by adding 
 this to your configuration file (src/ontology/hp-odk.yaml):
 
-```
+```yaml
 ci:
   - github_actions
 ```
@@ -16,7 +16,7 @@ This file contains your CI logic, so if you need to change, or add anything, thi
 Alternatively, if your repo is in GitLab instead of GitHub, you can set up your repo with GitLab CI by adding 
 this to your configuration file (src/ontology/hp-odk.yaml):
 
-```
+```yaml
 ci:
   - gitlab-ci
 ```
